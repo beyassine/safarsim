@@ -45,6 +45,7 @@
 
 <script>
 import DestinationSearch from "./DestinationSearch.vue";
+import hero from "../../assets/hero.png";
 import { useDisplay } from "vuetify";
 
 export default {
@@ -60,6 +61,7 @@ export default {
 
     data() {
         return {
+            hero: hero,
         };
     },
     computed: {
