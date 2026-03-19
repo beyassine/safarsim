@@ -3,7 +3,7 @@
 
         <v-container class="d-flex align-center justify-space-between">
 
-            <div class="text-h6 font-weight-bold">
+            <div class="text-h6 font-weight-bold text-purple">
                 SAFAR SIM
             </div>
 

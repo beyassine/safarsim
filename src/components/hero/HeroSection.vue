@@ -6,11 +6,11 @@
                 <div class="overlay">
 
                     <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 fill-height d-flex align-center' : 'px-6  fill-height'" >
-                        <v-row >
+                        <v-row class="mt-5" >
 
                             <v-col class="mt-5" :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
-                                <div class="hero">
+                                <div class="hero mb-5">
                                     <h1 class="hero-title">
                                         Voyagez Connecté avec <span class="accent"> SAFAR SIM</span> 
                                     </h1>
@@ -96,16 +96,16 @@ export default {
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
-    font-weight: 550;
+    font-size: 32px;
+    font-weight: 500;
     line-height: 1.2;
     color: #1f2937;
     margin-bottom: 10px;
 }
 
 .hero-title .accent {
-    color: purple;
-    font-size: 28px;
+    color:#D81B60;
+    font-size: 36px;
     font-weight: bold;
     /* red/pink like holafly */
 }

@@ -12,7 +12,7 @@
                         Pourquoi une eSIM pour voyager ?
                     </h2>
 
-                    <p class="text-body-1 mb-6">
+                    <p class="mb-6">
                         Avec une eSIM, restez connecté partout dans le monde sans changer
                         de carte SIM. Activez votre forfait directement depuis votre
                         téléphone et profitez d’une connexion internet dès votre arrivée.

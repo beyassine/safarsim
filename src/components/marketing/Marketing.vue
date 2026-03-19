@@ -30,7 +30,7 @@
                                 Voyagez connecté partout dans le monde
                             </h2>
 
-                            <p class="text-subtitle-1 mb-4">
+                            <p class="mb-4">
                                 Avec eSIM SAFAR, profitez d’internet mobile dès votre arrivée,
                                 sans changer de carte SIM ni payer de frais d’itinérance.
                             </p>
