@@ -45,7 +45,6 @@
 
 <script>
 import DestinationSearch from "./DestinationSearch.vue";
-import hero from "../../assets/hero.jpg";
 import { useDisplay } from "vuetify";
 
 export default {
@@ -61,7 +60,6 @@ export default {
 
     data() {
         return {
-            hero: hero,
         };
     },
     computed: {
@@ -77,7 +75,7 @@ export default {
 .hero-card {
     border-radius: 0;
     margin-bottom: 10px;
-    background-image: url("../../assets/hero.jpg");
+    background-image: url("../../assets/hero.png");
     background-size: cover;
     background-position: center;
     min-height: 500px;

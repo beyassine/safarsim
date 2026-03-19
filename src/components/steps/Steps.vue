@@ -108,7 +108,7 @@ export default {
 <style scoped>
 
 .bg-steps {
-    background-image: url("../../assets/steps.png");
+    background-image: url("../../assets/steps.jpg");
     background-size: cover;
     background-position: center;
     min-height: 500px;

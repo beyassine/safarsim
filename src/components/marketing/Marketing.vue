@@ -67,7 +67,6 @@
 </template>
 <script>
 import { useDisplay } from "vuetify";
-import marketing_bg from "../../assets/marketing.png";
 
 export default {
     name: "Header",
@@ -81,7 +80,6 @@ export default {
 
     data() {
         return {
-            marketing_bg: marketing_bg,
         };
     },
     computed: {
