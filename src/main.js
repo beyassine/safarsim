@@ -9,15 +9,12 @@ import * as components from "vuetify/components"
 import * as directives from "vuetify/directives"
 
 const vuetify = createVuetify({
-  ssr: false,
   theme: {
     defaultTheme: 'light',
   },
   icons: {
     defaultSet: 'mdi', // This is already the default value - only for display purposes
   },
-  components,
-  directives
 })
 
 createApp(App)
