@@ -22,12 +22,8 @@
                         <!-- CONTENT -->
                         <v-col cols="12" md="7">
 
-                            <div class="text-caption font-weight-bold mb-2 brand">
-                                Pourquoi SAFAR eSIM ?
-                            </div>
-
                             <h2 class="section-title mb-4">
-                                Voyagez connecté partout dans le monde
+                                Pourquoi SAFAR eSIM ?
                             </h2>
 
                             <p class="mb-4">
@@ -41,23 +37,9 @@
                                 Gardez votre numéro WhatsApp et naviguez comme un local.
                             </p>
 
-                            <v-btn color="light-blue-darken-4" size="large" rounded="lg" class="mb-6">
+                            <v-btn color="light-blue-darken-4 text-none" size="large" rounded="lg" class="mb-6">
                                 Acheter une eSIM
                             </v-btn>
-
-                            <v-row class="d-flex info-row">
-                                <v-col class="" :cols="$vuetify.display.smAndUp ? '4' : '12'">
-                                    🌍 160 destinations
-                                </v-col>
-
-                                <v-col class="" :cols="$vuetify.display.smAndUp ? '4' : '12'">
-                                    ⚡ Activation en 2 minutes
-                                </v-col>
-
-                                <v-col class="" :cols="$vuetify.display.smAndUp ? '4' : '12'">
-                                    📱 Sans carte SIM physique
-                                </v-col>
-                            </v-row>
                         </v-col>
                     </v-row>
                 </div>
@@ -99,7 +81,7 @@ export default {
 }
 
 .brand {
-    color: #ff3b6b;
+    color: #01579B;
 }
 
 .info-row {

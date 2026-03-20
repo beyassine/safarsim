@@ -14,7 +14,7 @@
                 <v-btn variant="text">Aide</v-btn>
             </div>
 
-                <v-btn class="text-white " rounded="lg" color="pink-darken-1" variant="flat">
+                <v-btn class="text-white text-none " rounded="lg" color="pink-darken-1" variant="flat">
                     Acheter eSIM
                 </v-btn>
 

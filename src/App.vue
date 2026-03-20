@@ -20,7 +20,7 @@ import Footer from "./components/layout/Footer.vue"
 
 .app {
   font-family: $body-font-family;
-  background-color: #fffbf8;
+  background-color: #fffbf8 !important;
 }
 .section-title {
     font-family: 'Montserrat', sans-serif;

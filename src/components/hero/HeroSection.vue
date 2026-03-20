@@ -3,40 +3,55 @@
 
         <v-card elevation="0" class="hero-card">
 
-                <div class="overlay">
+            <div class="overlay">
 
-                    <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 fill-height d-flex align-center' : 'px-6  fill-height'" >
-                        <v-row class="mt-5" >
+                <v-container fluid
+                    :class="$vuetify.display.smAndUp ? 'px-16 fill-height d-flex align-center' : 'px-6  fill-height'">
+                    <v-row class="mt-5 pb-15">
 
-                            <v-col class="mt-5" :cols="$vuetify.display.smAndUp ? '6' : '12'">
+                        <v-col class="mt-5" :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
-                                <div class="hero mb-5">
-                                    <h1 class="hero-title">
-                                        Voyagez Connecté avec <span class="accent"> SAFAR SIM</span> 
-                                    </h1>
+                            <div class="hero mb-5">
+                                <h1 class="hero-title text-center">
+                                    Voyagez Connecté partout dans le monde
+                                </h1>
 
-                                    <p class="hero-subtitle">
-                                        Installez votre eSIM en quelques secondes et profitez d’une
-                                        connexion internet fiable dans plus de 160 destinations.
-                                    </p>
-                                </div>
+                                <p class="hero-subtitle text-center">
+                                    Installez votre eSIM <span class="accent">SAFAR SIM</span> et
+                                    profitez d’une connexion internet fiable oú que vous soyez
+                                </p>
+                            </div>
+                            <v-row class="d-flex mb-5 info-row">
+                                <v-col class="text-center" cols="12">
+                                    <h3 class="info-title"> <v-icon color="green-darken-2" icon="mdi-check"
+                                            size="large"></v-icon> Activation en 2 minutes</h3>
+                                </v-col>
 
-                                <DestinationSearch />
+                                <v-col class="text-center" cols="12">
+                                    <h3 class="info-title"> <v-icon color="green-darken-2" icon="mdi-check"
+                                            size="large"></v-icon> Sans carte SIM physique</h3>
+                                </v-col>
 
-                            </v-col>
+                                <v-col class="text-center" cols="12">
+                                    <h3 class="info-title"> <v-icon color="green-darken-2" icon="mdi-check"
+                                            size="large"></v-icon> Plus de 160 destinations</h3>
+                                </v-col>
 
-                            <v-col class="mt-5" :cols="$vuetify.display.smAndUp ? '6' : '12'">
-                                
-                        <v-img src="/img/mountain.jpg" height="200" width="180" cover rounded="xl" />
-                            </v-col>
+                            </v-row>
 
-                        </v-row>
-                    </v-container>
+                        </v-col>
 
-                </div>
-                <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
-                    <path d="M0,60 C480,120 960,0 1440,60 L1440,120 L0,120 Z" fill="#fffbf8" />
-                </svg>
+                        <v-col class="mt-5 align-self-center" :cols="$vuetify.display.smAndUp ? '6' : '12'">
+                            <DestinationSearch />
+                        </v-col>
+
+                    </v-row>
+                </v-container>
+
+            </div>
+            <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C480,120 960,0 1440,60 L1440,120 L0,120 Z" fill="#fffbf8" />
+            </svg>
         </v-card>
 
     </v-container>
@@ -46,6 +61,8 @@
 <script>
 import DestinationSearch from "./DestinationSearch.vue";
 import hero from "../../assets/hero.png";
+import flying_paper from "../../assets/flying_paper.png";
+import flying_paper_solo from "../../assets/flying_paper_solo.png";
 import { useDisplay } from "vuetify";
 
 export default {
@@ -62,6 +79,8 @@ export default {
     data() {
         return {
             hero: hero,
+            flying_paper: flying_paper,
+            flying_paper_solo: flying_paper_solo,
         };
     },
     computed: {
@@ -77,6 +96,7 @@ export default {
 .hero-card {
     border-radius: 0;
     margin-bottom: 10px;
+    margin-top: 50px;
     background-image: url("../../assets/hero.png");
     background-size: cover;
     background-position: center;
@@ -88,6 +108,11 @@ export default {
     position: relative;
 }
 
+.hero-title img,
+.hero-title .v-img {
+    vertical-align: middle;
+}
+
 .overlay {
     height: 100%;
     width: 100%;
@@ -96,27 +121,35 @@ export default {
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: 550;
     line-height: 1.2;
     color: #1f2937;
     margin-bottom: 10px;
 }
 
-.hero-title .accent {
-    color:#D81B60;
-    font-size: 36px;
-    font-weight: bold;
-    /* red/pink like holafly */
-}
-
 .hero-subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 450;
     line-height: 1.6;
-    max-width: 600px;
 }
+
+.accent {
+    color: #D81B60;
+    font-size: 20px;
+    font-weight: 550;
+}
+
+.info-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 550;
+    line-height: 1;
+    color: #1f2937;
+    margin-bottom: 2px;
+}
+
 
 .hero-wave {
     position: absolute;

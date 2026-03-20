@@ -6,7 +6,7 @@ label="Où voyagez-vous ?"
 item-title="name"
 item-value="slug"
 prepend-inner-icon="mdi-map-marker-outline"
-variant="solo-inverted"
+variant="solo"
 color="white"
 rounded
 @update:modelValue="go"

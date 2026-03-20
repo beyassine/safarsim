@@ -4,11 +4,11 @@
 
 <PopularDestinations/>
 
-<Marketing/>
+<Steps/>
 
 <Esim/>
 
-<Steps/>
+<Marketing/>
 
 <FAQ/>
 

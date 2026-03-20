@@ -133,7 +133,7 @@ export default {
 .step-number {
     color: #ff4a4a;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     width: 40px;
 }
 

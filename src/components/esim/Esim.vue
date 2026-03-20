@@ -5,40 +5,28 @@
 
             <v-row align="center">
 
-                <!-- LEFT CONTENT -->
+                <!-- LEFT CONTENT -->                
+                <v-col cols="12" md="6">
+                        <v-img :src="app_icons" height="150" class="mb-5" />
+                </v-col>
+                 <!-- RIGHT IMAGE -->
                 <v-col cols="12" md="6">
 
                     <h2 class="section-title mb-4">
-                        Pourquoi une eSIM pour voyager ?
+                        Continuez à utiliser vos applications préférées
                     </h2>
 
                     <p class="mb-6">
-                        Avec une eSIM, restez connecté partout dans le monde sans changer
-                        de carte SIM. Activez votre forfait directement depuis votre
-                        téléphone et profitez d’une connexion internet dès votre arrivée.
-
-                        Plus besoin de chercher une boutique SIM à l’étranger :
-                        tout se fait en quelques secondes.
+                        Retrouvez facilement votre hébergement , 
+                        découvrez les meilleures adresses et explorez les sites incontournables , 
+                        tout en restant connecté avec vos proches grâce à votre eSIM.
                     </p>
 
-                    <v-btn color="green-darken-1" size="large" rounded="lg">
+                    <v-btn color="green-darken-1 text-none" size="large" rounded="lg">
                         Plus de détails
                     </v-btn>
 
                 </v-col>
-
-
-                <!-- RIGHT IMAGE -->
-                <v-col cols="12" md="6">
-
-                    <div class="image-wrapper">
-
-                        <v-img src="/img/esim-phone.jpg" height="260" cover rounded="xl" />
-
-                    </div>
-
-                </v-col>
-
             </v-row>
 
         </v-card>
@@ -46,7 +34,32 @@
     </v-container>
 </template>
 
-<script></script>
+<script>
+import { useDisplay } from "vuetify";
+import app_icons from "../../assets/app_icons.png";
+
+export default {
+    name: "Header",
+
+    setup() {
+        const { display } = useDisplay();
+    },
+
+    components: {
+    },
+
+    data() {
+        return {
+            app_icons: app_icons,
+        };
+    },
+    computed: {
+    },
+    methods: {
+    },
+    mounted() { },
+};
+</script>
 
 <style scoped>
 .esim-section {
