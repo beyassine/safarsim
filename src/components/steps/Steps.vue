@@ -1,29 +1,24 @@
 <template>
     <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 pb-10' : 'px-0 pb-10'">
         <v-card elevation="0" class="bg-steps" rounded="xl">
-            <v-row fluid class="pa-8" align="center">
+            <v-row fluid align="center" class="mt-5 pa-3">
 
                 <!-- RIGHT SIDE -->
 
-                <v-col cols="12" md="6">
+                <v-col  :cols="$vuetify.display.smAndUp ? '6' : '12'">
+                    
 
-                    <div class="images-row">
+                    <h2 class="section-title text-center px-3">
+                        Profitez d’internet partout en seulement 3 étapes
+                    </h2>
 
-                        <v-img src="/img/mountain.jpg" height="200" width="180" cover rounded="xl" />
-
-                        <v-img src="/img/traveler.jpg" height="200" width="260" cover rounded="xl" />
-
-                    </div>
+                    <v-img :src="paris" height="300" class="" />
 
                 </v-col>
 
                 <!-- LEFT SIDE -->
 
-                <v-col  cols="12" md="6">
-
-                    <h2 class="section-title mb-4">
-                        Profitez d’internet partout en seulement 3 étapes
-                    </h2>
+                <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
                     <div class="step-card">
 
                         <div class="step-number">01</div>
@@ -82,6 +77,7 @@
 
 <script>
 import { useDisplay } from "vuetify";
+import paris from "../../assets/paris.png";
 
 export default {
     name: "Header",
@@ -95,6 +91,7 @@ export default {
 
     data() {
         return {
+            paris: paris,
         };
     },
     computed: {
@@ -106,6 +103,14 @@ export default {
 
 </script>
 <style scoped>
+.section-title-1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 550;
+    line-height: 1.2;
+    color: #1f2937;
+    padding: 10px;
+}
 
 .bg-steps {
     background-image: url("../../assets/steps.png");
@@ -127,7 +132,7 @@ export default {
     border-radius: 16px;
     background: #f3efe9;
     margin-bottom: 20px;
-    border: 1px solid purple;
+    border: 1px solid pURPle;
 }
 
 .step-number {

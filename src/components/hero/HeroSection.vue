@@ -9,9 +9,11 @@
                     :class="$vuetify.display.smAndUp ? 'px-16 fill-height d-flex align-center' : 'px-6  fill-height'">
                     <v-row class="mt-5 pb-15">
 
-                        <v-col class="mt-5" :cols="$vuetify.display.smAndUp ? '6' : '12'">
+                        <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
                             <div class="hero mb-5">
+                                
+                                <v-img :src="monuments" height="100" class="mb-5"></v-img>
                                 <h1 class="hero-title text-center">
                                     Voyagez Connecté partout dans le monde
                                 </h1>
@@ -41,7 +43,7 @@
 
                         </v-col>
 
-                        <v-col class="mt-5 align-self-center" :cols="$vuetify.display.smAndUp ? '6' : '12'">
+                        <v-col class="align-self-center" :cols="$vuetify.display.smAndUp ? '6' : '12'">
                             <DestinationSearch />
                         </v-col>
 
@@ -61,8 +63,7 @@
 <script>
 import DestinationSearch from "./DestinationSearch.vue";
 import hero from "../../assets/hero.png";
-import flying_paper from "../../assets/flying_paper.png";
-import flying_paper_solo from "../../assets/flying_paper_solo.png";
+import monuments from "../../assets/monuments.png";
 import { useDisplay } from "vuetify";
 
 export default {
@@ -79,8 +80,7 @@ export default {
     data() {
         return {
             hero: hero,
-            flying_paper: flying_paper,
-            flying_paper_solo: flying_paper_solo,
+            monuments: monuments,
         };
     },
     computed: {

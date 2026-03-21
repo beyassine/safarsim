@@ -6,11 +6,11 @@
             <v-row align="center">
 
                 <!-- LEFT CONTENT -->                
-                <v-col cols="12" md="6">
-                        <v-img :src="app_icons" height="150" class="mb-5" />
+                <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
+                        <v-img :src="app_icons" height="" class="mb-5" />
                 </v-col>
                  <!-- RIGHT IMAGE -->
-                <v-col cols="12" md="6">
+                <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
                     <h2 class="section-title mb-4">
                         Continuez à utiliser vos applications préférées

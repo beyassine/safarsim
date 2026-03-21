@@ -8,7 +8,7 @@
                 Destinations Populaires
             </h2>
 
-            <p class="text-body-small text-medium-emphasis">
+            <p class="text-body-smal">
                 Choisissez parmi nos 160 destinations <br>et profitez des forfaits flexibles adaptés à vos besoins de voyage.
             </p>
         </div>
