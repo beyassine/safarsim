@@ -12,8 +12,6 @@
                         <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
                             <div class="hero mb-5">
-                                
-                                <v-img :src="monuments" height="100" class="mb-5"></v-img>
                                 <h1 class="hero-title text-center">
                                     Voyagez Connecté partout dans le monde
                                 </h1>
@@ -44,14 +42,17 @@
                         </v-col>
 
                         <v-col class="align-self-center" :cols="$vuetify.display.smAndUp ? '6' : '12'">
-                            <DestinationSearch />
+
+                            <v-img :src="monuments" height="100" class="mb-5"></v-img>
+                            <DestinationSearch :destinations="destinations" :popularDestinations="popularDestinations"
+                                @select="goToDestination" />
                         </v-col>
 
                     </v-row>
                 </v-container>
 
             </div>
-            <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none">
                 <path d="M0,60 C480,120 960,0 1440,60 L1440,120 L0,120 Z" fill="#fffbf8" />
             </svg>
         </v-card>
@@ -62,6 +63,8 @@
 
 <script>
 import DestinationSearch from "./DestinationSearch.vue";
+import destinations from "@/data/destinations";
+import PopularDestinations from "@/data/popularDestinations";
 import hero from "../../assets/hero.png";
 import monuments from "../../assets/monuments.png";
 import { useDisplay } from "vuetify";
@@ -81,11 +84,16 @@ export default {
         return {
             hero: hero,
             monuments: monuments,
+            destinations: destinations,
+            popularDestinations: PopularDestinations,
         };
     },
     computed: {
     },
     methods: {
+        goToDestination(destination) {
+            console.log("select", destination);
+        },
     },
     mounted() { },
 };
@@ -95,13 +103,14 @@ export default {
 
 .hero-card {
     border-radius: 0;
-    margin-bottom: 10px;
     margin-top: 50px;
     background-image: url("../../assets/hero.png");
     background-size: cover;
     background-position: center;
     min-height: 500px;
-
+    overflow: visible;
+    position: relative;
+    z-index: 20;
 }
 
 .hero-image {
@@ -156,7 +165,7 @@ export default {
     bottom: -1px;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 60px;
     z-index: 1;
     fill: #fffbf8;
 }

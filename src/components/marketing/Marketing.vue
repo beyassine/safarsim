@@ -23,11 +23,11 @@
                         <v-col cols="12" md="7">
 
                             <h2 class="section-title mb-4">
-                                Pourquoi SAFAR eSIM ?
+                                Pourquoi SAFAR SIM ?
                             </h2>
 
                             <p class="mb-4">
-                                Avec eSIM SAFAR, profitez d’internet mobile dès votre arrivée,
+                                Avec eSIM SAFAR SIM, profitez d’internet mobile dès votre arrivée,
                                 sans changer de carte SIM ni payer de frais d’itinérance.
                             </p>
 
@@ -36,10 +36,10 @@
                                 dans plus de 160 destinations.
                                 Gardez votre numéro WhatsApp et naviguez comme un local.
                             </p>
-
-                            <v-btn color="light-blue-darken-4 text-none" size="large" rounded="lg" class="mb-6">
-                                Acheter une eSIM
-                            </v-btn>
+                            
+                            <a class="compatibility">
+                                Acheter eSim SAFAR SIM →
+                            </a>
                         </v-col>
                     </v-row>
                 </div>
@@ -96,5 +96,12 @@ export default {
     line-height: 1.2;
     color: #1f2937;
     margin-bottom: 50px;
+}
+
+.compatibility {
+    font-size: 18px;
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
 }
 </style>

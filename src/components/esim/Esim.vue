@@ -7,14 +7,14 @@
 
                 <!-- LEFT CONTENT -->                
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
-                        <v-img :src="app_icons" height="" class="mb-5" />
+
+                    <h2 class="section-title text-center mb-4">
+                        Continuez à utiliser vos applications préférées
+                    </h2>
+                        <v-img :src="app_icons" height="250" class="" />
                 </v-col>
                  <!-- RIGHT IMAGE -->
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
-
-                    <h2 class="section-title mb-4">
-                        Continuez à utiliser vos applications préférées
-                    </h2>
 
                     <p class="mb-6">
                         Retrouvez facilement votre hébergement , 
@@ -22,8 +22,8 @@
                         tout en restant connecté avec vos proches grâce à votre eSIM.
                     </p>
 
-                    <v-btn color="green-darken-1 text-none" size="large" rounded="lg">
-                        Plus de détails
+                    <v-btn color="green-darken-1 text-none" block="" size="large" rounded="lg">
+                        Achetez votre eSIM maintenant
                     </v-btn>
 
                 </v-col>
