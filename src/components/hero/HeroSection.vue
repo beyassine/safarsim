@@ -43,7 +43,6 @@
 
                         <v-col class="align-self-center" :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
-                            <v-img :src="monuments" height="100" class="mb-5"></v-img>
                             <DestinationSearch :destinations="destinations" :popularDestinations="popularDestinations"
                                 @select="goToDestination" />
                         </v-col>

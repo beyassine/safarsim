@@ -1,74 +1,73 @@
 <template>
     <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 pb-10' : 'px-0 pb-10'">
-        <v-card elevation="0" class="bg-steps" rounded="xl">
+        <v-card class="" elevation="0">
             <v-row fluid align="center" class="mt-5 pa-3">
 
                 <!-- RIGHT SIDE -->
 
-                <v-col  :cols="$vuetify.display.smAndUp ? '6' : '12'">
-                    
+                <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
-                    <h2 class="section-title text-center px-3">
-                        Profitez d’internet partout en seulement 3 étapes
-                    </h2>
-
-                    <v-img :src="paris" height="300" class="" />
+                    <v-img :src="barcelona" height="" class="" />
 
                 </v-col>
 
                 <!-- LEFT SIDE -->
 
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
-                    <div class="step-card">
+                    <v-card class=" " elevation="0" >
+                        <h2 class="section-title text-center mb-5">
+                            Profitez d’internet partout en seulement 3 étapes
+                        </h2>
+                        <div class="step-card bg-steps">
 
-                        <div class="step-number">01</div>
+                            <div class="step-number">01</div>
 
-                        <v-icon size="40">mdi-cart-outline</v-icon>
+                            <v-icon size="40">mdi-cart-outline</v-icon>
 
-                        <div>
-                            <p class="step-text">
-                                <b>Choisissez votre destination</b> et le nombre de jours
-                                pour votre forfait eSIM.
-                            </p>
-                            <a class="compatibility">
-                                Choisir destination →
-                            </a>
+                            <div>
+                                <p class="step-text">
+                                    <b>Choisissez votre destination</b> et le nombre de jours
+                                    pour votre forfait eSIM.
+                                </p>
+                                <a class="compatibility">
+                                    Choisir destination →
+                                </a>
+                            </div>
+
                         </div>
 
-                    </div>
 
+                        <div class="step-card  bg-steps">
 
-                    <div class="step-card">
+                            <div class="step-number ">02</div>
 
-                        <div class="step-number">02</div>
+                            <v-icon size="40">mdi-qrcode-scan</v-icon>
 
-                        <v-icon size="40">mdi-qrcode-scan</v-icon>
+                            <div>
+                                <p class="step-text">
+                                    <b>Installez votre eSIM</b> facilement grâce
+                                    au QR code reçu par e-mail.
+                                </p>
+                            </div>
 
-                        <div>
-                            <p class="step-text">
-                                <b>Installez votre eSIM</b> facilement grâce
-                                au QR code reçu par e-mail.
-                            </p>
                         </div>
 
-                    </div>
 
+                        <div class="step-card bg-steps">
 
-                    <div class="step-card">
+                            <div class="step-number">03</div>
 
-                        <div class="step-number">03</div>
+                            <v-icon size="40">mdi-cellphone-wireless</v-icon>
 
-                        <v-icon size="40">mdi-cellphone-wireless</v-icon>
+                            <div>
+                                <p class="step-text">
+                                    <b>Activez votre connexion</b> à votre arrivée
+                                    et profitez d’internet immédiatement.
+                                </p>
+                            </div>
 
-                        <div>
-                            <p class="step-text">
-                                <b>Activez votre connexion</b> à votre arrivée
-                                et profitez d’internet immédiatement.
-                            </p>
                         </div>
-
-                    </div>
-
+                    </v-card>
                 </v-col>
             </v-row>
         </v-card>
@@ -78,6 +77,8 @@
 <script>
 import { useDisplay } from "vuetify";
 import paris from "../../assets/paris.png";
+import barcelona from "../../assets/barcelona.png";
+
 
 export default {
     name: "Header",
@@ -92,6 +93,7 @@ export default {
     data() {
         return {
             paris: paris,
+            barcelona: barcelona,
         };
     },
     computed: {
@@ -116,7 +118,6 @@ export default {
     background-image: url("../../assets/steps.png");
     background-size: cover;
     background-position: center;
-    min-height: 500px;
 }
 
 .images-row {
@@ -130,9 +131,8 @@ export default {
     gap: 20px;
     padding: 22px;
     border-radius: 16px;
-    background: #f3efe9;
     margin-bottom: 20px;
-    border: 1px solid pURPle;
+    border: 1px solid #D81B60 ;
 }
 
 .step-number {

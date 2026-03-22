@@ -1,5 +1,7 @@
 <template>
     <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 pb-5 destination-container' : 'px-6  pb-5 destination-container'">
+            
+        <v-img :src="flying_paper" height="100" class="mb-5"  />
         <div class="mb-5" align="center">
             <h2 class="section-title text-center">
                 Destinations Populaires
@@ -7,8 +9,6 @@
             <p class="text-body-smal">
                 Choisissez parmi nos 160 destinations <br>et profitez des forfaits flexibles adaptés à vos besoins de voyage.
             </p>
-            
-        <v-img :src="flying_paper" height="60" class="mb-2"  />
         </div>
 
         <v-row class="mb-5">
@@ -32,7 +32,7 @@
 import countries from "@/data/destinations";
 import DestinationCard from "./DestinationCard.vue"
 import { useDisplay } from "vuetify";
-import flying_paper from "../../assets/flying_paper.png";
+import flying_paper from "../../assets/line.png";
 
 export default {
     name: "Header",

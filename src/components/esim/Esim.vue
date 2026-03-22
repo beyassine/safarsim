@@ -2,23 +2,21 @@
     <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 mb-5' : ' px-0 mb-5'">
 
         <v-card class="esim-section px-8" elevation="0" rounded="xl">
-
             <v-row align="center">
-
-                <!-- LEFT CONTENT -->                
+                <!-- LEFT CONTENT -->
+                <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
+                    <v-img :src="app_icons" height="" class="mb-5" />
+                </v-col>
+                <!-- RIGHT IMAGE -->
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
                     <h2 class="section-title text-center mb-4">
                         Continuez à utiliser vos applications préférées
                     </h2>
-                        <v-img :src="app_icons" height="250" class="" />
-                </v-col>
-                 <!-- RIGHT IMAGE -->
-                <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
                     <p class="mb-6">
-                        Retrouvez facilement votre hébergement , 
-                        découvrez les meilleures adresses et explorez les sites incontournables , 
+                        Retrouvez facilement votre hébergement,
+                        découvrez les meilleures adresses et explorez les sites incontournables,
                         tout en restant connecté avec vos proches grâce à votre eSIM.
                     </p>
 
