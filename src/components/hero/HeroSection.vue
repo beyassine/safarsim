@@ -65,7 +65,6 @@ import DestinationSearch from "./DestinationSearch.vue";
 import destinations from "@/data/destinations";
 import PopularDestinations from "@/data/popularDestinations";
 import hero from "../../assets/hero.png";
-import monuments from "../../assets/monuments.png";
 import { useDisplay } from "vuetify";
 
 export default {
@@ -82,7 +81,6 @@ export default {
     data() {
         return {
             hero: hero,
-            monuments: monuments,
             destinations: destinations,
             popularDestinations: PopularDestinations,
         };

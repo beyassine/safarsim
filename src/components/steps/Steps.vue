@@ -1,6 +1,6 @@
 <template>
     <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 pb-10' : 'px-0 pb-10'">
-        <v-card class="" elevation="0">
+        <v-card class="" color="#fffbf8" elevation="0">
             <v-row fluid align="center" class="mt-5 pa-3">
 
                 <!-- RIGHT SIDE -->
@@ -14,11 +14,11 @@
                 <!-- LEFT SIDE -->
 
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
-                    <v-card class=" " elevation="0" >
+                    <div >
                         <h2 class="section-title text-center mb-5">
                             Profitez d’internet partout en seulement 3 étapes
                         </h2>
-                        <div class="step-card bg-steps">
+                        <div class="step-card">
 
                             <div class="step-number">01</div>
 
@@ -37,11 +37,11 @@
                         </div>
 
 
-                        <div class="step-card  bg-steps">
+                        <div class="step-card">
 
                             <div class="step-number ">02</div>
 
-                            <v-icon size="40">mdi-qrcode-scan</v-icon>
+                            <v-icon size="40" >mdi-qrcode-scan</v-icon>
 
                             <div>
                                 <p class="step-text">
@@ -53,7 +53,7 @@
                         </div>
 
 
-                        <div class="step-card bg-steps">
+                        <div class="step-card ">
 
                             <div class="step-number">03</div>
 
@@ -67,7 +67,7 @@
                             </div>
 
                         </div>
-                    </v-card>
+                    </div>
                 </v-col>
             </v-row>
         </v-card>
@@ -132,13 +132,15 @@ export default {
     padding: 22px;
     border-radius: 16px;
     margin-bottom: 20px;
-    border: 1px solid #D81B60 ;
+    border: 1px solid #e5e7eb; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 
 .step-number {
-    color: #ff4a4a;
+    color: #D81B60;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
     width: 40px;
 }
 

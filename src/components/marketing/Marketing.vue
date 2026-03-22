@@ -1,24 +1,22 @@
 <template>
     <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 pb-10' : 'px-0 pb-10'">
 
-        <v-card elevation="0" class="bg-marketing" rounded="xl">
+        <v-card elevation="0" class="" color="#fffbf8" rounded="xl">
             <div>
-                <v-row fluid  align="center">
+                <v-row fluid align="center">
 
                     <!-- IMAGES -->
                     <v-col class="px-8 " :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
-                        <v-img :src="barcelona" height="" class="" />
+                        <h2 class="section-title text-center mb-4">
+                            Pourquoi SAFAR SIM ?
+                        </h2>
+                        <v-img :src="paris" height="" class="" />
 
                     </v-col>
 
                     <!-- CONTENT -->
-                    <v-col  class="pa-8" :cols="$vuetify.display.smAndUp ? '6' : '12'">
-
-                        <h2 class="section-title mb-4">
-                            Pourquoi SAFAR SIM ?
-                        </h2>
-
+                    <v-col class="pa-8" :cols="$vuetify.display.smAndUp ? '6' : '12'">
                         <p class="mb-4">
                             Avec eSIM SAFAR SIM, profitez d’internet mobile dès votre arrivée,
                             sans changer de carte SIM ni payer de frais d’itinérance.
@@ -29,12 +27,14 @@
                             dans plus de 160 destinations.
                             Gardez votre numéro WhatsApp et naviguez comme un local.
                         </p>
-
-                        <a class="compatibility">
-                            Acheter eSim SAFAR SIM →
-                        </a>
                     </v-col>
                 </v-row>
+            </div>
+
+            <div class="d-flex align-center justify-center">
+                <v-btn class="text-none ma-4" rounded="lg" color="pink-darken-1" size="large" variant="flat">
+                    Choisir ma destination
+                </v-btn>
             </div>
         </v-card>
 
@@ -42,7 +42,7 @@
 </template>
 <script>
 import { useDisplay } from "vuetify";
-import barcelona from "../../assets/barcelona.png";
+import paris from "../../assets/paris.png";
 
 export default {
     name: "Header",
@@ -56,7 +56,7 @@ export default {
 
     data() {
         return {
-            barcelona: barcelona,
+            paris: paris,
         };
     },
     computed: {

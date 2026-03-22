@@ -1,7 +1,5 @@
 <template>
     <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 pb-5 destination-container' : 'px-6  pb-5 destination-container'">
-            
-        <v-img :src="flying_paper" height="100" class="mb-5"  />
         <div class="mb-5" align="center">
             <h2 class="section-title text-center">
                 Destinations Populaires

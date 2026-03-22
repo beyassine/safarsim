@@ -5,14 +5,14 @@
             <v-row align="center">
                 <!-- LEFT CONTENT -->
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
+
+                    <h2 class="section-title text-center ">
+                        Continuez à utiliser vos applications préférées
+                    </h2>
                     <v-img :src="app_icons" height="" class="mb-5" />
                 </v-col>
                 <!-- RIGHT IMAGE -->
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
-
-                    <h2 class="section-title text-center mb-4">
-                        Continuez à utiliser vos applications préférées
-                    </h2>
 
                     <p class="mb-6">
                         Retrouvez facilement votre hébergement,

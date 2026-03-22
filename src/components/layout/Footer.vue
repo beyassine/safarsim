@@ -116,7 +116,7 @@ export default {
 
 <style scoped>
 .bg-footer {
-    background-image: url("../../assets/footer.jpg");
+    background-image: url("../../assets/steps.png");
     background-size: cover;
     background-position: center;
 }
