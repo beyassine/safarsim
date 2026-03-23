@@ -3,16 +3,29 @@
     <div class="text-center mb-8">
       <h1 class="page-title">Toutes Destinations</h1>
     </div>
-    
+
     <DestinationSearch :destinations="destinations" :popular-destinations="popularDestinations"
       placeholder="Où voyages-tu ?" @select="selectDestination" @search="handleSearch" class="mb-8" />
 
-    <v-row>
-      <v-col v-for="country in destinations" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
-        <DestinationCard :country="country" />
-      </v-col>
-    </v-row>
+    <div>
+      <h2 class="page-subtitle text-center">Plans régionaux</h2>
+      <v-row>
+        <v-col v-for="country in destinations" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
+          <DestinationCard :country="country" />
+        </v-col>
+      </v-row>
+    </div>
     
+
+    <div>
+      <h2 class="page-subtitle text-center">Choisissez par pays</h2>
+      <v-row>
+        <v-col v-for="country in destinations" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
+          <DestinationCard :country="country" />
+        </v-col>
+      </v-row>
+    </div>
+
   </v-container>
 </template>
 
@@ -69,6 +82,18 @@ function handleSearch() {
   line-height: 1.1;
   font-weight: 400;
   color: #1f2328;
+}
+
+.page-subtitle {
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 40px;
+  margin-top: 60px;
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-decoration-thickness: 2px;
 }
 
 @media (max-width: 960px) {
