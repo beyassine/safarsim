@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import DestinationSearch from "./DestinationSearch.vue";
+import DestinationSearch from "@/components/DestinationSearchBar.vue";
 import destinations from "@/data/destinations";
 import PopularDestinations from "@/data/popularDestinations";
 import { useDisplay } from "vuetify";
