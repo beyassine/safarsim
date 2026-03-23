@@ -64,7 +64,6 @@ v-for="(item, i) in rightFaq"
 </template>
 
 <script setup>
-import line_img from "../../assets/line.png";
 
 const leftFaq = [
 

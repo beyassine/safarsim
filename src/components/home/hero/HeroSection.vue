@@ -64,7 +64,6 @@
 import DestinationSearch from "./DestinationSearch.vue";
 import destinations from "@/data/destinations";
 import PopularDestinations from "@/data/popularDestinations";
-import hero from "../../assets/hero.png";
 import { useDisplay } from "vuetify";
 
 export default {
@@ -80,7 +79,6 @@ export default {
 
     data() {
         return {
-            hero: hero,
             destinations: destinations,
             popularDestinations: PopularDestinations,
         };
@@ -101,7 +99,7 @@ export default {
 .hero-card {
     border-radius: 0;
     margin-top: 50px;
-    background-image: url("../../assets/hero.png");
+    background-image: url("@/assets/images/bg/hero.png");
     background-size: cover;
     background-position: center;
     min-height: 500px;

@@ -1,7 +1,7 @@
-import france from "@/assets/images/france.png";
-import spain from "@/assets/images/spain.png";
-import turkey from "@/assets/images/turkey.png";
-import germany from "@/assets/images/germany.svg";
+import france from "@/assets/images/flags/france.png";
+import spain from "@/assets/images/flags/spain.png";
+import turkey from "@/assets/images/flags/turkey.png";
+import germany from "@/assets/images/flags/germany.svg";
 
 export default [
 

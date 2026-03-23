@@ -12,24 +12,15 @@
 
 <FAQ/>
 
-<HowItWorks/>
-
-<Benefits/>
-
-<CTASection/>
-
 </template>
 
 <script setup>
 
-import HeroSection from "../components/hero/HeroSection.vue"
-import PopularDestinations from "../components/destinations/PopularDestinations.vue"
-import Marketing from "../components/marketing/Marketing.vue"
-import Esim from "../components/esim/Esim.vue"
-import Steps from "../components/steps/Steps.vue"
-import FAQ from "../components/FAQ/FAQ.vue"
-import HowItWorks from "../components/sections/HowItWorks.vue"
-import Benefits from "../components/sections/Benefits.vue"
-import CTASection from "../components/sections/CTASection.vue"
+import HeroSection from "../components/home/hero/HeroSection.vue"
+import PopularDestinations from "../components/home/destinations/PopularDestinations.vue"
+import Marketing from "../components/home/marketing/Marketing.vue"
+import Esim from "../components/home/esim/Esim.vue"
+import Steps from "../components/home/steps/Steps.vue"
+import FAQ from "../components/home/FAQ/FAQ.vue"
 
 </script>

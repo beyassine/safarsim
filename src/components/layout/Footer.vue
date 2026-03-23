@@ -88,7 +88,7 @@
 
 <script>
 import { useDisplay } from "vuetify";
-import footer_bg from "../../assets/footer.jpg";
+import footer_bg from "@/assets/images/bg/footer.png";
 
 export default {
     name: "Header",
@@ -116,7 +116,7 @@ export default {
 
 <style scoped>
 .bg-footer {
-    background-image: url("../../assets/steps.png");
+    background-image: url("@/assets/images/bg/footer.png");
     background-size: cover;
     background-position: center;
 }

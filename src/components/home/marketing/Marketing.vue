@@ -42,7 +42,7 @@
 </template>
 <script>
 import { useDisplay } from "vuetify";
-import paris from "../../assets/paris.png";
+import paris from "@/assets/images/home/paris.png";
 
 export default {
     name: "Header",
@@ -68,13 +68,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg-marketing {
-    background-image: url("../../assets/marketing.png");
-    background-size: cover;
-    background-position: center;
-    min-height: 420px;
-}
-
 .brand {
     color: #01579B;
 }

@@ -76,8 +76,7 @@
 
 <script>
 import { useDisplay } from "vuetify";
-import paris from "../../assets/paris.png";
-import barcelona from "../../assets/barcelona.png";
+import barcelona from "@/assets/images/home/barcelona.png";
 
 
 export default {
@@ -92,7 +91,6 @@ export default {
 
     data() {
         return {
-            paris: paris,
             barcelona: barcelona,
         };
     },
@@ -112,12 +110,6 @@ export default {
     line-height: 1.2;
     color: #1f2937;
     padding: 10px;
-}
-
-.bg-steps {
-    background-image: url("../../assets/steps.png");
-    background-size: cover;
-    background-position: center;
 }
 
 .images-row {

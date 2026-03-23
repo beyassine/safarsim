@@ -34,7 +34,7 @@
 
 <script>
 import { useDisplay } from "vuetify";
-import app_icons from "../../assets/app_icons.png";
+import app_icons from "@/assets/images/home/app_icons.png";
 
 export default {
     name: "Header",

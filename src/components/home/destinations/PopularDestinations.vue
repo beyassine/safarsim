@@ -30,7 +30,7 @@
 import countries from "@/data/destinations";
 import DestinationCard from "./DestinationCard.vue"
 import { useDisplay } from "vuetify";
-import flying_paper from "../../assets/line.png";
+import flying_paper from "@/assets/images/home/line.png";
 
 export default {
     name: "Header",
