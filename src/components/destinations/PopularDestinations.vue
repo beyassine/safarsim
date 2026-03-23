@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 pb-5 destination-container' : 'px-6  pb-5 destination-container'">
+    <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 destination-container' : 'px-6 destination-container'">
         <div class="mb-5" align="center">
             <h2 class="section-title text-center">
                 Destinations Populaires

@@ -6,6 +6,9 @@
                 <!-- RIGHT SIDE -->
 
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
+                        <h2 class="section-title text-center mb-5">
+                            Profitez d’internet partout en seulement 3 étapes
+                        </h2>
 
                     <v-img :src="barcelona" height="" class="" />
 
@@ -15,9 +18,6 @@
 
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
                     <div >
-                        <h2 class="section-title text-center mb-5">
-                            Profitez d’internet partout en seulement 3 étapes
-                        </h2>
                         <div class="step-card">
 
                             <div class="step-number">01</div>

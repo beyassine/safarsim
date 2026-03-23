@@ -6,8 +6,6 @@
   <h2 class="section-title text-center">
     Questions fréquentes (FAQ)
   </h2>
-  <v-img :src="line_img" height="50" class="mb-2"  />
-
   <p class="text-subtitle-1 text-medium-emphasis">
     Tout ce que vous devez savoir sur votre SAFAR eSIM
   </p>
