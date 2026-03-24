@@ -27,14 +27,14 @@
                             dans plus de 160 destinations.
                             Gardez votre numéro WhatsApp et naviguez comme un local.
                         </p>
+                        <v-btn class="text-none" block rounded="lg" color="pink-darken-1" size="large" variant="flat">
+                            Choisir ma destination
+                        </v-btn>
                     </v-col>
                 </v-row>
             </div>
 
             <div class="d-flex align-center justify-center">
-                <v-btn class="text-none ma-4" rounded="lg" color="pink-darken-1" size="large" variant="flat">
-                    Choisir ma destination
-                </v-btn>
             </div>
         </v-card>
 

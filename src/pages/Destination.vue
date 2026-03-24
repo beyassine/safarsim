@@ -1,52 +1,242 @@
 <template>
+  <v-container class="py-8 destination-page" v-if="destination">
+    <!-- Breadcrumb -->
+    <div class="mb-6 text-body-2">
+      <span class="text-medium-emphasis">eSIM Store</span>
+      <span class="mx-2">></span>
+      <span class="text-medium-emphasis">eSIM locales</span>
+      <span class="mx-2">></span>
+      <strong>{{ destination.name }}</strong>
+    </div>
 
-<v-container>
+    <!-- Title -->
+    <h1 class="text-h3 font-weight-bold mb-6">{{ destination.name }} eSIMs</h1>
 
-<h1 class="text-h3 font-weight-bold mb-6">
-eSIM for {{country}}
-</h1>
+    <!-- Country card -->
+    <v-card rounded="xl" elevation="0" class="pa-6 mb-8 country-card">
+      <div class="d-flex align-center mb-4">
+        <div class="flag-emoji mr-3">{{ destination.flag }}</div>
+        <h2 class="text-h5 font-weight-bold">{{ destination.name }}</h2>
+      </div>
 
-<v-card class="pa-6">
+      <v-divider class="mb-5" />
 
-<v-row>
+      <div class="d-flex align-center mb-6 text-body-1">
+        <v-icon size="20" class="mr-2">mdi-signal-cellular-outline</v-icon>
+        <strong class="mr-2">Réseau disponible</strong>
+        <v-chip size="x-small" variant="outlined">4G</v-chip>
+      </div>
 
-<v-col md="4">
+      <v-btn
+        color="orange-darken-1"
+        rounded="pill"
+        class="text-none font-weight-bold mb-6"
+        prepend-icon="mdi-cellphone-check"
+      >
+        Vérifier la compatibilité
+      </v-btn>
 
-<h2>5 Days</h2>
-<p>$4.90</p>
-<v-btn color="primary">Buy</v-btn>
+      <div class="d-flex align-start mb-3">
+        <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
+        <div>Recharge possible à tout moment si vous manquez de data</div>
+      </div>
 
-</v-col>
+      <div class="d-flex align-start">
+        <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
+        <div>Le forfait démarre dès la connexion à un réseau pris en charge</div>
+      </div>
+    </v-card>
 
-<v-col md="4">
+    <!-- Packages -->
+    <v-card rounded="xl" elevation="0" class="pa-4 pa-md-6 mb-8 package-card">
+      <div class="text-center text-h6 font-weight-bold mb-3">Data</div>
+      <div class="section-line mb-6"></div>
 
-<h2>10 Days</h2>
-<p>$7.90</p>
-<v-btn color="primary">Buy</v-btn>
+      <h3 class="text-h5 font-weight-bold mb-5">Choisissez votre forfait</h3>
 
-</v-col>
+      <div
+        v-for="group in groupedPlans"
+        :key="group.days"
+        class="mb-8"
+      >
+        <div class="text-h6 font-weight-bold mb-4">{{ group.days }} jours</div>
 
-<v-col md="4">
+        <v-card
+          v-for="plan in group.items"
+          :key="plan.key"
+          rounded="xl"
+          elevation="1"
+          class="mb-3 px-4 py-4 package-item"
+        >
+          <div class="d-flex align-center justify-space-between">
+            <div>
+              <div class="text-h6 font-weight-bold">{{ plan.dataLabel }}</div>
+            </div>
 
-<h2>Unlimited</h2>
-<p>$19.90</p>
-<v-btn color="primary">Buy</v-btn>
+            <div class="d-flex align-center">
+              <div class="text-right mr-4">
+                <div class="text-h5 font-weight-bold">{{ plan.price }} DH</div>
+              </div>
 
-</v-col>
+              <v-btn
+                icon
+                color="orange-darken-1"
+                variant="flat"
+                @click="addToCart(plan)"
+              >
+                <v-icon>mdi-plus</v-icon>
+              </v-btn>
+            </div>
+          </div>
+        </v-card>
+      </div>
+    </v-card>
+  </v-container>
 
-</v-row>
-
-</v-card>
-
-</v-container>
-
+  <v-container v-else class="py-10">
+    <h2>Pays introuvable</h2>
+  </v-container>
 </template>
 
-<script setup>
+<script>
+import destinations from '@/data/destinations.json'
 
-import { useRoute } from "vue-router"
+export default {
+  name: 'DestinationDetailsPage',
 
-const route = useRoute()
-const country = route.params.country
+  data() {
+    return {
+      destination: null,
+    }
+  },
 
+  computed: {
+    parsedPlans() {
+      if (!this.destination?.plans) return []
+
+      return Object.entries(this.destination.plans).map(([key, price]) => {
+        const match = key.match(/^(\d+GB)_(\d+)days$/)
+
+        if (!match) {
+          return {
+            key,
+            data: '',
+            days: 0,
+            dataLabel: key,
+            price,
+          }
+        }
+
+        const data = match[1]
+        const days = Number(match[2])
+
+        return {
+          key,
+          data,
+          days,
+          dataLabel: data.replace('GB', ' GB'),
+          price,
+        }
+      })
+    },
+
+    groupedPlans() {
+      const groups = {}
+
+      this.parsedPlans.forEach((plan) => {
+        if (!groups[plan.days]) groups[plan.days] = []
+        groups[plan.days].push(plan)
+      })
+
+      return Object.keys(groups)
+        .sort((a, b) => Number(a) - Number(b))
+        .map((days) => ({
+          days,
+          items: groups[days].sort((a, b) => {
+            const aValue = parseInt(a.data)
+            const bValue = parseInt(b.data)
+            return aValue - bValue
+          }),
+        }))
+    },
+  },
+
+  methods: {
+    loadDestination() {
+      const slug = this.$route.params.slug
+      this.destination = destinations.find((item) => item.slug === slug) || null
+    },
+
+    addToCart(plan) {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+
+      const existing = cart.find(
+        (item) =>
+          item.destinationSlug === this.destination.slug &&
+          item.planKey === plan.key
+      )
+
+      if (existing) {
+        existing.quantity += 1
+      } else {
+        cart.push({
+          id: `${this.destination.slug}-${plan.key}`,
+          destinationName: this.destination.name,
+          destinationSlug: this.destination.slug,
+          flag: this.destination.flag,
+          image: this.destination.image,
+          iso: this.destination.iso,
+          planKey: plan.key,
+          data: plan.data,
+          dataLabel: plan.dataLabel,
+          days: plan.days,
+          price: plan.price,
+          quantity: 1,
+        })
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart))
+    },
+  },
+
+  watch: {
+    '$route.params.slug': {
+      immediate: true,
+      handler() {
+        this.loadDestination()
+      },
+    },
+  },
+}
 </script>
+
+<style scoped>
+.destination-page {
+  max-width: 900px;
+}
+
+.country-card,
+.package-card {
+  background: #f7f4f1;
+}
+
+.section-line {
+  height: 4px;
+  background: #111;
+  border-radius: 999px;
+}
+
+.package-item {
+  background: white;
+  transition: 0.2s ease;
+}
+
+.package-item:hover {
+  transform: translateY(-1px);
+}
+
+.flag-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+</style>

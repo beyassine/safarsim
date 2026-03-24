@@ -10,7 +10,7 @@
     <div>
       <h2 class="page-subtitle text-center">Plans régionaux</h2>
       <v-row>
-        <v-col v-for="country in destinations" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
+        <v-col v-for="country in regions" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
           <DestinationCard :country="country" />
         </v-col>
       </v-row>
@@ -34,8 +34,9 @@ import { ref, computed } from 'vue'
 import DestinationSearch from "@/components/DestinationSearchBar.vue";
 import DestinationCard from '@/components/DestinationCard.vue'
 
-import destinations from "@/data/destinations";
-import popularDestinations from "@/data/popularDestinations";
+import regions from "@/data/regions.json";
+import destinations from "@/data/destinations.json";
+import popularDestinations from "@/data/popularDestinations.json";
 
 const search = ref('')
 const selectedFilter = ref('Toutes les destinations')

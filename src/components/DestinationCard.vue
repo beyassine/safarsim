@@ -1,7 +1,7 @@
 <template>
     <v-card elevation="1" rounded="xl" :to="{
-        name: 'Destination',
-        params: { country: country.slug }
+        name: 'destinationDetails',
+        params: { slug: country.slug }
     }">
         <div class="d-flex  justify-space-between align-center ma-3">
             <div class="d-flex align-center">

@@ -7,15 +7,17 @@ import allDestinations from "../pages/allDestinations.vue"
 const routes = [
   {
     path: "/",
+    name: "Home",
     component: Home
   },  
   {
     path: "/destinations",
+    name: "allDestinations",
     component: allDestinations
   },
   {
-    path: "/esim/:country",
-    name: "Destination",
+    path: "/destinations/:slug",
+    name: "destinationDetails",
     component: Destination
   }
 ]
