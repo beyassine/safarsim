@@ -31,4 +31,5 @@ import Footer from "./components/layout/Footer.vue"
     margin-bottom: 10px;
 }
 
+
 </style>

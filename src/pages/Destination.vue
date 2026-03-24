@@ -1,16 +1,11 @@
 <template>
-  <v-container class="py-8 destination-page" v-if="destination">
+  <v-container class="py-10 destination-page" v-if="destination">
     <!-- Breadcrumb -->
     <div class="mb-6 text-body-2">
       <span class="text-medium-emphasis">eSIM Store</span>
       <span class="mx-2">></span>
-      <span class="text-medium-emphasis">eSIM locales</span>
-      <span class="mx-2">></span>
       <strong>{{ destination.name }}</strong>
     </div>
-
-    <!-- Title -->
-    <h1 class="text-h3 font-weight-bold mb-6">{{ destination.name }} eSIMs</h1>
 
     <!-- Country card -->
     <v-card rounded="xl" elevation="0" class="pa-6 mb-8 country-card">
@@ -28,18 +23,13 @@
       </div>
 
       <v-btn
-        color="orange-darken-1"
+        color="green-darken-1"
         rounded="pill"
         class="text-none font-weight-bold mb-6"
         prepend-icon="mdi-cellphone-check"
       >
         Vérifier la compatibilité
       </v-btn>
-
-      <div class="d-flex align-start mb-3">
-        <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
-        <div>Recharge possible à tout moment si vous manquez de data</div>
-      </div>
 
       <div class="d-flex align-start">
         <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
@@ -66,7 +56,7 @@
           :key="plan.key"
           rounded="xl"
           elevation="1"
-          class="mb-3 px-4 py-4 package-item"
+          class="mb-5 px-4 py-4 package-item"
         >
           <div class="d-flex align-center justify-space-between">
             <div>
@@ -80,7 +70,7 @@
 
               <v-btn
                 icon
-                color="orange-darken-1"
+                color="pink-darken-1"
                 variant="flat"
                 @click="addToCart(plan)"
               >
@@ -212,6 +202,7 @@ export default {
 
 <style scoped>
 .destination-page {
+  padding-top: 150px;
   max-width: 900px;
 }
 

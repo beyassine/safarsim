@@ -10,7 +10,7 @@
     <div>
       <h2 class="page-subtitle text-center">Plans régionaux</h2>
       <v-row>
-        <v-col v-for="country in regions" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
+        <v-col v-for="country in re" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
           <DestinationCard :country="country" />
         </v-col>
       </v-row>
@@ -77,14 +77,6 @@ function handleSearch() {
   margin-top: 50px;
   max-width: 1280px;
 }
-
-.page-title {
-  font-size: 3rem;
-  line-height: 1.1;
-  font-weight: 400;
-  color: #1f2328;
-}
-
 .page-subtitle {
   font-size: 2rem;
   line-height: 1;
