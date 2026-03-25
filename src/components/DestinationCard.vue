@@ -15,8 +15,7 @@
                         </v-card-title>
 
                         <v-card-subtitle>
-                            Á partir de <span class="font-weight-bold text-title text-green-darken-4">{{
-                                country.price }}</span>
+                            Á partir de <span class=" text-h6 font-weight-bold text-pink-darken-4"> {{ getEntryPrice(country) }} DH</span>
                         </v-card-subtitle>
                     </v-card-item>
 
@@ -36,6 +35,11 @@
 defineProps({
     country: Object
 })
+
+const getEntryPrice = (destination) => {
+  const prices = Object.values(destination.plans)
+  return Math.min(...prices)
+}
 
 </script>
 

@@ -35,10 +35,9 @@
 
     <!-- Packages -->
     <v-card rounded="xl" elevation="0" class="pa-4 pa-md-6 mb-8 package-card">
-      <div class="text-center text-h6 font-weight-bold mb-3">Data</div>
-      <div class="section-line mb-6"></div>
 
-      <h3 class="text-h5 font-weight-bold mb-5">Choisissez votre forfait</h3>
+      <h3 class="text-h5 text-center mb-5">Choisissez votre forfait</h3>
+      <div class="section-line mb-6"></div>
 
       <div v-for="group in groupedPlans" :key="group.days" class="mb-8">
         <div class="text-h6 font-weight-bold mb-4">{{ group.days }} jours</div>
@@ -47,15 +46,15 @@
           class="mb-5 px-4 py-4 package-item">
           <div class="d-flex align-center justify-space-between">
             <div>
-              <div class="text-h6 font-weight-bold">{{ plan.dataLabel }}</div>
+              <div class="text-h6 ">{{ plan.dataLabel }}</div>
             </div>
 
             <div class="d-flex align-center">
               <div class="text-right mr-4">
-                <div class="text-h5 font-weight-bold">{{ plan.price }} DH</div>
+                <div class="text-h5 ">{{ plan.price }} DH</div>
               </div>
 
-              <v-btn icon color="pink" variant="flat" @click="addToCart(plan)">
+              <v-btn icon color="pink" size="small" variant="flat" @click="addToCart(plan)">
                 <v-icon>mdi-plus</v-icon>
               </v-btn>
             </div>
@@ -180,7 +179,7 @@ export default {
 }
 
 .section-line {
-  height: 4px;
+  height: 2px;
   background: #111;
   border-radius: 999px;
 }

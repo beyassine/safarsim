@@ -21,7 +21,7 @@
                 </router-link>
             </div>
             <router-link to="/cart" class="cart-link">
-                <v-badge :model-value="cartCount > 0" :content="cartCount" color="error" offset-x="2" offset-y="2">
+                <v-badge :model-value="cartCount > 0" :content="cartCount" color="pink" location="top right" offset-x="2" offset-y="2">
                     <v-btn icon variant="text">
                         <v-icon size="28">mdi-cart-outline</v-icon>
                     </v-btn>

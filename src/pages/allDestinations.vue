@@ -5,7 +5,7 @@
     </div>
 
     <DestinationSearch :destinations="destinations" :popular-destinations="popularDestinations"
-      placeholder="Où voyages-tu ?" @select="selectDestination" @search="handleSearch" class="mb-8" />
+      placeholder="Où voyages-tu ?"  @select="goToDestination" class="mb-8" />
 
     <div>
       <h2 class="page-subtitle text-center">Plans régionaux</h2>
@@ -15,7 +15,7 @@
         </v-col>
       </v-row>
     </div>
-    
+
 
     <div>
       <h2 class="page-subtitle text-center">Choisissez par pays</h2>
@@ -37,6 +37,7 @@ import DestinationCard from '@/components/DestinationCard.vue'
 import regions from "@/data/regions.json";
 import destinations from "@/data/destinations.json";
 import popularDestinations from "@/data/popularDestinations.json";
+import router from '@/router';
 
 const search = ref('')
 const selectedFilter = ref('Toutes les destinations')
@@ -66,9 +67,8 @@ const filteredDestinations = computed(() => {
   return result
 })
 
-function handleSearch() {
-  // Tu peux brancher ici un appel API si besoin
-  console.log('Recherche:', search.value)
+function  goToDestination(destination) {
+  router.push({ name: 'destinationDetails', params: { slug: destination.slug } })
 }
 </script>
 
@@ -77,6 +77,7 @@ function handleSearch() {
   margin-top: 50px;
   max-width: 1280px;
 }
+
 .page-subtitle {
   font-size: 2rem;
   line-height: 1;
