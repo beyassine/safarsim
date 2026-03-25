@@ -9,9 +9,12 @@
 
     <!-- Country card -->
     <v-card rounded="xl" elevation="0" class="pa-6 mb-8 country-card">
-      <div class="d-flex align-center mb-4">
-        <div class="flag-emoji mr-3">{{ destination.flag }}</div>
-        <h2 class="text-h5 font-weight-bold">{{ destination.name }}</h2>
+      <div class="d-flex align-center mb-4">        
+        <div class="flag-wrapper">
+          <v-img :src="getImage(destination)" contain class="flag-img" @error="fallback" />
+        </div>
+        <h2 class="text-h5 font-weight-bold ml-3">{{ destination.name }}</h2>
+        <div class="text-body-1 ml-2 ">{{ destination.flag }}</div>
       </div>
 
       <v-divider class="mb-5" />
@@ -154,6 +157,17 @@ export default {
         quantity: 1,
       })
     },
+    getImage(item) {
+  if (item.type === "region") {
+    return item.image;
+  }
+
+  try {
+    return require(`@/assets/images/flags/${item.iso.toLowerCase()}.svg`);
+  } catch (e) {
+    return item.image;
+  }
+}
   },
 
   watch: {
@@ -195,6 +209,18 @@ export default {
 
 .flag-emoji {
   font-size: 2rem;
-  line-height: 1;
+  line-height: 0.4;
+}
+
+.flag-wrapper {
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.flag-img {
+    width: 100%;
+    height: 100%;
 }
 </style>

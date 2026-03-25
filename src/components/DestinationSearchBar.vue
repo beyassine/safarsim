@@ -5,38 +5,30 @@
         <v-icon size="18" class="search-icon">mdi-map-marker-outline</v-icon>
         <span class="divider">|</span>
 
-        <input
-          :value="query"
-          type="text"
-          class="search-input"
-          :placeholder="placeholder"
-          @focus="handleFocus"
-          @input="onInput"
-        />
+        <input :value="query" type="text" class="search-input" :placeholder="placeholder" @focus="handleFocus"
+          @input="onInput" />
       </div>
+
+      <button v-if="query" class="clear-btn" type="button" @click="clearSearch" aria-label="Effacer la recherche">
+        <v-icon size="18">mdi-close</v-icon>
+      </button>
 
       <button class="search-btn" type="button" @click="handleSearchClick">
         <v-icon color="white" size="22">mdi-magnify</v-icon>
       </button>
     </div>
 
-    <div
-      v-if="showResults && displayedDestinations.length"
-      class="search-results"
-    >
+    <div v-if="showResults && displayedDestinations.length" class="search-results">
       <div class="results-label">
-        {{ (query || '').trim() ? resultsLabel : popularLabel }}
+        {{ safeQuery ? resultsLabel : popularLabel }}
       </div>
 
-      <div
-        v-for="item in displayedDestinations"
-        :key="item.slug"
-        class="search-result-item"
-        @click="selectDestination(item)"
-      >
-        <v-avatar size="42" rounded="lg" class="result-avatar">
-          <v-img :src="item.image" cover />
-        </v-avatar>
+      <div v-for="item in displayedDestinations" :key="item.slug" class="search-result-item"
+        @click="selectDestination(item)">
+
+        <div class="flag-wrapper">
+          <v-img :src="getImage(item)" contain class="flag-img" @error="fallback" />
+        </div>
 
         <div class="result-text">
           <div class="result-name">{{ item.name }}</div>
@@ -45,6 +37,11 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div v-else-if="showResults && safeQuery && !displayedDestinations.length" class="search-results">
+      <div class="results-label">{{ resultsLabel }}</div>
+      <div class="no-results">Aucune destination trouvée</div>
     </div>
   </div>
 </template>
@@ -89,18 +86,73 @@ const query = ref('')
 const showResults = ref(false)
 const searchWrapper = ref(null)
 
-const filteredDestinations = computed(() => {
-  const term = (query.value || '').trim().toLowerCase()
+function normalizeText(text) {
+  return (text || '')
+    .toString()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[’']/g, '')
+    .replace(/[\s-]+/g, '')
+}
 
-  if (!term) return []
+function singularizeWord(word) {
+  if (!word) return ''
+
+  if (word.endsWith('ies')) {
+    return word.slice(0, -3) + 'y'
+  }
+
+  if (word.endsWith('es') && word.length > 3) {
+    return word.slice(0, -2)
+  }
+
+  if (word.endsWith('s') && word.length > 2) {
+    return word.slice(0, -1)
+  }
+
+  return word
+}
+
+function buildSearchVariants(text) {
+  const normalized = normalizeText(text)
+
+  if (!normalized) return []
+
+  const variants = new Set([
+    normalized,
+    singularizeWord(normalized),
+  ])
+
+  return [...variants].filter(Boolean)
+}
+
+const safeQuery = computed(() => (query.value || '').trim())
+
+const filteredDestinations = computed(() => {
+  const termVariants = buildSearchVariants(query.value)
+
+  if (!termVariants.length) return []
 
   return props.destinations
-    .filter((item) => item.name.toLowerCase().includes(term))
+    .filter((item) => {
+      const name = normalizeText(item.name)
+      const region = normalizeText(item.region)
+      const iso = normalizeText(item.iso)
+
+      return termVariants.some((term) => {
+        return (
+          name.includes(term) ||
+          region.includes(term) ||
+          iso.includes(term)
+        )
+      })
+    })
     .slice(0, props.maxResults)
 })
 
 const displayedDestinations = computed(() => {
-  if (!(query.value || '').trim()) {
+  if (!safeQuery.value) {
     return props.popularDestinations.slice(0, props.maxPopular)
   }
 
@@ -112,10 +164,16 @@ function handleFocus() {
 }
 
 function onInput(event) {
-  const value = event.target.value || ''
+  const value = event?.target?.value || ''
   query.value = value
   showResults.value = true
   emit('update:query', value)
+}
+
+function clearSearch() {
+  query.value = ''
+  showResults.value = true
+  emit('update:query', '')
 }
 
 function selectDestination(item) {
@@ -132,6 +190,18 @@ function handleSearchClick() {
 function handleClickOutside(event) {
   if (searchWrapper.value && !searchWrapper.value.contains(event.target)) {
     showResults.value = false
+  }
+}
+
+const getImage = (item) => {
+  if (item.type === 'region') {
+    return item.image
+  }
+
+  try {
+    return require(`@/assets/images/flags/${item.iso.toLowerCase()}.svg`)
+  } catch (e) {
+    return item.image
   }
 }
 
@@ -196,12 +266,25 @@ onBeforeUnmount(() => {
   color: #7a7f87;
 }
 
+.clear-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 .search-btn {
   width: 44px;
   height: 44px;
   border: none;
   border-radius: 14px;
-  background:#43A047;
+  background: #43A047;
   color: #1f2937;
   display: flex;
   align-items: center;
@@ -234,6 +317,7 @@ onBeforeUnmount(() => {
   font-size: 13px;
   font-weight: 700;
   color: #8a90a0;
+  margin-left: 8px;
 }
 
 .search-result-item {
@@ -267,6 +351,25 @@ onBeforeUnmount(() => {
   font-size: 13px;
   color: #6b7280;
 }
+
+.no-results {
+  padding: 16px 18px 20px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.flag-wrapper {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.flag-img {
+    width: 100%;
+    height: 100%;
+}
+
 
 @media (max-width: 600px) {
   .destination-search-wrapper {

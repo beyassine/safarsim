@@ -5,9 +5,10 @@
     }">
         <div class="d-flex  justify-space-between align-center ma-3">
             <div class="d-flex align-center">
-                <v-avatar class="" rounded="1" size="40">
-                    <v-img :src="country.image"></v-img>
-                </v-avatar>
+                <div class="flag-wrapper">
+                    <v-img  :src="getImage(country)" contain
+                        class="flag-img" @error="fallback" />
+                </div>
                 <div>
                     <v-card-item>
                         <v-card-title class="card-title">
@@ -15,7 +16,8 @@
                         </v-card-title>
 
                         <v-card-subtitle>
-                            Á partir de <span class=" text-h6 font-weight-bold text-pink-darken-4"> {{ getEntryPrice(country) }} DH</span>
+                            Á partir de <span class=" text-h6 font-weight-bold text-pink-darken-4"> {{
+                                getEntryPrice(country) }} DH</span>
                         </v-card-subtitle>
                     </v-card-item>
 
@@ -37,10 +39,20 @@ defineProps({
 })
 
 const getEntryPrice = (destination) => {
-  const prices = Object.values(destination.plans)
-  return Math.min(...prices)
+    const prices = Object.values(destination.plans)
+    return Math.min(...prices)
 }
+const getImage = (item) => {
+  if (item.type === "region") {
+    return item.image;
+  }
 
+  try {
+    return require(`@/assets/images/flags/${item.iso.toLowerCase()}.svg`);
+  } catch (e) {
+    return item.image;
+  }
+};
 </script>
 
 <style scoped>
@@ -50,6 +62,18 @@ const getEntryPrice = (destination) => {
     font-weight: 500;
     line-height: 1.0;
     color: #1f2937;
+}
+
+.flag-wrapper {
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.flag-img {
+    width: 100%;
+    height: 100%;
 }
 
 .arrow-btn {

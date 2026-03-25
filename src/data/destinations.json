@@ -105,21 +105,6 @@
     }
   },
   {
-    "name": "Antilles néerlandaises",
-    "slug": "antilles-neerlandaises",
-    "flag": "🇦🇳",
-    "image": "/images/destinations/antilles-neerlandaises.jpg",
-    "popular": false,
-    "iso": "AN",
-    "plans": {
-      "1GB_7days": 115,
-      "5GB_30days": 335,
-      "10GB_30days": 510,
-      "20GB_30days": 790,
-      "50GB_30days": null
-    }
-  },
-  {
     "name": "Arabie saoudite",
     "slug": "arabie-saoudite",
     "flag": "🇸🇦",
@@ -605,7 +590,7 @@
     "flag": "🇨🇬",
     "image": "/images/destinations/congo.jpg",
     "popular": false,
-    "iso": "CG;CD",
+    "iso": "CG",
     "plans": {
       "1GB_7days": 155,
       "5GB_30days": 570,
@@ -960,21 +945,6 @@
     }
   },
   {
-    "name": "Guernesey",
-    "slug": "guernesey",
-    "flag": "🇬🇬",
-    "image": "/images/destinations/guernesey.jpg",
-    "popular": false,
-    "iso": "GG;JE",
-    "plans": {
-      "1GB_7days": 75,
-      "5GB_30days": 205,
-      "10GB_30days": 275,
-      "20GB_30days": 405,
-      "50GB_30days": 790
-    }
-  },
-  {
     "name": "Guinée",
     "slug": "guinee",
     "flag": "🇬🇳",
@@ -1047,21 +1017,6 @@
       "10GB_30days": 190,
       "20GB_30days": 245,
       "50GB_30days": 410
-    }
-  },
-  {
-    "name": "Hawaï",
-    "slug": "hawai",
-    "flag": "🇺🇸",
-    "image": "/images/destinations/hawai.jpg",
-    "popular": false,
-    "iso": "US-HI",
-    "plans": {
-      "1GB_7days": 65,
-      "5GB_30days": 165,
-      "10GB_30days": 210,
-      "20GB_30days": 300,
-      "50GB_30days": 550
     }
   },
   {
@@ -1257,21 +1212,6 @@
       "10GB_30days": 205,
       "20GB_30days": 265,
       "50GB_30days": null
-    }
-  },
-  {
-    "name": "Jersey",
-    "slug": "jersey",
-    "flag": "🇯🇪",
-    "image": "/images/destinations/jersey.jpg",
-    "popular": false,
-    "iso": "JE;GG",
-    "plans": {
-      "1GB_7days": 75,
-      "5GB_30days": 205,
-      "10GB_30days": 275,
-      "20GB_30days": 405,
-      "50GB_30days": 790
     }
   },
   {
@@ -2180,7 +2120,7 @@
     "flag": "🇨🇩",
     "image": "/images/destinations/republique-democratique-du-congo.jpg",
     "popular": false,
-    "iso": "CD;CG",
+    "iso": "CG",
     "plans": {
       "1GB_7days": 155,
       "5GB_30days": 570,
@@ -2535,10 +2475,10 @@
     }
   },
   {
-    "name": "Territoires palestiniens",
-    "slug": "territoires-palestiniens",
+    "name": "Palestine",
+    "slug": "palestine",
     "flag": "🇵🇸",
-    "image": "/images/destinations/territoires-palestiniens.jpg",
+    "image": "/images/destinations/palestine.jpg",
     "popular": false,
     "iso": "PS",
     "plans": {

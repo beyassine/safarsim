@@ -2,6 +2,7 @@
   {
     "name": "Afrique",
     "slug": "afrique",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/afrique.jpg",
     "popular": false,
@@ -32,6 +33,7 @@
   {
     "name": "Amériques",
     "slug": "ameriques",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/ameriques.jpg",
     "popular": false,
@@ -61,6 +63,7 @@
   {
     "name": "Asie",
     "slug": "asie",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/asie.jpg",
     "popular": false,
@@ -93,6 +96,7 @@
   {
     "name": "Balkans",
     "slug": "balkans",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/balkans.jpg",
     "popular": false,
@@ -122,6 +126,7 @@
   {
     "name": "Caraïbes",
     "slug": "caraibes",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/caraibes.jpg",
     "popular": false,
@@ -165,6 +170,7 @@
   {
     "name": "Amérique centrale et Mexique",
     "slug": "amerique-centrale-et-mexique",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/amerique-centrale-et-mexique.jpg",
     "popular": false,
@@ -190,6 +196,7 @@
   {
     "name": "CEI",
     "slug": "cei",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/cei.jpg",
     "popular": false,
@@ -215,6 +222,7 @@
   {
     "name": "EU+",
     "slug": "euplus",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/euplus.jpg",
     "popular": false,
@@ -269,6 +277,7 @@
   {
     "name": "Europe Extra",
     "slug": "europe-extra",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/europe-extra.jpg",
     "popular": false,
@@ -325,6 +334,7 @@
   {
     "name": "Europe Lite",
     "slug": "europe-lite",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/europe-lite.jpg",
     "popular": false,
@@ -377,6 +387,7 @@
   {
     "name": "Global",
     "slug": "global",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/global.jpg",
     "popular": false,
@@ -501,6 +512,7 @@
   {
     "name": "Moyen-Orient et Afrique",
     "slug": "moyen-orient-et-afrique",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/moyen-orient-et-afrique.jpg",
     "popular": false,
@@ -527,6 +539,7 @@
   {
     "name": "Moyen-Orient et Afrique du Nord",
     "slug": "moyen-orient-et-afrique-du-nord",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/moyen-orient-et-afrique-du-nord.jpg",
     "popular": false,
@@ -555,6 +568,7 @@
   {
     "name": "Amérique du Nord",
     "slug": "amerique-du-nord",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/amerique-du-nord.jpg",
     "popular": false,
@@ -577,6 +591,7 @@
     "name": "Chypre du Nord",
     "slug": "chypre-du-nord",
     "flag": null,
+    "type": "region",
     "image": "/images/regions/chypre-du-nord.jpg",
     "popular": false,
     "iso": null,
@@ -596,6 +611,7 @@
   {
     "name": "Océanie",
     "slug": "oceanie",
+    "type": "region",
     "flag": null,
     "image": "/images/regions/oceanie.jpg",
     "popular": false,
