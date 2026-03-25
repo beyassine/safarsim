@@ -5,7 +5,8 @@
                 Destinations Populaires
             </h2>
             <p class="text-body-smal">
-                Choisissez parmi nos 160 destinations <br>et profitez des forfaits flexibles adaptés à vos besoins de voyage.
+                Choisissez parmi nos 160 destinations <br>et profitez des forfaits flexibles adaptés à vos besoins de
+                voyage.
             </p>
         </div>
 
@@ -16,9 +17,12 @@
         </v-row>
 
         <div class="d-flex align-center justify-center">
-            <v-btn class="text-none ma-4" rounded="lg" color="green-darken-1" size="large" variant="flat">
-                Voir toutes les destinations
-            </v-btn>
+
+            <router-link class="text-decoration-none text-black" to="/destinations">
+                <v-btn class="text-none ma-4" rounded="lg" color="green-darken-1" size="large" variant="flat">
+                    Voir toutes les destinations
+                </v-btn>
+            </router-link>
         </div>
 
     </v-container>
@@ -27,7 +31,7 @@
 
 <script>
 
-import countries from "@/data/destinations";
+import countries from "@/data/popularDestinations.json";
 import DestinationCard from "@/components/DestinationCard.vue";
 import { useDisplay } from "vuetify";
 import flying_paper from "@/assets/images/home/line.png";
@@ -62,6 +66,7 @@ export default {
     padding-bottom: 50px;
 
 }
+
 .destination-container {
     position: relative;
     z-index: 1;

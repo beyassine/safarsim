@@ -62,8 +62,9 @@
 
 <script>
 import DestinationSearch from "@/components/DestinationSearchBar.vue";
-import destinations from "@/data/destinations";
-import PopularDestinations from "@/data/popularDestinations";
+import destinations from "@/data/destinations.json";
+import PopularDestinations from "@/data/popularDestinations.json";
+import router from "@/router";
 import { useDisplay } from "vuetify";
 
 export default {
@@ -87,7 +88,7 @@ export default {
     },
     methods: {
         goToDestination(destination) {
-            console.log("select", destination);
+            router.push({ name: "destinationDetails", params: { slug: destination.slug } })
         },
     },
     mounted() { },
@@ -98,7 +99,6 @@ export default {
 
 .hero-card {
     border-radius: 0;
-    margin-top: 50px;
     background-image: url("@/assets/images/bg/hero.png");
     background-size: cover;
     background-position: center;

@@ -1,7 +1,7 @@
 <template>
-  <v-container class="destinations-page py-10">
+  <v-container class="destinations-page">
     <div class="text-center mb-8">
-      <h1 class="page-title">Toutes Destinations</h1>
+      <h1 class="section-title">Toutes Destinations</h1>
     </div>
 
     <DestinationSearch :destinations="destinations" :popular-destinations="popularDestinations"
@@ -10,7 +10,7 @@
     <div>
       <h2 class="page-subtitle text-center">Plans régionaux</h2>
       <v-row>
-        <v-col v-for="country in re" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
+        <v-col v-for="country in regions" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
           <DestinationCard :country="country" />
         </v-col>
       </v-row>

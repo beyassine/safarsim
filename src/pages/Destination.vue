@@ -20,14 +20,11 @@
         <v-icon size="20" class="mr-2">mdi-signal-cellular-outline</v-icon>
         <strong class="mr-2">Réseau disponible</strong>
         <v-chip size="x-small" variant="outlined">4G</v-chip>
+        <v-chip size="x-small" variant="outlined">5G</v-chip>
       </div>
 
-      <v-btn
-        color="green-darken-1"
-        rounded="pill"
-        class="text-none font-weight-bold mb-6"
-        prepend-icon="mdi-cellphone-check"
-      >
+      <v-btn color="green-darken-1" rounded="pill" class="text-none font-weight-bold mb-6"
+        prepend-icon="mdi-cellphone-check">
         Vérifier la compatibilité
       </v-btn>
 
@@ -44,20 +41,11 @@
 
       <h3 class="text-h5 font-weight-bold mb-5">Choisissez votre forfait</h3>
 
-      <div
-        v-for="group in groupedPlans"
-        :key="group.days"
-        class="mb-8"
-      >
+      <div v-for="group in groupedPlans" :key="group.days" class="mb-8">
         <div class="text-h6 font-weight-bold mb-4">{{ group.days }} jours</div>
 
-        <v-card
-          v-for="plan in group.items"
-          :key="plan.key"
-          rounded="xl"
-          elevation="1"
-          class="mb-5 px-4 py-4 package-item"
-        >
+        <v-card v-for="plan in group.items" :key="plan.key" rounded="xl" elevation="1"
+          class="mb-5 px-4 py-4 package-item">
           <div class="d-flex align-center justify-space-between">
             <div>
               <div class="text-h6 font-weight-bold">{{ plan.dataLabel }}</div>
@@ -68,12 +56,7 @@
                 <div class="text-h5 font-weight-bold">{{ plan.price }} DH</div>
               </div>
 
-              <v-btn
-                icon
-                color="pink-darken-1"
-                variant="flat"
-                @click="addToCart(plan)"
-              >
+              <v-btn icon color="pink-darken-1" variant="flat" @click="addToCart(plan)">
                 <v-icon>mdi-plus</v-icon>
               </v-btn>
             </div>
@@ -90,6 +73,7 @@
 
 <script>
 import destinations from '@/data/destinations.json'
+import { addToCart } from '@/utils/cart'
 
 export default {
   name: 'DestinationDetailsPage',
@@ -156,36 +140,21 @@ export default {
       const slug = this.$route.params.slug
       this.destination = destinations.find((item) => item.slug === slug) || null
     },
-
     addToCart(plan) {
-      const cart = JSON.parse(localStorage.getItem('cart') || '[]')
-
-      const existing = cart.find(
-        (item) =>
-          item.destinationSlug === this.destination.slug &&
-          item.planKey === plan.key
-      )
-
-      if (existing) {
-        existing.quantity += 1
-      } else {
-        cart.push({
-          id: `${this.destination.slug}-${plan.key}`,
-          destinationName: this.destination.name,
-          destinationSlug: this.destination.slug,
-          flag: this.destination.flag,
-          image: this.destination.image,
-          iso: this.destination.iso,
-          planKey: plan.key,
-          data: plan.data,
-          dataLabel: plan.dataLabel,
-          days: plan.days,
-          price: plan.price,
-          quantity: 1,
-        })
-      }
-
-      localStorage.setItem('cart', JSON.stringify(cart))
+      addToCart({
+        id: `${this.destination.slug}-${plan.key}`,
+        destinationName: this.destination.name,
+        destinationSlug: this.destination.slug,
+        flag: this.destination.flag,
+        image: this.destination.image,
+        iso: this.destination.iso,
+        planKey: plan.key,
+        data: plan.data,
+        dataLabel: plan.dataLabel,
+        days: plan.days,
+        price: plan.price,
+        quantity: 1,
+      })
     },
   },
 

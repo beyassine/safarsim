@@ -2,8 +2,9 @@
   <v-app class="app">
 
     <Navbar />
-
-    <router-view />
+    <main class="main-content">
+      <router-view />
+    </main>
 
     <Footer />
 
@@ -30,6 +31,14 @@ import Footer from "./components/layout/Footer.vue"
     color: #1f2937;
     margin-bottom: 10px;
 }
+.main-content {
+  padding-top: 40px;
+}
 
+@media (max-width: 600px) {
+  .main-content {
+    padding-top: 40px;
+  }
+}
 
 </style>
