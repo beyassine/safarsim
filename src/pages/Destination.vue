@@ -19,19 +19,18 @@
       <div class="d-flex align-center mb-6 text-body-1">
         <v-icon size="20" class="mr-2">mdi-signal-cellular-outline</v-icon>
         <strong class="mr-2">Réseau disponible</strong>
-        <v-chip size="x-small" variant="outlined">4G</v-chip>
+        <v-chip class="mr-2"  size="x-small" variant="outlined">4G</v-chip>
         <v-chip size="x-small" variant="outlined">5G</v-chip>
       </div>
-
-      <v-btn color="green-darken-1" rounded="pill" class="text-none font-weight-bold mb-6"
-        prepend-icon="mdi-cellphone-check">
-        Vérifier la compatibilité
-      </v-btn>
-
       <div class="d-flex align-start">
         <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
         <div>Le forfait démarre dès la connexion à un réseau pris en charge</div>
       </div>
+
+      <v-btn color="green" rounded="pill" class="text-none font-weight-bold mt-2 mb-6"
+        prepend-icon="mdi-cellphone-check">
+        Vérifier la compatibilité
+      </v-btn>
     </v-card>
 
     <!-- Packages -->
@@ -56,7 +55,7 @@
                 <div class="text-h5 font-weight-bold">{{ plan.price }} DH</div>
               </div>
 
-              <v-btn icon color="pink-darken-1" variant="flat" @click="addToCart(plan)">
+              <v-btn icon color="pink" variant="flat" @click="addToCart(plan)">
                 <v-icon>mdi-plus</v-icon>
               </v-btn>
             </div>

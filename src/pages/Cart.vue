@@ -10,12 +10,7 @@
           Ajoutez un forfait eSIM pour continuer.
         </p>
 
-        <v-btn
-          color="black"
-          rounded="pill"
-          class="text-none"
-          to="/"
-        >
+        <v-btn color="black" rounded="pill" class="text-none" to="/">
           Voir les destinations
         </v-btn>
       </v-card>
@@ -23,13 +18,7 @@
 
     <v-row v-else>
       <v-col cols="12" md="8">
-        <v-card
-          v-for="item in cart"
-          :key="item.id"
-          rounded="xl"
-          elevation="1"
-          class="mb-4 pa-4 cart-item"
-        >
+        <v-card v-for="item in cart" :key="item.id" rounded="xl" elevation="1" class="mb-4 pa-4 cart-item">
           <div class="d-flex justify-space-between align-start">
             <div class="d-flex align-start">
               <div class="flag-emoji mr-3">{{ item.flag }}</div>
@@ -40,43 +29,25 @@
                 </div>
 
                 <div class="text-body-1 mb-1">
-                  {{ item.dataLabel }} • {{ item.days }} jours
-                </div>
-
-                <div class="text-body-2 text-medium-emphasis">
-                  Référence : {{ item.planKey }}
+                  {{ item.dataLabel }} • {{ item.days }} jours : {{ item.price}} DHs
                 </div>
               </div>
             </div>
 
-            <v-btn
-              icon
-              variant="text"
-              @click="removeItem(item.id)"
-            >
+            <v-btn icon variant="text" @click="removeItem(item.id)">
               <v-icon>mdi-close</v-icon>
             </v-btn>
           </div>
 
           <div class="d-flex justify-space-between align-center mt-5 flex-wrap ga-3">
             <div class="quantity-box d-flex align-center">
-              <v-btn
-                icon
-                size="small"
-                variant="outlined"
-                @click="decrease(item.id)"
-              >
+              <v-btn icon size="small" variant="outlined" @click="decrease(item.id)">
                 <v-icon size="18">mdi-minus</v-icon>
               </v-btn>
 
               <span class="mx-4 font-weight-bold">{{ item.quantity }}</span>
 
-              <v-btn
-                icon
-                size="small"
-                variant="outlined"
-                @click="increase(item.id)"
-              >
+              <v-btn icon size="small" variant="outlined" @click="increase(item.id)">
                 <v-icon size="18">mdi-plus</v-icon>
               </v-btn>
             </div>
@@ -104,24 +75,12 @@
 
           <v-divider class="mb-4" />
 
-          <v-btn
-            block
-            color="orange-darken-1"
-            size="large"
-            rounded="pill"
-            class="text-none font-weight-bold mb-3"
-            @click="checkout"
-          >
+          <v-btn block color="orange-darken-1" size="large" rounded="pill" class="text-none font-weight-bold mb-3"
+            @click="checkout">
             Passer au paiement
           </v-btn>
 
-          <v-btn
-            block
-            variant="outlined"
-            rounded="pill"
-            class="text-none"
-            @click="emptyCart"
-          >
+          <v-btn block variant="outlined" rounded="pill" class="text-none" @click="emptyCart">
             Vider le panier
           </v-btn>
         </v-card>
@@ -152,7 +111,9 @@ export default {
 
   computed: {
     subtotal() {
-      return getCartTotal()
+      return this.cart.reduce((total, item) => {
+        return total + item.price * item.quantity
+      }, 0)
     },
 
     total() {
