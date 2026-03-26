@@ -19,8 +19,8 @@
         <div class="d-flex align-center justify-center">
 
             <router-link class="text-decoration-none text-black" to="/destinations">
-                <v-btn class="text-none ma-4" rounded="lg" color="green-darken-1" size="large" variant="flat">
-                    Voir toutes les destinations
+                <v-btn class="text-none ma-4" rounded="lg" color="green-darken-1" prepend-icon="mdi-earth" size="large" variant="flat">
+                    Voir les destinations
                 </v-btn>
             </router-link>
         </div>
