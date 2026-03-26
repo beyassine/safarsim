@@ -6,9 +6,9 @@
                 <!-- RIGHT SIDE -->
 
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
-                        <h2 class="section-title text-center mb-5">
-                            Profitez d’internet partout en seulement 3 étapes
-                        </h2>
+                    <h2 class="section-title text-center mb-5">
+                        Profitez d’internet partout en seulement 3 étapes
+                    </h2>
 
                     <v-img :src="barcelona" height="" class="" />
 
@@ -17,7 +17,7 @@
                 <!-- LEFT SIDE -->
 
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
-                    <div >
+                    <div>
                         <div class="step-card">
 
                             <div class="step-number">01</div>
@@ -41,7 +41,7 @@
 
                             <div class="step-number ">02</div>
 
-                            <v-icon size="40" >mdi-qrcode-scan</v-icon>
+                            <v-icon size="40">mdi-qrcode-scan</v-icon>
 
                             <div>
                                 <p class="step-text">
@@ -67,6 +67,15 @@
                             </div>
 
                         </div>
+                    </div>
+
+                    <div class="d-flex align-center justify-center">
+                        <router-link class="text-decoration-none text-black" to="/destinations">
+                            <v-btn class="text-none ma-4" rounded="lg" color="pink-darken-1" size="large"
+                                variant="flat">
+                                Voir toutes les destinations
+                            </v-btn>
+                        </router-link>
                     </div>
                 </v-col>
             </v-row>
@@ -124,7 +133,7 @@ export default {
     padding: 22px;
     border-radius: 16px;
     margin-bottom: 20px;
-    border: 1px solid #e5e7eb; 
+    border: 1px solid #e5e7eb;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: white;
 }

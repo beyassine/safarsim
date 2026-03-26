@@ -4,13 +4,14 @@ import Home from "../pages/Home.vue"
 import Destination from "../pages/Destination.vue"
 import allDestinations from "../pages/allDestinations.vue"
 import Cart from "../pages/Cart.vue"
+import Compatibility from "../pages/compatibilityPage.vue"
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home
-  },  
+  },
   {
     path: "/destinations",
     name: "allDestinations",
@@ -25,10 +26,19 @@ const routes = [
     path: "/cart",
     name: "cart",
     component: Cart
+  },
+  {
+    path: "/compatibility",
+    name: "compatibility",
+    component: Compatibility,
   }
 ]
 
+
 export default createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })

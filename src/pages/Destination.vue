@@ -2,7 +2,9 @@
   <v-container class="py-10 destination-page" v-if="destination">
     <!-- Breadcrumb -->
     <div class="mb-6 text-body-2">
-      <span class="text-medium-emphasis">eSIM Store</span>
+      <router-link to="/destinations" class="text-decoration-none">
+        <span class="text-medium-emphasis">Destinations</span>
+      </router-link>
       <span class="mx-2">></span>
       <strong>{{ destination.name }}</strong>
     </div>
@@ -14,7 +16,7 @@
           <v-img :src="getImage(destination)" contain class="flag-img" @error="fallback" />
         </div>
         <h2 class="text-h5 font-weight-bold ml-3">{{ destination.name }}</h2>
-        <div class="text-body-1 ml-2 ">{{ destination.flag }}</div>
+        <div class="text-body-1 ml-2 ">{{ destination.iso}}</div>
       </div>
 
       <v-divider class="mb-5" />
@@ -29,11 +31,12 @@
         <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
         <div>Le forfait démarre dès la connexion à un réseau pris en charge</div>
       </div>
-
-      <v-btn color="green" rounded="pill" class="text-none font-weight-bold mt-2 mb-6"
-        prepend-icon="mdi-cellphone-check">
-        Vérifier la compatibilité
-      </v-btn>
+      <router-link to="/compatibility">
+        <v-btn color="green" rounded="pill" class="text-none font-weight-bold mt-2 mb-6"
+          prepend-icon="mdi-cellphone-check">
+          Vérifier la compatibilité
+        </v-btn>
+      </router-link>
     </v-card>
 
     <!-- Packages -->
