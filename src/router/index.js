@@ -5,6 +5,7 @@ import Destination from "../pages/Destination.vue"
 import allDestinations from "../pages/allDestinations.vue"
 import Cart from "../pages/Cart.vue"
 import Compatibility from "../pages/compatibilityPage.vue"
+import Help from "../pages/Help.vue"
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: "/compatibility",
     name: "compatibility",
     component: Compatibility,
+  },
+  {
+    path: "/help",
+    name: "help",
+    component: Help,
   }
 ]
 
