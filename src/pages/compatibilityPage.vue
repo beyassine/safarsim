@@ -2,7 +2,7 @@
   <div class="compatibility-page">
     <v-container class="py-8 py-md-12" style="max-width: 980px">
       <!-- Breadcrumb -->
-      <div class="mb-6 text-body-2">
+      <div class="mb-6 mt-2 text-body-2">
         <router-link to="/" class="text-decoration-none">
           <span class="text-medium-emphasis">Acceuil</span>
         </router-link>

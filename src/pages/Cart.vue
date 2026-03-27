@@ -75,13 +75,9 @@
 
           <v-divider class="mb-4" />
 
-          <v-btn block color="orange-darken-1" size="large" rounded="pill" class="text-none font-weight-bold mb-3"
+          <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill" class="text-none font-weight-bold mb-3"
             @click="checkout">
-            Passer au paiement
-          </v-btn>
-
-          <v-btn block variant="outlined" rounded="pill" class="text-none" @click="emptyCart">
-            Vider le panier
+            Continuer par WHATSAPP
           </v-btn>
         </v-card>
       </v-col>

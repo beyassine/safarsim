@@ -1,52 +1,116 @@
 <template>
-    <v-app-bar elevation="0" color="white">
-
-        <v-container class="d-flex align-center justify-space-between">
-            
-            <router-link to="/" class="text-decoration-none logo-link">
-            <div class="text-h6 font-weight-bold text-pink-darken-1">   
-                SAFAR SIM
+    <v-app-bar app elevation="0" color="white" height="72" class="navbar">
+        <v-container class="nav-wrapper d-flex align-center justify-space-between">
+            <!-- MOBILE LEFT -->
+            <div class="d-flex d-md-none align-center">
+                <v-btn icon variant="text" @click="drawer = !drawer">
+                    <v-icon size="30">
+                        {{ drawer ? 'mdi-close' : 'mdi-menu' }}
+                    </v-icon>
+                </v-btn>
             </div>
-            </router-link>
 
-            <div class="d-none d-md-flex">
+            <!-- DESKTOP LEFT LOGO -->
+            <div class="d-none d-md-flex align-center">
+                <router-link to="/" class="text-decoration-none logo-link">
+                    <div class="text-h6 font-weight-bold text-pink-darken-1">
+                        SAFAR SIM
+                    </div>
+                </router-link>
+            </div>
+
+            <!-- DESKTOP CENTER LINKS -->
+            <div class="d-none d-md-flex nav-links">
                 <router-link class="text-decoration-none text-black" to="/destinations">
                     <v-btn variant="text">Destinations</v-btn>
                 </router-link>
-                <router-link class="text-decoration-none text-black" to="/">
-                    <v-btn variant="text">Comment ca marche ? </v-btn>
+
+                <router-link class="text-decoration-none text-black" to="/compatibility">
+                    <v-btn variant="text">Compatibilité eSIM</v-btn>
                 </router-link>
+
                 <router-link class="text-decoration-none text-black" to="/">
                     <v-btn variant="text">Aide</v-btn>
                 </router-link>
             </div>
-            <router-link to="/cart" class="cart-link">
-                <v-badge :model-value="cartCount > 0" :content="cartCount" color="pink" location="top right" offset-x="2" offset-y="2">
-                    <v-btn icon variant="text">
-                        <v-icon size="28">mdi-cart-outline</v-icon>
-                    </v-btn>
-                </v-badge>
-            </router-link>
-        </v-container>
 
+            <!-- MOBILE CENTER LOGO -->
+            <div class="mobile-logo d-flex d-md-none">
+                <router-link to="/" class="text-decoration-none logo-link">
+                    <div class="text-h6 font-weight-bold text-pink-darken-1">
+                        SAFAR SIM
+                    </div>
+                </router-link>
+            </div>
+
+            <!-- RIGHT CART -->
+            <div class="d-flex align-center">
+                <router-link to="/cart" class="cart-link">
+                    <v-badge :model-value="cartCount > 0" :content="cartCount" color="pink" location="top right"
+                        offset-x="2" offset-y="2">
+                        <v-btn icon variant="text">
+                            <v-icon size="28">mdi-cart-outline</v-icon>
+                        </v-btn>
+                    </v-badge>
+                </router-link>
+            </div>
+        </v-container>
     </v-app-bar>
+    <v-expand-transition>
+        <div v-if="drawer" class="mobile-menu">
+
+            <div class="menu-search">
+                <DestinationSearch :destinations="destinations" :popularDestinations="popularDestinations"
+                    @select="goToDestination" />
+            </div>
+
+            <router-link to="/destinations" class="menu-item" @click="drawer = false">
+                <span>Destinations</span>
+                <v-icon>mdi-arrow-right</v-icon>
+            </router-link>
+
+            <router-link to="/compatibility" class="menu-item" @click="drawer = false">
+                <span>Compatibilité eSIM</span>
+                <v-icon>mdi-arrow-right</v-icon>
+            </router-link>
+
+            <router-link to="/" class="menu-item" @click="drawer = false">
+                <span>Aide</span>
+                <v-icon>mdi-arrow-right</v-icon>
+            </router-link>
+
+        </div>
+    </v-expand-transition>
 </template>
 
 <script>
 import { getCartCount, CART_UPDATED_EVENT } from '@/utils/cart'
+import DestinationSearch from '@/components/DestinationSearchBar.vue'
+import destinations from "@/data/destinations.json";
+import PopularDestinations from "@/data/popularDestinations.json";
 
 export default {
     name: 'AppHeader',
+    components: {
+        DestinationSearch,
+    },
 
     data() {
         return {
             cartCount: 0,
+            drawer: false,
+            destinations: destinations,
+            popularDestinations: PopularDestinations,
         }
     },
 
     methods: {
         refreshCartCount() {
             this.cartCount = getCartCount()
+        },
+        goToDestination(destination) {
+            this.drawer = false
+            this.$router.push({ name: "destinationDetails", params: { slug: destination.slug } })
         },
     },
 
@@ -70,10 +134,57 @@ export default {
     color: inherit;
 }
 
-.logo-text {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #d81b60;
-    letter-spacing: 0.5px;
+.navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-wrapper {
+    position: relative;
+}
+
+.nav-links {
+    gap: 8px;
+}
+
+.mobile-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+@media (max-width: 959px) {
+    .mobile-logo .text-h6 {
+        font-size: 1.55rem !important;
+        letter-spacing: 0.3px;
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background: white;
+    z-index: 2000;
+    overflow-y: auto;
+}
+
+.menu-search {
+    padding: 16px;
+}
+
+.menu-item {
+    min-height: 70px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #1f2940;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 </style>

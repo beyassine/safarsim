@@ -11,12 +11,12 @@
 
     <!-- Country card -->
     <v-card rounded="xl" elevation="0" class="pa-6 mb-8 country-card">
-      <div class="d-flex align-center mb-4">        
+      <div class="d-flex align-center mb-4">
         <div class="flag-wrapper">
           <v-img :src="getImage(destination)" contain class="flag-img" @error="fallback" />
         </div>
         <h2 class="text-h5 font-weight-bold ml-3">{{ destination.name }}</h2>
-        <div class="text-body-1 ml-2 ">{{ destination.iso}}</div>
+        <div class="text-body-1 ml-2 ">{{ destination.iso }}</div>
       </div>
 
       <v-divider class="mb-5" />
@@ -24,7 +24,7 @@
       <div class="d-flex align-center mb-6 text-body-1">
         <v-icon size="20" class="mr-2">mdi-signal-cellular-outline</v-icon>
         <strong class="mr-2">Réseau disponible</strong>
-        <v-chip class="mr-2"  size="x-small" variant="outlined">4G</v-chip>
+        <v-chip class="mr-2" size="x-small" variant="outlined">4G</v-chip>
         <v-chip size="x-small" variant="outlined">5G</v-chip>
       </div>
       <div class="d-flex align-start">
@@ -59,10 +59,16 @@
               <div class="text-right mr-4">
                 <div class="text-h5 ">{{ plan.price }} DH</div>
               </div>
-
-              <v-btn icon color="pink" size="small" variant="flat" @click="addToCart(plan)">
-                <v-icon>mdi-plus</v-icon>
+              <v-btn icon :color="addedPlanKey === plan.key ? 'green' : 'pink-darken-1'" variant="flat"
+                @click="handleAddToCart(plan)">
+                <v-icon>
+                  {{ addedPlanKey === plan.key ? 'mdi-check' : 'mdi-plus' }}
+                </v-icon>
               </v-btn>
+
+              <v-snackbar v-model="snackbar" location="top" color="green" timeout="2000">
+                {{ snackbarText }}
+              </v-snackbar>
             </div>
           </div>
         </v-card>
@@ -85,6 +91,9 @@ export default {
   data() {
     return {
       destination: null,
+      addedPlanKey: null,
+      snackbar: false,
+      snackbarText: '',
     }
   },
 
@@ -160,17 +169,41 @@ export default {
         quantity: 1,
       })
     },
-    getImage(item) {
-  if (item.type === "region") {
-    return item.image;
-  }
+    handleAddToCart(plan) {
+      addToCart({
+        id: `${this.destination.slug}-${plan.key}`,
+        destinationName: this.destination.name,
+        destinationSlug: this.destination.slug,
+        flag: this.destination.flag,
+        image: this.destination.image,
+        iso: this.destination.iso,
+        planKey: plan.key,
+        data: plan.data,
+        dataLabel: plan.dataLabel,
+        days: plan.days,
+        price: plan.price,
+        quantity: 1,
+      })
 
-  try {
-    return require(`@/assets/images/flags/${item.iso.toLowerCase()}.svg`);
-  } catch (e) {
-    return item.image;
-  }
-}
+      this.addedPlanKey = plan.key
+      this.snackbarText = 'Forfait ajouté au panier avec succès'
+      this.snackbar = true
+
+      setTimeout(() => {
+        this.addedPlanKey = null
+      }, 1500)
+    },
+    getImage(item) {
+      if (item.type === "region") {
+        return item.image;
+      }
+
+      try {
+        return require(`@/assets/images/flags/${item.iso.toLowerCase()}.svg`);
+      } catch (e) {
+        return item.image;
+      }
+    }
   },
 
   watch: {
@@ -216,14 +249,14 @@ export default {
 }
 
 .flag-wrapper {
-    width: 60px;
-    height: 40px;
-    display: flex;
-    align-items: center;
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .flag-img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 </style>
