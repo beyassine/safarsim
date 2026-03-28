@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "title": "Voyagez connecté partout dans le monde",
+    "subtitle": "Installez votre eSIM SAFAR SIM et profitez d’une connexion internet fiable où que vous soyez"
+  },
+  "search": {
+    "placeholder": "Rechercher une destination"
+  },
+  "nav": {
+    "destinations": "Destinations",
+    "compatibility": "Compatibilité",
+    "help": "Aide"
+  }
+}

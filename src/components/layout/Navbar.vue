@@ -45,6 +45,24 @@
 
             <!-- RIGHT CART -->
             <div class="d-flex align-center">
+                <v-menu location="bottom end">
+                    <template v-slot:activator="{ props }">
+                        <v-btn v-bind="props" variant="text" icon class="">
+                            <v-icon  class="">mdi-web</v-icon>
+                        </v-btn>
+                    </template>
+
+                    <v-list density="compact">
+                        <v-list-item @click="setLang('fr')">
+                            <v-list-item-title>Français</v-list-item-title>
+                        </v-list-item>
+
+                        <v-list-item @click="setLang('ar')">
+                            <v-list-item-title>العربية</v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+                
                 <router-link to="/cart" class="cart-link">
                     <v-badge :model-value="cartCount > 0" :content="cartCount" color="pink" location="top right"
                         offset-x="2" offset-y="2">
@@ -88,11 +106,17 @@ import { getCartCount, CART_UPDATED_EVENT } from '@/utils/cart'
 import DestinationSearch from '@/components/DestinationSearchBar.vue'
 import destinations from "@/data/destinations.json";
 import PopularDestinations from "@/data/popularDestinations.json";
+import { applyLanguage } from "@/i18n";
 
 export default {
     name: 'AppHeader',
     components: {
         DestinationSearch,
+    },
+    computed: {
+        currentLang() {
+            return this.$i18n.locale
+        }
     },
 
     data() {
@@ -112,6 +136,9 @@ export default {
             this.drawer = false
             this.$router.push({ name: "destinationDetails", params: { slug: destination.slug } })
         },
+        setLang(lang) {
+            applyLanguage(lang)
+        }
     },
 
     mounted() {

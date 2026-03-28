@@ -13,12 +13,11 @@
 
                             <div class="hero mb-5">
                                 <h1 class="hero-title text-center">
-                                    Voyagez Connecté partout dans le monde
+                                     {{ $t("hero.title") }}
                                 </h1>
 
                                 <p class="hero-subtitle text-center">
-                                    Installez votre eSIM <span class="accent">SAFAR SIM</span> et
-                                    profitez d’une connexion internet fiable oú que vous soyez
+                                    {{ $t("hero.subtitle") }}
                                 </p>
                             </div>
                             <v-row class="d-flex mb-5 info-row">

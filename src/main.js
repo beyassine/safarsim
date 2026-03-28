@@ -1,6 +1,7 @@
 import { createApp } from "vue"
 import App from "./App.vue"
 import router from "./router"
+import i18n , {applyLanguage } from "./i18n"
 
 import "vuetify/styles"
 import '@mdi/font/css/materialdesignicons.css'
@@ -17,10 +18,17 @@ const vuetify = createVuetify({
     defaultSet: 'mdi', // This is already the default value - only for display purposes
   },
   components,
-  directives
+  directives,
+  rtl: {
+    ar: true
+  }
 })
 
+
+applyLanguage(i18n.global.locale)
+
 createApp(App)
+  .use(i18n)
   .use(router)
   .use(vuetify)
   .mount("#app")
