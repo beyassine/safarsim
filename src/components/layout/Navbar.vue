@@ -1,10 +1,10 @@
 <template>
-    <v-app-bar app elevation="0" color="white" height="72" class="navbar">
+    <v-app-bar app elevation="0" color="white" height="56" class="navbar">
         <v-container class="nav-wrapper d-flex align-center justify-space-between">
             <!-- MOBILE LEFT -->
             <div class="d-flex d-md-none align-center">
                 <v-btn icon variant="text" @click="drawer = !drawer">
-                    <v-icon size="30">
+                    <v-icon size="20">
                         {{ drawer ? 'mdi-close' : 'mdi-menu' }}
                     </v-icon>
                 </v-btn>
@@ -13,7 +13,7 @@
             <!-- DESKTOP LEFT LOGO -->
             <div class="d-none d-md-flex align-center">
                 <router-link to="/" class="text-decoration-none logo-link">
-                    <v-img :src="logo" alt="SafarSim" height="40" width="130" contain />
+                    <v-img :src="logo" alt="SafarSim" height="60" width="150" contain />
                 </router-link>
             </div>
 
@@ -34,8 +34,8 @@
 
             <!-- MOBILE CENTER LOGO -->
             <div class="mobile-logo d-flex d-md-none">
-                <router-link to="/" class="logo-link">
-                    <v-img :src="logo" alt="SafarSim" height="40" width="130" contain />
+                <router-link to="/" class="logo-link mb-2">
+                    <v-img :src="logo" alt="SafarSim" height="54" width="140" contain />
                 </router-link>
             </div>
 
@@ -44,7 +44,7 @@
                 <v-menu location="bottom end">
                     <template v-slot:activator="{ props }">
                         <v-btn v-bind="props" variant="text" icon class="">
-                            <v-icon  class="">mdi-web</v-icon>
+                            <v-icon size="20"  class="">mdi-web</v-icon>
                         </v-btn>
                     </template>
 
@@ -61,9 +61,9 @@
                 
                 <router-link to="/cart" class="cart-link">
                     <v-badge :model-value="cartCount > 0" :content="cartCount" color="pink" location="top right"
-                        offset-x="2" offset-y="2">
+                        offset-x="9" offset-y="7">
                         <v-btn icon variant="text">
-                            <v-icon size="28">mdi-cart-outline</v-icon>
+                            <v-icon size="20">mdi-cart-outline</v-icon>
                         </v-btn>
                     </v-badge>
                 </router-link>
@@ -174,8 +174,8 @@ export default {
 
 .mobile-logo {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 45%;
+    transform: translateX(-45%);
     white-space: nowrap;
 }
 
@@ -188,10 +188,10 @@ export default {
 
 .mobile-menu {
     position: fixed;
-    top: 72px;
+    top: 56px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 72px);
+    height: calc(100vh - 56px);
     background: white;
     z-index: 2000;
     overflow-y: auto;
