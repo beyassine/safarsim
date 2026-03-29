@@ -53,6 +53,10 @@ const getImage = (item) => {
     return item.image;
   }
 };
+
+const fallback = (event) => {
+  event.target.src = require('@/assets/images/flags/default.png');
+};
 </script>
 
 <style scoped>

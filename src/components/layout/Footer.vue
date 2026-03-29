@@ -7,12 +7,13 @@
             </svg>
 
             <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16' : 'px-6'">
-                <v-row >
+                <v-row>
 
                     <!-- LEFT: BRAND -->
                     <v-col cols="12" md="4">
-
-                        <h2 class="logo">SAFAR SIM</h2>
+                        <div>
+                            <v-img :src="logo" alt="SafarSim" height="60" width="160" contain />
+                        </div>
 
                         <div class="socials mt-6">
                             <v-icon class="mr-3">mdi-facebook</v-icon>
@@ -90,6 +91,8 @@
 import { useDisplay } from "vuetify";
 import footer_bg from "@/assets/images/bg/footer.png";
 
+import logo from "@/assets/logo.png";
+
 export default {
     name: "Header",
 
@@ -103,6 +106,7 @@ export default {
     data() {
         return {
             footer_bg: footer_bg,
+            logo: logo,
         };
     },
     computed: {

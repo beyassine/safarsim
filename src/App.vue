@@ -46,8 +46,12 @@ export default {
 <style lang="scss">
 @import "./scss/variables.scss";
 
+html[dir="rtl"] {
+  font-family: $body-font-family-arabic !important;
+}
+
 .app {
-  font-family: $body-font-family;
+  font-family: $body-font-family !important;
   background-color: #fffbf8 !important;
 }
 .section-title {

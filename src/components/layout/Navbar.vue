@@ -13,9 +13,7 @@
             <!-- DESKTOP LEFT LOGO -->
             <div class="d-none d-md-flex align-center">
                 <router-link to="/" class="text-decoration-none logo-link">
-                    <div class="text-h6 font-weight-bold text-pink-darken-1">
-                        SAFAR SIM
-                    </div>
+                    <v-img :src="logo" alt="SafarSim" height="40" width="130" contain />
                 </router-link>
             </div>
 
@@ -36,10 +34,8 @@
 
             <!-- MOBILE CENTER LOGO -->
             <div class="mobile-logo d-flex d-md-none">
-                <router-link to="/" class="text-decoration-none logo-link">
-                    <div class="text-h6 font-weight-bold text-pink-darken-1">
-                        SAFAR SIM
-                    </div>
+                <router-link to="/" class="logo-link">
+                    <v-img :src="logo" alt="SafarSim" height="40" width="130" contain />
                 </router-link>
             </div>
 
@@ -92,7 +88,7 @@
                 <v-icon>mdi-arrow-right</v-icon>
             </router-link>
 
-            <router-link to="/" class="menu-item" @click="drawer = false">
+            <router-link to="/help" class="menu-item" @click="drawer = false">
                 <span>Aide</span>
                 <v-icon>mdi-arrow-right</v-icon>
             </router-link>
@@ -108,6 +104,8 @@ import destinations from "@/data/destinations.json";
 import PopularDestinations from "@/data/popularDestinations.json";
 import { applyLanguage } from "@/i18n";
 
+import logo from '@/assets/logo.png'
+
 export default {
     name: 'AppHeader',
     components: {
@@ -121,6 +119,7 @@ export default {
 
     data() {
         return {
+            logo: logo,
             cartCount: 0,
             drawer: false,
             destinations: destinations,
