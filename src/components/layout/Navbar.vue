@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app elevation="0" color="white" height="56" class="navbar">
+    <v-app-bar app fixed flat elevation="0" color="white" height="56" class="navbar">
         <v-container class="nav-wrapper d-flex align-center justify-space-between">
             <!-- MOBILE LEFT -->
             <div class="d-flex d-md-none align-center">
@@ -44,7 +44,7 @@
                 <v-menu location="bottom end">
                     <template v-slot:activator="{ props }">
                         <v-btn v-bind="props" variant="text" icon class="">
-                            <v-icon size="20"  class="">mdi-web</v-icon>
+                            <v-icon size="20" class="">mdi-web</v-icon>
                         </v-btn>
                     </template>
 
@@ -58,7 +58,7 @@
                         </v-list-item>
                     </v-list>
                 </v-menu>
-                
+
                 <router-link to="/cart" class="cart-link">
                     <v-badge :model-value="cartCount > 0" :content="cartCount" color="pink" location="top right"
                         offset-x="9" offset-y="7">
@@ -162,6 +162,14 @@ export default {
 
 .navbar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999 !important;
+    background: white !important;
+    height: 56px !important;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .nav-wrapper {
