@@ -4,7 +4,7 @@
             <!-- MOBILE LEFT -->
             <div class="d-flex d-md-none align-center">
                 <v-btn icon variant="text" @click="drawer = !drawer">
-                    <v-icon size="20">
+                    <v-icon size="24">
                         {{ drawer ? 'mdi-close' : 'mdi-menu' }}
                     </v-icon>
                 </v-btn>
