@@ -46,13 +46,14 @@ export default {
 <style lang="scss">
 @import "./scss/variables.scss";
 
-html[dir="rtl"] {
-  font-family: $body-font-family-arabic !important;
-}
-
 .app {
   font-family: $body-font-family !important;
   background-color: #fffbf8 !important;
+}
+
+html[dir="rtl"] .app,
+html[dir="rtl"] .app * {
+  font-family: $body-font-family-arabic !important;
 }
 .section-title {
     font-family: 'Montserrat', sans-serif;

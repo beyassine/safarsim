@@ -78,7 +78,6 @@ export default {
 }
 
 .section-title {
-    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 550;
     line-height: 1.2;

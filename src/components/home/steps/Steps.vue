@@ -113,7 +113,6 @@ export default {
 </script>
 <style scoped>
 .section-title-1 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 550;
     line-height: 1.2;

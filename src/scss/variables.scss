@@ -4,9 +4,8 @@
 
 $body-font-family: 'Montserrat', sans-serif;
 
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+// Global 
 
-// Arabic
-
-$body-font-family-arabic: 'Almarai', sans-serif;
+$body-font-family-arabic: 'Cairo', sans-serif;

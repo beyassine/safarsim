@@ -94,7 +94,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .hero-card {
     border-radius: 0;
@@ -123,7 +122,6 @@ export default {
 }
 
 .hero-title {
-    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     font-weight: 550;
     line-height: 1.2;
@@ -132,7 +130,6 @@ export default {
 }
 
 .hero-subtitle {
-    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 450;
     line-height: 1.6;
@@ -145,7 +142,6 @@ export default {
 }
 
 .info-title {
-    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 550;
     line-height: 1;
