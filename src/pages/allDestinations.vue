@@ -4,14 +4,16 @@
       <h1 class="section-title">Toutes Destinations</h1>
     </div>
 
-    <DestinationSearch :destinations="destinations" :popular-destinations="popularDestinations"
-      placeholder="Où voyages-tu ?"  @select="goToDestination" class="mb-8" />
+    <div class="search-sticky-wrapper">
+      <DestinationSearch :destinations="destinations" :popular-destinations="popularDestinations"
+        placeholder="Où voyages-tu ?" @select="goToDestination" class="mb-8" />
+    </div>
 
     <div>
       <h2 class="page-subtitle text-center">Plans régionaux</h2>
       <v-row>
-        <v-col v-for="country in regions" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
-          <DestinationCard :country="country" />
+        <v-col v-for="region in regions" :key="region.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
+          <DestinationCardRegion :country="region" />
         </v-col>
       </v-row>
     </div>
@@ -33,6 +35,7 @@
 import { ref, computed } from 'vue'
 import DestinationSearch from "@/components/DestinationSearchBar.vue";
 import DestinationCard from '@/components/DestinationCard.vue'
+import DestinationCardRegion from '@/components/DestinationCardRegion.vue'
 
 import regions from "@/data/regions.json";
 import destinations from "@/data/destinations.json";
@@ -67,7 +70,7 @@ const filteredDestinations = computed(() => {
   return result
 })
 
-function  goToDestination(destination) {
+function goToDestination(destination) {
   router.push({ name: 'destinationDetails', params: { slug: destination.slug } })
 }
 </script>
@@ -88,6 +91,13 @@ function  goToDestination(destination) {
   text-decoration: underline;
   text-decoration-color: black;
   text-decoration-thickness: 2px;
+}
+.search-sticky-wrapper {
+  position: sticky;
+  top: 56px; /* adjust based on your navbar height */
+  z-index: 20;
+  background: #fffbf8; /* same as page bg */
+  padding: 8px 0;
 }
 
 @media (max-width: 960px) {

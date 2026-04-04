@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="text-body-1 mb-1">
-                  {{ item.dataLabel }} • {{ item.days }} jours : {{ item.price}} DHs
+                  {{ item.dataLabel }} • {{ item.days }} jours : {{ item.price }} DHs
                 </div>
               </div>
             </div>
@@ -75,9 +75,9 @@
 
           <v-divider class="mb-4" />
 
-          <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill" class="text-none font-weight-bold mb-3"
-            @click="checkout">
-            Continuer par WHATSAPP
+          <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
+            class="text-none font-weight-bold mb-3" @click="checkout">
+            Continuer par WhatsApp
           </v-btn>
         </v-card>
       </v-col>
@@ -141,10 +141,31 @@ export default {
       clearCart()
       this.refreshCart()
     },
-
     checkout() {
-      this.$router.push('/checkout')
-    },
+      if (!this.cart.length) return
+
+      const phoneNumber = '212613147245'
+
+      const lines = [
+        'Bonjour,',
+        '',
+        'Je souhaite commander les eSIM suivantes :',
+        '',
+        ...this.cart.map((item, index) => {
+          const lineTotal = item.price * item.quantity
+          return `${index + 1}. ${item.destinationName} - ${item.dataLabel} - ${item.days} jours - Quantité: ${item.quantity} - Prix unitaire: ${item.price} DH - Total: ${lineTotal} DH`
+        }),
+        '',
+        `Total panier : ${this.total} DH`,
+        '',
+        'Merci.'
+      ]
+
+      const message = encodeURIComponent(lines.join('\n'))
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+
+      window.open(whatsappUrl, '_blank')
+    }
   },
 
   mounted() {

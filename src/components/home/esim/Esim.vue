@@ -19,11 +19,6 @@
                         découvrez les meilleures adresses et explorez les sites incontournables,
                         tout en restant connecté avec vos proches grâce à votre eSIM.
                     </p>
-
-                    <v-btn color="green-darken-1 text-none" block="" size="large" rounded="lg">
-                        Achetez votre eSIM maintenant
-                    </v-btn>
-
                 </v-col>
             </v-row>
 

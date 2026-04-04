@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router"
 import Home from "../pages/Home.vue"
 import Destination from "../pages/Destination.vue"
 import allDestinations from "../pages/allDestinations.vue"
+import Region from "../pages/Region.vue"
 import Cart from "../pages/Cart.vue"
 import Compatibility from "../pages/compatibilityPage.vue"
 import Help from "../pages/Help.vue"
@@ -22,6 +23,11 @@ const routes = [
     path: "/destinations/:slug",
     name: "destinationDetails",
     component: Destination
+  },
+  {
+    path: "/regions/:slug",
+    name: "regionDetails",
+    component: Region
   },
   {
     path: "/cart",
