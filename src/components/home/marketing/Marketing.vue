@@ -27,9 +27,11 @@
                             dans plus de 160 destinations.
                             Gardez votre numéro WhatsApp et naviguez comme un local.
                         </p>
+                        <router-link class="text-decoration-none text-black" to="/destinations" >
                         <v-btn class="text-none" block rounded="lg" color="pink-darken-1" size="large" variant="flat">
                             Choisir ma destination
                         </v-btn>
+                        </router-link>
                     </v-col>
                 </v-row>
             </div>

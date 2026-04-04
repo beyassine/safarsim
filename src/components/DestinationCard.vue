@@ -44,7 +44,7 @@ const getEntryPrice = (destination) => {
 }
 const getImage = (item) => {
   if (item.type === "region") {
-    return item.image;
+    return require(`@/assets/images/flags/regions/regions.png`);
   }
 
   try {
