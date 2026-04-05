@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>SAFAR SIM – eSIM pour voyager connecté</title>
+
+  <meta name="description"
+    content="Voyagez connecté partout dans le monde avec l’eSIM SAFAR SIM. Internet 4G/5G dans plus de 190 destinations. Activation instantanée." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SAFAR SIM – eSIM pour voyager connecté" />
+  <meta property="og:description"
+    content="Internet mobile dans plus de 190 destinations avec eSIM SAFAR SIM. Activation en 2 minutes." />
+  <meta property="og:image" content="https://safarsim.net/og-image.jpg" />
+  <meta property="og:url" content="https://safarsim.net" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SAFAR SIM" />
+
+  <!-- Twitter (WhatsApp sometimes uses these too) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SAFAR SIM – eSIM pour voyager connecté">
+  <meta name="twitter:description" content="Internet 4G/5G dans plus de 190 destinations avec eSIM SAFAR SIM.">
+  <meta name="twitter:image" content="https://safarsim.net/og-image.jpg">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
