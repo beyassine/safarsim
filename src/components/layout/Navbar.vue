@@ -27,7 +27,11 @@
                     <v-btn variant="text">Compatibilité eSIM</v-btn>
                 </router-link>
 
-                <router-link class="text-decoration-none text-black" to="/">
+                <router-link class="text-decoration-none text-black" to="pricing">
+                    <v-btn variant="text">Tarifs</v-btn>
+                </router-link>
+
+                <router-link class="text-decoration-none text-black" to="help">
                     <v-btn variant="text">Aide</v-btn>
                 </router-link>
             </div>
@@ -85,6 +89,11 @@
 
             <router-link to="/compatibility" class="menu-item" @click="drawer = false">
                 <span>Compatibilité eSIM</span>
+                <v-icon>mdi-arrow-right</v-icon>
+            </router-link>
+
+            <router-link to="pricing" class="menu-item" @click="drawer = false">
+                <span>Tarifs</span>
                 <v-icon>mdi-arrow-right</v-icon>
             </router-link>
 

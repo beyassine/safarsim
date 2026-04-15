@@ -32,9 +32,12 @@
                         <h4 class="footer-title">Entreprise</h4>
                         <ul>
                             <li>À propos</li>
-                            <li>Nos offres</li>
-                            <li>Avis clients</li>
-                            <li>Contact</li>
+                            <router-link class="text-decoration-none" to="pricing">
+                                <li>Tarifs</li>
+                            </router-link>
+                            <router-link class="text-decoration-none" to="pricing">
+                                <li>Contact</li>
+                            </router-link>
                         </ul>
                     </v-col>
 
@@ -43,11 +46,18 @@
                     <v-col cols="6" md="2">
                         <h4 class="footer-title">Destinations</h4>
                         <ul>
+                            <router-link class="text-decoration-none" to="/regions/europe">
                             <li>eSIM Europe</li>
-                            <li>eSIM USA</li>
-                            <li>eSIM Maroc</li>
-                            <li>eSIM Asie</li>
+                            </router-link>
+                            <router-link class="text-decoration-none" to="/destinations/arabie-saoudite">
+                            <li>eSIM ARABIE SAUDITE</li>
+                            </router-link>
+                            <router-link class="text-decoration-none" to="/destinations/turquie">
+                            <li>eSIM Turquie</li>
+                            </router-link>
+                            <router-link class="text-decoration-none" to="/destinations">
                             <li>Toutes les destinations</li>
+                            </router-link>
                         </ul>
                     </v-col>
 
@@ -56,9 +66,15 @@
                     <v-col cols="6" md="2">
                         <h4 class="footer-title">Légal</h4>
                         <ul>
-                            <li>Conditions générales</li>
-                            <li>Confidentialité</li>
-                            <li>Cookies</li>
+                            <router-link class="text-decoration-none" to="/terms-of-service">
+                                <li>Conditions générales</li>
+                            </router-link>
+                            <router-link class="text-decoration-none" to="/privacy-policy">
+                                <li>Confidentialité</li>
+                            </router-link>
+                            <router-link class="text-decoration-none" to="/refund-policy">
+                                <li>Politique de Remboursement</li>
+                            </router-link>
                         </ul>
                     </v-col>
 
@@ -67,10 +83,12 @@
                     <v-col cols="6" md="2">
                         <h4 class="footer-title">Support</h4>
                         <ul>
-                            <li>Centre d’aide</li>
-                            <li>Compatibilité eSIM</li>
-                            <li>Guide d’installation</li>
-                            <li>FAQ</li>
+                            <router-link class="text-decoration-none" to="/help">
+                                <li>Aide</li>
+                            </router-link>
+                            <router-link class="text-decoration-none" to="/compatibility">
+                                <li>Compatibilité eSIM</li>
+                            </router-link>
                         </ul>
                     </v-col>
 
