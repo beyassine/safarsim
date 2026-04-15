@@ -31,11 +31,13 @@
                     <v-col cols="6" md="2">
                         <h4 class="footer-title">Entreprise</h4>
                         <ul>
+                            <router-link class="text-decoration-none" to="/about">
                             <li>À propos</li>
-                            <router-link class="text-decoration-none" to="pricing">
+                            </router-link>
+                            <router-link class="text-decoration-none" to="/pricing">
                                 <li>Tarifs</li>
                             </router-link>
-                            <router-link class="text-decoration-none" to="pricing">
+                            <router-link class="text-decoration-none" to="/contact">
                                 <li>Contact</li>
                             </router-link>
                         </ul>

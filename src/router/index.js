@@ -11,7 +11,8 @@ import Princg from "../pages/PricingPage.vue"
 import PrivacyPolicy from "@/pages/PrivacyPolicy.vue"
 import RefundPolicy from "@/pages/RefundPolicy.vue"
 import TermsOfService from "@/pages/TermsOfService.vue"
-
+import contact from "@/pages/contact.vue"
+import about from "@/pages/about.vue"
 
 const routes = [
   {
@@ -68,6 +69,16 @@ const routes = [
     path: "/terms-of-service",
     name: "termsOfService",
     component: TermsOfService,
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: contact,
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: about,
   },
 ]
 
