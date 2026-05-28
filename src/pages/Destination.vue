@@ -101,34 +101,37 @@ export default {
     parsedPlans() {
       if (!this.destination?.plans) return []
 
-      return Object.entries(this.destination.plans).map(([key, planConfig]) => {
+      return Object.entries(this.destination.plans).flatMap(([key, planConfig]) => {
         const hasPlanConfig = planConfig && typeof planConfig === 'object'
         const price = hasPlanConfig ? planConfig.price : planConfig
         const esimGoBundleName = hasPlanConfig ? planConfig.esimGoBundleName : null
+
+        if (price === null || price === undefined) return []
+
         const match = key.match(/^(\d+GB)_(\d+)days$/)
 
         if (!match) {
-          return {
+          return [{
             key,
             data: '',
             days: 0,
             dataLabel: key,
             price,
             esimGoBundleName,
-          }
+          }]
         }
 
         const data = match[1]
         const days = Number(match[2])
 
-        return {
+        return [{
           key,
           data,
           days,
           dataLabel: data.replace('GB', ' GB'),
           price,
           esimGoBundleName,
-        }
+        }]
       })
     },
 

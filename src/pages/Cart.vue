@@ -103,7 +103,9 @@
               {{ paypalError }}
             </div>
 
-            <div id="paypal-button-container"></div>
+            <div id="paypal-button-wrapper">
+              <div :id="paypalButtonContainerId" :key="paypalButtonRenderKey"></div>
+            </div>
           </div>
 
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
@@ -141,6 +143,10 @@ export default {
       paypalLoading: false,
       paypalError: '',
       paypalConfig: null,
+      paypalButtonRenderKey: 0,
+      paypalButtons: null,
+      paypalRenderTimeout: null,
+      paypalRendering: false,
       pendingOrderId: '',
       customerEmail: '',
       snackbar: {
@@ -193,6 +199,10 @@ export default {
     hasValidEmail() {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.customerEmail)
     },
+
+    paypalButtonContainerId() {
+      return `paypal-button-container-${this.paypalButtonRenderKey}`
+    },
   },
 
   methods: {
@@ -209,7 +219,7 @@ export default {
 
       if (this.paypalLoaded) {
         await this.$nextTick()
-        this.renderPayPalButtons()
+        this.schedulePayPalButtonsRender()
       }
     },
 
@@ -266,7 +276,7 @@ export default {
       if (window.paypal && this.isPayPalScriptLoaded(scriptSrc)) {
         this.paypalLoaded = true
         await this.$nextTick()
-        this.renderPayPalButtons()
+        this.schedulePayPalButtonsRender()
         return
       }
 
@@ -278,7 +288,7 @@ export default {
         } else if (window.paypal) {
           this.paypalLoaded = true
           await this.$nextTick()
-          this.renderPayPalButtons()
+          this.schedulePayPalButtonsRender()
           return
         } else {
           this.paypalLoading = true
@@ -286,7 +296,7 @@ export default {
             this.paypalLoading = false
             this.paypalLoaded = true
             await this.$nextTick()
-            this.renderPayPalButtons()
+            this.schedulePayPalButtonsRender()
           }, { once: true })
           return
         }
@@ -305,7 +315,7 @@ export default {
           this.paypalLoading = false
           this.paypalLoaded = true
           await this.$nextTick()
-          this.renderPayPalButtons()
+          this.schedulePayPalButtonsRender()
         }
 
         script.onerror = () => {
@@ -334,15 +344,42 @@ export default {
       return existingScript?.src === scriptSrc
     },
 
-    renderPayPalButtons() {
+    closePayPalButtons() {
+      if (this.paypalButtons?.close) {
+        try {
+          this.paypalButtons.close()
+        } catch (error) {
+          console.warn('Unable to close PayPal buttons:', error)
+        }
+      }
+
+      this.paypalButtons = null
+    },
+
+    schedulePayPalButtonsRender() {
+      clearTimeout(this.paypalRenderTimeout)
+
+      this.paypalRenderTimeout = setTimeout(() => {
+        this.renderPayPalButtons()
+      }, 75)
+    },
+
+    async renderPayPalButtons() {
       if (!window.paypal || !this.cart.length) return
+      if (this.paypalRendering) return
 
-      const container = document.getElementById('paypal-button-container')
-      if (!container) return
+      this.paypalRendering = true
+      this.closePayPalButtons()
+      this.paypalButtonRenderKey += 1
+      await this.$nextTick()
 
-      container.innerHTML = ''
+      const container = document.getElementById(this.paypalButtonContainerId)
+      if (!container) {
+        this.paypalRendering = false
+        return
+      }
 
-      window.paypal.Buttons({
+      const buttons = window.paypal.Buttons({
         style: {
           layout: 'vertical',
           shape: 'pill',
@@ -412,7 +449,15 @@ export default {
         onCancel: () => {
           this.showMessage('Paiement annulé.')
         },
-      }).render('#paypal-button-container')
+      })
+
+      this.paypalButtons = buttons
+
+      try {
+        await buttons.render(`#${this.paypalButtonContainerId}`)
+      } finally {
+        this.paypalRendering = false
+      }
     },
   },
 
@@ -425,6 +470,8 @@ export default {
   },
 
   beforeUnmount() {
+    clearTimeout(this.paypalRenderTimeout)
+    this.closePayPalButtons()
     window.removeEventListener(CART_UPDATED_EVENT, this.refreshCart)
     window.removeEventListener('storage', this.refreshCart)
   },
