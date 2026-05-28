@@ -1,0 +1,137 @@
+[
+  {
+    "name": "France",
+    "slug": "france",
+    "flag": "🇫🇷",
+    "image": "/images/destinations/france.jpg",
+    "popular": true,
+    "iso": "FR",
+    "plans": {
+      "1GB_7days": 60,
+      "5GB_30days": 135,
+      "10GB_30days": 160,
+      "20GB_30days": 200,
+      "50GB_30days": 320
+    }
+  },
+  {
+    "name": "Espagne",
+    "slug": "espagne",
+    "flag": "🇪🇸",
+    "image": "/images/destinations/espagne.jpg",
+    "popular": true,
+    "iso": "ES",
+    "plans": {
+      "1GB_7days": 60,
+      "5GB_30days": 140,
+      "10GB_30days": 170,
+      "20GB_30days": 220,
+      "50GB_30days": 335
+    }
+  },
+  {
+    "name": "Turquie",
+    "slug": "turquie",
+    "flag": "🇹🇷",
+    "image": "/images/destinations/turquie.jpg",
+    "popular": true,
+    "iso": "TR",
+    "plans": {
+      "1GB_7days": 65,
+      "5GB_30days": 140,
+      "10GB_30days": 155,
+      "20GB_30days": 190,
+      "50GB_30days": 285
+    }
+  },
+  {
+    "name": "Italie",
+    "slug": "italie",
+    "flag": "🇮🇹",
+    "image": "/images/destinations/italie.jpg",
+    "popular": true,
+    "iso": "IT",
+    "plans": {
+      "1GB_7days": 60,
+      "5GB_30days": 135,
+      "10GB_30days": 160,
+      "20GB_30days": 200,
+      "50GB_30days": 320
+    }
+  },
+  {
+    "name": "Émirats arabes unis",
+    "slug": "emirats-arabes-unis",
+    "flag": "🇦🇪",
+    "image": "/images/destinations/emirats-arabes-unis.jpg",
+    "popular": true,
+    "iso": "AE",
+    "plans": {
+      "1GB_7days": 75,
+      "5GB_30days": 185,
+      "10GB_30days": 250,
+      "20GB_30days": 365,
+      "50GB_30days": 695
+    }
+  },
+  {
+    "name": "Arabie saoudite",
+    "slug": "arabie-saoudite",
+    "flag": "🇸🇦",
+    "image": "/images/destinations/arabie-saoudite.jpg",
+    "popular": true,
+    "iso": "SA",
+    "plans": {
+      "1GB_7days": 70,
+      "5GB_30days": 170,
+      "10GB_30days": 230,
+      "20GB_30days": 305,
+      "50GB_30days": 610
+    }
+  },
+  {
+    "name": "Égypte",
+    "slug": "egypte",
+    "flag": "🇪🇬",
+    "image": "/images/destinations/egypte.jpg",
+    "popular": true,
+    "iso": "EG",
+    "plans": {
+      "1GB_7days": 80,
+      "5GB_30days": 200,
+      "10GB_30days": 250,
+      "20GB_30days": 350,
+      "50GB_30days": 645
+    }
+  },
+  {
+    "name": "États-Unis",
+    "slug": "etats-unis",
+    "flag": "🇺🇸",
+    "image": "/images/destinations/etats-unis.jpg",
+    "popular": true,
+    "iso": "US",
+    "plans": {
+      "1GB_7days": 65,
+      "5GB_30days": 165,
+      "10GB_30days": 210,
+      "20GB_30days": 300,
+      "50GB_30days": 550
+    }
+  },
+  {
+    "name": "Canada",
+    "slug": "canada",
+    "flag": "🇨🇦",
+    "image": "/images/destinations/canada.jpg",
+    "popular": true,
+    "iso": "CA",
+    "plans": {
+      "1GB_7days": 75,
+      "5GB_30days": 205,
+      "10GB_30days": 285,
+      "20GB_30days": 430,
+      "50GB_30days": 810
+    }
+  }
+]

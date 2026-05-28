@@ -1,0 +1,401 @@
+[
+  {
+    "name": "Afrique",
+    "slug": "afrique",
+    "type": "region",
+    "flag": null,
+    "image": "./assets/images/flags/regions/regions.png",
+    "popular": false,
+    "iso": null,
+    "code": "africa",
+    "coverageIsoCodes": [
+      "EG",
+      "MA",
+      "TZ",
+      "UG",
+      "TN",
+      "ZA",
+      "ZM",
+      "MG",
+      "NG",
+      "KE",
+      "MU",
+      "RE"
+    ],
+    "plans": {
+      "1GB_7days": {
+        "price": 120,
+        "esimGoBundleName": "esim_1GB_7D_RAF_V2"
+      },
+      "5GB_30days": {
+        "price": 405,
+        "esimGoBundleName": "esim_5GB_30D_RAF_V2"
+      },
+      "10GB_30days": {
+        "price": 660,
+        "esimGoBundleName": "esim_10GB_30D_RAF_V2"
+      },
+      "20GB_30days": {
+        "price": 1105,
+        "esimGoBundleName": "esim_20GB_30D_RAF_V2"
+      },
+      "50GB_30days": {
+        "price": 100,
+        "esimGoBundleName": null
+      }
+    },
+    "esimGoRateSheetName": "Africa"
+  },
+  {
+    "name": "Amériques",
+    "slug": "ameriques",
+    "type": "region",
+    "flag": null,
+    "image": "./assets/images/flags/regions/regions.png",
+    "popular": false,
+    "iso": null,
+    "code": "americas",
+    "coverageIsoCodes": [
+      "AR",
+      "BR",
+      "CL",
+      "CO",
+      "CR",
+      "EC",
+      "SV",
+      "PE",
+      "UY",
+      "GF",
+      "MX"
+    ],
+    "plans": {
+      "1GB_7days": {
+        "price": 85,
+        "esimGoBundleName": "esim_1GB_7D_RLA_V2"
+      },
+      "5GB_30days": {
+        "price": 240,
+        "esimGoBundleName": "esim_5GB_30D_RLA_V2"
+      },
+      "10GB_30days": {
+        "price": 355,
+        "esimGoBundleName": "esim_10GB_30D_RLA_V2"
+      },
+      "20GB_30days": {
+        "price": 555,
+        "esimGoBundleName": "esim_20GB_30D_RLA_V2"
+      },
+      "50GB_30days": {
+        "price": 1125,
+        "esimGoBundleName": "esim_50GB_30D_RLA_V2"
+      }
+    },
+    "esimGoRateSheetName": "Americas"
+  },
+  {
+    "name": "Asie",
+    "slug": "asie",
+    "type": "region",
+    "flag": null,
+    "image": "@/assets/images/flags/regions/regions.png",
+    "popular": false,
+    "iso": null,
+    "code": "asia",
+    "coverageIsoCodes": [
+      "AU",
+      "HK",
+      "ID",
+      "KR",
+      "MO",
+      "MY",
+      "PK",
+      "SG",
+      "LK",
+      "TW",
+      "TH",
+      "UZ",
+      "VN",
+      "NZ"
+    ],
+    "plans": {
+      "1GB_7days": {
+        "price": 80,
+        "esimGoBundleName": "esim_1GB_7D_RAS_V2"
+      },
+      "5GB_30days": {
+        "price": 220,
+        "esimGoBundleName": "esim_5GB_30D_RAS_V2"
+      },
+      "10GB_30days": {
+        "price": 315,
+        "esimGoBundleName": "esim_10GB_30D_RAS_V2"
+      },
+      "20GB_30days": {
+        "price": 485,
+        "esimGoBundleName": "esim_20GB_30D_RAS_V2"
+      },
+      "50GB_30days": {
+        "price": 970,
+        "esimGoBundleName": "esim_50GB_30D_RAS_V2"
+      }
+    },
+    "esimGoRateSheetName": "Asia"
+  },
+  {
+    "name": "Caraïbes",
+    "slug": "caraibes",
+    "type": "region",
+    "flag": null,
+    "image": "@/assets/images/flags/regions/regions.png",
+    "popular": false,
+    "iso": null,
+    "code": "caribbean",
+    "coverageIsoCodes": [
+      "AI",
+      "AG",
+      "BS",
+      "BB",
+      "BM",
+      "BQ",
+      "KY",
+      "CW",
+      "DM",
+      "SV",
+      "GF",
+      "GD",
+      "GY",
+      "HT",
+      "JM",
+      "MQ",
+      "MS",
+      "AN",
+      "KN",
+      "LC",
+      "VC",
+      "TT",
+      "TC",
+      "VG",
+      "SR"
+    ],
+    "plans": {
+      "1GB_7days": {
+        "price": 115,
+        "esimGoBundleName": "esim_1GB_7D_RCA_V2"
+      },
+      "5GB_30days": {
+        "price": 335,
+        "esimGoBundleName": "esim_5GB_30D_RCA_V2"
+      },
+      "10GB_30days": {
+        "price": 510,
+        "esimGoBundleName": "esim_10GB_30D_RCA_V2"
+      },
+      "20GB_30days": {
+        "price": 790,
+        "esimGoBundleName": "esim_20GB_30D_RCA_V2"
+      },
+      "50GB_30days": {
+        "price": 100,
+        "esimGoBundleName": null
+      }
+    },
+    "esimGoRateSheetName": "Caribbean"
+  },
+  {
+    "name": "Amérique centrale",
+    "slug": "amerique-centrale-et-mexique",
+    "type": "region",
+    "flag": null,
+    "image": "@/assets/images/flags/regions/regions.png",
+    "popular": false,
+    "iso": null,
+    "code": "cenam",
+    "coverageIsoCodes": [
+      "CR",
+      "SV",
+      "GT",
+      "HN",
+      "MX",
+      "NI",
+      "PA"
+    ],
+    "plans": {
+      "1GB_7days": {
+        "price": 90,
+        "esimGoBundleName": "esim_1GB_7D_RCE_V2"
+      },
+      "5GB_30days": {
+        "price": 240,
+        "esimGoBundleName": "esim_5GB_30D_RCE_V2"
+      },
+      "10GB_30days": {
+        "price": 315,
+        "esimGoBundleName": "esim_10GB_30D_RCE_V2"
+      },
+      "20GB_30days": {
+        "price": 450,
+        "esimGoBundleName": "esim_20GB_30D_RCE_V2"
+      },
+      "50GB_30days": {
+        "price": 880,
+        "esimGoBundleName": "esim_50GB_30D_RCE_V2"
+      }
+    },
+    "esimGoRateSheetName": "CENAM"
+  },
+  {
+    "name": "Europe",
+    "slug": "europe",
+    "type": "region",
+    "flag": null,
+    "image": "@/assets/images/flags/regions/regions.png",
+    "popular": false,
+    "iso": null,
+    "code": "europe-extra",
+    "coverageIsoCodes": [
+      "AT",
+      "DK",
+      "IE",
+      "IT",
+      "SE",
+      "FR",
+      "BG",
+      "CY",
+      "EE",
+      "FI",
+      "GR",
+      "HU",
+      "LV",
+      "LT",
+      "NL",
+      "NO",
+      "PL",
+      "RO",
+      "SK",
+      "ES",
+      "GB",
+      "TR",
+      "DE",
+      "MT",
+      "CH",
+      "BE",
+      "HR",
+      "CZ",
+      "LI",
+      "LU",
+      "PT",
+      "SI",
+      "IS",
+      "IC",
+      "VA",
+      "CYP",
+      "MD",
+      "RS"
+    ],
+    "plans": {
+      "1GB_7days": {
+        "price": 65,
+        "esimGoBundleName": "esim_1GB_7D_REUX_V2"
+      },
+      "5GB_30days": {
+        "price": 145,
+        "esimGoBundleName": "esim_5GB_30D_REUX_V2"
+      },
+      "10GB_30days": {
+        "price": 180,
+        "esimGoBundleName": "esim_10GB_30D_REUX_V2"
+      },
+      "20GB_30days": {
+        "price": 235,
+        "esimGoBundleName": "esim_20GB_30D_REUX_V2"
+      },
+      "50GB_30days": {
+        "price": 405,
+        "esimGoBundleName": "esim_50GB_30D_REUX_V2"
+      }
+    },
+    "esimGoRateSheetName": "Europe Extra"
+  },
+  {
+    "name": "MENA",
+    "slug": "moyen-orient-et-afrique-du-nord",
+    "type": "region",
+    "flag": null,
+    "image": "@/assets/images/flags/regions/regions.png",
+    "popular": false,
+    "iso": null,
+    "code": "middle-east-and-north-africa",
+    "coverageIsoCodes": [
+      "AE",
+      "BH",
+      "EG",
+      "MA",
+      "SA",
+      "TN",
+      "QA",
+      "KW",
+      "JO"
+    ],
+    "plans": {
+      "1GB_7days": {
+        "price": 75,
+        "esimGoBundleName": "esim_1GB_7D_RMENA_V2"
+      },
+      "5GB_30days": {
+        "price": 200,
+        "esimGoBundleName": "esim_5GB_30D_RMENA_V2"
+      },
+      "10GB_30days": {
+        "price": 285,
+        "esimGoBundleName": "esim_10GB_30D_RMENA_V2"
+      },
+      "20GB_30days": {
+        "price": 435,
+        "esimGoBundleName": "esim_20GB_30D_RMENA_V2"
+      },
+      "50GB_30days": {
+        "price": 805,
+        "esimGoBundleName": "esim_50GB_30D_RMENA_V2"
+      }
+    },
+    "esimGoRateSheetName": "Middle East and North Africa"
+  },
+  {
+    "name": "Amérique du Nord",
+    "slug": "amerique-du-nord",
+    "type": "region",
+    "flag": null,
+    "image": "@/assets/images/flags/regions/regions.png",
+    "popular": false,
+    "iso": null,
+    "code": "north-america",
+    "coverageIsoCodes": [
+      "CA",
+      "MX",
+      "US"
+    ],
+    "plans": {
+      "1GB_7days": {
+        "price": 75,
+        "esimGoBundleName": "esim_1GB_7D_RNA_V2"
+      },
+      "5GB_30days": {
+        "price": 210,
+        "esimGoBundleName": "esim_5GB_30D_RNA_V2"
+      },
+      "10GB_30days": {
+        "price": 295,
+        "esimGoBundleName": "esim_10GB_30D_RNA_V2"
+      },
+      "20GB_30days": {
+        "price": 440,
+        "esimGoBundleName": "esim_20GB_30D_RNA_V2"
+      },
+      "50GB_30days": {
+        "price": 840,
+        "esimGoBundleName": "esim_50GB_30D_RNA_V2"
+      }
+    },
+    "esimGoRateSheetName": "North America"
+  }
+]
