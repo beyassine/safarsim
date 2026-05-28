@@ -74,7 +74,7 @@
           </div>
 
           <div class="d-flex justify-space-between mb-4 charged-currency">
-            <span>PayPal débitera</span>
+            <span>PayPal débitera ::</span>
             <strong>{{ paypalTotalUsd }} USD</strong>
           </div>
 
