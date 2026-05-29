@@ -73,10 +73,12 @@
             <strong>{{ total }} DH</strong>
           </div>
 
+          <!-- PayPal is temporarily disabled while verification is pending.
           <div class="d-flex justify-space-between mb-4 charged-currency">
             <span>PayPal débitera ::</span>
             <strong>{{ paypalTotalUsd }} USD</strong>
           </div>
+          -->
 
           <v-divider class="mb-4" />
 
@@ -90,6 +92,7 @@
             hide-details="auto"
           />
 
+          <!-- PayPal buttons are temporarily disabled while verification is pending.
           <div class="mb-4">
             <div class="text-subtitle-1 font-weight-bold mb-2">
               Paiement sécurisé par PayPal
@@ -107,6 +110,7 @@
               <div :id="paypalButtonContainerId" :key="paypalButtonRenderKey"></div>
             </div>
           </div>
+          -->
 
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
             class="text-none font-weight-bold mb-3" @click="checkoutWhatsApp">
@@ -160,7 +164,7 @@ export default {
   computed: {
     subtotal() {
       return this.cart.reduce((total, item) => {
-        return total + item.price * item.quantity
+        return total + Number(item.price) * Number(item.quantity)
       }, 0)
     },
 
@@ -182,9 +186,9 @@ export default {
         destinationName: item.destinationName,
         dataLabel: item.dataLabel,
         days: item.days,
-        quantity: item.quantity,
-        unitPrice: item.price,
-        totalPrice: item.price * item.quantity,
+        quantity: Number(item.quantity),
+        unitPrice: Number(item.price),
+        totalPrice: Number(item.price) * Number(item.quantity),
         esimGoBundleName: item.esimGoBundleName,
         flag: item.flag,
       }))
@@ -215,11 +219,49 @@ export default {
     },
 
     async refreshCart() {
-      this.cart = getCart()
+      const cart = getCart()
+      const normalizedCart = cart
+        .map(this.normalizeCartItem)
+        .filter(Boolean)
+
+      if (normalizedCart.length !== cart.length) {
+        localStorage.setItem('cart', JSON.stringify(normalizedCart))
+      }
+
+      this.cart = normalizedCart
+      console.log('Cart refreshed:', this.cart)
 
       if (this.paypalLoaded) {
         await this.$nextTick()
         this.schedulePayPalButtonsRender()
+      }
+    },
+
+    normalizeCartItem(item) {
+      const price = item.price && typeof item.price === 'object'
+        ? Number(item.price.price)
+        : Number(item.price)
+      const quantity = Number(item.quantity || 1)
+      const days = Number(item.days)
+
+      if (
+        !item.destinationName ||
+        !item.dataLabel ||
+        !Number.isFinite(days) ||
+        days < 1 ||
+        !Number.isFinite(price) ||
+        price <= 0 ||
+        !Number.isInteger(quantity) ||
+        quantity < 1
+      ) {
+        return null
+      }
+
+      return {
+        ...item,
+        days,
+        price,
+        quantity,
       }
     },
 
@@ -392,7 +434,6 @@ export default {
               this.showMessage('Veuillez entrer une adresse email valide.', 'error')
               throw new Error('Customer email is required')
             }
-
             const response = await axios.post(
               `${process.env.VUE_APP_API_URL}/api/paypal/create-order`,
               {
@@ -405,8 +446,9 @@ export default {
 
             return response.data.id
           } catch (error) {
-            console.error('Create order error:', error)
-            this.showMessage('Erreur lors de la création de la commande PayPal.', 'error')
+            const errorMessage = error.response?.data?.error || 'Erreur lors de la création de la commande PayPal.'
+            console.error('Create order error:', error.response?.data || error)
+            this.showMessage(errorMessage, 'error')
             throw error
           }
         },
@@ -463,7 +505,8 @@ export default {
 
   mounted() {
     this.refreshCart()
-    this.loadPayPalScript()
+    // PayPal is temporarily disabled while verification is pending.
+    // this.loadPayPalScript()
 
     window.addEventListener(CART_UPDATED_EVENT, this.refreshCart)
     window.addEventListener('storage', this.refreshCart)
