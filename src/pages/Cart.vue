@@ -1,7 +1,5 @@
 <template>
   <v-container class="py-8 cart-page">
-    <h1 class="section-title mb-6">Mon panier</h1>
-
     <div v-if="cart.length === 0">
       <v-card rounded="xl" elevation="0" class="pa-8 empty-cart text-center">
         <v-icon size="56" class="mb-4">mdi-cart-outline</v-icon>
@@ -17,60 +15,56 @@
     </div>
 
     <v-row v-else>
-      <v-col cols="12" md="8">
-        <v-card v-for="item in cart" :key="item.id" rounded="xl" elevation="1" class="mb-4 pa-4 cart-item">
-          <div class="d-flex justify-space-between align-start">
-            <div class="d-flex align-start">
-              <div class="flag-emoji mr-3">{{ item.flag }}</div>
+      <v-col cols="12" md="6">
+        <v-card rounded="xl" elevation="1" class="pa-5 summary-card">
+        <h2 class="subsection-title mb-4">Résumé de commande</h2>
+          <div v-for="(item, index) in cart" :key="item.id" class="cart-line py-4">
+            <div class="d-flex justify-space-between align-start">
+              <div class="d-flex align-start">
+                <div class="flag-emoji mr-3">{{ item.flag }}</div>
 
-              <div>
-                <div class="text-h6 font-weight-bold mb-1">
-                  {{ item.destinationName }}
-                </div>
+                <div>
+                  <div class="text-h6 font-weight-bold mb-1">
+                    {{ item.destinationName }}
+                  </div>
 
-                <div class="text-body-1 mb-1">
-                  {{ item.dataLabel }} • {{ item.days }} jours : {{ item.price }} DHs
+                  <div class="text-body-1 mb-1">
+                    {{ item.dataLabel }} • {{ item.days }} jours : {{ item.price }} DHs
+                  </div>
                 </div>
+              </div>
+
+              <v-btn icon variant="text" @click="removeItem(item.id)">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+            </div>
+
+            <div class="d-flex justify-space-between align-center mt-5 flex-wrap ga-3">
+              <div class="quantity-box d-flex align-center">
+                <v-btn icon size="small" variant="outlined" @click="decrease(item.id)">
+                  <v-icon size="18">mdi-minus</v-icon>
+                </v-btn>
+
+                <span class="mx-4 font-weight-bold">{{ item.quantity }}</span>
+
+                <v-btn icon size="small" variant="outlined" @click="increase(item.id)">
+                  <v-icon size="18">mdi-plus</v-icon>
+                </v-btn>
+              </div>
+
+              <div class="text-h6 font-weight-bold">
+                {{ item.price * item.quantity }} DH
               </div>
             </div>
 
-            <v-btn icon variant="text" @click="removeItem(item.id)">
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
+            <v-divider v-if="index < cart.length - 1" class="mt-4" />
           </div>
 
-          <div class="d-flex justify-space-between align-center mt-5 flex-wrap ga-3">
-            <div class="quantity-box d-flex align-center">
-              <v-btn icon size="small" variant="outlined" @click="decrease(item.id)">
-                <v-icon size="18">mdi-minus</v-icon>
-              </v-btn>
-
-              <span class="mx-4 font-weight-bold">{{ item.quantity }}</span>
-
-              <v-btn icon size="small" variant="outlined" @click="increase(item.id)">
-                <v-icon size="18">mdi-plus</v-icon>
-              </v-btn>
-            </div>
-
-            <div class="text-h6 font-weight-bold">
-              {{ item.price * item.quantity }} DH
-            </div>
-          </div>
-        </v-card>
-      </v-col>
-
-      <v-col cols="12" md="4">
-        <v-card rounded="xl" elevation="0" class="pa-5 summary-card">
-          <h2 class="text-h6 font-weight-bold mb-4">Résumé</h2>
-
-          <div class="d-flex justify-space-between mb-2">
-            <span>Sous-total</span>
-            <strong>{{ subtotal }} DH</strong>
-          </div>
+          <v-divider class="my-4" />
 
           <div class="d-flex justify-space-between mb-4">
-            <span>Total</span>
-            <strong>{{ total }} DH</strong>
+            <span class="text-h6 font-weight-bold">Total</span>
+            <span class="text-h6 font-weight-bold">{{ total }} DH</span>
           </div>
 
           <!-- PayPal is temporarily disabled while verification is pending.
@@ -80,18 +74,10 @@
           </div>
           -->
 
-          <v-divider class="mb-4" />
+        </v-card>
 
-          <v-text-field
-            v-model.trim="customerEmail"
-            type="email"
-            label="Email"
-            variant="outlined"
-            density="comfortable"
-            class="mb-4"
-            hide-details="auto"
-          />
-
+        <v-card rounded="xl" elevation="1" class="pa-5 payment-card mt-6 d-none d-md-block">
+          <h2 class="subsection-title mb-4">Paiement</h2>
           <!-- PayPal buttons are temporarily disabled while verification is pending.
           <div class="mb-4">
             <div class="text-subtitle-1 font-weight-bold mb-2">
@@ -113,7 +99,134 @@
           -->
 
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
-            class="text-none font-weight-bold mb-3" @click="checkoutWhatsApp">
+            class="text-none font-weight-bold mb-3" :disabled="!isPaymentReady" @click="checkoutWhatsApp">
+            Continuer par WhatsApp
+          </v-btn>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" md="6">
+        <v-card rounded="xl" elevation="1" class="pa-5 compatibility-card mb-6">
+        <h4 class="subsection-title mb-4">Compatibilité téléphone</h4>
+          <v-alert
+            :type="hasSelectedCompatiblePhone ? 'success' : 'info'"
+            variant="tonal"
+            class="mb-4"
+          >
+            {{ compatibilityMessage }}
+          </v-alert>
+
+          <v-select
+            v-model="phoneModel"
+            :items="phoneModelOptions"
+            label="Modèle du téléphone"
+            variant="outlined"
+            density="comfortable"
+            rounded="lg"
+            prepend-inner-icon="mdi-cellphone"
+            :menu-props="{ maxHeight: 320 }"
+            class="mb-4"
+            hide-details="auto"
+            @update:model-value="phoneSubmodel = ''"
+          />
+
+          <v-autocomplete
+            v-model="phoneSubmodel"
+            :items="phoneSubmodelOptions"
+            label="Sous-modèle"
+            variant="outlined"
+            density="comfortable"
+            rounded="lg"
+            prepend-inner-icon="mdi-cellphone-check"
+            :menu-props="{ maxHeight: 320 }"
+            hide-details="auto"
+            :disabled="!phoneModel"
+            no-data-text="Aucun modèle trouvé"
+          />
+        </v-card>
+        <v-card rounded="xl" elevation="1" class="pa-5 contact-card">
+        <h2 class="subsection-title mb-4">Informations de contact</h2>
+          <v-alert
+            icon="mdi-information-outline"
+            variant="tonal"
+            class="mb-4"
+          >
+          Les QR codes des eSIM achetées seront envoyés par email. 
+          <br>Merci de fournir une adresse email valide et accessible.
+        </v-alert>
+          <v-text-field
+            v-model.trim="customerEmail"
+            type="email"
+            label="Email"
+            variant="outlined"
+            density="comfortable"
+            rounded="lg"
+            prepend-inner-icon="mdi-email-outline"
+            class="mb-4"
+            :error-messages="customerEmailError"
+            hide-details="auto"
+          />
+
+          <v-text-field
+            v-model.trim="customerEmailConfirmation"
+            type="email"
+            label="Confirmer l'email"
+            variant="outlined"
+            density="comfortable"
+            rounded="lg"
+            prepend-inner-icon="mdi-email-check-outline"
+            class="mb-4"
+            :error-messages="customerEmailConfirmationError"
+            hide-details="auto"
+          />
+
+          <v-text-field
+            v-model.trim="customerPhone"
+            type="tel"
+            label="Téléphone"
+            variant="outlined"
+            density="comfortable"
+            rounded="lg"
+            prepend-inner-icon="mdi-phone-outline"
+            class="mb-4"
+            hide-details="auto"
+          >
+            <template #append-inner>
+              <span class="phone-help" tabindex="0">
+                <v-icon size="22" color="grey-darken-1">
+                  mdi-help-circle-outline
+                </v-icon>
+                <span class="phone-help-tooltip">
+                  En cas de besoin, nous vous contacterons à propos de votre commande.
+                </span>
+              </span>
+            </template>
+          </v-text-field>
+        </v-card>
+        <v-card rounded="xl" elevation="1" class="pa-5 payment-card mt-6 d-md-none">
+          <h2 class="subsection-title mb-4">Paiement</h2>
+          <!-- PayPal buttons are temporarily disabled while verification is pending.
+          <div class="mb-4">
+            <div class="text-subtitle-1 font-weight-bold mb-2">
+              Paiement sécurisé par PayPal
+            </div>
+
+            <div v-if="paypalLoading" class="text-body-2 text-medium-emphasis">
+              Chargement de PayPal...
+            </div>
+
+            <div v-if="paypalError" class="text-body-2 text-red mb-2">
+              {{ paypalError }}
+            </div>
+
+            <div id="paypal-button-wrapper">
+              <div :id="paypalButtonContainerId" :key="paypalButtonRenderKey"></div>
+            </div>
+          </div>
+          -->
+
+          <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
+            class="text-none font-weight-bold mb-3" :disabled="!isPaymentReady" @click="checkoutWhatsApp">
             Continuer par WhatsApp
           </v-btn>
         </v-card>
@@ -128,6 +241,7 @@
 
 <script>
 import axios from 'axios'
+import { iosCompatibility, androidCompatibility } from '@/data/deviceCompatibility'
 import {
   getCart,
   increaseQuantity,
@@ -153,6 +267,10 @@ export default {
       paypalRendering: false,
       pendingOrderId: '',
       customerEmail: '',
+      customerEmailConfirmation: '',
+      customerPhone: '',
+      phoneModel: '',
+      phoneSubmodel: '',
       snackbar: {
         show: false,
         text: '',
@@ -162,14 +280,10 @@ export default {
   },
 
   computed: {
-    subtotal() {
+    total() {
       return this.cart.reduce((total, item) => {
         return total + Number(item.price) * Number(item.quantity)
       }, 0)
-    },
-
-    total() {
-      return this.subtotal
     },
 
     madToUsdRate() {
@@ -197,11 +311,105 @@ export default {
     customerPayload() {
       return {
         email: this.customerEmail,
+        phone: this.customerPhone,
       }
+    },
+
+    compatibilityPayload() {
+      return {
+        phoneModel: this.phoneModel,
+        phoneSubmodel: this.phoneSubmodel,
+      }
+    },
+
+    deviceCompatibilityGroups() {
+      const groups = new Map()
+      const priorityBrands = ['iphone', 'samsung', 'oppo', 'huawei', 'xiaomi']
+
+      ;[...iosCompatibility, ...androidCompatibility].forEach(group => {
+        const brand = this.formatDeviceBrand(group.brand)
+        const key = brand.toLowerCase()
+        const existing = groups.get(key) || {
+          brand,
+          models: new Set(),
+        }
+
+        group.models.forEach(model => {
+          existing.models.add(model)
+        })
+
+        groups.set(key, existing)
+      })
+
+      return Array.from(groups.values())
+        .map(group => ({
+          brand: group.brand,
+          models: Array.from(group.models).sort((a, b) => a.localeCompare(b)),
+        }))
+        .sort((a, b) => {
+          const aPriority = priorityBrands.indexOf(a.brand.toLowerCase())
+          const bPriority = priorityBrands.indexOf(b.brand.toLowerCase())
+
+          if (aPriority !== -1 || bPriority !== -1) {
+            if (aPriority === -1) return 1
+            if (bPriority === -1) return -1
+            return aPriority - bPriority
+          }
+
+          return a.brand.localeCompare(b.brand)
+        })
+    },
+
+    phoneModelOptions() {
+      return this.deviceCompatibilityGroups.map(group => group.brand)
+    },
+
+    phoneSubmodelOptions() {
+      return this.deviceCompatibilityGroups.find(group => group.brand === this.phoneModel)?.models || []
+    },
+
+    hasSelectedCompatiblePhone() {
+      return Boolean(this.phoneModel && this.phoneSubmodel)
+    },
+
+    compatibilityMessage() {
+      if (this.hasSelectedCompatiblePhone) {
+        return 'Votre téléphone est compatible avec la eSIM.'
+      }
+
+      return 'Merci de sélectionner le modèle de votre téléphone. Votre téléphone doit être d’une génération récente pour adopter la eSIM.'
     },
 
     hasValidEmail() {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.customerEmail)
+    },
+
+    emailsMatch() {
+      return this.customerEmail === this.customerEmailConfirmation
+    },
+
+    hasValidConfirmedEmail() {
+      return this.hasValidEmail && this.emailsMatch
+    },
+
+    hasValidPhone() {
+      return Boolean(this.customerPhone.trim())
+    },
+
+    isPaymentReady() {
+      return this.hasSelectedCompatiblePhone && this.hasValidConfirmedEmail && this.hasValidPhone
+    },
+
+    customerEmailError() {
+      if (!this.customerEmail || this.hasValidEmail) return ''
+
+      return 'Veuillez entrer une adresse email valide.'
+    },
+
+    customerEmailConfirmationError() {
+      if (!this.customerEmailConfirmation || this.emailsMatch) return ''
+
+      return 'Les adresses email ne correspondent pas.'
     },
 
     paypalButtonContainerId() {
@@ -285,8 +493,47 @@ export default {
       this.refreshCart()
     },
 
+    formatDeviceBrand(brand) {
+      const normalizedBrand = String(brand || '').trim()
+      const specialBrands = {
+        oppo: 'OPPO',
+      }
+
+      if (normalizedBrand.toLowerCase() === 'apple') {
+        return 'iPhone'
+      }
+
+      if (specialBrands[normalizedBrand.toLowerCase()]) {
+        return specialBrands[normalizedBrand.toLowerCase()]
+      }
+
+      return normalizedBrand
+        .toLowerCase()
+        .replace(/\b\w/g, character => character.toUpperCase())
+    },
+
+    paymentValidationMessage() {
+      if (!this.hasSelectedCompatiblePhone) {
+        return 'Veuillez sélectionner un téléphone compatible avec la eSIM.'
+      }
+
+      if (!this.hasValidConfirmedEmail) {
+        return 'Veuillez entrer deux adresses email valides et identiques.'
+      }
+
+      if (!this.hasValidPhone) {
+        return 'Veuillez entrer votre numéro de téléphone.'
+      }
+
+      return 'Veuillez compléter les informations requises.'
+    },
+
     checkoutWhatsApp() {
       if (!this.cart.length) return
+      if (!this.isPaymentReady) {
+        this.showMessage(this.paymentValidationMessage(), 'error')
+        return
+      }
 
       const phoneNumber = '212613147245'
 
@@ -299,6 +546,10 @@ export default {
           const lineTotal = item.price * item.quantity
           return `${index + 1}. ${item.destinationName} - ${item.dataLabel} - ${item.days} jours - Quantité: ${item.quantity} - Prix unitaire: ${item.price} DH - Total: ${lineTotal} DH`
         }),
+        '',
+        `Téléphone compatible : ${this.phoneModel || 'Non renseigné'} ${this.phoneSubmodel || ''}`.trim(),
+        `Email : ${this.customerEmail || 'Non renseigné'}`,
+        `Téléphone : ${this.customerPhone || 'Non renseigné'}`,
         '',
         `Total panier : ${this.total} DH`,
         '',
@@ -430,15 +681,16 @@ export default {
 
         createOrder: async () => {
           try {
-            if (!this.hasValidEmail) {
-              this.showMessage('Veuillez entrer une adresse email valide.', 'error')
-              throw new Error('Customer email is required')
+            if (!this.isPaymentReady) {
+              this.showMessage(this.paymentValidationMessage(), 'error')
+              throw new Error('Customer information is incomplete')
             }
             const response = await axios.post(
               `${process.env.VUE_APP_API_URL}/api/paypal/create-order`,
               {
                 cart: this.cartPayload,
                 customer: this.customerPayload,
+                compatibility: this.compatibilityPayload,
               }
             )
 
@@ -462,6 +714,7 @@ export default {
                 localOrderId: this.pendingOrderId,
                 cart: this.cartPayload,
                 customer: this.customerPayload,
+                compatibility: this.compatibilityPayload,
               }
             )
 
@@ -522,17 +775,25 @@ export default {
 </script>
 
 <style scoped>
+.app {
+  background-color: white !important;
+}
+
 .cart-page {
   max-width: 1100px;
+  min-height: 100vh;
 }
 
 .empty-cart,
-.summary-card {
-  background: #f7f4f1;
+.summary-card,
+.compatibility-card,
+.contact-card,
+.payment-card {
+  background: white;
 }
 
-.cart-item {
-  background: white;
+.cart-line:first-of-type {
+  padding-top: 0 !important;
 }
 
 .charged-currency {
@@ -547,5 +808,49 @@ export default {
 
 .quantity-box {
   border-radius: 999px;
+}
+
+.phone-help {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: help;
+}
+
+.phone-help-tooltip {
+  position: absolute;
+  right: -14px;
+  bottom: calc(100% + 14px);
+  z-index: 5;
+  width: 270px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(17, 17, 17, 0.96);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.phone-help-tooltip::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  bottom: -9px;
+  border-top: 10px solid rgba(17, 17, 17, 0.96);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+.phone-help:hover .phone-help-tooltip,
+.phone-help:focus .phone-help-tooltip,
+.phone-help:focus-within .phone-help-tooltip {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

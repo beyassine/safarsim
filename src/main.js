@@ -10,6 +10,14 @@ import { createVuetify } from "vuetify"
 import * as components from "vuetify/components"
 import * as directives from "vuetify/directives"
 
+const resizeObserverLoopError = "ResizeObserver loop completed with undelivered notifications."
+
+window.addEventListener("error", (event) => {
+  if (event.message === resizeObserverLoopError) {
+    event.stopImmediatePropagation()
+  }
+})
+
 const vuetify = createVuetify({
   theme: {
     defaultTheme: 'light',

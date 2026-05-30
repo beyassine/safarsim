@@ -63,6 +63,14 @@ html[dir="rtl"] .app * {
     color: #1f2937;
     margin-bottom: 10px;
 }
+.subsection-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 550;
+    line-height: 1.0;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
 .main-content {
   padding-top: 40px;
 }
