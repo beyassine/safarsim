@@ -3,10 +3,10 @@
     <!-- Breadcrumb -->
     <div class="mb-6 text-body-2">
       <router-link to="/destinations" class="text-decoration-none">
-        <span class="text-medium-emphasis">Destinations</span>
+        <span class="text-medium-emphasis">{{ $t("common.destinations") }}</span>
       </router-link>
       <span class="mx-2">></span>
-      <strong>{{ destination.name }}</strong>
+      <strong>{{ localizedDestinationName }}</strong>
     </div>
 
     <!-- Country card -->
@@ -15,7 +15,7 @@
         <div class="flag-wrapper">
           <v-img :src="getImage(destination)" contain class="flag-img" @error="fallback" />
         </div>
-        <h2 class="text-h5 font-weight-bold ml-3">{{ destination.name }}</h2>
+        <h2 class="text-h5 font-weight-bold ml-3">{{ localizedDestinationName }}</h2>
         <div class="text-body-1 ml-2 ">{{ destination.iso }}</div>
       </div>
 
@@ -23,18 +23,18 @@
 
       <div class="d-flex align-center mb-6 text-body-1">
         <v-icon size="20" class="mr-2">mdi-signal-cellular-outline</v-icon>
-        <strong class="mr-2">Réseau disponible</strong>
+        <strong class="mr-2">{{ $t("destinationsPage.availableNetwork") }}</strong>
         <v-chip class="mr-2" size="x-small" variant="outlined">4G</v-chip>
         <v-chip size="x-small" variant="outlined">5G</v-chip>
       </div>
       <div class="d-flex align-start">
         <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
-        <div>Le forfait démarre dès la connexion à un réseau pris en charge</div>
+        <div>{{ $t("destinationsPage.planStarts") }}</div>
       </div>
       <router-link to="/compatibility">
         <v-btn color="green" rounded="pill" class="text-none font-weight-bold mt-2 mb-6"
           prepend-icon="mdi-cellphone-check">
-          Vérifier la compatibilité
+          {{ $t("destinationsPage.checkCompatibility") }}
         </v-btn>
       </router-link>
     </v-card>
@@ -42,11 +42,11 @@
     <!-- Packages -->
     <v-card rounded="xl" elevation="0" class="pa-4 pa-md-6 mb-8 package-card">
 
-      <h3 class="text-h5 text-center mb-5">Choisissez votre forfait</h3>
+      <h3 class="text-h5 text-center mb-5">{{ $t("destinationsPage.choosePlan") }}</h3>
       <div class="section-line mb-6"></div>
 
       <div v-for="group in groupedPlans" :key="group.days" class="mb-8">
-        <div class="text-h6 font-weight-bold mb-4">{{ group.days }} jours</div>
+        <div class="text-h6 font-weight-bold mb-4">{{ group.days }} {{ $t("destinationsPage.days") }}</div>
 
         <v-card v-for="plan in group.items" :key="plan.key" rounded="xl" elevation="1"
           class="mb-5 px-4 py-4 package-item">
@@ -77,13 +77,14 @@
   </v-container>
 
   <v-container v-else class="py-10">
-    <h2>Pays introuvable</h2>
+    <h2>{{ $t("destinationsPage.countryNotFound") }}</h2>
   </v-container>
 </template>
 
 <script>
 import destinations from '@/data/destinations.json'
 import { addToCart } from '@/utils/cart'
+import { getLocalizedName } from '@/utils/localizedNames'
 
 export default {
   name: 'DestinationDetailsPage',
@@ -154,6 +155,10 @@ export default {
           }),
         }))
     },
+
+    localizedDestinationName() {
+      return getLocalizedName(this.destination, this.$i18n.locale)
+    },
   },
 
   methods: {
@@ -164,7 +169,8 @@ export default {
     addToCart(plan) {
       addToCart({
         id: `${this.destination.slug}-${plan.key}`,
-        destinationName: this.destination.name,
+        destinationName: this.localizedDestinationName,
+        names: this.destination.names,
         destinationSlug: this.destination.slug,
         flag: this.destination.flag,
         image: this.destination.image,
@@ -181,7 +187,8 @@ export default {
     handleAddToCart(plan) {
       addToCart({
         id: `${this.destination.slug}-${plan.key}`,
-        destinationName: this.destination.name,
+        destinationName: this.localizedDestinationName,
+        names: this.destination.names,
         destinationSlug: this.destination.slug,
         flag: this.destination.flag,
         image: this.destination.image,
@@ -196,7 +203,7 @@ export default {
       })
 
       this.addedPlanKey = plan.key
-      this.snackbarText = 'Forfait ajouté au panier avec succès'
+      this.snackbarText = this.$t('destinationsPage.addedToCart')
       this.snackbar = true
 
       setTimeout(() => {

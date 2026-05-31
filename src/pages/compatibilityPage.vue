@@ -4,41 +4,39 @@
       <!-- Breadcrumb -->
       <div class="mb-6 mt-2 text-body-2">
         <router-link to="/" class="text-decoration-none">
-          <span class="text-medium-emphasis">Acceuil</span>
+          <span class="text-medium-emphasis">{{ $t("common.home") }}</span>
         </router-link>
         <span class="mx-2">></span>
-        <strong>Appareils Compatibles</strong>
+        <strong>{{ $t("compatibility.breadcrumb") }}</strong>
       </div>
 
       <div class="mb-8">
-        <h1 class="section-title mb-4">Vérifier la compatibilité</h1>
+        <h1 class="section-title mb-4">{{ $t("compatibility.title") }}</h1>
 
         <p class="page-text mb-4">
-          Pour utiliser une eSIM Safar Sim, un appareil doit remplir les conditions suivantes :
+          {{ $t("compatibility.intro") }}
         </p>
 
         <ul class="conditions-list mb-5">
-          <li>L’appareil prend en charge les eSIM.</li>
-          <li>L’appareil n’est pas verrouillé par un opérateur ou par le réseau.</li>
-          <li>L’appareil n’est pas jailbreaké (iOS) ou rooté (Android).</li>
+          <li>{{ $t("compatibility.conditionEsim") }}</li>
+          <li>{{ $t("compatibility.conditionUnlocked") }}</li>
+          <li>{{ $t("compatibility.conditionRoot") }}</li>
         </ul>
 
         <p class="page-text mb-4">
-          Vous pouvez consulter notre liste pour vérifier si l’appareil que vous souhaitez utiliser
-          est compatible eSIM. Notez que certains modèles régionaux peuvent ne pas prendre en charge l’eSIM.
+          {{ $t("compatibility.description") }}
         </p>
         <v-alert class="mt-10 pa-6 text-center" variant="tonal" rounded="lg" >
           <p class="mb-3">
-            <strong>Vous avez trouvé votre appareil compatible ? 📱</strong>
+            <strong>{{ $t("compatibility.ctaTitle") }} 📱</strong>
           </p>
 
           <p class="mb-4">
-            Il ne vous reste plus qu’à choisir votre destination et profiter d’une
-            connexion internet immédiate avec eSIM <strong class="text-pink-darken-1 font-weight-bold"> SAFAR SIM</strong>.
+            {{ $t("compatibility.ctaText") }} <strong class="text-pink-darken-1 font-weight-bold"> SAFAR SIM</strong>.
           </p>
           <router-link  to="/destinations" class="text-decoration-none">
             <v-btn color="pink" size="large" class="text-none" prepend-icon="mdi-earth">
-              Voir les destinations
+              {{ $t("common.viewDestinations") }}
             </v-btn>
           </router-link>
         </v-alert>
@@ -46,14 +44,14 @@
 
       <div class="search-wrapper mb-8">
         <v-text-field v-model="search" density="comfortable" variant="outlined" rounded="lg" hide-details
-          prepend-inner-icon="mdi-magnify" placeholder="Rechercher votre appareil" bg-color="white" clearable />
+          prepend-inner-icon="mdi-magnify" :placeholder="$t('compatibility.searchPlaceholder')" bg-color="white" clearable />
       </div>
 
       <div v-if="filteredDevices.length">
         <div v-for="group in filteredDevices" :key="group.brand" class="brand-section">
           <div class="brand-header">
             <h2 class="brand-title">{{ group.brand }}</h2>
-            <span class="brand-count">{{ group.models.length }} modèle(s)</span>
+            <span class="brand-count">{{ group.models.length }} {{ $t("common.models") }}</span>
           </div>
 
           <div class="models-grid">
@@ -65,12 +63,11 @@
       </div>
 
       <v-alert v-else type="info" variant="tonal" rounded="lg">
-        Aucun appareil trouvé       
+        {{ $t("compatibility.noDevice") }}       
 
         <p class="page-text">
-          <strong>Vous ne trouvez pas votre appareil ?</strong>
-          Notre liste est mise à jour régulièrement, mais elle n’est pas exhaustive — vérifiez auprès
-          du fabricant pour confirmer la compatibilité eSIM.
+          <strong>{{ $t("compatibility.notFoundTitle") }}</strong>
+          {{ $t("compatibility.notFoundText") }}
         </p>
 
       </v-alert>

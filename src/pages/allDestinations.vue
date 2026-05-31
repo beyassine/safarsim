@@ -1,16 +1,16 @@
 <template>
   <v-container class="destinations-page">
     <div class="text-center mb-8">
-      <h1 class="section-title">Toutes Destinations</h1>
+      <h1 class="section-title">{{ $t("destinationsPage.title") }}</h1>
     </div>
 
     <div class="search-sticky-wrapper">
       <DestinationSearch :destinations="destinations" :popular-destinations="popularDestinations"
-        placeholder="Où voyages-tu ?" @select="goToDestination" class="mb-8" />
+        @select="goToDestination" class="mb-8" />
     </div>
 
     <div>
-      <h2 class="page-subtitle text-center">Plans régionaux</h2>
+      <h2 class="page-subtitle text-center">{{ $t("destinationsPage.regionalPlans") }}</h2>
       <v-row>
         <v-col v-for="region in regions" :key="region.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
           <DestinationCardRegion :country="region" />
@@ -20,7 +20,7 @@
 
 
     <div>
-      <h2 class="page-subtitle text-center">Choisissez par pays</h2>
+      <h2 class="page-subtitle text-center">{{ $t("destinationsPage.chooseByCountry") }}</h2>
       <v-row>
         <v-col v-for="country in destinations" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
           <DestinationCard :country="country" />

@@ -44,7 +44,12 @@
         "esimGoBundleName": null
       }
     },
-    "esimGoRateSheetName": "Africa"
+    "esimGoRateSheetName": "Africa",
+    "names": {
+      "fr": "Afrique",
+      "en": "Africa",
+      "ar": "أفريقيا"
+    }
   },
   {
     "name": "Amériques",
@@ -90,7 +95,12 @@
         "esimGoBundleName": "esim_50GB_30D_RLA_V2"
       }
     },
-    "esimGoRateSheetName": "Americas"
+    "esimGoRateSheetName": "Americas",
+    "names": {
+      "fr": "Amériques",
+      "en": "Americas",
+      "ar": "الأمريكتان"
+    }
   },
   {
     "name": "Asie",
@@ -139,7 +149,12 @@
         "esimGoBundleName": "esim_50GB_30D_RAS_V2"
       }
     },
-    "esimGoRateSheetName": "Asia"
+    "esimGoRateSheetName": "Asia",
+    "names": {
+      "fr": "Asie",
+      "en": "Asia",
+      "ar": "آسيا"
+    }
   },
   {
     "name": "Caraïbes",
@@ -199,7 +214,12 @@
         "esimGoBundleName": null
       }
     },
-    "esimGoRateSheetName": "Caribbean"
+    "esimGoRateSheetName": "Caribbean",
+    "names": {
+      "fr": "Caraïbes",
+      "en": "Caribbean",
+      "ar": "منطقة البحر الكاريبي"
+    }
   },
   {
     "name": "Amérique centrale",
@@ -241,7 +261,12 @@
         "esimGoBundleName": "esim_50GB_30D_RCE_V2"
       }
     },
-    "esimGoRateSheetName": "CENAM"
+    "esimGoRateSheetName": "CENAM",
+    "names": {
+      "fr": "Amérique centrale",
+      "en": "CENAM",
+      "ar": "Amérique centrale"
+    }
   },
   {
     "name": "Europe",
@@ -314,7 +339,12 @@
         "esimGoBundleName": "esim_50GB_30D_REUX_V2"
       }
     },
-    "esimGoRateSheetName": "Europe Extra"
+    "esimGoRateSheetName": "Europe Extra",
+    "names": {
+      "fr": "Europe",
+      "en": "Europe Extra",
+      "ar": "Europe"
+    }
   },
   {
     "name": "MENA",
@@ -358,7 +388,12 @@
         "esimGoBundleName": "esim_50GB_30D_RMENA_V2"
       }
     },
-    "esimGoRateSheetName": "Middle East and North Africa"
+    "esimGoRateSheetName": "Middle East and North Africa",
+    "names": {
+      "fr": "MENA",
+      "en": "Middle East and North Africa",
+      "ar": "MENA"
+    }
   },
   {
     "name": "Amérique du Nord",
@@ -396,6 +431,11 @@
         "esimGoBundleName": "esim_50GB_30D_RNA_V2"
       }
     },
-    "esimGoRateSheetName": "North America"
+    "esimGoRateSheetName": "North America",
+    "names": {
+      "fr": "Amérique du Nord",
+      "en": "North America",
+      "ar": "Amérique du Nord"
+    }
   }
 ]

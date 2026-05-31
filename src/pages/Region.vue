@@ -3,10 +3,10 @@
     <!-- Breadcrumb -->
     <div class="mb-6 text-body-2">
       <router-link to="/destinations" class="text-decoration-none">
-        <span class="text-medium-emphasis">Destinations</span>
+        <span class="text-medium-emphasis">{{ $t("common.destinations") }}</span>
       </router-link>
       <span class="mx-2">></span>
-      <strong>{{ region.name }}</strong>
+      <strong>{{ localizedRegionName }}</strong>
     </div>
 
     <!-- Region card -->
@@ -16,9 +16,9 @@
           <v-img :src="region.image" cover class="flag-img rounded-lg" />
         </div>
         <div class="ml-3">
-          <h2 class="text-h5 font-weight-bold">{{ region.name }}</h2>
+          <h2 class="text-h5 font-weight-bold">{{ localizedRegionName }}</h2>
           <div class="text-body-2 text-medium-emphasis">
-            {{ coveredCountries.length }} pays couverts
+            {{ coveredCountries.length }} {{ $t("destinationsPage.coveredCountries") }}
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
 
       <div class="d-flex align-center mb-6 text-body-1">
         <v-icon size="20" class="mr-2">mdi-earth</v-icon>
-        <strong class="mr-2">Couverture régionale</strong>
+        <strong class="mr-2">{{ $t("destinationsPage.regionalCoverage") }}</strong>
         <v-chip class="mr-2" size="x-small" variant="outlined">4G</v-chip>
         <v-chip size="x-small" variant="outlined">5G</v-chip>
       </div>
@@ -35,7 +35,7 @@
       <div class="d-flex align-start mb-4">
         <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
         <div>
-          Cette eSIM fonctionne dans les pays inclus dans cette région.
+          {{ $t("destinationsPage.regionWorks") }}
         </div>
       </div>
 
@@ -46,14 +46,14 @@
           class="text-none font-weight-bold mt-2"
           prepend-icon="mdi-cellphone-check"
         >
-          Vérifier la compatibilité
+          {{ $t("destinationsPage.checkCompatibility") }}
         </v-btn>
       </router-link>
     </v-card>
 
     <!-- Covered countries -->
     <v-card rounded="xl" elevation="0" class="pa-4 pa-md-6 mb-8 package-card">
-      <h3 class="text-h5 text-center mb-5">Pays inclus dans cette région</h3>
+      <h3 class="text-h5 text-center mb-5">{{ $t("destinationsPage.countriesIncluded") }}</h3>
       <div class="section-line mb-6"></div>
 
       <v-row>
@@ -86,11 +86,11 @@
 
     <!-- Packages -->
     <v-card rounded="xl" elevation="0" class="pa-4 pa-md-6 mb-8 package-card">
-      <h3 class="text-h5 text-center mb-5">Choisissez votre forfait</h3>
+      <h3 class="text-h5 text-center mb-5">{{ $t("destinationsPage.choosePlan") }}</h3>
       <div class="section-line mb-6"></div>
 
       <div v-for="group in groupedPlans" :key="group.days" class="mb-8">
-        <div class="text-h6 font-weight-bold mb-4">{{ group.days }} jours</div>
+        <div class="text-h6 font-weight-bold mb-4">{{ group.days }} {{ $t("destinationsPage.days") }}</div>
 
         <v-card
           v-for="plan in group.items"
@@ -131,13 +131,14 @@
   </v-container>
 
   <v-container v-else class="py-10">
-    <h2>Région introuvable</h2>
+    <h2>{{ $t("destinationsPage.regionNotFound") }}</h2>
   </v-container>
 </template>
 
 <script>
 import regions from '@/data/regions.json'
 import { addToCart } from '@/utils/cart'
+import { getLocalizedName } from '@/utils/localizedNames'
 
 export default {
   name: 'RegionDetailsPage',
@@ -333,10 +334,16 @@ export default {
     coveredCountries() {
       if (!this.region?.coverageIsoCodes) return []
 
+      const locale = this.$i18n.locale
+
       return this.region.coverageIsoCodes.map((iso) => ({
         iso,
-        name: this.getCountryName(iso),
+        name: this.getCountryName(iso, locale),
       }))
+    },
+
+    localizedRegionName() {
+      return getLocalizedName(this.region, this.$i18n.locale)
     },
   },
 
@@ -349,7 +356,8 @@ export default {
     handleAddToCart(plan) {
       addToCart({
         id: `${this.region.slug}-${plan.key}`,
-        destinationName: this.region.name,
+        destinationName: this.localizedRegionName,
+        names: this.region.names,
         destinationSlug: this.region.slug,
         flag: this.region.flag,
         image: this.region.image,
@@ -365,7 +373,7 @@ export default {
       })
 
       this.addedPlanKey = plan.key
-      this.snackbarText = 'Forfait ajouté au panier avec succès'
+      this.snackbarText = this.$t('destinationsPage.addedToCart')
       this.snackbar = true
 
       setTimeout(() => {
@@ -373,13 +381,15 @@ export default {
       }, 1500)
     },
 
-    getCountryName(iso) {
-      if (this.countryNameOverrides[iso]) {
+    getCountryName(iso, locale = 'fr') {
+      const lang = String(locale || 'fr').split('-')[0]
+
+      if (lang === 'fr' && this.countryNameOverrides[iso]) {
         return this.countryNameOverrides[iso]
       }
 
       try {
-        const displayNames = new Intl.DisplayNames(['fr'], { type: 'region' })
+        const displayNames = new Intl.DisplayNames([lang], { type: 'region' })
         return displayNames.of(iso) || iso
       } catch (e) {
         return iso

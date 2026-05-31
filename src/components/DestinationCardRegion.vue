@@ -12,11 +12,11 @@
                 <div>
                     <v-card-item>
                         <v-card-title class="card-title">
-                            {{ country.name }}
+                            {{ getLocalizedName(country) }}
                         </v-card-title>
 
                         <v-card-subtitle>
-                            Á partir de <span class=" text-h6 font-weight-bold text-pink-darken-4"> {{
+                            {{ $t("common.from") }} <span class=" text-h6 font-weight-bold text-pink-darken-4"> {{
                                 getEntryPrice(country) }} DH</span>
                         </v-card-subtitle>
                     </v-card-item>
@@ -33,6 +33,7 @@
 </template>
 
 <script setup>
+import { getLocalizedName } from "@/utils/localizedNames"
 
 defineProps({
     country: Object

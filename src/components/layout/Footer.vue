@@ -29,16 +29,16 @@
 
                     <!-- COLUMN 1 -->
                     <v-col cols="6" md="2">
-                        <h4 class="footer-title">Entreprise</h4>
+                        <h4 class="footer-title">{{ $t("footer.company") }}</h4>
                         <ul>
                             <router-link class="text-decoration-none" to="/about">
-                            <li>À propos</li>
+                            <li>{{ $t("footer.about") }}</li>
                             </router-link>
                             <router-link class="text-decoration-none" to="/pricing">
-                                <li>Tarifs</li>
+                                <li>{{ $t("footer.pricing") }}</li>
                             </router-link>
                             <router-link class="text-decoration-none" to="/contact">
-                                <li>Contact</li>
+                                <li>{{ $t("footer.contact") }}</li>
                             </router-link>
                         </ul>
                     </v-col>
@@ -46,19 +46,19 @@
 
                     <!-- COLUMN 2 -->
                     <v-col cols="6" md="2">
-                        <h4 class="footer-title">Destinations</h4>
+                        <h4 class="footer-title">{{ $t("footer.destinations") }}</h4>
                         <ul>
                             <router-link class="text-decoration-none" to="/regions/europe">
-                            <li>eSIM Europe</li>
+                            <li>{{ $t("footer.esimEurope") }}</li>
                             </router-link>
                             <router-link class="text-decoration-none" to="/destinations/arabie-saoudite">
-                            <li>eSIM ARABIE SAUDITE</li>
+                            <li>{{ $t("footer.esimSaudiArabia") }}</li>
                             </router-link>
                             <router-link class="text-decoration-none" to="/destinations/turquie">
-                            <li>eSIM Turquie</li>
+                            <li>{{ $t("footer.esimTurkey") }}</li>
                             </router-link>
                             <router-link class="text-decoration-none" to="/destinations">
-                            <li>Toutes les destinations</li>
+                            <li>{{ $t("footer.allDestinations") }}</li>
                             </router-link>
                         </ul>
                     </v-col>
@@ -66,16 +66,16 @@
 
                     <!-- COLUMN 3 -->
                     <v-col cols="6" md="2">
-                        <h4 class="footer-title">Légal</h4>
+                        <h4 class="footer-title">{{ $t("footer.legal") }}</h4>
                         <ul>
                             <router-link class="text-decoration-none" to="/terms-of-service">
-                                <li>Conditions générales</li>
+                                <li>{{ $t("footer.terms") }}</li>
                             </router-link>
                             <router-link class="text-decoration-none" to="/privacy-policy">
-                                <li>Confidentialité</li>
+                                <li>{{ $t("footer.privacy") }}</li>
                             </router-link>
                             <router-link class="text-decoration-none" to="/refund-policy">
-                                <li>Politique de Remboursement</li>
+                                <li>{{ $t("footer.refund") }}</li>
                             </router-link>
                         </ul>
                     </v-col>
@@ -83,13 +83,13 @@
 
                     <!-- COLUMN 4 -->
                     <v-col cols="6" md="2">
-                        <h4 class="footer-title">Support</h4>
+                        <h4 class="footer-title">{{ $t("footer.support") }}</h4>
                         <ul>
                             <router-link class="text-decoration-none" to="/help">
-                                <li>Aide</li>
+                                <li>{{ $t("footer.help") }}</li>
                             </router-link>
                             <router-link class="text-decoration-none" to="/compatibility">
-                                <li>Compatibilité eSIM</li>
+                                <li>{{ $t("footer.compatibility") }}</li>
                             </router-link>
                         </ul>
                     </v-col>
@@ -100,7 +100,7 @@
             <!-- BOTTOM BAR -->
             <div class="footer-bottom mt-5 text-center">
                 <p>
-                    Conçu avec ❤️ pour les voyageurs <br> SAFAR SIM © 2026
+                    {{ $t("footer.bottom") }} <br> {{ $t("footer.copyright") }}
                 </p>
             </div>
         </v-card>

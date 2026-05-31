@@ -5,11 +5,11 @@
         <v-icon size="18" class="search-icon">mdi-map-marker-outline</v-icon>
         <span class="divider">|</span>
 
-        <input :value="query" type="text" class="search-input" :placeholder="placeholder" @focus="handleFocus"
+        <input :value="query" type="text" class="search-input" :placeholder="placeholder || $t('search.destinationPlaceholder')" @focus="handleFocus"
           @input="onInput" />
       </div>
 
-      <button v-if="query" class="clear-btn" type="button" @click="clearSearch" aria-label="Effacer la recherche">
+      <button v-if="query" class="clear-btn" type="button" @click="clearSearch" :aria-label="$t('search.clear')">
         <v-icon size="18">mdi-close</v-icon>
       </button>
 
@@ -20,7 +20,7 @@
 
     <div v-if="showResults && displayedDestinations.length" class="search-results">
       <div class="results-label">
-        {{ safeQuery ? resultsLabel : popularLabel }}
+        {{ safeQuery ? (resultsLabel || $t("search.resultsLabel")) : (popularLabel || $t("search.popularLabel")) }}
       </div>
 
       <div v-for="item in displayedDestinations" :key="item.slug" class="search-result-item"
@@ -31,23 +31,24 @@
         </div>
 
         <div class="result-text">
-          <div class="result-name">{{ item.name }}</div>
+          <div class="result-name">{{ getLocalizedName(item) }}</div>
           <div class="result-subtitle">
-            {{ item.region || 'Destination' }}
+            {{ item.region || $t("search.destination") }}
           </div>
         </div>
       </div>
     </div>
 
     <div v-else-if="showResults && safeQuery && !displayedDestinations.length" class="search-results">
-      <div class="results-label">{{ resultsLabel }}</div>
-      <div class="no-results">Aucune destination trouvée</div>
+      <div class="results-label">{{ resultsLabel || $t("search.resultsLabel") }}</div>
+      <div class="no-results">{{ $t("search.noResults") }}</div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { getCurrentLocale, getLocalizedName, getLocalizedSearchValues } from '@/utils/localizedNames'
 
 const props = defineProps({
   destinations: {
@@ -60,7 +61,7 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    default: 'Où voyages-tu ?',
+    default: '',
   },
   maxResults: {
     type: Number,
@@ -72,11 +73,11 @@ const props = defineProps({
   },
   popularLabel: {
     type: String,
-    default: 'Destinations populaires',
+    default: '',
   },
   resultsLabel: {
     type: String,
-    default: 'Résultats',
+    default: '',
   },
 })
 
@@ -136,16 +137,10 @@ const filteredDestinations = computed(() => {
 
   return props.destinations
     .filter((item) => {
-      const name = normalizeText(item.name)
-      const region = normalizeText(item.region)
-      const iso = normalizeText(item.iso)
+      const values = getLocalizedSearchValues(item).map(normalizeText)
 
       return termVariants.some((term) => {
-        return (
-          name.includes(term) ||
-          region.includes(term) ||
-          iso.includes(term)
-        )
+        return values.some((value) => value.includes(term))
       })
     })
     .slice(0, props.maxResults)
@@ -177,9 +172,11 @@ function clearSearch() {
 }
 
 function selectDestination(item) {
-  query.value = item.name
+  const name = getLocalizedName(item, getCurrentLocale())
+
+  query.value = name
   showResults.value = false
-  emit('update:query', item.name)
+  emit('update:query', name)
   emit('select', item)
 }
 

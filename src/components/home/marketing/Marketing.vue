@@ -9,7 +9,7 @@
                     <v-col class="px-8 " :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
                         <h2 class="section-title text-center mb-4">
-                            Pourquoi SAFAR SIM ?
+                            {{ $t("home.marketing.title") }}
                         </h2>
                         <v-img :src="paris" height="" class="" />
 
@@ -18,18 +18,15 @@
                     <!-- CONTENT -->
                     <v-col class="pa-8" :cols="$vuetify.display.smAndUp ? '6' : '12'">
                         <p class="mb-4">
-                            Avec eSIM SAFAR SIM, profitez d’internet mobile dès votre arrivée,
-                            sans changer de carte SIM ni payer de frais d’itinérance.
+                            {{ $t("home.marketing.text1") }}
                         </p>
 
                         <p class="mb-6">
-                            Installez votre eSIM en quelques secondes et connectez-vous
-                            dans plus de 160 destinations.
-                            Gardez votre numéro WhatsApp et naviguez comme un local.
+                            {{ $t("home.marketing.text2") }}
                         </p>
                         <router-link class="text-decoration-none text-black" to="/destinations" >
                         <v-btn class="text-none" block rounded="lg" color="pink-darken-1" size="large" variant="flat">
-                            Choisir ma destination
+                            {{ $t("common.chooseDestination") }}
                         </v-btn>
                         </router-link>
                     </v-col>

@@ -1,14 +1,256 @@
 {
+  "common": {
+    "home": "Accueil",
+    "destinations": "Destinations",
+    "viewDestinations": "Voir les destinations",
+    "chooseDestination": "Choisir ma destination",
+    "chooseDestinationShort": "Choisir destination",
+    "from": "À partir de",
+    "models": "modèle(s)"
+  },
   "hero": {
     "title": "Voyagez connecté partout dans le monde",
-    "subtitle": "Installez votre eSIM SAFAR SIM et profitez d’une connexion internet fiable où que vous soyez"
+    "subtitle": "Installez votre eSIM SAFAR SIM et profitez d’une connexion internet fiable où que vous soyez",
+    "activation": "Activation en 2 minutes",
+    "noPhysicalSim": "Sans carte SIM physique",
+    "destinationsCount": "Plus de 160 destinations"
   },
   "search": {
-    "placeholder": "Rechercher une destination"
+    "placeholder": "Rechercher une destination",
+    "destinationPlaceholder": "Où voyages-tu ?",
+    "popularLabel": "Destinations populaires",
+    "resultsLabel": "Résultats",
+    "noResults": "Aucune destination trouvée",
+    "clear": "Effacer la recherche",
+    "destination": "Destination"
   },
   "nav": {
     "destinations": "Destinations",
-    "compatibility": "Compatibilité",
+    "compatibility": "Compatibilité eSIM",
+    "pricing": "Tarifs",
     "help": "Aide"
+  },
+  "home": {
+    "popular": {
+      "title": "Destinations Populaires",
+      "subtitle": "Choisissez parmi nos 160 destinations et profitez des forfaits flexibles adaptés à vos besoins de voyage."
+    },
+    "steps": {
+      "title": "Profitez d’internet partout en seulement 3 étapes",
+      "step1": {
+        "strong": "Choisissez votre destination",
+        "text": "et le nombre de jours pour votre forfait eSIM."
+      },
+      "step2": {
+        "strong": "Installez votre eSIM",
+        "text": "facilement grâce au QR code reçu par e-mail."
+      },
+      "step3": {
+        "strong": "Activez votre connexion",
+        "text": "à votre arrivée et profitez d’internet immédiatement."
+      }
+    },
+    "apps": {
+      "title": "Continuez à utiliser vos applications préférées",
+      "text": "Retrouvez facilement votre hébergement, découvrez les meilleures adresses et explorez les sites incontournables, tout en restant connecté avec vos proches grâce à votre eSIM."
+    },
+    "marketing": {
+      "title": "Pourquoi SAFAR SIM ?",
+      "text1": "Avec eSIM SAFAR SIM, profitez d’internet mobile dès votre arrivée, sans changer de carte SIM ni payer de frais d’itinérance.",
+      "text2": "Installez votre eSIM en quelques secondes et connectez-vous dans plus de 160 destinations. Gardez votre numéro WhatsApp et naviguez comme un local."
+    },
+    "faq": {
+      "title": "Questions fréquentes (FAQ)",
+      "subtitle": "Tout ce que vous devez savoir sur votre SAFAR eSIM",
+      "items": {
+        "whatIsEsim": {
+          "question": "Qu’est-ce qu’une eSIM ?",
+          "answer": "Une eSIM est une carte SIM digitale qui vous permet d’accéder à internet sans carte physique."
+        },
+        "roaming": {
+          "question": "Dois-je activer l’itinérance des données ?",
+          "answer": "Oui, l’itinérance doit être activée pour que votre eSIM fonctionne à l’étranger."
+        },
+        "speed": {
+          "question": "Quelle vitesse de connexion puis-je avoir ?",
+          "answer": "La vitesse dépend du réseau local, généralement 4G ou 5G selon la destination."
+        },
+        "whatsapp": {
+          "question": "Puis-je garder mon WhatsApp ?",
+          "answer": "Oui, votre numéro WhatsApp reste inchangé avec une eSIM."
+        },
+        "receive": {
+          "question": "Quand vais-je recevoir mon eSIM ?",
+          "answer": "Votre eSIM est envoyée instantanément après l’achat par email."
+        },
+        "phones": {
+          "question": "Quels téléphones sont compatibles ?",
+          "answer": "La plupart des smartphones récents sont compatibles eSIM (iPhone, Samsung, etc.)."
+        },
+        "calls": {
+          "question": "Puis-je appeler ou envoyer des SMS ?",
+          "answer": "Nos eSIM sont principalement data-only."
+        },
+        "why": {
+          "question": "Pourquoi choisir eSIM SAFAR ?",
+          "answer": "Nous offrons une connexion fiable dans plus de 160 destinations avec activation rapide."
+        },
+        "dualSim": {
+          "question": "Puis-je utiliser SIM et eSIM ensemble ?",
+          "answer": "Oui, la plupart des téléphones permettent d’utiliser les deux simultanément."
+        },
+        "delete": {
+          "question": "Comment supprimer une eSIM ?",
+          "answer": "Vous pouvez la supprimer directement depuis les paramètres de votre téléphone."
+        },
+        "reuse": {
+          "question": "Combien de fois puis-je utiliser mon eSIM ?",
+          "answer": "Chaque eSIM est valable pour un seul usage, selon le forfait choisi."
+        },
+        "usage": {
+          "question": "Comment vérifier ma consommation ?",
+          "answer": "Vous pouvez suivre votre consommation dans les paramètres de votre appareil."
+        },
+        "setup": {
+          "question": "Quand configurer mon eSIM ?",
+          "answer": "Nous recommandons de l’installer avant votre départ."
+        },
+        "install": {
+          "question": "Comment installer mon eSIM ?",
+          "answer": "Scannez le QR code reçu par email et suivez les instructions simples."
+        }
+      }
+    }
+  },
+  "compatibility": {
+    "breadcrumb": "Appareils Compatibles",
+    "title": "Vérifier la compatibilité",
+    "intro": "Pour utiliser une eSIM Safar Sim, un appareil doit remplir les conditions suivantes :",
+    "conditionEsim": "L’appareil prend en charge les eSIM.",
+    "conditionUnlocked": "L’appareil n’est pas verrouillé par un opérateur ou par le réseau.",
+    "conditionRoot": "L’appareil n’est pas jailbreaké (iOS) ou rooté (Android).",
+    "description": "Vous pouvez consulter notre liste pour vérifier si l’appareil que vous souhaitez utiliser est compatible eSIM. Notez que certains modèles régionaux peuvent ne pas prendre en charge l’eSIM.",
+    "ctaTitle": "Vous avez trouvé votre appareil compatible ?",
+    "ctaText": "Il ne vous reste plus qu’à choisir votre destination et profiter d’une connexion internet immédiate avec eSIM",
+    "searchPlaceholder": "Rechercher votre appareil",
+    "noDevice": "Aucun appareil trouvé",
+    "notFoundTitle": "Vous ne trouvez pas votre appareil ?",
+    "notFoundText": "Notre liste est mise à jour régulièrement, mais elle n’est pas exhaustive — vérifiez auprès du fabricant pour confirmer la compatibilité eSIM."
+  },
+  "destinationsPage": {
+    "title": "Toutes Destinations",
+    "regionalPlans": "Plans régionaux",
+    "chooseByCountry": "Choisissez par pays",
+    "days": "jours",
+    "availableNetwork": "Réseau disponible",
+    "planStarts": "Le forfait démarre dès la connexion à un réseau pris en charge",
+    "checkCompatibility": "Vérifier la compatibilité",
+    "choosePlan": "Choisissez votre forfait",
+    "countryNotFound": "Pays introuvable",
+    "regionNotFound": "Région introuvable",
+    "coveredCountries": "pays couverts",
+    "regionalCoverage": "Couverture régionale",
+    "regionWorks": "Cette eSIM fonctionne dans les pays inclus dans cette région.",
+    "countriesIncluded": "Pays inclus dans cette région",
+    "addedToCart": "Forfait ajouté au panier avec succès"
+  },
+  "cart": {
+    "emptyTitle": "Votre panier est vide",
+    "emptyText": "Ajoutez un forfait eSIM pour continuer.",
+    "summary": "Résumé de commande",
+    "total": "Total",
+    "payment": "Paiement",
+    "whatsappCheckout": "Continuer par WhatsApp",
+    "phoneCompatibility": "Compatibilité téléphone",
+    "phoneModel": "Modèle du téléphone",
+    "phoneSubmodel": "Sous-modèle",
+    "noModel": "Aucun modèle trouvé",
+    "contactInfo": "Informations de contact",
+    "emailNotice": "Les QR codes des eSIM achetées seront envoyés par email. Merci de fournir une adresse email valide et accessible.",
+    "confirmEmail": "Confirmer l'email",
+    "phone": "Téléphone",
+    "phoneHelp": "En cas de besoin, nous vous contacterons à propos de votre commande.",
+    "compatiblePhone": "Votre téléphone est compatible avec la eSIM.",
+    "selectPhone": "Merci de sélectionner le modèle de votre téléphone. Votre téléphone doit être d’une génération récente pour adopter la eSIM.",
+    "invalidEmail": "Veuillez entrer une adresse email valide.",
+    "emailsMismatch": "Les adresses email ne correspondent pas.",
+    "selectCompatiblePhone": "Veuillez sélectionner un téléphone compatible avec la eSIM.",
+    "enterValidEmails": "Veuillez entrer deux adresses email valides et identiques.",
+    "enterPhone": "Veuillez entrer votre numéro de téléphone.",
+    "completeRequired": "Veuillez compléter les informations requises.",
+    "quantity": "Quantité",
+    "unitPrice": "Prix unitaire",
+    "cartTotal": "Total panier",
+    "notProvided": "Non renseigné",
+    "whatsappGreeting": "Bonjour,",
+    "whatsappIntro": "Je souhaite commander les eSIM suivantes :",
+    "whatsappCompatiblePhone": "Téléphone compatible",
+    "whatsappThanks": "Merci."
+  },
+  "footer": {
+    "company": "Entreprise",
+    "about": "À propos",
+    "pricing": "Tarifs",
+    "contact": "Contact",
+    "destinations": "Destinations",
+    "esimEurope": "eSIM Europe",
+    "esimSaudiArabia": "eSIM Arabie saoudite",
+    "esimTurkey": "eSIM Turquie",
+    "allDestinations": "Toutes les destinations",
+    "legal": "Légal",
+    "terms": "Conditions générales",
+    "privacy": "Confidentialité",
+    "refund": "Politique de Remboursement",
+    "support": "Support",
+    "help": "Aide",
+    "compatibility": "Compatibilité eSIM",
+    "bottom": "Conçu avec amour pour les voyageurs",
+    "copyright": "SAFAR SIM © 2026"
+  },
+  "about": {
+    "title": "Qu’est-ce que SafarSim ?",
+    "subtitle": "SafarSim vend des eSIM de voyage permettant d’accéder à internet mobile dans de nombreuses destinations, sans carte SIM physique.",
+    "features": {
+      "internet": {
+        "title": "Internet mobile",
+        "text": "Accédez à internet dans votre destination avec un forfait de données valable pendant une durée définie."
+      },
+      "delivery": {
+        "title": "Livraison rapide",
+        "text": "Après paiement, l’eSIM est envoyée par email avec les instructions d’installation."
+      },
+      "travelers": {
+        "title": "Pour les voyageurs",
+        "text": "Une solution simple pour éviter les frais d’itinérance et rester connecté à l’étranger."
+      }
+    },
+    "whatWeSell": {
+      "title": "Ce que nous vendons",
+      "text": "SafarSim propose des forfaits eSIM de voyage avec un volume de données mobile, une durée de validité et une couverture selon la destination choisie."
+    },
+    "included": {
+      "title": "Ce qui est inclus",
+      "items": [
+        "Une eSIM numérique",
+        "Un QR code ou des instructions d’installation",
+        "Un forfait data selon l’offre choisie",
+        "Une validité définie selon le plan acheté"
+      ]
+    },
+    "howItWorks": {
+      "title": "Comment ça fonctionne",
+      "items": [
+        "Choisissez votre destination et votre forfait",
+        "Finalisez votre achat en ligne",
+        "Recevez votre eSIM par email",
+        "Installez-la sur votre appareil compatible",
+        "Activez-la au moment de votre voyage"
+      ]
+    },
+    "important": {
+      "title": "Important",
+      "text": "L’acheteur doit vérifier que son appareil est compatible eSIM avant achat. La qualité du service peut varier selon les réseaux locaux et la couverture disponible."
+    },
+    "cta": "Voir les tarifs"
   }
 }

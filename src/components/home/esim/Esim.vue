@@ -7,7 +7,7 @@
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
                     <h2 class="section-title text-center ">
-                        Continuez à utiliser vos applications préférées
+                        {{ $t("home.apps.title") }}
                     </h2>
                     <v-img :src="app_icons" height="" class="mb-5" />
                 </v-col>
@@ -15,9 +15,7 @@
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
                     <p class="mb-6">
-                        Retrouvez facilement votre hébergement,
-                        découvrez les meilleures adresses et explorez les sites incontournables,
-                        tout en restant connecté avec vos proches grâce à votre eSIM.
+                        {{ $t("home.apps.text") }}
                     </p>
                 </v-col>
             </v-row>

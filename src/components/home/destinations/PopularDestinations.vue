@@ -2,11 +2,10 @@
     <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 destination-container' : 'px-6 destination-container'">
         <div class="mb-5" align="center">
             <h2 class="section-title text-center">
-                Destinations Populaires
+                {{ $t("home.popular.title") }}
             </h2>
             <p class="text-body-smal">
-                Choisissez parmi nos 160 destinations <br>et profitez des forfaits flexibles adaptés à vos besoins de
-                voyage.
+                {{ $t("home.popular.subtitle") }}
             </p>
         </div>
 
@@ -20,7 +19,7 @@
 
             <router-link class="text-decoration-none text-black" to="/destinations">
                 <v-btn class="text-none ma-4" rounded="lg" color="green-darken-1" prepend-icon="mdi-earth" size="large" variant="flat">
-                    Voir les destinations
+                    {{ $t("common.viewDestinations") }}
                 </v-btn>
             </router-link>
         </div>

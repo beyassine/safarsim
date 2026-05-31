@@ -7,7 +7,7 @@
 
                 <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
                     <h2 class="section-title text-center mb-5">
-                        Profitez d’internet partout en seulement 3 étapes
+                        {{ $t("home.steps.title") }}
                     </h2>
 
                     <v-img :src="barcelona" height="" class="" />
@@ -26,11 +26,10 @@
 
                             <div>
                                 <p class="step-text">
-                                    <b>Choisissez votre destination</b> et le nombre de jours
-                                    pour votre forfait eSIM.
+                                    <b>{{ $t("home.steps.step1.strong") }}</b> {{ $t("home.steps.step1.text") }}
                                 </p>
                                 <a class="compatibility">
-                                    Choisir destination →
+                                    {{ $t("common.chooseDestinationShort") }} →
                                 </a>
                             </div>
 
@@ -45,8 +44,7 @@
 
                             <div>
                                 <p class="step-text">
-                                    <b>Installez votre eSIM</b> facilement grâce
-                                    au QR code reçu par e-mail.
+                                    <b>{{ $t("home.steps.step2.strong") }}</b> {{ $t("home.steps.step2.text") }}
                                 </p>
                             </div>
 
@@ -61,8 +59,7 @@
 
                             <div>
                                 <p class="step-text">
-                                    <b>Activez votre connexion</b> à votre arrivée
-                                    et profitez d’internet immédiatement.
+                                    <b>{{ $t("home.steps.step3.strong") }}</b> {{ $t("home.steps.step3.text") }}
                                 </p>
                             </div>
 

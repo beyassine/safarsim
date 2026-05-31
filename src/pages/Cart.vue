@@ -3,13 +3,13 @@
     <div v-if="cart.length === 0">
       <v-card rounded="xl" elevation="0" class="pa-8 empty-cart text-center">
         <v-icon size="56" class="mb-4">mdi-cart-outline</v-icon>
-        <h2 class="text-h5 font-weight-bold mb-2">Votre panier est vide</h2>
+        <h2 class="text-h5 font-weight-bold mb-2">{{ $t("cart.emptyTitle") }}</h2>
         <p class="text-body-1 mb-5">
-          Ajoutez un forfait eSIM pour continuer.
+          {{ $t("cart.emptyText") }}
         </p>
 
         <v-btn color="black" rounded="pill" class="text-none" to="/">
-          Voir les destinations
+          {{ $t("common.viewDestinations") }}
         </v-btn>
       </v-card>
     </div>
@@ -17,7 +17,7 @@
     <v-row v-else>
       <v-col cols="12" md="6">
         <v-card rounded="xl" elevation="1" class="pa-5 summary-card">
-        <h2 class="subsection-title mb-4">Résumé de commande</h2>
+        <h2 class="subsection-title mb-4">{{ $t("cart.summary") }}</h2>
           <div v-for="(item, index) in cart" :key="item.id" class="cart-line py-4">
             <div class="d-flex justify-space-between align-start">
               <div class="d-flex align-start">
@@ -25,11 +25,11 @@
 
                 <div>
                   <div class="text-h6 font-weight-bold mb-1">
-                    {{ item.destinationName }}
+                    {{ getCartItemName(item) }}
                   </div>
 
                   <div class="text-body-1 mb-1">
-                    {{ item.dataLabel }} • {{ item.days }} jours : {{ item.price }} DHs
+                    {{ item.dataLabel }} • {{ item.days }} {{ $t("destinationsPage.days") }} : {{ item.price }} DH
                   </div>
                 </div>
               </div>
@@ -63,7 +63,7 @@
           <v-divider class="my-4" />
 
           <div class="d-flex justify-space-between mb-4">
-            <span class="text-h6 font-weight-bold">Total</span>
+            <span class="text-h6 font-weight-bold">{{ $t("cart.total") }}</span>
             <span class="text-h6 font-weight-bold">{{ total }} DH</span>
           </div>
 
@@ -77,7 +77,7 @@
         </v-card>
 
         <v-card rounded="xl" elevation="1" class="pa-5 payment-card mt-6 d-none d-md-block">
-          <h2 class="subsection-title mb-4">Paiement</h2>
+          <h2 class="subsection-title mb-4">{{ $t("cart.payment") }}</h2>
           <!-- PayPal buttons are temporarily disabled while verification is pending.
           <div class="mb-4">
             <div class="text-subtitle-1 font-weight-bold mb-2">
@@ -100,14 +100,14 @@
 
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
             class="text-none font-weight-bold mb-3" :disabled="!isPaymentReady" @click="checkoutWhatsApp">
-            Continuer par WhatsApp
+            {{ $t("cart.whatsappCheckout") }}
           </v-btn>
         </v-card>
       </v-col>
 
       <v-col cols="12" md="6">
         <v-card rounded="xl" elevation="1" class="pa-5 compatibility-card mb-6">
-        <h4 class="subsection-title mb-4">Compatibilité téléphone</h4>
+        <h4 class="subsection-title mb-4">{{ $t("cart.phoneCompatibility") }}</h4>
           <v-alert
             :type="hasSelectedCompatiblePhone ? 'success' : 'info'"
             variant="tonal"
@@ -119,7 +119,7 @@
           <v-select
             v-model="phoneModel"
             :items="phoneModelOptions"
-            label="Modèle du téléphone"
+            :label="$t('cart.phoneModel')"
             variant="outlined"
             density="comfortable"
             rounded="lg"
@@ -133,7 +133,7 @@
           <v-autocomplete
             v-model="phoneSubmodel"
             :items="phoneSubmodelOptions"
-            label="Sous-modèle"
+            :label="$t('cart.phoneSubmodel')"
             variant="outlined"
             density="comfortable"
             rounded="lg"
@@ -141,18 +141,17 @@
             :menu-props="{ maxHeight: 320 }"
             hide-details="auto"
             :disabled="!phoneModel"
-            no-data-text="Aucun modèle trouvé"
+            :no-data-text="$t('cart.noModel')"
           />
         </v-card>
         <v-card rounded="xl" elevation="1" class="pa-5 contact-card">
-        <h2 class="subsection-title mb-4">Informations de contact</h2>
+        <h2 class="subsection-title mb-4">{{ $t("cart.contactInfo") }}</h2>
           <v-alert
             icon="mdi-information-outline"
             variant="tonal"
             class="mb-4"
           >
-          Les QR codes des eSIM achetées seront envoyés par email. 
-          <br>Merci de fournir une adresse email valide et accessible.
+          {{ $t("cart.emailNotice") }}
         </v-alert>
           <v-text-field
             v-model.trim="customerEmail"
@@ -170,7 +169,7 @@
           <v-text-field
             v-model.trim="customerEmailConfirmation"
             type="email"
-            label="Confirmer l'email"
+            :label="$t('cart.confirmEmail')"
             variant="outlined"
             density="comfortable"
             rounded="lg"
@@ -183,7 +182,7 @@
           <v-text-field
             v-model.trim="customerPhone"
             type="tel"
-            label="Téléphone"
+            :label="$t('cart.phone')"
             variant="outlined"
             density="comfortable"
             rounded="lg"
@@ -197,14 +196,14 @@
                   mdi-help-circle-outline
                 </v-icon>
                 <span class="phone-help-tooltip">
-                  En cas de besoin, nous vous contacterons à propos de votre commande.
+                  {{ $t("cart.phoneHelp") }}
                 </span>
               </span>
             </template>
           </v-text-field>
         </v-card>
         <v-card rounded="xl" elevation="1" class="pa-5 payment-card mt-6 d-md-none">
-          <h2 class="subsection-title mb-4">Paiement</h2>
+          <h2 class="subsection-title mb-4">{{ $t("cart.payment") }}</h2>
           <!-- PayPal buttons are temporarily disabled while verification is pending.
           <div class="mb-4">
             <div class="text-subtitle-1 font-weight-bold mb-2">
@@ -227,7 +226,7 @@
 
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
             class="text-none font-weight-bold mb-3" :disabled="!isPaymentReady" @click="checkoutWhatsApp">
-            Continuer par WhatsApp
+            {{ $t("cart.whatsappCheckout") }}
           </v-btn>
         </v-card>
       </v-col>
@@ -250,6 +249,7 @@ import {
   clearCart,
   CART_UPDATED_EVENT,
 } from '@/utils/cart'
+import { getLocalizedName } from '@/utils/localizedNames'
 
 export default {
   name: 'CartPage',
@@ -297,7 +297,7 @@ export default {
     cartPayload() {
       return this.cart.map(item => ({
         id: item.id,
-        destinationName: item.destinationName,
+        destinationName: this.getCartItemName(item),
         dataLabel: item.dataLabel,
         days: item.days,
         quantity: Number(item.quantity),
@@ -374,10 +374,10 @@ export default {
 
     compatibilityMessage() {
       if (this.hasSelectedCompatiblePhone) {
-        return 'Votre téléphone est compatible avec la eSIM.'
+        return this.$t('cart.compatiblePhone')
       }
 
-      return 'Merci de sélectionner le modèle de votre téléphone. Votre téléphone doit être d’une génération récente pour adopter la eSIM.'
+      return this.$t('cart.selectPhone')
     },
 
     hasValidEmail() {
@@ -403,13 +403,13 @@ export default {
     customerEmailError() {
       if (!this.customerEmail || this.hasValidEmail) return ''
 
-      return 'Veuillez entrer une adresse email valide.'
+      return this.$t('cart.invalidEmail')
     },
 
     customerEmailConfirmationError() {
       if (!this.customerEmailConfirmation || this.emailsMatch) return ''
 
-      return 'Les adresses email ne correspondent pas.'
+      return this.$t('cart.emailsMismatch')
     },
 
     paypalButtonContainerId() {
@@ -468,6 +468,7 @@ export default {
       return {
         ...item,
         days,
+        names: item.names,
         price,
         quantity,
       }
@@ -486,6 +487,10 @@ export default {
     removeItem(itemId) {
       removeFromCart(itemId)
       this.refreshCart()
+    },
+
+    getCartItemName(item) {
+      return getLocalizedName(item, this.$i18n.locale) || item.destinationName
     },
 
     emptyCart() {
@@ -514,18 +519,18 @@ export default {
 
     paymentValidationMessage() {
       if (!this.hasSelectedCompatiblePhone) {
-        return 'Veuillez sélectionner un téléphone compatible avec la eSIM.'
+        return this.$t('cart.selectCompatiblePhone')
       }
 
       if (!this.hasValidConfirmedEmail) {
-        return 'Veuillez entrer deux adresses email valides et identiques.'
+        return this.$t('cart.enterValidEmails')
       }
 
       if (!this.hasValidPhone) {
-        return 'Veuillez entrer votre numéro de téléphone.'
+        return this.$t('cart.enterPhone')
       }
 
-      return 'Veuillez compléter les informations requises.'
+      return this.$t('cart.completeRequired')
     },
 
     checkoutWhatsApp() {
@@ -538,22 +543,22 @@ export default {
       const phoneNumber = '212613147245'
 
       const lines = [
-        'Bonjour,',
+        this.$t('cart.whatsappGreeting'),
         '',
-        'Je souhaite commander les eSIM suivantes :',
+        this.$t('cart.whatsappIntro'),
         '',
         ...this.cart.map((item, index) => {
           const lineTotal = item.price * item.quantity
-          return `${index + 1}. ${item.destinationName} - ${item.dataLabel} - ${item.days} jours - Quantité: ${item.quantity} - Prix unitaire: ${item.price} DH - Total: ${lineTotal} DH`
+          return `${index + 1}. ${this.getCartItemName(item)} - ${item.dataLabel} - ${item.days} ${this.$t('destinationsPage.days')} - ${this.$t('cart.quantity')}: ${item.quantity} - ${this.$t('cart.unitPrice')}: ${item.price} DH - ${this.$t('cart.total')}: ${lineTotal} DH`
         }),
         '',
-        `Téléphone compatible : ${this.phoneModel || 'Non renseigné'} ${this.phoneSubmodel || ''}`.trim(),
-        `Email : ${this.customerEmail || 'Non renseigné'}`,
-        `Téléphone : ${this.customerPhone || 'Non renseigné'}`,
+        `${this.$t('cart.whatsappCompatiblePhone')} : ${this.phoneModel || this.$t('cart.notProvided')} ${this.phoneSubmodel || ''}`.trim(),
+        `Email : ${this.customerEmail || this.$t('cart.notProvided')}`,
+        `${this.$t('cart.phone')} : ${this.customerPhone || this.$t('cart.notProvided')}`,
         '',
-        `Total panier : ${this.total} DH`,
+        `${this.$t('cart.cartTotal')} : ${this.total} DH`,
         '',
-        'Merci.'
+        this.$t('cart.whatsappThanks')
       ]
 
       const message = encodeURIComponent(lines.join('\n'))

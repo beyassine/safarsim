@@ -20,19 +20,19 @@
             <!-- DESKTOP CENTER LINKS -->
             <div class="d-none d-md-flex nav-links">
                 <router-link class="text-decoration-none text-black" to="/destinations">
-                    <v-btn variant="text">Destinations</v-btn>
+                    <v-btn variant="text">{{ $t("nav.destinations") }}</v-btn>
                 </router-link>
 
                 <router-link class="text-decoration-none text-black" to="/compatibility">
-                    <v-btn variant="text">Compatibilité eSIM</v-btn>
+                    <v-btn variant="text">{{ $t("nav.compatibility") }}</v-btn>
                 </router-link>
 
                 <router-link class="text-decoration-none text-black" to="pricing">
-                    <v-btn variant="text">Tarifs</v-btn>
+                    <v-btn variant="text">{{ $t("nav.pricing") }}</v-btn>
                 </router-link>
 
                 <router-link class="text-decoration-none text-black" to="help">
-                    <v-btn variant="text">Aide</v-btn>
+                    <v-btn variant="text">{{ $t("nav.help") }}</v-btn>
                 </router-link>
             </div>
 
@@ -55,6 +55,10 @@
                     <v-list density="compact">
                         <v-list-item @click="setLang('fr')">
                             <v-list-item-title>Français</v-list-item-title>
+                        </v-list-item>
+
+                        <v-list-item @click="setLang('en')">
+                            <v-list-item-title>English</v-list-item-title>
                         </v-list-item>
 
                         <v-list-item @click="setLang('ar')">
@@ -83,23 +87,23 @@
             </div>
 
             <router-link to="/destinations" class="menu-item" @click="drawer = false">
-                <span>Destinations</span>
-                <v-icon>mdi-arrow-right</v-icon>
+                <span>{{ $t("nav.destinations") }}</span>
+                <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
 
             <router-link to="/compatibility" class="menu-item" @click="drawer = false">
-                <span>Compatibilité eSIM</span>
-                <v-icon>mdi-arrow-right</v-icon>
+                <span>{{ $t("nav.compatibility") }}</span>
+                <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
 
             <router-link to="pricing" class="menu-item" @click="drawer = false">
-                <span>Tarifs</span>
-                <v-icon>mdi-arrow-right</v-icon>
+                <span>{{ $t("nav.pricing") }}</span>
+                <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
 
             <router-link to="/help" class="menu-item" @click="drawer = false">
-                <span>Aide</span>
-                <v-icon>mdi-arrow-right</v-icon>
+                <span>{{ $t("nav.help") }}</span>
+                <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
 
         </div>

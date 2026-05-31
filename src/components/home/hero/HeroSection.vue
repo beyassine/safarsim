@@ -23,17 +23,17 @@
                             <v-row class="d-flex mb-5 info-row">
                                 <v-col class="text-center" cols="12">
                                     <h3 class="info-title"> <v-icon color="green-darken-2" icon="mdi-check"
-                                            size="large"></v-icon> Activation en 2 minutes</h3>
+                                            size="large"></v-icon> {{ $t("hero.activation") }}</h3>
                                 </v-col>
 
                                 <v-col class="text-center" cols="12">
                                     <h3 class="info-title"> <v-icon color="green-darken-2" icon="mdi-check"
-                                            size="large"></v-icon> Sans carte SIM physique</h3>
+                                            size="large"></v-icon> {{ $t("hero.noPhysicalSim") }}</h3>
                                 </v-col>
 
                                 <v-col class="text-center" cols="12">
                                     <h3 class="info-title"> <v-icon color="green-darken-2" icon="mdi-check"
-                                            size="large"></v-icon> Plus de 160 destinations</h3>
+                                            size="large"></v-icon> {{ $t("hero.destinationsCount") }}</h3>
                                 </v-col>
 
                             </v-row>

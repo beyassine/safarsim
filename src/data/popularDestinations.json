@@ -12,6 +12,11 @@
       "10GB_30days": 160,
       "20GB_30days": 200,
       "50GB_30days": 320
+    },
+    "names": {
+      "fr": "France",
+      "en": "France",
+      "ar": "فرنسا"
     }
   },
   {
@@ -27,6 +32,11 @@
       "10GB_30days": 170,
       "20GB_30days": 220,
       "50GB_30days": 335
+    },
+    "names": {
+      "fr": "Espagne",
+      "en": "Spain",
+      "ar": "إسبانيا"
     }
   },
   {
@@ -42,6 +52,11 @@
       "10GB_30days": 155,
       "20GB_30days": 190,
       "50GB_30days": 285
+    },
+    "names": {
+      "fr": "Turquie",
+      "en": "Türkiye",
+      "ar": "تركيا"
     }
   },
   {
@@ -57,6 +72,11 @@
       "10GB_30days": 160,
       "20GB_30days": 200,
       "50GB_30days": 320
+    },
+    "names": {
+      "fr": "Italie",
+      "en": "Italy",
+      "ar": "إيطاليا"
     }
   },
   {
@@ -72,6 +92,11 @@
       "10GB_30days": 250,
       "20GB_30days": 365,
       "50GB_30days": 695
+    },
+    "names": {
+      "fr": "Émirats arabes unis",
+      "en": "United Arab Emirates",
+      "ar": "الإمارات العربية المتحدة"
     }
   },
   {
@@ -87,6 +112,11 @@
       "10GB_30days": 230,
       "20GB_30days": 305,
       "50GB_30days": 610
+    },
+    "names": {
+      "fr": "Arabie saoudite",
+      "en": "Saudi Arabia",
+      "ar": "المملكة العربية السعودية"
     }
   },
   {
@@ -102,6 +132,11 @@
       "10GB_30days": 250,
       "20GB_30days": 350,
       "50GB_30days": 645
+    },
+    "names": {
+      "fr": "Égypte",
+      "en": "Egypt",
+      "ar": "مصر"
     }
   },
   {
@@ -117,6 +152,11 @@
       "10GB_30days": 210,
       "20GB_30days": 300,
       "50GB_30days": 550
+    },
+    "names": {
+      "fr": "États-Unis",
+      "en": "United States",
+      "ar": "الولايات المتحدة"
     }
   },
   {
@@ -132,6 +172,11 @@
       "10GB_30days": 285,
       "20GB_30days": 430,
       "50GB_30days": 810
+    },
+    "names": {
+      "fr": "Canada",
+      "en": "Canada",
+      "ar": "كندا"
     }
   }
 ]

@@ -3,10 +3,9 @@
     <v-container class="py-12 py-md-16">
       <div class="text-center mb-10">
         <div class="eyebrow">SAFAR SIM</div>
-        <h1 class="page-title">Qu’est-ce que SafarSim ?</h1>
+        <h1 class="page-title">{{ $t("about.title") }}</h1>
         <p class="page-subtitle">
-          SafarSim vend des eSIM de voyage permettant d’accéder à internet mobile
-          dans de nombreuses destinations, sans carte SIM physique.
+          {{ $t("about.subtitle") }}
         </p>
       </div>
 
@@ -14,10 +13,9 @@
         <v-col cols="12" md="4">
           <v-card class="feature-card" elevation="0">
             <div class="icon">📶</div>
-            <h3>Internet mobile</h3>
+            <h3>{{ $t("about.features.internet.title") }}</h3>
             <p>
-              Accédez à internet dans votre destination avec un forfait de données
-              valable pendant une durée définie.
+              {{ $t("about.features.internet.text") }}
             </p>
           </v-card>
         </v-col>
@@ -25,10 +23,9 @@
         <v-col cols="12" md="4">
           <v-card class="feature-card" elevation="0">
             <div class="icon">⚡</div>
-            <h3>Livraison rapide</h3>
+            <h3>{{ $t("about.features.delivery.title") }}</h3>
             <p>
-              Après paiement, l’eSIM est envoyée par email avec les instructions
-              d’installation.
+              {{ $t("about.features.delivery.text") }}
             </p>
           </v-card>
         </v-col>
@@ -36,10 +33,9 @@
         <v-col cols="12" md="4">
           <v-card class="feature-card" elevation="0">
             <div class="icon">🌍</div>
-            <h3>Pour les voyageurs</h3>
+            <h3>{{ $t("about.features.travelers.title") }}</h3>
             <p>
-              Une solution simple pour éviter les frais d’itinérance et rester connecté
-              à l’étranger.
+              {{ $t("about.features.travelers.text") }}
             </p>
           </v-card>
         </v-col>
@@ -47,39 +43,30 @@
 
       <v-card class="content-card" elevation="0">
         <section class="section">
-          <h2>Ce que nous vendons</h2>
+          <h2>{{ $t("about.whatWeSell.title") }}</h2>
           <p>
-            SafarSim propose des forfaits eSIM de voyage avec un volume de données
-            mobile, une durée de validité et une couverture selon la destination choisie.
+            {{ $t("about.whatWeSell.text") }}
           </p>
         </section>
 
         <section class="section">
-          <h2>Ce qui est inclus</h2>
+          <h2>{{ $t("about.included.title") }}</h2>
           <ul class="styled-list">
-            <li>Une eSIM numérique</li>
-            <li>Un QR code ou des instructions d’installation</li>
-            <li>Un forfait data selon l’offre choisie</li>
-            <li>Une validité définie selon le plan acheté</li>
+            <li v-for="item in $tm('about.included.items')" :key="item">{{ item }}</li>
           </ul>
         </section>
 
         <section class="section">
-          <h2>Comment ça fonctionne</h2>
+          <h2>{{ $t("about.howItWorks.title") }}</h2>
           <ol class="styled-list ordered">
-            <li>Choisissez votre destination et votre forfait</li>
-            <li>Finalisez votre achat en ligne</li>
-            <li>Recevez votre eSIM par email</li>
-            <li>Installez-la sur votre appareil compatible</li>
-            <li>Activez-la au moment de votre voyage</li>
+            <li v-for="item in $tm('about.howItWorks.items')" :key="item">{{ item }}</li>
           </ol>
         </section>
 
         <section class="section">
-          <h2>Important</h2>
+          <h2>{{ $t("about.important.title") }}</h2>
           <p>
-            L’acheteur doit vérifier que son appareil est compatible eSIM avant achat.
-            La qualité du service peut varier selon les réseaux locaux et la couverture disponible.
+            {{ $t("about.important.text") }}
           </p>
         </section>
 
@@ -91,7 +78,7 @@
             class="cta-btn"
             to="/pricing"
           >
-            Voir les tarifs
+            {{ $t("about.cta") }}
           </v-btn>
         </div>
       </v-card>

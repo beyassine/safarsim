@@ -44,16 +44,51 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./scss/variables.scss";
+@use "./scss/variables.scss" as vars;
 
 .app {
-  font-family: $body-font-family !important;
+  font-family: vars.$body-font-family !important;
   background-color: #fffbf8 !important;
 }
 
 html[dir="rtl"] .app,
 html[dir="rtl"] .app * {
-  font-family: $body-font-family-arabic !important;
+  font-family: vars.$body-font-family-arabic !important;
+}
+
+html[dir="rtl"],
+html[dir="rtl"] body,
+html[dir="rtl"] .v-application,
+html[dir="rtl"] .v-overlay-container {
+  direction: rtl;
+}
+
+html[dir="rtl"] .app {
+  text-align: right;
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] .v-field,
+html[dir="rtl"] .v-list-item-title,
+html[dir="rtl"] .v-expansion-panel-title,
+html[dir="rtl"] .v-expansion-panel-text {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+html[dir="rtl"] ul,
+html[dir="rtl"] ol {
+  padding-right: 1.25rem;
+  padding-left: 0;
 }
 .section-title {
     font-family: 'Montserrat', sans-serif;

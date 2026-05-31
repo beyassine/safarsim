@@ -4,10 +4,10 @@
 <!-- TITLE -->
 <div class="text-center mb-10">
   <h2 class="section-title text-center">
-    Questions fréquentes (FAQ)
+    {{ $t("home.faq.title") }}
   </h2>
   <p class="text-subtitle-1 text-medium-emphasis">
-    Tout ce que vous devez savoir sur votre SAFAR eSIM
+    {{ $t("home.faq.subtitle") }}
   </p>
 </div>
 
@@ -23,11 +23,11 @@ v-for="(item, i) in leftFaq"
 :key="i"
 >
   <v-expansion-panel-title>
-    {{ item.question }}
+    {{ $t(item.question) }}
   </v-expansion-panel-title>
 
   <v-expansion-panel-text>
-    {{ item.answer }}
+    {{ $t(item.answer) }}
   </v-expansion-panel-text>
 </v-expansion-panel>
 
@@ -46,11 +46,11 @@ v-for="(item, i) in rightFaq"
 :key="i"
 >
   <v-expansion-panel-title>
-    {{ item.question }}
+    {{ $t(item.question) }}
   </v-expansion-panel-title>
 
   <v-expansion-panel-text>
-    {{ item.answer }}
+    {{ $t(item.answer) }}
   </v-expansion-panel-text>
 </v-expansion-panel>
 
@@ -68,38 +68,38 @@ v-for="(item, i) in rightFaq"
 const leftFaq = [
 
 {
-question: "Qu’est-ce qu’une eSIM ?",
-answer: "Une eSIM est une carte SIM digitale qui vous permet d’accéder à internet sans carte physique."
+question: "home.faq.items.whatIsEsim.question",
+answer: "home.faq.items.whatIsEsim.answer"
 },
 
 {
-question: "Dois-je activer l’itinérance des données ?",
-answer: "Oui, l’itinérance doit être activée pour que votre eSIM fonctionne à l’étranger."
+question: "home.faq.items.roaming.question",
+answer: "home.faq.items.roaming.answer"
 },
 
 {
-question: "Quelle vitesse de connexion puis-je avoir ?",
-answer: "La vitesse dépend du réseau local, généralement 4G ou 5G selon la destination."
+question: "home.faq.items.speed.question",
+answer: "home.faq.items.speed.answer"
 },
 
 {
-question: "Puis-je garder mon WhatsApp ?",
-answer: "Oui, votre numéro WhatsApp reste inchangé avec une eSIM."
+question: "home.faq.items.whatsapp.question",
+answer: "home.faq.items.whatsapp.answer"
 },
 
 {
-question: "Quand vais-je recevoir mon eSIM ?",
-answer: "Votre eSIM est envoyée instantanément après l’achat par email."
+question: "home.faq.items.receive.question",
+answer: "home.faq.items.receive.answer"
 },
 
 {
-question: "Quels téléphones sont compatibles?",
-answer: "La plupart des smartphones récents sont compatibles eSIM (iPhone, Samsung, etc.)."
+question: "home.faq.items.phones.question",
+answer: "home.faq.items.phones.answer"
 },
 
 {
-question: "Puis-je appeler ou envoyer des SMS?",
-answer: "Nos eSIM sont principalement data-only."
+question: "home.faq.items.calls.question",
+answer: "home.faq.items.calls.answer"
 }
 
 ]
@@ -107,39 +107,39 @@ answer: "Nos eSIM sont principalement data-only."
 const rightFaq = [
 
 {
-question: "Pourquoi choisir eSIM SAFAR ?",
-answer: "Nous offrons une connexion fiable dans plus de 160 destinations avec activation rapide."
+question: "home.faq.items.why.question",
+answer: "home.faq.items.why.answer"
 },
 
 
 {
-question: "Puis-je utiliser SIM et eSIM ensemble ?",
-answer: "Oui, la plupart des téléphones permettent d’utiliser les deux simultanément."
+question: "home.faq.items.dualSim.question",
+answer: "home.faq.items.dualSim.answer"
 },
 
 {
-question: "Comment supprimer une eSIM ?",
-answer: "Vous pouvez la supprimer directement depuis les paramètres de votre téléphone."
+question: "home.faq.items.delete.question",
+answer: "home.faq.items.delete.answer"
 },
 
 {
-question: "Combien de fois puis-je utiliser mon eSIM ?",
-answer: "Chaque eSIM est valable pour un seul usage, selon le forfait choisi."
+question: "home.faq.items.reuse.question",
+answer: "home.faq.items.reuse.answer"
 },
 
 {
-question: "Comment vérifier ma consommation ?",
-answer: "Vous pouvez suivre votre consommation dans les paramètres de votre appareil."
+question: "home.faq.items.usage.question",
+answer: "home.faq.items.usage.answer"
 },
 
 {
-question: "Quand configurer mon eSIM ?",
-answer: "Nous recommandons de l’installer avant votre départ."
+question: "home.faq.items.setup.question",
+answer: "home.faq.items.setup.answer"
 },
 
 {
-question: "Comment installer mon eSIM ?",
-answer: "Scannez le QR code reçu par email et suivez les instructions simples."
+question: "home.faq.items.install.question",
+answer: "home.faq.items.install.answer"
 },
 
 ]
