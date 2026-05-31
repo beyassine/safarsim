@@ -12,27 +12,27 @@
                         <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">
 
                             <div class="hero mb-5">
-                                <h1 class="hero-title text-center">
+                                <h1 class="hero-title text-center bidi-text">
                                      {{ $t("hero.title") }}
                                 </h1>
 
-                                <p class="hero-subtitle text-center">
+                                <p class="hero-subtitle text-center bidi-text">
                                     {{ $t("hero.subtitle") }}
                                 </p>
                             </div>
                             <v-row class="d-flex mb-5 info-row">
                                 <v-col class="text-center" cols="12">
-                                    <h3 class="info-title"> <v-icon color="green-darken-2" icon="mdi-check"
+                                    <h3 class="info-title"> <v-icon class="hero-check-icon" color="green-darken-2" icon="mdi-check"
                                             size="large"></v-icon> {{ $t("hero.activation") }}</h3>
                                 </v-col>
 
                                 <v-col class="text-center" cols="12">
-                                    <h3 class="info-title"> <v-icon color="green-darken-2" icon="mdi-check"
+                                    <h3 class="info-title"> <v-icon class="hero-check-icon" color="green-darken-2" icon="mdi-check"
                                             size="large"></v-icon> {{ $t("hero.noPhysicalSim") }}</h3>
                                 </v-col>
 
                                 <v-col class="text-center" cols="12">
-                                    <h3 class="info-title"> <v-icon color="green-darken-2" icon="mdi-check"
+                                    <h3 class="info-title"> <v-icon class="hero-check-icon" color="green-darken-2" icon="mdi-check"
                                             size="large"></v-icon> {{ $t("hero.destinationsCount") }}</h3>
                                 </v-col>
 
@@ -135,6 +135,10 @@ export default {
     line-height: 1.6;
 }
 
+.bidi-text {
+    unicode-bidi: plaintext;
+}
+
 .accent {
     color: #D81B60;
     font-size: 20px;
@@ -147,6 +151,28 @@ export default {
     line-height: 1;
     color: #1f2937;
     margin-bottom: 2px;
+}
+
+:global(html[dir="rtl"]) .hero-title {
+    font-size: 36px;
+    line-height: 1.45;
+}
+
+:global(html[dir="rtl"]) .hero-subtitle {
+    font-size: 24px;
+    line-height: 1.9;
+}
+
+:global(html[dir="rtl"]) .info-title {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+:global(html[dir="rtl"]) .hero-check-icon {
+    font-size: 27px;
+    margin-inline-end: 6px;
 }
 
 

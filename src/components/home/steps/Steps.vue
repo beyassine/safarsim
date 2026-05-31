@@ -143,4 +143,27 @@ export default {
     text-decoration: underline;
     cursor: pointer;
 }
+
+:global(html[dir="rtl"]) .step-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+:global(html[dir="rtl"]) .step-text b {
+    font-weight: 700;
+}
+
+:global(html[dir="rtl"]) .compatibility {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+:global(html[dir="rtl"]) .step-number {
+    font-size: 24px;
+}
+
+:global(html[dir="rtl"]) .step-card {
+    gap: 21px;
+}
 </style>
