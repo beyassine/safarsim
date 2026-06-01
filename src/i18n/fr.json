@@ -6,7 +6,11 @@
     "chooseDestination": "Choisir ma destination",
     "chooseDestinationShort": "Choisir destination",
     "from": "À partir de",
-    "models": "modèle(s)"
+    "models": "modèle(s)",
+    "contactUs": "Nous contacter",
+    "email": "Email",
+    "phone": "Téléphone",
+    "website": "Site web"
   },
   "hero": {
     "title": "Voyagez connecté partout dans le monde",
@@ -185,7 +189,14 @@
     "whatsappGreeting": "Bonjour,",
     "whatsappIntro": "Je souhaite commander les eSIM suivantes :",
     "whatsappCompatiblePhone": "Téléphone compatible",
-    "whatsappThanks": "Merci."
+    "whatsappThanks": "Merci.",
+    "emailLabel": "Email",
+    "paypalCharge": "PayPal débitera :",
+    "paypalSecure": "Paiement sécurisé par PayPal",
+    "paypalLoading": "Chargement de PayPal...",
+    "paypalCreateOrderError": "Erreur lors de la création de la commande PayPal.",
+    "paypalCancelled": "Paiement annulé.",
+    "paypalGenericError": "Une erreur PayPal est survenue."
   },
   "footer": {
     "company": "Entreprise",
@@ -252,5 +263,210 @@
       "text": "L’acheteur doit vérifier que son appareil est compatible eSIM avant achat. La qualité du service peut varier selon les réseaux locaux et la couverture disponible."
     },
     "cta": "Voir les tarifs"
+  },
+  "allDestinations": {
+    "filters": {
+      "popular": "Populaire",
+      "regional": "Forfaits régionaux",
+      "countries": "Pays",
+      "cities": "Villes",
+      "all": "Toutes les destinations"
+    }
+  },
+  "paymentSuccess": {
+    "title": "Paiement confirmé",
+    "text": "Merci pour votre commande. Nous allons traiter votre eSIM rapidement.",
+    "orderReference": "Référence commande",
+    "viewDestinations": "Voir les destinations",
+    "contact": "Nous contacter"
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "sections": [
+      {
+        "title": "1. Données collectées",
+        "text": "Nous collectons : nom, email et informations nécessaires à la commande."
+      },
+      {
+        "title": "2. Utilisation",
+        "text": "Les données servent à traiter les commandes et fournir le support."
+      },
+      {
+        "title": "3. Paiement",
+        "text": "Les paiements sont sécurisés et gérés par Paddle.com."
+      },
+      {
+        "title": "4. Partage",
+        "text": "Les données sont partagées uniquement avec les prestataires nécessaires."
+      },
+      {
+        "title": "5. Sécurité",
+        "text": "Nous protégeons vos données avec des mesures adaptées."
+      },
+      {
+        "title": "6. Vos droits",
+        "text": "Contactez-nous à contact@safarsim.net pour toute demande."
+      }
+    ]
+  },
+  "refund": {
+    "title": "Politique de Remboursement",
+    "sections": [
+      {
+        "title": "1. Produits numériques",
+        "text": "Les eSIM sont des produits numériques livrés instantanément."
+      },
+      {
+        "title": "2. Garantie",
+        "text": "Nous offrons une garantie de remboursement sous 14 jours si le service ne fonctionne pas."
+      },
+      {
+        "title": "3. Cas remboursables",
+        "items": [
+          "eSIM non reçue",
+          "eSIM non fonctionnelle"
+        ]
+      },
+      {
+        "title": "4. Non remboursable",
+        "items": [
+          "Appareil non compatible",
+          "Mauvaise utilisation",
+          "Consommation du forfait"
+        ]
+      },
+      {
+        "title": "5. Demande",
+        "text": "Envoyez votre demande à contact@safarsim.net avec les détails."
+      },
+      {
+        "title": "6. Délai",
+        "text": "Les remboursements sont traités sous 5 à 10 jours ouvrés."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Conditions Générales de Vente et d’Utilisation",
+    "updated": "Dernière mise à jour : Avril 2026",
+    "sections": [
+      {
+        "title": "1. Informations générales",
+        "paragraphs": [
+          "Le site www.safarsim.net est exploité par SafarSim.",
+          "Pour toute question, vous pouvez nous contacter :"
+        ],
+        "items": [
+          "Email : contact@safarsim.net",
+          "Téléphone : +212 613 147 245"
+        ]
+      },
+      {
+        "title": "2. Description du service",
+        "paragraphs": [
+          "SafarSim propose des forfaits eSIM permettant d’accéder à internet mobile à l’étranger. Chaque offre inclut un volume de données et une durée de validité définis."
+        ]
+      },
+      {
+        "title": "3. Commande et paiement",
+        "paragraphs": [
+          "Les commandes sont effectuées en ligne via notre site.",
+          "Notre processus de paiement est géré par notre revendeur Paddle.com. Paddle.com agit en tant que Merchant of Record pour toutes les transactions."
+        ]
+      },
+      {
+        "title": "4. Livraison",
+        "paragraphs": [
+          "Après paiement, l’eSIM est envoyée instantanément par email sous forme de QR code."
+        ]
+      },
+      {
+        "title": "5. Responsabilités",
+        "paragraphs": [
+          "L’utilisateur doit vérifier la compatibilité de son appareil avant achat. SafarSim ne garantit pas une couverture parfaite dans toutes les zones."
+        ]
+      },
+      {
+        "title": "6. Utilisation",
+        "paragraphs": [
+          "L’utilisateur s’engage à utiliser le service conformément aux lois du pays visité."
+        ]
+      },
+      {
+        "title": "7. Propriété intellectuelle",
+        "paragraphs": [
+          "Tous les contenus du site sont la propriété de SafarSim."
+        ]
+      },
+      {
+        "title": "8. Droit applicable",
+        "paragraphs": [
+          "Les présentes conditions sont régies par le droit applicable au Maroc."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Notre équipe est disponible pour vous aider avant, pendant et après votre achat.",
+    "supportTitle": "Support client",
+    "supportText": "Pour toute question sur votre commande, votre eSIM ou votre installation, vous pouvez nous contacter directement :",
+    "phoneWhatsapp": "Téléphone / WhatsApp",
+    "responseTitle": "Horaires de réponse",
+    "responseText": "Nous faisons de notre mieux pour répondre dans les plus brefs délais, généralement sous 24 heures ouvrées.",
+    "assistanceTitle": "Assistance",
+    "assistanceText": "Avant de demander un remboursement, nous vous invitons à nous contacter afin que nous puissions vérifier et résoudre rapidement le problème.",
+    "cta": "Nous écrire"
+  },
+  "pricing": {
+    "title": "Nos Tarifs eSIM",
+    "subtitle": "Des forfaits simples, flexibles et adaptés à vos voyages, avec des prix transparents selon chaque destination.",
+    "features": [
+      {
+        "icon": "🌍",
+        "title": "190+ destinations",
+        "text": "Restez connecté dans le monde entier avec des forfaits adaptés à chaque pays et région."
+      },
+      {
+        "icon": "⚡",
+        "title": "Activation rapide",
+        "text": "Recevez votre eSIM par email et installez-la en quelques minutes avant ou pendant votre voyage."
+      },
+      {
+        "icon": "💸",
+        "title": "Prix transparents",
+        "text": "Pas de frais cachés. Le prix affiché est le prix que vous payez pour votre forfait eSIM."
+      }
+    ],
+    "howTitle": "Comment fonctionnent nos prix ?",
+    "howText": "Les tarifs varient selon la destination, la quantité de données et la durée du forfait. Vous trouverez sur SafarSim des offres adaptées aux courts séjours comme aux voyages plus longs.",
+    "influencesTitle": "Ce qui influence le tarif",
+    "influences": [
+      "La destination choisie",
+      "Le nombre de Go inclus dans le forfait",
+      "La durée de validité du forfait",
+      "Le type d’offre : pays unique ou région"
+    ],
+    "includedTitle": "Ce qui est inclus",
+    "included": [
+      "Une eSIM prête à installer",
+      "Un QR code envoyé par email",
+      "Une connexion internet 4G / 5G selon le réseau local",
+      "La possibilité de garder votre numéro WhatsApp"
+    ],
+    "note": "Les prix affichés ci-dessous correspondent à nos forfaits disponibles pour certaines destinations populaires.",
+    "popularTitle": "Destinations populaires",
+    "popularText": "Consultez quelques-unes de nos destinations les plus demandées avec leurs tarifs eSIM.",
+    "from": "À partir de",
+    "offer": "Voir l’offre",
+    "allDestinations": "Voir toutes les destinations",
+    "days": "jours"
+  },
+  "helpPage": {
+    "badge": "Centre d’aide",
+    "title": "Questions fréquentes",
+    "subtitle": "Trouvez rapidement les réponses aux questions les plus courantes sur votre eSIM SAFAR.",
+    "ctaTitle": "Vous n’avez pas trouvé votre réponse ?",
+    "ctaText": "Notre équipe est là pour vous aider avant, pendant et après votre achat.",
+    "cta": "Nous contacter"
   }
 }

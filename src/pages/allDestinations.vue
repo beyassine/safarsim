@@ -43,21 +43,21 @@ import popularDestinations from "@/data/popularDestinations.json";
 import router from '@/router';
 
 const search = ref('')
-const selectedFilter = ref('Toutes les destinations')
+const selectedFilter = ref('all')
 
 const filters = [
-  'Populaire',
-  'Forfaits régionaux',
-  'Pays',
-  'Villes',
-  'Toutes les destinations',
+  'popular',
+  'regional',
+  'countries',
+  'cities',
+  'all',
 ]
 const filteredDestinations = computed(() => {
   let result = destinations.value
 
-  if (selectedFilter.value === 'Populaire') {
+  if (selectedFilter.value === 'popular') {
     result = result.filter(item => item.popular)
-  } else if (selectedFilter.value !== 'Toutes les destinations') {
+  } else if (selectedFilter.value !== 'all') {
     result = result.filter(item => item.category === selectedFilter.value)
   }
 

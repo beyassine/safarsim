@@ -1,5 +1,4 @@
 <template>
-<meta name="description" content="Achetez une eSIM pour voyager en Allemagne. Internet mobile rapide 4G/5G sans carte SIM physique. Activation instantanée avec SAFAR SIM.">
 <HeroSection/>
 
 <PopularDestinations/>

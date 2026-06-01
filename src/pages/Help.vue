@@ -2,11 +2,10 @@
   <div class="help-page">
     <v-container class="py-12 py-md-16">
       <div class="text-center mb-10">
-        <div class="help-badge mb-4">Centre d’aide</div>
-        <h1 class="help-title mb-3">Questions fréquentes</h1>
+        <div class="help-badge mb-4">{{ $t("helpPage.badge") }}</div>
+        <h1 class="help-title mb-3">{{ $t("helpPage.title") }}</h1>
         <p class="help-subtitle mx-auto">
-          Trouvez rapidement les réponses aux questions les plus courantes sur
-          votre eSIM SAFAR.
+          {{ $t("helpPage.subtitle") }}
         </p>
       </div>
 
@@ -21,11 +20,11 @@
               elevation="0"
             >
               <v-expansion-panel-title class="faq-question">
-                {{ item.question }}
+                {{ $t(`home.faq.items.${item}.question`) }}
               </v-expansion-panel-title>
 
               <v-expansion-panel-text class="faq-answer">
-                {{ item.answer }}
+                {{ $t(`home.faq.items.${item}.answer`) }}
               </v-expansion-panel-text>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -41,11 +40,11 @@
               elevation="0"
             >
               <v-expansion-panel-title class="faq-question">
-                {{ item.question }}
+                {{ $t(`home.faq.items.${item}.question`) }}
               </v-expansion-panel-title>
 
               <v-expansion-panel-text class="faq-answer">
-                {{ item.answer }}
+                {{ $t(`home.faq.items.${item}.answer`) }}
               </v-expansion-panel-text>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -53,9 +52,9 @@
       </v-row>
 
       <div class="help-cta text-center mt-12">
-        <h2 class="cta-title mb-3">Vous n’avez pas trouvé votre réponse ?</h2>
+        <h2 class="cta-title mb-3">{{ $t("helpPage.ctaTitle") }}</h2>
         <p class="cta-text mb-6">
-          Notre équipe est là pour vous aider avant, pendant et après votre achat.
+          {{ $t("helpPage.ctaText") }}
         </p>
 
         <v-btn
@@ -65,7 +64,7 @@
           to="/contact"
           class="px-8 text-none"
         >
-          Nous contacter
+          {{ $t("helpPage.cta") }}
         </v-btn>
       </div>
     </v-container>
@@ -74,76 +73,23 @@
 
 <script setup>
 const leftFaq = [
-  {
-    question: "Qu’est-ce qu’une eSIM ?",
-    answer:
-      "Une eSIM est une carte SIM digitale qui vous permet d’accéder à internet sans carte physique."
-  },
-  {
-    question: "Dois-je activer l’itinérance des données ?",
-    answer:
-      "Oui, l’itinérance doit être activée pour que votre eSIM fonctionne à l’étranger."
-  },
-  {
-    question: "Quelle vitesse de connexion puis-je avoir ?",
-    answer:
-      "La vitesse dépend du réseau local, généralement 4G ou 5G selon la destination."
-  },
-  {
-    question: "Puis-je garder mon WhatsApp ?",
-    answer: "Oui, votre numéro WhatsApp reste inchangé avec une eSIM."
-  },
-  {
-    question: "Quand vais-je recevoir mon eSIM ?",
-    answer:
-      "Votre eSIM est envoyée instantanément après l’achat par email."
-  },
-  {
-    question: "Quels téléphones sont compatibles?",
-    answer:
-      "La plupart des smartphones récents sont compatibles eSIM (iPhone, Samsung, etc.)."
-  },
-  {
-    question: "Puis-je appeler ou envoyer des SMS?",
-    answer: "Nos eSIM sont principalement data-only."
-  }
+  "whatIsEsim",
+  "roaming",
+  "speed",
+  "whatsapp",
+  "receive",
+  "phones",
+  "calls",
 ]
 
 const rightFaq = [
-  {
-    question: "Pourquoi choisir eSIM SAFAR ?",
-    answer:
-      "Nous offrons une connexion fiable dans plus de 160 destinations avec activation rapide."
-  },
-  {
-    question: "Puis-je utiliser SIM et eSIM ensemble ?",
-    answer:
-      "Oui, la plupart des téléphones permettent d’utiliser les deux simultanément."
-  },
-  {
-    question: "Comment supprimer une eSIM ?",
-    answer:
-      "Vous pouvez la supprimer directement depuis les paramètres de votre téléphone."
-  },
-  {
-    question: "Combien de fois puis-je utiliser mon eSIM ?",
-    answer:
-      "Chaque eSIM est valable pour un seul usage, selon le forfait choisi."
-  },
-  {
-    question: "Comment vérifier ma consommation ?",
-    answer:
-      "Vous pouvez suivre votre consommation dans les paramètres de votre appareil."
-  },
-  {
-    question: "Quand configurer mon eSIM ?",
-    answer: "Nous recommandons de l’installer avant votre départ."
-  },
-  {
-    question: "Comment installer mon eSIM ?",
-    answer:
-      "Scannez le QR code reçu par email et suivez les instructions simples."
-  }
+  "why",
+  "dualSim",
+  "delete",
+  "reuse",
+  "usage",
+  "setup",
+  "install",
 ]
 </script>
 

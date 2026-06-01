@@ -6,7 +6,11 @@
     "chooseDestination": "Choose my destination",
     "chooseDestinationShort": "Choose destination",
     "from": "From",
-    "models": "model(s)"
+    "models": "model(s)",
+    "contactUs": "Contact us",
+    "email": "Email",
+    "phone": "Phone",
+    "website": "Website"
   },
   "hero": {
     "title": "Travel connected anywhere in the world",
@@ -185,7 +189,14 @@
     "whatsappGreeting": "Hello,",
     "whatsappIntro": "I would like to order the following eSIMs:",
     "whatsappCompatiblePhone": "Compatible phone",
-    "whatsappThanks": "Thank you."
+    "whatsappThanks": "Thank you.",
+    "emailLabel": "Email",
+    "paypalCharge": "PayPal will charge:",
+    "paypalSecure": "Secure payment by PayPal",
+    "paypalLoading": "Loading PayPal...",
+    "paypalCreateOrderError": "Error creating the PayPal order.",
+    "paypalCancelled": "Payment cancelled.",
+    "paypalGenericError": "A PayPal error occurred."
   },
   "footer": {
     "company": "Company",
@@ -252,5 +263,210 @@
       "text": "The buyer must check that their device is eSIM compatible before purchase. Service quality may vary depending on local networks and available coverage."
     },
     "cta": "View pricing"
+  },
+  "allDestinations": {
+    "filters": {
+      "popular": "Popular",
+      "regional": "Regional plans",
+      "countries": "Countries",
+      "cities": "Cities",
+      "all": "All destinations"
+    }
+  },
+  "paymentSuccess": {
+    "title": "Payment confirmed",
+    "text": "Thank you for your order. We will process your eSIM quickly.",
+    "orderReference": "Order reference",
+    "viewDestinations": "View destinations",
+    "contact": "Contact us"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": [
+      {
+        "title": "1. Data collected",
+        "text": "We collect: name, email and information needed for the order."
+      },
+      {
+        "title": "2. Use",
+        "text": "The data is used to process orders and provide support."
+      },
+      {
+        "title": "3. Payment",
+        "text": "Payments are secure and handled by Paddle.com."
+      },
+      {
+        "title": "4. Sharing",
+        "text": "Data is shared only with the necessary service providers."
+      },
+      {
+        "title": "5. Security",
+        "text": "We protect your data with appropriate measures."
+      },
+      {
+        "title": "6. Your rights",
+        "text": "Contact us at contact@safarsim.net for any request."
+      }
+    ]
+  },
+  "refund": {
+    "title": "Refund Policy",
+    "sections": [
+      {
+        "title": "1. Digital products",
+        "text": "eSIMs are digital products delivered instantly."
+      },
+      {
+        "title": "2. Guarantee",
+        "text": "We offer a 14-day money-back guarantee if the service does not work."
+      },
+      {
+        "title": "3. Refundable cases",
+        "items": [
+          "eSIM not received",
+          "eSIM not working"
+        ]
+      },
+      {
+        "title": "4. Non-refundable",
+        "items": [
+          "Incompatible device",
+          "Incorrect use",
+          "Plan consumed"
+        ]
+      },
+      {
+        "title": "5. Request",
+        "text": "Send your request to contact@safarsim.net with the details."
+      },
+      {
+        "title": "6. Timeframe",
+        "text": "Refunds are processed within 5 to 10 business days."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Sale and Use",
+    "updated": "Last updated: April 2026",
+    "sections": [
+      {
+        "title": "1. General information",
+        "paragraphs": [
+          "The website www.safarsim.net is operated by SafarSim.",
+          "For any question, you can contact us:"
+        ],
+        "items": [
+          "Email: contact@safarsim.net",
+          "Phone: +212 613 147 245"
+        ]
+      },
+      {
+        "title": "2. Service description",
+        "paragraphs": [
+          "SafarSim offers eSIM plans that provide access to mobile internet abroad. Each offer includes a defined data allowance and validity period."
+        ]
+      },
+      {
+        "title": "3. Order and payment",
+        "paragraphs": [
+          "Orders are placed online through our website.",
+          "Our payment process is handled by our reseller Paddle.com. Paddle.com acts as Merchant of Record for all transactions."
+        ]
+      },
+      {
+        "title": "4. Delivery",
+        "paragraphs": [
+          "After payment, the eSIM is sent instantly by email as a QR code."
+        ]
+      },
+      {
+        "title": "5. Responsibilities",
+        "paragraphs": [
+          "The user must check device compatibility before purchase. SafarSim does not guarantee perfect coverage in all areas."
+        ]
+      },
+      {
+        "title": "6. Use",
+        "paragraphs": [
+          "The user agrees to use the service in accordance with the laws of the visited country."
+        ]
+      },
+      {
+        "title": "7. Intellectual property",
+        "paragraphs": [
+          "All site content is the property of SafarSim."
+        ]
+      },
+      {
+        "title": "8. Applicable law",
+        "paragraphs": [
+          "These terms are governed by the applicable law in Morocco."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Our team is available to help you before, during and after your purchase.",
+    "supportTitle": "Customer support",
+    "supportText": "For any question about your order, your eSIM or your installation, you can contact us directly:",
+    "phoneWhatsapp": "Phone / WhatsApp",
+    "responseTitle": "Response times",
+    "responseText": "We do our best to respond as quickly as possible, usually within 24 business hours.",
+    "assistanceTitle": "Assistance",
+    "assistanceText": "Before requesting a refund, we invite you to contact us so we can quickly check and resolve the issue.",
+    "cta": "Write to us"
+  },
+  "pricing": {
+    "title": "Our eSIM Pricing",
+    "subtitle": "Simple, flexible plans adapted to your travels, with transparent prices for each destination.",
+    "features": [
+      {
+        "icon": "🌍",
+        "title": "190+ destinations",
+        "text": "Stay connected worldwide with plans adapted to each country and region."
+      },
+      {
+        "icon": "⚡",
+        "title": "Fast activation",
+        "text": "Receive your eSIM by email and install it in a few minutes before or during your trip."
+      },
+      {
+        "icon": "💸",
+        "title": "Transparent prices",
+        "text": "No hidden fees. The displayed price is the price you pay for your eSIM plan."
+      }
+    ],
+    "howTitle": "How do our prices work?",
+    "howText": "Prices vary depending on the destination, data amount and plan duration. On SafarSim you will find offers adapted to short stays and longer trips.",
+    "influencesTitle": "What influences the price",
+    "influences": [
+      "The selected destination",
+      "The number of GB included in the plan",
+      "The plan validity period",
+      "The offer type: single country or region"
+    ],
+    "includedTitle": "What is included",
+    "included": [
+      "An eSIM ready to install",
+      "A QR code sent by email",
+      "4G / 5G internet depending on the local network",
+      "The ability to keep your WhatsApp number"
+    ],
+    "note": "The prices shown below correspond to our available plans for some popular destinations.",
+    "popularTitle": "Popular destinations",
+    "popularText": "View some of our most requested destinations with their eSIM prices.",
+    "from": "From",
+    "offer": "View offer",
+    "allDestinations": "View all destinations",
+    "days": "days"
+  },
+  "helpPage": {
+    "badge": "Help center",
+    "title": "Frequently asked questions",
+    "subtitle": "Quickly find answers to the most common questions about your SAFAR eSIM.",
+    "ctaTitle": "Did not find your answer?",
+    "ctaText": "Our team is here to help you before, during and after your purchase.",
+    "cta": "Contact us"
   }
 }

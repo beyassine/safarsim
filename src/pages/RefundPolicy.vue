@@ -3,54 +3,19 @@
     <v-container class="py-12">
       
       <div class="text-center mb-10">
-        <div class="eyebrow">SAFAR SIM</div>
-        <h1 class="page-title">Politique de Remboursement</h1>
+        <div class="eyebrow"><bdi dir="ltr">SAFAR SIM</bdi></div>
+        <h1 class="page-title">{{ $t("refund.title") }}</h1>
       </div>
 
       <v-card class="card">
-        <section>
-          <h2>1. Produits numériques</h2>
-          <p>
-            Les eSIM sont des produits numériques livrés instantanément.
+        <section v-for="section in $tm('refund.sections')" :key="section.title">
+          <h2>{{ section.title }}</h2>
+          <p v-if="section.text">
+            {{ section.text }}
           </p>
-        </section>
-
-        <section>
-          <h2>2. Garantie</h2>
-          <p>
-            Nous offrons une garantie de remboursement sous 14 jours si le service ne fonctionne pas.
-          </p>
-        </section>
-
-        <section>
-          <h2>3. Cas remboursables</h2>
-          <ul>
-            <li>eSIM non reçue</li>
-            <li>eSIM non fonctionnelle</li>
+          <ul v-if="section.items">
+            <li v-for="item in section.items" :key="item">{{ item }}</li>
           </ul>
-        </section>
-
-        <section>
-          <h2>4. Non remboursable</h2>
-          <ul>
-            <li>Appareil non compatible</li>
-            <li>Mauvaise utilisation</li>
-            <li>Consommation du forfait</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>5. Demande</h2>
-          <p>
-            Envoyez votre demande à contact@safarsim.net avec les détails.
-          </p>
-        </section>
-
-        <section>
-          <h2>6. Délai</h2>
-          <p>
-            Les remboursements sont traités sous 5 à 10 jours ouvrés.
-          </p>
         </section>
       </v-card>
     </v-container>

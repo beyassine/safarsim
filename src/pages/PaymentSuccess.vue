@@ -6,16 +6,16 @@
       </v-icon>
 
       <h1 class="text-h4 font-weight-bold mb-3">
-        Paiement confirmé
+        {{ $t("paymentSuccess.title") }}
       </h1>
 
       <p class="text-body-1 text-medium-emphasis mb-6">
-        Merci pour votre commande. Nous allons traiter votre eSIM rapidement.
+        {{ $t("paymentSuccess.text") }}
       </p>
 
       <div v-if="orderId" class="order-reference pa-4 mb-6">
         <div class="text-caption text-medium-emphasis mb-1">
-          Référence commande
+          {{ $t("paymentSuccess.orderReference") }}
         </div>
         <div class="font-weight-bold">
           {{ orderId }}
@@ -24,11 +24,11 @@
 
       <div class="d-flex flex-wrap ga-3">
         <v-btn color="black" rounded="pill" class="text-none" to="/">
-          Voir les destinations
+          {{ $t("paymentSuccess.viewDestinations") }}
         </v-btn>
 
         <v-btn variant="outlined" rounded="pill" class="text-none" to="/contact">
-          Nous contacter
+          {{ $t("paymentSuccess.contact") }}
         </v-btn>
       </div>
     </v-sheet>

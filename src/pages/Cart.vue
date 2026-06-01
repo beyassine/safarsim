@@ -156,7 +156,7 @@
           <v-text-field
             v-model.trim="customerEmail"
             type="email"
-            label="Email"
+            :label="$t('cart.emailLabel')"
             variant="outlined"
             density="comfortable"
             rounded="lg"
@@ -703,7 +703,7 @@ export default {
 
             return response.data.id
           } catch (error) {
-            const errorMessage = error.response?.data?.error || 'Erreur lors de la création de la commande PayPal.'
+        const errorMessage = error.response?.data?.error || this.$t('cart.paypalCreateOrderError')
             console.error('Create order error:', error.response?.data || error)
             this.showMessage(errorMessage, 'error')
             throw error
@@ -743,11 +743,11 @@ export default {
 
         onError: (err) => {
           console.error('PayPal SDK error:', err)
-          this.showMessage('Une erreur PayPal est survenue.', 'error')
+          this.showMessage(this.$t('cart.paypalGenericError'), 'error')
         },
 
         onCancel: () => {
-          this.showMessage('Paiement annulé.')
+          this.showMessage(this.$t('cart.paypalCancelled'))
         },
       })
 

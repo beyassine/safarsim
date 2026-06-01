@@ -2,41 +2,20 @@
   <div class="pricing-page">
     <v-container class="py-12 py-md-16">
       <div class="text-center mb-10">
-        <div class="eyebrow">SAFAR SIM</div>
-        <h1 class="page-title">Nos Tarifs eSIM</h1>
+        <div class="eyebrow"><bdi dir="ltr">SAFAR SIM</bdi></div>
+        <h1 class="page-title">{{ $t("pricing.title") }}</h1>
         <p class="page-subtitle">
-          Des forfaits simples, flexibles et adaptés à vos voyages, avec des prix
-          transparents selon chaque destination.
+          {{ $t("pricing.subtitle") }}
         </p>
       </div>
 
       <v-row class="mb-10" justify="center">
-        <v-col cols="12" md="4">
+        <v-col v-for="feature in $tm('pricing.features')" :key="feature.title" cols="12" md="4">
           <v-card class="feature-card" elevation="0">
-            <div class="feature-icon">🌍</div>
-            <h3>190+ destinations</h3>
+            <div class="feature-icon">{{ feature.icon }}</div>
+            <h3>{{ feature.title }}</h3>
             <p>
-              Restez connecté dans le monde entier avec des forfaits adaptés à chaque pays et région.
-            </p>
-          </v-card>
-        </v-col>
-
-        <v-col cols="12" md="4">
-          <v-card class="feature-card" elevation="0">
-            <div class="feature-icon">⚡</div>
-            <h3>Activation rapide</h3>
-            <p>
-              Recevez votre eSIM par email et installez-la en quelques minutes avant ou pendant votre voyage.
-            </p>
-          </v-card>
-        </v-col>
-
-        <v-col cols="12" md="4">
-          <v-card class="feature-card" elevation="0">
-            <div class="feature-icon">💸</div>
-            <h3>Prix transparents</h3>
-            <p>
-              Pas de frais cachés. Le prix affiché est le prix que vous payez pour votre forfait eSIM.
+              {{ feature.text }}
             </p>
           </v-card>
         </v-col>
@@ -44,44 +23,37 @@
 
       <v-card class="pricing-card mb-10" elevation="0">
         <div class="pricing-header">
-          <h2>Comment fonctionnent nos prix ?</h2>
+          <h2>{{ $t("pricing.howTitle") }}</h2>
           <p>
-            Les tarifs varient selon la destination, la quantité de données et la durée du forfait.
-            Vous trouverez sur SafarSim des offres adaptées aux courts séjours comme aux voyages plus longs.
+            {{ $t("pricing.howText") }}
           </p>
         </div>
 
         <div class="pricing-block">
-          <h3>Ce qui influence le tarif</h3>
+          <h3>{{ $t("pricing.influencesTitle") }}</h3>
           <ul class="pricing-list">
-            <li>La destination choisie</li>
-            <li>Le nombre de Go inclus dans le forfait</li>
-            <li>La durée de validité du forfait</li>
-            <li>Le type d’offre : pays unique ou région</li>
+            <li v-for="item in $tm('pricing.influences')" :key="item">{{ item }}</li>
           </ul>
         </div>
 
         <div class="pricing-block">
-          <h3>Ce qui est inclus</h3>
+          <h3>{{ $t("pricing.includedTitle") }}</h3>
           <ul class="pricing-list">
-            <li>Une eSIM prête à installer</li>
-            <li>Un QR code envoyé par email</li>
-            <li>Une connexion internet 4G / 5G selon le réseau local</li>
-            <li>La possibilité de garder votre numéro WhatsApp</li>
+            <li v-for="item in $tm('pricing.included')" :key="item">{{ item }}</li>
           </ul>
         </div>
 
         <div class="pricing-note">
           <p>
-            Les prix affichés ci-dessous correspondent à nos forfaits disponibles pour certaines destinations populaires.
+            {{ $t("pricing.note") }}
           </p>
         </div>
       </v-card>
 
       <div class="section-header text-center mb-6">
-        <h2>Destinations populaires</h2>
+        <h2>{{ $t("pricing.popularTitle") }}</h2>
         <p>
-          Consultez quelques-unes de nos destinations les plus demandées avec leurs tarifs eSIM.
+          {{ $t("pricing.popularText") }}
         </p>
       </div>
 
@@ -107,10 +79,10 @@
               <div class="destination-top">
                 <div class="destination-name-wrap">
                   <span class="flag">{{ destination.flag }}</span>
-                  <h3>{{ destination.name }}</h3>
+                  <h3>{{ getDestinationName(destination) }}</h3>
                 </div>
                 <div class="from-price">
-                  À partir de <span>{{ getEntryPrice(destination) }} Dh</span>
+                  {{ $t("pricing.from") }} <span>{{ getEntryPrice(destination) }} Dh</span>
                 </div>
               </div>
 
@@ -132,7 +104,7 @@
                 block
                 :to="`/destinations/${destination.slug}`"
               >
-                Voir l’offre
+                {{ $t("pricing.offer") }}
               </v-btn>
             </div>
           </v-card>
@@ -147,7 +119,7 @@
           class="cta-btn"
           to="/destinations"
         >
-          Voir toutes les destinations
+          {{ $t("pricing.allDestinations") }}
         </v-btn>
       </div>
     </v-container>
@@ -155,143 +127,9 @@
 </template>
 
 <script setup>
-const popularDestinations = [
-  {
-    name: "France",
-    slug: "france",
-    flag: "🇫🇷",
-    image: "/images/destinations/france.jpg",
-    popular: true,
-    iso: "FR",
-    plans: {
-      "1GB_7days": 60,
-      "5GB_30days": 135,
-      "10GB_30days": 160,
-      "20GB_30days": 200,
-      "50GB_30days": 320
-    }
-  },
-  {
-    name: "Espagne",
-    slug: "espagne",
-    flag: "🇪🇸",
-    image: "/images/destinations/espagne.jpg",
-    popular: true,
-    iso: "ES",
-    plans: {
-      "1GB_7days": 60,
-      "5GB_30days": 140,
-      "10GB_30days": 170,
-      "20GB_30days": 220,
-      "50GB_30days": 335
-    }
-  },
-  {
-    name: "Turquie",
-    slug: "turquie",
-    flag: "🇹🇷",
-    image: "/images/destinations/turquie.jpg",
-    popular: true,
-    iso: "TR",
-    plans: {
-      "1GB_7days": 65,
-      "5GB_30days": 140,
-      "10GB_30days": 155,
-      "20GB_30days": 190,
-      "50GB_30days": 285
-    }
-  },
-  {
-    name: "Italie",
-    slug: "italie",
-    flag: "🇮🇹",
-    image: "/images/destinations/italie.jpg",
-    popular: true,
-    iso: "IT",
-    plans: {
-      "1GB_7days": 60,
-      "5GB_30days": 135,
-      "10GB_30days": 160,
-      "20GB_30days": 200,
-      "50GB_30days": 320
-    }
-  },
-  {
-    name: "Émirats arabes unis",
-    slug: "emirats-arabes-unis",
-    flag: "🇦🇪",
-    image: "/images/destinations/emirats-arabes-unis.jpg",
-    popular: true,
-    iso: "AE",
-    plans: {
-      "1GB_7days": 75,
-      "5GB_30days": 185,
-      "10GB_30days": 250,
-      "20GB_30days": 365,
-      "50GB_30days": 695
-    }
-  },
-  {
-    name: "Arabie saoudite",
-    slug: "arabie-saoudite",
-    flag: "🇸🇦",
-    image: "/images/destinations/arabie-saoudite.jpg",
-    popular: true,
-    iso: "SA",
-    plans: {
-      "1GB_7days": 70,
-      "5GB_30days": 170,
-      "10GB_30days": 230,
-      "20GB_30days": 305,
-      "50GB_30days": 610
-    }
-  },
-  {
-    name: "Égypte",
-    slug: "egypte",
-    flag: "🇪🇬",
-    image: "/images/destinations/egypte.jpg",
-    popular: true,
-    iso: "EG",
-    plans: {
-      "1GB_7days": 80,
-      "5GB_30days": 200,
-      "10GB_30days": 250,
-      "20GB_30days": 350,
-      "50GB_30days": 645
-    }
-  },
-  {
-    name: "États-Unis",
-    slug: "etats-unis",
-    flag: "🇺🇸",
-    image: "/images/destinations/etats-unis.jpg",
-    popular: true,
-    iso: "US",
-    plans: {
-      "1GB_7days": 65,
-      "5GB_30days": 165,
-      "10GB_30days": 210,
-      "20GB_30days": 300,
-      "50GB_30days": 550
-    }
-  },
-  {
-    name: "Canada",
-    slug: "canada",
-    flag: "🇨🇦",
-    image: "/images/destinations/canada.jpg",
-    popular: true,
-    iso: "CA",
-    plans: {
-      "1GB_7days": 75,
-      "5GB_30days": 205,
-      "10GB_30days": 285,
-      "20GB_30days": 430,
-      "50GB_30days": 810
-    }
-  }
-]
+import popularDestinations from "@/data/popularDestinations.json"
+import { getLocalizedName } from "@/utils/localizedNames"
+import i18n from "@/i18n"
 
 function getEntryPrice(destination) {
   const prices = Object.values(destination.plans)
@@ -302,7 +140,7 @@ function getEntryPrice(destination) {
 
 function formatPlanLabel(key) {
   const [data, duration] = key.split("_")
-  return `${data.replace("GB", " Go")} / ${duration.replace("days", " jours")}`
+  return data + " / " + duration.replace("days", i18n.global.t("pricing.days"))
 }
 
 function getTopPlans(destination) {
@@ -316,6 +154,10 @@ function getTopPlans(destination) {
         price
       }
     })
+}
+
+function getDestinationName(destination) {
+  return getLocalizedName(destination, i18n.global.locale)
 }
 
 const getImage = (item) => {

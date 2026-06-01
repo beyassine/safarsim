@@ -2,7 +2,7 @@
   <div class="compatibility-page">
     <v-container class="py-8 py-md-12" style="max-width: 980px">
       <!-- Breadcrumb -->
-      <div class="mb-6 mt-2 text-body-2">
+      <div class="mb-6 mt-2 text-body-2 bidi-text">
         <router-link to="/" class="text-decoration-none">
           <span class="text-medium-emphasis">{{ $t("common.home") }}</span>
         </router-link>
@@ -11,28 +11,28 @@
       </div>
 
       <div class="mb-8">
-        <h1 class="section-title mb-4">{{ $t("compatibility.title") }}</h1>
+        <h1 class="section-title mb-4 bidi-text">{{ $t("compatibility.title") }}</h1>
 
-        <p class="page-text mb-4">
+        <p class="page-text mb-4 bidi-text">
           {{ $t("compatibility.intro") }}
         </p>
 
-        <ul class="conditions-list mb-5">
-          <li>{{ $t("compatibility.conditionEsim") }}</li>
-          <li>{{ $t("compatibility.conditionUnlocked") }}</li>
-          <li>{{ $t("compatibility.conditionRoot") }}</li>
+        <ul class="conditions-list mb-5 bidi-text">
+          <li class="bidi-text">{{ $t("compatibility.conditionEsim") }}</li>
+          <li class="bidi-text">{{ $t("compatibility.conditionUnlocked") }}</li>
+          <li class="bidi-text">{{ $t("compatibility.conditionRoot") }}</li>
         </ul>
 
-        <p class="page-text mb-4">
+        <p class="page-text mb-4 bidi-text">
           {{ $t("compatibility.description") }}
         </p>
 
         <v-card rounded="xl" elevation="1" class="pa-5 compatibility-card mb-8">
-          <h4 class="subsection-title mb-4">{{ $t("cart.phoneCompatibility") }}</h4>
+          <h4 class="subsection-title mb-4 bidi-text">{{ $t("cart.phoneCompatibility") }}</h4>
           <v-alert
             :type="hasSelectedCompatiblePhone ? 'success' : 'info'"
             variant="tonal"
-            class="mb-4"
+            class="mb-4 bidi-text"
           >
             {{
               hasSelectedCompatiblePhone
@@ -76,50 +76,20 @@
         </v-card>
 
         <v-alert class="mt-10 pa-6 text-center" variant="tonal" rounded="lg" >
-          <p class="mb-3">
+          <p class="mb-3 bidi-text">
             <strong>{{ $t("compatibility.ctaTitle") }} 📱</strong>
           </p>
 
-          <p class="mb-4">
-            {{ $t("compatibility.ctaText") }} <strong class="text-pink-darken-1 font-weight-bold"> SAFAR SIM</strong>.
+          <p class="mb-4 bidi-text">
+            {{ $t("compatibility.ctaText") }} <strong class="text-pink-darken-1 font-weight-bold"><bdi dir="ltr">SAFAR SIM</bdi></strong>.
           </p>
           <router-link  to="/destinations" class="text-decoration-none">
-            <v-btn color="pink" size="large" class="text-none" prepend-icon="mdi-earth">
+            <v-btn color="pink" size="large" class="text-none bidi-text" prepend-icon="mdi-earth">
               {{ $t("common.viewDestinations") }}
             </v-btn>
           </router-link>
         </v-alert>
       </div>
-
-      <div class="search-wrapper mb-8">
-        <v-text-field v-model="search" density="comfortable" variant="outlined" rounded="lg" hide-details
-          prepend-inner-icon="mdi-magnify" :placeholder="$t('compatibility.searchPlaceholder')" bg-color="white" clearable />
-      </div>
-
-      <div v-if="filteredDevices.length">
-        <div v-for="group in filteredDevices" :key="group.brand" class="brand-section">
-          <div class="brand-header">
-            <h2 class="brand-title">{{ group.brand }}</h2>
-            <span class="brand-count">{{ group.models.length }} {{ $t("common.models") }}</span>
-          </div>
-
-          <div class="models-grid">
-            <v-chip v-for="model in group.models" :key="model" class="model-chip" variant="outlined" rounded="lg">
-              {{ model }}
-            </v-chip>
-          </div>
-        </div>
-      </div>
-
-      <v-alert v-else type="info" variant="tonal" rounded="lg">
-        {{ $t("compatibility.noDevice") }}       
-
-        <p class="page-text">
-          <strong>{{ $t("compatibility.notFoundTitle") }}</strong>
-          {{ $t("compatibility.notFoundText") }}
-        </p>
-
-      </v-alert>
     </v-container>
   </div>
 </template>
@@ -239,7 +209,6 @@ const hasSelectedCompatiblePhone = computed(() =>
 
 <style scoped>
 .compatibility-page {
-  background: #f7f3ef;
   min-height: 100vh;
 }
 

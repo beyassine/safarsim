@@ -2,7 +2,7 @@
   <v-app class="app">
 
     <Navbar />
-    <main class="main-content">
+    <main class="main-content bidi-text">
       <router-view />
     </main>
 
@@ -107,6 +107,11 @@ html[dir="rtl"] ol {
     color: #1f2937;
     margin-bottom: 10px;
 }
+.bidi-text,
+.bidi-text :where(p, h1, h2, h3, h4, h5, h6, li, span, a, button, label, input, textarea, .v-btn, .v-alert, .v-list-item-title, .v-card-title, .v-card-text, .v-expansion-panel-title, .v-expansion-panel-text) {
+  unicode-bidi: plaintext;
+}
+
 .main-content {
   padding-top: 40px;
 }

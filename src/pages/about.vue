@@ -2,7 +2,7 @@
   <div class="product-page">
     <v-container class="py-12 py-md-16">
       <div class="text-center mb-10">
-        <div class="eyebrow">SAFAR SIM</div>
+        <div class="eyebrow"><bdi dir="ltr">SAFAR SIM</bdi></div>
         <h1 class="page-title">{{ $t("about.title") }}</h1>
         <p class="page-subtitle">
           {{ $t("about.subtitle") }}

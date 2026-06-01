@@ -15,9 +15,11 @@
                             {{ getLocalizedName(country) }}
                         </v-card-title>
 
-                        <v-card-subtitle>
-                            {{ $t("common.from") }} <span class=" text-h6 font-weight-bold text-pink-darken-4"> {{
-                                getEntryPrice(country) }} DH</span>
+                        <v-card-subtitle class="price-subtitle">
+                            <span>{{ $t("common.from") }}</span>
+                            <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
+                                {{ getEntryPrice(country) }} DH
+                            </bdi>
                         </v-card-subtitle>
                     </v-card-item>
 
@@ -69,6 +71,18 @@ const fallback = (event) => {
     font-weight: 500;
     line-height: 1.0;
     color: #1f2937;
+}
+
+.price-subtitle {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    unicode-bidi: isolate;
+}
+
+:global(html[dir="rtl"]) .price-subtitle {
+    direction: rtl;
+    text-align: right;
 }
 
 .flag-wrapper {

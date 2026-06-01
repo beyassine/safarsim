@@ -2,10 +2,10 @@
   <div class="legal-page">
     <v-container class="py-12 py-md-16">
       <div class="text-center mb-8">
-        <div class="eyebrow">SAFAR SIM</div>
-        <h1 class="page-title">Contactez-nous</h1>
+        <div class="eyebrow"><bdi dir="ltr">SAFAR SIM</bdi></div>
+        <h1 class="page-title">{{ $t("contact.title") }}</h1>
         <p class="page-subtitle">
-          Notre équipe est disponible pour vous aider avant, pendant et après votre achat.
+          {{ $t("contact.subtitle") }}
         </p>
       </div>
 
@@ -13,43 +13,40 @@
         <v-col cols="12" md="8" lg="7">
           <v-card class="content-card" elevation="0">
             <div class="contact-block">
-              <h2>Support client</h2>
+              <h2>{{ $t("contact.supportTitle") }}</h2>
               <p>
-                Pour toute question sur votre commande, votre eSIM ou votre installation,
-                vous pouvez nous contacter directement :
+                {{ $t("contact.supportText") }}
               </p>
 
               <div class="info-box">
                 <div class="info-item">
-                  <span class="label">Email</span>
+                  <span class="label">{{ $t("common.email") }}</span>
                   <a href="mailto:contact@safarsim.net" class="value">contact@safarsim.net</a>
                 </div>
 
                 <div class="info-item">
-                  <span class="label">Téléphone / WhatsApp</span>
+                  <span class="label">{{ $t("contact.phoneWhatsapp") }}</span>
                   <a href="tel:+212613147245" class="value">+212 613 147 245</a>
                 </div>
 
                 <div class="info-item">
-                  <span class="label">Site web</span>
+                  <span class="label">{{ $t("common.website") }}</span>
                   <a href="https://www.safarsim.net" class="value">www.safarsim.net</a>
                 </div>
               </div>
             </div>
 
             <div class="contact-block">
-              <h2>Horaires de réponse</h2>
+              <h2>{{ $t("contact.responseTitle") }}</h2>
               <p>
-                Nous faisons de notre mieux pour répondre dans les plus brefs délais,
-                généralement sous 24 heures ouvrées.
+                {{ $t("contact.responseText") }}
               </p>
             </div>
 
             <div class="contact-block">
-              <h2>Assistance</h2>
+              <h2>{{ $t("contact.assistanceTitle") }}</h2>
               <p>
-                Avant de demander un remboursement, nous vous invitons à nous contacter
-                afin que nous puissions vérifier et résoudre rapidement le problème.
+                {{ $t("contact.assistanceText") }}
               </p>
             </div>
 
@@ -61,7 +58,7 @@
                 class="cta-btn"
                 href="mailto:contact@safarsim.net"
               >
-                Nous écrire
+                {{ $t("contact.cta") }}
               </v-btn>
             </div>
           </v-card>
