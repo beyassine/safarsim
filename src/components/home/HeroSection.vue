@@ -153,25 +153,7 @@ export default {
     margin-bottom: 2px;
 }
 
-:global(html[dir="rtl"]) .hero-title {
-    font-size: 36px;
-    line-height: 1.45;
-}
-
-:global(html[dir="rtl"]) .hero-subtitle {
-    font-size: 24px;
-    line-height: 1.9;
-}
-
-:global(html[dir="rtl"]) .info-title {
-    font-size: 23px;
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 5px;
-}
-
 :global(html[dir="rtl"]) .hero-check-icon {
-    font-size: 27px;
     margin-inline-end: 6px;
 }
 

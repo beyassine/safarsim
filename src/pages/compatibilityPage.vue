@@ -26,6 +26,55 @@
         <p class="page-text mb-4">
           {{ $t("compatibility.description") }}
         </p>
+
+        <v-card rounded="xl" elevation="1" class="pa-5 compatibility-card mb-8">
+          <h4 class="subsection-title mb-4">{{ $t("cart.phoneCompatibility") }}</h4>
+          <v-alert
+            :type="hasSelectedCompatiblePhone ? 'success' : 'info'"
+            variant="tonal"
+            class="mb-4"
+          >
+            {{
+              hasSelectedCompatiblePhone
+                ? $t("cart.compatiblePhone")
+                : $t("cart.selectPhone")
+            }}
+          </v-alert>
+
+          <v-row>
+            <v-col cols="12" md="6">
+              <v-select
+                v-model="phoneModel"
+                :items="phoneModelOptions"
+                :label="$t('cart.phoneModel')"
+                variant="outlined"
+                density="comfortable"
+                rounded="lg"
+                prepend-inner-icon="mdi-cellphone"
+                :menu-props="{ maxHeight: 320 }"
+                hide-details="auto"
+                @update:model-value="phoneSubmodel = ''"
+              />
+            </v-col>
+
+            <v-col cols="12" md="6">
+              <v-autocomplete
+                v-model="phoneSubmodel"
+                :items="phoneSubmodelOptions"
+                :label="$t('cart.phoneSubmodel')"
+                variant="outlined"
+                density="comfortable"
+                rounded="lg"
+                prepend-inner-icon="mdi-cellphone-check"
+                :menu-props="{ maxHeight: 320 }"
+                hide-details="auto"
+                :disabled="!phoneModel"
+                :no-data-text="$t('cart.noModel')"
+              />
+            </v-col>
+          </v-row>
+        </v-card>
+
         <v-alert class="mt-10 pa-6 text-center" variant="tonal" rounded="lg" >
           <p class="mb-3">
             <strong>{{ $t("compatibility.ctaTitle") }} 📱</strong>
@@ -80,9 +129,30 @@ import { computed, ref } from "vue";
 import { iosCompatibility, androidCompatibility } from "@/data/deviceCompatibility";
 
 const search = ref("");
+const phoneModel = ref("");
+const phoneSubmodel = ref("");
 
 // on fusionne iOS + Android dans une seule liste
 const allDevices = [...iosCompatibility, ...androidCompatibility];
+
+const formatDeviceBrand = (brand) => {
+  const normalizedBrand = String(brand || "").trim();
+  const specialBrands = {
+    oppo: "OPPO",
+  };
+
+  if (normalizedBrand.toLowerCase() === "apple") {
+    return "iPhone";
+  }
+
+  if (specialBrands[normalizedBrand.toLowerCase()]) {
+    return specialBrands[normalizedBrand.toLowerCase()];
+  }
+
+  return normalizedBrand
+    .toLowerCase()
+    .replace(/\b\w/g, (character) => character.toUpperCase());
+};
 
 const normalize = (value) => {
   return String(value || "")
@@ -114,6 +184,57 @@ const filteredDevices = computed(() => {
     })
     .filter((group) => group.models.length > 0);
 });
+
+const deviceCompatibilityGroups = computed(() => {
+  const groups = new Map();
+  const priorityBrands = ["iphone", "samsung", "oppo", "huawei", "xiaomi"];
+
+  allDevices.forEach((group) => {
+    const brand = formatDeviceBrand(group.brand);
+    const key = brand.toLowerCase();
+    const existing = groups.get(key) || {
+      brand,
+      models: new Set(),
+    };
+
+    group.models.forEach((model) => {
+      existing.models.add(model);
+    });
+
+    groups.set(key, existing);
+  });
+
+  return Array.from(groups.values())
+    .map((group) => ({
+      brand: group.brand,
+      models: Array.from(group.models).sort((a, b) => a.localeCompare(b)),
+    }))
+    .sort((a, b) => {
+      const aPriority = priorityBrands.indexOf(a.brand.toLowerCase());
+      const bPriority = priorityBrands.indexOf(b.brand.toLowerCase());
+
+      if (aPriority !== -1 || bPriority !== -1) {
+        if (aPriority === -1) return 1;
+        if (bPriority === -1) return -1;
+        return aPriority - bPriority;
+      }
+
+      return a.brand.localeCompare(b.brand);
+    });
+});
+
+const phoneModelOptions = computed(() =>
+  deviceCompatibilityGroups.value.map((group) => group.brand)
+);
+
+const phoneSubmodelOptions = computed(() =>
+  deviceCompatibilityGroups.value.find((group) => group.brand === phoneModel.value)?.models || []
+);
+
+const hasSelectedCompatiblePhone = computed(() =>
+  Boolean(phoneModel.value && phoneSubmodel.value)
+);
+
 </script>
 
 <style scoped>
@@ -147,6 +268,10 @@ const filteredDevices = computed(() => {
 
 .compatibility-tabs {
   border-bottom: 1px solid #d8d1ca;
+}
+
+.compatibility-card {
+  background: white;
 }
 
 .brand-section {

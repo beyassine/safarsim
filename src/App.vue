@@ -65,8 +65,6 @@ html[dir="rtl"] .v-overlay-container {
 
 html[dir="rtl"] .app {
   text-align: right;
-  font-size: 1.08rem;
-  line-height: 1.75;
 }
 
 html[dir="rtl"] input,
@@ -93,21 +91,6 @@ html[dir="rtl"] ol {
   padding-left: 0;
 }
 
-html[dir="rtl"] .section-title {
-  font-size: 28px;
-  line-height: 1.45;
-}
-
-html[dir="rtl"] .subsection-title {
-  font-size: 23px;
-  line-height: 1.45;
-}
-
-html[dir="rtl"] .text-body-1,
-html[dir="rtl"] .text-body-2 {
-  font-size: 1.05rem !important;
-  line-height: 1.8;
-}
 .section-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;

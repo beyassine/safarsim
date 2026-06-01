@@ -4,7 +4,7 @@
             <h2 class="section-title text-center">
                 {{ $t("home.popular.title") }}
             </h2>
-            <p class="text-body-smal">
+            <p class="text-medium-emphasis text-center">
                 {{ $t("home.popular.subtitle") }}
             </p>
         </div>
