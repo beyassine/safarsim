@@ -3,13 +3,40 @@
         name: 'regionDetails',
         params: { slug: country.slug }
     }">
-        <div class="d-flex  justify-space-between align-center ma-3">
-            <div class="d-flex align-center">
+        <div class="card-row d-flex justify-space-between align-center ma-3">
+            <template v-if="$i18n.locale === 'ar'">
+            <button class="arrow-btn ml-3" type="button">
+                <v-icon color="" size="22">mdi-arrow-left</v-icon>
+            </button>
+            <div class="card-content d-flex align-center justify-end">
+                <div class="card-copy">
+                    <v-card-item>
+                        <v-card-title class="card-title">
+                            {{ getLocalizedName(country) }}
+                        </v-card-title>
+
+                        <v-card-subtitle class="price-subtitle">
+                            <span>{{ $t("common.from") }}</span>
+                            <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
+                                {{ getEntryPrice(country) }} DH
+                            </bdi>
+                        </v-card-subtitle>
+                    </v-card-item>
+                </div>
                 <div class="flag-wrapper">
                     <v-img  :src="getImage(country)" contain
                         class="flag-img" @error="fallback" />
                 </div>
-                <div>
+            </div>
+            <div class="card-wave-mirror"></div>
+            </template>
+            <template v-else>
+            <div class="card-content d-flex align-center">
+                <div class="flag-wrapper">
+                    <v-img  :src="getImage(country)" contain
+                        class="flag-img" @error="fallback" />
+                </div>
+                <div class="card-copy">
                     <v-card-item>
                         <v-card-title class="card-title">
                             {{ getLocalizedName(country) }}
@@ -29,6 +56,7 @@
                 <v-icon color="" size="22">mdi-arrow-right</v-icon>
             </button>
             <div class="card-wave"></div>
+            </template>
         </div>
     </v-card>
 
@@ -73,6 +101,14 @@ const fallback = (event) => {
     color: #1f2937;
 }
 
+.card-row {
+    direction: ltr;
+}
+
+.card-copy {
+    min-width: 0;
+}
+
 .price-subtitle {
     display: inline-flex;
     align-items: baseline;
@@ -115,5 +151,16 @@ const fallback = (event) => {
     background: #FCE4EC;
     border-radius: 50% 50% 0 0;
     transform: rotate(-45deg);
+}
+
+.card-wave-mirror {
+    position: absolute;
+    left: -130px;
+    bottom: 0px;
+    width: 220px;
+    height: 120px;
+    background: #FCE4EC;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(45deg);
 }
 </style>

@@ -88,7 +88,6 @@ function goToDestination(destination) {
   color: black;
   margin-bottom: 40px;
   margin-top: 60px;
-  text-decoration: underline;
   text-decoration-color: black;
   text-decoration-thickness: 2px;
 }
