@@ -1,7 +1,14 @@
 <template>
   <v-container class="py-10 destination-page" v-if="destination">
     <!-- Breadcrumb -->
-    <div class="mb-6 text-body-2">
+    <div v-if="$i18n.locale === 'ar'" class="breadcrumb-row breadcrumb-row-ar mb-6 text-body-2">
+      <router-link to="/destinations" class="text-decoration-none">
+        <span class="text-medium-emphasis">{{ $t("common.destinations") }}</span>
+      </router-link>
+      <span class="mx-2">&lt;</span>
+      <strong>{{ localizedDestinationName }}</strong>
+    </div>
+    <div v-else class="breadcrumb-row mb-6 text-body-2">
       <router-link to="/destinations" class="text-decoration-none">
         <span class="text-medium-emphasis">{{ $t("common.destinations") }}</span>
       </router-link>
@@ -257,6 +264,16 @@ export default {
 .destination-page {
   padding-top: 150px;
   max-width: 900px;
+}
+
+.breadcrumb-row {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-row-ar {
+  direction: rtl;
+  justify-content: flex-start;
 }
 
 .country-card,

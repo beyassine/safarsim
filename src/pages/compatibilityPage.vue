@@ -2,7 +2,17 @@
   <div class="compatibility-page">
     <v-container class="py-8 py-md-12" style="max-width: 980px">
       <!-- Breadcrumb -->
-      <div class="mb-6 mt-2 text-body-2 bidi-text">
+      <div
+        v-if="$i18n.locale === 'ar'"
+        class="breadcrumb-row breadcrumb-row-ar mb-6 mt-2 text-body-2 bidi-text"
+      >
+        <router-link to="/" class="text-decoration-none">
+          <span class="text-medium-emphasis">{{ $t("common.home") }}</span>
+        </router-link>
+        <span class="mx-2">&lt;</span>
+        <strong>{{ $t("compatibility.breadcrumb") }}</strong>
+      </div>
+      <div v-else class="breadcrumb-row mb-6 mt-2 text-body-2 bidi-text">
         <router-link to="/" class="text-decoration-none">
           <span class="text-medium-emphasis">{{ $t("common.home") }}</span>
         </router-link>
@@ -66,11 +76,23 @@
             variant="tonal"
             class="mb-4 bidi-text"
           >
-            {{
-              hasSelectedCompatiblePhone
-                ? $t("cart.compatiblePhone")
-                : $t("cart.selectPhone")
-            }}
+            <i18n-t
+              v-if="$i18n.locale === 'ar'"
+              :keypath="hasSelectedCompatiblePhone ? 'cart.compatiblePhone' : 'cart.selectPhone'"
+              tag="span"
+              dir="rtl"
+            >
+              <template #esim>
+                <bdi dir="ltr">eSIM</bdi>
+              </template>
+            </i18n-t>
+            <span v-else>
+              {{
+                hasSelectedCompatiblePhone
+                  ? $t("cart.compatiblePhone")
+                  : $t("cart.selectPhone")
+              }}
+            </span>
           </v-alert>
 
           <v-row>
@@ -242,6 +264,16 @@ const hasSelectedCompatiblePhone = computed(() =>
 <style scoped>
 .compatibility-page {
   min-height: 100vh;
+}
+
+.breadcrumb-row {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-row-ar {
+  direction: rtl;
+  justify-content: flex-start;
 }
 
 .page-title {

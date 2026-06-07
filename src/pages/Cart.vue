@@ -165,9 +165,19 @@
           <v-alert
             :type="hasSelectedCompatiblePhone ? 'success' : 'info'"
             variant="tonal"
-            class="mb-4"
+            class="mb-4 compatibility-alert"
           >
-            {{ compatibilityMessage }}
+            <i18n-t
+              v-if="$i18n.locale === 'ar'"
+              :keypath="hasSelectedCompatiblePhone ? 'cart.compatiblePhone' : 'cart.selectPhone'"
+              tag="span"
+              dir="rtl"
+            >
+              <template #esim>
+                <bdi dir="ltr">eSIM</bdi>
+              </template>
+            </i18n-t>
+            <span v-else>{{ compatibilityMessage }}</span>
           </v-alert>
 
           <v-select
@@ -873,6 +883,10 @@ export default {
 
 .cart-item-title-ar {
   direction: ltr;
+}
+
+.compatibility-alert bdi {
+  unicode-bidi: isolate;
 }
 
 .charged-currency {
