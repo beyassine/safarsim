@@ -17,11 +17,43 @@
           {{ $t("compatibility.intro") }}
         </p>
 
-        <ul class="conditions-list mb-5 bidi-text">
-          <li class="bidi-text">{{ $t("compatibility.conditionEsim") }}</li>
-          <li class="bidi-text">{{ $t("compatibility.conditionUnlocked") }}</li>
-          <li class="bidi-text">{{ $t("compatibility.conditionRoot") }}</li>
-        </ul>
+        <v-row class="d-flex mb-5 conditions-row">
+          <v-col class="" cols="12">
+            <h3 class="condition-title bidi-text">
+              <v-icon
+                class="compatibility-check-icon"
+                color="green-darken-2"
+                icon="mdi-check"
+                size="large"
+              />
+              {{ $t("compatibility.conditionEsim") }}
+            </h3>
+          </v-col>
+
+          <v-col class="" cols="12">
+            <h3 class="condition-title bidi-text">
+              <v-icon
+                class="compatibility-check-icon"
+                color="green-darken-2"
+                icon="mdi-check"
+                size="large"
+              />
+              {{ $t("compatibility.conditionUnlocked") }}
+            </h3>
+          </v-col>
+
+          <v-col class="" cols="12">
+            <h3 class="condition-title bidi-text">
+              <v-icon
+                class="compatibility-check-icon"
+                color="green-darken-2"
+                icon="mdi-check"
+                size="large"
+              />
+              {{ $t("compatibility.conditionRoot") }}
+            </h3>
+          </v-col>
+        </v-row>
 
         <p class="page-text mb-4 bidi-text">
           {{ $t("compatibility.description") }}
@@ -225,14 +257,15 @@ const hasSelectedCompatiblePhone = computed(() =>
   color: #2f2f2f;
 }
 
-.conditions-list {
-  padding-left: 1.25rem;
-  color: #2f2f2f;
+.condition-title {
+  font-size: 18px;
+  font-weight: 550;
+  line-height: 1.4;
+  color: #1f2937;
 }
 
-.conditions-list li {
-  margin-bottom: 0.75rem;
-  line-height: 1.7;
+:global(html[dir="rtl"]) .compatibility-check-icon {
+  margin-inline-end: 6px;
 }
 
 .compatibility-tabs {
@@ -280,7 +313,7 @@ const hasSelectedCompatiblePhone = computed(() =>
   }
 
   .page-text,
-  .conditions-list li {
+  .condition-title {
     font-size: 0.98rem;
   }
 

@@ -19,7 +19,32 @@
         <v-card rounded="xl" elevation="1" class="pa-5 summary-card">
         <h2 class="subsection-title mb-4">{{ $t("cart.summary") }}</h2>
           <div v-for="(item, index) in cart" :key="item.id" class="cart-line py-4">
-            <div class="d-flex justify-space-between align-start">
+            <div
+              v-if="$i18n.locale === 'ar'"
+              class="cart-layout-row d-flex justify-space-between align-start"
+            >
+              <v-btn icon variant="text" @click="removeItem(item.id)">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+
+              <div class="cart-item-details cart-item-details-ar">
+                <div class="text-right">
+                  <div class="cart-item-title-ar d-flex align-center justify-end mb-1">
+                    <div class="text-h6 font-weight-bold">
+                      {{ getCartItemName(item) }}
+                    </div>
+                    <div class="flag-emoji ml-3">{{ item.flag }}</div>
+                  </div>
+
+                  <div class="text-h6 mt-1 mb-1">
+                    {{ item.days }} {{ $t("destinationsPage.days") }} • {{ item.dataLabel }} 
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div v-else class="cart-layout-row d-flex justify-space-between align-start">
               <div class="d-flex align-start">
                 <div class="flag-emoji mr-3">{{ item.flag }}</div>
 
@@ -28,8 +53,8 @@
                     {{ getCartItemName(item) }}
                   </div>
 
-                  <div class="text-body-1 mb-1">
-                    {{ item.dataLabel }} • {{ item.days }} {{ $t("destinationsPage.days") }} : {{ item.price }} DH
+                  <div class="text-h6 mb-1">
+                    {{ item.dataLabel }} • {{ item.days }} {{ $t("destinationsPage.days") }}
                   </div>
                 </div>
               </div>
@@ -39,7 +64,28 @@
               </v-btn>
             </div>
 
-            <div class="d-flex justify-space-between align-center mt-5 flex-wrap ga-3">
+            <div
+              v-if="$i18n.locale === 'ar'"
+              class="cart-layout-row d-flex justify-space-between align-center mt-5 flex-wrap ga-3"
+            >
+              <div class="text-h6 font-weight-bold">
+                {{ item.price * item.quantity }} DH
+              </div>
+
+              <div class="quantity-box d-flex align-center">
+                <v-btn icon size="small" variant="outlined" @click="decrease(item.id)">
+                  <v-icon size="18">mdi-minus</v-icon>
+                </v-btn>
+
+                <span class="mx-4 font-weight-bold">{{ item.quantity }}</span>
+
+                <v-btn icon size="small" variant="outlined" @click="increase(item.id)">
+                  <v-icon size="18">mdi-plus</v-icon>
+                </v-btn>
+              </div>
+            </div>
+
+            <div v-else class="cart-layout-row d-flex justify-space-between align-center mt-5 flex-wrap ga-3">
               <div class="quantity-box d-flex align-center">
                 <v-btn icon size="small" variant="outlined" @click="decrease(item.id)">
                   <v-icon size="18">mdi-minus</v-icon>
@@ -62,7 +108,15 @@
 
           <v-divider class="my-4" />
 
-          <div class="d-flex justify-space-between mb-4">
+          <div
+            v-if="$i18n.locale === 'ar'"
+            class="cart-layout-row d-flex justify-space-between mb-4"
+          >
+            <span class="text-h6 font-weight-bold">{{ total }} DH</span>
+            <span class="text-h6 font-weight-bold">{{ $t("cart.total") }}</span>
+          </div>
+
+          <div v-else class="cart-layout-row d-flex justify-space-between mb-4">
             <span class="text-h6 font-weight-bold">{{ $t("cart.total") }}</span>
             <span class="text-h6 font-weight-bold">{{ total }} DH</span>
           </div>
@@ -799,6 +853,26 @@ export default {
 
 .cart-line:first-of-type {
   padding-top: 0 !important;
+}
+
+.cart-layout-row {
+  direction: ltr;
+}
+
+.cart-item-details {
+  min-width: 0;
+}
+
+.cart-item-details-ar {
+  direction: ltr;
+}
+
+.cart-item-details-ar .text-right {
+  direction: rtl;
+}
+
+.cart-item-title-ar {
+  direction: ltr;
 }
 
 .charged-currency {

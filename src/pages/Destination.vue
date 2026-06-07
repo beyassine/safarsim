@@ -11,7 +11,14 @@
 
     <!-- Country card -->
     <v-card rounded="xl" elevation="0" class="pa-6 mb-8 country-card">
-      <div class="d-flex align-center mb-4">
+      <div v-if="$i18n.locale === 'ar'" class="destination-header destination-header-ar d-flex justify-end align-center mb-4">
+        <div class="text-body-1 mr-2">{{ destination.iso }}</div>
+        <h2 class="text-h5 font-weight-bold mr-3">{{ localizedDestinationName }}</h2>
+        <div class="flag-wrapper">
+          <v-img :src="getImage(destination)" contain class="flag-img" @error="fallback" />
+        </div>
+      </div>
+      <div v-else class="destination-header d-flex align-center mb-4">
         <div class="flag-wrapper">
           <v-img :src="getImage(destination)" contain class="flag-img" @error="fallback" />
         </div>
@@ -21,22 +28,26 @@
 
       <v-divider class="mb-5" />
 
-      <div class="d-flex align-center mb-6 text-body-1">
+      <div v-if="$i18n.locale === 'ar'" class="destination-info-row d-flex align-center justify-end mb-6 text-body-1">
+        <v-chip class="ml-2" size="x-small" variant="outlined">5G</v-chip>
+        <v-chip class="ml-2" size="x-small" variant="outlined">4G</v-chip>
+        <strong class="ml-2">{{ $t("destinationsPage.availableNetwork") }}</strong>
+        <v-icon size="20">mdi-signal-cellular-outline</v-icon>
+      </div>
+      <div v-else class="destination-info-row d-flex align-center mb-6 text-body-1">
         <v-icon size="20" class="mr-2">mdi-signal-cellular-outline</v-icon>
         <strong class="mr-2">{{ $t("destinationsPage.availableNetwork") }}</strong>
         <v-chip class="mr-2" size="x-small" variant="outlined">4G</v-chip>
         <v-chip size="x-small" variant="outlined">5G</v-chip>
       </div>
-      <div class="d-flex align-start">
+      <div v-if="$i18n.locale === 'ar'" class="d-flex align-start justify-end">
+        <div>{{ $t("destinationsPage.planStarts") }}</div>
+        <v-icon size="20" class="ml-3 mt-1">mdi-check</v-icon>
+      </div>
+      <div v-else class="d-flex align-start">
         <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
         <div>{{ $t("destinationsPage.planStarts") }}</div>
       </div>
-      <router-link to="/compatibility">
-        <v-btn color="green" rounded="pill" class="text-none font-weight-bold mt-2 mb-6"
-          prepend-icon="mdi-cellphone-check">
-          {{ $t("destinationsPage.checkCompatibility") }}
-        </v-btn>
-      </router-link>
     </v-card>
 
     <!-- Packages -->
@@ -46,7 +57,7 @@
       <div class="section-line mb-6"></div>
 
       <div v-for="group in groupedPlans" :key="group.days" class="mb-8">
-        <div class="text-h6 font-weight-bold mb-4">{{ group.days }} {{ $t("destinationsPage.days") }}</div>
+        <div class="text-h6 font-weight-bold mb-4">{{ formatDaysLabel(group.days) }}</div>
 
         <v-card v-for="plan in group.items" :key="plan.key" rounded="xl" elevation="1"
           class="mb-5 px-4 py-4 package-item">
@@ -220,6 +231,14 @@ export default {
       } catch (e) {
         return item.image;
       }
+    },
+    fallback(event) {
+      event.target.src = require('@/assets/images/flags/default.png')
+    },
+    formatDaysLabel(days) {
+      return this.$i18n.locale === 'ar'
+        ? `${this.$t("destinationsPage.days")} ${days}`
+        : `${days} ${this.$t("destinationsPage.days")}`
     }
   },
 
