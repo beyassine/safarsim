@@ -25,11 +25,6 @@
                 </div>
 
                 <div class="info-item">
-                  <span class="label">{{ $t("contact.phoneWhatsapp") }}</span>
-                  <a href="tel:+212613147245" class="value">+212 613 147 245</a>
-                </div>
-
-                <div class="info-item">
                   <span class="label">{{ $t("common.website") }}</span>
                   <a href="https://www.safarsim.net" class="value">www.safarsim.net</a>
                 </div>

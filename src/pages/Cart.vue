@@ -152,10 +152,12 @@
           </div>
           -->
 
+          <!-- WhatsApp checkout is temporarily disabled.
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
-            class="text-none font-weight-bold mb-3" :disabled="!isPaymentReady" @click="checkoutWhatsApp">
+            class="text-none font-weight-bold mb-3" disabled @click="checkoutWhatsApp">
             {{ $t("cart.whatsappCheckout") }}
           </v-btn>
+          -->
         </v-card>
       </v-col>
 
@@ -288,10 +290,12 @@
           </div>
           -->
 
+          <!-- WhatsApp checkout is temporarily disabled.
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
-            class="text-none font-weight-bold mb-3" :disabled="!isPaymentReady" @click="checkoutWhatsApp">
+            class="text-none font-weight-bold mb-3" disabled @click="checkoutWhatsApp">
             {{ $t("cart.whatsappCheckout") }}
           </v-btn>
+          -->
         </v-card>
       </v-col>
     </v-row>
