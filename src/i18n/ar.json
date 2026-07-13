@@ -216,7 +216,7 @@
     "help": "المساعدة",
     "compatibility": "توافق ⁨eSIM⁩",
     "bottom": "صُمم بحب للمسافرين",
-    "copyright": "⁨SAFAR SIM⁩ © 2026"
+    "copyright": "⁨SAFAR NETWORKS LLC⁩ © 2026"
   },
   "about": {
     "title": "ما هي ⁨SafarSim⁩؟",
@@ -293,7 +293,7 @@
       },
       {
         "title": "3. الدفع",
-        "text": "تتم المدفوعات بشكل آمن وتديرها Paddle.com."
+        "text": "تتم المدفوعات بشكل آمن وتديرها Stripe.com."
       },
       {
         "title": "4. المشاركة",
@@ -370,7 +370,7 @@
         "title": "3. الطلب والدفع",
         "paragraphs": [
           "تتم الطلبات عبر الإنترنت من خلال موقعنا.",
-          "تتم إدارة عملية الدفع بواسطة موزعنا Paddle.com. تعمل Paddle.com بصفتها Merchant of Record لجميع المعاملات."
+          "تتم إدارة عملية الدفع بواسطة Stripe.com. تعمل Stripe.com بصفتها Merchant of Record لجميع المعاملات."
         ]
       },
       {

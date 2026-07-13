@@ -17,7 +17,7 @@
 
                         <v-card-subtitle class="price-subtitle price-subtitle-ar">
                             <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                {{ getEntryPrice(country) }} DH
+                                {{ formatUsdPrice(getEntryPrice(country)) }} USD
                             </bdi>
                             <span dir="rtl">{{ $t("common.from") }}</span>
                         </v-card-subtitle>
@@ -45,7 +45,7 @@
                         <v-card-subtitle class="price-subtitle">
                             <span>{{ $t("common.from") }}</span>
                             <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                {{ getEntryPrice(country) }} DH
+                                {{ formatUsdPrice(getEntryPrice(country)) }} USD
                             </bdi>
                         </v-card-subtitle>
                     </v-card-item>
@@ -75,6 +75,8 @@ const getEntryPrice = (destination) => {
         .filter((price) => price !== null && price !== undefined)
     return Math.min(...prices)
 }
+
+const formatUsdPrice = (price) => Number(price).toFixed(2)
 const getImage = (item) => {
   if (item.type === "region") {
     return require(`@/assets/images/flags/regions/regions.png`);

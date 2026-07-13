@@ -216,7 +216,7 @@
     "help": "Help",
     "compatibility": "eSIM Compatibility",
     "bottom": "Made with love for travelers",
-    "copyright": "SAFAR SIM © 2026"
+    "copyright": "SAFAR NETWORKS LLC © 2026"
   },
   "about": {
     "title": "What is SafarSim?",
@@ -293,7 +293,7 @@
       },
       {
         "title": "3. Payment",
-        "text": "Payments are secure and handled by Paddle.com."
+        "text": "Payments are secure and handled by Stripe.com."
       },
       {
         "title": "4. Sharing",
@@ -370,7 +370,7 @@
         "title": "3. Order and payment",
         "paragraphs": [
           "Orders are placed online through our website.",
-          "Our payment process is handled by our reseller Paddle.com. Paddle.com acts as Merchant of Record for all transactions."
+          "Our payment process is handled by Stripe.com. Stripe.com acts as Merchant of Record for all transactions."
         ]
       },
       {

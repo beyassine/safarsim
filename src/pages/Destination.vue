@@ -75,7 +75,7 @@
 
             <div class="d-flex align-center">
               <div class="text-right mr-4">
-                <div class="text-h5 ">{{ plan.price }} DH</div>
+                <div class="text-h5 ">{{ formatUsdPrice(plan.price) }} USD</div>
               </div>
               <v-btn icon :color="addedPlanKey === plan.key ? 'green' : 'pink-darken-1'" variant="flat"
                 @click="handleAddToCart(plan)">
@@ -198,6 +198,7 @@ export default {
         dataLabel: plan.dataLabel,
         days: plan.days,
         price: plan.price,
+        currency: 'USD',
         esimGoBundleName: plan.esimGoBundleName,
         quantity: 1,
       })
@@ -216,6 +217,7 @@ export default {
         dataLabel: plan.dataLabel,
         days: plan.days,
         price: plan.price,
+        currency: 'USD',
         esimGoBundleName: plan.esimGoBundleName,
         quantity: 1,
       })
@@ -246,6 +248,9 @@ export default {
       return this.$i18n.locale === 'ar'
         ? `${this.$t("destinationsPage.days")} ${days}`
         : `${days} ${this.$t("destinationsPage.days")}`
+    },
+    formatUsdPrice(price) {
+      return Number(price).toFixed(2)
     }
   },
 

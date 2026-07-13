@@ -82,7 +82,7 @@
                   <h3>{{ getDestinationName(destination) }}</h3>
                 </div>
                 <div class="from-price">
-                  {{ $t("pricing.from") }} <span>{{ getEntryPrice(destination) }} Dh</span>
+                  {{ $t("pricing.from") }} <span>{{ formatUsdPrice(getEntryPrice(destination)) }} USD</span>
                 </div>
               </div>
 
@@ -93,7 +93,7 @@
                   class="plan-row"
                 >
                   <span class="plan-label">{{ plan.label }}</span>
-                  <span class="plan-value">{{ plan.price }} Dh</span>
+                  <span class="plan-value">{{ formatUsdPrice(plan.price) }} USD</span>
                 </div>
               </div>
 
@@ -136,6 +136,10 @@ function getEntryPrice(destination) {
     .map((plan) => (plan && typeof plan === "object" ? plan.price : plan))
     .filter((price) => price !== null && price !== undefined)
   return Math.min(...prices)
+}
+
+function formatUsdPrice(price) {
+  return Number(price).toFixed(2)
 }
 
 function formatPlanLabel(key) {

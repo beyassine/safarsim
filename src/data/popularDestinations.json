@@ -7,11 +7,11 @@
     "popular": true,
     "iso": "FR",
     "plans": {
-      "1GB_7days": 60,
-      "5GB_30days": 135,
-      "10GB_30days": 160,
-      "20GB_30days": 200,
-      "50GB_30days": 320
+      "1GB_7days": 6.5,
+      "5GB_30days": 14.5,
+      "10GB_30days": 17.5,
+      "20GB_30days": 21.5,
+      "50GB_30days": 34.5
     },
     "names": {
       "fr": "France",
@@ -27,11 +27,11 @@
     "popular": true,
     "iso": "ES",
     "plans": {
-      "1GB_7days": 60,
-      "5GB_30days": 140,
-      "10GB_30days": 170,
-      "20GB_30days": 220,
-      "50GB_30days": 335
+      "1GB_7days": 6.5,
+      "5GB_30days": 15,
+      "10GB_30days": 18.5,
+      "20GB_30days": 24,
+      "50GB_30days": 36
     },
     "names": {
       "fr": "Espagne",
@@ -47,11 +47,11 @@
     "popular": true,
     "iso": "TR",
     "plans": {
-      "1GB_7days": 65,
-      "5GB_30days": 140,
-      "10GB_30days": 155,
-      "20GB_30days": 190,
-      "50GB_30days": 285
+      "1GB_7days": 7,
+      "5GB_30days": 15,
+      "10GB_30days": 16.5,
+      "20GB_30days": 20.5,
+      "50GB_30days": 31
     },
     "names": {
       "fr": "Turquie",
@@ -67,11 +67,11 @@
     "popular": true,
     "iso": "IT",
     "plans": {
-      "1GB_7days": 60,
-      "5GB_30days": 135,
-      "10GB_30days": 160,
-      "20GB_30days": 200,
-      "50GB_30days": 320
+      "1GB_7days": 6.5,
+      "5GB_30days": 14.5,
+      "10GB_30days": 17.5,
+      "20GB_30days": 21.5,
+      "50GB_30days": 34.5
     },
     "names": {
       "fr": "Italie",
@@ -87,11 +87,11 @@
     "popular": true,
     "iso": "AE",
     "plans": {
-      "1GB_7days": 75,
-      "5GB_30days": 185,
-      "10GB_30days": 250,
-      "20GB_30days": 365,
-      "50GB_30days": 695
+      "1GB_7days": 8,
+      "5GB_30days": 20,
+      "10GB_30days": 27,
+      "20GB_30days": 39.5,
+      "50GB_30days": 75
     },
     "names": {
       "fr": "Émirats arabes unis",
@@ -107,11 +107,11 @@
     "popular": true,
     "iso": "SA",
     "plans": {
-      "1GB_7days": 70,
-      "5GB_30days": 170,
-      "10GB_30days": 230,
-      "20GB_30days": 305,
-      "50GB_30days": 610
+      "1GB_7days": 7.5,
+      "5GB_30days": 18.5,
+      "10GB_30days": 25,
+      "20GB_30days": 33,
+      "50GB_30days": 66
     },
     "names": {
       "fr": "Arabie saoudite",
@@ -127,11 +127,11 @@
     "popular": true,
     "iso": "EG",
     "plans": {
-      "1GB_7days": 80,
-      "5GB_30days": 200,
-      "10GB_30days": 250,
-      "20GB_30days": 350,
-      "50GB_30days": 645
+      "1GB_7days": 8.5,
+      "5GB_30days": 21.5,
+      "10GB_30days": 27,
+      "20GB_30days": 38,
+      "50GB_30days": 69.5
     },
     "names": {
       "fr": "Égypte",
@@ -147,11 +147,11 @@
     "popular": true,
     "iso": "US",
     "plans": {
-      "1GB_7days": 65,
-      "5GB_30days": 165,
-      "10GB_30days": 210,
-      "20GB_30days": 300,
-      "50GB_30days": 550
+      "1GB_7days": 7,
+      "5GB_30days": 18,
+      "10GB_30days": 22.5,
+      "20GB_30days": 32.5,
+      "50GB_30days": 59.5
     },
     "names": {
       "fr": "États-Unis",
@@ -167,11 +167,11 @@
     "popular": true,
     "iso": "CA",
     "plans": {
-      "1GB_7days": 75,
-      "5GB_30days": 205,
-      "10GB_30days": 285,
-      "20GB_30days": 430,
-      "50GB_30days": 810
+      "1GB_7days": 8,
+      "5GB_30days": 22,
+      "10GB_30days": 31,
+      "20GB_30days": 46.5,
+      "50GB_30days": 87.5
     },
     "names": {
       "fr": "Canada",

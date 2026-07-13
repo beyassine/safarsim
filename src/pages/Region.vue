@@ -113,7 +113,7 @@
 
             <div class="d-flex align-center">
               <div class="text-right mr-4">
-                <div class="text-h5">{{ plan.price }} DH</div>
+                <div class="text-h5">{{ formatUsdPrice(plan.price) }} USD</div>
               </div>
 
               <v-btn
@@ -375,6 +375,7 @@ export default {
         dataLabel: plan.dataLabel,
         days: plan.days,
         price: plan.price,
+        currency: 'USD',
         esimGoBundleName: plan.esimGoBundleName,
         quantity: 1,
       })
@@ -409,6 +410,10 @@ export default {
       } catch (e) {
         return require('@/assets/images/flags/default.png')
       }
+    },
+
+    formatUsdPrice(price) {
+      return Number(price).toFixed(2)
     },
   },
 

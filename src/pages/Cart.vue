@@ -69,7 +69,7 @@
               class="cart-layout-row d-flex justify-space-between align-center mt-5 flex-wrap ga-3"
             >
               <div class="text-h6 font-weight-bold">
-                {{ item.price * item.quantity }} DH
+                {{ formatMoney(item.price * item.quantity, item.currency) }}
               </div>
 
               <div class="quantity-box d-flex align-center">
@@ -99,7 +99,7 @@
               </div>
 
               <div class="text-h6 font-weight-bold">
-                {{ item.price * item.quantity }} DH
+                {{ formatMoney(item.price * item.quantity, item.currency) }}
               </div>
             </div>
 
@@ -112,13 +112,13 @@
             v-if="$i18n.locale === 'ar'"
             class="cart-layout-row d-flex justify-space-between mb-4"
           >
-            <span class="text-h6 font-weight-bold">{{ total }} DH</span>
+            <span class="text-h6 font-weight-bold">{{ formatMoney(total, totalCurrency) }}</span>
             <span class="text-h6 font-weight-bold">{{ $t("cart.total") }}</span>
           </div>
 
           <div v-else class="cart-layout-row d-flex justify-space-between mb-4">
             <span class="text-h6 font-weight-bold">{{ $t("cart.total") }}</span>
-            <span class="text-h6 font-weight-bold">{{ total }} DH</span>
+            <span class="text-h6 font-weight-bold">{{ formatMoney(total, totalCurrency) }}</span>
           </div>
 
           <!-- PayPal is temporarily disabled while verification is pending.
@@ -350,6 +350,11 @@ export default {
       }, 0)
     },
 
+    totalCurrency() {
+      const currencies = new Set(this.cart.map(item => item.currency || 'DH'))
+      return currencies.size === 1 ? Array.from(currencies)[0] : ''
+    },
+
     madToUsdRate() {
       return Number(process.env.VUE_APP_MAD_TO_USD_RATE || 0.108)
     },
@@ -534,6 +539,7 @@ export default {
         days,
         names: item.names,
         price,
+        currency: item.currency || 'DH',
         quantity,
       }
     },
@@ -581,6 +587,14 @@ export default {
         .replace(/\b\w/g, character => character.toUpperCase())
     },
 
+    formatMoney(amount, currency = 'DH') {
+      const value = Number(amount)
+      const formatted = currency === 'USD'
+        ? value.toFixed(2)
+        : Number.isInteger(value) ? value : value.toFixed(2)
+      return currency ? `${formatted} ${currency}` : formatted
+    },
+
     paymentValidationMessage() {
       if (!this.hasSelectedCompatiblePhone) {
         return this.$t('cart.selectCompatiblePhone')
@@ -613,14 +627,14 @@ export default {
         '',
         ...this.cart.map((item, index) => {
           const lineTotal = item.price * item.quantity
-          return `${index + 1}. ${this.getCartItemName(item)} - ${item.dataLabel} - ${item.days} ${this.$t('destinationsPage.days')} - ${this.$t('cart.quantity')}: ${item.quantity} - ${this.$t('cart.unitPrice')}: ${item.price} DH - ${this.$t('cart.total')}: ${lineTotal} DH`
+          return `${index + 1}. ${this.getCartItemName(item)} - ${item.dataLabel} - ${item.days} ${this.$t('destinationsPage.days')} - ${this.$t('cart.quantity')}: ${item.quantity} - ${this.$t('cart.unitPrice')}: ${this.formatMoney(item.price, item.currency)} - ${this.$t('cart.total')}: ${this.formatMoney(lineTotal, item.currency)}`
         }),
         '',
         `${this.$t('cart.whatsappCompatiblePhone')} : ${this.phoneModel || this.$t('cart.notProvided')} ${this.phoneSubmodel || ''}`.trim(),
         `Email : ${this.customerEmail || this.$t('cart.notProvided')}`,
         `${this.$t('cart.phone')} : ${this.customerPhone || this.$t('cart.notProvided')}`,
         '',
-        `${this.$t('cart.cartTotal')} : ${this.total} DH`,
+        `${this.$t('cart.cartTotal')} : ${this.formatMoney(this.total, this.totalCurrency)}`,
         '',
         this.$t('cart.whatsappThanks')
       ]
