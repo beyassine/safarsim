@@ -19,8 +19,11 @@
     <!-- Region card -->
     <v-card rounded="xl" elevation="0" class="pa-6 mb-8 country-card">
       <div class="d-flex align-center mb-4">
-        <div class="flag-wrapper region-image-wrapper">
-          <v-img :src="region.image" cover class="flag-img rounded-lg" />
+        <div
+          class="flag-wrapper region-image-wrapper"
+          :class="{ 'europe-region-image-wrapper': region.slug === 'europe' }"
+        >
+          <v-img :src="getRegionImage(region)" cover class="flag-img rounded-lg" />
         </div>
         <div class="ml-3">
           <h2 class="text-h5 font-weight-bold">{{ localizedRegionName }}</h2>
@@ -63,32 +66,34 @@
       <h3 class="text-h5 text-center mb-5">{{ $t("destinationsPage.countriesIncluded") }}</h3>
       <div class="section-line mb-6"></div>
 
-      <v-row>
-        <v-col
-          v-for="country in coveredCountries"
-          :key="country.iso"
-          cols="12"
-          sm="6"
-          md="4"
-        >
-          <v-card rounded="xl" elevation="1" class="country-item px-4 py-3 h-100">
-            <div class="d-flex align-center">
-              <div class="flag-wrapper mr-3">
-                <v-img
-                  :src="getFlagImage(country.iso)"
-                  contain
-                  class="flag-img"
-                />
-              </div>
+      <div class="countries-scroll">
+        <v-row>
+          <v-col
+            v-for="country in coveredCountries"
+            :key="country.iso"
+            cols="6"
+            sm="6"
+            md="4"
+          >
+            <v-card rounded="xl" elevation="1" class="country-item px-4 py-3 h-100">
+              <div class="d-flex align-center">
+                <div class="flag-wrapper mr-3">
+                  <v-img
+                    :src="getFlagImage(country.iso)"
+                    contain
+                    class="flag-img"
+                  />
+                </div>
 
-              <div>
-                <div class="font-weight-medium">{{ country.name }}</div>
-                <div class="text-body-2 text-medium-emphasis">{{ country.iso }}</div>
+                <div>
+                  <div class="font-weight-medium">{{ country.name }}</div>
+                  <div class="text-body-2 text-medium-emphasis">{{ country.iso }}</div>
+                </div>
               </div>
-            </div>
-          </v-card>
-        </v-col>
-      </v-row>
+            </v-card>
+          </v-col>
+        </v-row>
+      </div>
     </v-card>
 
     <!-- Packages -->
@@ -113,7 +118,7 @@
 
             <div class="d-flex align-center">
               <div class="text-right mr-4">
-                <div class="text-h5">{{ formatUsdPrice(plan.price) }} USD</div>
+                <div class="text-h5">{{ formatUsdPrice(plan.price) }} DH</div>
               </div>
 
               <v-btn
@@ -355,6 +360,14 @@ export default {
   },
 
   methods: {
+    getRegionImage(region) {
+      if (region?.slug === 'europe') {
+        return require('@/assets/images/flags/regions/europe.png')
+      }
+
+      return require('@/assets/images/flags/regions/regions.png')
+    },
+
     loadRegion() {
       const slug = this.$route.params.slug
       this.region = regions.find((item) => item.slug === slug) || null
@@ -375,7 +388,7 @@ export default {
         dataLabel: plan.dataLabel,
         days: plan.days,
         price: plan.price,
-        currency: 'USD',
+        currency: 'DH',
         esimGoBundleName: plan.esimGoBundleName,
         quantity: 1,
       })
@@ -455,6 +468,28 @@ export default {
   border-radius: 999px;
 }
 
+.countries-scroll {
+  max-height: 430px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2px 8px;
+  scrollbar-color: #9e9e9e transparent;
+  scrollbar-width: thin;
+}
+
+.countries-scroll::-webkit-scrollbar {
+  width: 7px;
+}
+
+.countries-scroll::-webkit-scrollbar-thumb {
+  background: #9e9e9e;
+  border-radius: 999px;
+}
+
+.countries-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .package-item,
 .country-item {
   background: white;
@@ -480,8 +515,35 @@ export default {
   height: 48px;
 }
 
+.europe-region-image-wrapper {
+  width: 110px;
+  height: 76px;
+}
+
 .flag-img {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 599px) {
+  .countries-scroll {
+    max-height: 380px;
+    padding-inline: 4px;
+  }
+
+  .country-item {
+    padding: 10px 8px !important;
+  }
+
+  .country-item .flag-wrapper {
+    width: 38px;
+    height: 28px;
+    margin-right: 8px !important;
+  }
+
+  .country-item .font-weight-medium {
+    font-size: 0.875rem;
+    line-height: 1.15;
+  }
 }
 </style>

@@ -17,7 +17,7 @@
 
                         <v-card-subtitle class="price-subtitle price-subtitle-ar">
                             <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                {{ formatUsdPrice(getEntryPrice(country)) }} USD
+                                {{ formatUsdPrice(getEntryPrice(country)) }} DH
                             </bdi>
                             <span dir="rtl">{{ $t("common.from") }}</span>
                         </v-card-subtitle>
@@ -45,7 +45,7 @@
                         <v-card-subtitle class="price-subtitle">
                                 <span>{{ $t("common.from") }}</span>
                                 <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                    {{ formatUsdPrice(getEntryPrice(country)) }} USD
+                                    {{ formatUsdPrice(getEntryPrice(country)) }} DH
                                 </bdi>
                         </v-card-subtitle>
                     </v-card-item>

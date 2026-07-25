@@ -17,13 +17,13 @@
 
                         <v-card-subtitle class="price-subtitle price-subtitle-ar">
                             <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                {{ formatUsdPrice(getEntryPrice(country)) }} USD
+                                {{ formatUsdPrice(getEntryPrice(country)) }} DH
                             </bdi>
                             <span dir="rtl">{{ $t("common.from") }}</span>
                         </v-card-subtitle>
                     </v-card-item>
                 </div>
-                <div class="flag-wrapper">
+                <div class="flag-wrapper" :class="{ 'europe-flag-wrapper': country.slug === 'europe' }">
                     <v-img  :src="getImage(country)" contain
                         class="flag-img" @error="fallback" />
                 </div>
@@ -32,7 +32,7 @@
             </template>
             <template v-else>
             <div class="card-content d-flex align-center">
-                <div class="flag-wrapper">
+                <div class="flag-wrapper" :class="{ 'europe-flag-wrapper': country.slug === 'europe' }">
                     <v-img  :src="getImage(country)" contain
                         class="flag-img" @error="fallback" />
                 </div>
@@ -45,7 +45,7 @@
                         <v-card-subtitle class="price-subtitle">
                             <span>{{ $t("common.from") }}</span>
                             <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                {{ formatUsdPrice(getEntryPrice(country)) }} USD
+                                {{ formatUsdPrice(getEntryPrice(country)) }} DH
                             </bdi>
                         </v-card-subtitle>
                     </v-card-item>
@@ -78,6 +78,10 @@ const getEntryPrice = (destination) => {
 
 const formatUsdPrice = (price) => Number(price).toFixed(2)
 const getImage = (item) => {
+  if (item.slug === "europe") {
+    return require("@/assets/images/flags/regions/europe.png");
+  }
+
   if (item.type === "region") {
     return require(`@/assets/images/flags/regions/regions.png`);
   }
@@ -128,6 +132,11 @@ const fallback = (event) => {
     height: 40px;
     display: flex;
     align-items: center;
+}
+
+.europe-flag-wrapper {
+    width: 82px;
+    height: 56px;
 }
 
 .flag-img {

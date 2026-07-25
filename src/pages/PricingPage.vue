@@ -82,7 +82,7 @@
                   <h3>{{ getDestinationName(destination) }}</h3>
                 </div>
                 <div class="from-price">
-                  {{ $t("pricing.from") }} <span>{{ formatUsdPrice(getEntryPrice(destination)) }} USD</span>
+                  {{ $t("pricing.from") }} <span>{{ formatUsdPrice(getEntryPrice(destination)) }} DH</span>
                 </div>
               </div>
 
@@ -93,7 +93,7 @@
                   class="plan-row"
                 >
                   <span class="plan-label">{{ plan.label }}</span>
-                  <span class="plan-value">{{ formatUsdPrice(plan.price) }} USD</span>
+                  <span class="plan-value">{{ formatUsdPrice(plan.price) }} DH</span>
                 </div>
               </div>
 

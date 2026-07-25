@@ -11,7 +11,8 @@
 
         <v-row class="mb-5">
             <v-col v-for="country in countries" :key="country.slug" :cols="$vuetify.display.smAndUp ? '4' : '12'">
-                <DestinationCard :country="country" />
+                <DestinationCardRegion v-if="country.type === 'region'" :country="country" />
+                <DestinationCard v-else :country="country" />
             </v-col>
         </v-row>
 
@@ -30,8 +31,11 @@
 
 <script>
 
-import countries from "@/data/popularDestinations.json";
+import popularDestinations from "@/data/popularDestinations.json";
+import destinations from "@/data/destinations.json";
+import regions from "@/data/regions.json";
 import DestinationCard from "@/components/DestinationCard.vue";
+import DestinationCardRegion from "@/components/DestinationCardRegion.vue";
 import { useDisplay } from "vuetify";
 import flying_paper from "@/assets/images/home/line.png";
 
@@ -44,11 +48,20 @@ export default {
 
     components: {
         DestinationCard,
+        DestinationCardRegion,
     },
 
     data() {
+        const europe = regions.find((region) => region.slug === "europe");
+        const popularCountries = popularDestinations
+            .filter((popularDestination) => popularDestination.slug !== "arabie-saoudite")
+            .map((popularDestination) => {
+                return destinations.find((destination) => destination.slug === popularDestination.slug)
+                    || popularDestination;
+            });
+
         return {
-            countries: countries,
+            countries: europe ? [europe, ...popularCountries] : popularCountries,
             flying_paper: flying_paper,
         };
     },

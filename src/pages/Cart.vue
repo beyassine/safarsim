@@ -152,12 +152,10 @@
           </div>
           -->
 
-          <!-- WhatsApp checkout is temporarily disabled.
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
-            class="text-none font-weight-bold mb-3" disabled @click="checkoutWhatsApp">
+            class="text-none font-weight-bold mb-3" @click="checkoutWhatsApp">
             {{ $t("cart.whatsappCheckout") }}
           </v-btn>
-          -->
         </v-card>
       </v-col>
 
@@ -233,19 +231,6 @@
           />
 
           <v-text-field
-            v-model.trim="customerEmailConfirmation"
-            type="email"
-            :label="$t('cart.confirmEmail')"
-            variant="outlined"
-            density="comfortable"
-            rounded="lg"
-            prepend-inner-icon="mdi-email-check-outline"
-            class="mb-4"
-            :error-messages="customerEmailConfirmationError"
-            hide-details="auto"
-          />
-
-          <v-text-field
             v-model.trim="customerPhone"
             type="tel"
             :label="$t('cart.phone')"
@@ -290,12 +275,10 @@
           </div>
           -->
 
-          <!-- WhatsApp checkout is temporarily disabled.
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
-            class="text-none font-weight-bold mb-3" disabled @click="checkoutWhatsApp">
+            class="text-none font-weight-bold mb-3" @click="checkoutWhatsApp">
             {{ $t("cart.whatsappCheckout") }}
           </v-btn>
-          -->
         </v-card>
       </v-col>
     </v-row>
@@ -335,7 +318,6 @@ export default {
       paypalRendering: false,
       pendingOrderId: '',
       customerEmail: '',
-      customerEmailConfirmation: '',
       customerPhone: '',
       phoneModel: '',
       phoneSubmodel: '',
@@ -457,32 +439,18 @@ export default {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.customerEmail)
     },
 
-    emailsMatch() {
-      return this.customerEmail === this.customerEmailConfirmation
-    },
-
-    hasValidConfirmedEmail() {
-      return this.hasValidEmail && this.emailsMatch
-    },
-
     hasValidPhone() {
       return Boolean(this.customerPhone.trim())
     },
 
     isPaymentReady() {
-      return this.hasSelectedCompatiblePhone && this.hasValidConfirmedEmail && this.hasValidPhone
+      return this.hasSelectedCompatiblePhone && this.hasValidEmail && this.hasValidPhone
     },
 
     customerEmailError() {
       if (!this.customerEmail || this.hasValidEmail) return ''
 
       return this.$t('cart.invalidEmail')
-    },
-
-    customerEmailConfirmationError() {
-      if (!this.customerEmailConfirmation || this.emailsMatch) return ''
-
-      return this.$t('cart.emailsMismatch')
     },
 
     paypalButtonContainerId() {
@@ -543,7 +511,7 @@ export default {
         days,
         names: item.names,
         price,
-        currency: item.currency || 'DH',
+        currency: 'DH',
         quantity,
       }
     },
@@ -604,8 +572,8 @@ export default {
         return this.$t('cart.selectCompatiblePhone')
       }
 
-      if (!this.hasValidConfirmedEmail) {
-        return this.$t('cart.enterValidEmails')
+      if (!this.hasValidEmail) {
+        return this.$t('cart.invalidEmail')
       }
 
       if (!this.hasValidPhone) {

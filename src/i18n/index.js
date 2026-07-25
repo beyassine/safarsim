@@ -5,7 +5,7 @@ import ar from "./ar.json"
 
 const i18n = createI18n({
   legacy: true,
-  locale: localStorage.getItem("lang") || "en",
+  locale: localStorage.getItem("lang") || "fr",
   fallbackLocale: "en",
   messages: {
     fr,
