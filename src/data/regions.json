@@ -42,6 +42,10 @@
       "50GB_30days": {
         "price": null,
         "esimGoBundleName": null
+      },
+      "2GB_15days": {
+        "price": 210,
+        "esimGoBundleName": "esim_2GB_15D_RAF_V2"
       }
     },
     "esimGoRateSheetName": "Africa",
@@ -93,6 +97,10 @@
       "50GB_30days": {
         "price": 1125,
         "esimGoBundleName": "esim_50GB_30D_RLA_V2"
+      },
+      "2GB_15days": {
+        "price": 145,
+        "esimGoBundleName": "esim_2GB_15D_RLA_V2"
       }
     },
     "esimGoRateSheetName": "Americas",
@@ -147,6 +155,10 @@
       "50GB_30days": {
         "price": 970,
         "esimGoBundleName": "esim_50GB_30D_RAS_V2"
+      },
+      "2GB_15days": {
+        "price": 135,
+        "esimGoBundleName": "esim_2GB_15D_RAS_V2"
       }
     },
     "esimGoRateSheetName": "Asia",
@@ -212,6 +224,10 @@
       "50GB_30days": {
         "price": null,
         "esimGoBundleName": null
+      },
+      "2GB_15days": {
+        "price": 195,
+        "esimGoBundleName": "esim_2GB_15D_RCA_V2"
       }
     },
     "esimGoRateSheetName": "Caribbean",
@@ -259,6 +275,10 @@
       "50GB_30days": {
         "price": 1020,
         "esimGoBundleName": "esim_50GB_30D_RCE_V2"
+      },
+      "2GB_15days": {
+        "price": 160,
+        "esimGoBundleName": "esim_2GB_15D_RCE_V2"
       }
     },
     "esimGoRateSheetName": "CENAM",
@@ -337,6 +357,10 @@
       "50GB_30days": {
         "price": 405,
         "esimGoBundleName": "esim_50GB_30D_REUX_V2"
+      },
+      "2GB_15days": {
+        "price": 105,
+        "esimGoBundleName": "esim_2GB_15D_REUX_V2"
       }
     },
     "esimGoRateSheetName": "Europe Extra",
@@ -386,6 +410,10 @@
       "50GB_30days": {
         "price": 805,
         "esimGoBundleName": "esim_50GB_30D_RMENA_V2"
+      },
+      "2GB_15days": {
+        "price": 130,
+        "esimGoBundleName": "esim_2GB_15D_RMENA_V2"
       }
     },
     "esimGoRateSheetName": "Middle East and North Africa",
@@ -429,6 +457,10 @@
       "50GB_30days": {
         "price": 840,
         "esimGoBundleName": "esim_50GB_30D_RNA_V2"
+      },
+      "2GB_15days": {
+        "price": 125,
+        "esimGoBundleName": "esim_2GB_15D_RNA_V2"
       }
     },
     "esimGoRateSheetName": "North America",
