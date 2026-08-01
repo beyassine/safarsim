@@ -28,7 +28,7 @@
         "esimGoBundleName": "esim_50GB_30D_ZA_V2"
       },
       "2GB_15days": {
-        "price": 95,
+        "price": 105,
         "esimGoBundleName": "esim_2GB_15D_ZA_V2"
       }
     },
@@ -67,7 +67,7 @@
         "esimGoBundleName": "esim_50GB_30D_AL_V2"
       },
       "2GB_15days": {
-        "price": 80,
+        "price": 90,
         "esimGoBundleName": "esim_2GB_15D_AL_V2"
       }
     },
@@ -106,7 +106,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 245,
+        "price": 255,
         "esimGoBundleName": "esim_2GB_15D_DZ_V2"
       }
     },
@@ -145,7 +145,7 @@
         "esimGoBundleName": "esim_50GB_30D_DE_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_DE_V2"
       }
     },
@@ -184,7 +184,7 @@
         "esimGoBundleName": "esim_50GB_30D_AD_V2"
       },
       "2GB_15days": {
-        "price": 165,
+        "price": 175,
         "esimGoBundleName": "esim_2GB_15D_AD_V2"
       }
     },
@@ -223,7 +223,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_AI_V2"
       }
     },
@@ -262,7 +262,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_AG_V2"
       }
     },
@@ -301,7 +301,7 @@
         "esimGoBundleName": "esim_50GB_30D_SA_V2"
       },
       "2GB_15days": {
-        "price": 75,
+        "price": 85,
         "esimGoBundleName": "esim_2GB_15D_SA_V2"
       }
     },
@@ -340,7 +340,7 @@
         "esimGoBundleName": "esim_50GB_30D_AR_V2"
       },
       "2GB_15days": {
-        "price": 100,
+        "price": 110,
         "esimGoBundleName": "esim_2GB_15D_AR_V2"
       }
     },
@@ -379,7 +379,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 115,
+        "price": 125,
         "esimGoBundleName": "esim_2GB_15D_AM_V2"
       }
     },
@@ -418,7 +418,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_AW_V2"
       }
     },
@@ -457,7 +457,7 @@
         "esimGoBundleName": "esim_50GB_30D_AU_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_AU_V2"
       }
     },
@@ -496,7 +496,7 @@
         "esimGoBundleName": "esim_50GB_30D_AT_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_AT_V2"
       }
     },
@@ -535,7 +535,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 90,
+        "price": 100,
         "esimGoBundleName": "esim_2GB_15D_AZ_V2"
       }
     },
@@ -574,7 +574,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_BS_V2"
       }
     },
@@ -613,7 +613,7 @@
         "esimGoBundleName": "esim_50GB_30D_BH_V2"
       },
       "2GB_15days": {
-        "price": 80,
+        "price": 90,
         "esimGoBundleName": "esim_2GB_15D_BH_V2"
       }
     },
@@ -652,7 +652,7 @@
         "esimGoBundleName": "esim_50GB_30D_BD_V2"
       },
       "2GB_15days": {
-        "price": 105,
+        "price": 115,
         "esimGoBundleName": "esim_2GB_15D_BD_V2"
       }
     },
@@ -691,7 +691,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_BB_V2"
       }
     },
@@ -730,7 +730,7 @@
         "esimGoBundleName": "esim_50GB_30D_BE_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_BE_V2"
       }
     },
@@ -769,7 +769,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 370,
+        "price": 380,
         "esimGoBundleName": "esim_2GB_15D_BZ_V2"
       }
     },
@@ -808,7 +808,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_BM_V2"
       }
     },
@@ -847,7 +847,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 220,
+        "price": 230,
         "esimGoBundleName": "esim_2GB_15D_BY_V2"
       }
     },
@@ -886,7 +886,7 @@
         "esimGoBundleName": "esim_50GB_30D_BO_V2"
       },
       "2GB_15days": {
-        "price": 115,
+        "price": 125,
         "esimGoBundleName": "esim_2GB_15D_BO_V2"
       }
     },
@@ -925,7 +925,7 @@
         "esimGoBundleName": "esim_50GB_30D_BA_V2"
       },
       "2GB_15days": {
-        "price": 75,
+        "price": 85,
         "esimGoBundleName": "esim_2GB_15D_BA_V2"
       }
     },
@@ -964,7 +964,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 195,
+        "price": 205,
         "esimGoBundleName": "esim_2GB_15D_BW_V2"
       }
     },
@@ -1003,7 +1003,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 195,
+        "price": 205,
         "esimGoBundleName": "esim_2GB_15D_BN_V2"
       }
     },
@@ -1042,7 +1042,7 @@
         "esimGoBundleName": "esim_50GB_30D_BR_V2"
       },
       "2GB_15days": {
-        "price": 90,
+        "price": 100,
         "esimGoBundleName": "esim_2GB_15D_BR_V2"
       }
     },
@@ -1081,7 +1081,7 @@
         "esimGoBundleName": "esim_50GB_30D_BG_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_BG_V2"
       }
     },
@@ -1120,7 +1120,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 315,
+        "price": 325,
         "esimGoBundleName": "esim_2GB_15D_BF_V2"
       }
     },
@@ -1159,7 +1159,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 415,
+        "price": 425,
         "esimGoBundleName": "esim_2GB_15D_BJ_V2"
       }
     },
@@ -1198,7 +1198,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 380,
+        "price": 390,
         "esimGoBundleName": "esim_2GB_15D_KH_V2"
       }
     },
@@ -1237,7 +1237,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 260,
+        "price": 270,
         "esimGoBundleName": "esim_2GB_15D_CM_V2"
       }
     },
@@ -1276,7 +1276,7 @@
         "esimGoBundleName": "esim_50GB_30D_CA_V2"
       },
       "2GB_15days": {
-        "price": 85,
+        "price": 95,
         "esimGoBundleName": "esim_2GB_15D_CA_V2"
       }
     },
@@ -1315,7 +1315,7 @@
         "esimGoBundleName": "esim_50GB_30D_CV_V2"
       },
       "2GB_15days": {
-        "price": 175,
+        "price": 185,
         "esimGoBundleName": "esim_2GB_15D_CV_V2"
       }
     },
@@ -1354,7 +1354,7 @@
         "esimGoBundleName": "esim_50GB_30D_CL_V2"
       },
       "2GB_15days": {
-        "price": 95,
+        "price": 105,
         "esimGoBundleName": "esim_2GB_15D_CL_V2"
       }
     },
@@ -1393,7 +1393,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 180,
+        "price": 190,
         "esimGoBundleName": "esim_2GB_15D_CN_V2"
       }
     },
@@ -1432,7 +1432,7 @@
         "esimGoBundleName": "esim_50GB_30D_CY_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_CY_V2"
       }
     },
@@ -1471,7 +1471,7 @@
         "esimGoBundleName": "esim_50GB_30D_VA_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_VA_V2"
       }
     },
@@ -1510,7 +1510,7 @@
         "esimGoBundleName": "esim_50GB_30D_CO_V2"
       },
       "2GB_15days": {
-        "price": 85,
+        "price": 95,
         "esimGoBundleName": "esim_2GB_15D_CO_V2"
       }
     },
@@ -1627,7 +1627,7 @@
         "esimGoBundleName": "esim_50GB_30D_CR_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_CR_V2"
       }
     },
@@ -1666,7 +1666,7 @@
         "esimGoBundleName": "esim_50GB_30D_HR_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_HR_V2"
       }
     },
@@ -1705,7 +1705,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 580,
+        "price": 590,
         "esimGoBundleName": "esim_2GB_15D_CU_V2"
       }
     },
@@ -1744,7 +1744,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_CW_V2"
       }
     },
@@ -1783,7 +1783,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 295,
+        "price": 305,
         "esimGoBundleName": "esim_2GB_15D_CI_V2"
       }
     },
@@ -1822,7 +1822,7 @@
         "esimGoBundleName": "esim_50GB_30D_DK_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_DK_V2"
       }
     },
@@ -1861,7 +1861,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_DM_V2"
       }
     },
@@ -1900,7 +1900,7 @@
         "esimGoBundleName": "esim_50GB_30D_ES_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_ES_V2"
       }
     },
@@ -1939,7 +1939,7 @@
         "esimGoBundleName": "esim_50GB_30D_EE_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_EE_V2"
       }
     },
@@ -1978,7 +1978,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 240,
+        "price": 250,
         "esimGoBundleName": "esim_2GB_15D_SZ_V2"
       }
     },
@@ -2017,7 +2017,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 395,
+        "price": 405,
         "esimGoBundleName": "esim_2GB_15D_FJ_V2"
       }
     },
@@ -2056,7 +2056,7 @@
         "esimGoBundleName": "esim_50GB_30D_FI_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_FI_V2"
       }
     },
@@ -2095,7 +2095,7 @@
         "esimGoBundleName": "esim_50GB_30D_FR_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_FR_V2"
       }
     },
@@ -2134,7 +2134,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 240,
+        "price": 250,
         "esimGoBundleName": "esim_2GB_15D_GA_V2"
       }
     },
@@ -2173,7 +2173,7 @@
         "esimGoBundleName": "esim_50GB_30D_GH_V2"
       },
       "2GB_15days": {
-        "price": 150,
+        "price": 160,
         "esimGoBundleName": "esim_2GB_15D_GH_V2"
       }
     },
@@ -2212,7 +2212,7 @@
         "esimGoBundleName": "esim_50GB_30D_GI_V2"
       },
       "2GB_15days": {
-        "price": 105,
+        "price": 115,
         "esimGoBundleName": "esim_2GB_15D_GI_V2"
       }
     },
@@ -2251,7 +2251,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_GD_V2"
       }
     },
@@ -2290,7 +2290,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 315,
+        "price": 325,
         "esimGoBundleName": "esim_2GB_15D_GL_V2"
       }
     },
@@ -2329,7 +2329,7 @@
         "esimGoBundleName": "esim_50GB_30D_GR_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_GR_V2"
       }
     },
@@ -2368,7 +2368,7 @@
         "esimGoBundleName": "esim_50GB_30D_GP_V2"
       },
       "2GB_15days": {
-        "price": 105,
+        "price": 115,
         "esimGoBundleName": "esim_2GB_15D_GP_V2"
       }
     },
@@ -2407,7 +2407,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 245,
+        "price": 255,
         "esimGoBundleName": "esim_2GB_15D_GU_V2"
       }
     },
@@ -2446,7 +2446,7 @@
         "esimGoBundleName": "esim_50GB_30D_GT_V2"
       },
       "2GB_15days": {
-        "price": 105,
+        "price": 115,
         "esimGoBundleName": "esim_2GB_15D_GT_V2"
       }
     },
@@ -2485,7 +2485,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 280,
+        "price": 290,
         "esimGoBundleName": "esim_2GB_15D_GN_V2"
       }
     },
@@ -2524,7 +2524,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 170,
+        "price": 180,
         "esimGoBundleName": "esim_2GB_15D_GW_V2"
       }
     },
@@ -2563,7 +2563,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_GY_V2"
       }
     },
@@ -2602,7 +2602,7 @@
         "esimGoBundleName": "esim_50GB_30D_GF_V2"
       },
       "2GB_15days": {
-        "price": 90,
+        "price": 100,
         "esimGoBundleName": "esim_2GB_15D_GF_V2"
       }
     },
@@ -2641,7 +2641,7 @@
         "esimGoBundleName": "esim_50GB_30D_GE_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_GE_V2"
       }
     },
@@ -2680,7 +2680,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_HT_V2"
       }
     },
@@ -2719,7 +2719,7 @@
         "esimGoBundleName": "esim_50GB_30D_HN_V2"
       },
       "2GB_15days": {
-        "price": 105,
+        "price": 115,
         "esimGoBundleName": "esim_2GB_15D_HN_V2"
       }
     },
@@ -2758,7 +2758,7 @@
         "esimGoBundleName": "esim_50GB_30D_HK_V2"
       },
       "2GB_15days": {
-        "price": 80,
+        "price": 90,
         "esimGoBundleName": "esim_2GB_15D_HK_V2"
       }
     },
@@ -2797,7 +2797,7 @@
         "esimGoBundleName": "esim_50GB_30D_HU_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_HU_V2"
       }
     },
@@ -2836,7 +2836,7 @@
         "esimGoBundleName": "esim_50GB_30D_IN_V2"
       },
       "2GB_15days": {
-        "price": 90,
+        "price": 100,
         "esimGoBundleName": "esim_2GB_15D_IN_V2"
       }
     },
@@ -2875,7 +2875,7 @@
         "esimGoBundleName": "esim_50GB_30D_ID_V2"
       },
       "2GB_15days": {
-        "price": 85,
+        "price": 95,
         "esimGoBundleName": "esim_2GB_15D_ID_V2"
       }
     },
@@ -2914,7 +2914,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 225,
+        "price": 235,
         "esimGoBundleName": "esim_2GB_15D_IQ_V2"
       }
     },
@@ -2953,7 +2953,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 645,
+        "price": 655,
         "esimGoBundleName": "esim_2GB_15D_IR_V2"
       }
     },
@@ -2992,7 +2992,7 @@
         "esimGoBundleName": "esim_50GB_30D_IE_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_IE_V2"
       }
     },
@@ -3031,7 +3031,7 @@
         "esimGoBundleName": "esim_50GB_30D_IS_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_IS_V2"
       }
     },
@@ -3070,7 +3070,7 @@
         "esimGoBundleName": "esim_50GB_30D_IT_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_IT_V2"
       }
     },
@@ -3109,7 +3109,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_JM_V2"
       }
     },
@@ -3148,7 +3148,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 75,
+        "price": 85,
         "esimGoBundleName": "esim_2GB_15D_JP_V2"
       }
     },
@@ -3187,7 +3187,7 @@
         "esimGoBundleName": "esim_50GB_30D_JO_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_JO_V2"
       }
     },
@@ -3226,7 +3226,7 @@
         "esimGoBundleName": "esim_50GB_30D_KZ_V2"
       },
       "2GB_15days": {
-        "price": 145,
+        "price": 155,
         "esimGoBundleName": "esim_2GB_15D_KZ_V2"
       }
     },
@@ -3265,7 +3265,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 220,
+        "price": 230,
         "esimGoBundleName": "esim_2GB_15D_KE_V2"
       }
     },
@@ -3304,7 +3304,7 @@
         "esimGoBundleName": "esim_50GB_30D_KG_V2"
       },
       "2GB_15days": {
-        "price": 80,
+        "price": 90,
         "esimGoBundleName": "esim_2GB_15D_KG_V2"
       }
     },
@@ -3343,7 +3343,7 @@
         "esimGoBundleName": "esim_50GB_30D_KW_V2"
       },
       "2GB_15days": {
-        "price": 80,
+        "price": 90,
         "esimGoBundleName": "esim_2GB_15D_KW_V2"
       }
     },
@@ -3382,7 +3382,7 @@
         "esimGoBundleName": "esim_50GB_30D_RE_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_RE_V2"
       }
     },
@@ -3421,7 +3421,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 335,
+        "price": 345,
         "esimGoBundleName": "esim_2GB_15D_LA_V2"
       }
     },
@@ -3460,7 +3460,7 @@
         "esimGoBundleName": "esim_50GB_30D_LS_V2"
       },
       "2GB_15days": {
-        "price": 100,
+        "price": 110,
         "esimGoBundleName": "esim_2GB_15D_LS_V2"
       }
     },
@@ -3499,7 +3499,7 @@
         "esimGoBundleName": "esim_50GB_30D_LV_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_LV_V2"
       }
     },
@@ -3538,7 +3538,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 305,
+        "price": 315,
         "esimGoBundleName": "esim_2GB_15D_LR_V2"
       }
     },
@@ -3577,7 +3577,7 @@
         "esimGoBundleName": "esim_50GB_30D_LI_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_LI_V2"
       }
     },
@@ -3616,7 +3616,7 @@
         "esimGoBundleName": "esim_50GB_30D_LT_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_LT_V2"
       }
     },
@@ -3655,7 +3655,7 @@
         "esimGoBundleName": "esim_50GB_30D_LU_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_LU_V2"
       }
     },
@@ -3694,7 +3694,7 @@
         "esimGoBundleName": "esim_50GB_30D_MO_V2"
       },
       "2GB_15days": {
-        "price": 75,
+        "price": 85,
         "esimGoBundleName": "esim_2GB_15D_MO_V2"
       }
     },
@@ -3733,7 +3733,7 @@
         "esimGoBundleName": "esim_50GB_30D_MK_V2"
       },
       "2GB_15days": {
-        "price": 75,
+        "price": 85,
         "esimGoBundleName": "esim_2GB_15D_MK_V2"
       }
     },
@@ -3772,7 +3772,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 215,
+        "price": 225,
         "esimGoBundleName": "esim_2GB_15D_MG_V2"
       }
     },
@@ -3811,7 +3811,7 @@
         "esimGoBundleName": "esim_50GB_30D_MY_V2"
       },
       "2GB_15days": {
-        "price": 85,
+        "price": 95,
         "esimGoBundleName": "esim_2GB_15D_MY_V2"
       }
     },
@@ -3850,7 +3850,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 240,
+        "price": 250,
         "esimGoBundleName": "esim_2GB_15D_MW_V2"
       }
     },
@@ -3889,7 +3889,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 250,
+        "price": 260,
         "esimGoBundleName": "esim_2GB_15D_ML_V2"
       }
     },
@@ -3928,7 +3928,7 @@
         "esimGoBundleName": "esim_50GB_30D_MT_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_MT_V2"
       }
     },
@@ -3967,7 +3967,7 @@
         "esimGoBundleName": "esim_50GB_30D_MA_V2"
       },
       "2GB_15days": {
-        "price": 80,
+        "price": 90,
         "esimGoBundleName": "esim_2GB_15D_MA_V2"
       }
     },
@@ -4006,7 +4006,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 140,
+        "price": 150,
         "esimGoBundleName": "esim_2GB_15D_MQ_V2"
       }
     },
@@ -4045,7 +4045,7 @@
         "esimGoBundleName": "esim_50GB_30D_MU_V2"
       },
       "2GB_15days": {
-        "price": 105,
+        "price": 115,
         "esimGoBundleName": "esim_2GB_15D_MU_V2"
       }
     },
@@ -4084,7 +4084,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 335,
+        "price": 345,
         "esimGoBundleName": "esim_2GB_15D_MR_V2"
       }
     },
@@ -4123,7 +4123,7 @@
         "esimGoBundleName": "esim_50GB_30D_YT_V2"
       },
       "2GB_15days": {
-        "price": 90,
+        "price": 100,
         "esimGoBundleName": "esim_2GB_15D_YT_V2"
       }
     },
@@ -4162,7 +4162,7 @@
         "esimGoBundleName": "esim_50GB_30D_MX_V2"
       },
       "2GB_15days": {
-        "price": 75,
+        "price": 85,
         "esimGoBundleName": "esim_2GB_15D_MX_V2"
       }
     },
@@ -4201,7 +4201,7 @@
         "esimGoBundleName": "esim_50GB_30D_MD_V2"
       },
       "2GB_15days": {
-        "price": 75,
+        "price": 85,
         "esimGoBundleName": "esim_2GB_15D_MD_V2"
       }
     },
@@ -4240,7 +4240,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 240,
+        "price": 250,
         "esimGoBundleName": "esim_2GB_15D_MC_V2"
       }
     },
@@ -4279,7 +4279,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 495,
+        "price": 505,
         "esimGoBundleName": "esim_2GB_15D_MN_V2"
       }
     },
@@ -4318,7 +4318,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_MS_V2"
       }
     },
@@ -4357,7 +4357,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 75,
+        "price": 85,
         "esimGoBundleName": "esim_2GB_15D_ME_V2"
       }
     },
@@ -4396,7 +4396,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 635,
+        "price": 645,
         "esimGoBundleName": "esim_2GB_15D_MZ_V2"
       }
     },
@@ -4435,7 +4435,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 475,
+        "price": 485,
         "esimGoBundleName": "esim_2GB_15D_NA_V2"
       }
     },
@@ -4474,7 +4474,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 580,
+        "price": 590,
         "esimGoBundleName": "esim_2GB_15D_NR_V2"
       }
     },
@@ -4513,7 +4513,7 @@
         "esimGoBundleName": "esim_50GB_30D_NI_V2"
       },
       "2GB_15days": {
-        "price": 120,
+        "price": 130,
         "esimGoBundleName": "esim_2GB_15D_NI_V2"
       }
     },
@@ -4552,7 +4552,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 240,
+        "price": 250,
         "esimGoBundleName": "esim_2GB_15D_NE_V2"
       }
     },
@@ -4591,7 +4591,7 @@
         "esimGoBundleName": "esim_50GB_30D_NG_V2"
       },
       "2GB_15days": {
-        "price": 100,
+        "price": 110,
         "esimGoBundleName": "esim_2GB_15D_NG_V2"
       }
     },
@@ -4630,7 +4630,7 @@
         "esimGoBundleName": "esim_50GB_30D_NO_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_NO_V2"
       }
     },
@@ -4669,7 +4669,7 @@
         "esimGoBundleName": "esim_50GB_30D_NZ_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_NZ_V2"
       }
     },
@@ -4708,7 +4708,7 @@
         "esimGoBundleName": "esim_50GB_30D_OM_V2"
       },
       "2GB_15days": {
-        "price": 125,
+        "price": 135,
         "esimGoBundleName": "esim_2GB_15D_OM_V2"
       }
     },
@@ -4747,7 +4747,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 190,
+        "price": 200,
         "esimGoBundleName": "esim_2GB_15D_UG_V2"
       }
     },
@@ -4786,7 +4786,7 @@
         "esimGoBundleName": "esim_50GB_30D_UZ_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_UZ_V2"
       }
     },
@@ -4825,7 +4825,7 @@
         "esimGoBundleName": "esim_50GB_30D_PK_V2"
       },
       "2GB_15days": {
-        "price": 85,
+        "price": 95,
         "esimGoBundleName": "esim_2GB_15D_PK_V2"
       }
     },
@@ -4864,7 +4864,7 @@
         "esimGoBundleName": "esim_50GB_30D_PA_V2"
       },
       "2GB_15days": {
-        "price": 90,
+        "price": 100,
         "esimGoBundleName": "esim_2GB_15D_PA_V2"
       }
     },
@@ -4903,7 +4903,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 345,
+        "price": 355,
         "esimGoBundleName": "esim_2GB_15D_PG_V2"
       }
     },
@@ -4942,7 +4942,7 @@
         "esimGoBundleName": "esim_50GB_30D_PY_V2"
       },
       "2GB_15days": {
-        "price": 105,
+        "price": 115,
         "esimGoBundleName": "esim_2GB_15D_PY_V2"
       }
     },
@@ -4981,7 +4981,7 @@
         "esimGoBundleName": "esim_50GB_30D_NL_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_NL_V2"
       }
     },
@@ -5020,7 +5020,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_BQ_V2"
       }
     },
@@ -5059,7 +5059,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 125,
+        "price": 135,
         "esimGoBundleName": "esim_2GB_15D_PH_V2"
       }
     },
@@ -5098,7 +5098,7 @@
         "esimGoBundleName": "esim_50GB_30D_PL_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_PL_V2"
       }
     },
@@ -5137,7 +5137,7 @@
         "esimGoBundleName": "esim_50GB_30D_PR_V2"
       },
       "2GB_15days": {
-        "price": 80,
+        "price": 90,
         "esimGoBundleName": "esim_2GB_15D_PR_V2"
       }
     },
@@ -5176,7 +5176,7 @@
         "esimGoBundleName": "esim_50GB_30D_PT_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_PT_V2"
       }
     },
@@ -5215,7 +5215,7 @@
         "esimGoBundleName": "esim_50GB_30D_PE_V2"
       },
       "2GB_15days": {
-        "price": 90,
+        "price": 100,
         "esimGoBundleName": "esim_2GB_15D_PE_V2"
       }
     },
@@ -5254,7 +5254,7 @@
         "esimGoBundleName": "esim_50GB_30D_QA_V2"
       },
       "2GB_15days": {
-        "price": 80,
+        "price": 90,
         "esimGoBundleName": "esim_2GB_15D_QA_V2"
       }
     },
@@ -5293,7 +5293,7 @@
         "esimGoBundleName": "esim_50GB_30D_RO_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_RO_V2"
       }
     },
@@ -5332,7 +5332,7 @@
         "esimGoBundleName": "esim_50GB_30D_GB_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_GB_V2"
       }
     },
@@ -5371,7 +5371,7 @@
         "esimGoBundleName": "esim_50GB_30D_RU_V2"
       },
       "2GB_15days": {
-        "price": 85,
+        "price": 95,
         "esimGoBundleName": "esim_2GB_15D_RU_V2"
       }
     },
@@ -5410,7 +5410,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 350,
+        "price": 360,
         "esimGoBundleName": "esim_2GB_15D_RW_V2"
       }
     },
@@ -5449,7 +5449,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 240,
+        "price": 250,
         "esimGoBundleName": "esim_2GB_15D_CF_V2"
       }
     },
@@ -5488,7 +5488,7 @@
         "esimGoBundleName": "esim_50GB_30D_DO_V2"
       },
       "2GB_15days": {
-        "price": 85,
+        "price": 95,
         "esimGoBundleName": "esim_2GB_15D_DO_V2"
       }
     },
@@ -5566,7 +5566,7 @@
         "esimGoBundleName": "esim_50GB_30D_CZ_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_CZ_V2"
       }
     },
@@ -5605,7 +5605,7 @@
         "esimGoBundleName": "esim_50GB_30D_BL_V2"
       },
       "2GB_15days": {
-        "price": 105,
+        "price": 115,
         "esimGoBundleName": "esim_2GB_15D_BL_V2"
       }
     },
@@ -5644,7 +5644,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_KN_V2"
       }
     },
@@ -5683,7 +5683,7 @@
         "esimGoBundleName": "esim_50GB_30D_MF_V2"
       },
       "2GB_15days": {
-        "price": 105,
+        "price": 115,
         "esimGoBundleName": "esim_2GB_15D_MF_V2"
       }
     },
@@ -5722,7 +5722,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_VC_V2"
       }
     },
@@ -5761,7 +5761,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_LC_V2"
       }
     },
@@ -5800,7 +5800,7 @@
         "esimGoBundleName": "esim_50GB_30D_SV_V2"
       },
       "2GB_15days": {
-        "price": 85,
+        "price": 95,
         "esimGoBundleName": "esim_2GB_15D_SV_V2"
       }
     },
@@ -5839,7 +5839,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 345,
+        "price": 355,
         "esimGoBundleName": "esim_2GB_15D_WS_V2"
       }
     },
@@ -5878,7 +5878,7 @@
         "esimGoBundleName": "esim_50GB_30D_RS_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_RS_V2"
       }
     },
@@ -5917,7 +5917,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 195,
+        "price": 205,
         "esimGoBundleName": "esim_2GB_15D_SC_V2"
       }
     },
@@ -5995,7 +5995,7 @@
         "esimGoBundleName": "esim_50GB_30D_SK_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_SK_V2"
       }
     },
@@ -6034,7 +6034,7 @@
         "esimGoBundleName": "esim_50GB_30D_SI_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_SI_V2"
       }
     },
@@ -6073,7 +6073,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 275,
+        "price": 285,
         "esimGoBundleName": "esim_2GB_15D_SD_V2"
       }
     },
@@ -6112,7 +6112,7 @@
         "esimGoBundleName": "esim_50GB_30D_LK_V2"
       },
       "2GB_15days": {
-        "price": 90,
+        "price": 100,
         "esimGoBundleName": "esim_2GB_15D_LK_V2"
       }
     },
@@ -6151,7 +6151,7 @@
         "esimGoBundleName": "esim_50GB_30D_CH_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_CH_V2"
       }
     },
@@ -6190,7 +6190,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 180,
+        "price": 190,
         "esimGoBundleName": "esim_2GB_15D_SR_V2"
       }
     },
@@ -6229,7 +6229,7 @@
         "esimGoBundleName": "esim_50GB_30D_SE_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_SE_V2"
       }
     },
@@ -6268,7 +6268,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 270,
+        "price": 280,
         "esimGoBundleName": "esim_2GB_15D_SN_V2"
       }
     },
@@ -6346,7 +6346,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 245,
+        "price": 255,
         "esimGoBundleName": "esim_2GB_15D_TZ_V2"
       }
     },
@@ -6385,7 +6385,7 @@
         "esimGoBundleName": "esim_50GB_30D_TW_V2"
       },
       "2GB_15days": {
-        "price": 95,
+        "price": 105,
         "esimGoBundleName": "esim_2GB_15D_TW_V2"
       }
     },
@@ -6424,7 +6424,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 320,
+        "price": 330,
         "esimGoBundleName": "esim_2GB_15D_TD_V2"
       }
     },
@@ -6463,7 +6463,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 435,
+        "price": 445,
         "esimGoBundleName": "esim_2GB_15D_PS_V2"
       }
     },
@@ -6502,7 +6502,7 @@
         "esimGoBundleName": "esim_50GB_30D_TH_V2"
       },
       "2GB_15days": {
-        "price": 75,
+        "price": 85,
         "esimGoBundleName": "esim_2GB_15D_TH_V2"
       }
     },
@@ -6541,7 +6541,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 565,
+        "price": 575,
         "esimGoBundleName": "esim_2GB_15D_TG_V2"
       }
     },
@@ -6580,7 +6580,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 415,
+        "price": 425,
         "esimGoBundleName": "esim_2GB_15D_TO_V2"
       }
     },
@@ -6619,7 +6619,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_TT_V2"
       }
     },
@@ -6658,7 +6658,7 @@
         "esimGoBundleName": "esim_50GB_30D_TN_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_TN_V2"
       }
     },
@@ -6697,7 +6697,7 @@
         "esimGoBundleName": "esim_50GB_30D_TR_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_TR_V2"
       }
     },
@@ -6736,7 +6736,7 @@
         "esimGoBundleName": "esim_50GB_30D_UA_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_UA_V2"
       }
     },
@@ -6775,7 +6775,7 @@
         "esimGoBundleName": "esim_50GB_30D_UY_V2"
       },
       "2GB_15days": {
-        "price": 100,
+        "price": 110,
         "esimGoBundleName": "esim_2GB_15D_UY_V2"
       }
     },
@@ -6814,7 +6814,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 550,
+        "price": 560,
         "esimGoBundleName": "esim_2GB_15D_VU_V2"
       }
     },
@@ -6853,7 +6853,7 @@
         "esimGoBundleName": "esim_50GB_30D_VN_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_VN_V2"
       }
     },
@@ -6892,7 +6892,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 170,
+        "price": 180,
         "esimGoBundleName": "esim_2GB_15D_ZM_V2"
       }
     },
@@ -6931,7 +6931,7 @@
         "esimGoBundleName": "esim_50GB_30D_EG_V2"
       },
       "2GB_15days": {
-        "price": 90,
+        "price": 100,
         "esimGoBundleName": "esim_2GB_15D_EG_V2"
       }
     },
@@ -6970,7 +6970,7 @@
         "esimGoBundleName": "esim_50GB_30D_AE_V2"
       },
       "2GB_15days": {
-        "price": 80,
+        "price": 90,
         "esimGoBundleName": "esim_2GB_15D_AE_V2"
       }
     },
@@ -7009,7 +7009,7 @@
         "esimGoBundleName": "esim_50GB_30D_EC_V2"
       },
       "2GB_15days": {
-        "price": 125,
+        "price": 135,
         "esimGoBundleName": "esim_2GB_15D_EC_V2"
       }
     },
@@ -7048,7 +7048,7 @@
         "esimGoBundleName": "esim_50GB_30D_US_V2"
       },
       "2GB_15days": {
-        "price": 70,
+        "price": 80,
         "esimGoBundleName": "esim_2GB_15D_US_V2"
       }
     },
@@ -7087,7 +7087,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 360,
+        "price": 370,
         "esimGoBundleName": "esim_2GB_15D_ET_V2"
       }
     },
@@ -7165,7 +7165,7 @@
         "esimGoBundleName": "esim_50GB_30D_IC_V2"
       },
       "2GB_15days": {
-        "price": 60,
+        "price": 70,
         "esimGoBundleName": "esim_2GB_15D_IC_V2"
       }
     },
@@ -7204,7 +7204,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_KY_V2"
       }
     },
@@ -7243,7 +7243,7 @@
         "esimGoBundleName": "esim_50GB_30D_FO_V2"
       },
       "2GB_15days": {
-        "price": 100,
+        "price": 110,
         "esimGoBundleName": "esim_2GB_15D_FO_V2"
       }
     },
@@ -7282,7 +7282,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_TC_V2"
       }
     },
@@ -7321,7 +7321,7 @@
         "esimGoBundleName": null
       },
       "2GB_15days": {
-        "price": 155,
+        "price": 165,
         "esimGoBundleName": "esim_2GB_15D_VG_V2"
       }
     },
@@ -7360,7 +7360,7 @@
         "esimGoBundleName": "esim_50GB_30D_VI_V2"
       },
       "2GB_15days": {
-        "price": 100,
+        "price": 110,
         "esimGoBundleName": "esim_2GB_15D_VI_V2"
       }
     },
@@ -7399,7 +7399,7 @@
         "esimGoBundleName": "esim_50GB_30D_AX_V2"
       },
       "2GB_15days": {
-        "price": 65,
+        "price": 75,
         "esimGoBundleName": "esim_2GB_15D_AX_V2"
       }
     },
