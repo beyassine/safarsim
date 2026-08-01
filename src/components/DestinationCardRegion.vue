@@ -64,13 +64,15 @@
 
 <script setup>
 import { getLocalizedName } from "@/utils/localizedNames"
+import regions from "@/data/regions.json"
 
 defineProps({
     country: Object
 })
 
 const getEntryPrice = (destination) => {
-    const prices = Object.values(destination.plans)
+    const canonicalRegion = regions.find((item) => item.slug === destination.slug) || destination
+    const prices = Object.values(canonicalRegion.plans)
         .map((plan) => (plan && typeof plan === 'object' ? plan.price : plan))
         .filter((price) => price !== null && price !== undefined)
     return Math.min(...prices)

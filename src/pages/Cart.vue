@@ -108,17 +108,9 @@
 
           <v-divider class="my-4" />
 
-          <div
-            v-if="$i18n.locale === 'ar'"
-            class="cart-layout-row d-flex justify-space-between mb-4"
-          >
-            <span class="text-h6 font-weight-bold">{{ formatMoney(total, totalCurrency) }}</span>
-            <span class="text-h6 font-weight-bold">{{ $t("cart.total") }}</span>
-          </div>
-
-          <div v-else class="cart-layout-row d-flex justify-space-between mb-4">
-            <span class="text-h6 font-weight-bold">{{ $t("cart.total") }}</span>
-            <span class="text-h6 font-weight-bold">{{ formatMoney(total, totalCurrency) }}</span>
+          <div class="d-flex justify-space-between align-center mb-4">
+            <span class="text-h6 font-weight-bold">{{ $t("cart.cartSubtotal") }}</span>
+            <span class="text-h6 font-weight-bold">{{ formatMoney(subtotal, totalCurrency) }}</span>
           </div>
 
           <!-- PayPal is temporarily disabled while verification is pending.
@@ -130,33 +122,6 @@
 
         </v-card>
 
-        <v-card rounded="xl" elevation="1" class="pa-5 payment-card mt-6 d-none d-md-block">
-          <h2 class="subsection-title mb-4">{{ $t("cart.payment") }}</h2>
-          <!-- PayPal buttons are temporarily disabled while verification is pending.
-          <div class="mb-4">
-            <div class="text-subtitle-1 font-weight-bold mb-2">
-              Paiement sécurisé par PayPal
-            </div>
-
-            <div v-if="paypalLoading" class="text-body-2 text-medium-emphasis">
-              Chargement de PayPal...
-            </div>
-
-            <div v-if="paypalError" class="text-body-2 text-red mb-2">
-              {{ paypalError }}
-            </div>
-
-            <div id="paypal-button-wrapper">
-              <div :id="paypalButtonContainerId" :key="paypalButtonRenderKey"></div>
-            </div>
-          </div>
-          -->
-
-          <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
-            class="text-none font-weight-bold mb-3" @click="checkoutWhatsApp">
-            {{ $t("cart.whatsappCheckout") }}
-          </v-btn>
-        </v-card>
       </v-col>
 
       <v-col cols="12" md="6">
@@ -215,8 +180,19 @@
             variant="tonal"
             class="mb-4"
           >
-          {{ $t("cart.emailNotice") }}
+          {{ contactNotice }}
         </v-alert>
+          <v-text-field
+            v-model.trim="customerName"
+            :label="$t('cart.fullName')"
+            variant="outlined"
+            density="comfortable"
+            rounded="lg"
+            prepend-inner-icon="mdi-account-outline"
+            class="mb-4"
+            hide-details="auto"
+          />
+
           <v-text-field
             v-model.trim="customerEmail"
             type="email"
@@ -253,30 +229,59 @@
             </template>
           </v-text-field>
         </v-card>
-        <v-card rounded="xl" elevation="1" class="pa-5 payment-card mt-6 d-md-none">
-          <h2 class="subsection-title mb-4">{{ $t("cart.payment") }}</h2>
-          <!-- PayPal buttons are temporarily disabled while verification is pending.
-          <div class="mb-4">
-            <div class="text-subtitle-1 font-weight-bold mb-2">
-              Paiement sécurisé par PayPal
-            </div>
+        <v-card rounded="xl" elevation="1" class="pa-5 payment-card mt-6">
+          <h2 class="subsection-title mb-4">{{ $t("cart.paymentAndDelivery") }}</h2>
 
-            <div v-if="paypalLoading" class="text-body-2 text-medium-emphasis">
-              Chargement de PayPal...
-            </div>
+          <v-radio-group v-model="deliveryType" hide-details>
+            <v-radio value="digital" color="primary">
+              <template #label>
+                <div>
+                  <div class="font-weight-bold">{{ $t("cart.digitalQr") }}</div>
+                  <div class="text-body-2 text-medium-emphasis">{{ $t("cart.digitalQrDescription") }}</div>
+                </div>
+              </template>
+            </v-radio>
+            <v-radio value="paper" color="primary" class="mt-3">
+              <template #label>
+                <div>
+                  <div class="font-weight-bold">{{ $t("cart.paperDelivery") }}</div>
+                  <div class="text-body-2 text-medium-emphasis">{{ $t("cart.paperDeliveryDescription") }}</div>
+                </div>
+              </template>
+            </v-radio>
+          </v-radio-group>
 
-            <div v-if="paypalError" class="text-body-2 text-red mb-2">
-              {{ paypalError }}
-            </div>
+          <template v-if="!isPaperDelivery">
+            <v-alert type="info" variant="tonal" class="mt-5 mb-4">
+              {{ $t("cart.bankTransferNotice") }}
+            </v-alert>
+          </template>
 
-            <div id="paypal-button-wrapper">
-              <div :id="paypalButtonContainerId" :key="paypalButtonRenderKey"></div>
-            </div>
+          <template v-else>
+            <v-alert type="info" variant="tonal" class="mt-5 mb-5">
+              {{ $t("cart.cashOnDeliveryNotice") }}
+            </v-alert>
+          </template>
+
+          <v-divider class="my-5" />
+
+          <div class="d-flex justify-space-between mb-3 text-medium-emphasis">
+            <span>{{ $t("cart.cartSubtotal") }}</span>
+            <span>{{ formatMoney(subtotal, totalCurrency) }}</span>
           </div>
-          -->
+
+          <div class="d-flex justify-space-between mb-3 text-medium-emphasis">
+            <span>{{ $t("cart.deliveryFee") }}</span>
+            <span>{{ formatMoney(paperDeliveryFee, totalCurrency) }}</span>
+          </div>
+
+          <div class="d-flex justify-space-between align-center mb-5">
+            <span class="text-h6 font-weight-bold">{{ $t("cart.totalToPay") }}</span>
+            <span class="text-h6 font-weight-bold">{{ formatMoney(total, totalCurrency) }}</span>
+          </div>
 
           <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
-            class="text-none font-weight-bold mb-3" @click="checkoutWhatsApp">
+            class="text-none font-weight-bold" @click="checkoutWhatsApp">
             {{ $t("cart.whatsappCheckout") }}
           </v-btn>
         </v-card>
@@ -319,6 +324,9 @@ export default {
       pendingOrderId: '',
       customerEmail: '',
       customerPhone: '',
+      customerName: '',
+      deliveryType: 'digital',
+      digitalChannel: 'whatsapp',
       phoneModel: '',
       phoneSubmodel: '',
       snackbar: {
@@ -330,10 +338,29 @@ export default {
   },
 
   computed: {
-    total() {
+    subtotal() {
       return this.cart.reduce((total, item) => {
         return total + Number(item.price) * Number(item.quantity)
       }, 0)
+    },
+
+    paperDeliveryFee() {
+      return this.isPaperDelivery ? 50 : 0
+    },
+
+    total() {
+      return this.subtotal + this.paperDeliveryFee
+    },
+
+    isPaperDelivery() {
+      return this.deliveryType === 'paper'
+    },
+
+    contactNotice() {
+      if (this.isPaperDelivery) return this.$t('cart.paperContactNotice')
+      return this.digitalChannel === 'email'
+        ? this.$t('cart.emailNotice')
+        : this.$t('cart.whatsappNotice')
     },
 
     totalCurrency() {
@@ -367,6 +394,16 @@ export default {
       return {
         email: this.customerEmail,
         phone: this.customerPhone,
+        name: this.customerName,
+      }
+    },
+
+    deliveryPayload() {
+      return {
+        type: this.deliveryType,
+        digitalChannel: this.isPaperDelivery ? null : this.digitalChannel,
+        paymentMethod: this.isPaperDelivery ? 'cash_on_delivery' : 'bank_transfer',
+        fee: this.paperDeliveryFee,
       }
     },
 
@@ -444,11 +481,16 @@ export default {
     },
 
     isPaymentReady() {
-      return this.hasSelectedCompatiblePhone && this.hasValidEmail && this.hasValidPhone
+      const hasRequiredContact = this.digitalChannel === 'email' && !this.isPaperDelivery
+        ? this.hasValidEmail
+        : this.hasValidPhone
+      const hasCustomerName = Boolean(this.customerName.trim())
+
+      return this.hasSelectedCompatiblePhone && hasRequiredContact && hasCustomerName
     },
 
     customerEmailError() {
-      if (!this.customerEmail || this.hasValidEmail) return ''
+      if (this.digitalChannel !== 'email' || this.isPaperDelivery || !this.customerEmail || this.hasValidEmail) return ''
 
       return this.$t('cart.invalidEmail')
     },
@@ -572,12 +614,16 @@ export default {
         return this.$t('cart.selectCompatiblePhone')
       }
 
-      if (!this.hasValidEmail) {
+      if (this.digitalChannel === 'email' && !this.isPaperDelivery && !this.hasValidEmail) {
         return this.$t('cart.invalidEmail')
       }
 
       if (!this.hasValidPhone) {
         return this.$t('cart.enterPhone')
+      }
+
+      if (!this.customerName.trim()) {
+        return this.$t('cart.enterFullName')
       }
 
       return this.$t('cart.completeRequired')
@@ -605,6 +651,15 @@ export default {
         `${this.$t('cart.whatsappCompatiblePhone')} : ${this.phoneModel || this.$t('cart.notProvided')} ${this.phoneSubmodel || ''}`.trim(),
         `Email : ${this.customerEmail || this.$t('cart.notProvided')}`,
         `${this.$t('cart.phone')} : ${this.customerPhone || this.$t('cart.notProvided')}`,
+        `${this.$t('cart.deliveryMethod')} : ${this.$t(this.isPaperDelivery ? 'cart.paperDelivery' : 'cart.digitalQr')}`,
+        ...(!this.isPaperDelivery ? [
+          `${this.$t('cart.digitalChannel')} : ${this.digitalChannel === 'email' ? this.$t('common.email') : 'WhatsApp'}`,
+          `${this.$t('cart.paymentMethod')} : ${this.$t('cart.bankTransfer')}`,
+        ] : [
+          `${this.$t('cart.paymentMethod')} : ${this.$t('cart.cashOnDelivery')}`,
+          `${this.$t('cart.fullName')} : ${this.customerName}`,
+          `${this.$t('cart.paperDeliveryFee')} : ${this.formatMoney(this.paperDeliveryFee, this.totalCurrency)}`,
+        ]),
         '',
         `${this.$t('cart.cartTotal')} : ${this.formatMoney(this.total, this.totalCurrency)}`,
         '',
@@ -746,6 +801,7 @@ export default {
                 cart: this.cartPayload,
                 customer: this.customerPayload,
                 compatibility: this.compatibilityPayload,
+                delivery: this.deliveryPayload,
               }
             )
 
@@ -770,6 +826,7 @@ export default {
                 cart: this.cartPayload,
                 customer: this.customerPayload,
                 compatibility: this.compatibilityPayload,
+                delivery: this.deliveryPayload,
               }
             )
 

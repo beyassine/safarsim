@@ -128,11 +128,13 @@
 
 <script setup>
 import popularDestinations from "@/data/popularDestinations.json"
+import destinations from "@/data/destinations.json"
 import { getLocalizedName } from "@/utils/localizedNames"
 import i18n from "@/i18n"
 
 function getEntryPrice(destination) {
-  const prices = Object.values(destination.plans)
+  const canonicalDestination = destinations.find((item) => item.slug === destination.slug) || destination
+  const prices = Object.values(canonicalDestination.plans)
     .map((plan) => (plan && typeof plan === "object" ? plan.price : plan))
     .filter((price) => price !== null && price !== undefined)
   return Math.min(...prices)
@@ -148,7 +150,8 @@ function formatPlanLabel(key) {
 }
 
 function getTopPlans(destination) {
-  return Object.entries(destination.plans)
+  const canonicalDestination = destinations.find((item) => item.slug === destination.slug) || destination
+  return Object.entries(canonicalDestination.plans)
     .slice(0, 3)
     .map(([key, plan]) => {
       const price = plan && typeof plan === "object" ? plan.price : plan
