@@ -172,6 +172,7 @@
     "paymentAndDelivery": "Paiement et livraison",
     "whatsappCheckout": "Continuer par WhatsApp",
     "phoneCompatibility": "Compatibilité téléphone",
+    "checkPhoneForEsim": "Merci de vérifier la compatibilité de votre téléphone pour l’eSIM {number}.",
     "phoneModel": "Modèle du téléphone",
     "phoneSubmodel": "Sous-modèle",
     "noModel": "Aucun modèle trouvé",

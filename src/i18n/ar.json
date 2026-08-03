@@ -172,6 +172,7 @@
     "paymentAndDelivery": "الدفع والتوصيل",
     "whatsappCheckout": "المتابعة عبر ⁨WhatsApp⁩",
     "phoneCompatibility": "توافق الهاتف",
+    "checkPhoneForEsim": "يرجى التحقق من توافق هاتفك مع شريحة eSIM رقم {number}.",
     "phoneModel": "طراز الهاتف",
     "phoneSubmodel": "الطراز الفرعي",
     "noModel": "لم يتم العثور على أي طراز",

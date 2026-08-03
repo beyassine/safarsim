@@ -127,14 +127,26 @@
       <v-col cols="12" md="6">
         <v-card rounded="xl" elevation="1" class="pa-5 compatibility-card mb-6">
         <h4 class="subsection-title mb-4">{{ $t("cart.phoneCompatibility") }}</h4>
+        <div
+          v-for="(entry, compatibilityIndex) in compatibilityEntries"
+          :key="entry.key"
+          :class="{ 'mb-6': compatibilityIndex < compatibilityEntries.length - 1 }"
+        >
+          <div v-if="compatibilityEntries.length > 1" class="font-weight-bold mb-3">
+            <bdi dir="ltr">eSIM {{ compatibilityIndex + 1 }}</bdi>
+            <span> — {{ getCartItemName(entry.item) }}</span>
+          </div>
+          <p v-if="compatibilityEntries.length > 1" class="text-body-2 text-medium-emphasis mb-3">
+            {{ $t('cart.checkPhoneForEsim', { number: compatibilityIndex + 1 }) }}
+          </p>
           <v-alert
-            :type="hasSelectedCompatiblePhone ? 'success' : 'info'"
+            :type="isCompatibilityComplete(entry.key) ? 'success' : 'info'"
             variant="tonal"
             class="mb-4 compatibility-alert"
           >
             <i18n-t
               v-if="$i18n.locale === 'ar'"
-              :keypath="hasSelectedCompatiblePhone ? 'cart.compatiblePhone' : 'cart.selectPhone'"
+              :keypath="isCompatibilityComplete(entry.key) ? 'cart.compatiblePhone' : 'cart.selectPhone'"
               tag="span"
               dir="rtl"
             >
@@ -142,11 +154,11 @@
                 <bdi dir="ltr">eSIM</bdi>
               </template>
             </i18n-t>
-            <span v-else>{{ compatibilityMessage }}</span>
+            <span v-else>{{ compatibilityMessageFor(entry.key) }}</span>
           </v-alert>
 
           <v-select
-            v-model="phoneModel"
+            v-model="compatibilitySelections[entry.key].phoneModel"
             :items="phoneModelOptions"
             :label="$t('cart.phoneModel')"
             variant="outlined"
@@ -156,12 +168,12 @@
             :menu-props="{ maxHeight: 320 }"
             class="mb-4"
             hide-details="auto"
-            @update:model-value="phoneSubmodel = ''"
+            @update:model-value="compatibilitySelections[entry.key].phoneSubmodel = ''"
           />
 
           <v-autocomplete
-            v-model="phoneSubmodel"
-            :items="phoneSubmodelOptions"
+            v-model="compatibilitySelections[entry.key].phoneSubmodel"
+            :items="phoneSubmodelOptionsFor(entry.key)"
             :label="$t('cart.phoneSubmodel')"
             variant="outlined"
             density="comfortable"
@@ -169,9 +181,10 @@
             prepend-inner-icon="mdi-cellphone-check"
             :menu-props="{ maxHeight: 320 }"
             hide-details="auto"
-            :disabled="!phoneModel"
+            :disabled="!compatibilitySelections[entry.key].phoneModel"
             :no-data-text="$t('cart.noModel')"
           />
+        </div>
         </v-card>
         <v-card rounded="xl" elevation="1" class="pa-5 contact-card">
         <h2 class="subsection-title mb-4">{{ $t("cart.contactInfo") }}</h2>
@@ -327,8 +340,7 @@ export default {
       customerName: '',
       deliveryType: 'digital',
       digitalChannel: 'whatsapp',
-      phoneModel: '',
-      phoneSubmodel: '',
+      compatibilitySelections: {},
       snackbar: {
         show: false,
         text: '',
@@ -408,10 +420,24 @@ export default {
     },
 
     compatibilityPayload() {
-      return {
-        phoneModel: this.phoneModel,
-        phoneSubmodel: this.phoneSubmodel,
-      }
+      return this.compatibilityEntries.map((entry, index) => ({
+        esimNumber: index + 1,
+        cartItemId: entry.item.id,
+        destinationName: this.getCartItemName(entry.item),
+        unitNumber: entry.unitNumber,
+        ...this.compatibilitySelections[entry.key],
+      }))
+    },
+
+    compatibilityEntries() {
+      return this.cart.flatMap(item => Array.from(
+        { length: Number(item.quantity) },
+        (_, unitIndex) => ({
+          key: `${item.id}:${unitIndex + 1}`,
+          item,
+          unitNumber: unitIndex + 1,
+        })
+      ))
     },
 
     deviceCompatibilityGroups() {
@@ -456,20 +482,10 @@ export default {
       return this.deviceCompatibilityGroups.map(group => group.brand)
     },
 
-    phoneSubmodelOptions() {
-      return this.deviceCompatibilityGroups.find(group => group.brand === this.phoneModel)?.models || []
-    },
-
     hasSelectedCompatiblePhone() {
-      return Boolean(this.phoneModel && this.phoneSubmodel)
-    },
-
-    compatibilityMessage() {
-      if (this.hasSelectedCompatiblePhone) {
-        return this.$t('cart.compatiblePhone')
-      }
-
-      return this.$t('cart.selectPhone')
+      return this.compatibilityEntries.length > 0 && this.compatibilityEntries.every(entry => (
+        this.isCompatibilityComplete(entry.key)
+      ))
     },
 
     hasValidEmail() {
@@ -501,6 +517,33 @@ export default {
   },
 
   methods: {
+    syncCompatibilitySelections() {
+      const selections = {}
+
+      this.compatibilityEntries.forEach(entry => {
+        selections[entry.key] = this.compatibilitySelections[entry.key] || {
+          phoneModel: '',
+          phoneSubmodel: '',
+        }
+      })
+
+      this.compatibilitySelections = selections
+    },
+
+    isCompatibilityComplete(key) {
+      const selection = this.compatibilitySelections[key]
+      return Boolean(selection?.phoneModel && selection?.phoneSubmodel)
+    },
+
+    compatibilityMessageFor(key) {
+      return this.$t(this.isCompatibilityComplete(key) ? 'cart.compatiblePhone' : 'cart.selectPhone')
+    },
+
+    phoneSubmodelOptionsFor(key) {
+      const phoneModel = this.compatibilitySelections[key]?.phoneModel
+      return this.deviceCompatibilityGroups.find(group => group.brand === phoneModel)?.models || []
+    },
+
     showMessage(text, color = 'success') {
       this.snackbar = {
         show: true,
@@ -520,6 +563,7 @@ export default {
       }
 
       this.cart = normalizedCart
+      this.syncCompatibilitySelections()
       console.log('Cart refreshed:', this.cart)
 
       if (this.paypalLoaded) {
@@ -648,7 +692,9 @@ export default {
           return `${index + 1}. ${this.getCartItemName(item)} - ${item.dataLabel} - ${item.days} ${this.$t('destinationsPage.days')} - ${this.$t('cart.quantity')}: ${item.quantity} - ${this.$t('cart.unitPrice')}: ${this.formatMoney(item.price, item.currency)} - ${this.$t('cart.total')}: ${this.formatMoney(lineTotal, item.currency)}`
         }),
         '',
-        `${this.$t('cart.whatsappCompatiblePhone')} : ${this.phoneModel || this.$t('cart.notProvided')} ${this.phoneSubmodel || ''}`.trim(),
+        ...this.compatibilityPayload.map(compatibility => (
+          `${this.$t('cart.whatsappCompatiblePhone')} ${compatibility.esimNumber} (${compatibility.destinationName}) : ${compatibility.phoneModel} ${compatibility.phoneSubmodel}`
+        )),
         `Email : ${this.customerEmail || this.$t('cart.notProvided')}`,
         `${this.$t('cart.phone')} : ${this.customerPhone || this.$t('cart.notProvided')}`,
         `${this.$t('cart.deliveryMethod')} : ${this.$t(this.isPaperDelivery ? 'cart.paperDelivery' : 'cart.digitalQr')}`,
