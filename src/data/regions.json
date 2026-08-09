@@ -285,7 +285,7 @@
     "names": {
       "fr": "Amérique centrale",
       "en": "CENAM",
-      "ar": "Amérique centrale"
+      "ar": "أمريكا الوسطى والمكسيك"
     }
   },
   {
@@ -367,7 +367,7 @@
     "names": {
       "fr": "Europe",
       "en": "Europe Extra",
-      "ar": "Europe"
+      "ar": "أوروبا"
     }
   },
   {
@@ -420,7 +420,7 @@
     "names": {
       "fr": "MENA",
       "en": "Middle East and North Africa",
-      "ar": "MENA"
+      "ar": "الشرق الأوسط وشمال أفريقيا"
     }
   },
   {
@@ -467,7 +467,7 @@
     "names": {
       "fr": "Amérique du Nord",
       "en": "North America",
-      "ar": "Amérique du Nord"
+      "ar": "أمريكا الشمالية"
     }
   }
 ]

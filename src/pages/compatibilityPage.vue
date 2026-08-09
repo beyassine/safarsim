@@ -137,7 +137,7 @@
           <p class="mb-4 bidi-text">
             {{ $t("compatibility.ctaText") }} <strong class="text-pink-darken-1 font-weight-bold"><bdi dir="ltr">SAFAR SIM</bdi></strong>.
           </p>
-          <router-link  to="/destinations" class="text-decoration-none">
+          <router-link :to="{ path: '/', hash: '#destination-selection' }" class="text-decoration-none">
             <v-btn color="pink" size="large" class="text-none bidi-text" prepend-icon="mdi-earth">
               {{ $t("common.viewDestinations") }}
             </v-btn>

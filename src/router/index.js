@@ -14,12 +14,23 @@ import TermsOfService from "@/pages/TermsOfService.vue"
 import contact from "@/pages/contact.vue"
 import about from "@/pages/about.vue"
 import PaymentSuccess from "@/pages/PaymentSuccess.vue"
+import One from "@/pages/One.vue"
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: One
+  },
+  {
+    path: "/one",
+    name: "onePage",
+    redirect: "/",
+  },
+  {
+    path: "/archive/old-home",
+    name: "archivedHome",
+    component: Home,
   },
   {
     path: "/destinations",
@@ -92,7 +103,15 @@ const routes = [
 export default createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior() {
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        top: 72,
+        behavior: "smooth",
+      }
+    }
+
     return { top: 0 }
   }
 })

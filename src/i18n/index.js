@@ -5,7 +5,7 @@ import ar from "./ar.json"
 
 const i18n = createI18n({
   legacy: true,
-  locale: localStorage.getItem("lang") || "fr",
+  locale: localStorage.getItem("lang") || "ar",
   fallbackLocale: "en",
   messages: {
     fr,
@@ -25,6 +25,8 @@ export function applyLanguage(lang) {
   if (document.body) {
     document.body.setAttribute("dir", isRtl ? "rtl" : "ltr")
   }
+
+  window.dispatchEvent(new CustomEvent("language-changed", { detail: lang }))
 }
 
 export default i18n
