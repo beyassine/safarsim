@@ -1,5 +1,5 @@
 <template>
-<v-container  fluid :class="$vuetify.display.smAndUp ? 'px-16 pb-10' : 'px-6 pb-10'" >
+<v-container fluid :class="$vuetify.display.smAndUp ? 'px-16 pb-10' : 'px-6 pb-10'">
 
 <!-- TITLE -->
 <div class="text-center mb-10">

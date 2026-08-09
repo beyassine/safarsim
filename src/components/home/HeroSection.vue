@@ -6,7 +6,7 @@
             <div class="overlay">
 
                 <v-container fluid
-                    :class="$vuetify.display.smAndUp ? 'px-16 fill-height d-flex align-center' : 'px-6  fill-height'">
+                    :class="$vuetify.display.smAndUp ? 'px-16 fill-height d-flex align-center' : 'px-6 fill-height'">
                     <v-row class="mt-5 pb-15">
 
                         <v-col :cols="$vuetify.display.smAndUp ? '6' : '12'">

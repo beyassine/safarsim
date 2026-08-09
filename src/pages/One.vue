@@ -508,7 +508,7 @@ watch(locale, () => {
 </script>
 
 <style scoped>
-.one-page { --ink:#2f1b2a; --green:#d91c58; --mint:#fde7f0; --coral:#e72a64; --cream:#fffbf8; width:100vw;min-width:100vw;background:#fffbf8;color:var(--ink);overflow:hidden;font-family:inherit; }
+.one-page { --ink:#2f1b2a; --green:#d91c58; --mint:#fde7f0; --coral:#e72a64; --cream:#fffbf8; width:100%;max-width:100%;min-width:0;background:#fffbf8;color:var(--ink);overflow:hidden;font-family:inherit; }
 .one-page * { box-sizing:border-box; }
 .page-language-bar{position:relative;z-index:3;background:#fffbf8;color:#2f1b2a;padding:12px 0 5px}.language-bar-inner{min-height:42px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;white-space:nowrap}.language-prompt{display:flex;align-items:center;gap:7px;color:#765f6d;font-size:13px;font-weight:700}.language-options{display:flex;gap:8px;direction:rtl;flex-wrap:nowrap}.language-options button{position:relative;z-index:4;min-width:92px;border:1px solid #e4ddd8;background:#fffbf8;color:#6d5362;border-radius:99px;padding:7px 12px;display:flex;align-items:center;justify-content:center;gap:6px;font:inherit;font-size:13px;cursor:pointer;transition:.18s;white-space:nowrap}.language-options button:hover{border-color:#ef7891;color:#d91c58}.language-options button.active{background:#fff;color:#d91c58;border-color:#e72a64;font-weight:800}
 .one-page[dir="rtl"] .language-prompt{direction:ltr;flex-direction:row-reverse}.one-page[dir="ltr"] .language-prompt{direction:ltr;flex-direction:row}
