@@ -155,5 +155,7 @@ border:1px solid #e5e5e5;
 
 .v-expansion-panel-title{
 font-size:14px;
+min-width:0;
+overflow-wrap:anywhere;
 }
 </style>

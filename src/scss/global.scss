@@ -1,5 +1,23 @@
 @use "./variables.scss" as vars;
 
+html,
+body,
+#app {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent RTL rows or long translated labels from widening the whole page. */
+.v-application,
+.v-application__wrap,
+.main-content {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
 .app {
   font-family: vars.$body-font-family !important;
   background-color: #fffbf8 !important;

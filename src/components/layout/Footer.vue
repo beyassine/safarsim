@@ -143,6 +143,14 @@ export default {
     background-image: url("@/assets/images/bg/footer.png");
     background-size: cover;
     background-position: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.bg-footer :deep(.v-row),
+.bg-footer :deep(.v-col) {
+    min-width: 0;
 }
 
 .logo {
