@@ -108,7 +108,8 @@
 
           <v-divider class="my-4" />
 
-          <div class="d-flex justify-space-between align-center mb-4">
+          <div class="d-flex justify-space-between align-center mb-4"
+            :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
             <span class="text-h6 font-weight-bold">{{ $t("cart.cartSubtotal") }}</span>
             <span class="text-h6 font-weight-bold">{{ formatMoney(subtotal, totalCurrency) }}</span>
           </div>
@@ -246,17 +247,19 @@
           <h2 class="subsection-title mb-4">{{ $t("cart.paymentAndDelivery") }}</h2>
 
           <v-radio-group v-model="deliveryType" hide-details>
-            <v-radio value="digital" color="primary">
+            <v-radio value="digital" color="primary"
+              :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
               <template #label>
-                <div>
+                <div :dir="$i18n.locale === 'ar' ? 'rtl' : 'ltr'">
                   <div class="font-weight-bold">{{ $t("cart.digitalQr") }}</div>
                   <div class="text-body-2 text-medium-emphasis">{{ $t("cart.digitalQrDescription") }}</div>
                 </div>
               </template>
             </v-radio>
-            <v-radio value="paper" color="primary" class="mt-3">
+            <v-radio value="paper" color="primary" class="mt-3"
+              :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
               <template #label>
-                <div>
+                <div :dir="$i18n.locale === 'ar' ? 'rtl' : 'ltr'">
                   <div class="font-weight-bold">{{ $t("cart.paperDelivery") }}</div>
                   <div class="text-body-2 text-medium-emphasis">{{ $t("cart.paperDeliveryDescription") }}</div>
                 </div>
@@ -278,23 +281,26 @@
 
           <v-divider class="my-5" />
 
-          <div class="d-flex justify-space-between mb-3 text-medium-emphasis">
+          <div class="d-flex justify-space-between mb-3 text-medium-emphasis"
+            :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
             <span>{{ $t("cart.cartSubtotal") }}</span>
             <span>{{ formatMoney(subtotal, totalCurrency) }}</span>
           </div>
 
-          <div class="d-flex justify-space-between mb-3 text-medium-emphasis">
+          <div class="d-flex justify-space-between mb-3 text-medium-emphasis"
+            :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
             <span>{{ $t("cart.deliveryFee") }}</span>
             <span>{{ formatMoney(paperDeliveryFee, totalCurrency) }}</span>
           </div>
 
-          <div class="d-flex justify-space-between align-center mb-5">
+          <div class="d-flex justify-space-between align-center mb-5"
+            :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
             <span class="text-h6 font-weight-bold">{{ $t("cart.totalToPay") }}</span>
             <span class="text-h6 font-weight-bold">{{ formatMoney(total, totalCurrency) }}</span>
           </div>
 
-          <v-btn block prepend-icon="mdi-whatsapp" color="green-darken-1" size="large" rounded="pill"
-            class="text-none font-weight-bold" @click="checkoutWhatsApp">
+          <v-btn block prepend-icon="mdi-whatsapp" size="large" rounded="pill"
+            class="text-none font-weight-bold whatsapp-checkout-button" @click="checkoutWhatsApp">
             {{ $t("cart.whatsappCheckout") }}
           </v-btn>
         </v-card>
@@ -948,6 +954,38 @@ export default {
 .contact-card,
 .payment-card {
   background: white;
+}
+
+:global(html[dir="rtl"]) .payment-card :deep(.v-radio) {
+  width: 100%;
+  direction: ltr !important;
+  flex-direction: row !important;
+}
+
+:global(html[dir="rtl"]) .payment-card :deep(.v-radio .v-selection-control__wrapper) {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex: 0 0 auto;
+  order: 1;
+}
+
+:global(html[dir="rtl"]) .payment-card :deep(.v-radio .v-label) {
+  flex: 1;
+  order: 0;
+  direction: rtl;
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .payment-card .d-flex.justify-space-between,
+:global(html[dir="rtl"]) .summary-card > .d-flex.justify-space-between {
+  direction: ltr !important;
+  flex-direction: row-reverse !important;
+}
+
+.whatsapp-checkout-button {
+  background: #d91c58 !important;
+  color: white !important;
 }
 
 .cart-line:first-of-type {
