@@ -508,7 +508,7 @@ watch(locale, () => {
 </script>
 
 <style scoped>
-.one-page { --ink:#2f1b2a; --green:#d91c58; --mint:#fde7f0; --coral:#e72a64; --cream:#fffbf8; width:100%;max-width:100%;min-width:0;background:#fffbf8;color:var(--ink);overflow:hidden;font-family:inherit; }
+.one-page { --ink:#2f1b2a; --green:#d91c58; --mint:#fde7f0; --coral:#e72a64; --cream:#fffbf8; display:block;width:100%;max-width:100%;min-width:0;margin:0;background:#fffbf8;color:var(--ink);overflow:hidden;font-family:inherit; }
 .one-page * { box-sizing:border-box; }
 .one-page > *,
 .one-page :deep(.v-container) { width:100%;min-width:0; }

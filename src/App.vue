@@ -2,9 +2,9 @@
   <v-app class="app">
 
     <Navbar />
-    <main class="main-content bidi-text">
+    <v-main class="main-content bidi-text">
       <router-view />
-    </main>
+    </v-main>
 
     <Footer />
 
