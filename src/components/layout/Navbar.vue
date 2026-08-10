@@ -27,11 +27,11 @@
                     <v-btn variant="text">{{ $t("nav.compatibility") }}</v-btn>
                 </router-link>
 
-                <router-link class="text-decoration-none text-black" to="pricing">
+                <router-link class="text-decoration-none text-black" to="/pricing">
                     <v-btn variant="text">{{ $t("nav.pricing") }}</v-btn>
                 </router-link>
 
-                <router-link class="text-decoration-none text-black" to="help">
+                <router-link class="text-decoration-none text-black" to="/help">
                     <v-btn variant="text">{{ $t("nav.help") }}</v-btn>
                 </router-link>
             </div>
@@ -96,7 +96,7 @@
                 <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
 
-            <router-link to="pricing" class="menu-item" @click="drawer = false">
+            <router-link to="/pricing" class="menu-item" @click="drawer = false">
                 <span>{{ $t("nav.pricing") }}</span>
                 <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
@@ -187,6 +187,8 @@ export default {
 
 .nav-wrapper {
     position: relative;
+    max-width: 1240px;
+    padding-inline: 32px;
 }
 
 .nav-links {

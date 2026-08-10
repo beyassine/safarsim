@@ -17,7 +17,7 @@
       <div class="hero-glow hero-glow-two"></div>
       <v-container fluid class="hero-container">
         <div class="hero-copy">
-          <h1>{{ c.heroTitle }}<br><span>{{ c.heroAccent }}</span></h1>
+          <h1><span class="hero-title-line">{{ c.heroTitle }}</span><span class="hero-accent-line">{{ c.heroAccent }}</span></h1>
           <p class="hero-lead">{{ c.heroLead }}</p>
           <div class="hero-actions">
             <v-btn class="primary-cta" size="x-large" rounded="pill" elevation="0" @click="scrollToPlans">
@@ -511,7 +511,7 @@ watch(locale, () => {
 .one-page { --ink:#2f1b2a; --green:#d91c58; --mint:#fde7f0; --coral:#e72a64; --cream:#fffbf8; width:100%;max-width:100%;min-width:0;background:#fffbf8;color:var(--ink);overflow:hidden;font-family:inherit; }
 .one-page * { box-sizing:border-box; }
 .one-page > *,
-.one-page :deep(.v-container) { width:100%;max-width:100%;min-width:0; }
+.one-page :deep(.v-container) { width:100%;min-width:0; }
 .page-language-bar{position:relative;z-index:3;background:#fffbf8;color:#2f1b2a;padding:12px 0 5px}.language-bar-inner{min-height:42px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;white-space:nowrap}.language-prompt{display:flex;align-items:center;gap:7px;color:#765f6d;font-size:13px;font-weight:700}.language-options{display:flex;gap:8px;direction:rtl;flex-wrap:nowrap}.language-options button{position:relative;z-index:4;min-width:92px;border:1px solid #e4ddd8;background:#fffbf8;color:#6d5362;border-radius:99px;padding:7px 12px;display:flex;align-items:center;justify-content:center;gap:6px;font:inherit;font-size:13px;cursor:pointer;transition:.18s;white-space:nowrap}.language-options button:hover{border-color:#ef7891;color:#d91c58}.language-options button.active{background:#fff;color:#d91c58;border-color:#e72a64;font-weight:800}
 .one-page[dir="rtl"] .language-prompt{direction:ltr;flex-direction:row-reverse}.one-page[dir="ltr"] .language-prompt{direction:ltr;flex-direction:row}
 .hero-section { position:relative; min-height:690px; display:flex; align-items:center; background:#fffbf8; isolation:isolate; }
@@ -521,10 +521,14 @@ watch(locale, () => {
 .hero-glow-two { width:280px;height:280px;background:rgba(249,198,170,.2);right:38%;bottom:-100px; }
 .eyebrow,.section-kicker { display:inline-flex;align-items:center;gap:8px;color:var(--green);background:#fde7f0;border:1px solid #f4bfd2;border-radius:99px;padding:8px 14px;font-size:14px;font-weight:700; }
 .hero-copy h1 { font-size:clamp(42px,5vw,72px);line-height:1.15;letter-spacing:-2px;margin:22px 0;color:var(--ink);font-weight:900; }
-.hero-copy h1 span { color:var(--coral);position:relative; }
-.hero-copy h1 span:after { content:'';position:absolute;right:0;left:5%;bottom:-7px;height:9px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='9'%3E%3Cpath d='M2 7 C70 1 180 1 298 5' fill='none' stroke='%23efb39e' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
+.hero-title-line{display:block;text-align:center;color:var(--ink)}
+.hero-copy h1 .hero-accent-line { display:inline-block;color:var(--coral);position:relative; }
+.hero-copy h1 .hero-accent-line:after { content:'';position:absolute;right:0;left:5%;bottom:-7px;height:9px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='9'%3E%3Cpath d='M2 7 C70 1 180 1 298 5' fill='none' stroke='%23efb39e' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
 .hero-lead { font-size:19px;line-height:1.9;color:#705b68;max-width:620px;margin:0 0 28px; }
-.hero-actions { display:flex;align-items:center;gap:24px;flex-wrap:wrap; }
+.hero-actions { width:100%;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap; }
+.one-page[dir="rtl"] .hero-copy h1{line-height:1.46;letter-spacing:0;margin-bottom:52px}
+.one-page[dir="rtl"] .hero-copy h1 .hero-accent-line{padding-bottom:.22em}
+.one-page[dir="rtl"] .hero-copy h1 .hero-accent-line:after{bottom:-18px}
 .primary-cta,.buy-button { background:var(--coral)!important;color:#fff!important;font-weight:800!important;letter-spacing:0!important;padding-inline:28px!important;box-shadow:0 10px 25px rgba(217,28,88,.24)!important; }
 .hero-visual { height:520px;position:relative;display:flex;align-items:center;justify-content:center;direction:ltr; }
 .orbit { position:absolute;border:1px dashed rgba(217,28,88,.22);border-radius:50%; }.orbit-one{width:440px;height:440px}.orbit-two{width:350px;height:350px}
@@ -578,4 +582,43 @@ watch(locale, () => {
 @media(max-width:600px){.popular-packs-section{padding-bottom:24px}.plans-section{padding-top:34px}}
 .compact-steps-section{background:#fffbf8;padding:8px 0 24px}.compact-steps-container{padding-inline:clamp(16px,4vw,64px)}.compact-steps-heading{margin-bottom:27px}.compact-steps-heading h2{font-size:clamp(27px,3.5vw,38px)}.compact-steps{width:100%;display:grid;grid-template-columns:1fr;gap:10px}.compact-step{min-height:86px;display:flex;align-items:center;gap:16px;padding:13px 20px;background:#fff;border:1px solid #e1e3e6;border-radius:17px;box-shadow:0 7px 16px rgba(48,28,39,.07);color:var(--ink)}.compact-step i{width:37px;flex:0 0 37px;color:#d91c58;font-size:21px;font-weight:900;font-style:normal;text-align:center}.compact-step>.v-icon{width:42px;flex:0 0 42px;color:#2f1b2a;font-size:36px}.compact-step>div{flex:1}.compact-step strong{display:block;font-size:15px;line-height:1.4}.compact-step p{margin:4px 0 0;color:#786873;font-size:12px;line-height:1.55;font-weight:400}.one-page[dir="rtl"] .compact-step{direction:rtl}.one-page[dir="rtl"] .compact-step>div{text-align:right}.one-page[dir="ltr"] .compact-step{direction:ltr}.one-page[dir="ltr"] .compact-step>div{text-align:left}
 @media(max-width:600px){.compact-steps-section{padding:4px 0 16px}.compact-steps-heading{margin-bottom:20px}.compact-steps-heading h2{font-size:26px}.compact-steps-heading p{font-size:14px}.compact-steps{gap:8px}.compact-step{min-height:73px;gap:9px;padding:10px 11px;border-radius:14px}.compact-step i{width:27px;flex-basis:27px;font-size:16px}.compact-step>.v-icon{width:31px;flex-basis:31px;font-size:28px}.compact-step strong{font-size:12px}.compact-step p{margin-top:2px;font-size:10px;line-height:1.4}}
+
+/* Desktop layout: keep content readable and restore the intended multi-column rhythm. */
+@media(min-width:961px){
+  .one-page :deep(.v-container){max-width:1240px;padding-inline:32px}
+  .language-bar-inner{max-width:1240px;min-height:38px;flex-direction:row;justify-content:flex-end;gap:14px;padding-block:4px}
+  .one-page[dir="rtl"] .language-bar-inner{direction:rtl;justify-content:flex-start}
+  .one-page[dir="ltr"] .language-bar-inner{direction:ltr;justify-content:flex-end}
+  .page-language-bar{padding:6px 0}
+  .hero-section{min-height:640px}
+  .hero-container{max-width:1320px!important;grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr);gap:48px;padding:38px 48px 70px!important;margin-inline:auto}
+  .hero-copy{max-width:680px}
+  .hero-copy h1{font-size:clamp(48px,4.7vw,68px)}
+  .hero-visual{min-width:0;height:500px}
+  .popular-packs-grid{max-width:1180px;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+  .popular-pack-card{display:flex;min-height:285px;flex-direction:column;padding:18px}
+  .popular-pack-top{font-size:15px}
+  .popular-pack-body{flex:1;margin-top:22px;margin-bottom:16px}
+  .popular-pack-data strong{font-size:27px}
+  .popular-pack-price b{font-size:31px}
+  .compact-steps-section{padding:48px 0 64px}
+  .compact-steps-container{max-width:1240px!important;padding-inline:32px!important}
+  .compact-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .compact-step{min-height:132px;align-items:flex-start;padding:22px 20px}
+  .compact-step p{font-size:13px}
+  .plans-section{padding-top:78px}
+  .one-page[dir="rtl"] .benefits-layout{direction:ltr;grid-template-columns:1.2fr .8fr}
+  .one-page[dir="rtl"] .benefit-grid{direction:rtl;grid-column:1;grid-row:1}
+  .one-page[dir="rtl"] .benefit-copy{direction:rtl;grid-column:2;grid-row:1}
+}
+
+@media(min-width:961px) and (max-width:1120px){
+  .hero-container{grid-template-columns:minmax(0,1fr) 400px;gap:24px;padding-inline:32px!important}
+  .hero-copy h1{font-size:46px}
+  .floating-card{padding:10px 12px}
+  .popular-packs-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px}
+  .popular-pack-card{min-height:250px}
+  .purchase-card{grid-template-columns:390px minmax(0,1fr)}
+  .package-grid{grid-template-columns:1fr}
+}
 </style>
