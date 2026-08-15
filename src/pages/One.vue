@@ -168,7 +168,7 @@
                 <span class="radio-dot"></span>
                 <div class="plan-data"><b>{{ plan.data }}</b><small>{{ c.internet }}</small></div>
                 <div class="plan-validity"><v-icon size="18">mdi-calendar-blank-outline</v-icon><span>{{ c.validFor }} {{ plan.days }} {{ dayLabel(plan.days) }}</span></div>
-                <strong>{{ formatPrice(plan.price) }} <small>USD</small></strong>
+                <strong>{{ formatPrice(plan.price) }} <small>{{ preferredCurrency }}</small></strong>
                 <em v-if="plan.badge">{{ plan.badge }}</em>
               </button>
             </div>
@@ -229,9 +229,10 @@ import { addToCart, getCart } from '@/utils/cart'
 import i18n, { applyLanguage } from '@/i18n'
 import logo from '@/assets/logo.png'
 import Cart from '@/pages/Cart.vue'
-import { madToUsd, USD_CURRENCY } from '@/utils/currency'
+import { priceFromMad, getPreferredCurrency } from '@/utils/currency'
 
 const locale = ref(i18n.global.locale)
+const preferredCurrency = getPreferredCurrency()
 const router = useRouter()
 const search = ref('')
 const checkoutOpen = ref(false)
@@ -408,8 +409,8 @@ function buyPopularPack(pack) {
     data: pack.data.replace(' ', ''),
     dataLabel: pack.data,
     days: pack.days,
-    price: madToUsd(pack.price),
-    currency: USD_CURRENCY,
+    price: priceFromMad(pack.price),
+    currency: getPreferredCurrency(),
     esimGoBundleName: pack.esimGoBundleName,
     quantity: 1,
   })
@@ -450,7 +451,7 @@ function dayLabel(days) {
 
 function formatPrice(price) {
   const numberLocale = locale.value === 'ar' ? 'ar-MA' : locale.value === 'en' ? 'en-US' : 'fr-MA'
-  return new Intl.NumberFormat(numberLocale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(madToUsd(price))
+  return new Intl.NumberFormat(numberLocale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(priceFromMad(price))
 }
 
 async function selectPlanAndCheckout(plan) {
@@ -475,8 +476,8 @@ async function buySelectedPlan() {
     data: `${plan.dataValue}GB`,
     dataLabel: plan.data,
     days: plan.days,
-    price: madToUsd(plan.price),
-    currency: USD_CURRENCY,
+    price: priceFromMad(plan.price),
+    currency: getPreferredCurrency(),
     esimGoBundleName: plan.esimGoBundleName,
     quantity: 1,
   })

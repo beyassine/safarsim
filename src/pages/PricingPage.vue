@@ -82,7 +82,7 @@
                   <h3>{{ getDestinationName(destination) }}</h3>
                 </div>
                 <div class="from-price">
-                  {{ $t("pricing.from") }} <span>{{ formatUsd(madToUsd(getEntryPrice(destination)), $i18n.locale) }}</span>
+                  {{ $t("pricing.from") }} <span>{{ formatPriceFromMad(getEntryPrice(destination), $i18n.locale) }}</span>
                 </div>
               </div>
 
@@ -93,7 +93,7 @@
                   class="plan-row"
                 >
                   <span class="plan-label">{{ plan.label }}</span>
-                  <span class="plan-value">{{ formatUsd(madToUsd(plan.price), $i18n.locale) }}</span>
+                  <span class="plan-value">{{ formatPriceFromMad(plan.price, $i18n.locale) }}</span>
                 </div>
               </div>
 
@@ -130,7 +130,7 @@
 import popularDestinations from "@/data/popularDestinations.json"
 import destinations from "@/data/destinations.json"
 import { getLocalizedName } from "@/utils/localizedNames"
-import { formatUsd, madToUsd } from "@/utils/currency"
+import { formatPriceFromMad } from "@/utils/currency"
 import i18n from "@/i18n"
 
 function getEntryPrice(destination) {

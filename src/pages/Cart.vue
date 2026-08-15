@@ -280,7 +280,7 @@ import {
   CART_UPDATED_EVENT,
 } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
-import { formatUsd, madToUsd, USD_CURRENCY } from '@/utils/currency'
+import { formatMoney as formatCurrency, priceFromMad, getPreferredCurrency, MAD_CURRENCY, MAD_TO_USD_RATE } from '@/utils/currency'
 
 export default {
   name: 'CartPage',
@@ -305,7 +305,7 @@ export default {
     },
 
     paperDeliveryFee() {
-      return this.isPaperDelivery ? madToUsd(50) : 0
+      return this.isPaperDelivery ? priceFromMad(50) : 0
     },
 
     total() {
@@ -324,7 +324,7 @@ export default {
     },
 
     totalCurrency() {
-      return USD_CURRENCY
+      return getPreferredCurrency()
     },
 
     hasValidEmail() {
@@ -359,8 +359,14 @@ export default {
       const storedPrice = item.price && typeof item.price === 'object'
         ? Number(item.price.price)
         : Number(item.price)
-      const isUsd = item.currency === USD_CURRENCY
-      const price = isUsd ? storedPrice : madToUsd(storedPrice)
+      const preferredCurrency = getPreferredCurrency()
+      const sourceCurrency = item.currency || MAD_CURRENCY
+      let price = storedPrice
+      if (sourceCurrency !== preferredCurrency) {
+        price = preferredCurrency === MAD_CURRENCY
+          ? Number((storedPrice / MAD_TO_USD_RATE).toFixed(2))
+          : Number((storedPrice * MAD_TO_USD_RATE).toFixed(2))
+      }
       const quantity = Number(item.quantity || 1)
       const days = Number(item.days)
 
@@ -382,7 +388,7 @@ export default {
         days,
         names: item.names,
         price,
-        currency: USD_CURRENCY,
+        currency: preferredCurrency,
         quantity,
       }
     },
@@ -411,8 +417,8 @@ export default {
       this.refreshCart()
     },
 
-    formatMoney(amount) {
-      return formatUsd(amount, this.$i18n.locale)
+    formatMoney(amount, currency = this.totalCurrency) {
+      return formatCurrency(amount, currency, this.$i18n.locale)
     },
 
   },

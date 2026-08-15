@@ -17,7 +17,7 @@
 
                         <v-card-subtitle class="price-subtitle price-subtitle-ar">
                             <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                {{ formatUsd(madToUsd(getEntryPrice(country)), $i18n.locale) }}
+                                {{ formatPriceFromMad(getEntryPrice(country), $i18n.locale) }}
                             </bdi>
                             <span dir="rtl">{{ $t("common.from") }}</span>
                         </v-card-subtitle>
@@ -45,7 +45,7 @@
                         <v-card-subtitle class="price-subtitle">
                             <span>{{ $t("common.from") }}</span>
                             <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                {{ formatUsd(madToUsd(getEntryPrice(country)), $i18n.locale) }}
+                                {{ formatPriceFromMad(getEntryPrice(country), $i18n.locale) }}
                             </bdi>
                         </v-card-subtitle>
                     </v-card-item>
@@ -65,7 +65,7 @@
 <script setup>
 import { getLocalizedName } from "@/utils/localizedNames"
 import regions from "@/data/regions.json"
-import { formatUsd, madToUsd } from "@/utils/currency"
+import { formatPriceFromMad } from "@/utils/currency"
 
 defineProps({
     country: Object
