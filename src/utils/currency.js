@@ -35,11 +35,11 @@ export function getVisitorCountry() {
 }
 
 export function getPreferredCurrency() {
-  return getVisitorCountry() === 'MA' ? MAD_CURRENCY : USD_CURRENCY
+  return MAD_CURRENCY
 }
 
 export function priceFromMad(amount) {
-  return getPreferredCurrency() === MAD_CURRENCY ? Number(amount) : madToUsd(amount)
+  return Number(amount)
 }
 
 export function formatMoney(amount, currency = getPreferredCurrency(), locale = 'en') {
