@@ -115,7 +115,7 @@
 
                     <div class="company-support-block">
                         <div class="company-support-label">{{ $t("footer.customerSupport") }}</div>
-                        <a class="support-email" href="mailto:support@safarconnect.com">support@safarconnect.com</a>
+                        <a class="support-email" href="mailto:support@safarsim.net">support@safarsim.net</a>
                         <a class="support-phone" href="https://wa.me/212613147245" target="_blank" rel="noopener">
                             WhatsApp: +212 613-147245
                         </a>

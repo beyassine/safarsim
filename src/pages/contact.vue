@@ -21,7 +21,7 @@
               <div class="info-box">
                 <div class="info-item">
                   <span class="label">{{ $t("common.email") }}</span>
-                  <a href="mailto:support@safarconnect.com" class="value">support@safarconnect.com</a>
+                  <a href="mailto:support@safarsim.net" class="value">support@safarsim.net</a>
                 </div>
 
                 <div class="info-item">
@@ -51,7 +51,7 @@
                 rounded="xl"
                 size="large"
                 class="cta-btn"
-                href="mailto:support@safarconnect.com"
+                href="mailto:support@safarsim.net"
               >
                 {{ $t("contact.cta") }}
               </v-btn>
