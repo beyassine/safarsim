@@ -116,21 +116,12 @@
                     <div class="company-support-block">
                         <div class="company-support-label">{{ $t("footer.customerSupport") }}</div>
                         <a class="support-email" href="mailto:support@safarsim.net">support@safarsim.net</a>
-                        <a class="support-phone" href="https://wa.me/212613147245" target="_blank" rel="noopener">
-                            WhatsApp: +212 613-147245
-                        </a>
                         <p>{{ $t("footer.supportHours") }}</p>
                         <p>{{ $t("footer.responseTime") }}</p>
                     </div>
                 </div>
             </v-container>
 
-            <!-- BOTTOM BAR -->
-            <div class="footer-bottom mt-5 text-center">
-                <p>
-                    {{ $t("footer.copyright") }}
-                </p>
-            </div>
         </v-card>
     </v-container>
 </template>
@@ -210,13 +201,6 @@ li:hover {
 
 .socials .v-icon {
     cursor: pointer;
-}
-
-.footer-bottom {
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-    font-size: 14px;
-    color: #777;
 }
 
 .company-support {
