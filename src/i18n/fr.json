@@ -170,7 +170,7 @@
     "total": "Total",
     "payment": "Paiement",
     "paymentAndDelivery": "Paiement et livraison",
-    "whatsappCheckout": "Continuer par WhatsApp",
+    "buyButton": "Acheter",
     "phoneCompatibility": "Compatibilité téléphone",
     "checkPhoneForEsim": "Merci de vérifier la compatibilité de votre téléphone pour l’eSIM {number}.",
     "phoneModel": "Modèle du téléphone",
@@ -187,9 +187,9 @@
     "bankTransfer": "Virement bancaire",
     "bankTransferNotice": "Pour le QR code numérique, le paiement s’effectue par virement bancaire. Les coordonnées bancaires vous seront communiquées sur WhatsApp.",
     "paperDelivery": "QR code sur papier",
-    "paperDeliveryDescription": "Recevez une version imprimée, avec paiement à la livraison (+50 DH).",
+    "paperDeliveryDescription": "Recevez une version imprimée, avec paiement à la livraison (+5,18 USD).",
     "paperDeliveryFee": "Livraison papier",
-    "cashOnDeliveryNotice": "50 DH de frais sont ajoutés. Le paiement de la commande se fera à la livraison.",
+    "cashOnDeliveryNotice": "5,18 USD de frais sont ajoutés. Le paiement de la commande se fera à la livraison.",
     "cashOnDelivery": "Paiement à la livraison",
     "paymentMethod": "Mode de paiement",
     "paperContactNotice": "Indiquez vos coordonnées. L’adresse de livraison sera confirmée avec vous sur WhatsApp.",
@@ -218,12 +218,12 @@
     "whatsappCompatiblePhone": "Téléphone compatible",
     "whatsappThanks": "Merci.",
     "emailLabel": "Email",
-    "paypalCharge": "PayPal débitera :",
-    "paypalSecure": "Paiement sécurisé par PayPal",
-    "paypalLoading": "Chargement de PayPal...",
-    "paypalCreateOrderError": "Erreur lors de la création de la commande PayPal.",
-    "paypalCancelled": "Paiement annulé.",
-    "paypalGenericError": "Une erreur PayPal est survenue."
+    "acceptPoliciesPrefix": "J’accepte les",
+    "acceptPoliciesAnd": "et la",
+    "acceptPoliciesRequired": "Veuillez accepter les Conditions générales, la Politique de remboursement, la Politique de livraison numérique et la Politique de confidentialité.",
+    "policiesAccepted": "Conditions et politiques acceptées : Oui",
+    "paymentSecurityNotice": "Les données de paiement par carte sont transmises de façon sécurisée à un prestataire conforme à la norme PCI. SafarSIM ne conserve pas les numéros de carte complets.",
+    "acceptedCards": "Cartes acceptées :"
   },
   "footer": {
     "company": "Entreprise",
@@ -239,11 +239,16 @@
     "terms": "Conditions générales",
     "privacy": "Confidentialité",
     "refund": "Politique de Remboursement",
+    "digitalDelivery": "Politique de livraison numérique",
     "support": "Support",
     "help": "Aide",
     "compatibility": "Compatibilité eSIM",
     "bottom": "Conçu avec amour pour les voyageurs",
-    "copyright": "SAFAR NETWORKS LLC © 2026"
+    "copyright": "SAFAR NETWORKS LLC © 2026",
+    "companyInfo": "Entreprise",
+    "customerSupport": "Service client",
+    "supportHours": "Du lundi au vendredi, de 9 h à 17 h (heure de l’Est)",
+    "responseTime": "Délai de réponse habituel : 2 jours ouvrables"
   },
   "about": {
     "title": "Qu’est-ce que SafarSim ?",
@@ -320,7 +325,7 @@
       },
       {
         "title": "3. Paiement",
-        "text": "Les paiements sont sécurisés et gérés par Stripe.com."
+        "text": "Lorsque le paiement par carte est disponible, les données sont transmises de manière sécurisée à un prestataire conforme à la norme PCI tel que Stripe. Nous ne recevons ni ne conservons les numéros de carte complets."
       },
       {
         "title": "4. Partage",
@@ -332,7 +337,7 @@
       },
       {
         "title": "6. Vos droits",
-        "text": "Contactez-nous à contact@safarsim.net pour toute demande."
+        "text": "Contactez-nous à support@safarconnect.com pour toute demande."
       }
     ]
   },
@@ -364,26 +369,50 @@
       },
       {
         "title": "5. Demande",
-        "text": "Envoyez votre demande à contact@safarsim.net avec les détails."
+        "text": "Envoyez votre demande à support@safarconnect.com avec les détails."
       },
       {
         "title": "6. Délai",
         "text": "Les remboursements sont traités sous 5 à 10 jours ouvrés."
+      },
+      {
+        "title": "7. Annulation",
+        "text": "Vous pouvez demander l’annulation avant que le code QR eSIM soit livré, installé, activé ou utilisé. Après livraison ou activation, l’éligibilité dépend des conditions remboursables et non remboursables ci-dessus."
+      },
+      {
+        "title": "8. Litiges et réclamations",
+        "text": "Contactez support@safarconnect.com avant d’ouvrir un litige de paiement afin que nous puissions examiner et tenter de résoudre le problème. Cela ne limite pas les droits disponibles auprès de l’émetteur de votre carte ou en vertu de la loi applicable."
+      },
+      {
+        "title": "9. Retours",
+        "text": "Les produits eSIM numériques ne peuvent pas être retournés physiquement. Les commandes de codes QR imprimés ne sont pas retournables après livraison, mais les défaillances de service éligibles restent couvertes par la présente politique."
       }
+    ]
+  },
+  "digitalDelivery": {
+    "title": "Politique de livraison numérique",
+    "updated": "Dernière mise à jour : août 2026",
+    "sections": [
+      { "title": "1. Produit numérique", "text": "Les forfaits eSIM SafarSIM sont des produits numériques. Aucune carte SIM physique n’est expédiée pour les commandes en livraison numérique." },
+      { "title": "2. Mode de livraison", "text": "Après le paiement et la vérification de la commande, le code QR eSIM et les instructions d’installation sont envoyés à l’adresse e-mail ou au numéro WhatsApp fourni lors du paiement." },
+      { "title": "3. Délai de livraison", "text": "La livraison numérique commence normalement peu après la confirmation du paiement. La vérification, le traitement du paiement ou un problème technique peuvent entraîner un délai." },
+      { "title": "4. Responsabilité du client", "text": "Vous devez fournir des coordonnées exactes et accessibles, et vérifier avant l’achat que votre appareil est désimlocké et compatible eSIM." },
+      { "title": "5. Livraison non reçue", "text": "Si vous ne recevez pas votre eSIM, vérifiez vos courriers indésirables et contactez support@safarconnect.com. Nous vérifierons la commande et renverrons la livraison si nécessaire." },
+      { "title": "6. Activation et retours", "text": "N’installez pas et n’activez pas l’eSIM si vous souhaitez demander une annulation. L’éligibilité au remboursement est régie par notre Politique de remboursement." }
     ]
   },
   "terms": {
     "title": "Conditions Générales de Vente et d’Utilisation",
-    "updated": "Dernière mise à jour : Avril 2026",
+    "updated": "Dernière mise à jour : août 2026",
     "sections": [
       {
         "title": "1. Informations générales",
         "paragraphs": [
-          "Le site www.safarsim.net est exploité par SafarSim.",
+          "Le site www.safarsim.net et le service SafarSIM sont exploités par SAFAR NETWORKS LLC, 30 N Gould St, Ste R, Sheridan, WY 82801, États-Unis.",
           "Pour toute question, vous pouvez nous contacter :"
         ],
         "items": [
-          "Email : contact@safarsim.net",
+          "Email : support@safarconnect.com",
           "Téléphone : +212 613 147 245"
         ]
       },
@@ -397,13 +426,13 @@
         "title": "3. Commande et paiement",
         "paragraphs": [
           "Les commandes sont effectuées en ligne via notre site.",
-          "Notre processus de paiement est géré par Stripe.com."
+          "Les paiements par carte peuvent être traités en toute sécurité par un prestataire tiers tel que Stripe. SAFAR NETWORKS LLC reste le marchand responsable de la transaction, de l’exécution, des remboursements, des réclamations et des litiges."
         ]
       },
       {
         "title": "4. Livraison",
         "paragraphs": [
-          "Après paiement, l’eSIM est envoyée instantanément par email sous forme de QR code."
+          "Après le paiement et la vérification de la commande, le code QR eSIM et les instructions sont normalement livrés peu après par e-mail ou WhatsApp, conformément à notre Politique de livraison numérique."
         ]
       },
       {
@@ -427,7 +456,7 @@
       {
         "title": "8. Droit applicable",
         "paragraphs": [
-          "Les présentes conditions sont régies par le droit applicable au Maroc."
+          "Les présentes conditions sont régies par les lois applicables à SAFAR NETWORKS LLC, sans limiter les protections obligatoires dont bénéficie le consommateur."
         ]
       }
     ]
@@ -439,7 +468,7 @@
     "supportText": "Pour toute question sur votre commande, votre eSIM ou votre installation, vous pouvez nous contacter directement :",
     "phoneWhatsapp": "Téléphone / WhatsApp",
     "responseTitle": "Horaires de réponse",
-    "responseText": "Nous faisons de notre mieux pour répondre dans les plus brefs délais, généralement sous 24 heures ouvrées.",
+    "responseText": "Nous faisons de notre mieux pour répondre dans les plus brefs délais, généralement sous 2 jours ouvrables.",
     "assistanceTitle": "Assistance",
     "assistanceText": "Avant de demander un remboursement, nous vous invitons à nous contacter afin que nous puissions vérifier et résoudre rapidement le problème.",
     "cta": "Nous écrire"

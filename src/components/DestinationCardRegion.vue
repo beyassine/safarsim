@@ -17,7 +17,7 @@
 
                         <v-card-subtitle class="price-subtitle price-subtitle-ar">
                             <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                {{ formatUsdPrice(getEntryPrice(country)) }} DH
+                                {{ formatUsd(madToUsd(getEntryPrice(country)), $i18n.locale) }}
                             </bdi>
                             <span dir="rtl">{{ $t("common.from") }}</span>
                         </v-card-subtitle>
@@ -45,7 +45,7 @@
                         <v-card-subtitle class="price-subtitle">
                             <span>{{ $t("common.from") }}</span>
                             <bdi dir="ltr" class="text-h6 font-weight-bold text-pink-darken-4">
-                                {{ formatUsdPrice(getEntryPrice(country)) }} DH
+                                {{ formatUsd(madToUsd(getEntryPrice(country)), $i18n.locale) }}
                             </bdi>
                         </v-card-subtitle>
                     </v-card-item>
@@ -65,6 +65,7 @@
 <script setup>
 import { getLocalizedName } from "@/utils/localizedNames"
 import regions from "@/data/regions.json"
+import { formatUsd, madToUsd } from "@/utils/currency"
 
 defineProps({
     country: Object
@@ -78,7 +79,6 @@ const getEntryPrice = (destination) => {
     return Math.min(...prices)
 }
 
-const formatUsdPrice = (price) => Number(price).toFixed(2)
 const getImage = (item) => {
   if (item.slug === "europe") {
     return require("@/assets/images/flags/regions/europe.png");

@@ -11,6 +11,7 @@ import Princg from "../pages/PricingPage.vue"
 import PrivacyPolicy from "@/pages/PrivacyPolicy.vue"
 import RefundPolicy from "@/pages/RefundPolicy.vue"
 import TermsOfService from "@/pages/TermsOfService.vue"
+import DigitalDeliveryPolicy from "@/pages/DigitalDeliveryPolicy.vue"
 import contact from "@/pages/contact.vue"
 import about from "@/pages/about.vue"
 import PaymentSuccess from "@/pages/PaymentSuccess.vue"
@@ -86,6 +87,11 @@ const routes = [
     path: "/terms-of-service",
     name: "termsOfService",
     component: TermsOfService,
+  },
+  {
+    path: "/digital-delivery-policy",
+    name: "digitalDeliveryPolicy",
+    component: DigitalDeliveryPolicy,
   },
   {
     path: "/contact",

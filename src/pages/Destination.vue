@@ -75,7 +75,7 @@
 
             <div class="d-flex align-center">
               <div class="text-right mr-4">
-                <div class="text-h5 ">{{ formatUsdPrice(plan.price) }} DH</div>
+                <div class="text-h5 ">{{ formatUsd(madToUsd(plan.price), $i18n.locale) }}</div>
               </div>
               <v-btn icon :color="addedPlanKey === plan.key ? 'green' : 'pink-darken-1'" variant="flat"
                 @click="handleAddToCart(plan)">
@@ -103,6 +103,7 @@
 import destinations from '@/data/destinations.json'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
+import { formatUsd, madToUsd, USD_CURRENCY } from '@/utils/currency'
 
 export default {
   name: 'DestinationDetailsPage',
@@ -197,8 +198,8 @@ export default {
         data: plan.data,
         dataLabel: plan.dataLabel,
         days: plan.days,
-        price: plan.price,
-        currency: 'DH',
+        price: madToUsd(plan.price),
+        currency: USD_CURRENCY,
         esimGoBundleName: plan.esimGoBundleName,
         quantity: 1,
       })
@@ -216,8 +217,8 @@ export default {
         data: plan.data,
         dataLabel: plan.dataLabel,
         days: plan.days,
-        price: plan.price,
-        currency: 'DH',
+        price: madToUsd(plan.price),
+        currency: USD_CURRENCY,
         esimGoBundleName: plan.esimGoBundleName,
         quantity: 1,
       })
@@ -249,9 +250,8 @@ export default {
         ? `${this.$t("destinationsPage.days")} ${days}`
         : `${days} ${this.$t("destinationsPage.days")}`
     },
-    formatUsdPrice(price) {
-      return Number(price).toFixed(2)
-    }
+    formatUsd,
+    madToUsd,
   },
 
   watch: {

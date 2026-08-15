@@ -77,6 +77,9 @@
                             <router-link class="text-decoration-none" to="/refund-policy">
                                 <li>{{ $t("footer.refund") }}</li>
                             </router-link>
+                            <router-link class="text-decoration-none" to="/digital-delivery-policy">
+                                <li>{{ $t("footer.digitalDelivery") }}</li>
+                            </router-link>
                         </ul>
                     </v-col>
 
@@ -97,10 +100,35 @@
                 </v-row>
             </v-container>
 
+            <v-container fluid :class="$vuetify.display.smAndUp ? 'px-16' : 'px-6'">
+                <div class="company-support">
+                    <div class="company-support-block">
+                        <div class="company-support-label">{{ $t("footer.companyInfo") }}</div>
+                        <h3>SAFAR NETWORKS LLC</h3>
+                        <address>
+                            30 N Gould St<br>
+                            Ste R<br>
+                            Sheridan, WY 82801<br>
+                            United States
+                        </address>
+                    </div>
+
+                    <div class="company-support-block">
+                        <div class="company-support-label">{{ $t("footer.customerSupport") }}</div>
+                        <a class="support-email" href="mailto:support@safarconnect.com">support@safarconnect.com</a>
+                        <a class="support-phone" href="https://wa.me/212613147245" target="_blank" rel="noopener">
+                            WhatsApp: +212 613-147245
+                        </a>
+                        <p>{{ $t("footer.supportHours") }}</p>
+                        <p>{{ $t("footer.responseTime") }}</p>
+                    </div>
+                </div>
+            </v-container>
+
             <!-- BOTTOM BAR -->
             <div class="footer-bottom mt-5 text-center">
                 <p>
-                    {{ $t("footer.bottom") }} <br> {{ $t("footer.copyright") }}
+                    {{ $t("footer.copyright") }}
                 </p>
             </div>
         </v-card>
@@ -189,5 +217,74 @@ li:hover {
     padding-top: 20px;
     font-size: 14px;
     color: #777;
+}
+
+.company-support {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+    margin-top: 40px;
+    padding: 36px 0 8px;
+    border-top: 1px solid #ddd;
+}
+
+.company-support-label {
+    margin-bottom: 16px;
+    color: #7d1948;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.company-support h3,
+.support-email {
+    color: #2f1b2a;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.company-support address,
+.company-support p {
+    margin: 12px 0 0;
+    color: #666;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.company-support p + p {
+    margin-top: 0;
+}
+
+.support-email {
+    text-decoration: none;
+}
+
+.support-phone {
+    display: block;
+    width: fit-content;
+    margin-top: 8px;
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.support-email:hover,
+.support-phone:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 599px) {
+    .company-support {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .support-email {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
 }
 </style>

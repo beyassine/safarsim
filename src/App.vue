@@ -37,7 +37,7 @@ export default {
     methods: {
     },
     mounted() {
-      document.title = "eSIM SAFAR SIM – Internet Mobile pour les Voyageurs"
+      document.title = "SafarSIM – Travel Internet eSIM"
      },
 };
 

@@ -170,7 +170,7 @@
     "total": "Total",
     "payment": "Payment",
     "paymentAndDelivery": "Payment and delivery",
-    "whatsappCheckout": "Continue via WhatsApp",
+    "buyButton": "Buy",
     "phoneCompatibility": "Phone compatibility",
     "checkPhoneForEsim": "Please check your phone’s compatibility for eSIM {number}.",
     "phoneModel": "Phone model",
@@ -187,9 +187,9 @@
     "bankTransfer": "Bank transfer",
     "bankTransferNotice": "For a digital QR code, payment is made by bank transfer. Bank details will be sent to you on WhatsApp.",
     "paperDelivery": "Printed QR code",
-    "paperDeliveryDescription": "Receive a printed version with cash on delivery (+50 DH).",
+    "paperDeliveryDescription": "Receive a printed version with cash on delivery (+$5.18 USD).",
     "paperDeliveryFee": "Printed delivery",
-    "cashOnDeliveryNotice": "A 50 DH fee is added. The order is paid for upon delivery.",
+    "cashOnDeliveryNotice": "A $5.18 USD fee is added. The order is paid for upon delivery.",
     "cashOnDelivery": "Cash on delivery",
     "paymentMethod": "Payment method",
     "paperContactNotice": "Enter your contact details. The delivery address will be confirmed with you on WhatsApp.",
@@ -218,12 +218,12 @@
     "whatsappCompatiblePhone": "Compatible phone",
     "whatsappThanks": "Thank you.",
     "emailLabel": "Email",
-    "paypalCharge": "PayPal will charge:",
-    "paypalSecure": "Secure payment by PayPal",
-    "paypalLoading": "Loading PayPal...",
-    "paypalCreateOrderError": "Error creating the PayPal order.",
-    "paypalCancelled": "Payment cancelled.",
-    "paypalGenericError": "A PayPal error occurred."
+    "acceptPoliciesPrefix": "I agree to the",
+    "acceptPoliciesAnd": "and the",
+    "acceptPoliciesRequired": "Please accept the Terms of Service, Refund Policy, Digital Delivery Policy, and Privacy Policy.",
+    "policiesAccepted": "Terms and policies accepted: Yes",
+    "paymentSecurityNotice": "Card payment details are transmitted securely to a PCI-compliant payment provider. SafarSIM does not store full card numbers.",
+    "acceptedCards": "Accepted cards:"
   },
   "footer": {
     "company": "Company",
@@ -239,11 +239,16 @@
     "terms": "Terms of service",
     "privacy": "Privacy",
     "refund": "Refund Policy",
+    "digitalDelivery": "Digital Delivery Policy",
     "support": "Support",
     "help": "Help",
     "compatibility": "eSIM Compatibility",
     "bottom": "Made with love for travelers",
-    "copyright": "SAFAR NETWORKS LLC © 2026"
+    "copyright": "SAFAR NETWORKS LLC © 2026",
+    "companyInfo": "Company",
+    "customerSupport": "Customer support",
+    "supportHours": "Monday–Friday, 9:00 AM–5:00 PM Eastern Time",
+    "responseTime": "Typical response time: 2 business days"
   },
   "about": {
     "title": "What is SafarSim?",
@@ -320,7 +325,7 @@
       },
       {
         "title": "3. Payment",
-        "text": "Payments are secure and handled by Stripe.com."
+        "text": "When card payment is available, payment data is transmitted securely to a PCI-compliant provider such as Stripe. We do not receive or store full card numbers."
       },
       {
         "title": "4. Sharing",
@@ -332,7 +337,7 @@
       },
       {
         "title": "6. Your rights",
-        "text": "Contact us at contact@safarsim.net for any request."
+        "text": "Contact us at support@safarconnect.com for any request."
       }
     ]
   },
@@ -364,26 +369,50 @@
       },
       {
         "title": "5. Request",
-        "text": "Send your request to contact@safarsim.net with the details."
+        "text": "Send your request to support@safarconnect.com with the details."
       },
       {
         "title": "6. Timeframe",
         "text": "Refunds are processed within 5 to 10 business days."
+      },
+      {
+        "title": "7. Cancellation",
+        "text": "You may request cancellation before the eSIM QR code is delivered, installed, activated, or used. Once delivery or activation has occurred, cancellation eligibility is determined under the refundable and non-refundable conditions above."
+      },
+      {
+        "title": "8. Disputes and complaints",
+        "text": "Contact support@safarconnect.com before opening a payment dispute so we can investigate and try to resolve the issue. This does not limit any rights available through your card issuer or applicable law."
+      },
+      {
+        "title": "9. Returns",
+        "text": "Digital eSIM products cannot be physically returned. Printed QR-code orders are not returnable after delivery, but eligible service failures remain covered by this Refund Policy."
       }
+    ]
+  },
+  "digitalDelivery": {
+    "title": "Digital Delivery Policy",
+    "updated": "Last updated: August 2026",
+    "sections": [
+      { "title": "1. Digital product", "text": "SafarSIM eSIM plans are digital products. No physical SIM card is shipped for digital delivery orders." },
+      { "title": "2. Delivery method", "text": "After payment and order verification, the eSIM QR code and installation instructions are sent to the email address or WhatsApp number provided at checkout." },
+      { "title": "3. Delivery timing", "text": "Digital delivery normally begins shortly after payment is confirmed. Verification, payment processing, or technical issues may cause a delay." },
+      { "title": "4. Customer responsibility", "text": "You are responsible for providing accurate, accessible contact information and ensuring that your device is unlocked and supports eSIM before purchase." },
+      { "title": "5. Missing delivery", "text": "If you do not receive your eSIM, check your spam folder and contact support@safarconnect.com. We will verify the order and resend the delivery when appropriate." },
+      { "title": "6. Activation and returns", "text": "Do not install or activate the eSIM if you intend to request cancellation. Eligibility for refunds is governed by our Refund Policy." }
     ]
   },
   "terms": {
     "title": "Terms of Sale and Use",
-    "updated": "Last updated: April 2026",
+    "updated": "Last updated: August 2026",
     "sections": [
       {
         "title": "1. General information",
         "paragraphs": [
-          "The website www.safarsim.net is operated by SafarSim.",
+          "The website www.safarsim.net and the SafarSIM service are operated by SAFAR NETWORKS LLC, 30 N Gould St, Ste R, Sheridan, WY 82801, United States.",
           "For any question, you can contact us:"
         ],
         "items": [
-          "Email: contact@safarsim.net",
+          "Email: support@safarconnect.com",
           "Phone: +212 613 147 245"
         ]
       },
@@ -397,13 +426,13 @@
         "title": "3. Order and payment",
         "paragraphs": [
           "Orders are placed online through our website.",
-          "Our payment process is handled by Stripe.com. Stripe.com acts as Merchant of Record for all transactions."
+          "Card payments may be processed securely by a third-party payment provider such as Stripe. SAFAR NETWORKS LLC remains the merchant responsible for the transaction, fulfilment, refunds, complaints, and disputes."
         ]
       },
       {
         "title": "4. Delivery",
         "paragraphs": [
-          "After payment, the eSIM is sent instantly by email as a QR code."
+          "After payment and order verification, the eSIM QR code and instructions are normally delivered shortly afterward by email or WhatsApp, as described in our Digital Delivery Policy."
         ]
       },
       {
@@ -427,7 +456,7 @@
       {
         "title": "8. Applicable law",
         "paragraphs": [
-          "These terms are governed by the applicable law in Morocco."
+          "These terms are governed by the laws applicable to SAFAR NETWORKS LLC, without limiting any mandatory consumer protections that apply to the customer."
         ]
       }
     ]
@@ -439,7 +468,7 @@
     "supportText": "For any question about your order, your eSIM or your installation, you can contact us directly:",
     "phoneWhatsapp": "Phone / WhatsApp",
     "responseTitle": "Response times",
-    "responseText": "We do our best to respond as quickly as possible, usually within 24 business hours.",
+    "responseText": "We do our best to respond as quickly as possible, typically within 2 business days.",
     "assistanceTitle": "Assistance",
     "assistanceText": "Before requesting a refund, we invite you to contact us so we can quickly check and resolve the issue.",
     "cta": "Write to us"
