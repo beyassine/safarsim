@@ -13,6 +13,10 @@
         {{ $t("paymentSuccess.text") }}
       </p>
 
+      <v-alert v-if="verificationError" type="warning" variant="tonal" class="mb-6">
+        {{ verificationError }}
+      </v-alert>
+
       <div v-if="orderId" class="order-reference pa-4 mb-6">
         <div class="text-caption text-medium-emphasis mb-1">
           {{ $t("paymentSuccess.orderReference") }}
@@ -36,13 +40,45 @@
 </template>
 
 <script>
+import { clearCart } from '@/utils/cart'
+
 export default {
   name: 'PaymentSuccess',
 
+  data() {
+    return {
+      verificationError: '',
+    }
+  },
+
   computed: {
     orderId() {
-      return this.$route.query.orderId || ''
+      return this.$route.query.orderId || this.$route.query.session_id || ''
     },
+  },
+
+  async mounted() {
+    const sessionId = this.$route.query.session_id
+    if (!sessionId) return
+
+    try {
+      const apiUrl = String(
+        process.env.VUE_APP_STRIPE_API_URL || 'https://safar-stripe.vercel.app'
+      ).replace(/\/$/, '')
+      const response = await fetch(`${apiUrl}/api/checkout/verify`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionId }),
+      })
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok || !result.paid) {
+        throw new Error(result.error || 'Unable to verify payment')
+      }
+      clearCart()
+    } catch (error) {
+      console.error('Payment verification failed', error)
+      this.verificationError = error.message
+    }
   },
 }
 </script>

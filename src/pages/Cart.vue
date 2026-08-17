@@ -1,5 +1,5 @@
 <template>
-  <v-container class="py-8 cart-page">
+  <v-container class="py-8 cart-page" :class="{ 'numbered-checkout': showStepNumbers }">
     <div v-if="cart.length === 0">
       <v-card rounded="xl" elevation="0" class="pa-8 empty-cart text-center">
         <v-icon size="56" class="mb-4">mdi-cart-outline</v-icon>
@@ -15,9 +15,12 @@
     </div>
 
     <v-row v-else>
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="6" class="summary-column">
         <v-card rounded="xl" elevation="1" class="pa-5 summary-card">
-        <h2 class="subsection-title mb-4">{{ $t("cart.summary") }}</h2>
+        <div class="cart-step-title mb-4" :class="{ 'cart-step-title--rtl': $i18n.locale === 'ar' }">
+          <span v-if="showStepNumbers" class="cart-step-number">4</span>
+          <h2 class="subsection-title">{{ $t("cart.summary") }}</h2>
+        </div>
           <div v-for="(item, index) in cart" :key="item.id" class="cart-line py-4">
             <div
               v-if="$i18n.locale === 'ar'"
@@ -106,28 +109,96 @@
             <v-divider v-if="index < cart.length - 1" class="mt-4" />
           </div>
 
-          <v-divider class="my-4" />
+          <template v-if="!showStepNumbers">
+            <v-divider class="my-4" />
+            <div class="d-flex justify-space-between align-center"
+              :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
+              <span class="text-h6 font-weight-bold">{{ $t("cart.cartSubtotal") }}</span>
+              <span class="text-h6 font-weight-bold">{{ formatMoney(subtotal, totalCurrency) }}</span>
+            </div>
+          </template>
 
-          <div class="d-flex justify-space-between align-center mb-4"
-            :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
-            <span class="text-h6 font-weight-bold">{{ $t("cart.cartSubtotal") }}</span>
-            <span class="text-h6 font-weight-bold">{{ formatMoney(subtotal, totalCurrency) }}</span>
-          </div>
+          <template v-if="showStepNumbers">
+            <v-divider class="my-4" />
+
+            <div class="compatibility-section" :class="{ 'compatibility-rtl': $i18n.locale === 'ar' }">
+              <v-checkbox
+                v-model="compatibilityConfirmed"
+                color="primary"
+                hide-details
+                class="compatibility-confirmation"
+              >
+                <template #label>
+                  <span class="compatibility-label-content">
+                    {{ $t('cart.compatibilityConfirmed') }}
+                    <router-link class="compatibility-link" to="/compatibility" target="_blank" @click.stop>
+                      {{ $t("cart.checkCompatibilityLink") }}
+                      <v-icon size="15">mdi-open-in-new</v-icon>
+                    </router-link>
+                  </span>
+                </template>
+              </v-checkbox>
+            </div>
+
+            <v-checkbox
+              v-model="termsAccepted"
+              color="primary"
+              hide-details
+              class="policy-acceptance mb-4"
+              :class="{ 'policy-acceptance--rtl': $i18n.locale === 'ar' }"
+            >
+              <template #label>
+                <span>
+                  {{ $t("cart.acceptPoliciesPrefix") }}
+                  <router-link to="/terms-of-service" target="_blank" @click.stop>{{ $t("footer.terms") }}</router-link>,
+                  <router-link to="/refund-policy" target="_blank" @click.stop>{{ $t("footer.refund") }}</router-link>,
+                  <router-link to="/digital-delivery-policy" target="_blank" @click.stop>{{ $t("footer.digitalDelivery") }}</router-link>
+                  {{ $t("cart.acceptPoliciesAnd") }}
+                  <router-link to="/privacy-policy" target="_blank" @click.stop>{{ $t("footer.privacy") }}</router-link>.
+                </span>
+              </template>
+            </v-checkbox>
+
+            <v-divider class="mb-5" />
+
+            <div class="d-flex justify-space-between align-center mb-4"
+              :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
+              <span class="text-h6 font-weight-bold">{{ $t("cart.cartSubtotal") }}</span>
+              <span class="text-h6 font-weight-bold">{{ formatMoney(subtotal, totalCurrency) }}</span>
+            </div>
+
+            <v-alert v-if="checkoutError" type="error" variant="tonal" class="mb-4">
+              {{ checkoutError }}
+            </v-alert>
+
+            <v-btn
+              block
+              size="large"
+              rounded="pill"
+              class="text-none font-weight-bold buy-button"
+              :loading="isCheckingOut"
+              :disabled="isCheckingOut"
+              @click="startCheckout"
+            >
+              {{ $t("cart.buyButton") }}
+            </v-btn>
+
+            <div class="payment-security mt-5" :class="{ 'payment-security--rtl': $i18n.locale === 'ar' }">
+              <v-icon size="18">mdi-lock-outline</v-icon>
+              <span>{{ $t("cart.paymentSecurityNotice") }}</span>
+            </div>
+          </template>
 
         </v-card>
 
       </v-col>
 
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="6" class="contact-column">
         <v-card rounded="xl" elevation="1" class="pa-5 contact-card">
-        <h2 class="subsection-title mb-4">{{ $t("cart.contactInfo") }}</h2>
-          <v-alert
-            icon="mdi-information-outline"
-            variant="tonal"
-            class="mb-4"
-          >
-          {{ contactNotice }}
-        </v-alert>
+        <div class="cart-step-title mb-4" :class="{ 'cart-step-title--rtl': $i18n.locale === 'ar' }">
+          <span v-if="showStepNumbers" class="cart-step-number">3</span>
+          <h2 class="subsection-title">{{ $t("cart.contactInfo") }}</h2>
+        </div>
           <v-text-field
             v-model.trim="customerName"
             :label="$t('cart.fullName')"
@@ -153,82 +224,40 @@
           />
 
           <v-text-field
-            v-model.trim="customerPhone"
-            type="tel"
-            :label="$t('cart.phone')"
+            v-model.trim="customerEmailConfirmation"
+            type="email"
+            :label="$t('cart.confirmEmail')"
             variant="outlined"
+            color="blue"
             density="comfortable"
             rounded="lg"
-            prepend-inner-icon="mdi-phone-outline"
+            prepend-inner-icon="mdi-email-check-outline"
             class="mb-4"
+            :error-messages="customerEmailConfirmationError"
             hide-details="auto"
-          >
-            <template #append-inner>
-              <span class="phone-help" tabindex="0">
-                <v-icon size="22" color="grey-darken-1">
-                  mdi-help-circle-outline
-                </v-icon>
-                <span class="phone-help-tooltip">
-                  {{ $t("cart.phoneHelp") }}
-                </span>
-              </span>
-            </template>
-          </v-text-field>
+          />
         </v-card>
-        <v-card rounded="xl" elevation="1" class="pa-5 payment-card mt-6">
-          <h2 class="subsection-title mb-4">{{ $t("cart.paymentAndDelivery") }}</h2>
 
-          <v-radio-group v-model="deliveryType" hide-details>
-            <v-radio value="digital" color="primary"
-              :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
+        <v-card v-if="!showStepNumbers" rounded="xl" elevation="1" class="pa-5 mt-4 checkout-card">
+          <h2 class="checkout-card-title mb-4">{{ $t("cart.confirmOrder") }}</h2>
+
+          <div class="compatibility-section" :class="{ 'compatibility-rtl': $i18n.locale === 'ar' }">
+            <v-checkbox
+              v-model="compatibilityConfirmed"
+              color="primary"
+              hide-details
+              class="compatibility-confirmation"
+            >
               <template #label>
-                <div :dir="$i18n.locale === 'ar' ? 'rtl' : 'ltr'">
-                  <div class="font-weight-bold">{{ $t("cart.digitalQr") }}</div>
-                  <div class="text-body-2 text-medium-emphasis">{{ $t("cart.digitalQrDescription") }}</div>
-                </div>
+                <span class="compatibility-label-content">
+                  {{ $t('cart.compatibilityConfirmed') }}
+                <router-link class="compatibility-link" to="/compatibility" target="_blank" @click.stop>
+                  {{ $t("cart.checkCompatibilityLink") }}
+                  <v-icon size="15">mdi-open-in-new</v-icon>
+                </router-link>
+                </span>
               </template>
-            </v-radio>
-            <v-radio value="paper" color="primary" class="mt-3"
-              :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
-              <template #label>
-                <div :dir="$i18n.locale === 'ar' ? 'rtl' : 'ltr'">
-                  <div class="font-weight-bold">{{ $t("cart.paperDelivery") }}</div>
-                  <div class="text-body-2 text-medium-emphasis">{{ $t("cart.paperDeliveryDescription") }}</div>
-                </div>
-              </template>
-            </v-radio>
-          </v-radio-group>
-
-          <template v-if="!isPaperDelivery">
-            <v-alert type="info" variant="tonal" class="mt-5 mb-4">
-              {{ $t("cart.bankTransferNotice") }}
-            </v-alert>
-          </template>
-
-          <template v-else>
-            <v-alert type="info" variant="tonal" class="mt-5 mb-5">
-              {{ $t("cart.cashOnDeliveryNotice") }}
-            </v-alert>
-          </template>
-
-          <v-divider class="my-5" />
-
-          <div class="d-flex justify-space-between mb-3 text-medium-emphasis"
-            :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
-            <span>{{ $t("cart.cartSubtotal") }}</span>
-            <span>{{ formatMoney(subtotal, totalCurrency) }}</span>
-          </div>
-
-          <div class="d-flex justify-space-between mb-3 text-medium-emphasis"
-            :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
-            <span>{{ $t("cart.deliveryFee") }}</span>
-            <span>{{ formatMoney(paperDeliveryFee, totalCurrency) }}</span>
-          </div>
-
-          <div class="d-flex justify-space-between align-center mb-5"
-            :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
-            <span class="text-h6 font-weight-bold">{{ $t("cart.totalToPay") }}</span>
-            <span class="text-h6 font-weight-bold">{{ formatMoney(total, totalCurrency) }}</span>
+            </v-checkbox>
           </div>
 
           <v-checkbox
@@ -236,6 +265,7 @@
             color="primary"
             hide-details
             class="policy-acceptance mb-4"
+            :class="{ 'policy-acceptance--rtl': $i18n.locale === 'ar' }"
           >
             <template #label>
               <span>
@@ -249,20 +279,34 @@
             </template>
           </v-checkbox>
 
-          <div class="payment-security mb-4">
+          <v-divider class="mb-5" />
+
+          <div class="d-flex justify-space-between align-center mb-4"
+            :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
+            <span class="text-h6 font-weight-bold">{{ $t("cart.cartSubtotal") }}</span>
+            <span class="text-h6 font-weight-bold">{{ formatMoney(subtotal, totalCurrency) }}</span>
+          </div>
+
+          <v-alert v-if="checkoutError" type="error" variant="tonal" class="mb-4">
+            {{ checkoutError }}
+          </v-alert>
+
+          <v-btn
+            block
+            size="large"
+            rounded="pill"
+            class="text-none font-weight-bold buy-button"
+            :loading="isCheckingOut"
+            :disabled="isCheckingOut"
+            @click="startCheckout"
+          >
+            {{ $t("cart.buyButton") }}
+          </v-btn>
+
+          <div class="payment-security mt-5" :class="{ 'payment-security--rtl': $i18n.locale === 'ar' }">
             <v-icon size="18">mdi-lock-outline</v-icon>
             <span>{{ $t("cart.paymentSecurityNotice") }}</span>
           </div>
-          <div class="accepted-cards mb-5" :aria-label="$t('cart.acceptedCards')">
-            <span>{{ $t("cart.acceptedCards") }}</span>
-            <b>VISA</b>
-            <b>Mastercard</b>
-            <b>AMEX</b>
-          </div>
-
-          <v-btn block size="large" rounded="pill" class="text-none font-weight-bold buy-button">
-            {{ $t("cart.buyButton") }}
-          </v-btn>
         </v-card>
       </v-col>
     </v-row>
@@ -280,20 +324,28 @@ import {
   CART_UPDATED_EVENT,
 } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
-import { formatMoney as formatCurrency, priceFromMad, getPreferredCurrency, MAD_CURRENCY, MAD_TO_USD_RATE } from '@/utils/currency'
+import { formatMoney as formatCurrency, getPreferredCurrency, MAD_CURRENCY, MAD_TO_USD_RATE } from '@/utils/currency'
 
 export default {
   name: 'CartPage',
+
+  props: {
+    showStepNumbers: {
+      type: Boolean,
+      default: false,
+    },
+  },
 
   data() {
     return {
       cart: [],
       customerEmail: '',
-      customerPhone: '',
+      customerEmailConfirmation: '',
       customerName: '',
-      deliveryType: 'digital',
-      digitalChannel: 'whatsapp',
+      compatibilityConfirmed: false,
       termsAccepted: false,
+      isCheckingOut: false,
+      checkoutError: '',
     }
   },
 
@@ -302,25 +354,6 @@ export default {
       return this.cart.reduce((total, item) => {
         return total + Number(item.price) * Number(item.quantity)
       }, 0)
-    },
-
-    paperDeliveryFee() {
-      return this.isPaperDelivery ? priceFromMad(50) : 0
-    },
-
-    total() {
-      return this.subtotal + this.paperDeliveryFee
-    },
-
-    isPaperDelivery() {
-      return this.deliveryType === 'paper'
-    },
-
-    contactNotice() {
-      if (this.isPaperDelivery) return this.$t('cart.paperContactNotice')
-      return this.digitalChannel === 'email'
-        ? this.$t('cart.emailNotice')
-        : this.$t('cart.whatsappNotice')
     },
 
     totalCurrency() {
@@ -332,9 +365,15 @@ export default {
     },
 
     customerEmailError() {
-      if (this.digitalChannel !== 'email' || this.isPaperDelivery || !this.customerEmail || this.hasValidEmail) return ''
+      if (!this.customerEmail || this.hasValidEmail) return ''
 
       return this.$t('cart.invalidEmail')
+    },
+
+    customerEmailConfirmationError() {
+      if (!this.customerEmailConfirmation || this.customerEmailConfirmation === this.customerEmail) return ''
+
+      return this.$t('cart.emailsMismatch')
     },
 
   },
@@ -421,6 +460,76 @@ export default {
       return formatCurrency(amount, currency, this.$i18n.locale)
     },
 
+    formatCheckoutItemName(item) {
+      const parts = [
+        this.getCartItemName(item),
+        item.dataLabel,
+        `${item.days} ${this.$t('destinationsPage.days')}`,
+      ]
+
+      if (this.$i18n.locale !== 'ar') return parts.join(' · ')
+
+      // Keep Arabic and Latin/number segments from being visually reordered by Stripe.
+      return parts.map((part) => `\u2068${part}\u2069`).join(' · ')
+    },
+
+    async startCheckout() {
+      this.checkoutError = ''
+
+      if (!this.customerName || !this.hasValidEmail || this.customerEmailConfirmation !== this.customerEmail) {
+        this.checkoutError = this.$t('cart.checkoutContactError')
+        return
+      }
+      if (!this.compatibilityConfirmed) {
+        this.checkoutError = this.$t('cart.checkoutCompatibilityError')
+        return
+      }
+      if (!this.termsAccepted) {
+        this.checkoutError = this.$t('cart.checkoutTermsError')
+        return
+      }
+
+      const lineItems = this.cart.map((item) => ({
+        name: this.formatCheckoutItemName(item),
+        destinationName: this.getCartItemName(item),
+        destinationNameEnglish: item.names?.en || item.destinationName,
+        dataLabel: item.dataLabel,
+        days: item.days,
+        esimGoBundleName: item.esimGoBundleName,
+        currency: item.currency,
+        unitAmount: Math.round(Number(item.price) * 100),
+        quantity: item.quantity,
+      }))
+
+      this.isCheckingOut = true
+      try {
+        const apiUrl = String(
+          process.env.VUE_APP_STRIPE_API_URL || 'https://safar-stripe.vercel.app'
+        ).replace(/\/$/, '')
+        const response = await fetch(`${apiUrl}/api/checkout`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            customerEmail: this.customerEmail,
+            customerName: this.customerName,
+            locale: this.$i18n.locale,
+            orderReference: `SAFAR-${Date.now()}`,
+            lineItems,
+          }),
+        })
+        const result = await response.json().catch(() => ({}))
+        if (!response.ok || !result.url) {
+          throw new Error(result.error || this.$t('cart.checkoutError'))
+        }
+
+        window.location.assign(result.url)
+      } catch (error) {
+        console.error('Stripe Checkout failed', error)
+        this.checkoutError = error.message || this.$t('cart.checkoutError')
+        this.isCheckingOut = false
+      }
+    },
+
   },
 
   mounted() {
@@ -446,35 +555,24 @@ export default {
   min-height: 100vh;
 }
 
+@media (max-width: 959px) {
+  .cart-page:not(.numbered-checkout) .summary-column,
+  .numbered-checkout .contact-column {
+    order: 1;
+  }
+
+  .cart-page:not(.numbered-checkout) .contact-column,
+  .numbered-checkout .summary-column {
+    order: 2;
+  }
+}
+
 .empty-cart,
 .summary-card,
-.contact-card,
-.payment-card {
+.contact-card {
   background: white;
 }
 
-:global(html[dir="rtl"]) .payment-card :deep(.v-radio) {
-  width: 100%;
-  direction: ltr !important;
-  flex-direction: row !important;
-}
-
-:global(html[dir="rtl"]) .payment-card :deep(.v-radio .v-selection-control__wrapper) {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  flex: 0 0 auto;
-  order: 1;
-}
-
-:global(html[dir="rtl"]) .payment-card :deep(.v-radio .v-label) {
-  flex: 1;
-  order: 0;
-  direction: rtl;
-  text-align: right;
-}
-
-:global(html[dir="rtl"]) .payment-card .d-flex.justify-space-between,
 :global(html[dir="rtl"]) .summary-card > .d-flex.justify-space-between {
   direction: ltr !important;
   flex-direction: row-reverse !important;
@@ -483,6 +581,100 @@ export default {
 .buy-button {
   background: #d91c58 !important;
   color: white !important;
+}
+
+.cart-step-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-step-title .subsection-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 800;
+}
+
+.checkout-card-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 800;
+  font-family: inherit;
+}
+
+.cart-step-title--rtl {
+  width: 100%;
+  direction: rtl;
+  justify-content: flex-start;
+  text-align: right;
+}
+
+.cart-step-title--rtl .subsection-title {
+  text-align: right;
+}
+
+.cart-step-number {
+  width: 31px;
+  height: 31px;
+  flex: 0 0 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #d91c58;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+:global(html[dir="rtl"]) .cart-step-title {
+  direction: rtl;
+  text-align: right;
+}
+
+.compatibility-section {
+  padding: 2px 0 0;
+}
+
+.compatibility-divider {
+  margin: 4px 0 12px;
+}
+
+.compatibility-confirmation {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+}
+
+.compatibility-confirmation :deep(.v-selection-control) {
+  min-height: 32px;
+}
+
+.compatibility-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.compatibility-label-content {
+  line-height: 1.7;
+}
+
+.compatibility-rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.compatibility-rtl .compatibility-confirmation :deep(.v-selection-control) {
+  direction: rtl !important;
+  text-align: right;
+}
+
+.compatibility-rtl .compatibility-confirmation :deep(.v-label) {
+  justify-content: flex-start;
+  text-align: right;
 }
 
 .payment-security {
@@ -494,22 +686,38 @@ export default {
   line-height: 1.5;
 }
 
-.accepted-cards {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  color: rgba(0, 0, 0, 0.68);
-  font-size: 0.78rem;
+.payment-security--rtl {
+  direction: rtl;
+  justify-content: flex-start;
+  text-align: right;
 }
 
-.accepted-cards b {
-  padding: 3px 7px;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 4px;
-  background: #fff;
-  color: #333;
-  font-size: 0.7rem;
+.policy-acceptance--rtl :deep(.v-selection-control) {
+  direction: rtl !important;
+  text-align: right;
+}
+
+.policy-acceptance--rtl :deep(.v-label) {
+  justify-content: flex-start;
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .policy-acceptance :deep(.v-selection-control),
+:global(html[dir="rtl"]) .compatibility-confirmation :deep(.v-selection-control) {
+  direction: rtl;
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .policy-acceptance :deep(.v-label),
+:global(html[dir="rtl"]) .compatibility-confirmation :deep(.v-label) {
+  justify-content: flex-start;
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .payment-security {
+  direction: rtl;
+  justify-content: flex-start;
+  text-align: right;
 }
 
 .cart-line:first-of-type {
@@ -550,47 +758,4 @@ export default {
   border-radius: 999px;
 }
 
-.phone-help {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  cursor: help;
-}
-
-.phone-help-tooltip {
-  position: absolute;
-  right: -14px;
-  bottom: calc(100% + 14px);
-  z-index: 5;
-  width: 270px;
-  padding: 14px 16px;
-  border-radius: 12px;
-  background: rgba(17, 17, 17, 0.96);
-  color: white;
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.35;
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(4px);
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-
-.phone-help-tooltip::after {
-  content: "";
-  position: absolute;
-  right: 24px;
-  bottom: -9px;
-  border-top: 10px solid rgba(17, 17, 17, 0.96);
-  border-right: 10px solid transparent;
-  border-left: 10px solid transparent;
-}
-
-.phone-help:hover .phone-help-tooltip,
-.phone-help:focus .phone-help-tooltip,
-.phone-help:focus-within .phone-help-tooltip {
-  opacity: 1;
-  transform: translateY(0);
-}
 </style>
