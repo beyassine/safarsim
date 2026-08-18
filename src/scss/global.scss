@@ -10,6 +10,17 @@ body,
   box-sizing: border-box;
 }
 
+// Prevent direction-sensitive positioned elements from creating a horizontally
+// scrollable area. In RTL browsers that overflow appears as blank space on the
+// right-hand side of the page.
+html,
+body,
+#app,
+.v-application {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 *,
 *::before,
 *::after {

@@ -187,14 +187,14 @@
   padding-left: 22px;
 }
 
-:global(html[dir="rtl"]) .styled-list {
+:global(html[dir="rtl"] .styled-list) {
   direction: rtl;
   text-align: right;
   padding-right: 20px;
   padding-left: 0;
 }
 
-:global(html[dir="rtl"]) .ordered {
+:global(html[dir="rtl"] .ordered) {
   padding-right: 22px;
 }
 

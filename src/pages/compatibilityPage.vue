@@ -296,7 +296,7 @@ const hasSelectedCompatiblePhone = computed(() =>
   color: #1f2937;
 }
 
-:global(html[dir="rtl"]) .compatibility-check-icon {
+:global(html[dir="rtl"] .compatibility-check-icon) {
   margin-inline-end: 6px;
 }
 

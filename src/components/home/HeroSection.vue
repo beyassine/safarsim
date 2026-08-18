@@ -153,7 +153,7 @@ export default {
     margin-bottom: 2px;
 }
 
-:global(html[dir="rtl"]) .hero-check-icon {
+:global(html[dir="rtl"] .hero-check-icon) {
     margin-inline-end: 6px;
 }
 

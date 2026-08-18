@@ -144,7 +144,7 @@ export default {
     cursor: pointer;
 }
 
-:global(html[dir="rtl"]) .step-card {
+:global(html[dir="rtl"] .step-card) {
     gap: 21px;
 }
 </style>

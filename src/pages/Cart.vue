@@ -311,10 +311,22 @@
       </v-col>
     </v-row>
 
+    <v-card
+      v-if="showEmbeddedPayment"
+      ref="embeddedPaymentCard"
+      rounded="xl"
+      elevation="1"
+      class="pa-3 pa-sm-5 mt-5 embedded-payment-card"
+    >
+      <h2 class="checkout-card-title mb-4">{{ embeddedPaymentTitle }}</h2>
+      <div ref="embeddedCheckout" class="stripe-embedded-checkout" />
+    </v-card>
+
   </v-container>
 </template>
 
 <script>
+import { loadStripe } from '@stripe/stripe-js'
 import {
   getCart,
   increaseQuantity,
@@ -346,6 +358,8 @@ export default {
       termsAccepted: false,
       isCheckingOut: false,
       checkoutError: '',
+      showEmbeddedPayment: false,
+      embeddedCheckout: null,
     }
   },
 
@@ -374,6 +388,14 @@ export default {
       if (!this.customerEmailConfirmation || this.customerEmailConfirmation === this.customerEmail) return ''
 
       return this.$t('cart.emailsMismatch')
+    },
+
+    embeddedPaymentTitle() {
+      return {
+        ar: 'الدفع الآمن',
+        fr: 'Paiement sécurisé',
+        en: 'Secure payment',
+      }[this.$i18n.locale] || 'Secure payment'
     },
 
   },
@@ -503,6 +525,11 @@ export default {
 
       this.isCheckingOut = true
       try {
+        const publishableKey = String(process.env.VUE_APP_STRIPE_PUBLISHABLE_KEY || '').trim()
+        if (!publishableKey) {
+          throw new Error('Stripe publishable key is not configured')
+        }
+
         const apiUrl = String(
           process.env.VUE_APP_STRIPE_API_URL || 'https://safar-stripe.vercel.app'
         ).replace(/\/$/, '')
@@ -518,11 +545,36 @@ export default {
           }),
         })
         const result = await response.json().catch(() => ({}))
-        if (!response.ok || !result.url) {
+        if (!response.ok || !result.clientSecret) {
           throw new Error(result.error || this.$t('cart.checkoutError'))
         }
 
-        window.location.assign(result.url)
+        if (this.embeddedCheckout) {
+          this.embeddedCheckout.destroy()
+          this.embeddedCheckout = null
+        }
+
+        this.showEmbeddedPayment = true
+        await this.$nextTick()
+
+        const stripe = await loadStripe(publishableKey)
+        if (!stripe) throw new Error(this.$t('cart.checkoutError'))
+
+        this.embeddedCheckout = await stripe.createEmbeddedCheckoutPage({
+          clientSecret: result.clientSecret,
+          onComplete: () => {
+            this.$router.push({
+              path: '/payment-success',
+              query: { session_id: result.id },
+            })
+          },
+        })
+        this.embeddedCheckout.mount(this.$refs.embeddedCheckout)
+        this.isCheckingOut = false
+
+        this.$nextTick(() => {
+          this.$refs.embeddedPaymentCard?.$el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        })
       } catch (error) {
         console.error('Stripe Checkout failed', error)
         this.checkoutError = error.message || this.$t('cart.checkoutError')
@@ -539,6 +591,7 @@ export default {
   },
 
   beforeUnmount() {
+    if (this.embeddedCheckout) this.embeddedCheckout.destroy()
     window.removeEventListener(CART_UPDATED_EVENT, this.refreshCart)
     window.removeEventListener('storage', this.refreshCart)
   },
@@ -573,7 +626,16 @@ export default {
   background: white;
 }
 
-:global(html[dir="rtl"]) .summary-card > .d-flex.justify-space-between {
+.embedded-payment-card {
+  background: white;
+  scroll-margin-top: 24px;
+}
+
+.stripe-embedded-checkout {
+  min-height: 420px;
+}
+
+:global(html[dir="rtl"] .summary-card > .d-flex.justify-space-between) {
   direction: ltr !important;
   flex-direction: row-reverse !important;
 }
@@ -628,7 +690,7 @@ export default {
   font-weight: 800;
 }
 
-:global(html[dir="rtl"]) .cart-step-title {
+:global(html[dir="rtl"] .cart-step-title) {
   direction: rtl;
   text-align: right;
 }
@@ -702,19 +764,19 @@ export default {
   text-align: right;
 }
 
-:global(html[dir="rtl"]) .policy-acceptance :deep(.v-selection-control),
-:global(html[dir="rtl"]) .compatibility-confirmation :deep(.v-selection-control) {
+:global(html[dir="rtl"] .policy-acceptance .v-selection-control),
+:global(html[dir="rtl"] .compatibility-confirmation .v-selection-control) {
   direction: rtl;
   text-align: right;
 }
 
-:global(html[dir="rtl"]) .policy-acceptance :deep(.v-label),
-:global(html[dir="rtl"]) .compatibility-confirmation :deep(.v-label) {
+:global(html[dir="rtl"] .policy-acceptance .v-label),
+:global(html[dir="rtl"] .compatibility-confirmation .v-label) {
   justify-content: flex-start;
   text-align: right;
 }
 
-:global(html[dir="rtl"]) .payment-security {
+:global(html[dir="rtl"] .payment-security) {
   direction: rtl;
   justify-content: flex-start;
   text-align: right;
