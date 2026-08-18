@@ -301,6 +301,8 @@ const featuredPackageKeys = {
   espagne: '10GB_30days',
   turquie: '20GB_30days',
   'etats-unis': '5GB_30days',
+  france: '10GB_30days',
+  'emirats-arabes-unis': '10GB_30days',
 }
 
 const popularPacks = computed(() => Object.entries(featuredPackageKeys)
