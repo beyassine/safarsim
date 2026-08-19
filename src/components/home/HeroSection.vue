@@ -61,7 +61,7 @@
 
 <script>
 import DestinationSearch from "@/components/DestinationSearchBar.vue";
-import destinations from "@/data/destinations.json";
+import { destinations } from "@/services/catalog";
 import PopularDestinations from "@/data/popularDestinations.json";
 import router from "@/router";
 import { useDisplay } from "vuetify";

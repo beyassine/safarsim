@@ -113,7 +113,7 @@
 <script>
 import { getCartCount, CART_UPDATED_EVENT } from '@/utils/cart'
 import DestinationSearch from '@/components/DestinationSearchBar.vue'
-import destinations from "@/data/destinations.json";
+import { destinations } from "@/services/catalog";
 import PopularDestinations from "@/data/popularDestinations.json";
 import { applyLanguage } from "@/i18n";
 

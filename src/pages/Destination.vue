@@ -100,7 +100,7 @@
 </template>
 
 <script>
-import destinations from '@/data/destinations.json'
+import { destinations } from '@/services/catalog'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
 import { formatPriceFromMad, priceFromMad, getPreferredCurrency } from '@/utils/currency'

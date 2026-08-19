@@ -63,7 +63,7 @@
 
 <script setup>
 import { getLocalizedName } from "@/utils/localizedNames"
-import destinations from "@/data/destinations.json"
+import { destinations } from "@/services/catalog"
 import { formatPriceFromMad } from "@/utils/currency"
 
 defineProps({

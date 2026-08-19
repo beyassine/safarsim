@@ -2,6 +2,7 @@ import { createApp } from "vue"
 import App from "./App.vue"
 import router from "./router"
 import i18n , {applyLanguage } from "./i18n"
+import { loadCatalog } from "./services/catalog"
 
 import "vuetify/styles"
 import '@mdi/font/css/materialdesignicons.css'
@@ -36,8 +37,14 @@ const vuetify = createVuetify({
 // Apply the detected language without treating it as an explicit user choice.
 applyLanguage(i18n.global.locale, false)
 
-createApp(App)
-  .use(i18n)
-  .use(router)
-  .use(vuetify)
-  .mount("#app")
+async function bootstrap() {
+  await loadCatalog()
+
+  createApp(App)
+    .use(i18n)
+    .use(router)
+    .use(vuetify)
+    .mount("#app")
+}
+
+bootstrap()

@@ -128,7 +128,7 @@
 
 <script setup>
 import popularDestinations from "@/data/popularDestinations.json"
-import destinations from "@/data/destinations.json"
+import { destinations } from "@/services/catalog"
 import { getLocalizedName } from "@/utils/localizedNames"
 import { formatPriceFromMad } from "@/utils/currency"
 import i18n from "@/i18n"

@@ -64,7 +64,7 @@
 
 <script setup>
 import { getLocalizedName } from "@/utils/localizedNames"
-import regions from "@/data/regions.json"
+import { regions } from "@/services/catalog"
 import { formatPriceFromMad } from "@/utils/currency"
 
 defineProps({

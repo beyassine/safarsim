@@ -1,5 +1,5 @@
 <template>
-  <div class="one-page" :dir="pageDirection">
+  <div class="one-page" :class="{ 'locale-fr': locale === 'fr' }" :dir="pageDirection">
     <div class="page-language-bar">
       <v-container class="language-bar-inner">
         <span class="language-prompt"><v-icon size="18">mdi-web</v-icon>{{ c.language }}</span>
@@ -235,8 +235,7 @@
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import destinations from '@/data/destinations.json'
-import regions from '@/data/regions.json'
+import { destinations, regions } from '@/services/catalog'
 import { addToCart, getCart } from '@/utils/cart'
 import i18n, { applyLanguage } from '@/i18n'
 import logo from '@/assets/logo.png'
@@ -249,7 +248,7 @@ const router = useRouter()
 const search = ref('')
 const checkoutOpen = ref(false)
 const snackbar = ref(false)
-const catalog = [...regions, ...destinations]
+const catalog = computed(() => [...regions, ...destinations])
 const selectedDestination = ref(null)
 const selectedPlan = ref(null)
 const languages = [
@@ -306,7 +305,7 @@ const featuredPackageKeys = {
 }
 
 const popularPacks = computed(() => Object.entries(featuredPackageKeys)
-  .map(([slug, planKey]) => ({ destination: catalog.find(item => item.slug === slug), planKey }))
+  .map(([slug, planKey]) => ({ destination: catalog.value.find(item => item.slug === slug), planKey }))
   .filter(item => item.destination)
   .map(({ destination, planKey }) => {
     const preferredKey = destination.plans?.[planKey]?.price != null
@@ -333,7 +332,7 @@ const normalize = value => String(value || '').toLocaleLowerCase().normalize('NF
 
 const filteredDestinations = computed(() => {
   const query = normalize(search.value)
-  const matches = catalog.filter(item => {
+  const matches = catalog.value.filter(item => {
     const names = [item.name, item.names?.ar, item.names?.fr, item.names?.en, item.iso]
     return !query || names.some(name => normalize(name).includes(query))
   })
@@ -672,5 +671,11 @@ watch(locale, () => {
   .popular-pack-card{min-height:250px}
   .purchase-card:not(.purchase-card--single){grid-template-columns:minmax(0,1fr) 390px}
   .package-grid{grid-template-columns:1fr}
+}
+
+/* French hero copy is longer, so keep both lines within the text column. */
+.one-page.locale-fr .hero-copy h1{font-size:clamp(38px,4vw,54px)}
+@media(max-width:600px){
+  .one-page.locale-fr .hero-copy h1{font-size:32px;line-height:1.2;letter-spacing:-.7px}
 }
 </style>

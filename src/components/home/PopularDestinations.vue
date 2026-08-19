@@ -32,8 +32,7 @@
 <script>
 
 import popularDestinations from "@/data/popularDestinations.json";
-import destinations from "@/data/destinations.json";
-import regions from "@/data/regions.json";
+import { destinations, regions } from "@/services/catalog";
 import DestinationCard from "@/components/DestinationCard.vue";
 import DestinationCardRegion from "@/components/DestinationCardRegion.vue";
 import { useDisplay } from "vuetify";

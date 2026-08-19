@@ -148,7 +148,7 @@
 </template>
 
 <script>
-import regions from '@/data/regions.json'
+import { regions } from '@/services/catalog'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
 import { formatPriceFromMad, priceFromMad, getPreferredCurrency } from '@/utils/currency'

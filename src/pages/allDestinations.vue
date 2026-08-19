@@ -37,8 +37,7 @@ import DestinationSearch from "@/components/DestinationSearchBar.vue";
 import DestinationCard from '@/components/DestinationCard.vue'
 import DestinationCardRegion from '@/components/DestinationCardRegion.vue'
 
-import regions from "@/data/regions.json";
-import destinations from "@/data/destinations.json";
+import { destinations, regions } from "@/services/catalog";
 import popularDestinations from "@/data/popularDestinations.json";
 import router from '@/router';
 
@@ -53,7 +52,7 @@ const filters = [
   'all',
 ]
 const filteredDestinations = computed(() => {
-  let result = destinations.value
+  let result = destinations
 
   if (selectedFilter.value === 'popular') {
     result = result.filter(item => item.popular)
