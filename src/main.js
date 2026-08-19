@@ -33,7 +33,8 @@ const vuetify = createVuetify({
 })
 
 
-applyLanguage(i18n.global.locale)
+// Apply the detected language without treating it as an explicit user choice.
+applyLanguage(i18n.global.locale, false)
 
 createApp(App)
   .use(i18n)

@@ -1,10 +1,8 @@
 export const USD_CURRENCY = 'USD'
 export const MAD_CURRENCY = 'MAD'
 
-const configuredRate = Number(process.env.VUE_APP_MAD_TO_USD_RATE)
-export const MAD_TO_USD_RATE = Number.isFinite(configuredRate) && configuredRate > 0
-  ? configuredRate
-  : 0.108
+// Product prices use the fixed conversion stored in the catalogue: USD = MAD / 10.
+export const MAD_TO_USD_RATE = 0.1
 
 export function madToUsd(amount) {
   return Number((Number(amount) * MAD_TO_USD_RATE).toFixed(2))
@@ -23,23 +21,25 @@ export function getVisitorCountry() {
   if (configuredCountry) return configuredCountry
   if (typeof navigator === 'undefined') return ''
 
+  // Moroccan devices commonly use a fr-FR locale, so prefer their timezone.
+  try {
+    if (Intl.DateTimeFormat().resolvedOptions().timeZone === 'Africa/Casablanca') return 'MA'
+  } catch (error) {
+    // Fall through to browser locale detection.
+  }
+
   const locales = [...(navigator.languages || []), navigator.language].filter(Boolean)
   const country = locales.map(getLocaleCountry).find(Boolean)
   if (country) return country
-
-  try {
-    return Intl.DateTimeFormat().resolvedOptions().timeZone === 'Africa/Casablanca' ? 'MA' : ''
-  } catch (error) {
-    return ''
-  }
+  return ''
 }
 
 export function getPreferredCurrency() {
-  return MAD_CURRENCY
+  return getVisitorCountry() === 'MA' ? MAD_CURRENCY : USD_CURRENCY
 }
 
 export function priceFromMad(amount) {
-  return Number(amount)
+  return getPreferredCurrency() === MAD_CURRENCY ? Number(amount) : madToUsd(amount)
 }
 
 export function formatMoney(amount, currency = getPreferredCurrency(), locale = 'en') {

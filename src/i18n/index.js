@@ -8,6 +8,14 @@ const ARABIC_COUNTRIES = new Set([
   "MA", "MR", "OM", "PS", "QA", "SA", "SD", "SO", "SY", "TN", "YE"
 ])
 
+const ARABIC_COUNTRY_TIMEZONES = new Set([
+  "Africa/Algiers", "Africa/Cairo", "Africa/Casablanca", "Africa/Djibouti",
+  "Africa/Khartoum", "Africa/Mogadishu", "Africa/Nouakchott", "Africa/Tripoli",
+  "Africa/Tunis", "Asia/Aden", "Asia/Amman", "Asia/Baghdad", "Asia/Bahrain",
+  "Asia/Beirut", "Asia/Damascus", "Asia/Dubai", "Asia/Gaza", "Asia/Hebron",
+  "Asia/Kuwait", "Asia/Muscat", "Asia/Qatar", "Asia/Riyadh", "Indian/Comoro"
+])
+
 function getBrowserLocales() {
   if (typeof navigator === "undefined") return []
   return [...(navigator.languages || []), navigator.language].filter(Boolean)
@@ -23,13 +31,24 @@ function getLocaleCountry(locale) {
 
 export function getDefaultLanguage() {
   const locales = getBrowserLocales()
-  const isArabicMarket = locales.some((locale) => {
-    const language = String(locale).split(/[-_]/)[0].toLowerCase()
-    return language === "ar" || ARABIC_COUNTRIES.has(getLocaleCountry(locale))
-  })
+  let isArabicMarket = false
+
+  try {
+    isArabicMarket = ARABIC_COUNTRY_TIMEZONES.has(
+      Intl.DateTimeFormat().resolvedOptions().timeZone
+    )
+  } catch (error) {
+    // Fall through to locale-based detection.
+  }
+
+  if (!isArabicMarket) {
+    isArabicMarket = locales.some((locale) => {
+      const language = String(locale).split(/[-_]/)[0].toLowerCase()
+      return language === "ar" || ARABIC_COUNTRIES.has(getLocaleCountry(locale))
+    })
+  }
 
   if (isArabicMarket) return "ar"
-  if (locales.some((locale) => String(locale).toLowerCase().startsWith("fr"))) return "fr"
   return "en"
 }
 
@@ -44,11 +63,11 @@ const i18n = createI18n({
   }
 })
 
-export function applyLanguage(lang) {
+export function applyLanguage(lang, persist = true) {
   const isRtl = lang === "ar"
 
   i18n.global.locale = lang
-  localStorage.setItem("lang", lang)
+  if (persist) localStorage.setItem("lang", lang)
   document.documentElement.setAttribute("dir", isRtl ? "rtl" : "ltr")
   document.documentElement.setAttribute("lang", lang)
 
