@@ -675,6 +675,7 @@ watch(locale, () => {
 
 /* French hero copy is longer, so keep both lines within the text column. */
 .one-page.locale-fr .hero-copy h1{font-size:clamp(38px,4vw,54px)}
+.one-page.locale-fr .hero-copy h1 .hero-accent-line{display:block;max-width:100%;text-align:center}
 @media(max-width:600px){
   .one-page.locale-fr .hero-copy h1{font-size:32px;line-height:1.2;letter-spacing:-.7px}
 }
