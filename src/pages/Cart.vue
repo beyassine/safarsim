@@ -111,10 +111,22 @@
 
           <template v-if="!showStepNumbers">
             <v-divider class="my-4" />
+            <div class="coupon-row mb-4">
+              <v-text-field v-model.trim="couponCode" :label="$t('cart.couponCode')" variant="outlined"
+                density="compact" rounded="lg" hide-details="auto" :error-messages="couponError"
+                :messages="couponApplied ? $t('cart.couponApplied') : ''" @keyup.enter="applyCoupon" />
+              <v-btn variant="outlined" rounded="lg" class="text-none" @click="applyCoupon">
+                {{ $t('cart.applyCoupon') }}
+              </v-btn>
+            </div>
+            <div v-if="couponApplied" class="d-flex justify-space-between align-center mb-3 coupon-discount">
+              <span>{{ $t('cart.discount') }} ({{ couponDiscountPercent }}%)</span>
+              <span>-{{ formatMoney(discountAmount, totalCurrency) }}</span>
+            </div>
             <div class="d-flex justify-space-between align-center"
               :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
               <span class="text-h6 font-weight-bold">{{ $t("cart.cartSubtotal") }}</span>
-              <span class="text-h6 font-weight-bold">{{ formatMoney(subtotal, totalCurrency) }}</span>
+              <span class="text-h6 font-weight-bold">{{ formatMoney(total, totalCurrency) }}</span>
             </div>
           </template>
 
@@ -161,10 +173,23 @@
 
             <v-divider class="mb-5" />
 
+            <div class="coupon-row mb-4">
+              <v-text-field v-model.trim="couponCode" :label="$t('cart.couponCode')" variant="outlined"
+                density="compact" rounded="lg" hide-details="auto" :error-messages="couponError"
+                :messages="couponApplied ? $t('cart.couponApplied') : ''" @keyup.enter="applyCoupon" />
+              <v-btn variant="outlined" rounded="lg" class="text-none" @click="applyCoupon">
+                {{ $t('cart.applyCoupon') }}
+              </v-btn>
+            </div>
+            <div v-if="couponApplied" class="d-flex justify-space-between align-center mb-3 coupon-discount">
+              <span>{{ $t('cart.discount') }} ({{ couponDiscountPercent }}%)</span>
+              <span>-{{ formatMoney(discountAmount, totalCurrency) }}</span>
+            </div>
+
             <div class="d-flex justify-space-between align-center mb-4"
               :style="$i18n.locale === 'ar' ? { direction: 'ltr', flexDirection: 'row-reverse' } : null">
               <span class="text-h6 font-weight-bold">{{ $t("cart.cartSubtotal") }}</span>
-              <span class="text-h6 font-weight-bold">{{ formatMoney(subtotal, totalCurrency) }}</span>
+              <span class="text-h6 font-weight-bold">{{ formatMoney(total, totalCurrency) }}</span>
             </div>
 
             <v-alert v-if="checkoutError" type="error" variant="tonal" class="mb-4">
@@ -338,6 +363,11 @@ import {
 import { getLocalizedName } from '@/utils/localizedNames'
 import { formatMoney as formatCurrency, getPreferredCurrency, MAD_CURRENCY, MAD_TO_USD_RATE } from '@/utils/currency'
 
+const PROMO_CODES = new Map([
+  ['issam92', 10],
+  ['sep26', 20],
+])
+
 export default {
   name: 'CartPage',
 
@@ -360,6 +390,10 @@ export default {
       checkoutError: '',
       showEmbeddedPayment: false,
       embeddedCheckout: null,
+      couponCode: '',
+      couponApplied: false,
+      couponDiscountPercent: 0,
+      couponError: '',
     }
   },
 
@@ -372,6 +406,20 @@ export default {
 
     totalCurrency() {
       return getPreferredCurrency()
+    },
+
+    discountAmount() {
+      if (!this.couponApplied) return 0
+      const discountedTotal = this.cart.reduce((total, item) => {
+        const multiplier = (100 - this.couponDiscountPercent) / 100
+        const discountedUnitPrice = Math.round(Number(item.price) * 100 * multiplier) / 100
+        return total + discountedUnitPrice * Number(item.quantity)
+      }, 0)
+      return Number((this.subtotal - discountedTotal).toFixed(2))
+    },
+
+    total() {
+      return Number((this.subtotal - this.discountAmount).toFixed(2))
     },
 
     hasValidEmail() {
@@ -400,7 +448,24 @@ export default {
 
   },
 
+  watch: {
+    couponCode(value) {
+      if (this.couponApplied && PROMO_CODES.get(value.trim().toLowerCase()) !== this.couponDiscountPercent) {
+        this.couponApplied = false
+        this.couponDiscountPercent = 0
+        this.couponError = ''
+      }
+    },
+  },
+
   methods: {
+    applyCoupon() {
+      const discountPercent = PROMO_CODES.get(this.couponCode.trim().toLowerCase()) || 0
+      this.couponApplied = discountPercent > 0
+      this.couponDiscountPercent = discountPercent
+      this.couponError = discountPercent ? '' : this.$t('cart.invalidCoupon')
+    },
+
     async refreshCart() {
       const cart = getCart()
       const normalizedCart = cart
@@ -541,6 +606,7 @@ export default {
             customerName: this.customerName,
             locale: this.$i18n.locale,
             orderReference: `SAFAR-${Date.now()}`,
+            couponCode: this.couponApplied ? this.couponCode.trim().toLowerCase() : '',
             lineItems,
           }),
         })
@@ -818,6 +884,33 @@ export default {
 
 .quantity-box {
   border-radius: 999px;
+}
+
+.coupon-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.coupon-row .v-input {
+  min-width: 0;
+  flex: 1;
+}
+
+.coupon-discount {
+  color: #16834b;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .coupon-row {
+    flex-direction: column;
+  }
+
+  .coupon-row .v-input,
+  .coupon-row .v-btn {
+    width: 100%;
+  }
 }
 
 </style>
