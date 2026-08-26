@@ -241,6 +241,7 @@ import i18n, { applyLanguage } from '@/i18n'
 import logo from '@/assets/logo.png'
 import Cart from '@/pages/Cart.vue'
 import { priceFromMad, getPreferredCurrency } from '@/utils/currency'
+import { posthog } from '@/services/posthog'
 
 const locale = ref(i18n.global.locale)
 const preferredCurrency = getPreferredCurrency()
@@ -454,6 +455,16 @@ function buyPopularPack(pack) {
     esimGoBundleName: pack.esimGoBundleName,
     quantity: 1,
   })
+  posthog.capture('plan_added_to_cart', {
+    destination_slug: destination.slug,
+    destination_type: destination.type || 'country',
+    plan_key: pack.key,
+    data_amount: pack.data,
+    validity_days: pack.days,
+    currency: getPreferredCurrency(),
+    unit_price: priceFromMad(pack.price),
+    add_source: 'featured_plan',
+  })
   router.push('/cart')
 }
 
@@ -521,6 +532,16 @@ async function buySelectedPlan() {
     currency: getPreferredCurrency(),
     esimGoBundleName: plan.esimGoBundleName,
     quantity: 1,
+  })
+  posthog.capture('plan_added_to_cart', {
+    destination_slug: destination.slug,
+    destination_type: destination.type || 'country',
+    plan_key: plan.key,
+    data_amount: plan.data,
+    validity_days: plan.days,
+    currency: getPreferredCurrency(),
+    unit_price: priceFromMad(plan.price),
+    add_source: 'plan_selector',
   })
   checkoutOpen.value = true
   snackbar.value = true

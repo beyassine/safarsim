@@ -40,7 +40,8 @@
 </template>
 
 <script>
-import { clearCart } from '@/utils/cart'
+import { clearCart, getCart } from '@/utils/cart'
+import { posthog } from '@/services/posthog'
 
 export default {
   name: 'PaymentSuccess',
@@ -48,6 +49,7 @@ export default {
   data() {
     return {
       verificationError: '',
+      paymentCaptured: false,
     }
   },
 
@@ -74,7 +76,15 @@ export default {
       if (!response.ok || !result.paid) {
         throw new Error(result.error || 'Unable to verify payment')
       }
-      clearCart()
+      if (!this.paymentCaptured) {
+        const completedCart = getCart()
+        posthog.capture('payment_completed', {
+          cart_item_count: completedCart.reduce((count, item) => count + Number(item.quantity || 1), 0),
+          currency: completedCart[0]?.currency || null,
+        })
+        this.paymentCaptured = true
+        clearCart()
+      }
     } catch (error) {
       console.error('Payment verification failed', error)
       this.verificationError = error.message

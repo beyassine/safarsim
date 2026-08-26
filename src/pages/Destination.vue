@@ -104,6 +104,7 @@ import { destinations } from '@/services/catalog'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
 import { formatPriceFromMad, priceFromMad, getPreferredCurrency } from '@/utils/currency'
+import { posthog } from '@/services/posthog'
 
 export default {
   name: 'DestinationDetailsPage',
@@ -221,6 +222,15 @@ export default {
         currency: getPreferredCurrency(),
         esimGoBundleName: plan.esimGoBundleName,
         quantity: 1,
+      })
+
+      posthog.capture('plan_added_to_cart', {
+        destination_slug: this.destination.slug,
+        plan_key: plan.key,
+        data_amount: plan.data,
+        validity_days: plan.days,
+        currency: getPreferredCurrency(),
+        unit_price: priceFromMad(plan.price),
       })
 
       this.addedPlanKey = plan.key

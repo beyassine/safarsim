@@ -362,6 +362,7 @@ import {
 } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
 import { formatMoney as formatCurrency, getPreferredCurrency, MAD_CURRENCY, MAD_TO_USD_RATE } from '@/utils/currency'
+import { posthog } from '@/services/posthog'
 
 const PROMO_CODES = new Map([
   ['issam92', 10],
@@ -614,6 +615,14 @@ export default {
         if (!response.ok || !result.clientSecret) {
           throw new Error(result.error || this.$t('cart.checkoutError'))
         }
+
+        posthog.capture('checkout_started', {
+          cart_item_count: this.cart.reduce((count, item) => count + item.quantity, 0),
+          cart_total: this.total,
+          currency: this.totalCurrency,
+          coupon_applied: this.couponApplied,
+          discount_percent: this.couponDiscountPercent,
+        })
 
         if (this.embeddedCheckout) {
           this.embeddedCheckout.destroy()

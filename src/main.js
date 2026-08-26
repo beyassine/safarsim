@@ -3,6 +3,7 @@ import App from "./App.vue"
 import router from "./router"
 import i18n , {applyLanguage } from "./i18n"
 import { loadCatalog } from "./services/catalog"
+import { initPostHog, posthog } from "./services/posthog"
 
 import "vuetify/styles"
 import '@mdi/font/css/materialdesignicons.css'
@@ -39,8 +40,16 @@ applyLanguage(i18n.global.locale, false)
 
 async function bootstrap() {
   await loadCatalog()
+  const posthogInitialized = initPostHog()
+  const app = createApp(App)
 
-  createApp(App)
+  if (posthogInitialized) {
+    app.config.errorHandler = (error) => {
+      posthog.captureException(error)
+    }
+  }
+
+  app
     .use(i18n)
     .use(router)
     .use(vuetify)
