@@ -7,7 +7,7 @@
     "popular": true,
     "iso": "FR",
     "plans": {
-      "1GB_7days": 6.5,
+      "1GB_7days": 4.5,
       "5GB_30days": 14.5,
       "10GB_30days": 17.5,
       "20GB_30days": 21.5,
@@ -27,7 +27,7 @@
     "popular": true,
     "iso": "ES",
     "plans": {
-      "1GB_7days": 6.5,
+      "1GB_7days": 4.5,
       "5GB_30days": 15,
       "10GB_30days": 18.5,
       "20GB_30days": 24,
@@ -47,7 +47,7 @@
     "popular": true,
     "iso": "TR",
     "plans": {
-      "1GB_7days": 7,
+      "1GB_7days": 5,
       "5GB_30days": 15,
       "10GB_30days": 16.5,
       "20GB_30days": 20.5,
@@ -67,7 +67,7 @@
     "popular": true,
     "iso": "IT",
     "plans": {
-      "1GB_7days": 6.5,
+      "1GB_7days": 4.5,
       "5GB_30days": 14.5,
       "10GB_30days": 17.5,
       "20GB_30days": 21.5,
@@ -87,7 +87,7 @@
     "popular": true,
     "iso": "AE",
     "plans": {
-      "1GB_7days": 8,
+      "1GB_7days": 6,
       "5GB_30days": 20,
       "10GB_30days": 27,
       "20GB_30days": 39.5,
@@ -107,7 +107,7 @@
     "popular": true,
     "iso": "SA",
     "plans": {
-      "1GB_7days": 7.5,
+      "1GB_7days": 5.5,
       "5GB_30days": 18.5,
       "10GB_30days": 25,
       "20GB_30days": 33,
@@ -127,7 +127,7 @@
     "popular": true,
     "iso": "EG",
     "plans": {
-      "1GB_7days": 8.5,
+      "1GB_7days": 6.5,
       "5GB_30days": 21.5,
       "10GB_30days": 27,
       "20GB_30days": 38,
@@ -147,7 +147,7 @@
     "popular": true,
     "iso": "US",
     "plans": {
-      "1GB_7days": 7,
+      "1GB_7days": 5,
       "5GB_30days": 18,
       "10GB_30days": 22.5,
       "20GB_30days": 32.5,
@@ -167,7 +167,7 @@
     "popular": true,
     "iso": "CA",
     "plans": {
-      "1GB_7days": 8,
+      "1GB_7days": 6,
       "5GB_30days": 22,
       "10GB_30days": 31,
       "20GB_30days": 46.5,

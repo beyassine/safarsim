@@ -8,8 +8,8 @@
     "iso": "ZA",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_ZA_V2"
       },
       "5GB_30days": {
@@ -53,8 +53,8 @@
     "iso": "AL",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_AL_V2"
       },
       "5GB_30days": {
@@ -98,8 +98,8 @@
     "iso": "DZ",
     "plans": {
       "1GB_7days": {
-        "price": 145,
-        "price_usd": 14.5,
+        "price": 125,
+        "price_usd": 12.5,
         "esimGoBundleName": "esim_1GB_7D_DZ_V2"
       },
       "5GB_30days": {
@@ -143,8 +143,8 @@
     "iso": "DE",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_DE_V2"
       },
       "5GB_30days": {
@@ -188,8 +188,8 @@
     "iso": "AD",
     "plans": {
       "1GB_7days": {
-        "price": 110,
-        "price_usd": 11,
+        "price": 90,
+        "price_usd": 9,
         "esimGoBundleName": "esim_1GB_7D_AD_V2"
       },
       "5GB_30days": {
@@ -233,8 +233,8 @@
     "iso": "AI",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_AI_V2"
       },
       "5GB_30days": {
@@ -278,8 +278,8 @@
     "iso": "AG",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_AG_V2"
       },
       "5GB_30days": {
@@ -323,8 +323,8 @@
     "iso": "SA",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_SA_V2"
       },
       "5GB_30days": {
@@ -368,8 +368,8 @@
     "iso": "AR",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_AR_V2"
       },
       "5GB_30days": {
@@ -413,8 +413,8 @@
     "iso": "AM",
     "plans": {
       "1GB_7days": {
-        "price": 85,
-        "price_usd": 8.5,
+        "price": 65,
+        "price_usd": 6.5,
         "esimGoBundleName": "esim_1GB_7D_AM_V2"
       },
       "5GB_30days": {
@@ -458,8 +458,8 @@
     "iso": "AW",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_AW_V2"
       },
       "5GB_30days": {
@@ -503,8 +503,8 @@
     "iso": "AU",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_AU_V2"
       },
       "5GB_30days": {
@@ -548,8 +548,8 @@
     "iso": "AT",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_AT_V2"
       },
       "5GB_30days": {
@@ -593,8 +593,8 @@
     "iso": "AZ",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_AZ_V2"
       },
       "5GB_30days": {
@@ -638,8 +638,8 @@
     "iso": "BS",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_BS_V2"
       },
       "5GB_30days": {
@@ -683,8 +683,8 @@
     "iso": "BH",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_BH_V2"
       },
       "5GB_30days": {
@@ -728,8 +728,8 @@
     "iso": "BD",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_BD_V2"
       },
       "5GB_30days": {
@@ -773,8 +773,8 @@
     "iso": "BB",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_BB_V2"
       },
       "5GB_30days": {
@@ -818,8 +818,8 @@
     "iso": "BE",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_BE_V2"
       },
       "5GB_30days": {
@@ -863,8 +863,8 @@
     "iso": "BZ",
     "plans": {
       "1GB_7days": {
-        "price": 215,
-        "price_usd": 21.5,
+        "price": 195,
+        "price_usd": 19.5,
         "esimGoBundleName": "esim_1GB_7D_BZ_V2"
       },
       "5GB_30days": {
@@ -908,8 +908,8 @@
     "iso": "BM",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_BM_V2"
       },
       "5GB_30days": {
@@ -953,8 +953,8 @@
     "iso": "BY",
     "plans": {
       "1GB_7days": {
-        "price": 135,
-        "price_usd": 13.5,
+        "price": 115,
+        "price_usd": 11.5,
         "esimGoBundleName": "esim_1GB_7D_BY_V2"
       },
       "5GB_30days": {
@@ -998,8 +998,8 @@
     "iso": "BO",
     "plans": {
       "1GB_7days": {
-        "price": 85,
-        "price_usd": 8.5,
+        "price": 65,
+        "price_usd": 6.5,
         "esimGoBundleName": "esim_1GB_7D_BO_V2"
       },
       "5GB_30days": {
@@ -1043,8 +1043,8 @@
     "iso": "BA",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_BA_V2"
       },
       "5GB_30days": {
@@ -1088,8 +1088,8 @@
     "iso": "BW",
     "plans": {
       "1GB_7days": {
-        "price": 120,
-        "price_usd": 12,
+        "price": 100,
+        "price_usd": 10,
         "esimGoBundleName": "esim_1GB_7D_BW_V2"
       },
       "5GB_30days": {
@@ -1133,8 +1133,8 @@
     "iso": "BN",
     "plans": {
       "1GB_7days": {
-        "price": 120,
-        "price_usd": 12,
+        "price": 100,
+        "price_usd": 10,
         "esimGoBundleName": "esim_1GB_7D_BN_V2"
       },
       "5GB_30days": {
@@ -1178,8 +1178,8 @@
     "iso": "BR",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_BR_V2"
       },
       "5GB_30days": {
@@ -1223,8 +1223,8 @@
     "iso": "BG",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_BG_V2"
       },
       "5GB_30days": {
@@ -1268,8 +1268,8 @@
     "iso": "BF",
     "plans": {
       "1GB_7days": {
-        "price": 180,
-        "price_usd": 18,
+        "price": 160,
+        "price_usd": 16,
         "esimGoBundleName": "esim_1GB_7D_BF_V2"
       },
       "5GB_30days": {
@@ -1313,8 +1313,8 @@
     "iso": "BJ",
     "plans": {
       "1GB_7days": {
-        "price": 230,
-        "price_usd": 23,
+        "price": 210,
+        "price_usd": 21,
         "esimGoBundleName": "esim_1GB_7D_BJ_V2"
       },
       "5GB_30days": {
@@ -1358,8 +1358,8 @@
     "iso": "KH",
     "plans": {
       "1GB_7days": {
-        "price": 215,
-        "price_usd": 21.5,
+        "price": 195,
+        "price_usd": 19.5,
         "esimGoBundleName": "esim_1GB_7D_KH_V2"
       },
       "5GB_30days": {
@@ -1403,8 +1403,8 @@
     "iso": "CM",
     "plans": {
       "1GB_7days": {
-        "price": 155,
-        "price_usd": 15.5,
+        "price": 135,
+        "price_usd": 13.5,
         "esimGoBundleName": "esim_1GB_7D_CM_V2"
       },
       "5GB_30days": {
@@ -1448,8 +1448,8 @@
     "iso": "CA",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_CA_V2"
       },
       "5GB_30days": {
@@ -1493,8 +1493,8 @@
     "iso": "CV",
     "plans": {
       "1GB_7days": {
-        "price": 115,
-        "price_usd": 11.5,
+        "price": 95,
+        "price_usd": 9.5,
         "esimGoBundleName": "esim_1GB_7D_CV_V2"
       },
       "5GB_30days": {
@@ -1538,8 +1538,8 @@
     "iso": "CL",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_CL_V2"
       },
       "5GB_30days": {
@@ -1583,8 +1583,8 @@
     "iso": "CN",
     "plans": {
       "1GB_7days": {
-        "price": 115,
-        "price_usd": 11.5,
+        "price": 95,
+        "price_usd": 9.5,
         "esimGoBundleName": "esim_1GB_7D_CN_V2"
       },
       "5GB_30days": {
@@ -1628,8 +1628,8 @@
     "iso": "CY",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_CY_V2"
       },
       "5GB_30days": {
@@ -1673,8 +1673,8 @@
     "iso": "VA",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_VA_V2"
       },
       "5GB_30days": {
@@ -1718,8 +1718,8 @@
     "iso": "CO",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_CO_V2"
       },
       "5GB_30days": {
@@ -1853,8 +1853,8 @@
     "iso": "CR",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_CR_V2"
       },
       "5GB_30days": {
@@ -1898,8 +1898,8 @@
     "iso": "HR",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_HR_V2"
       },
       "5GB_30days": {
@@ -1943,8 +1943,8 @@
     "iso": "CU",
     "plans": {
       "1GB_7days": {
-        "price": 330,
-        "price_usd": 33,
+        "price": 310,
+        "price_usd": 31,
         "esimGoBundleName": "esim_1GB_7D_CU_V2"
       },
       "5GB_30days": {
@@ -1988,8 +1988,8 @@
     "iso": "CW",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_CW_V2"
       },
       "5GB_30days": {
@@ -2033,8 +2033,8 @@
     "iso": "CI",
     "plans": {
       "1GB_7days": {
-        "price": 170,
-        "price_usd": 17,
+        "price": 150,
+        "price_usd": 15,
         "esimGoBundleName": "esim_1GB_7D_CI_V2"
       },
       "5GB_30days": {
@@ -2078,8 +2078,8 @@
     "iso": "DK",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_DK_V2"
       },
       "5GB_30days": {
@@ -2123,8 +2123,8 @@
     "iso": "DM",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_DM_V2"
       },
       "5GB_30days": {
@@ -2168,8 +2168,8 @@
     "iso": "ES",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_ES_V2"
       },
       "5GB_30days": {
@@ -2213,8 +2213,8 @@
     "iso": "EE",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_EE_V2"
       },
       "5GB_30days": {
@@ -2258,8 +2258,8 @@
     "iso": "SZ",
     "plans": {
       "1GB_7days": {
-        "price": 145,
-        "price_usd": 14.5,
+        "price": 125,
+        "price_usd": 12.5,
         "esimGoBundleName": "esim_1GB_7D_SZ_V2"
       },
       "5GB_30days": {
@@ -2303,8 +2303,8 @@
     "iso": "FJ",
     "plans": {
       "1GB_7days": {
-        "price": 220,
-        "price_usd": 22,
+        "price": 200,
+        "price_usd": 20,
         "esimGoBundleName": "esim_1GB_7D_FJ_V2"
       },
       "5GB_30days": {
@@ -2348,8 +2348,8 @@
     "iso": "FI",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_FI_V2"
       },
       "5GB_30days": {
@@ -2393,8 +2393,8 @@
     "iso": "FR",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_FR_V2"
       },
       "5GB_30days": {
@@ -2438,8 +2438,8 @@
     "iso": "GA",
     "plans": {
       "1GB_7days": {
-        "price": 145,
-        "price_usd": 14.5,
+        "price": 125,
+        "price_usd": 12.5,
         "esimGoBundleName": "esim_1GB_7D_GA_V2"
       },
       "5GB_30days": {
@@ -2483,8 +2483,8 @@
     "iso": "GH",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_GH_V2"
       },
       "5GB_30days": {
@@ -2528,8 +2528,8 @@
     "iso": "GI",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_GI_V2"
       },
       "5GB_30days": {
@@ -2573,8 +2573,8 @@
     "iso": "GD",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_GD_V2"
       },
       "5GB_30days": {
@@ -2618,8 +2618,8 @@
     "iso": "GL",
     "plans": {
       "1GB_7days": {
-        "price": 180,
-        "price_usd": 18,
+        "price": 160,
+        "price_usd": 16,
         "esimGoBundleName": "esim_1GB_7D_GL_V2"
       },
       "5GB_30days": {
@@ -2663,8 +2663,8 @@
     "iso": "GR",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_GR_V2"
       },
       "5GB_30days": {
@@ -2708,8 +2708,8 @@
     "iso": "GP",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_GP_V2"
       },
       "5GB_30days": {
@@ -2753,8 +2753,8 @@
     "iso": "GU",
     "plans": {
       "1GB_7days": {
-        "price": 145,
-        "price_usd": 14.5,
+        "price": 125,
+        "price_usd": 12.5,
         "esimGoBundleName": "esim_1GB_7D_GU_V2"
       },
       "5GB_30days": {
@@ -2798,8 +2798,8 @@
     "iso": "GT",
     "plans": {
       "1GB_7days": {
-        "price": 80,
-        "price_usd": 8,
+        "price": 60,
+        "price_usd": 6,
         "esimGoBundleName": "esim_1GB_7D_GT_V2"
       },
       "5GB_30days": {
@@ -2843,8 +2843,8 @@
     "iso": "GN",
     "plans": {
       "1GB_7days": {
-        "price": 160,
-        "price_usd": 16,
+        "price": 140,
+        "price_usd": 14,
         "esimGoBundleName": "esim_1GB_7D_GN_V2"
       },
       "5GB_30days": {
@@ -2888,8 +2888,8 @@
     "iso": "GW",
     "plans": {
       "1GB_7days": {
-        "price": 110,
-        "price_usd": 11,
+        "price": 90,
+        "price_usd": 9,
         "esimGoBundleName": "esim_1GB_7D_GW_V2"
       },
       "5GB_30days": {
@@ -2933,8 +2933,8 @@
     "iso": "GY",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_GY_V2"
       },
       "5GB_30days": {
@@ -2978,8 +2978,8 @@
     "iso": "GF",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_GF_V2"
       },
       "5GB_30days": {
@@ -3023,8 +3023,8 @@
     "iso": "GE",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_GE_V2"
       },
       "5GB_30days": {
@@ -3068,8 +3068,8 @@
     "iso": "HT",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_HT_V2"
       },
       "5GB_30days": {
@@ -3113,8 +3113,8 @@
     "iso": "HN",
     "plans": {
       "1GB_7days": {
-        "price": 80,
-        "price_usd": 8,
+        "price": 60,
+        "price_usd": 6,
         "esimGoBundleName": "esim_1GB_7D_HN_V2"
       },
       "5GB_30days": {
@@ -3158,8 +3158,8 @@
     "iso": "HK",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_HK_V2"
       },
       "5GB_30days": {
@@ -3203,8 +3203,8 @@
     "iso": "HU",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_HU_V2"
       },
       "5GB_30days": {
@@ -3248,8 +3248,8 @@
     "iso": "IN",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_IN_V2"
       },
       "5GB_30days": {
@@ -3293,8 +3293,8 @@
     "iso": "ID",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_ID_V2"
       },
       "5GB_30days": {
@@ -3338,8 +3338,8 @@
     "iso": "IQ",
     "plans": {
       "1GB_7days": {
-        "price": 135,
-        "price_usd": 13.5,
+        "price": 115,
+        "price_usd": 11.5,
         "esimGoBundleName": "esim_1GB_7D_IQ_V2"
       },
       "5GB_30days": {
@@ -3383,8 +3383,8 @@
     "iso": "IR",
     "plans": {
       "1GB_7days": {
-        "price": 345,
-        "price_usd": 34.5,
+        "price": 325,
+        "price_usd": 32.5,
         "esimGoBundleName": "esim_1GB_7D_IR_V2"
       },
       "5GB_30days": {
@@ -3428,8 +3428,8 @@
     "iso": "IE",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_IE_V2"
       },
       "5GB_30days": {
@@ -3473,8 +3473,8 @@
     "iso": "IS",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_IS_V2"
       },
       "5GB_30days": {
@@ -3518,8 +3518,8 @@
     "iso": "IT",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_IT_V2"
       },
       "5GB_30days": {
@@ -3563,8 +3563,8 @@
     "iso": "JM",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_JM_V2"
       },
       "5GB_30days": {
@@ -3608,8 +3608,8 @@
     "iso": "JP",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_JP_V2"
       },
       "5GB_30days": {
@@ -3653,8 +3653,8 @@
     "iso": "JO",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_JO_V2"
       },
       "5GB_30days": {
@@ -3698,8 +3698,8 @@
     "iso": "KZ",
     "plans": {
       "1GB_7days": {
-        "price": 95,
-        "price_usd": 9.5,
+        "price": 75,
+        "price_usd": 7.5,
         "esimGoBundleName": "esim_1GB_7D_KZ_V2"
       },
       "5GB_30days": {
@@ -3743,8 +3743,8 @@
     "iso": "KE",
     "plans": {
       "1GB_7days": {
-        "price": 135,
-        "price_usd": 13.5,
+        "price": 115,
+        "price_usd": 11.5,
         "esimGoBundleName": "esim_1GB_7D_KE_V2"
       },
       "5GB_30days": {
@@ -3788,8 +3788,8 @@
     "iso": "KG",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_KG_V2"
       },
       "5GB_30days": {
@@ -3833,8 +3833,8 @@
     "iso": "KW",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_KW_V2"
       },
       "5GB_30days": {
@@ -3878,8 +3878,8 @@
     "iso": "RE",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_RE_V2"
       },
       "5GB_30days": {
@@ -3923,8 +3923,8 @@
     "iso": "LA",
     "plans": {
       "1GB_7days": {
-        "price": 190,
-        "price_usd": 19,
+        "price": 170,
+        "price_usd": 17,
         "esimGoBundleName": "esim_1GB_7D_LA_V2"
       },
       "5GB_30days": {
@@ -3968,8 +3968,8 @@
     "iso": "LS",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_LS_V2"
       },
       "5GB_30days": {
@@ -4013,8 +4013,8 @@
     "iso": "LV",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_LV_V2"
       },
       "5GB_30days": {
@@ -4058,8 +4058,8 @@
     "iso": "LR",
     "plans": {
       "1GB_7days": {
-        "price": 175,
-        "price_usd": 17.5,
+        "price": 155,
+        "price_usd": 15.5,
         "esimGoBundleName": "esim_1GB_7D_LR_V2"
       },
       "5GB_30days": {
@@ -4103,8 +4103,8 @@
     "iso": "LI",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_LI_V2"
       },
       "5GB_30days": {
@@ -4148,8 +4148,8 @@
     "iso": "LT",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_LT_V2"
       },
       "5GB_30days": {
@@ -4193,8 +4193,8 @@
     "iso": "LU",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_LU_V2"
       },
       "5GB_30days": {
@@ -4238,8 +4238,8 @@
     "iso": "MO",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_MO_V2"
       },
       "5GB_30days": {
@@ -4283,8 +4283,8 @@
     "iso": "MK",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_MK_V2"
       },
       "5GB_30days": {
@@ -4328,8 +4328,8 @@
     "iso": "MG",
     "plans": {
       "1GB_7days": {
-        "price": 135,
-        "price_usd": 13.5,
+        "price": 115,
+        "price_usd": 11.5,
         "esimGoBundleName": "esim_1GB_7D_MG_V2"
       },
       "5GB_30days": {
@@ -4373,8 +4373,8 @@
     "iso": "MY",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_MY_V2"
       },
       "5GB_30days": {
@@ -4418,8 +4418,8 @@
     "iso": "MW",
     "plans": {
       "1GB_7days": {
-        "price": 145,
-        "price_usd": 14.5,
+        "price": 125,
+        "price_usd": 12.5,
         "esimGoBundleName": "esim_1GB_7D_MW_V2"
       },
       "5GB_30days": {
@@ -4463,8 +4463,8 @@
     "iso": "ML",
     "plans": {
       "1GB_7days": {
-        "price": 150,
-        "price_usd": 15,
+        "price": 130,
+        "price_usd": 13,
         "esimGoBundleName": "esim_1GB_7D_ML_V2"
       },
       "5GB_30days": {
@@ -4508,8 +4508,8 @@
     "iso": "MT",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_MT_V2"
       },
       "5GB_30days": {
@@ -4553,8 +4553,8 @@
     "iso": "MA",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_MA_V2"
       },
       "5GB_30days": {
@@ -4598,8 +4598,8 @@
     "iso": "MQ",
     "plans": {
       "1GB_7days": {
-        "price": 90,
-        "price_usd": 9,
+        "price": 70,
+        "price_usd": 7,
         "esimGoBundleName": "esim_1GB_7D_MQ_V2"
       },
       "5GB_30days": {
@@ -4643,8 +4643,8 @@
     "iso": "MU",
     "plans": {
       "1GB_7days": {
-        "price": 80,
-        "price_usd": 8,
+        "price": 60,
+        "price_usd": 6,
         "esimGoBundleName": "esim_1GB_7D_MU_V2"
       },
       "5GB_30days": {
@@ -4688,8 +4688,8 @@
     "iso": "MR",
     "plans": {
       "1GB_7days": {
-        "price": 190,
-        "price_usd": 19,
+        "price": 170,
+        "price_usd": 17,
         "esimGoBundleName": "esim_1GB_7D_MR_V2"
       },
       "5GB_30days": {
@@ -4733,8 +4733,8 @@
     "iso": "YT",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_YT_V2"
       },
       "5GB_30days": {
@@ -4778,8 +4778,8 @@
     "iso": "MX",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_MX_V2"
       },
       "5GB_30days": {
@@ -4823,8 +4823,8 @@
     "iso": "MD",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_MD_V2"
       },
       "5GB_30days": {
@@ -4868,8 +4868,8 @@
     "iso": "MC",
     "plans": {
       "1GB_7days": {
-        "price": 145,
-        "price_usd": 14.5,
+        "price": 125,
+        "price_usd": 12.5,
         "esimGoBundleName": "esim_1GB_7D_MC_V2"
       },
       "5GB_30days": {
@@ -4913,8 +4913,8 @@
     "iso": "MN",
     "plans": {
       "1GB_7days": {
-        "price": 285,
-        "price_usd": 28.5,
+        "price": 265,
+        "price_usd": 26.5,
         "esimGoBundleName": "esim_1GB_7D_MN_V2"
       },
       "5GB_30days": {
@@ -4958,8 +4958,8 @@
     "iso": "MS",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_MS_V2"
       },
       "5GB_30days": {
@@ -5003,8 +5003,8 @@
     "iso": "ME",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_ME_V2"
       },
       "5GB_30days": {
@@ -5048,8 +5048,8 @@
     "iso": "MZ",
     "plans": {
       "1GB_7days": {
-        "price": 340,
-        "price_usd": 34,
+        "price": 320,
+        "price_usd": 32,
         "esimGoBundleName": "esim_1GB_7D_MZ_V2"
       },
       "5GB_30days": {
@@ -5093,8 +5093,8 @@
     "iso": "NA",
     "plans": {
       "1GB_7days": {
-        "price": 260,
-        "price_usd": 26,
+        "price": 240,
+        "price_usd": 24,
         "esimGoBundleName": "esim_1GB_7D_NA_V2"
       },
       "5GB_30days": {
@@ -5138,8 +5138,8 @@
     "iso": "NR",
     "plans": {
       "1GB_7days": {
-        "price": 315,
-        "price_usd": 31.5,
+        "price": 295,
+        "price_usd": 29.5,
         "esimGoBundleName": "esim_1GB_7D_NR_V2"
       },
       "5GB_30days": {
@@ -5183,8 +5183,8 @@
     "iso": "NI",
     "plans": {
       "1GB_7days": {
-        "price": 90,
-        "price_usd": 9,
+        "price": 70,
+        "price_usd": 7,
         "esimGoBundleName": "esim_1GB_7D_NI_V2"
       },
       "5GB_30days": {
@@ -5228,8 +5228,8 @@
     "iso": "NE",
     "plans": {
       "1GB_7days": {
-        "price": 145,
-        "price_usd": 14.5,
+        "price": 125,
+        "price_usd": 12.5,
         "esimGoBundleName": "esim_1GB_7D_NE_V2"
       },
       "5GB_30days": {
@@ -5273,8 +5273,8 @@
     "iso": "NG",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_NG_V2"
       },
       "5GB_30days": {
@@ -5318,8 +5318,8 @@
     "iso": "NO",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_NO_V2"
       },
       "5GB_30days": {
@@ -5363,8 +5363,8 @@
     "iso": "NZ",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_NZ_V2"
       },
       "5GB_30days": {
@@ -5408,8 +5408,8 @@
     "iso": "OM",
     "plans": {
       "1GB_7days": {
-        "price": 85,
-        "price_usd": 8.5,
+        "price": 65,
+        "price_usd": 6.5,
         "esimGoBundleName": "esim_1GB_7D_OM_V2"
       },
       "5GB_30days": {
@@ -5453,8 +5453,8 @@
     "iso": "UG",
     "plans": {
       "1GB_7days": {
-        "price": 120,
-        "price_usd": 12,
+        "price": 100,
+        "price_usd": 10,
         "esimGoBundleName": "esim_1GB_7D_UG_V2"
       },
       "5GB_30days": {
@@ -5498,8 +5498,8 @@
     "iso": "UZ",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_UZ_V2"
       },
       "5GB_30days": {
@@ -5543,8 +5543,8 @@
     "iso": "PK",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_PK_V2"
       },
       "5GB_30days": {
@@ -5588,8 +5588,8 @@
     "iso": "PA",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_PA_V2"
       },
       "5GB_30days": {
@@ -5633,8 +5633,8 @@
     "iso": "PG",
     "plans": {
       "1GB_7days": {
-        "price": 195,
-        "price_usd": 19.5,
+        "price": 175,
+        "price_usd": 17.5,
         "esimGoBundleName": "esim_1GB_7D_PG_V2"
       },
       "5GB_30days": {
@@ -5678,8 +5678,8 @@
     "iso": "PY",
     "plans": {
       "1GB_7days": {
-        "price": 80,
-        "price_usd": 8,
+        "price": 60,
+        "price_usd": 6,
         "esimGoBundleName": "esim_1GB_7D_PY_V2"
       },
       "5GB_30days": {
@@ -5723,8 +5723,8 @@
     "iso": "NL",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_NL_V2"
       },
       "5GB_30days": {
@@ -5768,8 +5768,8 @@
     "iso": "BQ",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_BQ_V2"
       },
       "5GB_30days": {
@@ -5813,8 +5813,8 @@
     "iso": "PH",
     "plans": {
       "1GB_7days": {
-        "price": 85,
-        "price_usd": 8.5,
+        "price": 65,
+        "price_usd": 6.5,
         "esimGoBundleName": "esim_1GB_7D_PH_V2"
       },
       "5GB_30days": {
@@ -5858,8 +5858,8 @@
     "iso": "PL",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_PL_V2"
       },
       "5GB_30days": {
@@ -5903,8 +5903,8 @@
     "iso": "PR",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_PR_V2"
       },
       "5GB_30days": {
@@ -5948,8 +5948,8 @@
     "iso": "PT",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_PT_V2"
       },
       "5GB_30days": {
@@ -5993,8 +5993,8 @@
     "iso": "PE",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_PE_V2"
       },
       "5GB_30days": {
@@ -6038,8 +6038,8 @@
     "iso": "QA",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_QA_V2"
       },
       "5GB_30days": {
@@ -6083,8 +6083,8 @@
     "iso": "RO",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_RO_V2"
       },
       "5GB_30days": {
@@ -6128,8 +6128,8 @@
     "iso": "GB",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_GB_V2"
       },
       "5GB_30days": {
@@ -6173,8 +6173,8 @@
     "iso": "RU",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_RU_V2"
       },
       "5GB_30days": {
@@ -6218,8 +6218,8 @@
     "iso": "RW",
     "plans": {
       "1GB_7days": {
-        "price": 200,
-        "price_usd": 20,
+        "price": 180,
+        "price_usd": 18,
         "esimGoBundleName": "esim_1GB_7D_RW_V2"
       },
       "5GB_30days": {
@@ -6263,8 +6263,8 @@
     "iso": "CF",
     "plans": {
       "1GB_7days": {
-        "price": 145,
-        "price_usd": 14.5,
+        "price": 125,
+        "price_usd": 12.5,
         "esimGoBundleName": "esim_1GB_7D_CF_V2"
       },
       "5GB_30days": {
@@ -6308,8 +6308,8 @@
     "iso": "DO",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_DO_V2"
       },
       "5GB_30days": {
@@ -6398,8 +6398,8 @@
     "iso": "CZ",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_CZ_V2"
       },
       "5GB_30days": {
@@ -6443,8 +6443,8 @@
     "iso": "BL",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_BL_V2"
       },
       "5GB_30days": {
@@ -6488,8 +6488,8 @@
     "iso": "KN",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_KN_V2"
       },
       "5GB_30days": {
@@ -6533,8 +6533,8 @@
     "iso": "MF",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_MF_V2"
       },
       "5GB_30days": {
@@ -6578,8 +6578,8 @@
     "iso": "VC",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_VC_V2"
       },
       "5GB_30days": {
@@ -6623,8 +6623,8 @@
     "iso": "LC",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_LC_V2"
       },
       "5GB_30days": {
@@ -6668,8 +6668,8 @@
     "iso": "SV",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_SV_V2"
       },
       "5GB_30days": {
@@ -6713,8 +6713,8 @@
     "iso": "WS",
     "plans": {
       "1GB_7days": {
-        "price": 195,
-        "price_usd": 19.5,
+        "price": 175,
+        "price_usd": 17.5,
         "esimGoBundleName": "esim_1GB_7D_WS_V2"
       },
       "5GB_30days": {
@@ -6758,8 +6758,8 @@
     "iso": "RS",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_RS_V2"
       },
       "5GB_30days": {
@@ -6803,8 +6803,8 @@
     "iso": "SC",
     "plans": {
       "1GB_7days": {
-        "price": 120,
-        "price_usd": 12,
+        "price": 100,
+        "price_usd": 10,
         "esimGoBundleName": "esim_1GB_7D_SC_V2"
       },
       "5GB_30days": {
@@ -6893,8 +6893,8 @@
     "iso": "SK",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_SK_V2"
       },
       "5GB_30days": {
@@ -6938,8 +6938,8 @@
     "iso": "SI",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_SI_V2"
       },
       "5GB_30days": {
@@ -6983,8 +6983,8 @@
     "iso": "SD",
     "plans": {
       "1GB_7days": {
-        "price": 160,
-        "price_usd": 16,
+        "price": 140,
+        "price_usd": 14,
         "esimGoBundleName": "esim_1GB_7D_SD_V2"
       },
       "5GB_30days": {
@@ -7028,8 +7028,8 @@
     "iso": "LK",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_LK_V2"
       },
       "5GB_30days": {
@@ -7073,8 +7073,8 @@
     "iso": "CH",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_CH_V2"
       },
       "5GB_30days": {
@@ -7118,8 +7118,8 @@
     "iso": "SR",
     "plans": {
       "1GB_7days": {
-        "price": 120,
-        "price_usd": 12,
+        "price": 100,
+        "price_usd": 10,
         "esimGoBundleName": "esim_1GB_7D_SR_V2"
       },
       "5GB_30days": {
@@ -7163,8 +7163,8 @@
     "iso": "SE",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_SE_V2"
       },
       "5GB_30days": {
@@ -7208,8 +7208,8 @@
     "iso": "SN",
     "plans": {
       "1GB_7days": {
-        "price": 160,
-        "price_usd": 16,
+        "price": 140,
+        "price_usd": 14,
         "esimGoBundleName": "esim_1GB_7D_SN_V2"
       },
       "5GB_30days": {
@@ -7298,8 +7298,8 @@
     "iso": "TZ",
     "plans": {
       "1GB_7days": {
-        "price": 150,
-        "price_usd": 15,
+        "price": 130,
+        "price_usd": 13,
         "esimGoBundleName": "esim_1GB_7D_TZ_V2"
       },
       "5GB_30days": {
@@ -7343,8 +7343,8 @@
     "iso": "TW",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_TW_V2"
       },
       "5GB_30days": {
@@ -7388,8 +7388,8 @@
     "iso": "TD",
     "plans": {
       "1GB_7days": {
-        "price": 185,
-        "price_usd": 18.5,
+        "price": 165,
+        "price_usd": 16.5,
         "esimGoBundleName": "esim_1GB_7D_TD_V2"
       },
       "5GB_30days": {
@@ -7433,8 +7433,8 @@
     "iso": "PS",
     "plans": {
       "1GB_7days": {
-        "price": 240,
-        "price_usd": 24,
+        "price": 220,
+        "price_usd": 22,
         "esimGoBundleName": "esim_1GB_7D_PS_V2"
       },
       "5GB_30days": {
@@ -7478,8 +7478,8 @@
     "iso": "TH",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_TH_V2"
       },
       "5GB_30days": {
@@ -7523,8 +7523,8 @@
     "iso": "TG",
     "plans": {
       "1GB_7days": {
-        "price": 305,
-        "price_usd": 30.5,
+        "price": 285,
+        "price_usd": 28.5,
         "esimGoBundleName": "esim_1GB_7D_TG_V2"
       },
       "5GB_30days": {
@@ -7568,8 +7568,8 @@
     "iso": "TO",
     "plans": {
       "1GB_7days": {
-        "price": 230,
-        "price_usd": 23,
+        "price": 210,
+        "price_usd": 21,
         "esimGoBundleName": "esim_1GB_7D_TO_V2"
       },
       "5GB_30days": {
@@ -7613,8 +7613,8 @@
     "iso": "TT",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_TT_V2"
       },
       "5GB_30days": {
@@ -7658,8 +7658,8 @@
     "iso": "TN",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_TN_V2"
       },
       "5GB_30days": {
@@ -7703,8 +7703,8 @@
     "iso": "TR",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_TR_V2"
       },
       "5GB_30days": {
@@ -7748,8 +7748,8 @@
     "iso": "UA",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_UA_V2"
       },
       "5GB_30days": {
@@ -7793,8 +7793,8 @@
     "iso": "UY",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_UY_V2"
       },
       "5GB_30days": {
@@ -7838,8 +7838,8 @@
     "iso": "VU",
     "plans": {
       "1GB_7days": {
-        "price": 300,
-        "price_usd": 30,
+        "price": 280,
+        "price_usd": 28,
         "esimGoBundleName": "esim_1GB_7D_VU_V2"
       },
       "5GB_30days": {
@@ -7883,8 +7883,8 @@
     "iso": "VN",
     "plans": {
       "1GB_7days": {
-        "price": 60,
-        "price_usd": 6,
+        "price": 40,
+        "price_usd": 4,
         "esimGoBundleName": "esim_1GB_7D_VN_V2"
       },
       "5GB_30days": {
@@ -7928,8 +7928,8 @@
     "iso": "ZM",
     "plans": {
       "1GB_7days": {
-        "price": 110,
-        "price_usd": 11,
+        "price": 90,
+        "price_usd": 9,
         "esimGoBundleName": "esim_1GB_7D_ZM_V2"
       },
       "5GB_30days": {
@@ -7973,8 +7973,8 @@
     "iso": "EG",
     "plans": {
       "1GB_7days": {
-        "price": 70,
-        "price_usd": 7,
+        "price": 50,
+        "price_usd": 5,
         "esimGoBundleName": "esim_1GB_7D_EG_V2"
       },
       "5GB_30days": {
@@ -8018,8 +8018,8 @@
     "iso": "AE",
     "plans": {
       "1GB_7days": {
-        "price": 65,
-        "price_usd": 6.5,
+        "price": 45,
+        "price_usd": 4.5,
         "esimGoBundleName": "esim_1GB_7D_AE_V2"
       },
       "5GB_30days": {
@@ -8063,8 +8063,8 @@
     "iso": "EC",
     "plans": {
       "1GB_7days": {
-        "price": 85,
-        "price_usd": 8.5,
+        "price": 65,
+        "price_usd": 6.5,
         "esimGoBundleName": "esim_1GB_7D_EC_V2"
       },
       "5GB_30days": {
@@ -8108,8 +8108,8 @@
     "iso": "US",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_US_V2"
       },
       "5GB_30days": {
@@ -8153,8 +8153,8 @@
     "iso": "ET",
     "plans": {
       "1GB_7days": {
-        "price": 215,
-        "price_usd": 21.5,
+        "price": 195,
+        "price_usd": 19.5,
         "esimGoBundleName": "esim_1GB_7D_ET_V2"
       },
       "5GB_30days": {
@@ -8243,8 +8243,8 @@
     "iso": "IC",
     "plans": {
       "1GB_7days": {
-        "price": 50,
-        "price_usd": 5,
+        "price": 30,
+        "price_usd": 3,
         "esimGoBundleName": "esim_1GB_7D_IC_V2"
       },
       "5GB_30days": {
@@ -8288,8 +8288,8 @@
     "iso": "KY",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_KY_V2"
       },
       "5GB_30days": {
@@ -8333,8 +8333,8 @@
     "iso": "FO",
     "plans": {
       "1GB_7days": {
-        "price": 80,
-        "price_usd": 8,
+        "price": 60,
+        "price_usd": 6,
         "esimGoBundleName": "esim_1GB_7D_FO_V2"
       },
       "5GB_30days": {
@@ -8378,8 +8378,8 @@
     "iso": "TC",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_TC_V2"
       },
       "5GB_30days": {
@@ -8423,8 +8423,8 @@
     "iso": "VG",
     "plans": {
       "1GB_7days": {
-        "price": 105,
-        "price_usd": 10.5,
+        "price": 85,
+        "price_usd": 8.5,
         "esimGoBundleName": "esim_1GB_7D_VG_V2"
       },
       "5GB_30days": {
@@ -8468,8 +8468,8 @@
     "iso": "VI",
     "plans": {
       "1GB_7days": {
-        "price": 75,
-        "price_usd": 7.5,
+        "price": 55,
+        "price_usd": 5.5,
         "esimGoBundleName": "esim_1GB_7D_VI_V2"
       },
       "5GB_30days": {
@@ -8513,8 +8513,8 @@
     "iso": "AX",
     "plans": {
       "1GB_7days": {
-        "price": 55,
-        "price_usd": 5.5,
+        "price": 35,
+        "price_usd": 3.5,
         "esimGoBundleName": "esim_1GB_7D_AX_V2"
       },
       "5GB_30days": {
