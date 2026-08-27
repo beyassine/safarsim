@@ -299,8 +299,8 @@ const cc = computed(() => catalogCopy[locale.value] || catalogCopy.en)
 const featuredPackageKeys = {
   europe: '10GB_30days',
   espagne: '10GB_30days',
-  turquie: '20GB_30days',
-  'etats-unis': '5GB_30days',
+  turquie: '10GB_30days',
+  'etats-unis': '10GB_30days',
   france: '10GB_30days',
   'emirats-arabes-unis': '10GB_30days',
 }
@@ -311,9 +311,9 @@ const popularPacks = computed(() => Object.entries(featuredPackageKeys)
   .map(({ destination, planKey }) => {
     const preferredKey = destination.plans?.[planKey]?.price != null
       ? planKey
-      : destination.plans?.['5GB_30days']?.price != null
-        ? '5GB_30days'
-        : Object.keys(destination.plans || {}).find(key => Number(key.match(/^(\d+)GB_/)?.[1] || 0) >= 5)
+      : destination.plans?.['10GB_30days']?.price != null
+        ? '10GB_30days'
+        : Object.keys(destination.plans || {}).find(key => Number(key.match(/^(\d+)GB_/)?.[1] || 0) >= 10)
     const config = destination.plans?.[preferredKey]
     const match = preferredKey?.match(/^(\d+GB)_(\d+)days$/)
     if (!config || !match) return null
@@ -385,7 +385,8 @@ const availablePlans = computed(() => {
     })
     .filter(Boolean)
     .sort((a, b) => a.price - b.price)
-  if (plans.length) plans[Math.min(2, plans.length - 1)].badge = c.value.popular
+  const mostPopularPlan = plans.find(plan => plan.dataValue === 10)
+  if (mostPopularPlan) mostPopularPlan.badge = c.value.popular
   return plans
 })
 
