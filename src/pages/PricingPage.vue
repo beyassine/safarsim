@@ -31,14 +31,14 @@
 
         <div class="pricing-block">
           <h3>{{ $t("pricing.influencesTitle") }}</h3>
-          <ul class="pricing-list">
+          <ul class="pricing-list" :class="{ 'pricing-list--rtl': $i18n.locale === 'ar' }">
             <li v-for="item in $tm('pricing.influences')" :key="item">{{ item }}</li>
           </ul>
         </div>
 
         <div class="pricing-block">
           <h3>{{ $t("pricing.includedTitle") }}</h3>
-          <ul class="pricing-list">
+          <ul class="pricing-list" :class="{ 'pricing-list--rtl': $i18n.locale === 'ar' }">
             <li v-for="item in $tm('pricing.included')" :key="item">{{ item }}</li>
           </ul>
         </div>
@@ -75,14 +75,15 @@
               @error="fallback"
             />
 
-            <div class="destination-content">
+            <div class="destination-content" :class="{ 'destination-content--rtl': $i18n.locale === 'ar' }">
               <div class="destination-top">
                 <div class="destination-name-wrap">
                   <span class="flag">{{ destination.flag }}</span>
                   <h3>{{ getDestinationName(destination) }}</h3>
                 </div>
-                <div class="from-price">
-                  {{ $t("pricing.from") }} <span>{{ formatPriceFromMad(getEntryPrice(destination), $i18n.locale) }}</span>
+                <div class="from-price" :class="{ 'from-price--rtl': $i18n.locale === 'ar' }">
+                  <span class="from-price-label">{{ $t("pricing.from") }}</span>
+                  <span class="from-price-value" dir="ltr">{{ formatPriceFromMad(getEntryPrice(destination), $i18n.locale) }}</span>
                 </div>
               </div>
 
@@ -99,7 +100,8 @@
 
               <v-btn
                 class="destination-btn"
-                color="deep-purple-accent-4"
+                color="pink-darken-1"
+                size="large"
                 rounded="xl"
                 block
                 :to="`/destinations/${destination.slug}`"
@@ -282,6 +284,19 @@ const fallback = (event) => {
   line-height: 1.9;
 }
 
+.pricing-list--rtl {
+  direction: rtl;
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 0 !important;
+}
+
+.pricing-list--rtl li {
+  direction: rtl;
+  text-align: right;
+  padding-right: 10px;
+}
+
 .pricing-note {
   margin-top: 28px;
   padding: 16px 18px;
@@ -336,13 +351,38 @@ const fallback = (event) => {
 }
 
 .from-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
   color: #6b7280;
   font-size: 0.95rem;
 }
 
-.from-price span {
+.from-price-value {
   color: #6f42c1;
   font-weight: 800;
+}
+
+.destination-content--rtl,
+.destination-content--rtl .destination-top {
+  direction: rtl;
+  text-align: right;
+}
+
+.from-price--rtl {
+  direction: rtl;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: right;
+}
+
+.from-price--rtl .from-price-label {
+  order: 1;
+  direction: rtl;
+}
+
+.from-price--rtl .from-price-value {
+  order: 2;
 }
 
 .plans-preview {
@@ -376,6 +416,11 @@ const fallback = (event) => {
 .cta-btn {
   text-transform: none;
   font-weight: 700;
+}
+
+.destination-btn {
+  min-height: 52px;
+  font-size: 1rem;
 }
 
 .cta-btn {
