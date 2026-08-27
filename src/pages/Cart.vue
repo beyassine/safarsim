@@ -343,7 +343,11 @@
       elevation="1"
       class="pa-3 pa-sm-5 mt-5 embedded-payment-card"
     >
-      <h2 class="checkout-card-title mb-4">{{ embeddedPaymentTitle }}</h2>
+      <h2 class="checkout-card-title mb-2">{{ embeddedPaymentTitle }}</h2>
+      <div class="payment-security mb-4" :class="{ 'payment-security--rtl': $i18n.locale === 'ar' }">
+        <v-icon size="18">mdi-lock-outline</v-icon>
+        <span>{{ $t("cart.paymentSecurityNotice") }}</span>
+      </div>
       <div ref="embeddedCheckout" class="stripe-embedded-checkout" />
     </v-card>
 
