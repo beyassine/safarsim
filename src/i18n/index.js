@@ -5,11 +5,11 @@ import ar from "./ar.json"
 
 const ARABIC_COUNTRIES = new Set([
   "AE", "BH", "DJ", "DZ", "EG", "IQ", "JO", "KM", "KW", "LB", "LY",
-  "MA", "MR", "OM", "PS", "QA", "SA", "SD", "SO", "SY", "TN", "YE"
+  "MR", "OM", "PS", "QA", "SA", "SD", "SO", "SY", "TN", "YE"
 ])
 
 const ARABIC_COUNTRY_TIMEZONES = new Set([
-  "Africa/Algiers", "Africa/Cairo", "Africa/Casablanca", "Africa/Djibouti",
+  "Africa/Algiers", "Africa/Cairo", "Africa/Djibouti",
   "Africa/Khartoum", "Africa/Mogadishu", "Africa/Nouakchott", "Africa/Tripoli",
   "Africa/Tunis", "Asia/Aden", "Asia/Amman", "Asia/Baghdad", "Asia/Bahrain",
   "Asia/Beirut", "Asia/Damascus", "Asia/Dubai", "Asia/Gaza", "Asia/Hebron",
@@ -31,15 +31,20 @@ function getLocaleCountry(locale) {
 
 export function getDefaultLanguage() {
   const locales = getBrowserLocales()
+  let timeZone = ""
   let isArabicMarket = false
 
   try {
-    isArabicMarket = ARABIC_COUNTRY_TIMEZONES.has(
-      Intl.DateTimeFormat().resolvedOptions().timeZone
-    )
+    timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    isArabicMarket = ARABIC_COUNTRY_TIMEZONES.has(timeZone)
   } catch (error) {
     // Fall through to locale-based detection.
   }
+
+  const isMorocco = timeZone === "Africa/Casablanca" ||
+    locales.some((locale) => getLocaleCountry(locale) === "MA")
+
+  if (isMorocco) return "fr"
 
   if (!isArabicMarket) {
     isArabicMarket = locales.some((locale) => {
