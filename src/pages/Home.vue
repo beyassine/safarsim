@@ -748,5 +748,6 @@ watch(locale, () => {
 
 @media(min-width:961px){
   .hero-section{align-items:center}
+  .hero-artwork{width:100%;transform:none}
 }
 </style>
