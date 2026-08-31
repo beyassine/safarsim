@@ -648,6 +648,7 @@ watch(locale, () => {
 @media(max-width:600px){.plans-section{padding-bottom:28px}.checkout-section{padding-top:24px}}
 @media(max-width:600px){.plans-section{scroll-margin-top:96px}}
 @media(max-width:600px){.benefits-section{padding-top:30px}.benefit-copy h2{font-size:30px;line-height:1.35}.benefit-copy p{font-size:16px;line-height:1.7}.benefit-apps-visual{margin-top:28px}}
+@media(max-width:600px){.benefit-grid>div{display:grid;grid-template-columns:54px minmax(0,1fr);grid-template-rows:auto auto;column-gap:16px;align-items:center;text-align:start}.benefit-grid .v-icon{grid-column:1;grid-row:1 / 3;margin:0}.benefit-grid h3{grid-column:2;grid-row:1;margin:0 0 6px}.benefit-grid p{grid-column:2;grid-row:2;margin:0}.one-page[dir="rtl"] .benefit-grid>div{direction:rtl}}
 @media(max-width:600px){.plans-section>.v-container>.section-heading h2{font-size:26px;line-height:1.35;letter-spacing:-.3px}.one-page[dir="rtl"] .plans-section>.v-container>.section-heading h2{line-height:1.5}}
 @media(max-width:600px){.one-page.locale-fr .plans-section>.v-container>.section-heading h2{max-width:310px;margin:8px auto 10px;font-size:25px;line-height:1.35}}
 @media(max-width:600px){.one-page.locale-fr .destination-panel>.step-label>span{font-size:19px;white-space:nowrap}}
