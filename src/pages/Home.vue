@@ -722,6 +722,7 @@ watch(locale, () => {
 @media(max-width:600px){
   .one-page.locale-fr .hero-copy h1{font-size:28px;line-height:1.25;letter-spacing:-.8px}
   .one-page.locale-fr .hero-copy h1 .hero-accent-line{white-space:nowrap;margin-top:6px}
+  .proof-strip{margin-top:-20px}
   .proof-grid div+div{border-inline-start:0}
 }
 @media(max-width:360px){
@@ -737,7 +738,7 @@ watch(locale, () => {
 @media(max-width:960px){
   .hero-container{padding-bottom:0!important}
   .hero-visual{margin-top:0;margin-bottom:0}
-  .hero-artwork{width:120%}
+  .hero-artwork{width:120%;transform:translateY(7%)}
 }
 
 @media(min-width:961px){
