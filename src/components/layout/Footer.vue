@@ -51,13 +51,13 @@
                             <router-link class="text-decoration-none" to="/regions/europe">
                             <li>{{ $t("footer.esimEurope") }}</li>
                             </router-link>
-                            <router-link class="text-decoration-none" to="/destinations/arabie-saoudite">
+                            <router-link class="text-decoration-none" to="/esim/saudi-arabia">
                             <li>{{ $t("footer.esimSaudiArabia") }}</li>
                             </router-link>
-                            <router-link class="text-decoration-none" to="/destinations/turquie">
+                            <router-link class="text-decoration-none" to="/esim/turkey">
                             <li>{{ $t("footer.esimTurkey") }}</li>
                             </router-link>
-                            <router-link class="text-decoration-none" to="/destinations">
+                            <router-link class="text-decoration-none" to="/esim">
                             <li>{{ $t("footer.allDestinations") }}</li>
                             </router-link>
                         </ul>

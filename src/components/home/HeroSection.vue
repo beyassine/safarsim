@@ -65,6 +65,7 @@ import { destinations } from "@/services/catalog";
 import PopularDestinations from "@/data/popularDestinations.json";
 import router from "@/router";
 import { useDisplay } from "vuetify";
+import { destinationUrlSlug } from "@/utils/destinationUrls";
 
 export default {
     name: "Header",
@@ -87,7 +88,7 @@ export default {
     },
     methods: {
         goToDestination(destination) {
-            router.push({ name: "destinationDetails", params: { slug: destination.slug } })
+            router.push({ name: "destinationDetails", params: { slug: destinationUrlSlug(destination) } })
         },
     },
     mounted() { },

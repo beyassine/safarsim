@@ -2,14 +2,14 @@
   <v-container class="py-10 destination-page" v-if="region">
     <!-- Breadcrumb -->
     <div v-if="$i18n.locale === 'ar'" class="breadcrumb-row breadcrumb-row-ar mb-6 text-body-2">
-      <router-link to="/destinations" class="text-decoration-none">
+      <router-link to="/esim" class="text-decoration-none">
         <span class="text-medium-emphasis">{{ $t("common.destinations") }}</span>
       </router-link>
       <span class="mx-2">&lt;</span>
       <strong>{{ localizedRegionName }}</strong>
     </div>
     <div v-else class="breadcrumb-row mb-6 text-body-2">
-      <router-link to="/destinations" class="text-decoration-none">
+      <router-link to="/esim" class="text-decoration-none">
         <span class="text-medium-emphasis">{{ $t("common.destinations") }}</span>
       </router-link>
       <span class="mx-2">></span>

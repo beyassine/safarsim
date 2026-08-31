@@ -24,7 +24,7 @@
                         <p class="mb-6">
                             {{ $t("home.marketing.text2") }}
                         </p>
-                        <router-link class="text-decoration-none text-black" to="/destinations" >
+                        <router-link class="text-decoration-none text-black" to="/esim" >
                         <v-btn class="text-none" block rounded="lg" color="pink-darken-1" size="large" variant="flat">
                             {{ $t("common.chooseDestination") }}
                         </v-btn>

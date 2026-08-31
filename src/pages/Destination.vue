@@ -2,14 +2,14 @@
   <v-container class="py-10 destination-page" v-if="destination">
     <!-- Breadcrumb -->
     <div v-if="$i18n.locale === 'ar'" class="breadcrumb-row breadcrumb-row-ar mb-6 text-body-2">
-      <router-link to="/destinations" class="text-decoration-none">
+      <router-link to="/esim" class="text-decoration-none">
         <span class="text-medium-emphasis">{{ $t("common.destinations") }}</span>
       </router-link>
       <span class="mx-2">&lt;</span>
       <strong>{{ localizedDestinationName }}</strong>
     </div>
     <div v-else class="breadcrumb-row mb-6 text-body-2">
-      <router-link to="/destinations" class="text-decoration-none">
+      <router-link to="/esim" class="text-decoration-none">
         <span class="text-medium-emphasis">{{ $t("common.destinations") }}</span>
       </router-link>
       <span class="mx-2">></span>
@@ -103,6 +103,7 @@
 import { destinations } from '@/services/catalog'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
+import { destinationUrlSlug, findDestinationByUrlSlug } from '@/utils/destinationUrls'
 import { formatPriceFromMad, priceFromMad, getPreferredCurrency } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
 
@@ -184,7 +185,14 @@ export default {
   methods: {
     loadDestination() {
       const slug = this.$route.params.slug
-      this.destination = destinations.find((item) => item.slug === slug) || null
+      this.destination = findDestinationByUrlSlug(destinations, slug)
+      if (this.destination) {
+        const canonicalSlug = destinationUrlSlug(this.destination)
+        if (slug !== canonicalSlug) {
+          const prefix = this.$i18n.locale === 'en' ? '' : `/${this.$i18n.locale}`
+          this.$router.replace(`${prefix}/esim/${canonicalSlug}`)
+        }
+      }
     },
     addToCart(plan) {
       addToCart({

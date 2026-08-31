@@ -5,7 +5,7 @@ import allDestinations from "../pages/allDestinations.vue"
 import Region from "../pages/Region.vue"
 import Cart from "../pages/Cart.vue"
 import Home from "@/pages/Home.vue"
-import i18n, { applyLanguage } from "@/i18n"
+import i18n, { applyLanguage, getDefaultLanguage, getPreferredLanguage } from "@/i18n"
 
 export const SUPPORTED_LOCALES = ["fr", "en", "ar"]
 const PREFIXED_LOCALES = SUPPORTED_LOCALES.filter((locale) => locale !== "en")
@@ -115,12 +115,12 @@ const pageRoutes = [
     redirect: (to) => ({ name: "Home", params: { lang: to.params.lang } }),
   },
   {
-    path: "/destinations",
+    path: "/esim",
     name: "allDestinations",
     component: allDestinations
   },
   {
-    path: "/destinations/:slug",
+    path: "/esim/:slug",
     name: "destinationDetails",
     component: Destination
   },
@@ -209,6 +209,17 @@ const routes = pageRoutes.flatMap((route) => {
   }]
 })
 
+routes.push(
+  {
+    path: `/:lang(${LOCALE_PATTERN})?/destinations`,
+    redirect: (to) => `${to.params.lang ? `/${to.params.lang}` : ""}/esim`,
+  },
+  {
+    path: `/:lang(${LOCALE_PATTERN})?/destinations/:slug`,
+    redirect: (to) => `${to.params.lang ? `/${to.params.lang}` : ""}/esim/${to.params.slug}`,
+  },
+)
+
 export function localePath(route, lang) {
   const fullPath = route.fullPath || route.path || "/"
   const suffixIndex = fullPath.search(/[?#]/)
@@ -241,8 +252,31 @@ const router = createRouter({
   }
 })
 
-router.beforeEach((to) => {
+router.beforeEach((to, from) => {
   const firstSegment = to.path.split("/")[1]
+  const fromFirstSegment = from.path.split("/")[1]
+  const fromLanguage = from.params.lang ||
+    (SUPPORTED_LOCALES.includes(fromFirstSegment) ? fromFirstSegment : "en")
+  const requestedLanguage = typeof sessionStorage === "undefined"
+    ? ""
+    : sessionStorage.getItem("safarsim-language-navigation") || ""
+
+  if (requestedLanguage && typeof sessionStorage !== "undefined") {
+    sessionStorage.removeItem("safarsim-language-navigation")
+  }
+
+  // Shared components may still use canonical, unprefixed paths. When the
+  // visitor is browsing French or Arabic, keep that locale for every internal
+  // navigation unless this navigation came from the language selector itself.
+  if (!requestedLanguage && from.name && fromLanguage !== "en" &&
+      !SUPPORTED_LOCALES.includes(firstSegment)) {
+    return localePath(to, fromLanguage)
+  }
+
+  if (to.path === "/" && !to.params.lang) {
+    const preferredLanguage = requestedLanguage || getPreferredLanguage() || getDefaultLanguage()
+    if (preferredLanguage !== "en") return localePath(to, preferredLanguage)
+  }
   const lang = to.params.lang || (SUPPORTED_LOCALES.includes(firstSegment) ? firstSegment : "en")
 
   const canonicalPath = localePath(to, lang)

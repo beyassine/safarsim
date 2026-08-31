@@ -19,7 +19,7 @@
 
             <!-- DESKTOP CENTER LINKS -->
             <div class="d-none d-md-flex nav-links">
-                <router-link class="text-decoration-none text-black" :to="sharedPagePath('/destinations')">
+                <router-link class="text-decoration-none text-black" :to="sharedPagePath('/esim')">
                     <v-btn variant="text">{{ $t("nav.destinations") }}</v-btn>
                 </router-link>
 
@@ -86,7 +86,7 @@
                     @select="goToDestination" />
             </div>
 
-            <router-link :to="sharedPagePath('/destinations')" class="menu-item" @click="drawer = false">
+            <router-link :to="sharedPagePath('/esim')" class="menu-item" @click="drawer = false">
                 <span>{{ $t("nav.destinations") }}</span>
                 <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
@@ -116,6 +116,8 @@ import DestinationSearch from '@/components/DestinationSearchBar.vue'
 import { destinations } from "@/services/catalog";
 import PopularDestinations from "@/data/popularDestinations.json";
 import { LOCALIZED_ROUTE_PATHS, localePath } from "@/router";
+import { rememberLanguage } from "@/i18n";
+import { destinationUrlSlug } from "@/utils/destinationUrls";
 
 import logo from '@/assets/logo.png'
 
@@ -155,9 +157,10 @@ export default {
         },
         goToDestination(destination) {
             this.drawer = false
-            this.$router.push(this.sharedPagePath(`/destinations/${destination.slug}`))
+            this.$router.push(this.sharedPagePath(`/esim/${destinationUrlSlug(destination)}`))
         },
         setLang(lang) {
+            rememberLanguage(lang)
             this.$router.push(localePath(this.$route, lang))
         }
     },

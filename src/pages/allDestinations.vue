@@ -40,6 +40,7 @@ import DestinationCardRegion from '@/components/DestinationCardRegion.vue'
 import { destinations, regions } from "@/services/catalog";
 import popularDestinations from "@/data/popularDestinations.json";
 import router from '@/router';
+import { destinationUrlSlug } from '@/utils/destinationUrls'
 
 const search = ref('')
 const selectedFilter = ref('all')
@@ -70,7 +71,7 @@ const filteredDestinations = computed(() => {
 })
 
 function goToDestination(destination) {
-  router.push({ name: 'destinationDetails', params: { slug: destination.slug } })
+  router.push({ name: 'destinationDetails', params: { slug: destinationUrlSlug(destination) } })
 }
 </script>
 

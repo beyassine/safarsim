@@ -1,5 +1,6 @@
 const fs = require("fs")
 const path = require("path")
+const { execFileSync } = require("child_process")
 
 const projectRoot = path.resolve(__dirname, "..")
 const publicDirectory = path.join(projectRoot, "public")
@@ -10,6 +11,46 @@ const siteUrl = String(process.env.SITE_URL || process.env.VUE_APP_SITE_URL || "
 const locales = ["en", "fr", "ar"]
 const destinations = require(path.join(projectRoot, "src/data/destinations.json"))
 const regions = require(path.join(projectRoot, "src/data/regions.json"))
+
+function sourceLastmod(relativePath) {
+  try {
+    const value = execFileSync(
+      "git",
+      ["log", "-1", "--format=%cI", "--", relativePath],
+      { cwd: projectRoot, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
+    ).trim()
+    if (value) return new Date(value).toISOString()
+  } catch (error) {
+    // A source-controlled lastmod is required so deployments never fabricate dates.
+  }
+
+  throw new Error(`Cannot determine a stable sitemap lastmod for ${relativePath}`)
+}
+
+const sourceDates = {
+  home: sourceLastmod("src/pages/Home.vue"),
+  destinations: sourceLastmod("src/data/destinations.json"),
+  regions: sourceLastmod("src/data/regions.json"),
+  router: sourceLastmod("src/router/index.js"),
+}
+
+function destinationUrlSlug(destination) {
+  if (destination?.slug === "republique-democratique-du-congo") {
+    return "democratic-republic-of-the-congo"
+  }
+  return String(destination?.names?.en || destination?.name || destination?.slug || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+}
+
+const destinationSlugs = destinations.map(destinationUrlSlug)
+if (destinationSlugs.some((slug) => !slug) || new Set(destinationSlugs).size !== destinationSlugs.length) {
+  throw new Error("Destination English URL slugs must be present and unique")
+}
 
 const localizedPublicPages = {
   compatibility: { en: "/compatibility", fr: "/compatibilite", ar: "/التوافق" },
@@ -57,24 +98,24 @@ function actualLastmod(record) {
     : date.toISOString()
 }
 
-function add(pathname, record) {
+function add(pathname, record, fallbackLastmod = sourceDates.router) {
   if (!pathname || /(^|\/)(cart|checkout|admin|account|auth)(\/|$)/i.test(pathname)) return
   if (/payment-success|paiement-reussi|نجاح-الدفع/i.test(pathname)) return
 
   const url = new URL(encodeURI(pathname), `${siteUrl}/`).toString()
-  entries.set(url, { url, lastmod: actualLastmod(record) })
+  entries.set(url, { url, lastmod: actualLastmod(record) || fallbackLastmod })
 }
 
 for (const locale of locales) {
-  add(localizedPath(locale, "/"))
-  add(localizedPath(locale, "/destinations"))
+  add(localizedPath(locale, "/"), null, sourceDates.home)
+  add(localizedPath(locale, "/esim"), null, sourceDates.destinations)
 
   for (const destination of destinations) {
-    add(localizedPath(locale, `/destinations/${destination.slug}`), destination)
+    add(localizedPath(locale, `/esim/${destinationUrlSlug(destination)}`), destination, sourceDates.destinations)
   }
 
   for (const region of regions) {
-    add(localizedPath(locale, `/regions/${region.slug}`), region)
+    add(localizedPath(locale, `/regions/${region.slug}`), region, sourceDates.regions)
   }
 }
 
@@ -87,10 +128,11 @@ for (const paths of Object.values(localizedPublicPages)) {
 const guidesFile = path.join(projectRoot, "src/data/guides.json")
 if (fs.existsSync(guidesFile)) {
   const guides = JSON.parse(fs.readFileSync(guidesFile, "utf8"))
+  const guidesLastmod = sourceLastmod("src/data/guides.json")
   for (const guide of guides) {
     for (const locale of locales) {
       const pathname = guide.paths?.[locale] || `/guides/${guide.slugs?.[locale] || guide.slug}`
-      add(localizedPath(locale, pathname), guide)
+      add(localizedPath(locale, pathname), guide, guidesLastmod)
     }
   }
 }

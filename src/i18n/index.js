@@ -57,6 +57,21 @@ export function getDefaultLanguage() {
   return "en"
 }
 
+const LANGUAGE_PREFERENCE_KEY = "safarsim-language"
+
+export function getPreferredLanguage() {
+  if (typeof localStorage === "undefined") return ""
+  const language = localStorage.getItem(LANGUAGE_PREFERENCE_KEY)
+  return ["fr", "en", "ar"].includes(language) ? language : ""
+}
+
+export function rememberLanguage(language) {
+  if (typeof localStorage !== "undefined" && ["fr", "en", "ar"].includes(language)) {
+    localStorage.setItem(LANGUAGE_PREFERENCE_KEY, language)
+    sessionStorage.setItem("safarsim-language-navigation", language)
+  }
+}
+
 const i18n = createI18n({
   legacy: true,
   locale: getDefaultLanguage(),

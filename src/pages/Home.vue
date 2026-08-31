@@ -202,11 +202,11 @@
             >
           </div>
         </div>
-        <div class="benefit-grid">
-          <div><v-icon>mdi-cash-remove</v-icon><h3>{{ c.saveRoaming }}</h3><p>{{ c.saveRoamingText }}</p></div>
-          <div><v-icon>mdi-sim-outline</v-icon><h3>{{ c.keepNumber }}</h3><p>{{ c.keepNumberText }}</p></div>
-          <div><v-icon>mdi-timer-outline</v-icon><h3>{{ c.fastActivation }}</h3><p>{{ c.fastActivationText }}</p></div>
-          <div><v-icon>mdi-face-agent</v-icon><h3>{{ c.help }}</h3><p>{{ c.helpText }}</p></div>
+        <div class="benefit-cta-wrap">
+          <v-btn class="primary-cta benefit-cta" size="x-large" rounded="pill" elevation="0" @click="scrollToPlans">
+            {{ c.choosePlan }}
+            <v-icon end>{{ arrowIcon }}</v-icon>
+          </v-btn>
         </div>
       </v-container>
     </section>
@@ -234,7 +234,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { destinations, regions } from '@/services/catalog'
 import { addToCart, getCart } from '@/utils/cart'
-import i18n from '@/i18n'
+import i18n, { rememberLanguage } from '@/i18n'
 import { localePath } from '@/router'
 import Cart from '@/pages/Cart.vue'
 import { priceFromMad, getPreferredCurrency } from '@/utils/currency'
@@ -466,6 +466,7 @@ function buyPopularPack(pack) {
 }
 
 function changeLanguage(language) {
+  rememberLanguage(language)
   router.push(localePath(route, language))
 }
 
@@ -640,6 +641,7 @@ watch(locale, () => {
 .how-section{padding:95px 0;background:var(--ink);color:#fff}.section-heading.light h2{color:#fff}.steps-grid{display:grid;grid-template-columns:1fr 50px 1fr 50px 1fr;align-items:center;gap:15px}.how-card{position:relative;text-align:center;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:33px 24px;min-height:255px}.how-card>i{position:absolute;right:18px;top:14px;color:#f09ab7;font-style:normal;font-weight:900}.how-icon{width:72px;height:72px;margin:0 auto 18px;display:grid;place-items:center;border-radius:19px;background:#5b2443;color:#f5afc7}.how-icon .v-icon{font-size:36px}.how-card h3{font-size:20px;margin-bottom:10px}.how-card p{color:#dfccd6;line-height:1.8;font-size:14px}.step-arrow{text-align:center;color:#e482a4}
 .benefits-section{padding:48px 0 72px;background:#fff}.benefits-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}.benefit-copy{text-align:center}.benefit-copy h2{font-size:40px;line-height:1.4;margin:0 0 14px}.benefit-copy p{color:#715d69;line-height:1.9;font-size:17px;margin-inline:auto}.benefit-copy a{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-weight:800;margin-top:16px}.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.benefit-grid>div{background:#fff;border:1px solid #f0dce4;border-radius:18px;padding:25px}.benefit-grid .v-icon{color:var(--coral);background:#fde7f0;border-radius:12px;padding:22px;font-size:25px}.benefit-grid h3{margin:17px 0 8px}.benefit-grid p{color:#796671;line-height:1.7;font-size:14px}
 .benefit-apps-visual{position:relative;width:100%;aspect-ratio:2.35 / 1;margin-top:20px;overflow:hidden}.benefit-apps-visual img{position:absolute;inset:0;width:100%;height:auto;transform:translateY(-18%)}
+.benefit-cta-wrap{display:flex;align-items:center;justify-content:center}.benefit-cta{min-width:min(100%,360px)}
 .faq-section{padding:95px 0;background:#fffbf8}.faq-container{max-width:850px}.faq-panels{border-top:1px solid #dfe6e3}.faq-panels :deep(.v-expansion-panel){border-bottom:1px solid #dfe6e3;background:transparent}.faq-panels :deep(.v-expansion-panel-title){font-size:17px;font-weight:800;padding:23px 5px}.faq-panels :deep(.v-expansion-panel-text__wrapper){color:#63736e;line-height:1.9;padding:0 5px 22px}
 .final-cta{background:var(--coral);color:#fff;padding:60px 0}.final-cta .v-container{display:flex;justify-content:space-between;align-items:center;gap:30px}.final-cta span{font-weight:800;opacity:.8}.final-cta h2{font-size:34px;margin:6px 0}.final-cta p{opacity:.85}.final-cta .v-btn{background:#fff;color:var(--ink);font-weight:900;letter-spacing:0;padding-inline:28px}.snackbar-content{display:flex;align-items:center;gap:10px}.snackbar-content .v-btn{color:#a9e0ce;margin-right:auto}
 @media(max-width:960px){.hero-container{grid-template-columns:1fr;text-align:center;padding-top:75px}.hero-lead{margin-inline:auto}.hero-actions{justify-content:center}.hero-visual{height:470px}.purchase-card{grid-template-columns:1fr;grid-template-areas:"destination" "package";gap:54px}.purchase-card--single{grid-template-areas:"destination"}.destination-list{display:grid;grid-template-columns:1fr;max-height:460px}.embedded-checkout :deep(.summary-column),.embedded-checkout :deep(.contact-column){padding-inline:12px!important}.embedded-checkout :deep(.contact-column){border-inline-start:0}.embedded-checkout :deep(.summary-column){margin-top:34px}.benefits-layout{grid-template-columns:1fr;gap:45px}.steps-grid{grid-template-columns:1fr}.step-arrow{transform:rotate(-90deg)}.proof-grid{grid-template-columns:1fr 1fr;gap:20px}.proof-grid div{border:0}.final-cta .v-container{flex-direction:column;text-align:center}}
@@ -648,6 +650,7 @@ watch(locale, () => {
 @media(max-width:600px){.plans-section{padding-bottom:28px}.checkout-section{padding-top:24px}}
 @media(max-width:600px){.plans-section{scroll-margin-top:96px}}
 @media(max-width:600px){.benefits-section{padding-top:30px}.benefit-copy h2{font-size:30px;line-height:1.35}.benefit-copy p{font-size:16px;line-height:1.7}.benefit-apps-visual{margin-top:28px}}
+@media(max-width:600px){.benefit-cta{width:100%;min-width:0}}
 @media(max-width:600px){.benefit-grid>div{display:grid;grid-template-columns:54px minmax(0,1fr);grid-template-rows:auto auto;column-gap:16px;align-items:center;text-align:start}.benefit-grid .v-icon{grid-column:1;grid-row:1 / 3;margin:0}.benefit-grid h3{grid-column:2;grid-row:1;margin:0 0 6px}.benefit-grid p{grid-column:2;grid-row:2;margin:0}.one-page[dir="rtl"] .benefit-grid>div{direction:rtl}}
 @media(max-width:600px){.plans-section>.v-container>.section-heading h2{font-size:26px;line-height:1.35;letter-spacing:-.3px}.one-page[dir="rtl"] .plans-section>.v-container>.section-heading h2{line-height:1.5}}
 @media(max-width:600px){.one-page.locale-fr .plans-section>.v-container>.section-heading h2{max-width:310px;margin:8px auto 10px;font-size:25px;line-height:1.35}}

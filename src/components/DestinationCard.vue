@@ -1,7 +1,7 @@
 <template>
     <v-card elevation="1" rounded="xl" :to="{
         name: 'destinationDetails',
-        params: { slug: country.slug }
+        params: { slug: destinationUrlSlug(country) }
     }">
         <div class="card-row d-flex justify-space-between align-center ma-3">
             <template v-if="$i18n.locale === 'ar'">
@@ -65,6 +65,7 @@
 import { getLocalizedName } from "@/utils/localizedNames"
 import { destinations } from "@/services/catalog"
 import { formatPriceFromMad } from "@/utils/currency"
+import { destinationUrlSlug } from "@/utils/destinationUrls"
 
 defineProps({
     country: Object

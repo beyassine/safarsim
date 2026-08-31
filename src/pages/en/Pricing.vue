@@ -104,7 +104,7 @@
                 size="large"
                 rounded="xl"
                 block
-                :to="`/destinations/${destination.slug}`"
+                :to="`/esim/${destinationUrlSlug(destination)}`"
               >
                 View offer
               </v-btn>
@@ -119,7 +119,7 @@
           size="large"
           rounded="xl"
           class="cta-btn"
-          to="/destinations"
+          to="/esim"
         >
           View all destinations
         </v-btn>
@@ -133,6 +133,7 @@ import popularDestinations from "@/data/popularDestinations.json"
 import { destinations } from "@/services/catalog"
 import { getLocalizedName } from "@/utils/localizedNames"
 import { formatPriceFromMad } from "@/utils/currency"
+import { destinationUrlSlug } from "@/utils/destinationUrls"
 
 function getEntryPrice(destination) {
   const canonicalDestination = destinations.find((item) => item.slug === destination.slug) || destination
