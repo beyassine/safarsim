@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "prebuild": "npm run sitemap",
     "build": "vue-cli-service build"
   },
   "dependencies": {

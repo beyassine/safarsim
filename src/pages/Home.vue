@@ -66,7 +66,6 @@
                 <div class="destination-group-title">
                   <v-icon size="18">{{ group.icon }}</v-icon>
                   <strong>{{ group.title }}</strong>
-                  <span>{{ group.items.length }}</span>
                 </div>
                 <button v-for="destination in group.items" :key="destination.slug"
                   type="button" class="destination-option" :class="{ active: selectedDestination?.slug === destination.slug, 'region-option': destination.type === 'region' }"
@@ -280,9 +279,9 @@ const planKicker = computed(() => ({
   en: 'Your plan in a few simple steps',
 }[locale.value] || 'Your plan in a few simple steps'))
 const catalogCopy = {
-  ar: { popular: 'الوجهات الأكثر طلباً', regions: 'الباقات الإقليمية', countries: 'الدول', countryCount: 'دولة', includedCountries: 'الدول المشمولة' },
-  fr: { popular: 'Destinations populaires', regions: 'Forfaits régionaux', countries: 'Pays', countryCount: 'pays', includedCountries: 'Pays inclus' },
-  en: { popular: 'Popular destinations', regions: 'Regional plans', countries: 'Countries', countryCount: 'countries', includedCountries: 'Included countries' },
+  ar: { popular: 'الوجهات الأكثر طلباً', results: 'النتائج', regions: 'الباقات الإقليمية', countries: 'الدول', countryCount: 'دولة', includedCountries: 'الدول المشمولة' },
+  fr: { popular: 'Destinations populaires', results: 'Résultats', regions: 'Forfaits régionaux', countries: 'Pays', countryCount: 'pays', includedCountries: 'Pays inclus' },
+  en: { popular: 'Popular destinations', results: 'Results', regions: 'Regional plans', countries: 'Countries', countryCount: 'countries', includedCountries: 'Included countries' },
 }
 const cc = computed(() => catalogCopy[locale.value] || catalogCopy.en)
 
@@ -323,39 +322,37 @@ const normalize = value => String(value || '').toLocaleLowerCase().normalize('NF
 
 const filteredDestinations = computed(() => {
   const query = normalize(search.value)
-  const matches = catalog.value.filter(item => {
+  if (!query) {
+    return catalog.value
+      .filter(item => popularDestinationSlugs.has(item.slug))
+      .sort((a, b) => Object.keys(featuredPackageKeys).indexOf(a.slug) - Object.keys(featuredPackageKeys).indexOf(b.slug))
+  }
+
+  const matchesQuery = item => {
     const names = [item.name, item.names?.ar, item.names?.fr, item.names?.en, item.iso]
-    return !query || names.some(name => normalize(name).includes(query))
-  })
-  return matches
+    return names.some(name => normalize(name).includes(query))
+  }
+  const matchingCountries = destinations.filter(matchesQuery)
+  const matchingCountryCodes = new Set(matchingCountries.map(country => country.iso))
+  const coveringRegions = regions.filter(region =>
+    region.coverageIsoCodes?.some(code => matchingCountryCodes.has(code))
+  )
+  const matchingRegions = regions.filter(matchesQuery)
+
+  return [...new Map(
+    [...coveringRegions, ...matchingRegions, ...matchingCountries]
+      .map(item => [item.slug, item])
+  ).values()]
 })
 
 const popularDestinationSlugs = new Set(Object.keys(featuredPackageKeys))
 
-const destinationGroups = computed(() => [
-  {
-    key: 'popular',
-    title: cc.value.popular,
-    icon: 'mdi-fire',
-    items: filteredDestinations.value
-      .filter(item => popularDestinationSlugs.has(item.slug))
-      .sort((a, b) => Object.keys(featuredPackageKeys).indexOf(a.slug) - Object.keys(featuredPackageKeys).indexOf(b.slug)),
-  },
-  {
-    key: 'regions',
-    title: cc.value.regions,
-    icon: 'mdi-earth',
-    items: filteredDestinations.value
-      .filter(item => item.type === 'region' && !popularDestinationSlugs.has(item.slug))
-      .sort((a, b) => Number(b.slug === 'europe') - Number(a.slug === 'europe')),
-  },
-  {
-    key: 'countries',
-    title: cc.value.countries,
-    icon: 'mdi-flag-outline',
-    items: filteredDestinations.value.filter(item => item.type !== 'region' && !popularDestinationSlugs.has(item.slug)),
-  },
-].filter(group => group.items.length))
+const destinationGroups = computed(() => filteredDestinations.value.length ? [{
+  key: 'popular',
+  title: search.value ? cc.value.results : cc.value.popular,
+  icon: search.value ? 'mdi-magnify' : 'mdi-fire',
+  items: filteredDestinations.value,
+}] : [])
 
 const availablePlans = computed(() => {
   if (!selectedDestination.value?.plans) return []
@@ -482,7 +479,7 @@ function flagUrl(destination) {
 }
 
 function destinationName(destination) {
-  if (destination?.slug === 'europe' && locale.value === 'ar') return 'أوروبا'
+  if (destination?.slug === 'europe') return locale.value === 'ar' ? 'أوروبا' : 'Europe'
   return destination?.names?.[locale.value] || destination?.name || ''
 }
 
@@ -540,7 +537,12 @@ async function buySelectedPlan() {
 }
 
 function scrollToPlans() {
-  document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const plans = document.getElementById('plans')
+  if (!plans) return
+
+  const headerOffset = window.innerWidth <= 600 ? 96 : 80
+  const top = plans.getBoundingClientRect().top + window.scrollY - headerOffset
+  window.scrollTo({ top, behavior: 'smooth' })
 }
 
 function scrollToCheckout() {
@@ -634,6 +636,7 @@ watch(locale, () => {
 @media(max-width:960px){.popular-packs-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.one-page :deep(.v-container){padding-left:12px!important;padding-right:12px!important}.page-language-bar{padding:10px 0 3px}.language-bar-inner{flex-direction:column;justify-content:center;gap:7px;padding-inline:8px!important}.language-prompt{display:flex;font-size:12px;gap:5px}.language-prompt .v-icon{font-size:17px!important}.language-options{width:auto;max-width:100%;justify-content:center;gap:5px;min-width:0}.language-options button{min-width:0;padding:6px 8px;font-size:11px;gap:4px}.hero-section{min-height:auto}.hero-container{padding-top:24px;padding-bottom:50px}.hero-copy h1{font-size:40px;letter-spacing:-1px}.hero-lead{font-size:16px}.hero-actions{flex-direction:column}.hero-visual{height:470px;margin-top:12px}.proof-grid b{font-size:18px}.plans-section,.how-section,.benefits-section,.faq-section{padding:70px 0}.section-heading{margin-bottom:30px}.destination-panel{padding:20px 0 4px}.package-panel{padding:20px 12px 20px}.step-label{font-size:21px;margin-bottom:24px}.step-label i{width:38px;height:38px;font-size:16px}.destination-list{grid-template-columns:1fr;max-height:460px}.package-grid{grid-template-columns:1fr}.selected-country{align-items:flex-start;flex-direction:column}.one-page[dir="rtl"] .selected-country>div,.one-page[dir="rtl"] .selected-country small{width:100%;text-align:right}.one-page[dir="rtl"] .selected-country>div{justify-content:flex-start}.one-page[dir="ltr"] .selected-country>div,.one-page[dir="ltr"] .selected-country small{width:100%;text-align:left}.checkout-row{align-items:stretch;flex-direction:column}.buy-button{width:100%}.benefit-copy h2{font-size:31px}.benefit-grid{grid-template-columns:1fr}.final-cta h2{font-size:28px}.final-cta .v-btn{width:100%}}
 @media(max-width:600px){.plans-section{padding-bottom:28px}.checkout-section{padding-top:24px}}
+@media(max-width:600px){.plans-section{scroll-margin-top:96px}}
 @media(max-width:600px){.plans-section>.v-container>.section-heading h2{font-size:26px;line-height:1.35;letter-spacing:-.3px}.one-page[dir="rtl"] .plans-section>.v-container>.section-heading h2{line-height:1.5}}
 @media(max-width:600px){.embedded-checkout :deep(.cart-page){padding:8px 0!important}.embedded-checkout :deep(.summary-card),.embedded-checkout :deep(.contact-card),.embedded-checkout :deep(.checkout-card){padding:20px 16px 16px!important}.embedded-checkout :deep(.cart-step-title .subsection-title),.embedded-checkout :deep(.checkout-card-title){font-size:21px!important}.embedded-checkout :deep(.cart-step-number){width:38px;height:38px;flex-basis:38px;font-size:16px}.embedded-checkout :deep(.cart-line .text-h6),.embedded-checkout :deep(.summary-card>.d-flex.justify-space-between .text-h6){font-size:16px!important;line-height:1.45}.embedded-checkout :deep(.flag-emoji){font-size:1.6rem}.embedded-checkout :deep(.policy-acceptance .v-selection-control),.embedded-checkout :deep(.compatibility-confirmation .v-selection-control){align-items:flex-start}.embedded-checkout :deep(.policy-acceptance .v-selection-control__wrapper),.embedded-checkout :deep(.compatibility-confirmation .v-selection-control__wrapper){margin-top:1px}.embedded-checkout :deep(.policy-acceptance .v-label),.embedded-checkout :deep(.compatibility-confirmation .v-label){min-width:0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.65}.embedded-checkout :deep(.compatibility-link){font-size:12px}.embedded-checkout :deep(.payment-security){font-size:12px;line-height:1.6}.embedded-checkout :deep(.buy-button){font-size:16px!important}}
 @media(max-width:600px){.popular-packs-section{padding:62px 0}.popular-packs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.popular-pack-card{min-width:0;min-height:255px;padding:14px;border-radius:17px}.discount-badge{font-size:10px;padding:5px 8px}.popular-pack-top{gap:7px;font-size:13px;padding-inline-end:35px}.popular-pack-top img{width:27px;height:20px;flex:0 0 27px}.popular-pack-body{height:128px;margin-top:15px;align-items:stretch;flex-direction:column;gap:12px}.popular-pack-data{gap:4px}.popular-pack-data strong{font-size:22px}.popular-pack-data span{font-size:11px}.popular-pack-validity{gap:4px;margin-top:10px;font-size:11px}.popular-pack-validity .v-icon{font-size:16px!important}.popular-pack-price{gap:3px}.popular-pack-price b{font-size:26px}.popular-pack-price small{font-size:11px}.popular-buy-button{margin-top:12px;font-size:11px!important;padding-inline:5px!important}}
@@ -715,5 +718,9 @@ watch(locale, () => {
   .hero-container{padding-bottom:0!important}
   .hero-visual{margin-top:0;margin-bottom:0}
   .hero-artwork{width:120%}
+}
+
+@media(min-width:961px){
+  .hero-section{align-items:center}
 }
 </style>
