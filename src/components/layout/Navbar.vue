@@ -12,33 +12,33 @@
 
             <!-- DESKTOP LEFT LOGO -->
             <div class="d-none d-md-flex align-center">
-                <router-link to="/" class="text-decoration-none logo-link">
+                <router-link :to="sharedPagePath('/')" class="text-decoration-none logo-link">
                     <v-img :src="logo" alt="SafarSim" height="60" width="150" contain />
                 </router-link>
             </div>
 
             <!-- DESKTOP CENTER LINKS -->
             <div class="d-none d-md-flex nav-links">
-                <router-link class="text-decoration-none text-black" to="/destinations">
+                <router-link class="text-decoration-none text-black" :to="sharedPagePath('/destinations')">
                     <v-btn variant="text">{{ $t("nav.destinations") }}</v-btn>
                 </router-link>
 
-                <router-link class="text-decoration-none text-black" to="/compatibility">
+                <router-link class="text-decoration-none text-black" :to="publicPagePath('compatibility')">
                     <v-btn variant="text">{{ $t("nav.compatibility") }}</v-btn>
                 </router-link>
 
-                <router-link class="text-decoration-none text-black" to="/pricing">
+                <router-link class="text-decoration-none text-black" :to="publicPagePath('pricing')">
                     <v-btn variant="text">{{ $t("nav.pricing") }}</v-btn>
                 </router-link>
 
-                <router-link class="text-decoration-none text-black" to="/help">
+                <router-link class="text-decoration-none text-black" :to="publicPagePath('help')">
                     <v-btn variant="text">{{ $t("nav.help") }}</v-btn>
                 </router-link>
             </div>
 
             <!-- MOBILE CENTER LOGO -->
             <div class="mobile-logo d-flex d-md-none">
-                <router-link to="/" class="logo-link mb-2">
+                <router-link :to="sharedPagePath('/')" class="logo-link mb-2">
                     <v-img :src="logo" alt="SafarSim" height="54" width="140" contain />
                 </router-link>
             </div>
@@ -67,7 +67,7 @@
                     </v-list>
                 </v-menu>
 
-                <router-link to="/cart" class="cart-link">
+                <router-link :to="sharedPagePath('/cart')" class="cart-link">
                     <v-badge :model-value="cartCount > 0" :content="cartCount" color="pink" location="top right"
                         offset-x="9" offset-y="7">
                         <v-btn icon variant="text">
@@ -86,22 +86,22 @@
                     @select="goToDestination" />
             </div>
 
-            <router-link to="/destinations" class="menu-item" @click="drawer = false">
+            <router-link :to="sharedPagePath('/destinations')" class="menu-item" @click="drawer = false">
                 <span>{{ $t("nav.destinations") }}</span>
                 <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
 
-            <router-link to="/compatibility" class="menu-item" @click="drawer = false">
+            <router-link :to="publicPagePath('compatibility')" class="menu-item" @click="drawer = false">
                 <span>{{ $t("nav.compatibility") }}</span>
                 <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
 
-            <router-link to="/pricing" class="menu-item" @click="drawer = false">
+            <router-link :to="publicPagePath('pricing')" class="menu-item" @click="drawer = false">
                 <span>{{ $t("nav.pricing") }}</span>
                 <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
 
-            <router-link to="/help" class="menu-item" @click="drawer = false">
+            <router-link :to="publicPagePath('help')" class="menu-item" @click="drawer = false">
                 <span>{{ $t("nav.help") }}</span>
                 <v-icon>{{ currentLang === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
             </router-link>
@@ -115,7 +115,7 @@ import { getCartCount, CART_UPDATED_EVENT } from '@/utils/cart'
 import DestinationSearch from '@/components/DestinationSearchBar.vue'
 import { destinations } from "@/services/catalog";
 import PopularDestinations from "@/data/popularDestinations.json";
-import { localePath } from "@/router";
+import { LOCALIZED_ROUTE_PATHS, localePath } from "@/router";
 
 import logo from '@/assets/logo.png'
 
@@ -141,12 +141,21 @@ export default {
     },
 
     methods: {
+        sharedPagePath(path) {
+            return this.currentLang === 'en'
+                ? path
+                : `/${this.currentLang}${path === '/' ? '' : path}`
+        },
+        publicPagePath(routeKey) {
+            const path = LOCALIZED_ROUTE_PATHS[routeKey]?.[this.currentLang] || '/'
+            return this.currentLang === 'en' ? path : `/${this.currentLang}${path}`
+        },
         refreshCartCount() {
             this.cartCount = getCartCount()
         },
         goToDestination(destination) {
             this.drawer = false
-            this.$router.push({ name: "destinationDetails", params: { slug: destination.slug } })
+            this.$router.push(this.sharedPagePath(`/destinations/${destination.slug}`))
         },
         setLang(lang) {
             this.$router.push(localePath(this.$route, lang))

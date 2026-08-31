@@ -192,7 +192,7 @@
 
     <section class="benefits-section">
       <v-container class="benefits-layout">
-        <div class="benefit-copy"><span class="section-kicker">{{ c.why }}</span><h2>{{ c.benefitTitle }}</h2><p>{{ c.benefitLead }}</p><router-link to="/compatibility">{{ c.phoneSupports }} <v-icon size="18">{{ arrowIcon }}</v-icon></router-link></div>
+        <div class="benefit-copy"><span class="section-kicker">{{ c.why }}</span><h2>{{ c.benefitTitle }}</h2><p>{{ c.benefitLead }}</p><router-link :to="localePath({ path: '/compatibility' }, locale)">{{ c.phoneSupports }} <v-icon size="18">{{ arrowIcon }}</v-icon></router-link></div>
         <div class="benefit-grid">
           <div><v-icon>mdi-cash-remove</v-icon><h3>{{ c.saveRoaming }}</h3><p>{{ c.saveRoamingText }}</p></div>
           <div><v-icon>mdi-sim-outline</v-icon><h3>{{ c.keepNumber }}</h3><p>{{ c.keepNumberText }}</p></div>
