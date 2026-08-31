@@ -3,9 +3,9 @@
     <v-container class="py-12 py-md-16">
       <div class="text-center mb-10">
         <div class="eyebrow"><bdi dir="ltr">SAFAR SIM</bdi></div>
-        <h1 class="page-title">{{ $t("pricing.title") }}</h1>
+        <h1 class="page-title">أسعار eSIM</h1>
         <p class="page-subtitle">
-          {{ $t("pricing.subtitle") }}
+          باقات بسيطة ومرنة تناسب رحلاتك، مع أسعار شفافة حسب كل وجهة.
         </p>
       </div>
 
@@ -23,37 +23,37 @@
 
       <v-card class="pricing-card mb-10" elevation="0">
         <div class="pricing-header">
-          <h2>{{ $t("pricing.howTitle") }}</h2>
+          <h2>كيف تعمل أسعارنا؟</h2>
           <p>
-            {{ $t("pricing.howText") }}
+            تختلف الأسعار حسب الوجهة وكمية البيانات ومدة الباقة. ستجد في SafarSim عروضاً مناسبة للإقامات القصيرة والرحلات الطويلة.
           </p>
         </div>
 
         <div class="pricing-block">
-          <h3>{{ $t("pricing.influencesTitle") }}</h3>
-          <ul class="pricing-list" :class="{ 'pricing-list--rtl': $i18n.locale === 'ar' }">
+          <h3>ما الذي يؤثر في السعر</h3>
+          <ul class="pricing-list" :class="{ 'pricing-list--rtl': true }">
             <li v-for="item in $tm('pricing.influences')" :key="item">{{ item }}</li>
           </ul>
         </div>
 
         <div class="pricing-block">
-          <h3>{{ $t("pricing.includedTitle") }}</h3>
-          <ul class="pricing-list" :class="{ 'pricing-list--rtl': $i18n.locale === 'ar' }">
+          <h3>ما الذي يشمله العرض</h3>
+          <ul class="pricing-list" :class="{ 'pricing-list--rtl': true }">
             <li v-for="item in $tm('pricing.included')" :key="item">{{ item }}</li>
           </ul>
         </div>
 
         <div class="pricing-note">
           <p>
-            {{ $t("pricing.note") }}
+            الأسعار المعروضة أدناه تخص بعض باقاتنا المتاحة للوجهات الشائعة.
           </p>
         </div>
       </v-card>
 
       <div class="section-header text-center mb-6">
-        <h2>{{ $t("pricing.popularTitle") }}</h2>
+        <h2>وجهات شائعة</h2>
         <p>
-          {{ $t("pricing.popularText") }}
+          اطلع على بعض أكثر الوجهات طلباً مع أسعار eSIM الخاصة بها.
         </p>
       </div>
 
@@ -75,15 +75,15 @@
               @error="fallback"
             />
 
-            <div class="destination-content" :class="{ 'destination-content--rtl': $i18n.locale === 'ar' }">
+            <div class="destination-content" :class="{ 'destination-content--rtl': true }">
               <div class="destination-top">
                 <div class="destination-name-wrap">
                   <span class="flag">{{ destination.flag }}</span>
                   <h3>{{ getDestinationName(destination) }}</h3>
                 </div>
-                <div class="from-price" :class="{ 'from-price--rtl': $i18n.locale === 'ar' }">
-                  <span class="from-price-label">{{ $t("pricing.from") }}</span>
-                  <span class="from-price-value" dir="ltr">{{ formatPriceFromMad(getEntryPrice(destination), $i18n.locale) }}</span>
+                <div class="from-price" :class="{ 'from-price--rtl': true }">
+                  <span class="from-price-label">ابتداءً من</span>
+                  <span class="from-price-value" dir="ltr">{{ formatPriceFromMad(getEntryPrice(destination), 'ar') }}</span>
                 </div>
               </div>
 
@@ -94,7 +94,7 @@
                   class="plan-row"
                 >
                   <span class="plan-label">{{ plan.label }}</span>
-                  <span class="plan-value">{{ formatPriceFromMad(plan.price, $i18n.locale) }}</span>
+                  <span class="plan-value">{{ formatPriceFromMad(plan.price, 'ar') }}</span>
                 </div>
               </div>
 
@@ -106,7 +106,7 @@
                 block
                 :to="`/destinations/${destination.slug}`"
               >
-                {{ $t("pricing.offer") }}
+                عرض الباقة
               </v-btn>
             </div>
           </v-card>
@@ -121,7 +121,7 @@
           class="cta-btn"
           to="/destinations"
         >
-          {{ $t("pricing.allDestinations") }}
+          عرض كل الوجهات
         </v-btn>
       </div>
     </v-container>
@@ -133,7 +133,6 @@ import popularDestinations from "@/data/popularDestinations.json"
 import { destinations } from "@/services/catalog"
 import { getLocalizedName } from "@/utils/localizedNames"
 import { formatPriceFromMad } from "@/utils/currency"
-import i18n from "@/i18n"
 
 function getEntryPrice(destination) {
   const canonicalDestination = destinations.find((item) => item.slug === destination.slug) || destination
@@ -145,7 +144,7 @@ function getEntryPrice(destination) {
 
 function formatPlanLabel(key) {
   const [data, duration] = key.split("_")
-  return data + " / " + duration.replace("days", i18n.global.t("pricing.days"))
+  return data + " / " + duration.replace("days", "أيام")
 }
 
 function getTopPlans(destination) {
@@ -163,7 +162,7 @@ function getTopPlans(destination) {
 }
 
 function getDestinationName(destination) {
-  return getLocalizedName(destination, i18n.global.locale)
+  return getLocalizedName(destination, 'ar')
 }
 
 const getImage = (item) => {

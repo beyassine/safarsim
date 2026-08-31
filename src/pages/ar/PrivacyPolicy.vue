@@ -1,7 +1,7 @@
 <template>
   <div class="legal-page">
     <v-container class="py-12">
-      <h1 class="title text-center mb-6">{{ $t("privacy.title") }}</h1>
+      <h1 class="title text-center mb-6">سياسة الخصوصية</h1>
 
       <v-card class="card" elevation="0" >
         <section v-for="section in $tm('privacy.sections')" :key="section.title" class="mt-5">

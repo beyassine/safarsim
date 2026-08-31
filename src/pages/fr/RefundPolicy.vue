@@ -4,7 +4,7 @@
       
       <div class="text-center mb-10">
         <div class="eyebrow"><bdi dir="ltr">SAFAR SIM</bdi></div>
-        <h1 class="page-title">{{ $t("refund.title") }}</h1>
+        <h1 class="page-title">Politique de Remboursement</h1>
       </div>
 
       <v-card class="card">

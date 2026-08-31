@@ -2,10 +2,10 @@
   <div class="help-page">
     <v-container class="py-12 py-md-16">
       <div class="text-center mb-10">
-        <div class="help-badge mb-4">{{ $t("helpPage.badge") }}</div>
-        <h1 class="help-title mb-3">{{ $t("helpPage.title") }}</h1>
+        <div class="help-badge mb-4">Help center</div>
+        <h1 class="help-title mb-3">Frequently asked questions</h1>
         <p class="help-subtitle mx-auto">
-          {{ $t("helpPage.subtitle") }}
+          Quickly find answers to the most common questions about your SAFAR eSIM.
         </p>
       </div>
 
@@ -20,11 +20,11 @@
               elevation="0"
             >
               <v-expansion-panel-title class="faq-question">
-                {{ $t(`home.faq.items.${item}.question`) }}
+                {{ item.question }}
               </v-expansion-panel-title>
 
               <v-expansion-panel-text class="faq-answer">
-                {{ $t(`home.faq.items.${item}.answer`) }}
+                {{ item.answer }}
               </v-expansion-panel-text>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -40,11 +40,11 @@
               elevation="0"
             >
               <v-expansion-panel-title class="faq-question">
-                {{ $t(`home.faq.items.${item}.question`) }}
+                {{ item.question }}
               </v-expansion-panel-title>
 
               <v-expansion-panel-text class="faq-answer">
-                {{ $t(`home.faq.items.${item}.answer`) }}
+                {{ item.answer }}
               </v-expansion-panel-text>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -52,9 +52,9 @@
       </v-row>
 
       <div class="help-cta text-center mt-12">
-        <h2 class="cta-title mb-3">{{ $t("helpPage.ctaTitle") }}</h2>
+        <h2 class="cta-title mb-3">Did not find your answer?</h2>
         <p class="cta-text mb-6">
-          {{ $t("helpPage.ctaText") }}
+          Our team is here to help you before, during and after your purchase.
         </p>
 
         <v-btn
@@ -64,7 +64,7 @@
           to="/contact"
           class="px-8 text-none"
         >
-          {{ $t("helpPage.cta") }}
+          Contact us
         </v-btn>
       </div>
     </v-container>
@@ -73,23 +73,65 @@
 
 <script setup>
 const leftFaq = [
-  "whatIsEsim",
-  "roaming",
-  "speed",
-  "whatsapp",
-  "receive",
-  "phones",
-  "calls",
+  {
+    "question": "What is an eSIM?",
+    "answer": "An eSIM is a digital SIM card that lets you access internet without a physical SIM."
+  },
+  {
+    "question": "Do I need to enable data roaming?",
+    "answer": "Yes, roaming must be enabled for your eSIM to work abroad."
+  },
+  {
+    "question": "What connection speed can I get?",
+    "answer": "Speed depends on the local network, usually 4G or 5G depending on the destination."
+  },
+  {
+    "question": "Can I keep my WhatsApp?",
+    "answer": "Yes, your WhatsApp number stays the same with an eSIM."
+  },
+  {
+    "question": "When will I receive my eSIM?",
+    "answer": "Your eSIM is sent instantly by email after purchase."
+  },
+  {
+    "question": "Which phones are compatible?",
+    "answer": "Most recent smartphones support eSIM, including iPhone, Samsung and others."
+  },
+  {
+    "question": "Can I call or send SMS?",
+    "answer": "Our eSIMs are mainly data-only."
+  }
 ]
 
 const rightFaq = [
-  "why",
-  "dualSim",
-  "delete",
-  "reuse",
-  "usage",
-  "setup",
-  "install",
+  {
+    "question": "Why choose eSIM SAFAR?",
+    "answer": "We offer reliable connection in more than 160 destinations with fast activation."
+  },
+  {
+    "question": "Can I use SIM and eSIM together?",
+    "answer": "Yes, most phones allow both to be used at the same time."
+  },
+  {
+    "question": "How do I delete an eSIM?",
+    "answer": "You can delete it directly from your phone settings."
+  },
+  {
+    "question": "How many times can I use my eSIM?",
+    "answer": "Each eSIM is valid for one use only, depending on the selected plan."
+  },
+  {
+    "question": "How do I check my usage?",
+    "answer": "You can track your usage in your device settings."
+  },
+  {
+    "question": "When should I set up my eSIM?",
+    "answer": "We recommend installing it before departure."
+  },
+  {
+    "question": "How do I install my eSIM?",
+    "answer": "Scan the QR code received by email and follow the simple instructions."
+  }
 ]
 </script>
 

@@ -35,8 +35,8 @@ const vuetify = createVuetify({
 })
 
 
-// Apply the detected language without treating it as an explicit user choice.
-applyLanguage(i18n.global.locale, false)
+// The router replaces this detected fallback with the locale from the URL.
+applyLanguage(i18n.global.locale)
 
 async function bootstrap() {
   await loadCatalog()

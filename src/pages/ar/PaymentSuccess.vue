@@ -6,11 +6,11 @@
       </v-icon>
 
       <h1 class="text-h4 font-weight-bold mb-3">
-        {{ $t("paymentSuccess.title") }}
+        تم تأكيد الدفع
       </h1>
 
       <p class="text-body-1 text-medium-emphasis mb-6">
-        {{ $t("paymentSuccess.text") }}
+        شكراً لطلبك. سنعالج شريحة eSIM الخاصة بك بسرعة.
       </p>
 
       <v-alert v-if="verificationError" type="warning" variant="tonal" class="mb-6">
@@ -19,7 +19,7 @@
 
       <div v-if="orderId" class="order-reference pa-4 mb-6">
         <div class="text-caption text-medium-emphasis mb-1">
-          {{ $t("paymentSuccess.orderReference") }}
+          مرجع الطلب
         </div>
         <div class="font-weight-bold">
           {{ orderId }}
@@ -28,11 +28,11 @@
 
       <div class="d-flex flex-wrap ga-3">
         <v-btn color="black" rounded="pill" class="text-none" to="/">
-          {{ $t("paymentSuccess.viewDestinations") }}
+          عرض الوجهات
         </v-btn>
 
         <v-btn variant="outlined" rounded="pill" class="text-none" to="/contact">
-          {{ $t("paymentSuccess.contact") }}
+          اتصل بنا
         </v-btn>
       </div>
     </v-sheet>

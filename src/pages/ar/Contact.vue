@@ -3,9 +3,9 @@
     <v-container class="py-12 py-md-16">
       <div class="text-center mb-8">
         <div class="eyebrow"><bdi dir="ltr">SAFAR SIM</bdi></div>
-        <h1 class="page-title">{{ $t("contact.title") }}</h1>
+        <h1 class="page-title">اتصل بنا</h1>
         <p class="page-subtitle">
-          {{ $t("contact.subtitle") }}
+          فريقنا متاح لمساعدتك قبل الشراء وأثناءه وبعده.
         </p>
       </div>
 
@@ -13,35 +13,35 @@
         <v-col cols="12" md="8" lg="7">
           <v-card class="content-card" elevation="0">
             <div class="contact-block">
-              <h2>{{ $t("contact.supportTitle") }}</h2>
+              <h2>دعم العملاء</h2>
               <p>
-                {{ $t("contact.supportText") }}
+                لأي سؤال حول طلبك أو شريحة eSIM أو طريقة التثبيت، يمكنك التواصل معنا مباشرة:
               </p>
 
               <div class="info-box">
                 <div class="info-item">
-                  <span class="label">{{ $t("common.email") }}</span>
+                  <span class="label">البريد الإلكتروني</span>
                   <a href="mailto:support@safarsim.net" class="value">support@safarsim.net</a>
                 </div>
 
                 <div class="info-item">
-                  <span class="label">{{ $t("common.website") }}</span>
+                  <span class="label">الموقع الإلكتروني</span>
                   <a href="https://www.safarsim.net" class="value">www.safarsim.net</a>
                 </div>
               </div>
             </div>
 
             <div class="contact-block">
-              <h2>{{ $t("contact.responseTitle") }}</h2>
+              <h2>أوقات الرد</h2>
               <p>
-                {{ $t("contact.responseText") }}
+                نبذل قصارى جهدنا للرد في أقرب وقت ممكن، عادة خلال يومي عمل.
               </p>
             </div>
 
             <div class="contact-block">
-              <h2>{{ $t("contact.assistanceTitle") }}</h2>
+              <h2>المساعدة</h2>
               <p>
-                {{ $t("contact.assistanceText") }}
+                قبل طلب الاسترداد، ندعوك للتواصل معنا حتى نتمكن من التحقق من المشكلة وحلها بسرعة.
               </p>
             </div>
 
@@ -53,7 +53,7 @@
                 class="cta-btn"
                 href="mailto:support@safarsim.net"
               >
-                {{ $t("contact.cta") }}
+                راسلنا
               </v-btn>
             </div>
           </v-card>

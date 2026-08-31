@@ -2,8 +2,8 @@
   <div class="legal-page">
     <v-container class="py-12">
       <div class="text-center mb-8">
-        <h1 class="title">{{ $t("digitalDelivery.title") }}</h1>
-        <p class="subtitle">{{ $t("digitalDelivery.updated") }}</p>
+        <h1 class="title">Digital Delivery Policy</h1>
+        <p class="subtitle">Last updated: August 2026</p>
       </div>
 
       <v-card class="card" elevation="1">

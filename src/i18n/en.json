@@ -176,7 +176,7 @@
     "total": "Total",
     "payment": "Payment",
     "paymentAndDelivery": "Payment and delivery",
-    "buyButton": "Pay securely with Stripe",
+    "buyButton": "Simple and secure payment",
     "checkoutContactError": "Enter your full name and matching valid email addresses.",
     "checkoutTermsError": "Accept the policies before continuing to payment.",
     "checkoutError": "We could not start the secure payment. Please try again.",

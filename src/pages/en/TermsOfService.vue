@@ -2,9 +2,9 @@
   <div class="legal-page">
     <v-container class="py-12">
       <div class="text-center mb-8">
-        <h1 class="title">{{ $t("terms.title") }}</h1>
+        <h1 class="title">Terms of Sale and Use</h1>
         <p class="subtitle">
-          {{ $t("terms.updated") }}
+          Last updated: August 2026
         </p>
       </div>
 

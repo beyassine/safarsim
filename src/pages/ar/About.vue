@@ -3,9 +3,9 @@
     <v-container class="py-12 py-md-16">
       <div class="text-center mb-10">
         <div class="eyebrow"><bdi dir="ltr">SAFAR SIM</bdi></div>
-        <h1 class="page-title">{{ $t("about.title") }}</h1>
+        <h1 class="page-title">ما هي ⁨SafarSim⁩؟</h1>
         <p class="page-subtitle">
-          {{ $t("about.subtitle") }}
+          تبيع ⁨SafarSim⁩ شرائح ⁨eSIM⁩ للسفر تتيح الوصول إلى الإنترنت المحمول في العديد من الوجهات بدون شريحة ⁨SIM⁩ فعلية.
         </p>
       </div>
 
@@ -13,9 +13,9 @@
         <v-col cols="12" md="4">
           <v-card class="feature-card" elevation="0">
             <div class="icon">📶</div>
-            <h3>{{ $t("about.features.internet.title") }}</h3>
+            <h3>إنترنت محمول</h3>
             <p>
-              {{ $t("about.features.internet.text") }}
+              استمتع بالإنترنت في وجهتك عبر باقة بيانات صالحة لمدة محددة.
             </p>
           </v-card>
         </v-col>
@@ -23,9 +23,9 @@
         <v-col cols="12" md="4">
           <v-card class="feature-card" elevation="0">
             <div class="icon">⚡</div>
-            <h3>{{ $t("about.features.delivery.title") }}</h3>
+            <h3>تسليم سريع</h3>
             <p>
-              {{ $t("about.features.delivery.text") }}
+              بعد الدفع، يتم إرسال شريحة ⁨eSIM⁩ عبر البريد الإلكتروني مع تعليمات التثبيت.
             </p>
           </v-card>
         </v-col>
@@ -33,9 +33,9 @@
         <v-col cols="12" md="4">
           <v-card class="feature-card" elevation="0">
             <div class="icon">🌍</div>
-            <h3>{{ $t("about.features.travelers.title") }}</h3>
+            <h3>للمسافرين</h3>
             <p>
-              {{ $t("about.features.travelers.text") }}
+              حل بسيط لتجنب رسوم التجوال والبقاء على اتصال أثناء السفر.
             </p>
           </v-card>
         </v-col>
@@ -43,30 +43,30 @@
 
       <v-card class="content-card" elevation="0">
         <section class="section">
-          <h2>{{ $t("about.whatWeSell.title") }}</h2>
+          <h2>ماذا نبيع</h2>
           <p>
-            {{ $t("about.whatWeSell.text") }}
+            تقدم ⁨SafarSim⁩ باقات ⁨eSIM⁩ للسفر تشمل بيانات محمولة ومدة صلاحية وتغطية حسب الوجهة المختارة.
           </p>
         </section>
 
         <section class="section">
-          <h2>{{ $t("about.included.title") }}</h2>
+          <h2>ما الذي يشمله العرض</h2>
           <ul class="styled-list">
             <li v-for="item in $tm('about.included.items')" :key="item">{{ item }}</li>
           </ul>
         </section>
 
         <section class="section">
-          <h2>{{ $t("about.howItWorks.title") }}</h2>
+          <h2>كيف تعمل الخدمة</h2>
           <ol class="styled-list ordered">
             <li v-for="item in $tm('about.howItWorks.items')" :key="item">{{ item }}</li>
           </ol>
         </section>
 
         <section class="section">
-          <h2>{{ $t("about.important.title") }}</h2>
+          <h2>مهم</h2>
           <p>
-            {{ $t("about.important.text") }}
+            يجب على المشتري التأكد من أن جهازه متوافق مع ⁨eSIM⁩ قبل الشراء. قد تختلف جودة الخدمة حسب الشبكات المحلية والتغطية المتاحة.
           </p>
         </section>
 
@@ -78,7 +78,7 @@
             class="cta-btn"
             to="/pricing"
           >
-            {{ $t("about.cta") }}
+            عرض الأسعار
           </v-btn>
         </div>
       </v-card>

@@ -59,7 +59,7 @@ export function getDefaultLanguage() {
 
 const i18n = createI18n({
   legacy: true,
-  locale: localStorage.getItem("lang") || getDefaultLanguage(),
+  locale: getDefaultLanguage(),
   fallbackLocale: "en",
   messages: {
     fr,
@@ -68,11 +68,10 @@ const i18n = createI18n({
   }
 })
 
-export function applyLanguage(lang, persist = true) {
+export function applyLanguage(lang) {
   const isRtl = lang === "ar"
 
   i18n.global.locale = lang
-  if (persist) localStorage.setItem("lang", lang)
   document.documentElement.setAttribute("dir", isRtl ? "rtl" : "ltr")
   document.documentElement.setAttribute("lang", lang)
 

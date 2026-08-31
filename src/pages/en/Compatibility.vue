@@ -3,28 +3,28 @@
     <v-container class="py-8 py-md-12" style="max-width: 980px">
       <!-- Breadcrumb -->
       <div
-        v-if="$i18n.locale === 'ar'"
+        v-if="false"
         class="breadcrumb-row breadcrumb-row-ar mb-6 mt-2 text-body-2 bidi-text"
       >
         <router-link to="/" class="text-decoration-none">
-          <span class="text-medium-emphasis">{{ $t("common.home") }}</span>
+          <span class="text-medium-emphasis">Home</span>
         </router-link>
         <span class="mx-2">&lt;</span>
-        <strong>{{ $t("compatibility.breadcrumb") }}</strong>
+        <strong>Compatible Devices</strong>
       </div>
       <div v-else class="breadcrumb-row mb-6 mt-2 text-body-2 bidi-text">
         <router-link to="/" class="text-decoration-none">
-          <span class="text-medium-emphasis">{{ $t("common.home") }}</span>
+          <span class="text-medium-emphasis">Home</span>
         </router-link>
         <span class="mx-2">></span>
-        <strong>{{ $t("compatibility.breadcrumb") }}</strong>
+        <strong>Compatible Devices</strong>
       </div>
 
       <div class="mb-8">
-        <h1 class="section-title mb-4 bidi-text">{{ $t("compatibility.title") }}</h1>
+        <h1 class="section-title mb-4 bidi-text">Check compatibility</h1>
 
         <p class="page-text mb-4 bidi-text">
-          {{ $t("compatibility.intro") }}
+          To use a Safar Sim eSIM, your device must meet these conditions:
         </p>
 
         <v-row class="d-flex mb-5 conditions-row">
@@ -36,7 +36,7 @@
                 icon="mdi-check"
                 size="large"
               />
-              {{ $t("compatibility.conditionEsim") }}
+              The device supports eSIM.
             </h3>
           </v-col>
 
@@ -48,7 +48,7 @@
                 icon="mdi-check"
                 size="large"
               />
-              {{ $t("compatibility.conditionUnlocked") }}
+              The device is not locked by an operator or network.
             </h3>
           </v-col>
 
@@ -60,38 +60,26 @@
                 icon="mdi-check"
                 size="large"
               />
-              {{ $t("compatibility.conditionRoot") }}
+              The device is not jailbroken on iOS or rooted on Android.
             </h3>
           </v-col>
         </v-row>
 
         <p class="page-text mb-4 bidi-text">
-          {{ $t("compatibility.description") }}
+          You can check our list to see whether the device you want to use is eSIM compatible. Some regional models may not support eSIM.
         </p>
 
         <v-card rounded="xl" elevation="1" class="pa-5 compatibility-card mb-8">
-          <h4 class="subsection-title mb-4 bidi-text">{{ $t("cart.phoneCompatibility") }}</h4>
+          <h4 class="subsection-title mb-4 bidi-text">Phone compatibility</h4>
           <v-alert
             :type="hasSelectedCompatiblePhone ? 'success' : 'info'"
             variant="tonal"
             class="mb-4 bidi-text"
           >
-            <i18n-t
-              v-if="$i18n.locale === 'ar'"
-              :keypath="hasSelectedCompatiblePhone ? 'cart.compatiblePhone' : 'cart.selectPhone'"
-              tag="span"
-              dir="rtl"
-            >
-              <template #esim>
-                <bdi dir="ltr">eSIM</bdi>
-              </template>
-            </i18n-t>
-            <span v-else>
-              {{
-                hasSelectedCompatiblePhone
-                  ? $t("cart.compatiblePhone")
-                  : $t("cart.selectPhone")
-              }}
+            <span>
+              {{ hasSelectedCompatiblePhone
+                ? "Your phone is compatible with eSIM."
+                : "Please select your phone model. Your phone must be recent enough to support eSIM." }}
             </span>
           </v-alert>
 
@@ -100,7 +88,7 @@
               <v-select
                 v-model="phoneModel"
                 :items="phoneModelOptions"
-                :label="$t('cart.phoneModel')"
+                label="Phone model"
                 variant="outlined"
                 density="comfortable"
                 rounded="lg"
@@ -115,7 +103,7 @@
               <v-autocomplete
                 v-model="phoneSubmodel"
                 :items="phoneSubmodelOptions"
-                :label="$t('cart.phoneSubmodel')"
+                label="Sub-model"
                 variant="outlined"
                 density="comfortable"
                 rounded="lg"
@@ -123,7 +111,7 @@
                 :menu-props="{ maxHeight: 320 }"
                 hide-details="auto"
                 :disabled="!phoneModel"
-                :no-data-text="$t('cart.noModel')"
+                no-data-text="No model found"
               />
             </v-col>
           </v-row>
@@ -131,15 +119,15 @@
 
         <v-alert class="mt-10 pa-6 text-center" variant="tonal" rounded="lg" >
           <p class="mb-3 bidi-text">
-            <strong>{{ $t("compatibility.ctaTitle") }} 📱</strong>
+            <strong>Did you find your compatible device? 📱</strong>
           </p>
 
           <p class="mb-4 bidi-text">
-            {{ $t("compatibility.ctaText") }} <strong class="text-pink-darken-1 font-weight-bold"><bdi dir="ltr">SAFAR SIM</bdi></strong>.
+            All that is left is to choose your destination and enjoy instant internet with eSIM <strong class="text-pink-darken-1 font-weight-bold"><bdi dir="ltr">SAFAR SIM</bdi></strong>.
           </p>
           <router-link :to="{ path: '/', hash: '#destination-selection' }" class="text-decoration-none">
             <v-btn color="pink" size="large" class="text-none bidi-text" prepend-icon="mdi-earth">
-              {{ $t("common.viewDestinations") }}
+              View destinations
             </v-btn>
           </router-link>
         </v-alert>

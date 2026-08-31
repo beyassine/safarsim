@@ -115,7 +115,7 @@ import { getCartCount, CART_UPDATED_EVENT } from '@/utils/cart'
 import DestinationSearch from '@/components/DestinationSearchBar.vue'
 import { destinations } from "@/services/catalog";
 import PopularDestinations from "@/data/popularDestinations.json";
-import { applyLanguage } from "@/i18n";
+import { localePath } from "@/router";
 
 import logo from '@/assets/logo.png'
 
@@ -149,7 +149,7 @@ export default {
             this.$router.push({ name: "destinationDetails", params: { slug: destination.slug } })
         },
         setLang(lang) {
-            applyLanguage(lang)
+            this.$router.push(localePath(this.$route, lang))
         }
     },
 

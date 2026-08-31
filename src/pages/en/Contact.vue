@@ -1,0 +1,167 @@
+<template>
+  <div class="legal-page">
+    <v-container class="py-12 py-md-16">
+      <div class="text-center mb-8">
+        <div class="eyebrow"><bdi dir="ltr">SAFAR SIM</bdi></div>
+        <h1 class="page-title">Contact us</h1>
+        <p class="page-subtitle">
+          Our team is available to help you before, during and after your purchase.
+        </p>
+      </div>
+
+      <v-row justify="center">
+        <v-col cols="12" md="8" lg="7">
+          <v-card class="content-card" elevation="0">
+            <div class="contact-block">
+              <h2>Customer support</h2>
+              <p>
+                For any question about your order, your eSIM or your installation, you can contact us directly:
+              </p>
+
+              <div class="info-box">
+                <div class="info-item">
+                  <span class="label">Email</span>
+                  <a href="mailto:support@safarsim.net" class="value">support@safarsim.net</a>
+                </div>
+
+                <div class="info-item">
+                  <span class="label">Website</span>
+                  <a href="https://www.safarsim.net" class="value">www.safarsim.net</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-block">
+              <h2>Response times</h2>
+              <p>
+                We do our best to respond as quickly as possible, typically within 2 business days.
+              </p>
+            </div>
+
+            <div class="contact-block">
+              <h2>Assistance</h2>
+              <p>
+                Before requesting a refund, we invite you to contact us so we can quickly check and resolve the issue.
+              </p>
+            </div>
+
+            <div class="text-center mt-8">
+              <v-btn
+                color="deep-purple-accent-4"
+                rounded="xl"
+                size="large"
+                class="cta-btn"
+                href="mailto:support@safarsim.net"
+              >
+                Write to us
+              </v-btn>
+            </div>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+</template>
+
+<script setup>
+// Page statique
+</script>
+
+<style scoped>
+.legal-page {
+  background: linear-gradient(180deg, #f7f3ff 0%, #fffaf7 220px, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(111, 66, 193, 0.1);
+  color: #6f42c1;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.page-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: #241437;
+  margin-bottom: 12px;
+}
+
+.page-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #6b7280;
+}
+
+.content-card {
+  border-radius: 24px;
+  padding: 32px 24px;
+  border: 1px solid #eee7fb;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 20px 60px rgba(84, 51, 142, 0.08);
+}
+
+.contact-block + .contact-block {
+  margin-top: 28px;
+}
+
+.contact-block h2 {
+  color: #6f42c1;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.contact-block p {
+  color: #374151;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.info-box {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #faf7ff;
+  border: 1px solid #eee7fb;
+}
+
+.info-item + .info-item {
+  margin-top: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.value {
+  color: #241437;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.value:hover {
+  color: #6f42c1;
+}
+
+.cta-btn {
+  text-transform: none;
+  font-weight: 700;
+  padding-inline: 28px;
+}
+
+@media (min-width: 960px) {
+  .content-card {
+    padding: 42px 40px;
+  }
+}
+</style>

@@ -176,7 +176,7 @@
     "total": "Total",
     "payment": "Paiement",
     "paymentAndDelivery": "Paiement et livraison",
-    "buyButton": "Payer en toute sécurité avec Stripe",
+    "buyButton": "Paiement simple et sécurisé",
     "checkoutContactError": "Saisissez votre nom complet et deux adresses e-mail valides et identiques.",
     "checkoutTermsError": "Acceptez les politiques avant de continuer vers le paiement.",
     "checkoutError": "Impossible de lancer le paiement sécurisé. Veuillez réessayer.",
