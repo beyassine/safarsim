@@ -11,43 +11,42 @@ export const SUPPORTED_LOCALES = ["fr", "en", "ar"]
 const PREFIXED_LOCALES = SUPPORTED_LOCALES.filter((locale) => locale !== "en")
 const LOCALE_PATTERN = PREFIXED_LOCALES.join("|")
 
-// Destination, region, home and cart URLs intentionally keep shared slugs.
-// The remaining public pages use a canonical slug for each language.
+// Every locale uses the same slug; only the optional language prefix changes.
 export const LOCALIZED_ROUTE_PATHS = {
   PaymentSuccess: {
-    fr: "/paiement-reussi",
+    fr: "/payment-success",
     en: "/payment-success",
-    ar: "/نجاح-الدفع",
+    ar: "/payment-success",
   },
   compatibility: {
-    fr: "/compatibilite",
+    fr: "/compatibility",
     en: "/compatibility",
-    ar: "/التوافق",
+    ar: "/compatibility",
   },
-  help: { fr: "/aide", en: "/help", ar: "/المساعدة" },
-  pricing: { fr: "/tarifs", en: "/pricing", ar: "/الأسعار" },
+  help: { fr: "/help", en: "/help", ar: "/help" },
+  pricing: { fr: "/pricing", en: "/pricing", ar: "/pricing" },
   privacyPolicy: {
-    fr: "/politique-de-confidentialite",
+    fr: "/privacy-policy",
     en: "/privacy-policy",
-    ar: "/سياسة-الخصوصية",
+    ar: "/privacy-policy",
   },
   refundPolicy: {
-    fr: "/politique-de-remboursement",
+    fr: "/refund-policy",
     en: "/refund-policy",
-    ar: "/سياسة-الاسترداد",
+    ar: "/refund-policy",
   },
   termsOfService: {
-    fr: "/conditions-utilisation",
+    fr: "/terms-of-service",
     en: "/terms-of-service",
-    ar: "/شروط-الخدمة",
+    ar: "/terms-of-service",
   },
   digitalDeliveryPolicy: {
-    fr: "/politique-de-livraison-numerique",
+    fr: "/digital-delivery-policy",
     en: "/digital-delivery-policy",
-    ar: "/سياسة-التسليم-الرقمي",
+    ar: "/digital-delivery-policy",
   },
-  contact: { fr: "/contact", en: "/contact", ar: "/اتصل-بنا" },
-  about: { fr: "/a-propos", en: "/about", ar: "/من-نحن" },
+  contact: { fr: "/contact", en: "/contact", ar: "/contact" },
+  about: { fr: "/about", en: "/about", ar: "/about" },
 }
 
 const LOCALIZED_COMPONENTS = {

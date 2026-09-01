@@ -52,33 +52,17 @@ if (destinationSlugs.some((slug) => !slug) || new Set(destinationSlugs).size !==
   throw new Error("Destination English URL slugs must be present and unique")
 }
 
-const localizedPublicPages = {
-  compatibility: { en: "/compatibility", fr: "/compatibilite", ar: "/التوافق" },
-  help: { en: "/help", fr: "/aide", ar: "/المساعدة" },
-  pricing: { en: "/pricing", fr: "/tarifs", ar: "/الأسعار" },
-  privacyPolicy: {
-    en: "/privacy-policy",
-    fr: "/politique-de-confidentialite",
-    ar: "/سياسة-الخصوصية",
-  },
-  refundPolicy: {
-    en: "/refund-policy",
-    fr: "/politique-de-remboursement",
-    ar: "/سياسة-الاسترداد",
-  },
-  termsOfService: {
-    en: "/terms-of-service",
-    fr: "/conditions-utilisation",
-    ar: "/شروط-الخدمة",
-  },
-  digitalDeliveryPolicy: {
-    en: "/digital-delivery-policy",
-    fr: "/politique-de-livraison-numerique",
-    ar: "/سياسة-التسليم-الرقمي",
-  },
-  contact: { en: "/contact", fr: "/contact", ar: "/اتصل-بنا" },
-  about: { en: "/about", fr: "/a-propos", ar: "/من-نحن" },
-}
+const publicPagePaths = [
+  "/compatibility",
+  "/help",
+  "/pricing",
+  "/privacy-policy",
+  "/refund-policy",
+  "/terms-of-service",
+  "/digital-delivery-policy",
+  "/contact",
+  "/about",
+]
 
 const entries = new Map()
 const localePrefix = (locale) => locale === "en" ? "" : `/${locale}`
@@ -104,23 +88,36 @@ function add(pathname, record, fallbackLastmod = sourceDates.router) {
 
   const url = new URL(encodeURI(pathname), `${siteUrl}/`).toString()
   entries.set(url, { url, lastmod: actualLastmod(record) || fallbackLastmod })
+  return url
 }
 
-for (const locale of locales) {
-  add(localizedPath(locale, "/"), null, sourceDates.home)
-  add(localizedPath(locale, "/esim"), null, sourceDates.destinations)
+function addLocalized(paths, record, fallbackLastmod = sourceDates.router) {
+  const alternates = Object.fromEntries(locales.map((locale) => [
+    locale,
+    new URL(encodeURI(localizedPath(locale, paths[locale])), `${siteUrl}/`).toString(),
+  ]))
 
-  for (const destination of destinations) {
-    add(localizedPath(locale, `/esim/${destinationUrlSlug(destination)}`), destination, sourceDates.destinations)
-  }
-
-  for (const region of regions) {
-    add(localizedPath(locale, `/regions/${region.slug}`), region, sourceDates.regions)
+  for (const locale of locales) {
+    const url = add(localizedPath(locale, paths[locale]), record, fallbackLastmod)
+    if (url) entries.get(url).alternates = alternates
   }
 }
 
-for (const paths of Object.values(localizedPublicPages)) {
-  for (const locale of locales) add(localizedPath(locale, paths[locale]))
+addLocalized(Object.fromEntries(locales.map((locale) => [locale, "/"])), null, sourceDates.home)
+addLocalized(Object.fromEntries(locales.map((locale) => [locale, "/esim"])), null, sourceDates.destinations)
+
+for (const destination of destinations) {
+  const pathname = `/esim/${destinationUrlSlug(destination)}`
+  addLocalized(Object.fromEntries(locales.map((locale) => [locale, pathname])), destination, sourceDates.destinations)
+}
+
+for (const region of regions) {
+  const pathname = `/regions/${region.slug}`
+  addLocalized(Object.fromEntries(locales.map((locale) => [locale, pathname])), region, sourceDates.regions)
+}
+
+for (const pathname of publicPagePaths) {
+  addLocalized(Object.fromEntries(locales.map((locale) => [locale, pathname])))
 }
 
 // Guides are included automatically when the project adds src/data/guides.json.
@@ -130,10 +127,11 @@ if (fs.existsSync(guidesFile)) {
   const guides = JSON.parse(fs.readFileSync(guidesFile, "utf8"))
   const guidesLastmod = sourceLastmod("src/data/guides.json")
   for (const guide of guides) {
-    for (const locale of locales) {
-      const pathname = guide.paths?.[locale] || `/guides/${guide.slugs?.[locale] || guide.slug}`
-      add(localizedPath(locale, pathname), guide, guidesLastmod)
-    }
+    const paths = Object.fromEntries(locales.map((locale) => [
+      locale,
+      guide.paths?.[locale] || `/guides/${guide.slugs?.[locale] || guide.slug}`,
+    ]))
+    addLocalized(paths, guide, guidesLastmod)
   }
 }
 
@@ -146,16 +144,18 @@ const escapeXml = (value) => value
 
 const urls = [...entries.values()]
   .sort((a, b) => a.url.localeCompare(b.url))
-  .map(({ url, lastmod }) => [
+  .map(({ url, lastmod, alternates }) => [
     "  <url>",
     `    <loc>${escapeXml(url)}</loc>`,
+    ...locales.map((locale) => `    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(alternates[locale])}" />`),
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(alternates.en)}" />`,
     lastmod ? `    <lastmod>${escapeXml(lastmod)}</lastmod>` : null,
     "  </url>",
   ].filter(Boolean).join("\n"))
   .join("\n")
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls}
 </urlset>
 `
