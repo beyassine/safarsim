@@ -9,6 +9,12 @@ export function slugifyDestinationName(value) {
 }
 
 export function destinationUrlSlug(destination) {
+  if (destination?.iso === 'TR' || destination?.slug === 'turquie') {
+    return 'turkiye'
+  }
+  if (destination?.iso === 'ES' || destination?.slug === 'espagne') {
+    return 'spain'
+  }
   if (destination?.slug === 'republique-democratique-du-congo') {
     return 'democratic-republic-of-the-congo'
   }

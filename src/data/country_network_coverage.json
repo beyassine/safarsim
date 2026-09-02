@@ -1,0 +1,2853 @@
+[
+  {
+    "country": "Aaland Islands",
+    "isocode": "AX",
+    "operators": [
+      "Telia Finland",
+      "Ålands Telekommunikation Ab"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Afghanistan",
+    "isocode": "AF",
+    "operators": [
+      "Afghan Wireless Communication Company",
+      "MTN Afghanistan"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Albania",
+    "isocode": "AL",
+    "operators": [
+      "Vodafone Albania",
+      "One Albania sh.a"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Algeria",
+    "isocode": "DZ",
+    "operators": [
+      "Ooredoo",
+      "ATM Mobilis",
+      "Orascom Telecom Algerie SPA"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Andorra",
+    "isocode": "AD",
+    "operators": [
+      "Andorra Telecom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Angola",
+    "isocode": "AO",
+    "operators": [
+      "Africell Angola",
+      "Angola Unitel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Anguilla",
+    "isocode": "AI",
+    "operators": [
+      "Digicel",
+      "FLOW Anguilla"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "isocode": "AG",
+    "operators": [
+      "Digicel",
+      "FLOW Antigua"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Argentina",
+    "isocode": "AR",
+    "operators": [
+      "Movistar",
+      "Claro Argentina"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Armenia",
+    "isocode": "AM",
+    "operators": [
+      "Viva-MTS",
+      "Team Telecom  Armenia"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Aruba",
+    "isocode": "AW",
+    "operators": [
+      "Digicel Aruba",
+      "Digicel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Australia",
+    "isocode": "AU",
+    "operators": [
+      "SingTel Optus Pty Limited",
+      "Telstra Australia Ltd"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Austria",
+    "isocode": "AT",
+    "operators": [
+      "Hutchinson Austria",
+      "A1 (Austria)",
+      "3 Austria"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Azerbaijan",
+    "isocode": "AZ",
+    "operators": [
+      "Azercell Telekom MMC",
+      "Bakcell Llc"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Bahamas",
+    "isocode": "BS",
+    "operators": [
+      "Aliv"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Bahrain",
+    "isocode": "BH",
+    "operators": [
+      "STC Bahrain B.S.C",
+      "Zain (Bahrain) B.S.C. (zain BH)"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Bangladesh",
+    "isocode": "BD",
+    "operators": [
+      "Grameenphone Ltd",
+      "Banglalink Digital Communications Ltd."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Barbados",
+    "isocode": "BB",
+    "operators": [
+      "Digicel",
+      "FLOW Barbados"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Belarus",
+    "isocode": "BY",
+    "operators": [
+      "Belarusian Telecommunications Network CJSC",
+      "MDC VELCOM"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Belgium",
+    "isocode": "BE",
+    "operators": [
+      "Proximus  Belgium",
+      "Orange (Belgium)",
+      "Telenet Group NV/SA"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Belize",
+    "isocode": "BZ",
+    "operators": [
+      "DigiCell",
+      "Speednet"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Benin",
+    "isocode": "BJ",
+    "operators": [
+      "ETISALAT BENIN SA",
+      "MTN Benin"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Bermuda",
+    "isocode": "BM",
+    "operators": [
+      "Digicel",
+      "One Communications"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Bolivia",
+    "isocode": "BO",
+    "operators": [
+      "Telefonica Celular de Bolivia S.A."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Bonaire, saint Eustatius and Saba",
+    "isocode": "BQ",
+    "operators": [
+      "Digicel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "isocode": "BA",
+    "operators": [
+      "HT Eronet",
+      "BH Telecom JSC Sarajevo"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Bosnia And Herzegovina",
+    "isocode": "BA",
+    "operators": [
+      "BH Telecom-- Joint Stock Company"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Botswana",
+    "isocode": "BW",
+    "operators": [
+      "Mascom Wireless (Pty) Limited",
+      "Orange Botswana"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Brazil",
+    "isocode": "BR",
+    "operators": [
+      "Vivo",
+      "TIM S.A.",
+      "Claro"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Brunei Darussalam",
+    "isocode": "BN",
+    "operators": [
+      "UNN"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Bulgaria",
+    "isocode": "BG",
+    "operators": [
+      "A1 (Bulgaria)",
+      "Cetin (Bulgaria)",
+      "Vivacom (Bulgaria) Telemach United Group"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Burkina Faso",
+    "isocode": "BF",
+    "operators": [
+      "Orange Burkina Faso S.A",
+      "Office national des telecommunications (ONATEL)"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Burundi",
+    "isocode": "BI",
+    "operators": [
+      "Econet Leo SA",
+      "Viettel Burundi S.A"
+    ],
+    "technologies": [
+      "2G",
+      "3G"
+    ]
+  },
+  {
+    "country": "Cambodia",
+    "isocode": "KH",
+    "operators": [
+      "metfone",
+      "Smart Axiata Co.-- Ltd."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Cameroon",
+    "isocode": "CM",
+    "operators": [
+      "Cameroon Orange",
+      "MTN Cameroon"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Canada",
+    "isocode": "CA",
+    "operators": [
+      "TELUS Communications Inc.",
+      "Bell Mobility Inc.",
+      "Rogers Communications"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Canary Islands",
+    "isocode": "IC",
+    "operators": [
+      "Orange Espagne, S.A",
+      "Vodafone Spain",
+      "Xfera Moviles SA"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Cape Verde",
+    "isocode": "CV",
+    "operators": [
+      "Unitel",
+      "CV MOVEL"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Cayman Islands",
+    "isocode": "KY",
+    "operators": [
+      "Digicel",
+      "FLOW Cayman"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Central African Republic",
+    "isocode": "CF",
+    "operators": [
+      "Orange Centrafrique",
+      "ATLANTIQUE TELECOM CENTRAFRIQUE SA"
+    ],
+    "technologies": [
+      "2G",
+      "3G"
+    ]
+  },
+  {
+    "country": "Chad",
+    "isocode": "TD",
+    "operators": [
+      "Airtel Chad",
+      "Millicom Chad"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Chile",
+    "isocode": "CL",
+    "operators": [
+      "WOM",
+      "Movistar Chile"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "China",
+    "isocode": "CN",
+    "operators": [
+      "China Mobile Communications Corporation",
+      "China Unicom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Colombia",
+    "isocode": "CO",
+    "operators": [
+      "Colombia Movil S.A. (Tigo)",
+      "Colombia Telecomunicaciones (Movistar)"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Congo",
+    "isocode": "CG",
+    "operators": [
+      "Airtel Congo B",
+      "MTN Congo Brazzaville"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Costa Rica",
+    "isocode": "CR",
+    "operators": [
+      "Instituto Costarricense de Electricidad - ICE",
+      "LIBERTY COSTA RICA",
+      "Claro CR Telecomunicaciones, S.A."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Croatia",
+    "isocode": "HR",
+    "operators": [
+      "Telemach (Croatia) United Group",
+      "A1 (Vipnet Croatia)",
+      "Hrvatski Telekom d.d."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Cuba",
+    "isocode": "CU",
+    "operators": [
+      "Cubacel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Curacao",
+    "isocode": "CW",
+    "operators": [
+      "Digicel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Cyprus",
+    "isocode": "CY",
+    "operators": [
+      "Cyta (Cyprus)",
+      "Epic Cyprus",
+      "Primetel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Czech Republic",
+    "isocode": "CZ",
+    "operators": [
+      "O2 Czech Republic a.s.",
+      "T-Mobile Czech",
+      "Vodafone Czech Republic"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "isocode": "CD",
+    "operators": [
+      "Airtel DRC",
+      "Orange SA",
+      "Orange RDC sarl"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Denmark",
+    "isocode": "DK",
+    "operators": [
+      "Hutchinson Denmark",
+      "Telia Denmark",
+      "TDC A/S"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Dominica",
+    "isocode": "DM",
+    "operators": [
+      "Digicel",
+      "FLOW Dominica"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Dominican Republic",
+    "isocode": "DO",
+    "operators": [
+      "ALTICE"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "East Timor",
+    "isocode": "TL",
+    "operators": [
+      "Viettel"
+    ],
+    "technologies": [
+      "2G",
+      "3G"
+    ]
+  },
+  {
+    "country": "Ecuador",
+    "isocode": "EC",
+    "operators": [
+      "OTECEL S.A"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Egypt",
+    "isocode": "EG",
+    "operators": [
+      "Orange Egypt",
+      "ETISALAT"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "El Salvador",
+    "isocode": "SV",
+    "operators": [
+      "Tigo",
+      "Movistar El Salvador",
+      "Digicel El Salvador"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Estonia",
+    "isocode": "EE",
+    "operators": [
+      "Telia Eesti AS",
+      "Elisa Eesti",
+      "Tele2 Eesti AS"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Ethiopia",
+    "isocode": "ET",
+    "operators": [
+      "Ethio Telecom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Faroe Islands",
+    "isocode": "FO",
+    "operators": [
+      "Vodafone Faroe Islands",
+      "Faroese Telecom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Fiji",
+    "isocode": "FJ",
+    "operators": [
+      "Digicel Fiji Limited",
+      "Vodafone Fiji Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Finland",
+    "isocode": "FI",
+    "operators": [
+      "Telia Finland Oyj",
+      "Elisa Oyj",
+      "Alands Telekommunikation Ab"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "France",
+    "isocode": "FR",
+    "operators": [
+      "Orange (France)",
+      "Bouygues Télécom",
+      "Free Mobile Iliad"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "French Guiana",
+    "isocode": "GF",
+    "operators": [
+      "Digicel Antilles Françaises Guyane",
+      "Iliad/Free"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "French Polynesia",
+    "isocode": "PF",
+    "operators": [
+      "Vodafone French Polynesia",
+      "Vini S.A.S."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Gabon",
+    "isocode": "GA",
+    "operators": [
+      "ZAIN GABON SA",
+      "Libertis sa"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Gambia",
+    "isocode": "GM",
+    "operators": [
+      "Comium",
+      "AFRICELL",
+      "QCEL"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Georgia",
+    "isocode": "GE",
+    "operators": [
+      "Beeline Georgia",
+      "Silknet",
+      "Magticom Ltd"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Germany",
+    "isocode": "DE",
+    "operators": [
+      "Telefonica  Germany",
+      "Vodafone GmbH",
+      "Telefónica Germany GmbH & Co. OHG"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Ghana",
+    "isocode": "GH",
+    "operators": [
+      "Vodafone Ghana",
+      "AT Ghana"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Gibraltar",
+    "isocode": "GI",
+    "operators": [
+      "Gibtelecom Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Greece",
+    "isocode": "GR",
+    "operators": [
+      "NOVA Telemach (ex Wind Hellas )",
+      "Vodafone Greece",
+      "NOVA"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Greenland",
+    "isocode": "GL",
+    "operators": [
+      "Tele Greenland A/S"
+    ],
+    "technologies": [
+      "2G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Grenada",
+    "isocode": "GD",
+    "operators": [
+      "Digicel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Guadeloupe",
+    "isocode": "GP",
+    "operators": [
+      "Digicel Guadeloupe",
+      "Iliad/Free"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Guam, Northern Mariana Islands",
+    "isocode": "GU",
+    "operators": [
+      "IT&E"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Guatemala",
+    "isocode": "GT",
+    "operators": [
+      "Comunicaciones Celulares S.A.",
+      "Telecomunicaciones de Guatemala S.A."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Guernsey",
+    "isocode": "GG",
+    "operators": [
+      "JT (Jersey) Limited",
+      "Sure (Guernsey) Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Guinea",
+    "isocode": "GN",
+    "operators": [
+      "MTN Guinea Conakry"
+    ],
+    "technologies": [
+      "2G",
+      "3G"
+    ]
+  },
+  {
+    "country": "Guinea-Bissau",
+    "isocode": "GW",
+    "operators": [
+      "Orange Bissau",
+      "MTN Guinea Bissau"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Guyana",
+    "isocode": "GY",
+    "operators": [
+      "Digicel Guyana"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Haiti",
+    "isocode": "HT",
+    "operators": [
+      "Digicel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Hawaii",
+    "isocode": "US-HI",
+    "operators": [
+      "Verizon Wireless",
+      "AT&T Mobility",
+      "T-Mobile USA"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Honduras",
+    "isocode": "HN",
+    "operators": [
+      "Telefónica Celular. S.A. (CELTEL)"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Hong Kong",
+    "isocode": "HK",
+    "operators": [
+      "China Mobile Hong Kong Company Ltd.",
+      "SmarTone Mobile Communications Ltd",
+      "Hong Kong Telecommunications (HKT) Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Hungary",
+    "isocode": "HU",
+    "operators": [
+      "Yettel (Cetin)",
+      "Vodafone",
+      "Magyar Telekom Plc"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Iceland",
+    "isocode": "IS",
+    "operators": [
+      "Nova Iceland",
+      "Siminn hf.",
+      "Syn hf"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "India",
+    "isocode": "IN",
+    "operators": [
+      "Reliance Jio Infocomm Limited",
+      "Airtel India"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Indonesia",
+    "isocode": "ID",
+    "operators": [
+      "PT Telekomunikasi Selular",
+      "Indosat Ooredoo Hutchison",
+      "PT. Hutchison 3 Indonesia"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Iran",
+    "isocode": "IR",
+    "operators": [
+      "Irancell Telecommunication Service Co.",
+      "RighTel Communications Services CO.",
+      "Telecommunication Infrastructure Company (TIC)"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Iraq",
+    "isocode": "IQ",
+    "operators": [
+      "Zain Iraq",
+      "Korek Telecom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Ireland",
+    "isocode": "IE",
+    "operators": [
+      "3 Ireland",
+      "Meteor Mobile Ireland",
+      "Vodafone Ireland"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Isle of Man",
+    "isocode": "IM",
+    "operators": [
+      "Manx Telecom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Israel",
+    "isocode": "IL",
+    "operators": [
+      "Partner Communications Company Ltd.",
+      "Pelephone Communication Ltd.",
+      "Hot Mobile"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Italy",
+    "isocode": "IT",
+    "operators": [
+      "Windtre (Wind/Hutchison)",
+      "Iliad",
+      "Vodafone Italy"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Ivory Coast",
+    "isocode": "CI",
+    "operators": [
+      "Orange Ivory Coast",
+      "MTN Ivory Coast"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Jamaica",
+    "isocode": "JM",
+    "operators": [
+      "Digicel (Jamaica) Limited",
+      "FLOW Jamaica"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Japan",
+    "isocode": "JP",
+    "operators": [
+      "NTT DoCoMo",
+      "Rakuten Mobile, Inc.",
+      "KDDI Corporation"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Jersey",
+    "isocode": "JE",
+    "operators": [
+      "JT (Jersey) Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Jordan",
+    "isocode": "JO",
+    "operators": [
+      "Umniah Mobile Company",
+      "Zain Jordan"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Kazakhstan",
+    "isocode": "KZ",
+    "operators": [
+      "KAR-TEL LLP",
+      "Tele2 Kazakhstan"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Kenya",
+    "isocode": "KE",
+    "operators": [
+      "Airtel Networks Kenya Ltd.",
+      "Safaricom Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Korea, Republic of",
+    "isocode": "KR",
+    "operators": [
+      "SK Telecom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Kuwait",
+    "isocode": "KW",
+    "operators": [
+      "Zain Kuwait",
+      "Ooredoo Kuwait",
+      "Kuwait Telecom Company"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Kyrgyzstan",
+    "isocode": "KG",
+    "operators": [
+      "Sky Mobile LLC"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Laos",
+    "isocode": "LA",
+    "operators": [
+      "Star Telecom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Latvia",
+    "isocode": "LV",
+    "operators": [
+      "LMT (Telia) Latvia",
+      "Bite Latvija",
+      "SIA  Tele2"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Lebanon",
+    "isocode": "LB",
+    "operators": [
+      "MIC 1 S.A.L."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Lesotho",
+    "isocode": "LS",
+    "operators": [
+      "VODACOM"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Liberia",
+    "isocode": "LR",
+    "operators": [
+      "Lonestar Communication Corporation",
+      "Orange Liberia"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Liechtenstein",
+    "isocode": "LI",
+    "operators": [
+      "A1 (Telecom Liechtenstein)",
+      "Salt (Liechtenstein) AG"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Lithuania",
+    "isocode": "LT",
+    "operators": [
+      "Telia Lietuva AB",
+      "Bite Lithuania",
+      "Tele2 UAB"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Luxembourg",
+    "isocode": "LU",
+    "operators": [
+      "Proximus (Tango) Lux",
+      "Orange (Luxembourg)",
+      "POST Luxembourg"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Macao",
+    "isocode": "MO",
+    "operators": [
+      "Companhia de Telecomunicacoes de Macau SARL",
+      "Hutchison Telephone (Macau) Company Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Macedonia",
+    "isocode": "MK",
+    "operators": [
+      "VIP Operator Dooel Skopje",
+      "T-Mobile Macedonia",
+      "A1 Makedonija DOOEL Skopje"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Madagascar",
+    "isocode": "MG",
+    "operators": [
+      "Airtel Madagascar",
+      "Orange Madagascar"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Malawi",
+    "isocode": "MW",
+    "operators": [
+      "Airtel Malawi"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Malaysia",
+    "isocode": "MY",
+    "operators": [
+      "Digi Telecommunications",
+      "Celcom Axiata Berhad",
+      "U Mobile Sdn Bhd"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Mali",
+    "isocode": "ML",
+    "operators": [
+      "Orange Mali SA"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Malta",
+    "isocode": "MT",
+    "operators": [
+      "Melita Ltd.",
+      "Go",
+      "Epic Malta + Maritime  (Vodafone)"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Martinique",
+    "isocode": "MQ",
+    "operators": [
+      "Iliad/Free",
+      "Digicel Antilles Françaises Guyane"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Mauritania",
+    "isocode": "MR",
+    "operators": [
+      "La Mauritano-Tunisienne des telecommunications S.A.",
+      "Mauritel"
+    ],
+    "technologies": [
+      "2G",
+      "3G"
+    ]
+  },
+  {
+    "country": "Mauritius",
+    "isocode": "MU",
+    "operators": [
+      "my.t",
+      "EmTel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Mayotte, Réunion",
+    "isocode": "YT",
+    "operators": [
+      "Orange La Reunion"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Mexico",
+    "isocode": "MX",
+    "operators": [
+      "Movistar Mexico",
+      "AT&T",
+      "Telcel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Moldova, Republic of",
+    "isocode": "MD",
+    "operators": [
+      "Orange",
+      "Mold Telecom",
+      "JVC Moldcell JSC"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Monaco",
+    "isocode": "MC",
+    "operators": [
+      "Monaco Telecom International"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Mongolia",
+    "isocode": "MN",
+    "operators": [
+      "Mongolia Mobicom",
+      "Unitel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Montenegro",
+    "isocode": "ME",
+    "operators": [
+      "Mtel",
+      "One",
+      "T-Mobile Montenegro"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Montserrat",
+    "isocode": "MS",
+    "operators": [
+      "Digicel",
+      "FLOW Montserrat"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Morocco",
+    "isocode": "MA",
+    "operators": [
+      "Orange Maroc",
+      "Maroc Telecom",
+      "Wana"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Mozambique",
+    "isocode": "MZ",
+    "operators": [
+      "MOVITEL-- SA",
+      "Vodacom Mozambique (VM-- SA)"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Myanmar",
+    "isocode": "MM",
+    "operators": [
+      "Myanmar National Tele & Communications Company Limited"
+    ],
+    "technologies": [
+      "2G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Namibia",
+    "isocode": "NA",
+    "operators": [
+      "Powercom (Pty) Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G"
+    ]
+  },
+  {
+    "country": "Nauru",
+    "isocode": "NR",
+    "operators": [
+      "Digicel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Nepal",
+    "isocode": "NP",
+    "operators": [
+      "Nepal Doorsanchar Company Ltd.",
+      "Spice Nepal"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Netherlands",
+    "isocode": "NL",
+    "operators": [
+      "KPN B.V.",
+      "Vodafone Libertel BV"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Netherlands Antilles",
+    "isocode": "AN",
+    "operators": [
+      "Digicel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "New Zealand",
+    "isocode": "NZ",
+    "operators": [
+      "Spark New Zealand",
+      "Vodafone New Zealand Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Nicaragua",
+    "isocode": "NI",
+    "operators": [
+      "Millicom/Tigo"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Niger",
+    "isocode": "NE",
+    "operators": [
+      "airtel Niger",
+      "Orange"
+    ],
+    "technologies": [
+      "2G",
+      "3G"
+    ]
+  },
+  {
+    "country": "Nigeria",
+    "isocode": "NG",
+    "operators": [
+      "Airtel Nigeria",
+      "MTN Nigeria",
+      "Globacom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Northern Cyprus",
+    "isocode": "CYP",
+    "operators": [
+      "Turkcell Iletisim Hizmetleri A.S."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Norway",
+    "isocode": "NO",
+    "operators": [
+      "Telia Norge AS",
+      "ICE"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Oman",
+    "isocode": "OM",
+    "operators": [
+      "Omantel",
+      "OMAN VODAFONE"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Pakistan",
+    "isocode": "PK",
+    "operators": [
+      "Jazz",
+      "Telenor Pakistan (Private) Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Palestine",
+    "isocode": "PS",
+    "operators": [
+      "JAWALL"
+    ],
+    "technologies": [
+      "2G"
+    ]
+  },
+  {
+    "country": "Panama",
+    "isocode": "PA",
+    "operators": [
+      "Tigo Panamá"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Papua New Guinea",
+    "isocode": "PG",
+    "operators": [
+      "BMobile Limited",
+      "Digicel (PNG) Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Paraguay",
+    "isocode": "PY",
+    "operators": [
+      "Telefonica Celular Del Paraguay S.A. (Telecel S.A.)",
+      "Claro Paraguay"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Peru",
+    "isocode": "PE",
+    "operators": [
+      "ENTEL PERU S.A.",
+      "Movistar Peru",
+      "Claro Peru"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Philippines",
+    "isocode": "PH",
+    "operators": [
+      "Globe Telecom",
+      "Smart Philippines"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Poland",
+    "isocode": "PL",
+    "operators": [
+      "Poland Polkomtel",
+      "Orange Polska",
+      "PLAY"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Portugal",
+    "isocode": "PT",
+    "operators": [
+      "NOS Comunicacoes, S.A.",
+      "MEO",
+      "Vodafone Portugal"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Puerto Rico",
+    "isocode": "PR",
+    "operators": [
+      "AT&T Mobility",
+      "T-Mobile USA"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Qatar",
+    "isocode": "QA",
+    "operators": [
+      "Vodafone",
+      "Ooredoo Qatar",
+      "Vodafone Qatar Q.S.C."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Reunion",
+    "isocode": "RE",
+    "operators": [
+      "Orange Reunion",
+      "Societe Reunionnaise du Radiote l phone"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Romania",
+    "isocode": "RO",
+    "operators": [
+      "S.C. Orange Romania S.A.",
+      "Vodafone Romania",
+      "Telekom Romania Mobile Communications S.A."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Russia",
+    "isocode": "RU",
+    "operators": [
+      "Beeline"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Rwanda",
+    "isocode": "RW",
+    "operators": [
+      "Airtel Rwanda Ltd.",
+      "MTN Rwandacell Ltd.",
+      "Tigo Rwanda"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Saint Barthelemy",
+    "isocode": "BL",
+    "operators": [
+      "Digicel Mobile Antilles",
+      "Iliad/Free",
+      "Digicel Antilles"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "isocode": "KN",
+    "operators": [
+      "Digicel",
+      "FLOW St Kitts & Nevis"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Saint Lucia",
+    "isocode": "LC",
+    "operators": [
+      "Digicel",
+      "FLOW St. Lucia"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Saint Martin",
+    "isocode": "MF",
+    "operators": [
+      "Digicel Mobile Antilles",
+      "Iliad/Free",
+      "Digicel Antilles"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Saint Vincent and the Grenadines",
+    "isocode": "VC",
+    "operators": [
+      "Digicel",
+      "FLOW St. Vincent & the Grenadines"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Samoa",
+    "isocode": "WS",
+    "operators": [
+      "Digicel Western Samoa"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Sao Tome And Principe",
+    "isocode": "ST",
+    "operators": [
+      "Unitel STP Sarl"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Saudi Arabia",
+    "isocode": "SA",
+    "operators": [
+      "MTC Saudi Arabia (Zain)",
+      "Mobily",
+      "STC"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Senegal",
+    "isocode": "SN",
+    "operators": [
+      "Orange Senegal",
+      "Sentel gsm SA (TIGO)"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Serbia",
+    "isocode": "RS",
+    "operators": [
+      "Telnor/Cetin",
+      "A1/VIP",
+      "Telekom Srbija a.d."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Seychelles",
+    "isocode": "SC",
+    "operators": [
+      "Airtel Seychelles"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Sierra Leone",
+    "isocode": "SL",
+    "operators": [
+      "Africell"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Singapore",
+    "isocode": "SG",
+    "operators": [
+      "SIMBA",
+      "Singtel",
+      "StarHub Ltd"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Slovakia",
+    "isocode": "SK",
+    "operators": [
+      "Orange Slovensko, a.s.",
+      "O2 Slovakia-- s.r.o."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Slovenia",
+    "isocode": "SI",
+    "operators": [
+      "Telemach (Slovenia) United Group",
+      "A1 (Slovenije)",
+      "Mobitel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "South Africa",
+    "isocode": "ZA",
+    "operators": [
+      "Telkom SA Ltd",
+      "Vodacom",
+      "MTN South Africa"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Spain",
+    "isocode": "ES",
+    "operators": [
+      "Orange (Spain)",
+      "Telefónica Móviles (Movistar)",
+      "Vodafone Spain"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Sri Lanka",
+    "isocode": "LK",
+    "operators": [
+      "Hutch Sri Lanka",
+      "Mobitel (Pvt) Ltd",
+      "Dialog Axiata PLC"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Sudan",
+    "isocode": "SD",
+    "operators": [
+      "MTN Sudan"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Suriname",
+    "isocode": "SR",
+    "operators": [
+      "Digicel"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Swaziland",
+    "isocode": "SZ",
+    "operators": [
+      "Swazi Mobile Ltd",
+      "MTN Swaziland"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Sweden",
+    "isocode": "SE",
+    "operators": [
+      "Telia Sweden",
+      "Hutchinson Sweden",
+      "Tele2 Sverige AB XX1149"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Switzerland",
+    "isocode": "CH",
+    "operators": [
+      "Salt Mobile SA",
+      "Swisscom (Switzerland) Ltd",
+      "Sunrise LLC"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Taiwan",
+    "isocode": "TW",
+    "operators": [
+      "Taiwan Mobile",
+      "Chunghwa Telecom"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Tajikistan",
+    "isocode": "TJ",
+    "operators": [
+      "Indigo-Tajikistan",
+      "TACOM LLC"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Tanzania, United Republic of",
+    "isocode": "TZ",
+    "operators": [
+      "Airtel Tanzania Limited",
+      "Vodacom Tanzania PLC"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Thailand",
+    "isocode": "TH",
+    "operators": [
+      "Advanced Wireless Network Company Ltd.",
+      "dtac TriNet Co.. Ltd.",
+      "National Telecom Public Company Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Togo",
+    "isocode": "TG",
+    "operators": [
+      "Atlantique Telecom Togo"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Tonga",
+    "isocode": "TO",
+    "operators": [
+      "Digicel Tonga Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "isocode": "TT",
+    "operators": [
+      "Digicel Trinidad and Tobago"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Trinidad And Tobago",
+    "isocode": "TT",
+    "operators": [
+      "Digicel Trinidad & Tobago"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Tunisia",
+    "isocode": "TN",
+    "operators": [
+      "Orange Tunisie, SA",
+      "Ooredoo Tunisie SA"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Turkey",
+    "isocode": "TR",
+    "operators": [
+      "AVEA .Iletisim Hizmetleri A.S",
+      "Turkcell Iletisim Hizmetleri A.S."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Turks and Caicos Islands",
+    "isocode": "TC",
+    "operators": [
+      "Digicel (Turks & Caicos)",
+      "Digicel Turks and Caicos",
+      "FLOW Turks and Caicos"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Uganda",
+    "isocode": "UG",
+    "operators": [
+      "Airtel Uganda",
+      "MTN Uganda"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Ukraine",
+    "isocode": "UA",
+    "operators": [
+      "KYIVSTAR Private Joint Stock Company",
+      "lifecell LLC"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "United Arab Emirates",
+    "isocode": "AE",
+    "operators": [
+      "Du",
+      "Etisalat United Arab Emirates"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "United Kingdom",
+    "isocode": "GB",
+    "operators": [
+      "Hutchison 3G UK Ltd",
+      "Virgin Media O2",
+      "Vodafone Ltd."
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "United States of America",
+    "isocode": "US",
+    "operators": [
+      "Verizon Wireless",
+      "AT&T Mobility",
+      "T-Mobile USA"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Uruguay",
+    "isocode": "UY",
+    "operators": [
+      "Movistar Uruguay",
+      "Antel",
+      "Claro Uruguay"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Uzbekistan",
+    "isocode": "UZ",
+    "operators": [
+      "Unitel LLC",
+      "Uzbektelekom",
+      "FE COSCOM LLC"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Vanuatu",
+    "isocode": "VU",
+    "operators": [
+      "Digicel Vanuatu"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Vatican City",
+    "isocode": "VA",
+    "operators": [
+      "Windtre (Wind/Hutchison)",
+      "Iliad",
+      "Vodafone Italy"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Venezuela",
+    "isocode": "VE",
+    "operators": [
+      "Venezuela TELCEL"
+    ],
+    "technologies": [
+      "2G",
+      "3G"
+    ]
+  },
+  {
+    "country": "Vietnam",
+    "isocode": "VN",
+    "operators": [
+      "Viettel Corporation",
+      "Vietnam Telecom Services Company",
+      "MOBIFONE CORPORATION"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Virgin Islands - British",
+    "isocode": "VG",
+    "operators": [
+      "Digicel",
+      "FLOW British Virgin Islands"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  },
+  {
+    "country": "Virgin Islands - United States",
+    "isocode": "VI",
+    "operators": [
+      "T-Mobile USA, Inc"
+    ],
+    "technologies": [
+      "2G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Zambia",
+    "isocode": "ZM",
+    "operators": [
+      "MTN Zambia",
+      "Celtel Zambia Limited"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G",
+      "5G"
+    ]
+  },
+  {
+    "country": "Zimbabwe",
+    "isocode": "ZW",
+    "operators": [
+      "Telecel Zimbabwe"
+    ],
+    "technologies": [
+      "2G",
+      "3G",
+      "4G"
+    ]
+  }
+]

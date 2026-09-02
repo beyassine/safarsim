@@ -6,10 +6,15 @@ import Region from "../pages/Region.vue"
 import Cart from "../pages/Cart.vue"
 import Home from "@/pages/Home.vue"
 import i18n, { applyLanguage, getDefaultLanguage, getPreferredLanguage } from "@/i18n"
+import regionCatalog from "@/data/regions.json"
 
 export const SUPPORTED_LOCALES = ["fr", "en", "ar"]
 const PREFIXED_LOCALES = SUPPORTED_LOCALES.filter((locale) => locale !== "en")
 const LOCALE_PATTERN = PREFIXED_LOCALES.join("|")
+const REGION_SLUG_PATTERN = regionCatalog
+  .filter((region) => region.slug !== "europe")
+  .map((region) => region.slug)
+  .join("|")
 
 // Every locale uses the same slug; only the optional language prefix changes.
 export const LOCALIZED_ROUTE_PATHS = {
@@ -19,10 +24,14 @@ export const LOCALIZED_ROUTE_PATHS = {
     ar: "/payment-success",
   },
   compatibility: {
-    fr: "/compatibility",
-    en: "/compatibility",
-    ar: "/compatibility",
+    fr: "/guides/compatibility",
+    en: "/guides/compatibility",
+    ar: "/guides/compatibility",
   },
+  europeDetails: { fr: "/esim/europe", en: "/esim/europe", ar: "/esim/europe" },
+  turkeyDetails: { fr: "/esim/turkiye", en: "/esim/turkiye", ar: "/esim/turkiye" },
+  spainDetails: { fr: "/esim/spain", en: "/esim/spain", ar: "/esim/spain" },
+  franceDetails: { fr: "/esim/france", en: "/esim/france", ar: "/esim/france" },
   help: { fr: "/help", en: "/help", ar: "/help" },
   pricing: { fr: "/pricing", en: "/pricing", ar: "/pricing" },
   privacyPolicy: {
@@ -47,18 +56,40 @@ export const LOCALIZED_ROUTE_PATHS = {
   },
   contact: { fr: "/contact", en: "/contact", ar: "/contact" },
   about: { fr: "/about", en: "/about", ar: "/about" },
+  iphoneEsimGuide: { fr: "/guides/install-esim-iphone", en: "/guides/install-esim-iphone", ar: "/guides/install-esim-iphone" },
+  androidEsimGuide: { fr: "/guides/install-esim-android", en: "/guides/install-esim-android", ar: "/guides/install-esim-android" },
 }
 
 const LOCALIZED_COMPONENTS = {
+  europeDetails: {
+    fr: () => import("@/pages/fr/esim/Europe.vue"),
+    en: () => import("@/pages/en/esim/Europe.vue"),
+    ar: () => import("@/pages/ar/esim/Europe.vue"),
+  },
+  turkeyDetails: {
+    fr: () => import("@/pages/fr/esim/Turkey.vue"),
+    en: () => import("@/pages/en/esim/Turkey.vue"),
+    ar: () => import("@/pages/ar/esim/Turkey.vue"),
+  },
+  spainDetails: {
+    fr: () => import("@/pages/fr/esim/Spain.vue"),
+    en: () => import("@/pages/en/esim/Spain.vue"),
+    ar: () => import("@/pages/ar/esim/Spain.vue"),
+  },
+  franceDetails: {
+    fr: () => import("@/pages/fr/esim/France.vue"),
+    en: () => import("@/pages/en/esim/France.vue"),
+    ar: () => import("@/pages/ar/esim/France.vue"),
+  },
   PaymentSuccess: {
     fr: () => import("@/pages/fr/PaymentSuccess.vue"),
     en: () => import("@/pages/en/PaymentSuccess.vue"),
     ar: () => import("@/pages/ar/PaymentSuccess.vue"),
   },
   compatibility: {
-    fr: () => import("@/pages/fr/Compatibility.vue"),
-    en: () => import("@/pages/en/Compatibility.vue"),
-    ar: () => import("@/pages/ar/Compatibility.vue"),
+    fr: () => import("@/pages/fr/guides/Compatibility.vue"),
+    en: () => import("@/pages/en/guides/Compatibility.vue"),
+    ar: () => import("@/pages/ar/guides/Compatibility.vue"),
   },
   help: {
     fr: () => import("@/pages/fr/Help.vue"),
@@ -100,6 +131,16 @@ const LOCALIZED_COMPONENTS = {
     en: () => import("@/pages/en/About.vue"),
     ar: () => import("@/pages/ar/About.vue"),
   },
+  iphoneEsimGuide: {
+    fr: () => import("@/pages/fr/guides/IphoneInstallation.vue"),
+    en: () => import("@/pages/en/guides/IphoneInstallation.vue"),
+    ar: () => import("@/pages/ar/guides/IphoneInstallation.vue"),
+  },
+  androidEsimGuide: {
+    fr: () => import("@/pages/fr/guides/AndroidInstallation.vue"),
+    en: () => import("@/pages/en/guides/AndroidInstallation.vue"),
+    ar: () => import("@/pages/ar/guides/AndroidInstallation.vue"),
+  },
 }
 
 const pageRoutes = [
@@ -119,19 +160,61 @@ const pageRoutes = [
     component: allDestinations
   },
   {
+    path: "/esim/europe",
+    name: "europeDetails",
+    component: LOCALIZED_COMPONENTS.europeDetails.en,
+  },
+  {
+    path: "/esim/turkiye",
+    name: "turkeyDetails",
+    component: LOCALIZED_COMPONENTS.turkeyDetails.en,
+  },
+  {
+    path: "/esim/spain",
+    name: "spainDetails",
+    component: LOCALIZED_COMPONENTS.spainDetails.en,
+  },
+  {
+    path: "/esim/france",
+    name: "franceDetails",
+    component: LOCALIZED_COMPONENTS.franceDetails.en,
+  },
+  {
+    path: "/esim/espagne",
+    redirect: (to) => `${to.params.lang ? `/${to.params.lang}` : ""}/esim/spain`,
+  },
+  {
+    path: "/esim/turkey",
+    redirect: (to) => `${to.params.lang ? `/${to.params.lang}` : ""}/esim/turkiye`,
+  },
+  {
+    path: "/esim/turquie",
+    redirect: (to) => `${to.params.lang ? `/${to.params.lang}` : ""}/esim/turkiye`,
+  },
+  {
+    path: `/esim/:slug(${REGION_SLUG_PATTERN})`,
+    name: "regionDetails",
+    component: Region,
+  },
+  {
     path: "/esim/:slug",
     name: "destinationDetails",
     component: Destination
   },
   {
-    path: "/regions/:slug",
-    name: "regionDetails",
-    component: Region
-  },
-  {
     path: "/cart",
     name: "cart",
     component: Cart
+  },
+  {
+    path: "/guides/install-esim-iphone",
+    name: "iphoneEsimGuide",
+    component: LOCALIZED_COMPONENTS.iphoneEsimGuide.en,
+  },
+  {
+    path: "/guides/install-esim-android",
+    name: "androidEsimGuide",
+    component: LOCALIZED_COMPONENTS.androidEsimGuide.en,
   },
   {
     path: "/payment-success",
@@ -209,6 +292,14 @@ const routes = pageRoutes.flatMap((route) => {
 })
 
 routes.push(
+  {
+    path: `/:lang(${LOCALE_PATTERN})?/compatibility`,
+    redirect: (to) => `${to.params.lang ? `/${to.params.lang}` : ""}/guides/compatibility`,
+  },
+  {
+    path: `/:lang(${LOCALE_PATTERN})?/regions/:slug`,
+    redirect: (to) => `${to.params.lang ? `/${to.params.lang}` : ""}/esim/${to.params.slug}`,
+  },
   {
     path: `/:lang(${LOCALE_PATTERN})?/destinations`,
     redirect: (to) => `${to.params.lang ? `/${to.params.lang}` : ""}/esim`,

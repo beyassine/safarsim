@@ -48,16 +48,16 @@
                     <v-col cols="6" md="2">
                         <h4 class="footer-title">{{ $t("footer.destinations") }}</h4>
                         <ul>
-                            <router-link class="text-decoration-none" to="/regions/europe">
+                            <router-link class="text-decoration-none" :to="`${localePrefix}/esim/europe`">
                             <li>{{ $t("footer.esimEurope") }}</li>
                             </router-link>
-                            <router-link class="text-decoration-none" to="/esim/saudi-arabia">
+                            <router-link class="text-decoration-none" :to="`${localePrefix}/esim/saudi-arabia`">
                             <li>{{ $t("footer.esimSaudiArabia") }}</li>
                             </router-link>
-                            <router-link class="text-decoration-none" to="/esim/turkey">
+                            <router-link class="text-decoration-none" :to="`${localePrefix}/esim/turkiye`">
                             <li>{{ $t("footer.esimTurkey") }}</li>
                             </router-link>
-                            <router-link class="text-decoration-none" to="/esim">
+                            <router-link class="text-decoration-none" :to="`${localePrefix}/esim`">
                             <li>{{ $t("footer.allDestinations") }}</li>
                             </router-link>
                         </ul>
@@ -91,7 +91,7 @@
                             <router-link class="text-decoration-none" to="/help">
                                 <li>{{ $t("footer.help") }}</li>
                             </router-link>
-                            <router-link class="text-decoration-none" to="/compatibility">
+                            <router-link class="text-decoration-none" to="/guides/compatibility">
                                 <li>{{ $t("footer.compatibility") }}</li>
                             </router-link>
                         </ul>
@@ -149,6 +149,9 @@ export default {
         };
     },
     computed: {
+        localePrefix() {
+            return this.$i18n.locale === "en" ? "" : `/${this.$i18n.locale}`;
+        },
     },
     methods: {
     },

@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "sitemap": "node scripts/generate-sitemap.js",
     "prebuild": "npm run sitemap",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build && node scripts/prerender-europe.js"
   },
   "dependencies": {
     "@stripe/stripe-js": "^9.13.0",
@@ -21,6 +21,7 @@
     "@mdi/font": "^7.4.47",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "puppeteer": "^25.9.0",
     "sass": "^1.98.0",
     "sass-loader": "^16.0.7",
     "vite-plugin-vuetify": "^2.1.3"

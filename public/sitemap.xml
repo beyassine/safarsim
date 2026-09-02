@@ -14,7 +14,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/about" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/about" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/ar/</loc>
@@ -30,15 +30,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/about" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/about" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/ar/compatibility</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/compatibility" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/compatibility" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/compatibility" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/compatibility" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/ar/contact</loc>
@@ -46,7 +38,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/contact" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/contact" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/ar/digital-delivery-policy</loc>
@@ -54,7 +46,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/digital-delivery-policy" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/digital-delivery-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/digital-delivery-policy" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/ar/esim</loc>
@@ -62,6 +54,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/ar/esim/afrique</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/afrique" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/afrique" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/afrique" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/afrique" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -86,6 +86,30 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/algeria" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/algeria" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/algeria" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/ar/esim/amerique-centrale-et-mexique</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/amerique-centrale-et-mexique" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/amerique-centrale-et-mexique" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/amerique-centrale-et-mexique" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/amerique-centrale-et-mexique" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/ar/esim/amerique-du-nord</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/amerique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/amerique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/amerique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/amerique-du-nord" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/ar/esim/ameriques</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/ameriques" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/ameriques" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/ameriques" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/ameriques" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -134,6 +158,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/aruba" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/aruba" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/aruba" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/ar/esim/asie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/asie" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/asie" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/asie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/asie" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -337,6 +369,14 @@
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
+    <loc>https://safarsim.net/ar/esim/caraibes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/caraibes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/caraibes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/caraibes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/caraibes" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://safarsim.net/ar/esim/caribbean-netherlands</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/caribbean-netherlands" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/caribbean-netherlands" />
@@ -534,6 +574,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/ethiopia" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/ethiopia" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/ethiopia" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/ar/esim/europe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/europe" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/europe" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/europe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/europe" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -1030,6 +1078,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/morocco" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/morocco" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/morocco" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/ar/esim/moyen-orient-et-afrique-du-nord</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/moyen-orient-et-afrique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/moyen-orient-et-afrique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/moyen-orient-et-afrique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/moyen-orient-et-afrique-du-nord" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -1585,12 +1641,36 @@
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
+    <loc>https://safarsim.net/ar/guides/compatibility</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/guides/compatibility" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/guides/compatibility" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/guides/compatibility" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/guides/compatibility" />
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/ar/guides/install-esim-android</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/guides/install-esim-android" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/guides/install-esim-android" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/guides/install-esim-android" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/guides/install-esim-android" />
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/ar/guides/install-esim-iphone</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/guides/install-esim-iphone" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/guides/install-esim-iphone" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/guides/install-esim-iphone" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/guides/install-esim-iphone" />
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://safarsim.net/ar/help</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/help" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/help" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/help" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/help" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/ar/pricing</loc>
@@ -1598,7 +1678,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/pricing" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/pricing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/pricing" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/ar/privacy-policy</loc>
@@ -1606,7 +1686,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/privacy-policy" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/ar/refund-policy</loc>
@@ -1614,71 +1694,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/refund-policy" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/refund-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/refund-policy" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/ar/regions/afrique</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/afrique" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/afrique" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/afrique" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/afrique" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/ar/regions/amerique-centrale-et-mexique</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/amerique-centrale-et-mexique" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/amerique-centrale-et-mexique" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/amerique-centrale-et-mexique" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/amerique-centrale-et-mexique" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/ar/regions/amerique-du-nord</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/amerique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/amerique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/amerique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/amerique-du-nord" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/ar/regions/ameriques</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/ameriques" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/ameriques" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/ameriques" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/ameriques" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/ar/regions/asie</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/asie" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/asie" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/asie" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/asie" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/ar/regions/caraibes</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/caraibes" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/caraibes" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/caraibes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/caraibes" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/ar/regions/europe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/europe" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/europe" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/europe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/europe" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/ar/regions/moyen-orient-et-afrique-du-nord</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/moyen-orient-et-afrique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/moyen-orient-et-afrique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/moyen-orient-et-afrique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/moyen-orient-et-afrique-du-nord" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/ar/terms-of-service</loc>
@@ -1686,15 +1702,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/terms-of-service" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/terms-of-service" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/terms-of-service" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/compatibility</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/compatibility" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/compatibility" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/compatibility" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/compatibility" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/contact</loc>
@@ -1702,7 +1710,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/contact" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/contact" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/digital-delivery-policy</loc>
@@ -1710,7 +1718,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/digital-delivery-policy" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/digital-delivery-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/digital-delivery-policy" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/esim</loc>
@@ -1718,6 +1726,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/esim/afrique</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/afrique" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/afrique" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/afrique" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/afrique" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -1742,6 +1758,30 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/algeria" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/algeria" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/algeria" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/esim/amerique-centrale-et-mexique</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/amerique-centrale-et-mexique" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/amerique-centrale-et-mexique" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/amerique-centrale-et-mexique" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/amerique-centrale-et-mexique" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/esim/amerique-du-nord</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/amerique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/amerique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/amerique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/amerique-du-nord" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/esim/ameriques</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/ameriques" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/ameriques" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/ameriques" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/ameriques" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -1790,6 +1830,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/aruba" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/aruba" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/aruba" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/esim/asie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/asie" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/asie" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/asie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/asie" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -1993,6 +2041,14 @@
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
+    <loc>https://safarsim.net/esim/caraibes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/caraibes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/caraibes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/caraibes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/caraibes" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://safarsim.net/esim/caribbean-netherlands</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/caribbean-netherlands" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/caribbean-netherlands" />
@@ -2190,6 +2246,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/ethiopia" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/ethiopia" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/ethiopia" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/esim/europe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/europe" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/europe" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/europe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/europe" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -2686,6 +2750,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/morocco" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/morocco" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/morocco" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/esim/moyen-orient-et-afrique-du-nord</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/moyen-orient-et-afrique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/moyen-orient-et-afrique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/moyen-orient-et-afrique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/moyen-orient-et-afrique-du-nord" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -3254,15 +3326,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/about" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/about" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/fr/compatibility</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/compatibility" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/compatibility" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/compatibility" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/compatibility" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/fr/contact</loc>
@@ -3270,7 +3334,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/contact" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/contact" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/fr/digital-delivery-policy</loc>
@@ -3278,7 +3342,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/digital-delivery-policy" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/digital-delivery-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/digital-delivery-policy" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/fr/esim</loc>
@@ -3286,6 +3350,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/fr/esim/afrique</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/afrique" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/afrique" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/afrique" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/afrique" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -3310,6 +3382,30 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/algeria" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/algeria" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/algeria" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/fr/esim/amerique-centrale-et-mexique</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/amerique-centrale-et-mexique" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/amerique-centrale-et-mexique" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/amerique-centrale-et-mexique" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/amerique-centrale-et-mexique" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/fr/esim/amerique-du-nord</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/amerique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/amerique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/amerique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/amerique-du-nord" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/fr/esim/ameriques</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/ameriques" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/ameriques" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/ameriques" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/ameriques" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -3358,6 +3454,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/aruba" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/aruba" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/aruba" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/fr/esim/asie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/asie" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/asie" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/asie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/asie" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -3561,6 +3665,14 @@
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
+    <loc>https://safarsim.net/fr/esim/caraibes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/caraibes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/caraibes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/caraibes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/caraibes" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://safarsim.net/fr/esim/caribbean-netherlands</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/caribbean-netherlands" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/caribbean-netherlands" />
@@ -3758,6 +3870,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/ethiopia" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/ethiopia" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/ethiopia" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/fr/esim/europe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/europe" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/europe" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/europe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/europe" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -4254,6 +4374,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/morocco" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/morocco" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/morocco" />
+    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/fr/esim/moyen-orient-et-afrique-du-nord</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/esim/moyen-orient-et-afrique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/esim/moyen-orient-et-afrique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/esim/moyen-orient-et-afrique-du-nord" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/esim/moyen-orient-et-afrique-du-nord" />
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
@@ -4809,12 +4937,36 @@
     <lastmod>2026-08-27T19:12:16.000Z</lastmod>
   </url>
   <url>
+    <loc>https://safarsim.net/fr/guides/compatibility</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/guides/compatibility" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/guides/compatibility" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/guides/compatibility" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/guides/compatibility" />
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/fr/guides/install-esim-android</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/guides/install-esim-android" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/guides/install-esim-android" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/guides/install-esim-android" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/guides/install-esim-android" />
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/fr/guides/install-esim-iphone</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/guides/install-esim-iphone" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/guides/install-esim-iphone" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/guides/install-esim-iphone" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/guides/install-esim-iphone" />
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://safarsim.net/fr/help</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/help" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/help" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/help" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/help" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/fr/pricing</loc>
@@ -4822,7 +4974,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/pricing" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/pricing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/pricing" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/fr/privacy-policy</loc>
@@ -4830,7 +4982,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/privacy-policy" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/fr/refund-policy</loc>
@@ -4838,71 +4990,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/refund-policy" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/refund-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/refund-policy" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/fr/regions/afrique</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/afrique" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/afrique" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/afrique" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/afrique" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/fr/regions/amerique-centrale-et-mexique</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/amerique-centrale-et-mexique" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/amerique-centrale-et-mexique" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/amerique-centrale-et-mexique" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/amerique-centrale-et-mexique" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/fr/regions/amerique-du-nord</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/amerique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/amerique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/amerique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/amerique-du-nord" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/fr/regions/ameriques</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/ameriques" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/ameriques" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/ameriques" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/ameriques" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/fr/regions/asie</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/asie" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/asie" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/asie" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/asie" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/fr/regions/caraibes</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/caraibes" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/caraibes" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/caraibes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/caraibes" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/fr/regions/europe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/europe" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/europe" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/europe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/europe" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/fr/regions/moyen-orient-et-afrique-du-nord</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/moyen-orient-et-afrique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/moyen-orient-et-afrique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/moyen-orient-et-afrique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/moyen-orient-et-afrique-du-nord" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/fr/terms-of-service</loc>
@@ -4910,7 +4998,31 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/terms-of-service" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/terms-of-service" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/terms-of-service" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/guides/compatibility</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/guides/compatibility" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/guides/compatibility" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/guides/compatibility" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/guides/compatibility" />
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/guides/install-esim-android</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/guides/install-esim-android" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/guides/install-esim-android" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/guides/install-esim-android" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/guides/install-esim-android" />
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://safarsim.net/guides/install-esim-iphone</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/guides/install-esim-iphone" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/guides/install-esim-iphone" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/guides/install-esim-iphone" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/guides/install-esim-iphone" />
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/help</loc>
@@ -4918,7 +5030,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/help" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/help" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/help" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/pricing</loc>
@@ -4926,7 +5038,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/pricing" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/pricing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/pricing" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/privacy-policy</loc>
@@ -4934,7 +5046,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/privacy-policy" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/refund-policy</loc>
@@ -4942,71 +5054,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/refund-policy" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/refund-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/refund-policy" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/regions/afrique</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/afrique" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/afrique" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/afrique" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/afrique" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/regions/amerique-centrale-et-mexique</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/amerique-centrale-et-mexique" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/amerique-centrale-et-mexique" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/amerique-centrale-et-mexique" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/amerique-centrale-et-mexique" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/regions/amerique-du-nord</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/amerique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/amerique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/amerique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/amerique-du-nord" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/regions/ameriques</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/ameriques" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/ameriques" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/ameriques" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/ameriques" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/regions/asie</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/asie" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/asie" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/asie" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/asie" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/regions/caraibes</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/caraibes" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/caraibes" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/caraibes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/caraibes" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/regions/europe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/europe" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/europe" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/europe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/europe" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://safarsim.net/regions/moyen-orient-et-afrique-du-nord</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://safarsim.net/regions/moyen-orient-et-afrique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/regions/moyen-orient-et-afrique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/regions/moyen-orient-et-afrique-du-nord" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/regions/moyen-orient-et-afrique-du-nord" />
-    <lastmod>2026-08-27T19:12:16.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://safarsim.net/terms-of-service</loc>
@@ -5014,6 +5062,6 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://safarsim.net/fr/terms-of-service" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://safarsim.net/ar/terms-of-service" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://safarsim.net/terms-of-service" />
-    <lastmod>2026-08-31T22:38:59.000Z</lastmod>
+    <lastmod>2026-09-01T09:12:22.000Z</lastmod>
   </url>
 </urlset>

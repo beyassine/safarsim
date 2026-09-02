@@ -36,7 +36,13 @@
                     <div class="text-h6 font-weight-bold">
                       {{ getCartItemName(item) }}
                     </div>
-                    <div class="flag-emoji ml-3">{{ item.flag }}</div>
+                    <img
+                      v-if="item.destinationSlug === 'europe'"
+                      src="@/assets/images/flags/regions/europe.png"
+                      alt="Europe"
+                      class="cart-region-image ml-3"
+                    >
+                    <div v-else class="flag-emoji ml-3">{{ item.flag }}</div>
                   </div>
 
                   <div class="text-h6 mt-1 mb-1">
@@ -49,7 +55,13 @@
 
             <div v-else class="cart-layout-row d-flex justify-space-between align-start">
               <div class="d-flex align-start">
-                <div class="flag-emoji mr-3">{{ item.flag }}</div>
+                <img
+                  v-if="item.destinationSlug === 'europe'"
+                  src="@/assets/images/flags/regions/europe.png"
+                  alt="Europe"
+                  class="cart-region-image mr-3"
+                >
+                <div v-else class="flag-emoji mr-3">{{ item.flag }}</div>
 
                 <div>
                   <div class="text-h6 font-weight-bold mb-1">
@@ -143,7 +155,7 @@
                 <template #label>
                   <span class="compatibility-label-content">
                     {{ $t('cart.compatibilityConfirmed') }}
-                    <router-link class="compatibility-link" to="/compatibility" target="_blank" @click.stop>
+                    <router-link class="compatibility-link" to="/guides/compatibility" target="_blank" @click.stop>
                       {{ $t("cart.checkCompatibilityLink") }}
                       <v-icon size="15">mdi-open-in-new</v-icon>
                     </router-link>
@@ -276,7 +288,7 @@
               <template #label>
                 <span class="compatibility-label-content">
                   {{ $t('cart.compatibilityConfirmed') }}
-                <router-link class="compatibility-link" to="/compatibility" target="_blank" @click.stop>
+                <router-link class="compatibility-link" to="/guides/compatibility" target="_blank" @click.stop>
                   {{ $t("cart.checkCompatibilityLink") }}
                   <v-icon size="15">mdi-open-in-new</v-icon>
                 </router-link>
@@ -896,6 +908,14 @@ export default {
 .flag-emoji {
   font-size: 2rem;
   line-height: 1;
+}
+
+.cart-region-image {
+  width: 46px;
+  height: 34px;
+  flex: 0 0 46px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
 .quantity-box {

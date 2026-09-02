@@ -3,7 +3,7 @@
     "name": "Afrique",
     "slug": "afrique",
     "type": "region",
-    "flag": null,
+    "flag": "🇪🇺",
     "image": "./assets/images/flags/regions/regions.png",
     "popular": false,
     "iso": null,

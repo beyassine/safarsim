@@ -44,9 +44,13 @@ export function priceFromMad(amount) {
 
 export function formatMoney(amount, currency = getPreferredCurrency(), locale = 'en') {
   const numberLocale = locale === 'ar' ? 'ar-MA' : locale === 'fr' ? 'fr-MA' : 'en-US'
-  return new Intl.NumberFormat(numberLocale, {
+  const formatter = new Intl.NumberFormat(numberLocale, {
     style: 'currency', currency, minimumFractionDigits: 2, maximumFractionDigits: 2,
-  }).format(Number(amount))
+  })
+
+  return formatter.formatToParts(Number(amount))
+    .map((part) => part.type === 'currency' && currency === MAD_CURRENCY ? 'DH' : part.value)
+    .join('')
 }
 
 export function formatPriceFromMad(amount, locale = 'en') {

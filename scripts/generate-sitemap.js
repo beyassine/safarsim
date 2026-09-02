@@ -35,6 +35,12 @@ const sourceDates = {
 }
 
 function destinationUrlSlug(destination) {
+  if (destination?.iso === "TR" || destination?.slug === "turquie") {
+    return "turkiye"
+  }
+  if (destination?.iso === "ES" || destination?.slug === "espagne") {
+    return "spain"
+  }
   if (destination?.slug === "republique-democratique-du-congo") {
     return "democratic-republic-of-the-congo"
   }
@@ -53,7 +59,7 @@ if (destinationSlugs.some((slug) => !slug) || new Set(destinationSlugs).size !==
 }
 
 const publicPagePaths = [
-  "/compatibility",
+  "/guides/compatibility",
   "/help",
   "/pricing",
   "/privacy-policy",
@@ -62,6 +68,8 @@ const publicPagePaths = [
   "/digital-delivery-policy",
   "/contact",
   "/about",
+  "/guides/install-esim-iphone",
+  "/guides/install-esim-android",
 ]
 
 const entries = new Map()
@@ -112,7 +120,7 @@ for (const destination of destinations) {
 }
 
 for (const region of regions) {
-  const pathname = `/regions/${region.slug}`
+  const pathname = `/esim/${region.slug}`
   addLocalized(Object.fromEntries(locales.map((locale) => [locale, pathname])), region, sourceDates.regions)
 }
 
