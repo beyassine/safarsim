@@ -220,6 +220,21 @@
       </v-container>
     </section>
 
+    <section class="turkey-policy-section">
+      <v-container class="turkey-policy-container">
+        <div class="europe-section-heading compact">
+          <span>À savoir avant le départ</span>
+          <h2>Restrictions eSIM en Turquie : comment préparer votre voyage ?</h2>
+          <p>La Turquie n’interdit pas la technologie eSIM. Les restrictions concernent notamment l’accès, depuis certains réseaux turcs, aux sites et applications de plusieurs fournisseurs internationaux d’eSIM.</p>
+        </div>
+        <div class="turkey-policy-copy">
+          <p>Achetez et installez votre eSIM SafarSim avant votre départ, depuis l’Europe ou votre pays de résidence. Enregistrez également le QR code et les instructions d’installation sur votre téléphone afin de pouvoir les consulter hors ligne.</p>
+          <p>Une fois en Turquie, sélectionnez SafarSim pour les données mobiles et activez l’itinérance des données. Une eSIM déjà installée peut se connecter aux réseaux partenaires disponibles sans nécessiter l’accès au site du fournisseur.</p>
+          <p><strong>SafarSim a été testée depuis l’Europe et fonctionne correctement pour les voyages en Turquie lorsqu’elle est achetée et installée avant le départ.</strong> La disponibilité du réseau reste toutefois soumise à la couverture locale, à la compatibilité du téléphone et aux conditions du réseau.</p>
+        </div>
+      </v-container>
+    </section>
+
     <section class="europe-faq-section">
       <v-container class="europe-faq-container">
         <div class="europe-section-heading compact">
@@ -842,4 +857,5 @@ export default {
 .turkey-country-line{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 18px}.turkey-country-line img{width:34px;height:24px;object-fit:cover;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,.14)}.turkey-country-line strong{color:var(--eu-pink)}
 .europe-proof-grid{grid-template-columns:1fr;max-width:520px;padding-top:0;padding-bottom:12px}.europe-proof-grid>div{justify-content:center;padding-top:6px}.europe-proof-grid>div+div{border:0}@media(max-width:599px){.europe-proof-grid{padding-block:0 10px}.europe-proof-grid>div{padding:6px 18px}.europe-map-card{margin-bottom:-40px}}
 .network-disclosure>.network-table-wrap{display:block!important}
+.turkey-policy-section{padding:90px 0;background:#fff8fa}.turkey-policy-container{max-width:950px}.turkey-policy-copy{display:grid;gap:14px;padding:26px 28px;border:1px solid #efdce3;border-radius:22px;background:#fff;color:#526b65;box-shadow:0 12px 30px rgba(96,45,65,.05)}.turkey-policy-copy p{margin:0;font-size:15px;line-height:1.8}.turkey-policy-copy strong{color:var(--eu-green)}@media(max-width:600px){.turkey-policy-section{padding:65px 0}.turkey-policy-copy{padding:21px 19px}.turkey-policy-copy p{font-size:14px}}
 </style>

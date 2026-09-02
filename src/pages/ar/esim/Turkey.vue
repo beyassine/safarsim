@@ -220,6 +220,21 @@
       </v-container>
     </section>
 
+    <section class="turkey-policy-section">
+      <v-container class="turkey-policy-container">
+        <div class="europe-section-heading compact">
+          <span>معلومات مهمة قبل السفر</span>
+          <h2>قيود شرائح eSIM في تركيا: كيف تستعد لرحلتك؟</h2>
+          <p>لم تحظر تركيا تقنية eSIM نفسها. تتعلق القيود أساساً بالوصول من بعض الشبكات التركية إلى مواقع وتطبيقات عدد من مزودي شرائح eSIM الدوليين.</p>
+        </div>
+        <div class="turkey-policy-copy">
+          <p>اشترِ شريحة SafarSim وثبّتها قبل المغادرة، أثناء وجودك في أوروبا أو في بلد إقامتك. احفظ رمز QR وتعليمات التثبيت على هاتفك أيضاً لتتمكن من الرجوع إليها دون اتصال بالإنترنت.</p>
+          <p>بعد الوصول إلى تركيا، اختر SafarSim لبيانات الهاتف وفعّل تجوال البيانات. تستطيع الشريحة المثبتة مسبقاً الاتصال بالشبكات الشريكة المتاحة دون الحاجة إلى فتح موقع المزود.</p>
+          <p><strong>تم اختبار SafarSim من أوروبا، وهي تعمل بصورة صحيحة للسفر في تركيا عند شرائها وتثبيتها قبل المغادرة.</strong> وتبقى الخدمة خاضعة للتغطية المحلية وتوافق الهاتف وظروف الشبكة.</p>
+        </div>
+      </v-container>
+    </section>
+
     <section class="europe-faq-section">
       <v-container class="europe-faq-container">
         <div class="europe-section-heading compact">
@@ -842,4 +857,5 @@ export default {
 .turkey-country-line{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 18px}.turkey-country-line img{width:34px;height:24px;object-fit:cover;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,.14)}.turkey-country-line strong{color:var(--eu-pink)}
 .europe-proof-grid{grid-template-columns:1fr;max-width:520px;padding-top:0;padding-bottom:12px}.europe-proof-grid>div{justify-content:center;padding-top:6px}.europe-proof-grid>div+div{border:0}@media(max-width:599px){.europe-proof-grid{padding-block:0 10px}.europe-proof-grid>div{padding:6px 18px}.europe-map-card{margin-bottom:-40px}}
 .network-disclosure>.network-table-wrap{display:block!important}
+.turkey-policy-section{padding:90px 0;background:#fff8fa}.turkey-policy-container{max-width:950px}.turkey-policy-copy{display:grid;gap:14px;padding:26px 28px;border:1px solid #efdce3;border-radius:22px;background:#fff;color:#526b65;box-shadow:0 12px 30px rgba(96,45,65,.05)}.turkey-policy-copy p{margin:0;font-size:15px;line-height:1.8}.turkey-policy-copy strong{color:var(--eu-green)}.europe-page[dir="rtl"] .turkey-policy-copy{text-align:right}@media(max-width:600px){.turkey-policy-section{padding:65px 0}.turkey-policy-copy{padding:21px 19px}.turkey-policy-copy p{font-size:14px}}
 </style>
