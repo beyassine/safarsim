@@ -13,9 +13,9 @@
         Thank you for your order. We will process your eSIM quickly.
       </p>
 
-      <v-alert v-if="verificationError" type="warning" variant="tonal" class="mb-6">
-        {{ verificationError }}
-      </v-alert>
+      <p v-if="customerEmail" class="text-body-1 font-weight-medium mb-6">
+        You will receive your eSIM instantly by email at {{ customerEmail }}.
+      </p>
 
       <div v-if="orderId" class="order-reference pa-4 mb-6">
         <div class="text-caption text-medium-emphasis mb-1">
@@ -48,7 +48,7 @@ export default {
 
   data() {
     return {
-      verificationError: '',
+      customerEmail: '',
       paymentCaptured: false,
     }
   },
@@ -76,6 +76,7 @@ export default {
       if (!response.ok || !result.paid) {
         throw new Error(result.error || 'Unable to verify payment')
       }
+      this.customerEmail = result.customerEmail || ''
       if (!this.paymentCaptured) {
         const completedCart = getCart()
         posthog.capture('payment_completed', {
@@ -87,7 +88,6 @@ export default {
       }
     } catch (error) {
       console.error('Payment verification failed', error)
-      this.verificationError = error.message
     }
   },
 }

@@ -657,8 +657,10 @@ export default {
         this.embeddedCheckout = await stripe.createEmbeddedCheckoutPage({
           clientSecret: result.clientSecret,
           onComplete: () => {
+            const locale = this.$i18n.locale
+            const localePrefix = locale === 'en' ? '' : `/${locale}`
             this.$router.push({
-              path: '/payment-success',
+              path: `${localePrefix}/payment-success`,
               query: { session_id: result.id },
             })
           },
@@ -700,6 +702,16 @@ export default {
 .cart-page {
   max-width: 1100px;
   min-height: 100vh;
+}
+
+@media (min-width: 960px) {
+  .numbered-checkout .contact-column {
+    order: 1;
+  }
+
+  .numbered-checkout .summary-column {
+    order: 2;
+  }
 }
 
 @media (max-width: 959px) {
