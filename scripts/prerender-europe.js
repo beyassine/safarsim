@@ -19,6 +19,15 @@ const server = http.createServer((request, response) => {
 })
 
 async function run() {
+  // Vercel's build image does not include all of the shared libraries required
+  // by Puppeteer's downloaded Chromium (for example, libnspr4). The Vue build
+  // is already complete at this point, so skip this optional SEO enhancement
+  // there instead of failing the entire deployment.
+  if (process.env.VERCEL) {
+    console.log('Skipping Puppeteer prerender on Vercel')
+    return
+  }
+
   await new Promise((resolve) => server.listen(port, '127.0.0.1', resolve))
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] })
 
