@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer')
 
 const distDir = path.resolve(__dirname, '..', 'dist')
 const port = 4177
-const routes = ['/esim/europe', '/fr/esim/europe', '/ar/esim/europe', '/esim/turkiye', '/fr/esim/turkiye', '/ar/esim/turkiye', '/esim/spain', '/fr/esim/spain', '/ar/esim/spain', '/esim/france', '/fr/esim/france', '/ar/esim/france']
+const routes = ['/esim/europe', '/fr/esim/europe', '/ar/esim/europe', '/esim/turkiye', '/fr/esim/turkiye', '/ar/esim/turkiye', '/esim/spain', '/fr/esim/spain', '/ar/esim/spain', '/esim/france', '/fr/esim/france', '/ar/esim/france', '/esim/saudi-arabia', '/fr/esim/saudi-arabia', '/ar/esim/saudi-arabia', '/esim/united-arab-emirates', '/fr/esim/united-arab-emirates', '/ar/esim/united-arab-emirates']
 const mimeTypes = { '.css': 'text/css', '.html': 'text/html; charset=utf-8', '.ico': 'image/x-icon', '.jpg': 'image/jpeg', '.js': 'text/javascript', '.png': 'image/png', '.svg': 'image/svg+xml', '.woff': 'font/woff', '.woff2': 'font/woff2' }
 
 const server = http.createServer((request, response) => {

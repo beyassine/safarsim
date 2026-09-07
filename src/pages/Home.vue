@@ -31,7 +31,7 @@
 
         <div class="hero-visual" :aria-label="c.connected">
           <img
-            src="@/assets/images/hero_safar.png"
+            src="@/assets/images/hero_home.png"
             class="hero-artwork"
             alt="Safar Sim travel connectivity"
           >
@@ -46,6 +46,23 @@
         <div><b>4G / 5G</b><span>{{ c.reliable }}</span></div>
         <div><b>{{ c.minutes }}</b><span>{{ c.purchaseToActivation }}</span></div>
         <div><b>24/7</b><span>{{ c.travelSupport }}</span></div>
+      </v-container>
+    </section>
+
+    <section class="featured-destinations-section">
+      <v-container fluid class="featured-destinations-container">
+        <div class="featured-destinations-heading">
+          <span>{{ featuredDestinationsCopy.kicker }}</span>
+          <h2>{{ featuredDestinationsCopy.title }}</h2>
+          <p>{{ featuredDestinationsCopy.text }}</p>
+        </div>
+        <div class="featured-destinations-grid">
+          <router-link v-for="destination in featuredLandingPages" :key="destination.slug" :to="destination.route" class="featured-destination-card">
+            <img :src="destination.image" alt="" loading="lazy" decoding="async">
+            <span class="featured-destination-overlay" aria-hidden="true"></span>
+            <div><strong>{{ destination.name }}</strong><small>{{ featuredDestinationsCopy.explore }} <v-icon size="16">{{ arrowIcon }}</v-icon></small></div>
+          </router-link>
+        </div>
       </v-container>
     </section>
 
@@ -158,52 +175,17 @@
       </v-container>
     </section>
 
-    <section class="popular-packs-section">
-      <v-container>
-        <div class="section-heading popular-heading">
-          <span>{{ pc.kicker }}</span>
-          <h2>{{ pc.title }}</h2>
-          <p>{{ pc.text }}</p>
-        </div>
-        <div class="popular-packs-grid">
-          <article v-for="pack in popularPacks" :key="pack.destination.slug"
-            class="popular-pack-card" @click="choosePopularPack(pack)">
-            <span class="discount-badge">-{{ pack.discount }}%</span>
-            <div class="popular-pack-top">
-              <img :src="flagUrl(pack.destination)" :alt="destinationName(pack.destination)">
-              <span>{{ destinationName(pack.destination) }}</span>
-            </div>
-            <div class="popular-pack-body">
-              <div class="popular-pack-details">
-                <div>
-                  <div class="popular-pack-data"><strong>{{ pack.data }}</strong><span>{{ c.internet }}</span></div>
-                  <div class="popular-pack-validity"><v-icon size="19">mdi-calendar-blank-outline</v-icon><span>{{ c.validFor }} {{ pack.days }} {{ dayLabel(pack.days) }}</span></div>
-                </div>
-              </div>
-              <div class="popular-pack-price">
-                <b>{{ formatPrice(pack.price) }}</b>
-                <small>{{ preferredCurrency }}</small>
-              </div>
-            </div>
-            <v-btn class="popular-buy-button" rounded="lg" elevation="0" block @click.stop="buyPopularPack(pack)">
-              <v-icon start size="19">mdi-cart-outline</v-icon>{{ pc.buy }}
-            </v-btn>
-          </article>
-        </div>
-      </v-container>
-    </section>
-
     <section class="benefits-section">
       <v-container class="benefits-layout">
         <div class="benefit-copy">
           <h2>{{ c.benefitTitle }}</h2>
           <p>{{ c.benefitLead }}</p>
-          <div class="benefit-apps-visual">
-            <img
-              src="@/assets/images/apps-icons.png"
-              alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail and Google Maps"
-            >
-          </div>
+        </div>
+        <div class="benefit-apps-visual">
+          <img
+            src="@/assets/images/apps-icons.png"
+            alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail and Google Maps"
+          >
         </div>
         <div class="benefit-cta-wrap">
           <v-btn class="primary-cta benefit-cta" size="x-large" rounded="pill" elevation="0" @click="scrollToPlans">
@@ -242,6 +224,12 @@ import { localePath } from '@/router'
 import Cart from '@/pages/Cart.vue'
 import { priceFromMad, getPreferredCurrency } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
+import europeLandingImage from '@/assets/images/flags/regions/ue_flag.webp'
+import turkeyLandingImage from '@/assets/images/flags/tr.svg'
+import spainLandingImage from '@/assets/images/flags/es.svg'
+import franceLandingImage from '@/assets/images/flags/fr.svg'
+import saudiLandingImage from '@/assets/images/flags/sa.svg'
+import uaeLandingImage from '@/assets/images/flags/ae.svg'
 
 const locale = ref(i18n.global.locale)
 const preferredCurrency = getPreferredCurrency() === 'MAD' ? 'DH' : getPreferredCurrency()
@@ -274,12 +262,28 @@ const pageCopy = {
 const c = computed(() => pageCopy[locale.value] || pageCopy.en)
 const pageDirection = computed(() => locale.value === 'ar' ? 'rtl' : 'ltr')
 const arrowIcon = computed(() => locale.value === 'ar' ? 'mdi-arrow-left' : 'mdi-arrow-right')
-const popularCopy = {
-  ar: { kicker: 'الأكثر طلباً', title: 'باقات سفر يحبها عملاؤنا', text: 'اختر واحدة من أشهر باقاتنا وابدأ رحلتك متصلاً.', from: 'ابتداءً من', buy: 'اشترِ الآن' },
-  fr: { kicker: 'Les plus demandés', title: 'Nos forfaits de voyage populaires', text: 'Choisissez l’un de nos forfaits préférés et partez connecté.', from: 'À partir de', buy: 'Acheter' },
-  en: { kicker: 'Most popular', title: 'Popular travel packages', text: 'Choose one of our most-loved plans and travel connected.', from: 'From', buy: 'Buy now' },
+const featuredDestinationsText = {
+  ar: { kicker: 'وجهات مميزة', title: 'اكتشف أشهر وجهات SafarSIM', text: 'صفحات مفصلة تساعدك على اختيار باقتك والاستعداد لرحلتك.', explore: 'اكتشف الباقات' },
+  fr: { kicker: 'Destinations à la une', title: 'Découvrez nos destinations populaires', text: 'Des guides détaillés pour choisir votre forfait et préparer votre voyage.', explore: 'Découvrir les forfaits' },
+  en: { kicker: 'Featured destinations', title: 'Explore our popular destinations', text: 'Detailed guides to help you choose a plan and prepare for your trip.', explore: 'Explore plans' },
 }
-const pc = computed(() => popularCopy[locale.value] || popularCopy.en)
+const featuredDestinationsCopy = computed(() => featuredDestinationsText[locale.value] || featuredDestinationsText.en)
+const featuredLandingPages = computed(() => {
+  const language = ['en', 'fr', 'ar'].includes(locale.value) ? locale.value : 'en'
+  const names = {
+    ar: ['أوروبا', 'تركيا', 'إسبانيا', 'فرنسا', 'المملكة العربية السعودية', 'الإمارات العربية المتحدة'],
+    fr: ['Europe', 'Turquie', 'Espagne', 'France', 'Arabie saoudite', 'Émirats arabes unis'],
+    en: ['Europe', 'Turkey', 'Spain', 'France', 'Saudi Arabia', 'United Arab Emirates'],
+  }[locale.value] || ['Europe', 'Turkey', 'Spain', 'France', 'Saudi Arabia', 'United Arab Emirates']
+  return [
+    { slug: 'europe', routeKey: 'europeDetails', flag: '🇪🇺', image: europeLandingImage },
+    { slug: 'turkiye', routeKey: 'turkeyDetails', flag: '🇹🇷', image: turkeyLandingImage },
+    { slug: 'spain', routeKey: 'spainDetails', flag: '🇪🇸', image: spainLandingImage },
+    { slug: 'france', routeKey: 'franceDetails', flag: '🇫🇷', image: franceLandingImage },
+    { slug: 'saudi-arabia', routeKey: 'saudiArabiaDetails', flag: '🇸🇦', image: saudiLandingImage },
+    { slug: 'united-arab-emirates', routeKey: 'unitedArabEmiratesDetails', flag: '🇦🇪', image: uaeLandingImage },
+  ].map((item, index) => ({ ...item, name: names[index], route: { name: `${item.routeKey}-${language}` } }))
+})
 const stepsSubtitle = computed(() => ({
   ar: 'من اختيار باقتك إلى الاتصال بالإنترنت، كل شيء يتم بسرعة وسهولة.',
   fr: 'Du choix de votre forfait à la connexion, tout se fait rapidement et simplement.',
@@ -305,30 +309,6 @@ const featuredPackageKeys = {
   france: '10GB_30days',
   'emirats-arabes-unis': '10GB_30days',
 }
-
-const popularPacks = computed(() => Object.entries(featuredPackageKeys)
-  .map(([slug, planKey]) => ({ destination: catalog.value.find(item => item.slug === slug), planKey }))
-  .filter(item => item.destination)
-  .map(({ destination, planKey }) => {
-    const preferredKey = destination.plans?.[planKey]?.price != null
-      ? planKey
-      : destination.plans?.['10GB_30days']?.price != null
-        ? '10GB_30days'
-        : Object.keys(destination.plans || {}).find(key => Number(key.match(/^(\d+)GB_/)?.[1] || 0) >= 10)
-    const config = destination.plans?.[preferredKey]
-    const match = preferredKey?.match(/^(\d+GB)_(\d+)days$/)
-    if (!config || !match) return null
-    return {
-      destination,
-      key: preferredKey,
-      data: match[1].replace('GB', ' GB'),
-      days: Number(match[2]),
-      price: Number(typeof config === 'object' ? config.price : config),
-      esimGoBundleName: typeof config === 'object' ? config.esimGoBundleName : null,
-      discount: 15,
-    }
-  })
-  .filter(pack => pack && Number.isFinite(pack.price)))
 
 const normalize = value => String(value || '').toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 
@@ -429,44 +409,7 @@ async function selectDestination(destination, shouldScroll = true) {
   }
 }
 
-async function choosePopularPack(pack) {
-  await selectDestination(pack.destination, false)
-  await nextTick()
-  selectedPlan.value = availablePlans.value.find(plan => plan.key === pack.key) || availablePlans.value[0] || null
-  scrollToPlans()
-}
 
-function buyPopularPack(pack) {
-  const destination = pack.destination
-  addToCart({
-    id: `${destination.slug}-${pack.key}`,
-    destinationName: destinationName(destination),
-    names: destination.names,
-    destinationSlug: destination.slug,
-    flag: destination.flag || '🌍',
-    image: destination.type === 'region' ? flagUrl(destination) : destination.image,
-    iso: destination.iso,
-    planKey: pack.key,
-    data: pack.data.replace(' ', ''),
-    dataLabel: pack.data,
-    days: pack.days,
-    price: priceFromMad(pack.price),
-    currency: getPreferredCurrency(),
-    esimGoBundleName: pack.esimGoBundleName,
-    quantity: 1,
-  })
-  posthog.capture('plan_added_to_cart', {
-    destination_slug: destination.slug,
-    destination_type: destination.type || 'country',
-    plan_key: pack.key,
-    data_amount: pack.data,
-    validity_days: pack.days,
-    currency: getPreferredCurrency(),
-    unit_price: priceFromMad(pack.price),
-    add_source: 'featured_plan',
-  })
-  router.push('/cart')
-}
 
 function changeLanguage(language) {
   rememberLanguage(language)
@@ -613,7 +556,9 @@ watch(locale, () => {
 .one-page[dir="rtl"] .phone-screen>strong{direction:rtl;unicode-bidi:isolate}.one-page[dir="ltr"] .phone-screen>strong{direction:ltr;unicode-bidi:isolate}
 .usage-card { background:#fff;border-radius:18px;padding:14px;width:100%;margin-top:35px;box-shadow:0 8px 25px rgba(21,62,55,.08); }.usage-card span,.usage-card b{display:block}.usage-card b{font-size:20px;margin:3px 0 8px}.usage-card div{height:6px;background:#e5eee9;border-radius:8px;overflow:hidden}.usage-card i{display:block;width:76%;height:100%;background:var(--coral)}
 .floating-card { position:absolute;z-index:3;background:rgba(255,255,255,.94);box-shadow:0 15px 35px rgba(92,28,62,.13);border-radius:16px;padding:12px 15px;display:flex;align-items:center;gap:10px;font-size:25px;line-height:1.2;backdrop-filter:blur(8px); }.floating-card span{font-size:12px;color:#765f6d}.floating-card b{font-size:14px;color:var(--ink)}.flag-card{top:85px;right:5px}.speed-card{bottom:75px;left:0}.speed-card>.v-icon{color:#d91c58;background:#fde7f0;border-radius:50%;padding:18px}.activation-card{bottom:15px;right:5px}.activation-card>.v-icon{color:#16835f;background:#e3f5ee;border-radius:50%;padding:18px}
-.proof-strip { background:#fff1f5;color:var(--ink); }.proof-grid { display:grid;grid-template-columns:repeat(4,1fr);padding-top:26px;padding-bottom:26px; }.proof-grid div{text-align:center;display:flex;flex-direction:column;gap:3px}.proof-grid div+div{border-inline-start:1px solid #ead7df}.proof-grid b{font-size:21px;color:#d91c58}.proof-grid span{font-size:13px;color:#6f5966}
+.featured-destinations-section{padding:62px 0 12px;background:#fff}.featured-destinations-container{max-width:1360px!important;padding-inline:clamp(18px,4vw,54px)!important}.featured-destinations-heading{text-align:center;max-width:680px;margin:0 auto 30px}.featured-destinations-heading>span{color:#d91c58;font-size:14px;font-weight:850}.featured-destinations-heading h2{margin:7px 0 8px;font-size:clamp(29px,3.5vw,42px);line-height:1.25}.featured-destinations-heading p{color:#71616a;font-size:16px}.featured-destinations-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.featured-destination-card{position:relative;height:230px;border-radius:22px;overflow:hidden;color:#fff;background:#102547;isolation:isolate;text-decoration:none;box-shadow:0 12px 28px rgba(65,25,46,.12);transition:transform .2s ease,box-shadow .2s ease}.featured-destination-card:focus-visible{outline:3px solid #d91c58;outline-offset:5px}.featured-destination-card:hover{transform:translateY(-4px);box-shadow:0 18px 35px rgba(65,25,46,.18)}.featured-destination-card>img{width:100%;height:100%;object-fit:cover;transition:.3s}.featured-destination-card:hover>img{transform:scale(1.035)}.featured-destination-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,18,32,.02) 20%,rgba(12,18,32,.48) 55%,rgba(12,18,32,.95) 100%)}.featured-destination-card>div{position:absolute;inset-inline:20px;bottom:17px;display:flex;flex-direction:column;align-items:flex-start;gap:3px}.featured-destination-card strong{font-size:22px;line-height:1.35;text-wrap:balance;text-shadow:0 2px 8px #0005}.featured-destination-card small{display:flex;align-items:center;gap:8px;color:#fff;font-size:12px;font-weight:700;margin-top:6px}.featured-destination-card small .v-icon{background:#ffffff24;border:1px solid #ffffff40;border-radius:50%;width:28px;height:28px}
+@media(prefers-reduced-motion:reduce){.featured-destination-card,.featured-destination-card>img{transition:none}.featured-destination-card:hover,.featured-destination-card:hover>img{transform:none}}
+.proof-strip { position:relative;z-index:3;margin-top:-28px;background:#fff1f5;color:var(--ink); }.proof-grid { display:grid;grid-template-columns:repeat(4,1fr);padding-top:26px;padding-bottom:26px; }.proof-grid div{text-align:center;display:flex;flex-direction:column;gap:3px}.proof-grid div+div{border-inline-start:1px solid #ead7df}.proof-grid b{font-size:21px;color:#d91c58}.proof-grid span{font-size:13px;color:#6f5966}
 .popular-packs-section{padding:82px 0 88px;background:#fff}.popular-heading{margin-bottom:32px}.popular-packs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:980px;margin:auto}.popular-pack-card{position:relative;min-height:230px;background:#fffbf8;border:2px solid #eadde3;border-radius:22px;padding:20px;text-align:start;color:var(--ink);font:inherit;cursor:pointer;transition:.2s;overflow:hidden}.popular-pack-card:hover{border-color:#e72a64;transform:translateY(-3px);box-shadow:0 14px 28px rgba(92,28,62,.09)}.discount-badge{position:absolute;left:0;right:auto;top:0;background:#d91c58;color:#fff;border-radius:0 0 14px 0;padding:7px 13px;font-size:12px;font-weight:900;direction:ltr}.one-page[dir="ltr"] .discount-badge{left:auto;right:0;border-radius:0 0 0 14px}.popular-pack-top{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px;padding-inline-end:54px}.popular-pack-top img{width:34px;height:24px;object-fit:cover;border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,.16)}.popular-pack-top span{flex:1}.popular-pack-body{display:flex;flex-direction:column;align-items:stretch;gap:16px;margin-top:20px}.popular-pack-details{display:flex;align-items:center}.popular-pack-data{display:flex;align-items:baseline;gap:7px}.popular-pack-data strong{font-size:29px;line-height:1}.popular-pack-data span{font-size:13px;color:#806c77}.popular-pack-validity{display:flex;align-items:center;gap:7px;margin-top:14px;color:#806c77;font-size:14px}.popular-pack-price{display:flex;align-items:baseline;gap:5px;color:#d91c58;white-space:nowrap;width:100%}.one-page[dir="rtl"] .popular-pack-price{direction:rtl;justify-content:flex-start;text-align:right}.one-page[dir="ltr"] .popular-pack-price{direction:ltr;justify-content:flex-start;text-align:left}.popular-pack-price b{font-size:35px;line-height:1}.popular-pack-price small{font-size:14px;font-weight:800}.popular-buy-button{margin-top:22px;background:#d91c58!important;color:#fff!important;font-weight:900!important;letter-spacing:0!important}.one-page[dir="rtl"] .popular-pack-card,.one-page[dir="rtl"] .popular-pack-top,.one-page[dir="rtl"] .popular-pack-body,.one-page[dir="rtl"] .popular-pack-details,.one-page[dir="rtl"] .popular-pack-data,.one-page[dir="rtl"] .popular-pack-validity{direction:rtl}.one-page[dir="ltr"] .popular-pack-card,.one-page[dir="ltr"] .popular-pack-top,.one-page[dir="ltr"] .popular-pack-body,.one-page[dir="ltr"] .popular-pack-details,.one-page[dir="ltr"] .popular-pack-data,.one-page[dir="ltr"] .popular-pack-validity{direction:ltr}
 .plans-section { padding:95px 0 36px;background:#fff;scroll-margin-top:80px; }.section-heading{text-align:center;max-width:680px;margin:0 auto 45px}.section-heading>span{font-size:14px;color:var(--coral);font-weight:800}.section-heading h2{font-size:clamp(30px,4vw,45px);line-height:1.3;margin:8px 0 10px;font-weight:900}.section-heading p{color:#697975;font-size:17px}
 .purchase-card { max-width:1240px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,480px);grid-template-areas:"package destination";gap:clamp(40px,5vw,72px);align-items:start;background:transparent; }.one-page[dir="ltr"] .purchase-card{grid-template-columns:minmax(420px,480px) minmax(0,1fr);grid-template-areas:"destination package"}.purchase-card--single,.one-page[dir="ltr"] .purchase-card--single{grid-template-columns:minmax(0,680px);grid-template-areas:"destination"}.one-page[dir="ltr"] .purchase-card--single{justify-content:start}.one-page[dir="rtl"] .purchase-card--single{justify-content:end}
@@ -643,12 +588,12 @@ watch(locale, () => {
 .one-page[dir="rtl"] .embedded-checkout :deep(.compatibility-heading),.one-page[dir="rtl"] .embedded-checkout :deep(.compatibility-details){direction:rtl;text-align:right}.one-page[dir="rtl"] .embedded-checkout :deep(.compatibility-heading){flex-direction:row;justify-content:flex-start}
 .embedded-checkout :deep(.cart-step-title){display:flex;align-items:center;gap:15px;margin-bottom:28px!important;font-size:25px;font-weight:900}.embedded-checkout :deep(.cart-step-title .subsection-title){font-size:25px;line-height:1.4;font-weight:900}.embedded-checkout :deep(.cart-step-number){width:44px;height:44px;flex:0 0 44px;border-radius:50%;background:var(--green);color:#fff;font-size:18px;font-weight:900}.one-page[dir="rtl"] .embedded-checkout :deep(.cart-step-title){direction:ltr;justify-content:flex-end}.one-page[dir="rtl"] .embedded-checkout :deep(.cart-step-number){order:2}.one-page[dir="rtl"] .embedded-checkout :deep(.cart-step-title .subsection-title){order:1;direction:rtl;text-align:right}.one-page[dir="ltr"] .embedded-checkout :deep(.cart-step-number){order:1}.one-page[dir="ltr"] .embedded-checkout :deep(.cart-step-title .subsection-title){order:2}
 .how-section{padding:95px 0;background:var(--ink);color:#fff}.section-heading.light h2{color:#fff}.steps-grid{display:grid;grid-template-columns:1fr 50px 1fr 50px 1fr;align-items:center;gap:15px}.how-card{position:relative;text-align:center;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:33px 24px;min-height:255px}.how-card>i{position:absolute;right:18px;top:14px;color:#f09ab7;font-style:normal;font-weight:900}.how-icon{width:72px;height:72px;margin:0 auto 18px;display:grid;place-items:center;border-radius:19px;background:#5b2443;color:#f5afc7}.how-icon .v-icon{font-size:36px}.how-card h3{font-size:20px;margin-bottom:10px}.how-card p{color:#dfccd6;line-height:1.8;font-size:14px}.step-arrow{text-align:center;color:#e482a4}
-.benefits-section{padding:48px 0 72px;background:#fff}.benefits-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}.benefit-copy{text-align:center}.benefit-copy h2{font-size:40px;line-height:1.4;margin:0 0 14px}.benefit-copy p{color:#715d69;line-height:1.9;font-size:17px;margin-inline:auto}.benefit-copy a{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-weight:800;margin-top:16px}.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.benefit-grid>div{background:#fff;border:1px solid #f0dce4;border-radius:18px;padding:25px}.benefit-grid .v-icon{color:var(--coral);background:#fde7f0;border-radius:12px;padding:22px;font-size:25px}.benefit-grid h3{margin:17px 0 8px}.benefit-grid p{color:#796671;line-height:1.7;font-size:14px}
-.benefit-apps-visual{position:relative;width:100%;aspect-ratio:2.35 / 1;margin-top:20px;overflow:hidden}.benefit-apps-visual img{position:absolute;inset:0;width:100%;height:auto;transform:translateY(-18%)}
+.benefits-section{padding:48px 0 72px;background:#fff}.benefits-layout{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:28px 70px;align-items:center}.benefit-copy{text-align:left;grid-column:1;grid-row:1}.benefit-copy h2{font-size:40px;line-height:1.4;margin:0 0 14px}.benefit-copy p{color:#715d69;line-height:1.9;font-size:17px;margin-inline:auto}.benefit-copy a{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-weight:800;margin-top:16px}.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.benefit-grid>div{background:#fff;border:1px solid #f0dce4;border-radius:18px;padding:25px}.benefit-grid .v-icon{color:var(--coral);background:#fde7f0;border-radius:12px;padding:22px;font-size:25px}.benefit-grid h3{margin:17px 0 8px}.benefit-grid p{color:#796671;line-height:1.7;font-size:14px}
+.benefit-apps-visual{position:relative;width:100%;aspect-ratio:2.35 / 1;grid-column:2;grid-row:1;overflow:hidden}.benefit-apps-visual img{position:absolute;inset:0;width:100%;height:auto;transform:translateY(-18%)}.benefit-cta-wrap{grid-column:2;grid-row:2;display:flex;justify-content:flex-end;align-items:flex-start}
 .benefit-cta-wrap{display:flex;align-items:center;justify-content:center}.benefit-cta{min-width:min(100%,360px)}
 .faq-section{padding:95px 0;background:#fffbf8}.faq-container{max-width:850px}.faq-panels{border-top:1px solid #dfe6e3}.faq-panels :deep(.v-expansion-panel){border-bottom:1px solid #dfe6e3;background:transparent}.faq-panels :deep(.v-expansion-panel-title){font-size:17px;font-weight:800;padding:23px 5px}.faq-panels :deep(.v-expansion-panel-text__wrapper){color:#63736e;line-height:1.9;padding:0 5px 22px}
 .final-cta{background:var(--coral);color:#fff;padding:60px 0}.final-cta .v-container{display:flex;justify-content:space-between;align-items:center;gap:30px}.final-cta span{font-weight:800;opacity:.8}.final-cta h2{font-size:34px;margin:6px 0}.final-cta p{opacity:.85}.final-cta .v-btn{background:#fff;color:var(--ink);font-weight:900;letter-spacing:0;padding-inline:28px}.snackbar-content{display:flex;align-items:center;gap:10px}.snackbar-content .v-btn{color:#a9e0ce;margin-right:auto}
-@media(max-width:960px){.hero-container{grid-template-columns:1fr;text-align:center;padding-top:75px}.hero-lead{margin-inline:auto}.hero-actions{justify-content:center}.hero-visual{height:470px}.purchase-card{grid-template-columns:1fr;grid-template-areas:"destination" "package";gap:54px}.purchase-card--single{grid-template-areas:"destination"}.destination-list{display:grid;grid-template-columns:1fr;max-height:460px}.embedded-checkout :deep(.summary-column),.embedded-checkout :deep(.contact-column){padding-inline:12px!important}.embedded-checkout :deep(.summary-column){border-inline-start:0;margin-top:34px}.benefits-layout{grid-template-columns:1fr;gap:45px}.steps-grid{grid-template-columns:1fr}.step-arrow{transform:rotate(-90deg)}.proof-grid{grid-template-columns:1fr 1fr;gap:20px}.proof-grid div{border:0}.final-cta .v-container{flex-direction:column;text-align:center}}
+@media(max-width:960px){.hero-container{grid-template-columns:1fr;text-align:center;padding-top:75px}.hero-lead{margin-inline:auto}.hero-actions{justify-content:center}.hero-visual{height:470px}.purchase-card{grid-template-columns:1fr;grid-template-areas:"destination" "package";gap:54px}.purchase-card--single{grid-template-areas:"destination"}.destination-list{display:grid;grid-template-columns:1fr;max-height:460px}.embedded-checkout :deep(.summary-column),.embedded-checkout :deep(.contact-column){padding-inline:12px!important}.embedded-checkout :deep(.summary-column){border-inline-start:0;margin-top:34px}.benefits-layout{grid-template-columns:1fr;grid-template-rows:auto;gap:28px}.benefit-copy{grid-column:1;grid-row:1;text-align:center}.benefit-apps-visual{grid-column:1;grid-row:2}.benefit-cta-wrap{grid-column:1;grid-row:3;justify-content:center}.steps-grid{grid-template-columns:1fr}.step-arrow{transform:rotate(-90deg)}.proof-grid{grid-template-columns:1fr 1fr;gap:20px}.proof-grid div{border:0}.final-cta .v-container{flex-direction:column;text-align:center}}
 @media(max-width:960px){.popular-packs-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.one-page :deep(.v-container){padding-left:12px!important;padding-right:12px!important}.page-language-bar{padding:10px 0 3px}.language-bar-inner{flex-direction:column;justify-content:center;gap:7px;padding-inline:8px!important}.language-prompt{display:flex;font-size:12px;gap:5px}.language-prompt .v-icon{font-size:17px!important}.language-options{width:auto;max-width:100%;justify-content:center;gap:5px;min-width:0}.language-options button{min-width:0;padding:6px 8px;font-size:11px;gap:4px}.hero-section{min-height:auto}.hero-container{padding-top:24px;padding-bottom:50px}.hero-copy h1{font-size:40px;letter-spacing:-1px}.hero-lead{font-size:16px}.hero-actions{flex-direction:column}.hero-visual{height:470px;margin-top:12px}.proof-grid b{font-size:18px}.plans-section,.how-section,.benefits-section,.faq-section{padding:70px 0}.section-heading{margin-bottom:30px}.destination-panel{padding:20px 0 4px}.package-panel{padding:20px 12px 20px}.step-label{font-size:21px;margin-bottom:24px}.step-label i{width:38px;height:38px;font-size:16px}.destination-list{grid-template-columns:1fr;max-height:460px}.package-grid{grid-template-columns:1fr}.selected-country{align-items:flex-start;flex-direction:column}.one-page[dir="rtl"] .selected-country>div,.one-page[dir="rtl"] .selected-country small{width:100%;text-align:right}.one-page[dir="rtl"] .selected-country>div{justify-content:flex-start}.one-page[dir="ltr"] .selected-country>div,.one-page[dir="ltr"] .selected-country small{width:100%;text-align:left}.checkout-row{align-items:stretch;flex-direction:column}.buy-button{width:100%}.benefit-copy h2{font-size:31px}.benefit-grid{grid-template-columns:1fr}.final-cta h2{font-size:28px}.final-cta .v-btn{width:100%}}
 @media(max-width:600px){.plans-section{padding-bottom:28px}.checkout-section{padding-top:24px}}
@@ -734,7 +679,7 @@ watch(locale, () => {
   .one-page.locale-en .hero-copy h1{font-size:32px;line-height:1.25;letter-spacing:-.8px}
   .one-page.locale-fr .hero-copy h1{font-size:28px;line-height:1.25;letter-spacing:-.8px}
   .one-page.locale-fr .hero-copy h1 .hero-accent-line{white-space:nowrap;margin-top:6px}
-  .proof-strip{margin-top:-20px}
+  .proof-strip{margin-top:-28px}
   .proof-grid div+div{border-inline-start:0}
 }
 @media(max-width:360px){
@@ -745,16 +690,19 @@ watch(locale, () => {
 .hero-section { align-items:flex-end; }
 .hero-container { padding-bottom:0!important; }
 .hero-visual { width:100%;height:auto!important;aspect-ratio:3 / 2;align-items:flex-end;overflow:hidden; }
-.hero-artwork { width:118%;max-width:none;height:auto;aspect-ratio:3 / 2;object-fit:contain;transform:translateY(3%); }
+.hero-artwork { width:100%;max-width:100%;height:auto;aspect-ratio:3 / 2;object-fit:contain;object-position:center;transform:none; }
 
 @media(max-width:960px){
   .hero-container{padding-bottom:0!important}
   .hero-visual{margin-top:0;margin-bottom:0}
-  .hero-artwork{width:120%;transform:translateY(7%)}
+  .hero-artwork{width:100%;max-width:100%;transform:none}
 }
 
 @media(min-width:961px){
   .hero-section{align-items:center}
   .hero-artwork{width:100%;transform:none}
 }
+@media(max-width:960px){.featured-destinations-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.featured-destinations-section{padding:48px 0 8px}.featured-destinations-heading{margin-bottom:23px}.featured-destinations-heading h2{font-size:27px}.featured-destinations-heading p{font-size:14px}.featured-destinations-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.featured-destination-card{height:180px;border-radius:16px}.featured-destination-card>div{inset-inline:12px;bottom:12px}.featured-destination-card strong{font-size:16px}.featured-destination-card small{font-size:10px}}
+.featured-destinations-section + .plans-section{padding-top:0}
 </style>

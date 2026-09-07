@@ -842,4 +842,61 @@ export default {
 .turkey-country-line{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 18px}.turkey-country-line img{width:34px;height:24px;object-fit:cover;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,.14)}.turkey-country-line strong{color:var(--eu-pink)}
 .europe-proof-grid{grid-template-columns:1fr;max-width:520px;padding-top:0;padding-bottom:12px}.europe-proof-grid>div{justify-content:center;padding-top:6px}.europe-proof-grid>div+div{border:0}@media(max-width:599px){.europe-proof-grid{padding-block:0 10px}.europe-proof-grid>div{padding:6px 18px}.europe-map-card{margin-bottom:-40px}}
 .network-disclosure>.network-table-wrap{display:block!important}
+/* RTL corrections for FAQ and related destination cards. */
+.europe-page[dir="rtl"] .europe-faq-list summary{direction:rtl;flex-direction:row;text-align:right}
+.europe-page[dir="rtl"] .europe-faq-list summary>span{flex:1;min-width:0}
+.europe-page[dir="rtl"] .europe-faq-list summary>.v-icon{flex:0 0 auto;margin-inline-start:16px}
+.europe-page[dir="rtl"] .europe-related-card{direction:ltr;grid-template-columns:24px minmax(0,1fr) 42px;text-align:right}
+.europe-page[dir="rtl"] .europe-related-card img{grid-column:3;grid-row:1}
+.europe-page[dir="rtl"] .europe-related-card strong{grid-column:2;grid-row:1;min-width:0;direction:rtl}
+.europe-page[dir="rtl"] .europe-related-card .v-icon{grid-column:1;grid-row:1;transform:scaleX(-1)}
+\.europe-page[dir="rtl"] .europe-fact,.europe-page[dir="rtl"] .europe-use-case-card,.europe-page[dir="rtl"] .safarsim-fact-card,.europe-page[dir="rtl"] .activation-guidance>div{flex-direction:row-reverse;text-align:right}
+.europe-page[dir="rtl"] .europe-fact>span,.europe-page[dir="rtl"] .europe-use-case-card>div,.europe-page[dir="rtl"] .safarsim-fact-card>div,.europe-page[dir="rtl"] .activation-guidance>div>span{min-width:0;flex:1}
+.europe-page[dir="rtl"] .network-notes>span{display:flex;flex-direction:row-reverse;justify-content:flex-start;text-align:right;gap:10px}
+.europe-page[dir="rtl"] .network-table th,.europe-page[dir="rtl"] .network-table td,.europe-page[dir="rtl"] .comparison-table th,.europe-page[dir="rtl"] .comparison-table td{text-align:right}
+.europe-page[dir="rtl"] .network-operators{direction:ltr;text-align:right;display:block}
+.europe-page[dir="rtl"] .technology-badge{direction:ltr;display:inline-flex}
+.europe-page[dir="rtl"] .europe-fact>.v-icon,.europe-page[dir="rtl"] .europe-use-case-card>.v-icon,.europe-page[dir="rtl"] .safarsim-fact-card>.v-icon,.europe-page[dir="rtl"] .activation-guidance>div>.v-icon{order:2;margin-inline-start:14px;margin-inline-end:0}
+.europe-page[dir="rtl"] .europe-fact>span,.europe-page[dir="rtl"] .europe-use-case-card>div,.europe-page[dir="rtl"] .safarsim-fact-card>div,.europe-page[dir="rtl"] .activation-guidance>div>span{order:1}
+.europe-page[dir="rtl"] .europe-use-case-card{direction:ltr;flex-direction:row-reverse}
+.europe-page[dir="rtl"] .europe-use-case-card>div{direction:rtl;text-align:right}
+.europe-page[dir="rtl"] .europe-fact,
+.europe-page[dir="rtl"] .europe-use-case-card,
+.europe-page[dir="rtl"] .safarsim-fact-card,
+.europe-page[dir="rtl"] .activation-guidance>div{direction:ltr;flex-direction:row-reverse;text-align:right}
+.europe-page[dir="rtl"] .europe-fact>span,
+.europe-page[dir="rtl"] .europe-use-case-card>div,
+.europe-page[dir="rtl"] .safarsim-fact-card>div,
+.europe-page[dir="rtl"] .activation-guidance>div>span{direction:rtl;text-align:right}
+.europe-page[dir="rtl"] .europe-fact,
+.europe-page[dir="rtl"] .europe-use-case-card,
+.europe-page[dir="rtl"] .safarsim-fact-card,
+.europe-page[dir="rtl"] .activation-guidance>div{direction:rtl!important;flex-direction:row!important;text-align:right}
+.europe-page[dir="rtl"] .europe-fact>.v-icon,
+.europe-page[dir="rtl"] .europe-use-case-card>.v-icon,
+.europe-page[dir="rtl"] .safarsim-fact-card>.v-icon,
+.europe-page[dir="rtl"] .activation-guidance>div>.v-icon{order:0!important;margin-inline-start:0;margin-inline-end:14px}
+.europe-page[dir="rtl"] .europe-fact>span,
+.europe-page[dir="rtl"] .europe-use-case-card>div,
+.europe-page[dir="rtl"] .safarsim-fact-card>div,
+.europe-page[dir="rtl"] .activation-guidance>div>span{order:0!important;direction:rtl;text-align:right}
+.europe-page[dir="rtl"] .comparison-recommendation{direction:rtl;flex-direction:row;text-align:right}
+.europe-page[dir="rtl"] .comparison-recommendation>.v-icon{order:0;margin-inline-end:0}
+.europe-page[dir="rtl"] .comparison-recommendation>p{order:0;flex:1}
+.europe-page[dir="rtl"] .comparison-links a{direction:ltr;display:grid;grid-template-columns:24px minmax(0,1fr);text-align:right}
+.europe-page[dir="rtl"] .comparison-links a>.v-icon{grid-column:1;grid-row:1;transform:scaleX(-1)}
+.europe-page[dir="rtl"] .comparison-link-label{grid-column:2;grid-row:1;direction:rtl;display:block;text-align:right}
+.europe-page[dir="rtl"] .comparison-link-flag{float:right;margin-inline-end:0;margin-inline-start:8px}
+.europe-page[dir="rtl"] .europe-installation-steps li{direction:rtl!important;flex-direction:row!important;text-align:right}
+.europe-page[dir="rtl"] .europe-installation-steps li>i{order:0!important;margin:0}
+.europe-page[dir="rtl"] .europe-installation-steps li>span{order:0!important;flex:1}
+.europe-page[dir="rtl"] .europe-guide-links a{direction:ltr!important;grid-template-columns:24px minmax(0,1fr) 34px;text-align:right}
+.europe-page[dir="rtl"] .europe-guide-links a>.v-icon:first-child{grid-column:3;grid-row:1}
+.europe-page[dir="rtl"] .europe-guide-links a>span{grid-column:2;grid-row:1;direction:rtl;text-align:right}
+.europe-page[dir="rtl"] .europe-guide-links a>.v-icon:last-child{grid-column:1;grid-row:1;transform:scaleX(-1)}
+.europe-page[dir="rtl"] .whatsapp-title-row{direction:ltr;grid-template-columns:minmax(0,1fr) 68px;text-align:right}
+.europe-page[dir="rtl"] .whatsapp-title-row .whatsapp-icon{grid-column:2;grid-row:1}
+.europe-page[dir="rtl"] .whatsapp-title-row h2{grid-column:1;grid-row:1;direction:rtl;text-align:right}
+.europe-page[dir="rtl"] .europe-whatsapp-container>p{margin-right:0;margin-left:92px;text-align:right}
+@media(max-width:600px){.europe-page[dir="rtl"] .whatsapp-title-row{grid-template-columns:minmax(0,1fr) 58px}.europe-page[dir="rtl"] .europe-whatsapp-container>p{margin:18px 0 0}}
 </style>

@@ -32,6 +32,8 @@ export const LOCALIZED_ROUTE_PATHS = {
   turkeyDetails: { fr: "/esim/turkiye", en: "/esim/turkiye", ar: "/esim/turkiye" },
   spainDetails: { fr: "/esim/spain", en: "/esim/spain", ar: "/esim/spain" },
   franceDetails: { fr: "/esim/france", en: "/esim/france", ar: "/esim/france" },
+  saudiArabiaDetails: { fr: "/esim/saudi-arabia", en: "/esim/saudi-arabia", ar: "/esim/saudi-arabia" },
+  unitedArabEmiratesDetails: { fr: "/esim/united-arab-emirates", en: "/esim/united-arab-emirates", ar: "/esim/united-arab-emirates" },
   help: { fr: "/help", en: "/help", ar: "/help" },
   pricing: { fr: "/pricing", en: "/pricing", ar: "/pricing" },
   privacyPolicy: {
@@ -80,6 +82,16 @@ const LOCALIZED_COMPONENTS = {
     fr: () => import("@/pages/fr/esim/France.vue"),
     en: () => import("@/pages/en/esim/France.vue"),
     ar: () => import("@/pages/ar/esim/France.vue"),
+  },
+  saudiArabiaDetails: {
+    fr: () => import("@/pages/fr/esim/SaudiArabia.vue"),
+    en: () => import("@/pages/en/esim/SaudiArabia.vue"),
+    ar: () => import("@/pages/ar/esim/SaudiArabia.vue"),
+  },
+  unitedArabEmiratesDetails: {
+    fr: () => import("@/pages/fr/esim/UnitedArabEmirates.vue"),
+    en: () => import("@/pages/en/esim/UnitedArabEmirates.vue"),
+    ar: () => import("@/pages/ar/esim/UnitedArabEmirates.vue"),
   },
   PaymentSuccess: {
     fr: () => import("@/pages/fr/PaymentSuccess.vue"),
@@ -178,6 +190,16 @@ const pageRoutes = [
     path: "/esim/france",
     name: "franceDetails",
     component: LOCALIZED_COMPONENTS.franceDetails.en,
+  },
+  {
+    path: "/esim/saudi-arabia",
+    name: "saudiArabiaDetails",
+    component: LOCALIZED_COMPONENTS.saudiArabiaDetails.en,
+  },
+  {
+    path: "/esim/united-arab-emirates",
+    name: "unitedArabEmiratesDetails",
+    component: LOCALIZED_COMPONENTS.unitedArabEmiratesDetails.en,
   },
   {
     path: "/esim/espagne",

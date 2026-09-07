@@ -1,337 +1,52 @@
 <template>
-  <v-container class="py-10 destination-page" v-if="destination">
-    <!-- Breadcrumb -->
-    <div v-if="$i18n.locale === 'ar'" class="breadcrumb-row breadcrumb-row-ar mb-6 text-body-2">
-      <router-link to="/esim" class="text-decoration-none">
-        <span class="text-medium-emphasis">{{ $t("common.esims") }}</span>
-      </router-link>
-      <span class="mx-2">&lt;</span>
-      <strong>{{ localizedDestinationName }}</strong>
-    </div>
-    <div v-else class="breadcrumb-row mb-6 text-body-2">
-      <router-link to="/esim" class="text-decoration-none">
-        <span class="text-medium-emphasis">{{ $t("common.esims") }}</span>
-      </router-link>
-      <span class="mx-2">></span>
-      <strong>{{ localizedDestinationName }}</strong>
-    </div>
+  <main v-if="destination" class="country-page" :dir="rtl ? 'rtl' : 'ltr'">
+    <section class="hero"><v-container>
+      <nav><router-link :to="`${prefix}/esim`">eSIMs</router-link><v-icon size="16">{{ rtl?'mdi-chevron-left':'mdi-chevron-right' }}</v-icon><b>{{ name }}</b></nav>
+      <div class="hero-grid"><div><span class="kicker">{{ t.prepaid }}</span><h1>{{ t.connected }}<em>{{ name }}</em></h1><p>{{ sentence(t.hero) }}</p><v-btn color="#d91c58" rounded="pill" size="x-large" @click="go('plans')">{{ t.plans }}</v-btn></div>
+      <figure><img :src="destination.image" :alt="`${name} eSIM`" @error="flagFallback"><i>{{ destination.flag }}</i><b><v-icon>mdi-wifi</v-icon>{{ technologies }}</b></figure></div>
+    </v-container></section>
+    <section class="proof"><v-container><b><v-icon>mdi-tag-outline</v-icon>{{ t.from }} {{ startingPrice }}</b><b><v-icon>mdi-qrcode-scan</v-icon>{{ t.instant }}</b><b><v-icon>mdi-signal</v-icon>{{ technologies }}</b></v-container></section>
 
-    <!-- Country card -->
-    <v-card rounded="xl" elevation="0" class="pa-6 mb-8 country-card">
-      <div v-if="$i18n.locale === 'ar'" class="destination-header destination-header-ar d-flex justify-end align-center mb-4">
-        <div class="text-body-1 mr-2">{{ destination.iso }}</div>
-        <h2 class="text-h5 font-weight-bold mr-3">{{ localizedDestinationName }}</h2>
-        <div class="flag-wrapper">
-          <v-img :src="getImage(destination)" contain class="flag-img" @error="fallback" />
-        </div>
-      </div>
-      <div v-else class="destination-header d-flex align-center mb-4">
-        <div class="flag-wrapper">
-          <v-img :src="getImage(destination)" contain class="flag-img" @error="fallback" />
-        </div>
-        <h2 class="text-h5 font-weight-bold ml-3">{{ localizedDestinationName }}</h2>
-        <div class="text-body-1 ml-2 ">{{ destination.iso }}</div>
-      </div>
+    <section id="plans" class="section"><v-container><Heading :kicker="t.flexible" :title="sentence(t.choose)" :text="sentence(t.chooseText)" />
+      <div class="plans"><button v-for="plan in sortedPlans" :key="plan.key" :class="{active:selected===plan.key}" @click="select(plan)"><i></i><div><strong>{{ plan.label }}</strong><small>{{ t.data }}</small></div><span><v-icon size="18">mdi-calendar-blank-outline</v-icon>{{ plan.days }} {{ t.days }}</span><b>{{ money(plan.price,locale) }}</b><em v-if="plan.data==='10GB'">{{ t.popular }}</em></button></div>
+      <v-btn v-if="selected" class="continue" color="#d91c58" rounded="pill" size="x-large" @click="go('checkout')">{{ t.continue }}</v-btn>
+    </v-container></section>
 
-      <v-divider class="mb-5" />
+    <section v-if="checkout" id="checkout" class="section checkout"><v-container><Heading :kicker="t.final" :title="t.complete" :text="sentence(t.review)" /><Cart :show-step-numbers="true" /></v-container></section>
 
-      <div v-if="$i18n.locale === 'ar'" class="destination-info-row d-flex align-center justify-end mb-6 text-body-1">
-        <v-chip class="ml-2" size="x-small" variant="outlined">5G</v-chip>
-        <v-chip class="ml-2" size="x-small" variant="outlined">4G</v-chip>
-        <strong class="ml-2">{{ $t("destinationsPage.availableNetwork") }}</strong>
-        <v-icon size="20">mdi-signal-cellular-outline</v-icon>
-      </div>
-      <div v-else class="destination-info-row d-flex align-center mb-6 text-body-1">
-        <v-icon size="20" class="mr-2">mdi-signal-cellular-outline</v-icon>
-        <strong class="mr-2">{{ $t("destinationsPage.availableNetwork") }}</strong>
-        <v-chip class="mr-2" size="x-small" variant="outlined">4G</v-chip>
-        <v-chip size="x-small" variant="outlined">5G</v-chip>
-      </div>
-      <div v-if="$i18n.locale === 'ar'" class="d-flex align-start justify-end">
-        <div>{{ $t("destinationsPage.planStarts") }}</div>
-        <v-icon size="20" class="ml-3 mt-1">mdi-check</v-icon>
-      </div>
-      <div v-else class="d-flex align-start">
-        <v-icon size="20" class="mr-3 mt-1">mdi-check</v-icon>
-        <div>{{ $t("destinationsPage.planStarts") }}</div>
-      </div>
-    </v-card>
+    <section class="section soft"><v-container><Heading :kicker="t.explained" :title="sentence(t.what)" :text="sentence(t.whatText)" /><div class="cards"><Info icon="mdi-wifi" :title="t.data" :text="t.dataText"/><Info icon="mdi-access-point" :title="t.hotspot" :text="t.hotspotText"/><Info icon="mdi-timer-outline" :title="t.validity" :text="t.validityText"/><Info icon="mdi-map-marker-radius" :title="sentence(t.coverage)" :text="t.coverageText"/></div></v-container></section>
 
-    <!-- Packages -->
-    <v-card rounded="xl" elevation="0" class="pa-4 pa-md-6 mb-8 package-card">
+    <section class="section"><v-container><Heading :kicker="t.partners" :title="sentence(t.networks)" :text="t.networkText"/><div class="network"><strong>{{ destination.flag }} {{ name }}</strong><div><span v-for="op in operators" :key="op">{{ op }}</span></div><b>{{ technologies }}</b></div></v-container></section>
 
-      <h3 class="text-h5 text-center mb-5">{{ $t("destinationsPage.choosePlan") }}</h3>
-      <div class="section-line mb-6"></div>
+    <section class="section soft"><v-container><Heading :kicker="t.everyTrip" :title="sentence(t.who)" :text="t.whoText"/><div class="cards"><Info icon="mdi-airplane" :title="t.holiday" :text="t.holidayText"/><Info icon="mdi-city-variant-outline" :title="t.city" :text="t.cityText"/><Info icon="mdi-briefcase-outline" :title="t.business" :text="t.businessText"/><Info icon="mdi-map-marker-path" :title="t.long" :text="t.longText"/></div></v-container></section>
 
-      <div v-for="group in groupedPlans" :key="group.days" class="mb-8">
-        <div class="text-h6 font-weight-bold mb-4">{{ formatDaysLabel(group.days) }}</div>
+    <section class="section"><v-container><Heading :kicker="t.ready" :title="sentence(t.install)" :text="t.installText"/><ol><li v-for="(step,i) in steps" :key="step"><i>{{ i+1 }}</i>{{ step }}</li></ol><div class="guides"><router-link :to="`${prefix}/guides/install-esim-iphone`"> {{ t.iphone }}</router-link><router-link :to="`${prefix}/guides/install-esim-android`"><v-icon>mdi-android</v-icon>{{ t.android }}</router-link><router-link :to="`${prefix}/guides/compatibility`"><v-icon>mdi-cellphone-check</v-icon>{{ t.compatibility }}</router-link></div></v-container></section>
 
-        <v-card v-for="plan in group.items" :key="plan.key" rounded="xl" elevation="1"
-          class="mb-5 px-4 py-4 package-item">
-          <div class="d-flex align-center justify-space-between">
-            <div>
-              <div class="text-h6 ">{{ plan.dataLabel }}</div>
-            </div>
-
-            <div class="d-flex align-center">
-              <div class="text-right mr-4">
-                <div class="text-h5 ">{{ formatPriceFromMad(plan.price, $i18n.locale) }}</div>
-              </div>
-              <v-btn icon :color="addedPlanKey === plan.key ? 'green' : 'pink-darken-1'" variant="flat"
-                @click="handleAddToCart(plan)">
-                <v-icon>
-                  {{ addedPlanKey === plan.key ? 'mdi-check' : 'mdi-plus' }}
-                </v-icon>
-              </v-btn>
-
-              <v-snackbar v-model="snackbar" location="top" color="green" timeout="2000">
-                {{ snackbarText }}
-              </v-snackbar>
-            </div>
-          </div>
-        </v-card>
-      </div>
-    </v-card>
-  </v-container>
-
-  <v-container v-else class="py-10">
-    <h2>{{ $t("destinationsPage.countryNotFound") }}</h2>
-  </v-container>
+    <section class="section soft"><v-container><Heading kicker="FAQ" :title="sentence(t.faq)"/><div class="faqs"><details v-for="x in faqs" :key="x.q"><summary>{{ x.q }}<v-icon>mdi-plus</v-icon></summary><p>{{ x.a }}</p></details></div></v-container></section>
+    <v-snackbar v-model="snackbar" color="green" location="top">{{ $t('destinationsPage.addedToCart') }}</v-snackbar>
+  </main>
+  <v-container v-else class="missing"><h2>{{ $t('destinationsPage.countryNotFound') }}</h2></v-container>
 </template>
 
 <script>
+import { defineComponent, h } from 'vue'
 import { destinations } from '@/services/catalog'
+import coverage from '@/data/country_network_coverage.json'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
 import { destinationUrlSlug, findDestinationByUrlSlug } from '@/utils/destinationUrls'
 import { formatPriceFromMad, priceFromMad, getPreferredCurrency } from '@/utils/currency'
-import { posthog } from '@/services/posthog'
-
-export default {
-  name: 'DestinationDetailsPage',
-
-  data() {
-    return {
-      destination: null,
-      addedPlanKey: null,
-      snackbar: false,
-      snackbarText: '',
-    }
-  },
-
-  computed: {
-    parsedPlans() {
-      if (!this.destination?.plans) return []
-
-      return Object.entries(this.destination.plans).flatMap(([key, planConfig]) => {
-        const hasPlanConfig = planConfig && typeof planConfig === 'object'
-        const price = hasPlanConfig ? planConfig.price : planConfig
-        const esimGoBundleName = hasPlanConfig ? planConfig.esimGoBundleName : null
-
-        if (price === null || price === undefined) return []
-
-        const match = key.match(/^(\d+GB)_(\d+)days$/)
-
-        if (!match) {
-          return [{
-            key,
-            data: '',
-            days: 0,
-            dataLabel: key,
-            price,
-            esimGoBundleName,
-          }]
-        }
-
-        const data = match[1]
-        const days = Number(match[2])
-
-        return [{
-          key,
-          data,
-          days,
-          dataLabel: data.replace('GB', ' GB'),
-          price,
-          esimGoBundleName,
-        }]
-      })
-    },
-
-    groupedPlans() {
-      const groups = {}
-
-      this.parsedPlans.forEach((plan) => {
-        if (!groups[plan.days]) groups[plan.days] = []
-        groups[plan.days].push(plan)
-      })
-
-      return Object.keys(groups)
-        .sort((a, b) => Number(a) - Number(b))
-        .map((days) => ({
-          days,
-          items: groups[days].sort((a, b) => {
-            const aValue = parseInt(a.data)
-            const bValue = parseInt(b.data)
-            return aValue - bValue
-          }),
-        }))
-    },
-
-    localizedDestinationName() {
-      return getLocalizedName(this.destination, this.$i18n.locale)
-    },
-  },
-
-  methods: {
-    loadDestination() {
-      const slug = this.$route.params.slug
-      this.destination = findDestinationByUrlSlug(destinations, slug)
-      if (this.destination) {
-        const canonicalSlug = destinationUrlSlug(this.destination)
-        if (slug !== canonicalSlug) {
-          const prefix = this.$i18n.locale === 'en' ? '' : `/${this.$i18n.locale}`
-          this.$router.replace(`${prefix}/esim/${canonicalSlug}`)
-        }
-      }
-    },
-    addToCart(plan) {
-      addToCart({
-        id: `${this.destination.slug}-${plan.key}`,
-        destinationName: this.localizedDestinationName,
-        names: this.destination.names,
-        destinationSlug: this.destination.slug,
-        flag: this.destination.flag,
-        image: this.destination.image,
-        iso: this.destination.iso,
-        planKey: plan.key,
-        data: plan.data,
-        dataLabel: plan.dataLabel,
-        days: plan.days,
-        price: priceFromMad(plan.price),
-        currency: getPreferredCurrency(),
-        esimGoBundleName: plan.esimGoBundleName,
-        quantity: 1,
-      })
-    },
-    handleAddToCart(plan) {
-      addToCart({
-        id: `${this.destination.slug}-${plan.key}`,
-        destinationName: this.localizedDestinationName,
-        names: this.destination.names,
-        destinationSlug: this.destination.slug,
-        flag: this.destination.flag,
-        image: this.destination.image,
-        iso: this.destination.iso,
-        planKey: plan.key,
-        data: plan.data,
-        dataLabel: plan.dataLabel,
-        days: plan.days,
-        price: priceFromMad(plan.price),
-        currency: getPreferredCurrency(),
-        esimGoBundleName: plan.esimGoBundleName,
-        quantity: 1,
-      })
-
-      posthog.capture('plan_added_to_cart', {
-        destination_slug: this.destination.slug,
-        plan_key: plan.key,
-        data_amount: plan.data,
-        validity_days: plan.days,
-        currency: getPreferredCurrency(),
-        unit_price: priceFromMad(plan.price),
-      })
-
-      this.addedPlanKey = plan.key
-      this.snackbarText = this.$t('destinationsPage.addedToCart')
-      this.snackbar = true
-
-      setTimeout(() => {
-        this.addedPlanKey = null
-      }, 1500)
-    },
-    getImage(item) {
-      if (item.type === "region") {
-        return item.image;
-      }
-
-      try {
-        return require(`@/assets/images/flags/${item.iso.toLowerCase()}.svg`);
-      } catch (e) {
-        return item.image;
-      }
-    },
-    fallback(event) {
-      event.target.src = require('@/assets/images/flags/default.png')
-    },
-    formatDaysLabel(days) {
-      return this.$i18n.locale === 'ar'
-        ? `${this.$t("destinationsPage.days")} ${days}`
-        : `${days} ${this.$t("destinationsPage.days")}`
-    },
-    formatPriceFromMad,
-  },
-
-  watch: {
-    '$route.params.slug': {
-      immediate: true,
-      handler() {
-        this.loadDestination()
-      },
-    },
-  },
-}
+import Cart from '@/pages/Cart.vue'
+const Heading=defineComponent({props:['kicker','title','text'],setup:p=>()=>h('header',{class:'heading'},[h('span',p.kicker),h('h2',p.title),p.text&&h('p',p.text)])})
+const Info=defineComponent({props:['icon','title','text'],setup:p=>()=>h('article',[h('span',{class:'v-icon mdi '+p.icon}),h('div',[h('b',p.title),h('p',p.text)])])})
+const words={
+ en:{prepaid:'Flexible prepaid data',connected:'Stay connected throughout',hero:'Travel across {country} with one prepaid eSIM. Use maps, messages and booking apps without changing your physical SIM.',plans:'See available plans',from:'Plans from',instant:'Instant digital delivery',flexible:'Flexible prepaid data',choose:'Choose your {country} eSIM plan',chooseText:'Choose the data allowance and validity period that match your stay in {country}.',data:'Mobile data',days:'days',popular:'Most popular',continue:'Continue to secure payment',final:'Final step',complete:'Complete your order',review:'Review your {country} plan, then enter delivery and payment details.',explained:'eSIM explained',what:'What is a {country} eSIM?',whatText:'A {country} eSIM is a digital SIM providing mobile data without a physical SIM card.',dataText:'Internet access without traditional calls or SMS.',hotspot:'Personal hotspot',hotspotText:'Most plans support hotspot depending on the device and network.',validity:'Validity starts on connection',validityText:'Your plan starts on its first supported network connection.',coverage:'Coverage in {country}',coverageText:'Use the same eSIM throughout covered areas.',partners:'Local network partners',networks:'Mobile networks in {country}',networkText:'Your device automatically selects an available partner network.',everyTrip:'One plan for every trip',who:'Who should choose a {country} eSIM?',whoText:'Ideal for holidays, city breaks, business trips and longer stays.',holiday:'Holidays',holidayText:'Keep maps, messages and bookings available.',city:'City breaks',cityText:'Use transport, taxi and local apps.',business:'Business travel',businessText:'Stay connected for meetings and work.',long:'Longer stays',longText:'Keep one connection while travelling.',ready:'Ready in minutes',install:'How to install your {country} eSIM',installText:'Prepare it before departure and activate it on arrival.',iphone:'iPhone installation guide',android:'Android installation guide',compatibility:'Check compatibility',faq:'{country} eSIM FAQ'},
+ fr:{prepaid:'Données prépayées flexibles',connected:'Restez connecté partout aux',hero:'Voyagez aux {country} avec une eSIM prépayée pour vos cartes, messages et réservations.',plans:'Voir les forfaits',from:'Forfaits dès',instant:'Livraison numérique instantanée',flexible:'Données prépayées flexibles',choose:'Choisissez votre forfait eSIM {country}',chooseText:'Choisissez le volume et la durée adaptés à votre séjour aux {country}.',data:'Données mobiles',days:'jours',popular:'Le plus populaire',continue:'Continuer vers le paiement sécurisé',final:'Dernière étape',complete:'Finalisez votre commande',review:'Vérifiez votre forfait {country}, puis renseignez la livraison et le paiement.',explained:'L’eSIM expliquée',what:'Qu’est-ce qu’une eSIM {country} ?',whatText:'Une eSIM {country} fournit les données mobiles sans carte SIM physique.',dataText:'Internet sans appels ni SMS traditionnels.',hotspot:'Partage de connexion',hotspotText:'La plupart des forfaits permettent le hotspot selon le réseau.',validity:'Validité dès la connexion',validityText:'Le forfait démarre à la première connexion compatible.',coverage:'Couverture aux {country}',coverageText:'Utilisez la même eSIM dans les zones couvertes.',partners:'Réseaux partenaires locaux',networks:'Réseaux mobiles aux {country}',networkText:'Votre appareil choisit automatiquement un réseau partenaire.',everyTrip:'Un forfait pour chaque voyage',who:'Pour quels voyages choisir une eSIM {country} ?',whoText:'Idéale pour vacances, séjours urbains, affaires et longs séjours.',holiday:'Vacances',holidayText:'Gardez cartes, messages et réservations accessibles.',city:'Séjour urbain',cityText:'Utilisez transports, taxis et applications.',business:'Voyage professionnel',businessText:'Restez connecté pour travailler.',long:'Long séjour',longText:'Gardez une connexion pendant vos déplacements.',ready:'Prête en quelques minutes',install:'Comment installer votre eSIM {country} ?',installText:'Préparez-la avant le départ et activez-la à l’arrivée.',iphone:'Guide iPhone',android:'Guide Android',compatibility:'Vérifier la compatibilité',faq:'FAQ eSIM {country}'},
+ ar:{prepaid:'بيانات مسبقة الدفع',connected:'ابقَ متصلاً في',hero:'سافر إلى {country} بشريحة eSIM مسبقة الدفع للخرائط والمراسلة والحجوزات.',plans:'عرض الباقات',from:'الباقات ابتداءً من',instant:'توصيل رقمي فوري',flexible:'باقات مرنة',choose:'اختر باقة eSIM في {country}',chooseText:'اختر حجم البيانات والمدة المناسبين لرحلتك.',data:'بيانات الهاتف',days:'أيام',popular:'الأكثر اختياراً',continue:'المتابعة إلى الدفع الآمن',final:'الخطوة الأخيرة',complete:'أكمل طلبك',review:'راجع باقة {country} ثم أدخل معلومات الاستلام والدفع.',explained:'شرح الشريحة الإلكترونية',what:'ما هي eSIM في {country}؟',whatText:'شريحة رقمية توفر بيانات الهاتف في {country} دون شريحة فعلية.',dataText:'إنترنت دون مكالمات أو رسائل تقليدية.',hotspot:'مشاركة الاتصال',hotspotText:'تدعم معظم الباقات نقطة الاتصال حسب الشبكة.',validity:'تبدأ الصلاحية عند الاتصال',validityText:'تبدأ الباقة عند أول اتصال بشبكة مدعومة.',coverage:'تغطية داخل {country}',coverageText:'استخدم الشريحة نفسها في المناطق المشمولة.',partners:'شبكات محلية شريكة',networks:'شبكات الهاتف في {country}',networkText:'يختار جهازك تلقائياً شبكة شريكة متاحة.',everyTrip:'باقة لكل رحلة',who:'لأي رحلات تختار eSIM في {country}؟',whoText:'مثالية للعطلات وزيارات المدن والعمل والإقامات الطويلة.',holiday:'العطلات',holidayText:'استخدم الخرائط والمراسلة والحجوزات.',city:'زيارة المدن',cityText:'استخدم النقل وسيارات الأجرة والتطبيقات.',business:'رحلات العمل',businessText:'ابقَ متصلاً للعمل والاجتماعات.',long:'الإقامة الطويلة',longText:'حافظ على اتصالك أثناء التنقل.',ready:'جاهزة خلال دقائق',install:'كيف تثبّت eSIM في {country}؟',installText:'جهّزها قبل السفر وفعّلها عند الوصول.',iphone:'دليل آيفون',android:'دليل أندرويد',compatibility:'تحقق من التوافق',faq:'أسئلة eSIM في {country}'} }
+export default {name:'DestinationDetailsPage',components:{Cart,Heading,Info},data:()=>({destination:null,selected:null,checkout:false,snackbar:false}),computed:{locale(){return ['en','fr','ar'].includes(this.$i18n.locale)?this.$i18n.locale:'en'},rtl(){return this.locale==='ar'},prefix(){return this.locale==='en'?'':`/${this.locale}`},name(){return getLocalizedName(this.destination,this.locale)},t(){return words[this.locale]},plansRaw(){return Object.entries(this.destination?.plans||{}).map(([key,v])=>{const c=typeof v==='object'?v:{price:v},m=key.match(/^(\d+GB)_(\d+)days$/);return{key,data:m?.[1]||key,label:(m?.[1]||key).replace('GB',' GB'),days:+(m?.[2]||0),price:c.price,bundle:c.esimGoBundleName}}).filter(x=>x.price!=null)},sortedPlans(){return [...this.plansRaw].sort((a,b)=>parseInt(a.data)-parseInt(b.data)||a.days-b.days)},startingPrice(){return this.plansRaw.length?formatPriceFromMad(Math.min(...this.plansRaw.map(x=>+x.price)),this.locale):''},network(){return coverage.find(x=>x.isocode===this.destination?.iso)},operators(){return this.network?.operators?.length?this.network.operators:[this.t.partners]},technologies(){return this.network?.technologies?.filter(x=>x==='4G'||x==='5G').join(' / ')||'4G / 5G'},steps(){return this.locale==='ar'?[`اختر باقة ${this.name}.`,'أكمل الدفع.','استلم رمز QR.','أضف eSIM من إعدادات الهاتف.','فعّل البيانات والتجوال عند الوصول.']:this.locale==='fr'?[`Choisissez votre forfait ${this.name}.`,'Effectuez le paiement.','Recevez votre QR code.','Ajoutez l’eSIM dans les réglages.','Activez les données et l’itinérance à l’arrivée.']:[`Choose your ${this.name} plan.`,'Complete payment.','Receive your QR code.','Add the eSIM in phone settings.','Enable data and roaming on arrival.']},faqs(){const n=this.name;return this.locale==='ar'?[{q:`هل تعمل eSIM في ${n}؟`,a:'تعمل حيثما تتوفر شبكة شريكة متوافقة.'},{q:'هل يمكن تثبيتها قبل السفر؟',a:'نعم، ثبّتها عبر Wi-Fi وفعّلها عند الوصول.'},{q:'متى تبدأ الصلاحية؟',a:'عند أول اتصال بشبكة مدعومة.'}]:this.locale==='fr'?[{q:`L’eSIM fonctionne-t-elle aux ${n} ?`,a:'Elle fonctionne lorsqu’un réseau partenaire compatible est disponible.'},{q:'Puis-je l’installer avant le voyage ?',a:'Oui, avec un Wi-Fi stable.'},{q:'Quand commence la validité ?',a:'À la première connexion à un réseau pris en charge.'}]:[{q:`Does the eSIM work in ${n}?`,a:'It works wherever a compatible partner network is available.'},{q:'Can I install it before travel?',a:'Yes, using stable Wi-Fi.'},{q:'When does validity start?',a:'At the first supported network connection.'}]}},methods:{sentence(x){return x.replaceAll('{country}',this.name)},load(){const s=this.$route.params.slug;this.destination=findDestinationByUrlSlug(destinations,s);if(this.destination&&s!==destinationUrlSlug(this.destination))this.$router.replace(`${this.prefix}/esim/${destinationUrlSlug(this.destination)}`);this.selected=null;this.checkout=false;this.meta()},select(p){this.selected=p.key;addToCart({id:`${this.destination.slug}-${p.key}`,destinationName:this.name,names:this.destination.names,destinationSlug:this.destination.slug,flag:this.destination.flag,image:this.destination.image,iso:this.destination.iso,type:'destination',planKey:p.key,data:p.data,dataLabel:p.label,days:p.days,price:priceFromMad(p.price),currency:getPreferredCurrency(),esimGoBundleName:p.bundle,quantity:1});this.snackbar=true;this.checkout=true;this.$nextTick(()=>this.go('checkout'))},go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})},flagFallback(e){try{e.target.src=require(`@/assets/images/flags/${this.destination.iso.toLowerCase()}.svg`)}catch{e.target.style.display='none'}},meta(){this.$nextTick(()=>{if(!this.destination)return;document.documentElement.lang=this.locale;document.title=`${this.sentence(this.t.choose)} | SafarSIM`})},money:formatPriceFromMad},watch:{'$route.params.slug':{immediate:true,handler(){this.load()}},'$i18n.locale'(){this.meta()}}}
 </script>
 
 <style scoped>
-.destination-page {
-  padding-top: 150px;
-  max-width: 900px;
-}
-
-.breadcrumb-row {
-  display: flex;
-  align-items: center;
-}
-
-.breadcrumb-row-ar {
-  direction: rtl;
-  justify-content: flex-start;
-}
-
-.country-card,
-.package-card {
-  background: #f7f4f1;
-}
-
-.section-line {
-  height: 2px;
-  background: #111;
-  border-radius: 999px;
-}
-
-.package-item {
-  background: white;
-  transition: 0.2s ease;
-}
-
-.package-item:hover {
-  transform: translateY(-1px);
-}
-
-.flag-emoji {
-  font-size: 2rem;
-  line-height: 0.4;
-}
-
-.flag-wrapper {
-  width: 60px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-
-.flag-img {
-  width: 100%;
-  height: 100%;
-}
+.country-page{--pink:#d91c58;--ink:#35182a;color:var(--ink)}.hero{padding:48px 0 62px;background:linear-gradient(135deg,#fff8fa,#fff3ed)}.hero .v-container,.section>.v-container{max-width:1180px}.hero nav{display:flex;gap:7px;align-items:center;margin-bottom:35px;font-size:13px}.hero-grid{display:grid;grid-template-columns:1fr .9fr;gap:55px;align-items:center}.kicker,.heading span{color:var(--pink);font-size:14px;font-weight:850}.hero h1{font-size:clamp(40px,5vw,62px);line-height:1.08;margin:10px 0 18px}.hero h1 em{display:block;color:var(--pink);font-style:normal}.hero p,.heading p{color:#74616c;font-size:17px;line-height:1.7}.hero figure{position:relative;height:370px;margin:0;border-radius:32px;overflow:hidden;background:#fff;box-shadow:0 25px 50px #5c213c26}.hero figure img{width:100%;height:100%;object-fit:cover}.hero figure>i{position:absolute;top:20px;inset-inline-start:20px;font-size:44px;font-style:normal}.hero figure>b{position:absolute;bottom:20px;inset-inline-end:20px;background:#fff;padding:9px 13px;border-radius:99px}.proof{background:#fff0f5}.proof .v-container{max-width:1000px;display:grid;grid-template-columns:repeat(3,1fr);padding-block:22px}.proof b{display:flex;justify-content:center;gap:8px}.proof .v-icon{color:var(--pink)}.section{padding:78px 0}.soft,.checkout{background:#fff8fa}.heading{text-align:center;max-width:720px;margin:0 auto 35px}.heading h2{font-size:clamp(28px,4vw,41px);margin:7px 0}.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.plans button{position:relative;min-height:180px;display:grid;grid-template-columns:24px 1fr;gap:9px 12px;padding:22px;border:2px solid #eadde3;border-radius:20px;background:#fff;text-align:start;color:inherit;font:inherit}.plans button:hover,.plans button.active{border-color:var(--pink)}.plans button>i{grid-row:1/4;width:19px;height:19px;border:3px solid #cbb9c2;border-radius:50%}.plans .active>i{border:6px solid var(--pink)}.plans button div{display:flex;gap:7px;align-items:baseline}.plans button div strong{font-size:27px}.plans button small{color:#806e78}.plans button>span{display:flex;gap:6px;align-items:center}.plans button>b{font-size:25px;color:var(--pink)}.plans button>em{position:absolute;top:-10px;inset-inline-end:12px;padding:5px 9px;border-radius:99px;background:var(--pink);color:white;font-size:11px;font-style:normal}.continue{display:flex;margin:28px auto 0}.checkout{scroll-margin-top:70px}.checkout :deep(.cart-page){max-width:none;min-height:0}.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}.cards article{display:flex;gap:14px;padding:22px;border:1px solid #eadde3;border-radius:17px;background:#fff}.cards article>span{color:var(--pink);font-size:30px}.cards article b{font-size:17px}.cards article p{color:#76646e;line-height:1.6}.network{display:grid;grid-template-columns:1fr 1.5fr auto;align-items:center;gap:18px;padding:23px;border:1px solid #eadde3;border-radius:17px}.network>div{display:flex;flex-wrap:wrap;gap:7px}.network span{padding:6px 9px;border-radius:99px;background:#fff0f5}.network>b{color:var(--pink)}ol,.guides,.faqs{max-width:820px;margin:0 auto}ol{padding:0;display:grid;gap:9px;list-style:none}ol li{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid #eadde3;border-radius:14px}ol i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--pink);color:white;font-style:normal}.guides{display:grid;gap:8px;margin-top:25px}.guides a{display:flex;align-items:center;gap:9px;padding:14px;border:1px solid #efcbd7;border-radius:14px;color:var(--pink);text-decoration:none}.faqs{border-top:1px solid #e6dce1}.faqs details{border-bottom:1px solid #e6dce1}.faqs summary{display:flex;justify-content:space-between;padding:20px 4px;font-weight:800}.faqs p{padding:0 4px 18px;color:#74616c}.missing{padding-top:150px;min-height:70vh}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr 1fr}}@media(max-width:600px){.hero{padding:28px 0 44px}.hero h1{font-size:37px}.hero figure{height:260px}.proof .v-container,.plans,.cards{grid-template-columns:1fr}.proof b{padding:5px}.section{padding:55px 0}.network{grid-template-columns:1fr}}
 </style>

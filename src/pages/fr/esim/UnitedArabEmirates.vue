@@ -1,27 +1,27 @@
 <template>
-  <div class="europe-page" dir="rtl">
+  <div class="europe-page" dir="ltr">
     <section class="europe-hero">
       <div class="europe-glow europe-glow-one"></div>
       <div class="europe-glow europe-glow-two"></div>
       <v-container class="europe-hero-inner">
         <div class="europe-breadcrumb">
-          <router-link :to="localePrefix + '/esim'">شرائح eSIM</router-link>
-          <v-icon size="16">mdi-chevron-left</v-icon>
-          <strong>أوروبا</strong>
+          <router-link :to="localePrefix + '/esim'">eSIMs</router-link>
+          <v-icon size="16">mdi-chevron-right</v-icon>
+          <strong>Émirats arabes unis</strong>
         </div>
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
-            <h1><span>ابقَ متصلاً في جميع أنحاء</span><em>أوروبا</em></h1>
-            <p>سافر من لشبونة إلى إسطنبول باستخدام شريحة eSIM واحدة مسبقة الدفع. بلا رسوم تجوال مفاجئة أو تبديل للشرائح، فقط إنترنت موثوق طوال رحلتك.</p>
+            <h1><span>Restez connecté partout en</span><em>Émirats arabes unis</em></h1>
+            <p>Explorez les Émirats avec une seule eSIM prépayée. Restez connecté à Dubaï, Abou Dabi, Charjah et dans les sept émirats sans changer votre carte SIM.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
-                عرض باقات أوروبا<v-icon end>mdi-arrow-down</v-icon>
+                Voir les forfaits Émirats arabes unis<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
           </div>
           <div class="europe-visual">
             <div class="europe-map-card">
-              <img :src="europeHeroImage" alt="Europe landmarks with eSIM connectivity">
+              <img :src="uaeHeroImage" alt="Émirats arabes unis landmarks with eSIM connectivity">
             </div>
           </div>
         </div>
@@ -30,72 +30,28 @@
 
     <section class="europe-proof-strip">
       <v-container class="europe-proof-grid">
-        <div class="proof-highlight"><v-icon>mdi-map-marker-multiple-outline</v-icon><b><strong>38</strong> دولة مشمولة</b></div>
-        <div class="proof-highlight"><v-icon>mdi-tag-outline</v-icon><b>الباقات ابتداءً من <strong>{{ startingPrice }}</strong></b></div>
+        <div class="proof-highlight"><v-icon>mdi-tag-outline</v-icon><b>Forfaits dès <strong>{{ startingPrice }}</strong></b></div>
       </v-container>
     </section>
 
     <section id="europe-plans" class="europe-plans-section">
       <v-container>
         <div class="europe-section-heading">
-          <span>بيانات مسبقة الدفع بمرونة</span>
-          <h2>اختر باقة eSIM لأوروبا</h2>
-          <p>ادفع مرة واحدة واستمتع بالاتصال في جميع البلدان المشمولة طوال مدة صلاحية الباقة.</p>
+          <span>Données prépayées flexibles</span>
+          <h2>Choisissez votre forfait eSIM Émirats arabes unis</h2>
+          <p>Choisissez le volume de données et la durée adaptés à votre séjour en Émirats arabes unis.</p>
         </div>
         <div class="europe-plan-grid">
           <button v-for="plan in sortedPlans" :key="plan.key" type="button" class="europe-plan-card" :class="{ active: selectedPlanKey === plan.key }" @click="handleAddToCart(plan)">
-            <span v-if="plan.data === '10GB'" class="popular-label">الأكثر اختياراً</span>
+            <span v-if="plan.data === '10GB'" class="popular-label">Le plus populaire</span>
             <span class="plan-radio" aria-hidden="true"></span>
-            <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>بيانات الهاتف</span></div>
-            <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} أيام</div>
-            <div class="plan-price">{{ formatPriceFromMad(plan.price, 'ar') }}</div>
+            <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>de données mobiles</span></div>
+            <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} jours</div>
+            <div class="plan-price">{{ formatPriceFromMad(plan.price, 'fr') }}</div>
           </button>
         </div>
-        <details class="covered-countries-compact">
-          <summary><v-icon>mdi-map-marker-multiple-outline</v-icon><strong>38 دولة مشمولة</strong><v-icon class="covered-toggle">mdi-chevron-down</v-icon></summary>
-          <div class="covered-country-chips">
-            <router-link to="/ar/esim/autriche"><img :src="getFlagImage('AT')" alt="النمسا"><span>النمسا</span></router-link>
-            <router-link to="/ar/esim/danemark"><img :src="getFlagImage('DK')" alt="الدانمرك"><span>الدانمرك</span></router-link>
-            <router-link to="/ar/esim/irlande"><img :src="getFlagImage('IE')" alt="أيرلندا"><span>أيرلندا</span></router-link>
-            <router-link to="/ar/esim/italie"><img :src="getFlagImage('IT')" alt="إيطاليا"><span>إيطاليا</span></router-link>
-            <router-link to="/ar/esim/suede"><img :src="getFlagImage('SE')" alt="السويد"><span>السويد</span></router-link>
-            <router-link to="/ar/esim/france"><img :src="getFlagImage('FR')" alt="فرنسا"><span>فرنسا</span></router-link>
-            <router-link to="/ar/esim/bulgarie"><img :src="getFlagImage('BG')" alt="بلغاريا"><span>بلغاريا</span></router-link>
-            <router-link to="/ar/esim/chypre"><img :src="getFlagImage('CY')" alt="قبرص"><span>قبرص</span></router-link>
-            <router-link to="/ar/esim/estonie"><img :src="getFlagImage('EE')" alt="إستونيا"><span>إستونيا</span></router-link>
-            <router-link to="/ar/esim/finlande"><img :src="getFlagImage('FI')" alt="فنلندا"><span>فنلندا</span></router-link>
-            <router-link to="/ar/esim/grece"><img :src="getFlagImage('GR')" alt="اليونان"><span>اليونان</span></router-link>
-            <router-link to="/ar/esim/hongrie"><img :src="getFlagImage('HU')" alt="هنغاريا"><span>هنغاريا</span></router-link>
-            <router-link to="/ar/esim/lettonie"><img :src="getFlagImage('LV')" alt="لاتفيا"><span>لاتفيا</span></router-link>
-            <router-link to="/ar/esim/lituanie"><img :src="getFlagImage('LT')" alt="ليتوانيا"><span>ليتوانيا</span></router-link>
-            <router-link to="/ar/esim/pays-bas"><img :src="getFlagImage('NL')" alt="هولندا"><span>هولندا</span></router-link>
-            <router-link to="/ar/esim/norvege"><img :src="getFlagImage('NO')" alt="النرويج"><span>النرويج</span></router-link>
-            <router-link to="/ar/esim/pologne"><img :src="getFlagImage('PL')" alt="بولندا"><span>بولندا</span></router-link>
-            <router-link to="/ar/esim/roumanie"><img :src="getFlagImage('RO')" alt="رومانيا"><span>رومانيا</span></router-link>
-            <router-link to="/ar/esim/slovaquie"><img :src="getFlagImage('SK')" alt="سلوفاكيا"><span>سلوفاكيا</span></router-link>
-            <router-link to="/ar/esim/spain"><img :src="getFlagImage('ES')" alt="إسبانيا"><span>إسبانيا</span></router-link>
-            <router-link to="/ar/esim/royaume-uni"><img :src="getFlagImage('GB')" alt="المملكة المتحدة"><span>المملكة المتحدة</span></router-link>
-            <router-link to="/ar/esim/turkiye"><img :src="getFlagImage('TR')" alt="تركيا"><span>تركيا</span></router-link>
-            <router-link to="/ar/esim/allemagne"><img :src="getFlagImage('DE')" alt="ألمانيا"><span>ألمانيا</span></router-link>
-            <router-link to="/ar/esim/malte"><img :src="getFlagImage('MT')" alt="مالطا"><span>مالطا</span></router-link>
-            <router-link to="/ar/esim/suisse"><img :src="getFlagImage('CH')" alt="سويسرا"><span>سويسرا</span></router-link>
-            <router-link to="/ar/esim/belgique"><img :src="getFlagImage('BE')" alt="بلجيكا"><span>بلجيكا</span></router-link>
-            <router-link to="/ar/esim/croatie"><img :src="getFlagImage('HR')" alt="كرواتيا"><span>كرواتيا</span></router-link>
-            <router-link to="/ar/esim/republique-tcheque"><img :src="getFlagImage('CZ')" alt="التشيك"><span>التشيك</span></router-link>
-            <router-link to="/ar/esim/liechtenstein"><img :src="getFlagImage('LI')" alt="ليختنشتاين"><span>ليختنشتاين</span></router-link>
-            <router-link to="/ar/esim/luxembourg"><img :src="getFlagImage('LU')" alt="لوكسمبورغ"><span>لوكسمبورغ</span></router-link>
-            <router-link to="/ar/esim/portugal"><img :src="getFlagImage('PT')" alt="البرتغال"><span>البرتغال</span></router-link>
-            <router-link to="/ar/esim/slovenie"><img :src="getFlagImage('SI')" alt="سلوفينيا"><span>سلوفينيا</span></router-link>
-            <router-link to="/ar/esim/islande"><img :src="getFlagImage('IS')" alt="آيسلندا"><span>آيسلندا</span></router-link>
-            <router-link to="/ar/esim/iles-canaries"><img :src="getFlagImage('IC')" alt="جزر الكناري"><span>جزر الكناري</span></router-link>
-            <router-link to="/ar/esim/cite-du-vatican"><img :src="getFlagImage('VA')" alt="الفاتيكان"><span>الفاتيكان</span></router-link>
-            <router-link to="/ar/esim/cyp"><img :src="getFlagImage('CYP')" alt="قبرص"><span>قبرص</span></router-link>
-            <router-link to="/ar/esim/moldavie"><img :src="getFlagImage('MD')" alt="مولدوفا"><span>مولدوفا</span></router-link>
-            <router-link to="/ar/esim/serbie"><img :src="getFlagImage('RS')" alt="صربيا"><span>صربيا</span></router-link>
-          </div>
-        </details>
         <v-btn v-if="selectedPlanKey" color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-purchase-cta" @click="scrollToCheckout">
-          المتابعة إلى الدفع الآمن<v-icon end>mdi-arrow-down</v-icon>
+          Continuer vers le paiement sécurisé<v-icon end>mdi-arrow-down</v-icon>
         </v-btn>
       </v-container>
     </section>
@@ -103,9 +59,9 @@
     <section v-if="checkoutOpen" id="europe-checkout" class="europe-checkout-section">
       <v-container>
         <div class="europe-section-heading europe-checkout-heading">
-          <span>الخطوة الأخيرة</span>
-          <h2>أكمل طلبك</h2>
-          <p>راجع باقة أوروبا، ثم أدخل معلومات الاستلام والدفع الآمن.</p>
+          <span>Dernière étape</span>
+          <h2>Finalisez votre commande</h2>
+          <p>Vérifiez votre forfait Émirats arabes unis, puis renseignez la livraison et le paiement sécurisé.</p>
         </div>
         <div class="europe-embedded-checkout">
           <Cart :show-step-numbers="true" />
@@ -116,15 +72,15 @@
     <section class="europe-explainer-section">
       <v-container class="europe-explainer-container">
         <div class="europe-explainer-copy">
-          <span>شرح شريحة أوروبا</span>
-          <h2>ما هي شريحة eSIM لأوروبا؟</h2>
-          <p>شريحة eSIM لأوروبا هي شريحة رقمية تتيح استخدام بيانات الهاتف في عدة دول أوروبية ضمن باقة واحدة، دون شراء أو تبديل شريحة فعلية عند كل حدود.</p>
+          <span>L’eSIM Émirats arabes unis expliquée</span>
+          <h2>Qu’est-ce qu’une eSIM Émirats arabes unis ?</h2>
+          <p>Une eSIM Émirats arabes unis est une carte SIM numérique permettant d’utiliser les données mobiles en Émirats arabes unis sans insérer ni récupérer de carte SIM physique.</p>
         </div>
         <div class="europe-facts-grid">
-          <div class="europe-fact"><v-icon>mdi-wifi</v-icon><span><b>بيانات الهاتف</b><small>شريحة أوروبا مخصصة للاتصال بالإنترنت ولا تشمل المكالمات أو الرسائل النصية التقليدية.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-access-point</v-icon><span><b>مشاركة الاتصال</b><small>تدعم معظم الباقات نقطة الاتصال الشخصية حسب الجهاز والشبكة المحلية.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-timer-outline</v-icon><span><b>تبدأ الصلاحية عند الاتصال</b><small>تبدأ الباقة عند اتصال الشريحة لأول مرة بشبكة مدعومة.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-earth</v-icon><span><b>شريحة واحدة عبر الحدود</b><small>التغطية الإقليمية مشمولة في الدول المدعومة، وتستمر الشريحة نفسها في العمل أثناء التنقل بينها.</small></span></div>
+          <div class="europe-fact"><v-icon>mdi-wifi</v-icon><span><b>Données mobiles</b><small>Accédez à Internet sans appels ni SMS traditionnels.</small></span></div>
+          <div class="europe-fact"><v-icon>mdi-access-point</v-icon><span><b>Partage de connexion</b><small>La plupart des forfaits permettent le hotspot selon l’appareil et le réseau.</small></span></div>
+          <div class="europe-fact"><v-icon>mdi-timer-outline</v-icon><span><b>Validité dès la connexion</b><small>Le forfait démarre lors de la première connexion à un réseau pris en charge en Émirats arabes unis.</small></span></div>
+          <div class="europe-fact"><v-icon>mdi-map-marker-radius</v-icon><span><b>Couverture en Émirats arabes unis</b><small>Utilisez la même eSIM pendant vos déplacements dans les zones couvertes du pays.</small></span></div>
         </div>
       </v-container>
     </section>
@@ -132,78 +88,41 @@
     <section class="europe-network-section">
       <v-container class="europe-network-container">
         <div class="europe-section-heading compact">
-          <span>شبكات محلية شريكة</span>
-          <h2>شبكات الهاتف والتغطية في أوروبا</h2>
-          <p>تتصل شريحة أوروبا بالمشغلين الشركاء المدعومين في الدول المشمولة، عبر 4G/LTE و5G حيثما كانت متاحة محلياً.</p>
+          <span>Réseaux partenaires locaux</span>
+          <h2>Réseaux mobiles et couverture en Émirats arabes unis</h2>
+          <p>Votre eSIM Émirats arabes unis se connecte aux opérateurs partenaires pris en charge, en 4G/LTE et en 5G lorsque celle-ci est disponible localement.</p>
         </div>
-        <details class="network-disclosure">
-          <summary><span>عرض جميع الشبكات الشريكة</span><v-icon>mdi-chevron-down</v-icon></summary>
+        <div class="network-disclosure" role="group" aria-label="Réseaux partenaires en Émirats arabes unis">
         <div class="network-table-wrap">
           <table class="network-table">
-            <thead><tr><th>الدولة</th><th>الشبكات الشريكة</th></tr></thead>
+            <thead><tr><th>Pays</th><th>Réseau(x) partenaire(s)</th></tr></thead>
             <tbody>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/autriche`"><img :src="getFlagImage('AT')" alt="Austria"><b>Austria</b></router-link></td><td><span class="network-operators">Hutchinson Austria · A1 Austria · 3 Austria</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/danemark`"><img :src="getFlagImage('DK')" alt="Denmark"><b>Denmark</b></router-link></td><td><span class="network-operators">Hutchinson Denmark · Telia Denmark · TDC</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/irlande`"><img :src="getFlagImage('IE')" alt="Ireland"><b>Ireland</b></router-link></td><td><span class="network-operators">3 Ireland · Meteor Mobile Ireland · Vodafone Ireland</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/italie`"><img :src="getFlagImage('IT')" alt="Italy"><b>Italy</b></router-link></td><td><span class="network-operators">Windtre · Iliad · Vodafone Italy</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/suede`"><img :src="getFlagImage('SE')" alt="Sweden"><b>Sweden</b></router-link></td><td><span class="network-operators">Telia Sweden · Hutchinson Sweden · Tele2 Sverige</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/france`"><img :src="getFlagImage('FR')" alt="France"><b>France</b></router-link></td><td><span class="network-operators">Orange France · Bouygues Télécom · Free Mobile Iliad</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/bulgarie`"><img :src="getFlagImage('BG')" alt="Bulgaria"><b>Bulgaria</b></router-link></td><td><span class="network-operators">A1 Bulgaria · Cetin Bulgaria · Vivacom Bulgaria</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/chypre`"><img :src="getFlagImage('CY')" alt="Cyprus"><b>Cyprus</b></router-link></td><td><span class="network-operators">Cyta Cyprus · Epic Cyprus · Primetel</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/estonie`"><img :src="getFlagImage('EE')" alt="Estonia"><b>Estonia</b></router-link></td><td><span class="network-operators">Telia Eesti · Elisa Eesti · Tele2 Eesti</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/finlande`"><img :src="getFlagImage('FI')" alt="Finland"><b>Finland</b></router-link></td><td><span class="network-operators">Telia Finland · Elisa · Ålands Telekommunikation</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/grece`"><img :src="getFlagImage('GR')" alt="Greece"><b>Greece</b></router-link></td><td><span class="network-operators">NOVA Telemach · Vodafone Greece · NOVA</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/hongrie`"><img :src="getFlagImage('HU')" alt="Hungary"><b>Hungary</b></router-link></td><td><span class="network-operators">Yettel · Vodafone · Magyar Telekom</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/lettonie`"><img :src="getFlagImage('LV')" alt="Latvia"><b>Latvia</b></router-link></td><td><span class="network-operators">LMT Latvia · Bite Latvija · Tele2</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/lituanie`"><img :src="getFlagImage('LT')" alt="Lithuania"><b>Lithuania</b></router-link></td><td><span class="network-operators">Telia Lietuva · Bite Lithuania · Tele2</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/pays-bas`"><img :src="getFlagImage('NL')" alt="Netherlands"><b>Netherlands</b></router-link></td><td><span class="network-operators">KPN · Vodafone Libertel</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/norvege`"><img :src="getFlagImage('NO')" alt="Norway"><b>Norway</b></router-link></td><td><span class="network-operators">Telia Norge · ICE</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/pologne`"><img :src="getFlagImage('PL')" alt="Poland"><b>Poland</b></router-link></td><td><span class="network-operators">Polkomtel · Orange Polska · Play</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/roumanie`"><img :src="getFlagImage('RO')" alt="Romania"><b>Romania</b></router-link></td><td><span class="network-operators">Orange Romania · Vodafone Romania · Telekom Romania</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/slovaquie`"><img :src="getFlagImage('SK')" alt="Slovakia"><b>Slovakia</b></router-link></td><td><span class="network-operators">Orange Slovensko · O2 Slovakia</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/spain`"><img :src="getFlagImage('ES')" alt="Spain"><b>Spain</b></router-link></td><td><span class="network-operators">Orange Spain · Movistar · Vodafone Spain</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/royaume-uni`"><img :src="getFlagImage('GB')" alt="United Kingdom"><b>United Kingdom</b></router-link></td><td><span class="network-operators">Three UK · Virgin Media O2 · Vodafone</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/turkiye`"><img :src="getFlagImage('TR')" alt="Turkey"><b>Turkey</b></router-link></td><td><span class="network-operators">AVEA · Turkcell</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/allemagne`"><img :src="getFlagImage('DE')" alt="Germany"><b>Germany</b></router-link></td><td><span class="network-operators">Telefonica Germany · Vodafone Germany</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/malte`"><img :src="getFlagImage('MT')" alt="Malta"><b>Malta</b></router-link></td><td><span class="network-operators">Melita · Go · Epic Malta</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/suisse`"><img :src="getFlagImage('CH')" alt="Switzerland"><b>Switzerland</b></router-link></td><td><span class="network-operators">Salt Mobile · Swisscom · Sunrise</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/belgique`"><img :src="getFlagImage('BE')" alt="Belgium"><b>Belgium</b></router-link></td><td><span class="network-operators">Proximus Belgium · Orange Belgium · Telenet</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/croatie`"><img :src="getFlagImage('HR')" alt="Croatia"><b>Croatia</b></router-link></td><td><span class="network-operators">Telemach Croatia · A1 Croatia · Hrvatski Telekom</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/republique-tcheque`"><img :src="getFlagImage('CZ')" alt="Czech Republic"><b>Czech Republic</b></router-link></td><td><span class="network-operators">O2 Czech Republic · T-Mobile Czech · Vodafone Czech Republic</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/liechtenstein`"><img :src="getFlagImage('LI')" alt="Liechtenstein"><b>Liechtenstein</b></router-link></td><td><span class="network-operators">Telecom Liechtenstein · Salt Liechtenstein</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/luxembourg`"><img :src="getFlagImage('LU')" alt="Luxembourg"><b>Luxembourg</b></router-link></td><td><span class="network-operators">Proximus Tango · Orange Luxembourg · POST Luxembourg</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/portugal`"><img :src="getFlagImage('PT')" alt="Portugal"><b>Portugal</b></router-link></td><td><span class="network-operators">NOS · MEO · Vodafone Portugal</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/slovenie`"><img :src="getFlagImage('SI')" alt="Slovenia"><b>Slovenia</b></router-link></td><td><span class="network-operators">Telemach Slovenia · A1 Slovenije · Mobitel</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/islande`"><img :src="getFlagImage('IS')" alt="Iceland"><b>Iceland</b></router-link></td><td><span class="network-operators">Nova Iceland · Siminn · Syn</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/iles-canaries`"><img :src="getFlagImage('IC')" alt="Canary Islands"><b>Canary Islands</b></router-link></td><td><span class="network-operators">Orange Spain · Vodafone Spain · Xfera Moviles</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/cite-du-vatican`"><img :src="getFlagImage('VA')" alt="Vatican City"><b>Vatican City</b></router-link></td><td><span class="network-operators">Windtre · Iliad · Vodafone Italy</span><span class="technology-badge">4G / 5G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/moldavie`"><img :src="getFlagImage('MD')" alt="Moldova"><b>Moldova</b></router-link></td><td><span class="network-operators">Orange · Mold Telecom · Moldcell</span><span class="technology-badge">4G</span></td></tr>
-              <tr><td><router-link class="network-country-link" :to="`${localePrefix}/esim/serbie`"><img :src="getFlagImage('RS')" alt="Serbia"><b>Serbia</b></router-link></td><td><span class="network-operators">Telenor/Cetin · A1/VIP · Telekom Srbija</span><span class="technology-badge">4G / 5G</span></td></tr>
+              <tr><th>🇦🇪 Émirats arabes unis</th><td><span class="network-operators">Etisalat<br>du</span><span class="technology-badge">4G / 5G</span></td></tr>
             </tbody>
           </table>
         </div>
-        </details>
-        <div class="network-notes network-notes-after-table">
-          <span><v-icon size="20">mdi-access-point-network</v-icon>يختار جهازك شبكة شريكة متاحة تلقائياً.</span>
-          <span><v-icon size="20">mdi-earth-arrow-right</v-icon>أبقِ تجوال البيانات مفعّلاً للشريحة عند التنقل بين الدول المشمولة.</span>
         </div>
-        <p class="network-disclaimer">يعتمد توفر الشبكة والسرعة والوصول إلى 5G على التغطية المحلية وحالة الشبكة وتوافق جهازك.</p>
+        <div class="network-notes network-notes-after-table">
+          <span><v-icon size="20">mdi-access-point-network</v-icon>Votre appareil sélectionne automatiquement un réseau partenaire disponible.</span>
+          <span><v-icon size="20">mdi-earth-arrow-right</v-icon>Gardez l’itinérance des données activée sur l’eSIM pendant vos déplacements en Émirats arabes unis.</span>
+        </div>
+        <p class="network-disclaimer">La disponibilité du réseau, le débit et l’accès à la 5G dépendent de la couverture locale, des conditions du réseau et de la compatibilité de votre appareil.</p>
       </v-container>
     </section>
 
     <section class="europe-use-cases-section">
       <v-container class="europe-use-cases-container">
         <div class="europe-section-heading compact">
-          <span>باقة واحدة لكل محطة</span>
-          <h2>لأي رحلات تختار شريحة eSIM لأوروبا؟</h2>
-          <p>تعد شريحة eSIM لأوروبا مناسبة بشكل خاص إذا كنت تزور عدة دول خلال الرحلة نفسها.</p>
+          <span>Un forfait pour chaque étape</span>
+          <h2>Pour quels voyages choisir une eSIM Émirats arabes unis ?</h2>
+          <p>Une eSIM Émirats arabes unis convient aux vacances, séjours urbains, voyages d’affaires et circuits à travers le pays.</p>
         </div>
         <div class="europe-use-cases-grid">
-          <div class="europe-use-case-card"><v-icon>mdi-map-marker-path</v-icon><div><b>إسبانيا + البرتغال</b><p>ابقَ متصلاً طوال رحلتك في شبه الجزيرة الإيبيرية دون تغيير الشريحة.</p></div></div>
-          <div class="europe-use-case-card"><v-icon>mdi-train</v-icon><div><b>فرنسا + بلجيكا + هولندا</b><p>استخدم باقة البيانات نفسها أثناء التنقل بين ثلاث دول متجاورة.</p></div></div>
-          <div class="europe-use-case-card"><v-icon>mdi-image-filter-hdr</v-icon><div><b>إيطاليا + سويسرا</b><p>حافظ على الخرائط والحجوزات والرسائل متاحة على جانبي الحدود.</p></div></div>
-          <div class="europe-use-case-card"><v-icon>mdi-city-variant-outline</v-icon><div><b>رحلة أوروبية متعددة المدن</b><p>مثالية للعطلات التي تجمع عدة مدن ودول.</p></div></div>
-          <div class="europe-use-case-card"><v-icon>mdi-briefcase-outline</v-icon><div><b>رحلات العمل عبر أوروبا</b><p>حافظ على اتصال واحد للاجتماعات ووسائل النقل وتطبيقات العمل.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-city-variant-outline</v-icon><div><b>Séjour à Dubaï</b><p>Utilisez cartes, messagerie, taxis et réservations pendant votre séjour.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-mosque</v-icon><div><b>Abou Dabi et la Grande Mosquée</b><p>Restez connecté pour les itinéraires, billets et préparatifs.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-beach</v-icon><div><b>Plages et excursions dans le désert</b><p>Gardez vos données pour les transports, réservations et le partage.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-map-marker-path</v-icon><div><b>Circuit multi-villes</b><p>Utilisez une seule eSIM entre plusieurs villes françaises.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-briefcase-outline</v-icon><div><b>Voyage d’affaires</b><p>Conservez une connexion pour les réunions et outils professionnels.</p></div></div>
         </div>
       </v-container>
     </section>
@@ -211,31 +130,31 @@
     <section class="europe-comparison-section">
       <v-container class="europe-comparison-container">
         <div class="europe-section-heading compact">
-          <span>اختر التغطية المناسبة</span>
-          <h2>شريحة eSIM لأوروبا أم لدولة واحدة؟</h2>
-          <p>يعتمد الخيار الأفضل أساساً على عدد الدول التي تنوي زيارتها.</p>
+          <span>Choisissez la bonne couverture</span>
+          <h2>eSIM Émirats arabes unis ou itinérance internationale ?</h2>
+          <p>Comparez une eSIM Émirats arabes unis prépayée avec l’itinérance internationale de votre opérateur.</p>
         </div>
         <div class="comparison-table-wrap">
           <table class="comparison-table">
             <thead>
-              <tr><th></th><th>eSIM أوروبا</th><th>eSIM لدولة</th></tr>
+              <tr><th></th><th>eSIM Émirats arabes unis</th><th>Roaming international</th></tr>
             </thead>
             <tbody>
-              <tr><th>السفر في دولة واحدة</th><td>ممكن</td><td>غالباً أكثر ملاءمة</td></tr>
-              <tr><th>عدة دول</th><td>مثالية</td><td>تحتاج إلى عدة شرائح</td></tr>
-              <tr><th>الانتقال بين الدول</th><td>الشريحة نفسها</td><td>قد تحتاج إلى شريحة أخرى</td></tr>
-              <tr><th>السهولة</th><td>عالية جداً</td><td>عالية</td></tr>
+              <tr><th>Voyage dans 1 pays</th><td>Possible</td><td>Souvent plus adaptée</td></tr>
+              <tr><th>Plusieurs pays</th><td>Idéale</td><td>Plusieurs eSIM nécessaires</td></tr>
+              <tr><th>Changement de pays</th><td>Même eSIM</td><td>Peut nécessiter une autre eSIM</td></tr>
+              <tr><th>Simplicité</th><td>Très élevée</td><td>Élevée</td></tr>
             </tbody>
           </table>
         </div>
         <div class="comparison-recommendation">
           <v-icon>mdi-lightbulb-on-outline</v-icon>
-          <p>إذا كنت تسافر إلى إسبانيا فقط لمدة أسبوع، فقد تكون شريحة إسبانيا أنسب. أما إذا شملت رحلتك إسبانيا والبرتغال وفرنسا، فعادةً ما تكون باقة أوروبا أكثر سهولة.</p>
+          <p>Choisissez une eSIM Émirats arabes unis pour disposer de données prépayées avec un volume connu avant le départ. Consultez les conditions de roaming de votre opérateur avant de comparer les coûts.</p>
         </div>
         <div class="comparison-links">
-          <router-link :to="`${localePrefix}/esim/spain`"><span class="comparison-link-label">عرض شرائح إسبانيا <span class="comparison-link-flag">🇪🇸</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/france`"><span class="comparison-link-label">عرض شرائح فرنسا <span class="comparison-link-flag">🇫🇷</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/portugal`"><span class="comparison-link-label">عرض شرائح البرتغال <span class="comparison-link-flag">🇵🇹</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
+          <router-link :to="`${localePrefix}/esim/turkiye`"><span class="comparison-link-label">Voir les eSIM Turquie <span class="comparison-link-flag">🇹🇷</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
+          <router-link :to="`${localePrefix}/esim/spain`"><span class="comparison-link-label">Voir les eSIM Espagne <span class="comparison-link-flag">🇪🇸</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
+          <router-link :to="`${localePrefix}/esim/portugal`"><span class="comparison-link-label">Voir les eSIM Portugal <span class="comparison-link-flag">🇵🇹</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>
@@ -243,32 +162,32 @@
     <section class="europe-installation-section">
       <v-container class="europe-installation-container">
         <div class="europe-section-heading compact">
-          <span>جاهزة خلال دقائق</span>
-          <h2>كيف تثبّت شريحة eSIM لأوروبا؟</h2>
-          <p>اشترِ شريحتك وجهزها قبل السفر، ثم فعّلها في الوقت المناسب.</p>
+          <span>Prête en quelques minutes</span>
+          <h2>Comment installer votre eSIM Émirats arabes unis ?</h2>
+          <p>Achetez et préparez votre eSIM avant le départ, puis activez-la au moment approprié.</p>
         </div>
         <ol class="europe-installation-steps">
-          <li><i>1</i><span>اختر باقة أوروبا.</span></li>
-          <li><i>2</i><span>أكمل عملية الدفع.</span></li>
-          <li><i>3</i><span>استلم رمز QR.</span></li>
-          <li><i>4</i><span>أضف eSIM من إعدادات هاتفك.</span></li>
-          <li><i>5</i><span>فعّل بيانات الهاتف في الوقت المناسب.</span></li>
+          <li><i>1</i><span>Choisissez votre forfait Émirats arabes unis.</span></li>
+          <li><i>2</i><span>Effectuez votre paiement.</span></li>
+          <li><i>3</i><span>Recevez votre QR code.</span></li>
+          <li><i>4</i><span>Ajoutez l’eSIM dans les réglages de votre téléphone.</span></li>
+          <li><i>5</i><span>Activez les données mobiles au moment approprié.</span></li>
         </ol>
         <div class="europe-guide-links">
-          <router-link :to="`${localePrefix}/guides/install-esim-iphone`"><v-icon>mdi-apple</v-icon><span>دليل تثبيت eSIM على آيفون</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/guides/install-esim-android`"><v-icon>mdi-cellphone-cog</v-icon><span>دليل تثبيت eSIM على سامسونج</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/guides/compatibility`"><v-icon>mdi-cellphone-check</v-icon><span>تحقق من توافق هاتفك</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
+          <router-link :to="`${localePrefix}/guides/install-esim-iphone`"><v-icon>mdi-apple</v-icon><span>Guide d’installation eSIM sur iPhone</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
+          <router-link :to="`${localePrefix}/guides/install-esim-android`"><v-icon>mdi-cellphone-cog</v-icon><span>Guide d’installation eSIM sur Samsung</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
+          <router-link :to="`${localePrefix}/guides/compatibility`"><v-icon>mdi-cellphone-check</v-icon><span>Vérifier la compatibilité de votre téléphone</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>
 
     <section class="europe-activation-section">
       <v-container class="europe-activation-container">
-        <div class="europe-section-heading compact"><span>ثبّتها الآن واتصل عند الوصول</span><h2>متى تثبّت وتفعّل شريحة eSIM لأوروبا؟</h2><p>يمكنك تثبيت الشريحة قبل السفر. تبدأ جميع باقات SafarSIM تلقائياً عندما تتصل الشريحة لأول مرة بشبكة مدعومة مع تفعيل تجوال البيانات.</p></div>
+        <div class="europe-section-heading compact"><span>Installez maintenant, connectez-vous à l’arrivée</span><h2>Quand installer et activer votre eSIM Émirats arabes unis ?</h2><p>Vous pouvez installer l’eSIM avant votre départ. Tous les forfaits SafarSIM démarrent automatiquement lorsque l’eSIM se connecte pour la première fois à un réseau compatible avec l’itinérance des données activée.</p></div>
         <div class="activation-guidance">
-          <div><v-icon>mdi-download-circle-outline</v-icon><span><b>ثبّتها قبل السفر</b><p>استخدم Wi-Fi مستقراً لمسح رمز QR وإضافة الشريحة إلى هاتفك.</p></span></div>
-          <div><v-icon>mdi-timer-play-outline</v-icon><span><b>تبدأ الصلاحية عند الاتصال</b><p>لا تبدأ المدة بمجرد تثبيت الملف، بل عند الاتصال بشبكة مدعومة مع تشغيل تجوال البيانات.</p></span></div>
-          <div><v-icon>mdi-airplane-landing</v-icon><span><b>فعّلها في وجهتك</b><p>بعد الوصول إلى أوروبا، شغّل SafarSIM واختره للبيانات ثم فعّل تجوال البيانات.</p></span></div>
+          <div><v-icon>mdi-download-circle-outline</v-icon><span><b>Installez-la avant le voyage</b><p>Utilisez un Wi-Fi stable pour scanner le QR code et ajouter l’eSIM à votre téléphone.</p></span></div>
+          <div><v-icon>mdi-timer-play-outline</v-icon><span><b>La validité commence à la connexion</b><p>La durée ne démarre pas simplement à l’installation du profil. Elle commence à la connexion à un réseau compatible avec l’itinérance activée.</p></span></div>
+          <div><v-icon>mdi-airplane-landing</v-icon><span><b>Activez-la à destination</b><p>À votre arrivée en Émirats arabes unis, activez SafarSIM, choisissez-la pour les données mobiles et activez l’itinérance.</p></span></div>
         </div>
       </v-container>
     </section>
@@ -277,26 +196,26 @@
       <v-container class="europe-whatsapp-container">
         <div class="whatsapp-title-row">
           <div class="whatsapp-icon"><v-icon>mdi-whatsapp</v-icon></div>
-          <h2>هل يعمل واتساب مع شريحة eSIM لأوروبا؟</h2>
+          <h2>WhatsApp fonctionne-t-il avec une eSIM Émirats arabes unis ?</h2>
         </div>
-        <p>نعم. شريحة البيانات الإلكترونية لا تغيّر عادة الرقم المستخدم في حساب واتساب. يمكنك الاستمرار في استخدام واتساب برقمك المعتاد بينما توفر شريحة SafarSIM اتصال بيانات الهاتف.</p>
+        <p>Oui. Une eSIM data ne change généralement pas le numéro utilisé par votre compte WhatsApp. Vous pouvez continuer à utiliser WhatsApp avec votre numéro habituel tout en utilisant l’eSIM SafarSIM pour les données mobiles.</p>
       </v-container>
     </section>
 
     <section class="europe-why-safarsim-section">
       <v-container class="europe-why-safarsim-container">
         <div class="europe-section-heading compact">
-          <span>خدمة رقمية بالكامل</span>
-          <h2>لماذا تختار SafarSim لشريحة eSIM أوروبا؟</h2>
-          <p>تقدم SafarSim طريقة رقمية بسيطة لشراء واستخدام بيانات الهاتف في عدة دول أوروبية.</p>
+          <span>Un service entièrement numérique</span>
+          <h2>Pourquoi choisir SafarSim pour votre eSIM Émirats arabes unis ?</h2>
+          <p>SafarSim propose une solution numérique simple pour acheter et utiliser des données mobiles en Émirats arabes unis.</p>
         </div>
         <div class="safarsim-facts-grid">
-          <div class="safarsim-fact-card"><v-icon>mdi-cart-outline</v-icon><div><b>شراء عبر الإنترنت</b><p>اختر واشترِ باقة بيانات أوروبا عبر الإنترنت.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-qrcode-scan</v-icon><div><b>رمز QR رقمي</b><p>يصلك رمز QR الخاص بالتثبيت إلكترونياً.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-signal</v-icon><div><b>باقات بيانات متعددة</b><p>اختر حجم البيانات ومدة الصلاحية المناسبين لرحلتك.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-headset</v-icon><div><b>المساعدة</b><p>تتوفر المساعدة عند الحاجة إلى دعم بخصوص شريحتك.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-earth</v-icon><div><b>تغطية متعددة الدول</b><p>استخدم شريحة أوروبا نفسها في جميع الدول المشمولة.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-sim-off-outline</v-icon><div><b>لا حاجة لاستلام شريحة فعلية</b><p>لا توجد بطاقة لاستلامها من متجر أو مطار.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-cart-outline</v-icon><div><b>Achat en ligne</b><p>Choisissez et achetez votre forfait data Émirats arabes unis en ligne.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-qrcode-scan</v-icon><div><b>QR code numérique</b><p>Votre QR code d’installation est envoyé par voie numérique.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-signal</v-icon><div><b>Plusieurs forfaits data</b><p>Sélectionnez le volume de données et la durée adaptés à votre voyage.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-headset</v-icon><div><b>Assistance</b><p>Une assistance est disponible si vous avez besoin d’aide avec votre eSIM.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-earth</v-icon><div><b>Couverture en Émirats arabes unis</b><p>Utilisez la même eSIM dans les zones couvertes en Émirats arabes unis.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-sim-off-outline</v-icon><div><b>Aucune SIM physique à récupérer</b><p>Vous n’avez aucune carte à retirer en boutique ou à l’aéroport.</p></div></div>
         </div>
       </v-container>
     </section>
@@ -304,21 +223,21 @@
     <section class="europe-faq-section">
       <v-container class="europe-faq-container">
         <div class="europe-section-heading compact">
-          <span>الأسئلة الشائعة</span>
-          <h2>الأسئلة الشائعة حول eSIM أوروبا</h2>
-          <p>إجابات عملية تساعدك على تجهيز شريحة أوروبا واستخدامها بصورة صحيحة.</p>
+          <span>Questions fréquentes</span>
+          <h2>FAQ sur l’eSIM Émirats arabes unis</h2>
+          <p>Des réponses pratiques pour préparer et utiliser correctement votre eSIM Émirats arabes unis.</p>
         </div>
         <div class="europe-faq-list">
-          <details><summary><span>هل تعمل شريحة eSIM واحدة في عدة دول أوروبية؟</span><v-icon>mdi-plus</v-icon></summary><p>نعم. تعمل شريحة أوروبا نفسها في جميع الدول المشمولة بالباقة دون استبدالها عند كل حدود.</p></details>
-          <details><summary><span>هل يمكنني تثبيت الشريحة قبل السفر؟</span><v-icon>mdi-plus</v-icon></summary><p>نعم. ثبّتها قبل المغادرة باستخدام Wi-Fi مستقر. تبدأ الباقة عند أول اتصال بشبكة مدعومة مع تفعيل تجوال البيانات.</p></details>
-          <details><summary><span>متى تبدأ صلاحية باقتي؟</span><v-icon>mdi-plus</v-icon></summary><p>تبدأ الصلاحية عندما تتصل الشريحة لأول مرة بشبكة مدعومة، وليس بمجرد تثبيت ملف الشريحة.</p></details>
-          <details><summary><span>هل يمكنني استخدام واتساب برقمي المعتاد؟</span><v-icon>mdi-plus</v-icon></summary><p>نعم. يمكنك الاستمرار في استخدام رقمك المعتاد على واتساب بينما توفر شريحة SafarSim بيانات الهاتف.</p></details>
-          <details><summary><span>هل يُسمح بمشاركة الاتصال؟</span><v-icon>mdi-plus</v-icon></summary><p>تدعم معظم الباقات نقطة الاتصال الشخصية حسب جهازك والشبكة المحلية الشريكة.</p></details>
-          <details><summary><span>هل تتوفر شبكة 5G؟</span><v-icon>mdi-plus</v-icon></summary><p>تتوفر 5G عندما تدعمها الشبكة المحلية الشريكة وجهازك. وإلا تتصل الشريحة عبر 4G/LTE.</p></details>
-          <details><summary><span>هل يمكنني الاحتفاظ بشريحتي الحالية؟</span><v-icon>mdi-plus</v-icon></summary><p>نعم، على هاتف يدعم شريحتين. احتفظ بشريحتك الحالية لرقمك المعتاد واختر SafarSim لبيانات الهاتف.</p></details>
-          <details><summary><span>ماذا يحدث عند الانتقال إلى دولة أخرى؟</span><v-icon>mdi-plus</v-icon></summary><p>تتصل الشريحة نفسها تلقائياً بشبكة شريكة متاحة في الدولة المشمولة التالية. أبقِ تجوال البيانات مفعلاً على خط SafarSim.</p></details>
-          <details><summary><span>هل يمكنني تعبئة شريحة eSIM أوروبا؟</span><v-icon>mdi-plus</v-icon></summary><p>تعتمد إمكانية التعبئة على الباقة المشتراة. إذا لم تتوفر التعبئة، اشترِ باقة جديدة قبل نفاد البيانات أو انتهاء الصلاحية.</p></details>
-          <details><summary><span>ما الهواتف المتوافقة مع eSIM؟</span><v-icon>mdi-plus</v-icon></summary><p>تدعم أجهزة حديثة عديدة من Apple وSamsung وGoogle وغيرها eSIM. تحقق من الطراز المحدد في دليل التوافق قبل الشراء.</p></details>
+          <details><summary><span>L’eSIM fonctionne-t-elle partout en Émirats arabes unis ?</span><v-icon>mdi-plus</v-icon></summary><p>Elle se connecte aux réseaux partenaires pris en charge lorsque la couverture compatible est disponible en Émirats arabes unis.</p></details>
+          <details><summary><span>Puis-je l’installer avant de voyager ?</span><v-icon>mdi-plus</v-icon></summary><p>Oui. Installez-la avant le départ avec une connexion Wi-Fi stable.</p></details>
+          <details><summary><span>Quand commence la validité ?</span><v-icon>mdi-plus</v-icon></summary><p>La validité commence lors de la première connexion à un réseau compatible avec l’itinérance activée.</p></details>
+          <details><summary><span>Puis-je garder mon numéro habituel sur WhatsApp ?</span><v-icon>mdi-plus</v-icon></summary><p>Oui. SafarSim fournit les données sans modifier le numéro enregistré dans WhatsApp.</p></details>
+          <details><summary><span>Le partage de connexion est-il autorisé ?</span><v-icon>mdi-plus</v-icon></summary><p>La plupart des forfaits permettent le hotspot selon votre appareil et le réseau local.</p></details>
+          <details><summary><span>La 5G est-elle disponible ?</span><v-icon>mdi-plus</v-icon></summary><p>La 5G est disponible si le réseau partenaire et votre appareil la prennent en charge; sinon, l’eSIM utilise la 4G/LTE.</p></details>
+          <details><summary><span>Puis-je garder ma SIM actuelle ?</span><v-icon>mdi-plus</v-icon></summary><p>Oui, sur un téléphone double SIM. Gardez votre SIM habituelle et sélectionnez SafarSim pour les données mobiles.</p></details>
+          <details><summary><span>Fonctionne-t-elle pendant mes déplacements en Émirats arabes unis ?</span><v-icon>mdi-plus</v-icon></summary><p>La même eSIM reste installée et sélectionne automatiquement un réseau compatible disponible.</p></details>
+          <details><summary><span>Puis-je recharger mon eSIM Émirats arabes unis ?</span><v-icon>mdi-plus</v-icon></summary><p>La recharge dépend du forfait sélectionné. Si elle n’est pas proposée, achetez un nouveau forfait.</p></details>
+          <details><summary><span>Quels téléphones sont compatibles ?</span><v-icon>mdi-plus</v-icon></summary><p>De nombreux appareils récents Apple, Samsung, Google et autres prennent en charge l’eSIM. Vérifiez votre modèle avant l’achat.</p></details>
         </div>
       </v-container>
     </section>
@@ -326,24 +245,24 @@
     <section class="europe-related-section">
       <v-container class="europe-related-container">
         <div class="europe-section-heading compact">
-          <span>استكشف حسب الدولة</span>
-          <h2>شرائح eSIM شائعة في أوروبا</h2>
+          <span>Explorez par pays</span>
+          <h2>Autres destinations eSIM populaires</h2>
         </div>
         <div class="europe-related-grid">
-          <router-link to="/ar/esim/spain" class="europe-related-card"><img :src="getFlagImage('ES')" alt="إسبانيا"><strong>eSIM إسبانيا</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/ar/esim/france" class="europe-related-card"><img :src="getFlagImage('FR')" alt="فرنسا"><strong>eSIM فرنسا</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/ar/esim/italie" class="europe-related-card"><img :src="getFlagImage('IT')" alt="إيطاليا"><strong>eSIM إيطاليا</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/ar/esim/portugal" class="europe-related-card"><img :src="getFlagImage('PT')" alt="البرتغال"><strong>eSIM البرتغال</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/ar/esim/royaume-uni" class="europe-related-card"><img :src="getFlagImage('GB')" alt="المملكة المتحدة"><strong>eSIM المملكة المتحدة</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/ar/esim/allemagne" class="europe-related-card"><img :src="getFlagImage('DE')" alt="ألمانيا"><strong>eSIM ألمانيا</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/ar/esim/pays-bas" class="europe-related-card"><img :src="getFlagImage('NL')" alt="هولندا"><strong>eSIM هولندا</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/ar/esim/suisse" class="europe-related-card"><img :src="getFlagImage('CH')" alt="سويسرا"><strong>eSIM سويسرا</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/fr/esim/turkiye" class="europe-related-card"><img :src="getFlagImage('TR')" alt="Turquie"><strong>eSIM Turquie</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/fr/esim/spain" class="europe-related-card"><img :src="getFlagImage('ES')" alt="Espagne"><strong>eSIM Espagne</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/fr/esim/italie" class="europe-related-card"><img :src="getFlagImage('IT')" alt="Italie"><strong>eSIM Italie</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/fr/esim/portugal" class="europe-related-card"><img :src="getFlagImage('PT')" alt="Portugal"><strong>eSIM Portugal</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/fr/esim/royaume-uni" class="europe-related-card"><img :src="getFlagImage('GB')" alt="Royaume-Uni"><strong>eSIM Royaume-Uni</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/fr/esim/allemagne" class="europe-related-card"><img :src="getFlagImage('DE')" alt="Allemagne"><strong>eSIM Allemagne</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/fr/esim/pays-bas" class="europe-related-card"><img :src="getFlagImage('NL')" alt="Pays-Bas"><strong>eSIM Pays-Bas</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/fr/esim/suisse" class="europe-related-card"><img :src="getFlagImage('CH')" alt="Suisse"><strong>eSIM Suisse</strong><v-icon>mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>
 
     <div class="europe-last-updated">
-      <v-container><v-icon size="17">mdi-calendar-check-outline</v-icon><span>تم تحديث المعلومات في 1 سبتمبر 2026.</span></v-container>
+      <v-container><v-icon size="17">mdi-calendar-check-outline</v-icon><span>Informations mises à jour le 2 septembre 2026.</span></v-container>
     </div>
 
     <v-snackbar v-model="snackbar" location="top" color="green" timeout="2000">{{ snackbarText }}</v-snackbar>
@@ -357,10 +276,10 @@ import { getLocalizedName } from '@/utils/localizedNames'
 import { formatPriceFromMad, priceFromMad, getPreferredCurrency } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
 import Cart from '@/pages/Cart.vue'
-import europeHeroImage from '@/assets/images/hero_europe.png'
+import uaeHeroImage from '@/assets/images/hero_uae.png'
 
 export default {
-  name: 'EuropeArabicPage',
+  name: 'UnitedArabEmiratesFrenchPage',
 
   components: { Cart },
 
@@ -372,7 +291,7 @@ export default {
       snackbar: false,
       snackbarText: '',
       checkoutOpen: false,
-      europeHeroImage,
+      uaeHeroImage,
       countryNameOverrides: {
         AE: 'Émirats arabes unis',
         AG: 'Antigua-et-Barbuda',
@@ -406,9 +325,9 @@ export default {
         EC: 'Équateur',
         EE: 'Estonie',
         EG: 'Égypte',
-        ES: 'Espagne',
+        ES: 'Émirats arabes unis',
         FI: 'Finlande',
-        FR: 'France',
+        FR: 'Émirats arabes unis',
         GB: 'Royaume-Uni',
         GE: 'Géorgie',
         GF: 'Guyane française',
@@ -565,7 +484,7 @@ export default {
     coveredCountries() {
       if (!this.region?.coverageIsoCodes) return []
 
-      const locale = 'ar'
+      const locale = 'fr'
 
       return this.region.coverageIsoCodes.map((iso) => ({
         iso,
@@ -574,16 +493,16 @@ export default {
     },
 
     localizedRegionName() {
-      return getLocalizedName(this.region, 'ar')
+      return getLocalizedName(this.region, 'fr')
     },
 
     localePrefix() {
-      return '/ar'
+      return '/fr'
     },
 
     startingPrice() {
       const cheapest = this.parsedPlans.reduce((lowest, plan) => Math.min(lowest, plan.price), Infinity)
-      return Number.isFinite(cheapest) ? formatPriceFromMad(cheapest, 'ar') : ''
+      return Number.isFinite(cheapest) ? formatPriceFromMad(cheapest, 'fr') : ''
     },
 
     featuredCountries() {
@@ -593,7 +512,7 @@ export default {
 
     relatedDestinations() {
       return [
-        { iso: 'ES', slug: 'espagne' },
+        { iso: 'ES', slug: 'france' },
         { iso: 'FR', slug: 'france' },
         { iso: 'IT', slug: 'italie' },
         { iso: 'PT', slug: 'portugal' },
@@ -601,7 +520,7 @@ export default {
         { iso: 'DE', slug: 'allemagne' },
         { iso: 'NL', slug: 'pays-bas' },
         { iso: 'CH', slug: 'suisse' },
-      ].map((country) => ({ ...country, name: this.getCountryName(country.iso, 'ar') }))
+      ].map((country) => ({ ...country, name: this.getCountryName(country.iso, 'fr') }))
     },
 
   },
@@ -628,7 +547,7 @@ export default {
     },
 
     loadRegion() {
-      this.region = regions.find((item) => item.slug === 'europe') || null
+      this.region = destinations.find((item) => item.slug === 'emirats-arabes-unis') || null
     },
 
     handleAddToCart(plan) {
@@ -641,7 +560,7 @@ export default {
         flag: this.region.flag,
         image: this.region.image,
         iso: this.region.iso,
-        type: 'region',
+        type: 'destination',
         planKey: plan.key,
         data: plan.data,
         dataLabel: plan.dataLabel,
@@ -654,7 +573,7 @@ export default {
 
       posthog.capture('plan_added_to_cart', {
         destination_slug: this.region.slug,
-        destination_type: 'region',
+        destination_type: 'destination',
         plan_key: plan.key,
         data_amount: plan.data,
         validity_days: plan.days,
@@ -663,10 +582,10 @@ export default {
       })
 
       this.addedPlanKey = plan.key
-      this.snackbarText = 'تمت الإضافة إلى السلة'
+      this.snackbarText = 'Ajouté au panier'
       this.snackbar = true
 
-      if (this.region.slug === 'europe') {
+      if (this.region.slug === 'emirats-arabes-unis') {
         this.checkoutOpen = true
         this.$nextTick(() => {
           document.getElementById('europe-checkout')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -704,15 +623,15 @@ export default {
     formatPriceFromMad,
 
     updateStructuredData() {
-      const locale = 'ar'
-      const path = `${this.localePrefix}/esim/europe`
+      const locale = 'fr'
+      const path = `${this.localePrefix}/esim/united-arab-emirates`
       const url = `https://safarsim.net${path}`
       const currency = getPreferredCurrency()
       const schema = [
         {
           '@context': 'https://schema.org', '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'شرائح eSIM', item: `https://safarsim.net${this.localePrefix}/esim` },
+            { '@type': 'ListItem', position: 1, name: 'eSIMs', item: `https://safarsim.net${this.localePrefix}/esim` },
             { '@type': 'ListItem', position: 2, name: this.localizedRegionName, item: url },
           ],
         },
@@ -740,7 +659,7 @@ export default {
       }
       node.textContent = JSON.stringify(schema)
       document.documentElement.lang = locale
-      document.title = document.querySelector('#europe-plans h2')?.textContent.trim() || 'SafarSim eSIM أوروبا'
+      document.title = document.querySelector('#europe-plans h2')?.textContent.trim() || 'SafarSim eSIM Émirats arabes unis'
     },
   },
 
@@ -920,67 +839,7 @@ export default {
 .covered-countries-compact{max-width:1060px;margin:28px auto 0;border:1px solid #eadfe3;border-radius:18px;background:var(--eu-cream);overflow:hidden}.covered-countries-compact summary{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:16px 18px;cursor:pointer;list-style:none;color:var(--eu-ink)}.covered-countries-compact summary::-webkit-details-marker{display:none}.covered-countries-compact summary>.v-icon:first-child{color:var(--eu-pink)}.covered-toggle{color:var(--eu-pink);transition:transform .2s}.covered-countries-compact[open] .covered-toggle{transform:rotate(180deg)}.covered-country-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 18px}.covered-country-chips a{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:99px;background:#fff;border:1px solid #eadfe3;color:var(--eu-ink);font-size:12px;text-decoration:none}.covered-country-chips img{width:22px;height:16px;object-fit:cover;border-radius:3px}.europe-purchase-cta{display:flex!important;margin:24px auto 0;color:#fff!important;font-weight:900!important;letter-spacing:0!important}
 .network-disclosure>summary{display:none}.network-disclosure>.network-table-wrap{display:block}.network-disclosure[open]>summary .v-icon{transform:rotate(180deg)}
 @media(max-width:599px){.europe-section-heading{padding-inline:24px}.europe-explainer-copy{padding-inline:20px}.covered-countries-compact{margin-inline:4px}.covered-country-chips{max-height:230px;overflow:auto}.europe-purchase-cta{width:calc(100% - 24px)}.network-disclosure>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border:1px solid #eadfe3;border-radius:16px;background:#fff0f5;color:var(--eu-ink);font-weight:850;cursor:pointer;list-style:none}.network-disclosure>summary::-webkit-details-marker{display:none}.network-disclosure>summary .v-icon{color:var(--eu-pink);transition:transform .2s}.network-disclosure:not([open])>.network-table-wrap{display:none}.network-disclosure[open]>summary{border-radius:16px 16px 0 0}.network-disclosure[open]>.network-table-wrap{border-radius:0 0 16px 16px}}
-/* RTL corrections for FAQ and related destination cards. */
-.europe-page[dir="rtl"] .europe-faq-list summary{direction:rtl;flex-direction:row;text-align:right}
-.europe-page[dir="rtl"] .europe-faq-list summary>span{flex:1;min-width:0}
-.europe-page[dir="rtl"] .europe-faq-list summary>.v-icon{flex:0 0 auto;margin-inline-start:16px}
-.europe-page[dir="rtl"] .europe-related-card{direction:ltr;grid-template-columns:24px minmax(0,1fr) 42px;text-align:right}
-.europe-page[dir="rtl"] .europe-related-card img{grid-column:3;grid-row:1}
-.europe-page[dir="rtl"] .europe-related-card strong{grid-column:2;grid-row:1;min-width:0;direction:rtl}
-.europe-page[dir="rtl"] .europe-related-card .v-icon{grid-column:1;grid-row:1;transform:scaleX(-1)}
-.europe-page[dir="rtl"] .europe-fact,.europe-page[dir="rtl"] .europe-use-case-card,.europe-page[dir="rtl"] .safarsim-fact-card,.europe-page[dir="rtl"] .activation-guidance>div{flex-direction:row-reverse;text-align:right}
-.europe-page[dir="rtl"] .europe-fact>span,.europe-page[dir="rtl"] .europe-use-case-card>div,.europe-page[dir="rtl"] .safarsim-fact-card>div,.europe-page[dir="rtl"] .activation-guidance>div>span{min-width:0;flex:1}
-.europe-page[dir="rtl"] .network-notes>span{display:flex;flex-direction:row-reverse;justify-content:flex-start;text-align:right;gap:10px}
-.europe-page[dir="rtl"] .network-table th,.europe-page[dir="rtl"] .network-table td,.europe-page[dir="rtl"] .comparison-table th,.europe-page[dir="rtl"] .comparison-table td{text-align:right}
-.europe-page[dir="rtl"] .network-operators{direction:ltr;text-align:right;display:block}
-.europe-page[dir="rtl"] .technology-badge{direction:ltr;display:inline-flex}
-.europe-page[dir="rtl"] .europe-fact>.v-icon,
-.europe-page[dir="rtl"] .europe-use-case-card>.v-icon,
-.europe-page[dir="rtl"] .safarsim-fact-card>.v-icon,
-.europe-page[dir="rtl"] .activation-guidance>div>.v-icon{order:2;margin-inline-start:14px;margin-inline-end:0}
-.europe-page[dir="rtl"] .europe-fact>span,
-.europe-page[dir="rtl"] .europe-use-case-card>div,
-.europe-page[dir="rtl"] .safarsim-fact-card>div,
-.europe-page[dir="rtl"] .activation-guidance>div>span{order:1}
-.europe-page[dir="rtl"] .europe-use-case-card{direction:ltr;flex-direction:row-reverse}
-.europe-page[dir="rtl"] .europe-use-case-card>div{direction:rtl;text-align:right}
-.europe-page[dir="rtl"] .europe-fact,
-.europe-page[dir="rtl"] .europe-use-case-card,
-.europe-page[dir="rtl"] .safarsim-fact-card,
-.europe-page[dir="rtl"] .activation-guidance>div{direction:ltr;flex-direction:row-reverse;text-align:right}
-.europe-page[dir="rtl"] .europe-fact>span,
-.europe-page[dir="rtl"] .europe-use-case-card>div,
-.europe-page[dir="rtl"] .safarsim-fact-card>div,
-.europe-page[dir="rtl"] .activation-guidance>div>span{direction:rtl;text-align:right}
-.europe-page[dir="rtl"] .europe-fact,
-.europe-page[dir="rtl"] .europe-use-case-card,
-.europe-page[dir="rtl"] .safarsim-fact-card,
-.europe-page[dir="rtl"] .activation-guidance>div{direction:rtl!important;flex-direction:row!important;text-align:right}
-.europe-page[dir="rtl"] .europe-fact>.v-icon,
-.europe-page[dir="rtl"] .europe-use-case-card>.v-icon,
-.europe-page[dir="rtl"] .safarsim-fact-card>.v-icon,
-.europe-page[dir="rtl"] .activation-guidance>div>.v-icon{order:0!important;margin-inline-start:0;margin-inline-end:14px}
-.europe-page[dir="rtl"] .europe-fact>span,
-.europe-page[dir="rtl"] .europe-use-case-card>div,
-.europe-page[dir="rtl"] .safarsim-fact-card>div,
-.europe-page[dir="rtl"] .activation-guidance>div>span{order:0!important;direction:rtl;text-align:right}
-.europe-page[dir="rtl"] .comparison-recommendation{direction:rtl;flex-direction:row;text-align:right}
-.europe-page[dir="rtl"] .comparison-recommendation>.v-icon{order:0;margin-inline-end:0}
-.europe-page[dir="rtl"] .comparison-recommendation>p{order:0;flex:1}
-.europe-page[dir="rtl"] .comparison-links a{direction:ltr;display:grid;grid-template-columns:24px minmax(0,1fr);text-align:right}
-.europe-page[dir="rtl"] .comparison-links a>.v-icon{grid-column:1;grid-row:1;transform:scaleX(-1)}
-.europe-page[dir="rtl"] .comparison-link-label{grid-column:2;grid-row:1;direction:rtl;display:block;text-align:right}
-.europe-page[dir="rtl"] .comparison-link-flag{float:right;margin-inline-end:0;margin-inline-start:8px}
-.europe-page[dir="rtl"] .europe-installation-steps li{direction:rtl!important;flex-direction:row!important;text-align:right}
-.europe-page[dir="rtl"] .europe-installation-steps li>i{order:0!important;margin:0}
-.europe-page[dir="rtl"] .europe-installation-steps li>span{order:0!important;flex:1}
-.europe-page[dir="rtl"] .europe-guide-links a{direction:ltr!important;grid-template-columns:24px minmax(0,1fr) 34px;text-align:right}
-.europe-page[dir="rtl"] .europe-guide-links a>.v-icon:first-child{grid-column:3;grid-row:1}
-.europe-page[dir="rtl"] .europe-guide-links a>span{grid-column:2;grid-row:1;direction:rtl;text-align:right}
-.europe-page[dir="rtl"] .europe-guide-links a>.v-icon:last-child{grid-column:1;grid-row:1;transform:scaleX(-1)}
-.europe-page[dir="rtl"] .whatsapp-title-row{direction:ltr;grid-template-columns:minmax(0,1fr) 68px;text-align:right}
-.europe-page[dir="rtl"] .whatsapp-title-row .whatsapp-icon{grid-column:2;grid-row:1}
-.europe-page[dir="rtl"] .whatsapp-title-row h2{grid-column:1;grid-row:1;direction:rtl;text-align:right}
-.europe-page[dir="rtl"] .europe-whatsapp-container>p{margin-right:0;margin-left:92px;text-align:right}
-@media(max-width:600px){.europe-page[dir="rtl"] .whatsapp-title-row{grid-template-columns:minmax(0,1fr) 58px}.europe-page[dir="rtl"] .europe-whatsapp-container>p{margin:18px 0 0}}
+.turkey-country-line{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 18px}.turkey-country-line img{width:34px;height:24px;object-fit:cover;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,.14)}.turkey-country-line strong{color:var(--eu-pink)}
+.europe-proof-grid{grid-template-columns:1fr;max-width:520px;padding-top:0;padding-bottom:12px}.europe-proof-grid>div{justify-content:center;padding-top:6px}.europe-proof-grid>div+div{border:0}@media(max-width:599px){.europe-proof-grid{padding-block:0 10px}.europe-proof-grid>div{padding:6px 18px}.europe-map-card{margin-bottom:-40px}}
+.network-disclosure>.network-table-wrap{display:block!important}
 </style>
