@@ -42,6 +42,7 @@
 <script>
 import { clearCart, getCart } from '@/utils/cart'
 import { posthog } from '@/services/posthog'
+import { trackVerifiedPurchase } from '@/services/googleAds'
 
 export default {
   name: 'PaymentSuccess',
@@ -76,6 +77,7 @@ export default {
       if (!response.ok || !result.paid) {
         throw new Error(result.error || 'Unable to verify payment')
       }
+      trackVerifiedPurchase(result)
       this.customerEmail = result.customerEmail || ''
       if (!this.paymentCaptured) {
         const completedCart = getCart()
