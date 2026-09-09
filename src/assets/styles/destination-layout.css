@@ -2,6 +2,10 @@
 .europe-hero-grid { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
 .europe-hero-copy, .europe-visual, .europe-map-card { min-width: 0; max-width: 100%; }
 .europe-page[dir] .europe-hero-copy h1 span { white-space: normal; overflow-wrap: anywhere; }
+/* Trim each asset's transparent footer and meet the price strip at the hero edge. */
+.europe-hero-inner { padding-bottom: 0; }
+.europe-visual { align-self: end; margin-bottom: 0; }
+.europe-map-card { margin-bottom: calc(-1 * var(--hero-bottom-trim, 0%)); }
 .europe-map-card > img { max-width: 100%; height: auto; }
 .europe-primary { max-width: 100%; height: auto !important; min-height: 52px; }
 .europe-primary :deep(.v-btn__content) { white-space: normal; padding-block: 12px; }
@@ -18,7 +22,6 @@
   .europe-hero-grid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 599px) {
-  .europe-map-card { margin-bottom: 0; }
   .europe-plan-grid { gap: 16px; }
   .europe-plan-card { min-height: 94px; padding: 16px 12px; grid-template-columns: 22px minmax(0, 1fr) auto; column-gap: 8px; border-radius: 16px; }
   .europe-plan-card .plan-radio { width: 20px; height: 20px; }

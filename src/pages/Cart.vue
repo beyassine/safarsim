@@ -380,7 +380,7 @@ import {
   CART_UPDATED_EVENT,
 } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
-import { formatMoney as formatCurrency, getPreferredCurrency, MAD_CURRENCY, MAD_TO_USD_RATE } from '@/utils/currency'
+import { formatMoney as formatCurrency, getPreferredCurrency, MAD_CURRENCY, convertPrice } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
 
 const PROMO_CODES = new Map([
@@ -507,12 +507,7 @@ export default {
         : Number(item.price)
       const preferredCurrency = getPreferredCurrency()
       const sourceCurrency = item.currency || MAD_CURRENCY
-      let price = storedPrice
-      if (sourceCurrency !== preferredCurrency) {
-        price = preferredCurrency === MAD_CURRENCY
-          ? Number((storedPrice / MAD_TO_USD_RATE).toFixed(2))
-          : Number((storedPrice * MAD_TO_USD_RATE).toFixed(2))
-      }
+      const price = convertPrice(storedPrice, sourceCurrency, preferredCurrency)
       const quantity = Number(item.quantity || 1)
       const days = Number(item.days)
 

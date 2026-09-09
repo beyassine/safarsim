@@ -1,5 +1,9 @@
 export const USD_CURRENCY = 'USD'
 export const MAD_CURRENCY = 'MAD'
+export const EUR_CURRENCY = 'EUR'
+
+// European visitors use EUR, including European countries outside the eurozone.
+const EUROPE_COUNTRIES = new Set('AD AL AT AX BA BE BG BY CH CY CZ DE DK EE ES FI FO FR GB GG GI GR HR HU IE IM IS IT JE LI LT LU LV MC MD ME MK MT NL NO PL PT RO RS RU SE SI SJ SK SM UA VA XK'.split(' '))
 
 // Product prices use the fixed conversion stored in the catalogue: USD = MAD / 10.
 export const MAD_TO_USD_RATE = 0.1
@@ -23,7 +27,9 @@ export function getVisitorCountry() {
 
   // Moroccan devices commonly use a fr-FR locale, so prefer their timezone.
   try {
-    if (Intl.DateTimeFormat().resolvedOptions().timeZone === 'Africa/Casablanca') return 'MA'
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    if (timeZone === 'Africa/Casablanca') return 'MA'
+    if (timeZone.startsWith('Europe/')) return 'EU'
   } catch (error) {
     // Fall through to browser locale detection.
   }
@@ -35,7 +41,18 @@ export function getVisitorCountry() {
 }
 
 export function getPreferredCurrency() {
-  return getVisitorCountry() === 'MA' ? MAD_CURRENCY : USD_CURRENCY
+  const country = getVisitorCountry()
+  if (country === 'MA') return MAD_CURRENCY
+  if (country === 'EU' || EUROPE_COUNTRIES.has(country)) return EUR_CURRENCY
+  return USD_CURRENCY
+}
+
+// EUR and USD deliberately share the same numeric catalogue price.
+export function convertPrice(amount, sourceCurrency, targetCurrency) {
+  if (sourceCurrency === targetCurrency) return Number(amount)
+  if (sourceCurrency === MAD_CURRENCY) return madToUsd(amount)
+  if (targetCurrency === MAD_CURRENCY) return Number((Number(amount) / MAD_TO_USD_RATE).toFixed(2))
+  return Number(amount)
 }
 
 export function priceFromMad(amount) {

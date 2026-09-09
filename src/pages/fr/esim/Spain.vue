@@ -19,7 +19,7 @@
               </v-btn>
             </div>
           </div>
-          <div class="europe-visual">
+          <div class="europe-visual" style="--hero-bottom-trim: 2.14844%">
             <div class="europe-map-card">
               <img :src="spainHeroImage" alt="Espagne landmarks with eSIM connectivity">
             </div>

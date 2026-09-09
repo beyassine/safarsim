@@ -19,7 +19,7 @@
               </v-btn>
             </div>
           </div>
-          <div class="europe-visual">
+          <div class="europe-visual" style="--hero-bottom-trim: 4.75260%">
             <div class="europe-map-card">
               <img :src="turkeyHeroImage" alt="تركيا landmarks with eSIM connectivity">
             </div>

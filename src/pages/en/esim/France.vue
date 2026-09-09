@@ -19,7 +19,7 @@
               </v-btn>
             </div>
           </div>
-          <div class="europe-visual">
+          <div class="europe-visual" style="--hero-bottom-trim: 0.84635%">
             <div class="europe-map-card">
               <img :src="franceHeroImage" alt="France landmarks with eSIM connectivity">
             </div>

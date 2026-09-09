@@ -19,7 +19,7 @@
               </v-btn>
             </div>
           </div>
-          <div class="europe-visual">
+          <div class="europe-visual" style="--hero-bottom-trim: 3.25521%">
             <div class="europe-map-card">
               <img :src="saudiArabiaHeroImage" alt="المملكة العربية السعودية landmarks with eSIM connectivity">
             </div>
