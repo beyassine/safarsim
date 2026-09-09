@@ -900,3 +900,5 @@ export default {
 .europe-page[dir="rtl"] .europe-whatsapp-container>p{margin-right:0;margin-left:92px;text-align:right}
 @media(max-width:600px){.europe-page[dir="rtl"] .whatsapp-title-row{grid-template-columns:minmax(0,1fr) 58px}.europe-page[dir="rtl"] .europe-whatsapp-container>p{margin:18px 0 0}}
 </style>
+
+<style scoped src="@/assets/styles/destination-layout.css"></style>

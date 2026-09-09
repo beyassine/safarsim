@@ -859,3 +859,5 @@ export default {
 .network-disclosure>.network-table-wrap{display:block!important}
 .turkey-policy-section{padding:90px 0;background:#fff8fa}.turkey-policy-container{max-width:950px}.turkey-policy-copy{display:grid;gap:14px;padding:26px 28px;border:1px solid #efdce3;border-radius:22px;background:#fff;color:#526b65;box-shadow:0 12px 30px rgba(96,45,65,.05)}.turkey-policy-copy p{margin:0;font-size:15px;line-height:1.8}.turkey-policy-copy strong{color:var(--eu-green)}@media(max-width:600px){.turkey-policy-section{padding:65px 0}.turkey-policy-copy{padding:21px 19px}.turkey-policy-copy p{font-size:14px}}
 </style>
+
+<style scoped src="@/assets/styles/destination-layout.css"></style>

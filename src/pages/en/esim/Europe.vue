@@ -921,3 +921,5 @@ export default {
 .network-disclosure>summary{display:none}.network-disclosure>.network-table-wrap{display:block}.network-disclosure[open]>summary .v-icon{transform:rotate(180deg)}
 @media(max-width:599px){.europe-section-heading{padding-inline:24px}.europe-explainer-copy{padding-inline:20px}.covered-countries-compact{margin-inline:4px}.covered-country-chips{max-height:230px;overflow:auto}.europe-purchase-cta{width:calc(100% - 24px)}.network-disclosure>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border:1px solid #eadfe3;border-radius:16px;background:#fff0f5;color:var(--eu-ink);font-weight:850;cursor:pointer;list-style:none}.network-disclosure>summary::-webkit-details-marker{display:none}.network-disclosure>summary .v-icon{color:var(--eu-pink);transition:transform .2s}.network-disclosure:not([open])>.network-table-wrap{display:none}.network-disclosure[open]>summary{border-radius:16px 16px 0 0}.network-disclosure[open]>.network-table-wrap{border-radius:0 0 16px 16px}}
 </style>
+
+<style scoped src="@/assets/styles/destination-layout.css"></style>

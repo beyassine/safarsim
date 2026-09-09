@@ -1,0 +1,31 @@
+/* Shared by every localized popular destination page. */
+.europe-hero-grid { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
+.europe-hero-copy, .europe-visual, .europe-map-card { min-width: 0; max-width: 100%; }
+.europe-page[dir] .europe-hero-copy h1 span { white-space: normal; overflow-wrap: anywhere; }
+.europe-map-card > img { max-width: 100%; height: auto; }
+.europe-primary { max-width: 100%; height: auto !important; min-height: 52px; }
+.europe-primary :deep(.v-btn__content) { white-space: normal; padding-block: 12px; }
+.europe-plan-card { min-height: 104px; padding: 18px 20px; grid-template-columns: 32px minmax(0, 1fr) auto; column-gap: 8px; border-radius: 18px; }
+.europe-plan-card .plan-data { flex-wrap: wrap; gap: 4px 8px; }
+.europe-plan-card .plan-data b { font-size: 26px; white-space: nowrap; }
+.europe-plan-card .plan-data span { font-size: 14px; }
+.europe-plan-card .plan-duration { margin-top: 8px; font-size: 14px; }
+.europe-plan-card .plan-price { font-size: 25px; }
+.europe-plan-card .plan-radio { width: 24px; height: 24px; }
+.europe-plan-card.active { border-color: var(--eu-pink); background: #fff0f5; box-shadow: 0 3px 0 var(--eu-pink); }
+.europe-plan-card.active .plan-radio { border: 7px solid var(--eu-pink); }
+@media (max-width: 900px) {
+  .europe-hero-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 599px) {
+  .europe-map-card { margin-bottom: 0; }
+  .europe-plan-grid { gap: 16px; }
+  .europe-plan-card { min-height: 94px; padding: 16px 12px; grid-template-columns: 22px minmax(0, 1fr) auto; column-gap: 8px; border-radius: 16px; }
+  .europe-plan-card .plan-radio { width: 20px; height: 20px; }
+  .europe-plan-card.active .plan-radio { border-width: 6px; }
+  .europe-plan-card .plan-data { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .europe-plan-card .plan-data b { font-size: 22px; }
+  .europe-plan-card .plan-data span { font-size: 11px; line-height: 1.2; }
+  .europe-plan-card .plan-duration { margin-top: 6px; font-size: 12px; }
+  .europe-plan-card .plan-price { font-size: clamp(16px, 4.7vw, 21px); }
+}
