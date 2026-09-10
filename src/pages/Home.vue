@@ -57,7 +57,7 @@
           <p>{{ featuredDestinationsCopy.text }}</p>
         </div>
         <div class="featured-destinations-grid">
-          <router-link v-for="destination in featuredLandingPages" :key="destination.slug" :to="destination.route" class="featured-destination-card">
+          <router-link v-for="destination in featuredLandingPages" :key="destination.slug" :to="destination.route" class="featured-destination-card featured-destination-card--illustrated">
             <img :src="destination.image" alt="" loading="lazy" decoding="async">
             <span class="featured-destination-overlay" aria-hidden="true"></span>
             <div><strong>{{ destination.name }}</strong><small>{{ featuredDestinationsCopy.explore }} <v-icon size="16">{{ arrowIcon }}</v-icon></small></div>
@@ -224,12 +224,12 @@ import { localePath } from '@/router'
 import Cart from '@/pages/Cart.vue'
 import { priceFromMad, getPreferredCurrency } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
-import europeLandingImage from '@/assets/images/flags/regions/ue_flag.webp'
-import turkeyLandingImage from '@/assets/images/flags/tr.svg'
-import spainLandingImage from '@/assets/images/flags/es.svg'
-import franceLandingImage from '@/assets/images/flags/fr.svg'
-import saudiLandingImage from '@/assets/images/flags/sa.svg'
-import egyptLandingImage from '@/assets/images/flags/eg.svg'
+import europeLandingImage from '@/assets/images/ue_flag.png'
+import turkeyLandingImage from '@/assets/images/turkey_flag.png'
+import spainLandingImage from '@/assets/images/spain_flag.png'
+import franceLandingImage from '@/assets/images/france_flag.png'
+import saudiLandingImage from '@/assets/images/saudi_flag.png'
+import egyptLandingImage from '@/assets/images/egypt_flag.png'
 
 const locale = ref(i18n.global.locale)
 const preferredCurrency = getPreferredCurrency() === 'MAD' ? 'DH' : getPreferredCurrency()
@@ -705,4 +705,13 @@ watch(locale, () => {
 @media(max-width:960px){.featured-destinations-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.featured-destinations-section{padding:48px 0 8px}.featured-destinations-heading{margin-bottom:23px}.featured-destinations-heading h2{font-size:27px}.featured-destinations-heading p{font-size:14px}.featured-destinations-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.featured-destination-card{height:180px;border-radius:16px}.featured-destination-card>div{inset-inline:12px;bottom:12px}.featured-destination-card strong{font-size:16px}.featured-destination-card small{font-size:10px}}
 .featured-destinations-section + .plans-section{padding-top:0}
+/* Illustrated destination cards, with live localized labels over the artwork. */
+.featured-destination-card--illustrated{height:auto;aspect-ratio:1.08;background:radial-gradient(ellipse at 50% 32%,#fff8fb 0%,#fff0f6 65%,#fce4ee 100%);border-radius:28px;box-shadow:0 10px 28px #ac28502b}
+.featured-destination-card--illustrated>img{position:absolute;inset:4% 0 auto;width:100%;height:82%;object-fit:contain;object-position:center top}
+.featured-destination-card--illustrated .featured-destination-overlay{background:linear-gradient(180deg,rgba(28,25,29,0) 42%,rgba(28,25,29,.08) 54%,rgba(28,25,29,.38) 66%,rgba(28,25,29,.82) 80%,#1c191d 100%)}
+.featured-destination-card--illustrated>div{inset-inline:24px;bottom:24px;gap:12px}
+.featured-destination-card--illustrated strong{font-size:36px;line-height:1.15}
+.featured-destination-card--illustrated small{font-size:17px;gap:12px;margin-top:0}
+.featured-destination-card--illustrated small .v-icon{width:36px;height:36px;font-size:25px!important;border:2px solid #ffffff70}
+@media(max-width:600px){.featured-destination-card--illustrated{height:auto;border-radius:18px}.featured-destination-card--illustrated>div{inset-inline:12px;bottom:12px;gap:7px}.featured-destination-card--illustrated strong{font-size:22px}.featured-destination-card--illustrated small{font-size:10px;gap:5px}.featured-destination-card--illustrated small .v-icon{width:22px;height:22px;font-size:16px!important;flex-shrink:0}}
 </style>

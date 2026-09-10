@@ -44,7 +44,7 @@
         </div>
         <div class="europe-plan-grid">
           <button v-for="plan in sortedPlans" :key="plan.key" type="button" class="europe-plan-card" :class="{ active: selectedPlanKey === plan.key }" @click="handleAddToCart(plan)">
-            <span v-if="plan.data === '10GB'" class="popular-label">Le plus populaire</span>
+            <span v-if="plan.data === '10GB'" class="popular-label">Le plus populaire • Idéal pour 1–2 semaines</span>
             <span class="plan-radio" aria-hidden="true"></span>
             <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>de données mobiles</span></div>
             <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} jours</div>
