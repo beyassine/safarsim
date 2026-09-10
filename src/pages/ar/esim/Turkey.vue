@@ -12,12 +12,13 @@
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
             <h1><span>ابقَ متصلاً في جميع أنحاء</span><em>تركيا</em></h1>
-            <p>سافر في أنحاء تركيا باستخدام شريحة eSIM واحدة مسبقة الدفع. ابقَ متصلاً في إسطنبول وأنقرة وأنطاليا وغيرها دون تغيير شريحتك الفعلية.</p>
+            <p class="europe-hero-description">سافر في أنحاء تركيا باستخدام شريحة eSIM واحدة مسبقة الدفع. ابقَ متصلاً في إسطنبول وأنقرة وأنطاليا وغيرها دون تغيير شريحتك الفعلية.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
                 عرض باقات تركيا<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 4.75260%">
             <div class="europe-map-card">
@@ -28,9 +29,12 @@
       </v-container>
     </section>
 
-    <section class="europe-proof-strip">
-      <v-container class="europe-proof-grid">
-        <div class="proof-highlight"><v-icon>mdi-tag-outline</v-icon><b>الباقات ابتداءً من <strong>{{ startingPrice }}</strong></b></div>
+    <section class="turkey-proof-strip">
+      <v-container class="turkey-proof-grid">
+        <div><b>ابتداءً من {{ startingPrice }}</b><span>باقات مسبقة الدفع لتركيا</span></div>
+        <div><b>قبل السفر</b><span>ثبّت شريحتك مسبقاً</span></div>
+        <div><b>عند الوصول</b><span>اتصل بالإنترنت في تركيا</span></div>
+        <div><b>Türk Telekom &amp; Turkcell</b><span>شبكات محلية شريكة</span></div>
       </v-container>
     </section>
 
@@ -43,7 +47,7 @@
         </div>
         <div class="europe-plan-grid">
           <button v-for="plan in sortedPlans" :key="plan.key" type="button" class="europe-plan-card" :class="{ active: selectedPlanKey === plan.key }" @click="handleAddToCart(plan)">
-            <span v-if="plan.data === '10GB'" class="popular-label">الأكثر اختياراً</span>
+            <span v-if="plan.data === '10GB'" class="popular-label">الأكثر اختياراً • مثالية لمدة أسبوع إلى أسبوعين</span>
             <span class="plan-radio" aria-hidden="true"></span>
             <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>بيانات الهاتف</span></div>
             <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} أيام</div>
@@ -123,38 +127,6 @@
           <div class="europe-use-case-card"><v-icon>mdi-image-filter-hdr</v-icon><div><b>كابادوكيا ووسط تركيا</b><p>حافظ على البيانات للنقل والحجوزات.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-map-marker-path</v-icon><div><b>رحلة بين عدة مدن</b><p>استخدم شريحة واحدة أثناء التنقل بين المدن التركية.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-briefcase-outline</v-icon><div><b>رحلات العمل</b><p>حافظ على الاتصال للاجتماعات وتطبيقات العمل.</p></div></div>
-        </div>
-      </v-container>
-    </section>
-
-    <section class="europe-comparison-section">
-      <v-container class="europe-comparison-container">
-        <div class="europe-section-heading compact">
-          <span>اختر التغطية المناسبة</span>
-          <h2>شريحة eSIM لتركيا أم التجوال الدولي؟</h2>
-          <p>قارن بين شريحة تركيا مسبقة الدفع وخدمة التجوال الدولي من مشغلك.</p>
-        </div>
-        <div class="comparison-table-wrap">
-          <table class="comparison-table">
-            <thead>
-              <tr><th></th><th>eSIM تركيا</th><th>التجوال الدولي</th></tr>
-            </thead>
-            <tbody>
-              <tr><th>السفر في دولة واحدة</th><td>ممكن</td><td>غالباً أكثر ملاءمة</td></tr>
-              <tr><th>عدة دول</th><td>مثالية</td><td>تحتاج إلى عدة شرائح</td></tr>
-              <tr><th>الانتقال بين الدول</th><td>الشريحة نفسها</td><td>قد تحتاج إلى شريحة أخرى</td></tr>
-              <tr><th>السهولة</th><td>عالية جداً</td><td>عالية</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="comparison-recommendation">
-          <v-icon>mdi-lightbulb-on-outline</v-icon>
-          <p>اختر شريحة تركيا للحصول على بيانات مسبقة الدفع بحجم معروف قبل السفر. تحقق من شروط التجوال لدى مشغلك قبل مقارنة التكلفة.</p>
-        </div>
-        <div class="comparison-links">
-          <router-link :to="`${localePrefix}/esim/spain`"><span class="comparison-link-label">عرض شرائح إسبانيا <span class="comparison-link-flag">🇪🇸</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/france`"><span class="comparison-link-label">عرض شرائح فرنسا <span class="comparison-link-flag">🇫🇷</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/portugal`"><span class="comparison-link-label">عرض شرائح البرتغال <span class="comparison-link-flag">🇵🇹</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>
@@ -934,6 +906,14 @@ export default {
 .europe-page[dir="rtl"] .whatsapp-title-row h2{grid-column:1;grid-row:1;direction:rtl;text-align:right}
 .europe-page[dir="rtl"] .europe-whatsapp-container>p{margin-right:0;margin-left:92px;text-align:right}
 @media(max-width:600px){.europe-page[dir="rtl"] .whatsapp-title-row{grid-template-columns:minmax(0,1fr) 58px}.europe-page[dir="rtl"] .europe-whatsapp-container>p{margin:18px 0 0}}
+.turkey-proof-strip{background:#fff1f5}
+.turkey-proof-grid{max-width:1200px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:26px;gap:20px}
+.turkey-proof-grid>div{text-align:center;display:flex;flex-direction:column;gap:5px;min-width:0;padding-inline:8px}
+.turkey-proof-grid>div+div{border-inline-start:1px solid #ead7df}
+.turkey-proof-grid b{font-size:21px;font-weight:800;line-height:1.35;color:#d91c58}
+.turkey-proof-grid span{font-size:13px;line-height:1.55;color:#6f5966}
+@media(max-width:960px){.turkey-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.turkey-proof-grid>div+div{border:0}}
+@media(max-width:600px){.turkey-proof-grid{padding:28px 12px}.turkey-proof-grid b{font-size:18px}}
 </style>
 
 <style scoped src="@/assets/styles/destination-layout.css"></style>

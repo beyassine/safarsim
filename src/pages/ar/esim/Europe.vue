@@ -12,12 +12,13 @@
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
             <h1><span>ابقَ متصلاً في جميع أنحاء</span><em>أوروبا</em></h1>
-            <p>سافر من لشبونة إلى إسطنبول باستخدام شريحة eSIM واحدة مسبقة الدفع. بلا رسوم تجوال مفاجئة أو تبديل للشرائح، فقط إنترنت موثوق طوال رحلتك.</p>
+            <p class="europe-hero-description">سافر من لشبونة إلى إسطنبول باستخدام شريحة eSIM واحدة مسبقة الدفع. بلا رسوم تجوال مفاجئة أو تبديل للشرائح، فقط إنترنت موثوق طوال رحلتك.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
                 عرض باقات أوروبا<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 2.21354%">
             <div class="europe-map-card">

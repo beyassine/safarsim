@@ -33,6 +33,7 @@ export const LOCALIZED_ROUTE_PATHS = {
   spainDetails: { fr: "/esim/spain", en: "/esim/spain", ar: "/esim/spain" },
   franceDetails: { fr: "/esim/france", en: "/esim/france", ar: "/esim/france" },
   saudiArabiaDetails: { fr: "/esim/saudi-arabia", en: "/esim/saudi-arabia", ar: "/esim/saudi-arabia" },
+  egyptDetails: { fr: "/esim/egypt", en: "/esim/egypt", ar: "/esim/egypt" },
   unitedArabEmiratesDetails: { fr: "/esim/united-arab-emirates", en: "/esim/united-arab-emirates", ar: "/esim/united-arab-emirates" },
   help: { fr: "/help", en: "/help", ar: "/help" },
   pricing: { fr: "/pricing", en: "/pricing", ar: "/pricing" },
@@ -87,6 +88,11 @@ const LOCALIZED_COMPONENTS = {
     fr: () => import("@/pages/fr/esim/SaudiArabia.vue"),
     en: () => import("@/pages/en/esim/SaudiArabia.vue"),
     ar: () => import("@/pages/ar/esim/SaudiArabia.vue"),
+  },
+  egyptDetails: {
+    fr: () => import("@/pages/fr/esim/Egypt.vue"),
+    en: () => import("@/pages/en/esim/Egypt.vue"),
+    ar: () => import("@/pages/ar/esim/Egypt.vue"),
   },
   unitedArabEmiratesDetails: {
     fr: () => import("@/pages/fr/esim/UnitedArabEmirates.vue"),
@@ -195,6 +201,11 @@ const pageRoutes = [
     path: "/esim/saudi-arabia",
     name: "saudiArabiaDetails",
     component: LOCALIZED_COMPONENTS.saudiArabiaDetails.en,
+  },
+  {
+    path: "/esim/egypt",
+    name: "egyptDetails",
+    component: LOCALIZED_COMPONENTS.egyptDetails.en,
   },
   {
     path: "/esim/united-arab-emirates",

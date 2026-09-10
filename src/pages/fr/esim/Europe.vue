@@ -12,12 +12,13 @@
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
             <h1><span>Restez connecté partout en</span><em>Europe</em></h1>
-            <p>Voyagez de Lisbonne à Istanbul avec une seule eSIM prépayée. Sans surprise de roaming ni changement de carte SIM, profitez de données fiables pendant tout votre séjour.</p>
+            <p class="europe-hero-description">Voyagez de Lisbonne à Istanbul avec une seule eSIM prépayée. Sans surprise de roaming ni changement de carte SIM, profitez de données fiables pendant tout votre séjour.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
                 Voir les forfaits Europe<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 2.21354%">
             <div class="europe-map-card">

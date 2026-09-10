@@ -12,12 +12,13 @@
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
             <h1><span>Restez connecté partout en</span><em>Turquie</em></h1>
-            <p>Voyagez partout en Turquie avec une seule eSIM prépayée. Restez connecté à Istanbul, Ankara, Antalya et ailleurs sans changer votre carte SIM physique.</p>
+            <p class="europe-hero-description">Voyagez partout en Turquie avec une seule eSIM prépayée. Restez connecté à Istanbul, Ankara, Antalya et ailleurs sans changer votre carte SIM physique.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
                 Voir les forfaits Turquie<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 4.75260%">
             <div class="europe-map-card">
@@ -28,9 +29,12 @@
       </v-container>
     </section>
 
-    <section class="europe-proof-strip">
-      <v-container class="europe-proof-grid">
-        <div class="proof-highlight"><v-icon>mdi-tag-outline</v-icon><b>Forfaits dès <strong>{{ startingPrice }}</strong></b></div>
+    <section class="turkey-proof-strip">
+      <v-container class="turkey-proof-grid">
+        <div><b>Dès {{ startingPrice }}</b><span>Forfaits prépayés pour la Turquie</span></div>
+        <div><b>Avant le départ</b><span>Installez votre eSIM à l’avance</span></div>
+        <div><b>Dès l’arrivée</b><span>Connectez-vous en Turquie</span></div>
+        <div><b>Türk Telekom &amp; Turkcell</b><span>Réseaux partenaires locaux</span></div>
       </v-container>
     </section>
 
@@ -43,7 +47,7 @@
         </div>
         <div class="europe-plan-grid">
           <button v-for="plan in sortedPlans" :key="plan.key" type="button" class="europe-plan-card" :class="{ active: selectedPlanKey === plan.key }" @click="handleAddToCart(plan)">
-            <span v-if="plan.data === '10GB'" class="popular-label">Le plus populaire</span>
+            <span v-if="plan.data === '10GB'" class="popular-label">Le plus populaire • Idéal pour 1–2 semaines</span>
             <span class="plan-radio" aria-hidden="true"></span>
             <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>de données mobiles</span></div>
             <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} jours</div>
@@ -123,38 +127,6 @@
           <div class="europe-use-case-card"><v-icon>mdi-image-filter-hdr</v-icon><div><b>Cappadoce et Turquie centrale</b><p>Gardez vos données pour les transports et réservations.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-map-marker-path</v-icon><div><b>Circuit multi-villes</b><p>Utilisez une seule eSIM entre plusieurs villes turques.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-briefcase-outline</v-icon><div><b>Voyage d’affaires</b><p>Conservez une connexion pour les réunions et outils professionnels.</p></div></div>
-        </div>
-      </v-container>
-    </section>
-
-    <section class="europe-comparison-section">
-      <v-container class="europe-comparison-container">
-        <div class="europe-section-heading compact">
-          <span>Choisissez la bonne couverture</span>
-          <h2>eSIM Turquie ou itinérance internationale ?</h2>
-          <p>Comparez une eSIM Turquie prépayée avec l’itinérance internationale de votre opérateur.</p>
-        </div>
-        <div class="comparison-table-wrap">
-          <table class="comparison-table">
-            <thead>
-              <tr><th></th><th>eSIM Turquie</th><th>Roaming international</th></tr>
-            </thead>
-            <tbody>
-              <tr><th>Voyage dans 1 pays</th><td>Possible</td><td>Souvent plus adaptée</td></tr>
-              <tr><th>Plusieurs pays</th><td>Idéale</td><td>Plusieurs eSIM nécessaires</td></tr>
-              <tr><th>Changement de pays</th><td>Même eSIM</td><td>Peut nécessiter une autre eSIM</td></tr>
-              <tr><th>Simplicité</th><td>Très élevée</td><td>Élevée</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="comparison-recommendation">
-          <v-icon>mdi-lightbulb-on-outline</v-icon>
-          <p>Choisissez une eSIM Turquie pour disposer de données prépayées avec un volume connu avant le départ. Consultez les conditions de roaming de votre opérateur avant de comparer les coûts.</p>
-        </div>
-        <div class="comparison-links">
-          <router-link :to="`${localePrefix}/esim/spain`"><span class="comparison-link-label">Voir les eSIM Espagne <span class="comparison-link-flag">🇪🇸</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/france`"><span class="comparison-link-label">Voir les eSIM France <span class="comparison-link-flag">🇫🇷</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/portugal`"><span class="comparison-link-label">Voir les eSIM Portugal <span class="comparison-link-flag">🇵🇹</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>
@@ -858,6 +830,14 @@ export default {
 .europe-proof-grid{grid-template-columns:1fr;max-width:520px;padding-top:0;padding-bottom:12px}.europe-proof-grid>div{justify-content:center;padding-top:6px}.europe-proof-grid>div+div{border:0}@media(max-width:599px){.europe-proof-grid{padding-block:0 10px}.europe-proof-grid>div{padding:6px 18px}.europe-map-card{margin-bottom:-40px}}
 .network-disclosure>.network-table-wrap{display:block!important}
 .turkey-policy-section{padding:90px 0;background:#f7f4f1}.turkey-policy-container{max-width:950px}.turkey-policy-copy{display:grid;gap:14px;padding:26px 28px;border:1px solid #efdce3;border-radius:22px;background:#fff;color:#526b65;box-shadow:0 12px 30px rgba(96,45,65,.05)}.turkey-policy-copy p{margin:0;font-size:15px;line-height:1.8}.turkey-policy-copy strong{color:var(--eu-green)}@media(max-width:600px){.turkey-policy-section{padding:65px 0}.turkey-policy-copy{padding:21px 19px}.turkey-policy-copy p{font-size:14px}}
+.turkey-proof-strip{background:#fff1f5}
+.turkey-proof-grid{max-width:1200px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:26px;gap:20px}
+.turkey-proof-grid>div{text-align:center;display:flex;flex-direction:column;gap:5px;min-width:0;padding-inline:8px}
+.turkey-proof-grid>div+div{border-inline-start:1px solid #ead7df}
+.turkey-proof-grid b{font-size:21px;font-weight:800;line-height:1.35;color:#d91c58}
+.turkey-proof-grid span{font-size:13px;line-height:1.55;color:#6f5966}
+@media(max-width:960px){.turkey-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.turkey-proof-grid>div+div{border:0}}
+@media(max-width:600px){.turkey-proof-grid{padding:28px 12px}.turkey-proof-grid b{font-size:18px}}
 </style>
 
 <style scoped src="@/assets/styles/destination-layout.css"></style>

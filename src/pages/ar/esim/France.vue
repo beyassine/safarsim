@@ -12,12 +12,13 @@
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
             <h1><span>ابقَ متصلاً في جميع أنحاء</span><em>فرنسا</em></h1>
-            <p>سافر في أنحاء فرنسا باستخدام شريحة eSIM واحدة مسبقة الدفع. ابقَ متصلاً في باريس وليون ومرسيليا وغيرها دون تغيير شريحتك الفعلية.</p>
+            <p class="europe-hero-description">سافر في أنحاء فرنسا باستخدام شريحة eSIM واحدة مسبقة الدفع. ابقَ متصلاً في باريس وليون ومرسيليا وغيرها دون تغيير شريحتك الفعلية.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
                 عرض باقات فرنسا<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 0.84635%">
             <div class="europe-map-card">
@@ -123,38 +124,6 @@
           <div class="europe-use-case-card"><v-icon>mdi-image-filter-hdr</v-icon><div><b>بروفانس وجنوب فرنسا</b><p>حافظ على البيانات للنقل والحجوزات.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-map-marker-path</v-icon><div><b>رحلة بين عدة مدن</b><p>استخدم شريحة واحدة أثناء التنقل بين المدن الفرنسية.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-briefcase-outline</v-icon><div><b>رحلات العمل</b><p>حافظ على الاتصال للاجتماعات وتطبيقات العمل.</p></div></div>
-        </div>
-      </v-container>
-    </section>
-
-    <section class="europe-comparison-section">
-      <v-container class="europe-comparison-container">
-        <div class="europe-section-heading compact">
-          <span>اختر التغطية المناسبة</span>
-          <h2>شريحة eSIM لفرنسا أم التجوال الدولي؟</h2>
-          <p>قارن بين شريحة فرنسا مسبقة الدفع وخدمة التجوال الدولي من مشغلك.</p>
-        </div>
-        <div class="comparison-table-wrap">
-          <table class="comparison-table">
-            <thead>
-              <tr><th></th><th>eSIM فرنسا</th><th>التجوال الدولي</th></tr>
-            </thead>
-            <tbody>
-              <tr><th>السفر في دولة واحدة</th><td>ممكن</td><td>غالباً أكثر ملاءمة</td></tr>
-              <tr><th>عدة دول</th><td>مثالية</td><td>تحتاج إلى عدة شرائح</td></tr>
-              <tr><th>الانتقال بين الدول</th><td>الشريحة نفسها</td><td>قد تحتاج إلى شريحة أخرى</td></tr>
-              <tr><th>السهولة</th><td>عالية جداً</td><td>عالية</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="comparison-recommendation">
-          <v-icon>mdi-lightbulb-on-outline</v-icon>
-          <p>اختر شريحة فرنسا للحصول على بيانات مسبقة الدفع بحجم معروف قبل السفر. تحقق من شروط التجوال لدى مشغلك قبل مقارنة التكلفة.</p>
-        </div>
-        <div class="comparison-links">
-          <router-link :to="`${localePrefix}/esim/turkiye`"><span class="comparison-link-label">عرض شرائح تركيا <span class="comparison-link-flag">🇹🇷</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/spain`"><span class="comparison-link-label">عرض شرائح إسبانيا <span class="comparison-link-flag">🇪🇸</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/portugal`"><span class="comparison-link-label">عرض شرائح البرتغال <span class="comparison-link-flag">🇵🇹</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>

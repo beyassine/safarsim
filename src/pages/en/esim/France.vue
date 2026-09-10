@@ -12,12 +12,13 @@
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
             <h1><span>Stay connected throughout</span><em>France</em></h1>
-            <p>Travel across France with one prepaid eSIM. Stay connected in Paris, Lyon, Marseille and beyond without changing your physical SIM.</p>
+            <p class="europe-hero-description">Travel across France with one prepaid eSIM. Stay connected in Paris, Lyon, Marseille and beyond without changing your physical SIM.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
                 See France plans<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 0.84635%">
             <div class="europe-map-card">
@@ -123,38 +124,6 @@
           <div class="europe-use-case-card"><v-icon>mdi-image-filter-hdr</v-icon><div><b>Provence and southern France</b><p>Keep mobile data available for transport and reservations.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-map-marker-path</v-icon><div><b>Multi-city trips</b><p>Use one eSIM while travelling between French cities.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-briefcase-outline</v-icon><div><b>Business travel</b><p>Maintain a data connection for meetings and work apps.</p></div></div>
-        </div>
-      </v-container>
-    </section>
-
-    <section class="europe-comparison-section">
-      <v-container class="europe-comparison-container">
-        <div class="europe-section-heading compact">
-          <span>Choose the right coverage</span>
-          <h2>France eSIM or international roaming?</h2>
-          <p>Compare a prepaid France eSIM with using your operator’s international roaming.</p>
-        </div>
-        <div class="comparison-table-wrap">
-          <table class="comparison-table">
-            <thead>
-              <tr><th></th><th>France eSIM</th><th>International roaming</th></tr>
-            </thead>
-            <tbody>
-              <tr><th>Travel in one country</th><td>Possible</td><td>Often more suitable</td></tr>
-              <tr><th>Several countries</th><td>Ideal</td><td>Several eSIMs required</td></tr>
-              <tr><th>Changing countries</th><td>Same eSIM</td><td>May require another eSIM</td></tr>
-              <tr><th>Simplicity</th><td>Very high</td><td>High</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="comparison-recommendation">
-          <v-icon>mdi-lightbulb-on-outline</v-icon>
-          <p>Choose a France eSIM when you want prepaid mobile data and a known allowance before departure. Check your home operator’s roaming terms before comparing costs.</p>
-        </div>
-        <div class="comparison-links">
-          <router-link :to="`${localePrefix}/esim/turkiye`"><span class="comparison-link-label">See Turkey eSIMs <span class="comparison-link-flag">🇹🇷</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/spain`"><span class="comparison-link-label">See Spain eSIMs <span class="comparison-link-flag">🇪🇸</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/portugal`"><span class="comparison-link-label">See Portugal eSIMs <span class="comparison-link-flag">🇵🇹</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>

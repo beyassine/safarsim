@@ -11,13 +11,14 @@
         </div>
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
-            <h1><span>Restez connecté partout en</span><em>Émirats arabes unis</em></h1>
-            <p>Explorez les Émirats avec une seule eSIM prépayée. Restez connecté à Dubaï, Abou Dabi, Charjah et dans les sept émirats sans changer votre carte SIM.</p>
+            <h1><span>Restez connecté partout en</span><em style="--country-title-size: 7cqw">Émirats arabes unis</em></h1>
+            <p class="europe-hero-description">Explorez les Émirats avec une seule eSIM prépayée. Restez connecté à Dubaï, Abou Dabi, Charjah et dans les sept émirats sans changer votre carte SIM.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
                 Voir les forfaits Émirats arabes unis<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 1.75781%">
             <div class="europe-map-card">
@@ -123,38 +124,6 @@
           <div class="europe-use-case-card"><v-icon>mdi-beach</v-icon><div><b>Plages et excursions dans le désert</b><p>Gardez vos données pour les transports, réservations et le partage.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-map-marker-path</v-icon><div><b>Circuit multi-villes</b><p>Utilisez une seule eSIM entre plusieurs villes françaises.</p></div></div>
           <div class="europe-use-case-card"><v-icon>mdi-briefcase-outline</v-icon><div><b>Voyage d’affaires</b><p>Conservez une connexion pour les réunions et outils professionnels.</p></div></div>
-        </div>
-      </v-container>
-    </section>
-
-    <section class="europe-comparison-section">
-      <v-container class="europe-comparison-container">
-        <div class="europe-section-heading compact">
-          <span>Choisissez la bonne couverture</span>
-          <h2>eSIM Émirats arabes unis ou itinérance internationale ?</h2>
-          <p>Comparez une eSIM Émirats arabes unis prépayée avec l’itinérance internationale de votre opérateur.</p>
-        </div>
-        <div class="comparison-table-wrap">
-          <table class="comparison-table">
-            <thead>
-              <tr><th></th><th>eSIM Émirats arabes unis</th><th>Roaming international</th></tr>
-            </thead>
-            <tbody>
-              <tr><th>Voyage dans 1 pays</th><td>Possible</td><td>Souvent plus adaptée</td></tr>
-              <tr><th>Plusieurs pays</th><td>Idéale</td><td>Plusieurs eSIM nécessaires</td></tr>
-              <tr><th>Changement de pays</th><td>Même eSIM</td><td>Peut nécessiter une autre eSIM</td></tr>
-              <tr><th>Simplicité</th><td>Très élevée</td><td>Élevée</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="comparison-recommendation">
-          <v-icon>mdi-lightbulb-on-outline</v-icon>
-          <p>Choisissez une eSIM Émirats arabes unis pour disposer de données prépayées avec un volume connu avant le départ. Consultez les conditions de roaming de votre opérateur avant de comparer les coûts.</p>
-        </div>
-        <div class="comparison-links">
-          <router-link :to="`${localePrefix}/esim/turkiye`"><span class="comparison-link-label">Voir les eSIM Turquie <span class="comparison-link-flag">🇹🇷</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/spain`"><span class="comparison-link-label">Voir les eSIM Espagne <span class="comparison-link-flag">🇪🇸</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/esim/portugal`"><span class="comparison-link-label">Voir les eSIM Portugal <span class="comparison-link-flag">🇵🇹</span></span><v-icon size="17">mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>

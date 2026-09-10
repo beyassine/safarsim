@@ -7,52 +7,55 @@
         <div class="europe-breadcrumb">
           <router-link :to="localePrefix + '/esim'">eSIMs</router-link>
           <v-icon size="16">mdi-chevron-right</v-icon>
-          <strong>Espagne</strong>
+          <strong>Egypt</strong>
         </div>
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
-            <h1><span>Restez connecté partout en</span><em>Espagne</em></h1>
-            <p class="europe-hero-description">Voyagez partout en Espagne avec une seule eSIM prépayée. Restez connecté à Madrid, Barcelone, Séville et ailleurs sans changer votre carte SIM physique.</p>
+            <h1><span>Stay connected throughout</span><em>Egypt</em></h1>
+            <p class="europe-hero-description">Travel across Egypt with one prepaid eSIM. Stay connected in Cairo, Luxor, Hurghada and beyond without changing your physical SIM.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
-                Voir les forfaits Espagne<v-icon end>mdi-arrow-down</v-icon>
+                See Egypt plans<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
 
           </div>
-          <div class="europe-visual" style="--hero-bottom-trim: 2.14844%">
+          <div class="europe-visual" style="--hero-bottom-trim: 0%">
             <div class="europe-map-card">
-              <img :src="spainHeroImage" alt="Espagne landmarks with eSIM connectivity">
+              <img :src="egyptHeroImage" alt="Egypt landmarks with eSIM connectivity">
             </div>
           </div>
         </div>
       </v-container>
     </section>
 
-    <section class="europe-proof-strip">
-      <v-container class="europe-proof-grid">
-        <div class="proof-highlight"><v-icon>mdi-tag-outline</v-icon><b>Forfaits dès <strong>{{ startingPrice }}</strong></b></div>
+    <section class="egypt-proof-strip">
+      <v-container class="egypt-proof-grid">
+        <div><b>From {{ startingPrice }}</b><span>Prepaid plans for Egypt</span></div>
+        <div><b>Before departure</b><span>Install your eSIM ahead of time</span></div>
+        <div><b>On arrival</b><span>Get connected in Egypt</span></div>
+        <div><b>Orange Egypt &amp; Etisalat</b><span>Local partner networks</span></div>
       </v-container>
     </section>
 
     <section id="europe-plans" class="europe-plans-section">
       <v-container>
         <div class="europe-section-heading">
-          <span>Données prépayées flexibles</span>
-          <h2>Choisissez votre forfait eSIM Espagne</h2>
-          <p>Choisissez le volume de données et la durée adaptés à votre séjour en Espagne.</p>
+          <span>Flexible prepaid data</span>
+          <h2>Choose your Egypt eSIM plan</h2>
+          <p>Choose the data allowance and validity period that match your stay in Egypt.</p>
         </div>
         <div class="europe-plan-grid">
           <button v-for="plan in sortedPlans" :key="plan.key" type="button" class="europe-plan-card" :class="{ active: selectedPlanKey === plan.key }" @click="handleAddToCart(plan)">
-            <span v-if="plan.data === '10GB'" class="popular-label">Le plus populaire</span>
+            <span v-if="plan.data === '10GB'" class="popular-label">Most popular • Ideal for 1–2 weeks</span>
             <span class="plan-radio" aria-hidden="true"></span>
-            <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>de données mobiles</span></div>
-            <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} jours</div>
-            <div class="plan-price">{{ formatPriceFromMad(plan.price, 'fr') }}</div>
+            <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>mobile data</span></div>
+            <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} days</div>
+            <div class="plan-price">{{ formatPriceFromMad(plan.price, 'en') }}</div>
           </button>
         </div>
         <v-btn v-if="selectedPlanKey" color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-purchase-cta" @click="scrollToCheckout">
-          Continuer vers le paiement sécurisé<v-icon end>mdi-arrow-down</v-icon>
+          Continue to secure payment<v-icon end>mdi-arrow-down</v-icon>
         </v-btn>
       </v-container>
     </section>
@@ -60,9 +63,9 @@
     <section v-if="checkoutOpen" id="europe-checkout" class="europe-checkout-section">
       <v-container>
         <div class="europe-section-heading europe-checkout-heading">
-          <span>Dernière étape</span>
-          <h2>Finalisez votre commande</h2>
-          <p>Vérifiez votre forfait Espagne, puis renseignez la livraison et le paiement sécurisé.</p>
+          <span>Final step</span>
+          <h2>Complete your order</h2>
+          <p>Review your Egypt plan, then enter your delivery and secure payment details.</p>
         </div>
         <div class="europe-embedded-checkout">
           <Cart :show-step-numbers="true" />
@@ -73,15 +76,15 @@
     <section class="europe-explainer-section">
       <v-container class="europe-explainer-container">
         <div class="europe-explainer-copy">
-          <span>L’eSIM Espagne expliquée</span>
-          <h2>Qu’est-ce qu’une eSIM Espagne ?</h2>
-          <p>Une eSIM Espagne est une carte SIM numérique permettant d’utiliser les données mobiles en Espagne sans insérer ni récupérer de carte SIM physique.</p>
+          <span>Egypt eSIM explained</span>
+          <h2>What is an Egypt eSIM?</h2>
+          <p>An Egypt eSIM is a digital SIM that provides mobile data in Egypt without inserting or collecting a physical SIM card.</p>
         </div>
         <div class="europe-facts-grid">
-          <div class="europe-fact"><v-icon>mdi-wifi</v-icon><span><b>Données mobiles</b><small>Accédez à Internet sans appels ni SMS traditionnels.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-access-point</v-icon><span><b>Partage de connexion</b><small>La plupart des forfaits permettent le hotspot selon l’appareil et le réseau.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-timer-outline</v-icon><span><b>Validité dès la connexion</b><small>Le forfait démarre lors de la première connexion à un réseau pris en charge en Espagne.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-map-marker-radius</v-icon><span><b>Couverture en Espagne</b><small>Utilisez la même eSIM pendant vos déplacements dans les zones couvertes du pays.</small></span></div>
+          <div class="europe-fact"><v-icon>mdi-wifi</v-icon><span><b>Mobile data</b><small>Internet access without traditional calls or SMS.</small></span></div>
+          <div class="europe-fact"><v-icon>mdi-access-point</v-icon><span><b>Personal hotspot</b><small>Most plans support hotspot use, depending on your device and the local network.</small></span></div>
+          <div class="europe-fact"><v-icon>mdi-timer-outline</v-icon><span><b>Validity starts on connection</b><small>The plan starts when the eSIM first connects to a supported network in Egypt.</small></span></div>
+          <div class="europe-fact"><v-icon>mdi-map-marker-radius</v-icon><span><b>Coverage within Egypt</b><small>Use the same eSIM while travelling between covered locations in Egypt.</small></span></div>
         </div>
       </v-container>
     </section>
@@ -89,41 +92,41 @@
     <section class="europe-network-section">
       <v-container class="europe-network-container">
         <div class="europe-section-heading compact">
-          <span>Réseaux partenaires locaux</span>
-          <h2>Réseaux mobiles et couverture en Espagne</h2>
-          <p>Votre eSIM Espagne se connecte aux opérateurs partenaires pris en charge, en 4G/LTE et en 5G lorsque celle-ci est disponible localement.</p>
+          <span>Local network partners</span>
+          <h2>Mobile networks and coverage in Egypt</h2>
+          <p>Your Egypt eSIM connects to supported partner operators, with 4G/LTE and 5G where locally available.</p>
         </div>
-        <div class="network-disclosure" role="group" aria-label="Réseaux partenaires en Espagne">
+        <div class="network-disclosure" role="group" aria-label="Partner networks in Egypt">
         <div class="network-table-wrap">
           <table class="network-table">
-            <thead><tr><th>Pays</th><th>Réseau(x) partenaire(s)</th></tr></thead>
+            <thead><tr><th>Country</th><th>Partner network(s)</th></tr></thead>
             <tbody>
-              <tr><th>🇪🇸 Espagne</th><td><span class="network-operators">Orange (Spain)<br>Telefónica Móviles (Movistar)<br>Vodafone Spain</span><span class="technology-badge">4G / 5G</span></td></tr>
+              <tr><th>🇪🇬 Egypt</th><td><span class="network-operators">Orange Egypt<br>Etisalat</span><span class="technology-badge">4G / 5G</span></td></tr>
             </tbody>
           </table>
         </div>
         </div>
         <div class="network-notes network-notes-after-table">
-          <span><v-icon size="20">mdi-access-point-network</v-icon>Votre appareil sélectionne automatiquement un réseau partenaire disponible.</span>
-          <span><v-icon size="20">mdi-earth-arrow-right</v-icon>Gardez l’itinérance des données activée sur l’eSIM pendant vos déplacements en Espagne.</span>
+          <span><v-icon size="20">mdi-access-point-network</v-icon>Your device selects an available partner network automatically.</span>
+          <span><v-icon size="20">mdi-earth-arrow-right</v-icon>Keep data roaming enabled on the eSIM while travelling within Egypt.</span>
         </div>
-        <p class="network-disclaimer">La disponibilité du réseau, le débit et l’accès à la 5G dépendent de la couverture locale, des conditions du réseau et de la compatibilité de votre appareil.</p>
+        <p class="network-disclaimer">Network availability, speed and 5G access depend on local coverage, network conditions and device compatibility.</p>
       </v-container>
     </section>
 
     <section class="europe-use-cases-section">
       <v-container class="europe-use-cases-container">
         <div class="europe-section-heading compact">
-          <span>Un forfait pour chaque étape</span>
-          <h2>Pour quels voyages choisir une eSIM Espagne ?</h2>
-          <p>Une eSIM Espagne convient aux vacances, séjours urbains, voyages d’affaires et circuits à travers le pays.</p>
+          <span>One plan for every stop</span>
+          <h2>Who should choose an Egypt eSIM?</h2>
+          <p>An Egypt eSIM is useful for holidays, city breaks, business travel and longer stays within Egypt.</p>
         </div>
         <div class="europe-use-cases-grid">
-          <div class="europe-use-case-card"><v-icon>mdi-city-variant-outline</v-icon><div><b>Séjour à Madrid ou Barcelone</b><p>Utilisez cartes, messagerie et réservations pendant votre séjour.</p></div></div>
-          <div class="europe-use-case-card"><v-icon>mdi-beach</v-icon><div><b>Côte méditerranéenne</b><p>Restez connecté à Barcelone, Valence et dans les destinations voisines.</p></div></div>
-          <div class="europe-use-case-card"><v-icon>mdi-image-filter-hdr</v-icon><div><b>Andalousie et sud de l’Espagne</b><p>Gardez vos données pour les transports et réservations.</p></div></div>
-          <div class="europe-use-case-card"><v-icon>mdi-map-marker-path</v-icon><div><b>Circuit multi-villes</b><p>Utilisez une seule eSIM entre plusieurs villes espagnoles.</p></div></div>
-          <div class="europe-use-case-card"><v-icon>mdi-briefcase-outline</v-icon><div><b>Voyage d’affaires</b><p>Conservez une connexion pour les réunions et outils professionnels.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-city-variant-outline</v-icon><div><b>Cairo city break</b><p>Use maps, messaging and booking apps throughout your stay.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-beach</v-icon><div><b>Red Sea coast</b><p>Stay connected while visiting Hurghada, Sharm el-Sheikh or nearby destinations.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-image-filter-hdr</v-icon><div><b>Luxor and the Nile</b><p>Keep mobile data available for transport and reservations.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-map-marker-path</v-icon><div><b>Multi-city trips</b><p>Use one eSIM while travelling between Egyptian cities.</p></div></div>
+          <div class="europe-use-case-card"><v-icon>mdi-briefcase-outline</v-icon><div><b>Business travel</b><p>Maintain a data connection for meetings and work apps.</p></div></div>
         </div>
       </v-container>
     </section>
@@ -131,32 +134,32 @@
     <section class="europe-installation-section">
       <v-container class="europe-installation-container">
         <div class="europe-section-heading compact">
-          <span>Prête en quelques minutes</span>
-          <h2>Comment installer votre eSIM Espagne ?</h2>
-          <p>Achetez et préparez votre eSIM avant le départ, puis activez-la au moment approprié.</p>
+          <span>Ready in a few minutes</span>
+          <h2>How to install your Egypt eSIM</h2>
+          <p>Purchase and prepare your eSIM before departure, then activate it at the appropriate time.</p>
         </div>
         <ol class="europe-installation-steps">
-          <li><i>1</i><span>Choisissez votre forfait Espagne.</span></li>
-          <li><i>2</i><span>Effectuez votre paiement.</span></li>
-          <li><i>3</i><span>Recevez votre QR code.</span></li>
-          <li><i>4</i><span>Ajoutez l’eSIM dans les réglages de votre téléphone.</span></li>
-          <li><i>5</i><span>Activez les données mobiles au moment approprié.</span></li>
+          <li><i>1</i><span>Choose your Egypt plan.</span></li>
+          <li><i>2</i><span>Complete your payment.</span></li>
+          <li><i>3</i><span>Receive your QR code.</span></li>
+          <li><i>4</i><span>Add the eSIM in your phone settings.</span></li>
+          <li><i>5</i><span>Enable mobile data at the appropriate time.</span></li>
         </ol>
         <div class="europe-guide-links">
-          <router-link :to="`${localePrefix}/guides/install-esim-iphone`"><v-icon>mdi-apple</v-icon><span>Guide d’installation eSIM sur iPhone</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/guides/install-esim-android`"><v-icon>mdi-cellphone-cog</v-icon><span>Guide d’installation eSIM sur Samsung</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
-          <router-link :to="`${localePrefix}/guides/compatibility`"><v-icon>mdi-cellphone-check</v-icon><span>Vérifier la compatibilité de votre téléphone</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
+          <router-link :to="`${localePrefix}/guides/install-esim-iphone`"><v-icon>mdi-apple</v-icon><span>eSIM installation guide for iPhone</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
+          <router-link :to="`${localePrefix}/guides/install-esim-android`"><v-icon>mdi-cellphone-cog</v-icon><span>eSIM installation guide for Samsung</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
+          <router-link :to="`${localePrefix}/guides/compatibility`"><v-icon>mdi-cellphone-check</v-icon><span>Check your phone compatibility</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>
 
     <section class="europe-activation-section">
       <v-container class="europe-activation-container">
-        <div class="europe-section-heading compact"><span>Installez maintenant, connectez-vous à l’arrivée</span><h2>Quand installer et activer votre eSIM Espagne ?</h2><p>Vous pouvez installer l’eSIM avant votre départ. Tous les forfaits SafarSIM démarrent automatiquement lorsque l’eSIM se connecte pour la première fois à un réseau compatible avec l’itinérance des données activée.</p></div>
+        <div class="europe-section-heading compact"><span>Install now, connect on arrival</span><h2>When should you install and activate your Egypt eSIM?</h2><p>You can install the eSIM before departure. All SafarSIM bundles use autostart, so the plan begins automatically when the eSIM first connects to a supported network with data roaming enabled.</p></div>
         <div class="activation-guidance">
-          <div><v-icon>mdi-download-circle-outline</v-icon><span><b>Installez-la avant le voyage</b><p>Utilisez un Wi-Fi stable pour scanner le QR code et ajouter l’eSIM à votre téléphone.</p></span></div>
-          <div><v-icon>mdi-timer-play-outline</v-icon><span><b>La validité commence à la connexion</b><p>La durée ne démarre pas simplement à l’installation du profil. Elle commence à la connexion à un réseau compatible avec l’itinérance activée.</p></span></div>
-          <div><v-icon>mdi-airplane-landing</v-icon><span><b>Activez-la à destination</b><p>À votre arrivée en Espagne, activez SafarSIM, choisissez-la pour les données mobiles et activez l’itinérance.</p></span></div>
+          <div><v-icon>mdi-download-circle-outline</v-icon><span><b>Install before you travel</b><p>Use stable Wi-Fi to scan the QR code and add the eSIM to your phone.</p></span></div>
+          <div><v-icon>mdi-timer-play-outline</v-icon><span><b>Validity starts on connection</b><p>The duration does not start simply because the profile is installed. It starts upon connection to a supported network with data roaming enabled.</p></span></div>
+          <div><v-icon>mdi-airplane-landing</v-icon><span><b>Activate at your destination</b><p>After arriving in Egypt, enable SafarSIM, select it for mobile data and turn on data roaming.</p></span></div>
         </div>
       </v-container>
     </section>
@@ -165,26 +168,41 @@
       <v-container class="europe-whatsapp-container">
         <div class="whatsapp-title-row">
           <div class="whatsapp-icon"><v-icon>mdi-whatsapp</v-icon></div>
-          <h2>WhatsApp fonctionne-t-il avec une eSIM Espagne ?</h2>
+          <h2>Does WhatsApp work with an Egypt eSIM?</h2>
         </div>
-        <p>Oui. Une eSIM data ne change généralement pas le numéro utilisé par votre compte WhatsApp. Vous pouvez continuer à utiliser WhatsApp avec votre numéro habituel tout en utilisant l’eSIM SafarSIM pour les données mobiles.</p>
+        <p>Yes. A data-only eSIM generally does not change the number used by your WhatsApp account. You can continue using WhatsApp with your usual number while SafarSIM provides the mobile data connection.</p>
       </v-container>
     </section>
 
     <section class="europe-why-safarsim-section">
       <v-container class="europe-why-safarsim-container">
         <div class="europe-section-heading compact">
-          <span>Un service entièrement numérique</span>
-          <h2>Pourquoi choisir SafarSim pour votre eSIM Espagne ?</h2>
-          <p>SafarSim propose une solution numérique simple pour acheter et utiliser des données mobiles en Espagne.</p>
+          <span>A fully digital service</span>
+          <h2>Why choose SafarSim for your Egypt eSIM?</h2>
+          <p>SafarSim provides a straightforward digital way to purchase and use mobile data in Egypt.</p>
         </div>
         <div class="safarsim-facts-grid">
-          <div class="safarsim-fact-card"><v-icon>mdi-cart-outline</v-icon><div><b>Achat en ligne</b><p>Choisissez et achetez votre forfait data Espagne en ligne.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-qrcode-scan</v-icon><div><b>QR code numérique</b><p>Votre QR code d’installation est envoyé par voie numérique.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-signal</v-icon><div><b>Plusieurs forfaits data</b><p>Sélectionnez le volume de données et la durée adaptés à votre voyage.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-headset</v-icon><div><b>Assistance</b><p>Une assistance est disponible si vous avez besoin d’aide avec votre eSIM.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-earth</v-icon><div><b>Couverture en Espagne</b><p>Utilisez la même eSIM dans les zones couvertes en Espagne.</p></div></div>
-          <div class="safarsim-fact-card"><v-icon>mdi-sim-off-outline</v-icon><div><b>Aucune SIM physique à récupérer</b><p>Vous n’avez aucune carte à retirer en boutique ou à l’aéroport.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-cart-outline</v-icon><div><b>Online purchase</b><p>Choose and purchase your Egypt data plan online.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-qrcode-scan</v-icon><div><b>Digital QR code</b><p>Your installation QR code is delivered electronically.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-signal</v-icon><div><b>Several data plans</b><p>Select the data allowance and validity suited to your trip.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-headset</v-icon><div><b>Customer support</b><p>Assistance is available if you need help with your eSIM.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-earth</v-icon><div><b>Coverage in Egypt</b><p>Use the same eSIM throughout covered areas in Egypt.</p></div></div>
+          <div class="safarsim-fact-card"><v-icon>mdi-sim-off-outline</v-icon><div><b>No physical SIM collection</b><p>There is no card to collect from a shop or airport.</p></div></div>
+        </div>
+      </v-container>
+    </section>
+
+    <section class="egypt-policy-section">
+      <v-container class="egypt-policy-container">
+        <div class="europe-section-heading compact">
+          <span>Before you travel</span>
+          <h2>Prepare your eSIM for Egypt</h2>
+          <p>A few simple steps will help you get connected on arrival.</p>
+        </div>
+        <div class="egypt-policy-copy">
+          <p>Check that your phone supports eSIM and is unlocked. Install your SafarSim eSIM using a stable Wi-Fi connection before departure.</p>
+          <p>Save your QR code and installation instructions offline. On arrival in Egypt, select SafarSim for mobile data and enable data roaming.</p>
+          <p>Coverage depends on your location, device and available partner networks.</p>
         </div>
       </v-container>
     </section>
@@ -192,21 +210,21 @@
     <section class="europe-faq-section">
       <v-container class="europe-faq-container">
         <div class="europe-section-heading compact">
-          <span>Questions fréquentes</span>
-          <h2>FAQ sur l’eSIM Espagne</h2>
-          <p>Des réponses pratiques pour préparer et utiliser correctement votre eSIM Espagne.</p>
+          <span>Frequently asked questions</span>
+          <h2>Egypt eSIM FAQ</h2>
+          <p>Practical answers to help you prepare and use your Egypt eSIM correctly.</p>
         </div>
         <div class="europe-faq-list">
-          <details><summary><span>L’eSIM fonctionne-t-elle partout en Espagne ?</span><v-icon>mdi-plus</v-icon></summary><p>Elle se connecte aux réseaux partenaires pris en charge lorsque la couverture compatible est disponible en Espagne.</p></details>
-          <details><summary><span>Puis-je l’installer avant de voyager ?</span><v-icon>mdi-plus</v-icon></summary><p>Oui. Installez-la avant le départ avec une connexion Wi-Fi stable.</p></details>
-          <details><summary><span>Quand commence la validité ?</span><v-icon>mdi-plus</v-icon></summary><p>La validité commence lors de la première connexion à un réseau compatible avec l’itinérance activée.</p></details>
-          <details><summary><span>Puis-je garder mon numéro habituel sur WhatsApp ?</span><v-icon>mdi-plus</v-icon></summary><p>Oui. SafarSim fournit les données sans modifier le numéro enregistré dans WhatsApp.</p></details>
-          <details><summary><span>Le partage de connexion est-il autorisé ?</span><v-icon>mdi-plus</v-icon></summary><p>La plupart des forfaits permettent le hotspot selon votre appareil et le réseau local.</p></details>
-          <details><summary><span>La 5G est-elle disponible ?</span><v-icon>mdi-plus</v-icon></summary><p>La 5G est disponible si le réseau partenaire et votre appareil la prennent en charge; sinon, l’eSIM utilise la 4G/LTE.</p></details>
-          <details><summary><span>Puis-je garder ma SIM actuelle ?</span><v-icon>mdi-plus</v-icon></summary><p>Oui, sur un téléphone double SIM. Gardez votre SIM habituelle et sélectionnez SafarSim pour les données mobiles.</p></details>
-          <details><summary><span>Fonctionne-t-elle pendant mes déplacements en Espagne ?</span><v-icon>mdi-plus</v-icon></summary><p>La même eSIM reste installée et sélectionne automatiquement un réseau compatible disponible.</p></details>
-          <details><summary><span>Puis-je recharger mon eSIM Espagne ?</span><v-icon>mdi-plus</v-icon></summary><p>La recharge dépend du forfait sélectionné. Si elle n’est pas proposée, achetez un nouveau forfait.</p></details>
-          <details><summary><span>Quels téléphones sont compatibles ?</span><v-icon>mdi-plus</v-icon></summary><p>De nombreux appareils récents Apple, Samsung, Google et autres prennent en charge l’eSIM. Vérifiez votre modèle avant l’achat.</p></details>
+          <details><summary><span>Does the eSIM work throughout Egypt?</span><v-icon>mdi-plus</v-icon></summary><p>It connects to supported partner networks wherever compatible coverage is available in Egypt.</p></details>
+          <details><summary><span>Can I install it before travelling?</span><v-icon>mdi-plus</v-icon></summary><p>Yes. Install it before departure using stable Wi-Fi.</p></details>
+          <details><summary><span>When does validity begin?</span><v-icon>mdi-plus</v-icon></summary><p>Validity starts when the eSIM first connects to a supported network with data roaming enabled.</p></details>
+          <details><summary><span>Can I keep using WhatsApp with my usual number?</span><v-icon>mdi-plus</v-icon></summary><p>Yes. SafarSim supplies mobile data without changing the number registered to WhatsApp.</p></details>
+          <details><summary><span>Is hotspot use supported?</span><v-icon>mdi-plus</v-icon></summary><p>Most plans allow hotspot use, depending on your device and the local network.</p></details>
+          <details><summary><span>Is 5G available?</span><v-icon>mdi-plus</v-icon></summary><p>5G is available where supported by the partner network and your device; otherwise the eSIM uses 4G/LTE.</p></details>
+          <details><summary><span>Can I keep my current SIM?</span><v-icon>mdi-plus</v-icon></summary><p>Yes, on a dual-SIM phone. Keep your usual SIM active and select SafarSim for mobile data.</p></details>
+          <details><summary><span>Will it work when I travel around Egypt?</span><v-icon>mdi-plus</v-icon></summary><p>The same eSIM remains installed and selects an available supported network automatically.</p></details>
+          <details><summary><span>Can I top up the Egypt eSIM?</span><v-icon>mdi-plus</v-icon></summary><p>Top-up availability depends on the selected plan. If unavailable, purchase a new plan.</p></details>
+          <details><summary><span>Which phones are compatible?</span><v-icon>mdi-plus</v-icon></summary><p>Many recent Apple, Samsung, Google and other devices support eSIM. Check your exact model before purchase.</p></details>
         </div>
       </v-container>
     </section>
@@ -214,24 +232,24 @@
     <section class="europe-related-section">
       <v-container class="europe-related-container">
         <div class="europe-section-heading compact">
-          <span>Explorez par pays</span>
-          <h2>Autres destinations eSIM populaires</h2>
+          <span>Explore by country</span>
+          <h2>Other popular eSIM destinations</h2>
         </div>
         <div class="europe-related-grid">
-          <router-link to="/fr/esim/turkiye" class="europe-related-card"><img :src="getFlagImage('TR')" alt="Turquie"><strong>eSIM Turquie</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/fr/esim/france" class="europe-related-card"><img :src="getFlagImage('FR')" alt="France"><strong>eSIM France</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/fr/esim/italie" class="europe-related-card"><img :src="getFlagImage('IT')" alt="Italie"><strong>eSIM Italie</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/fr/esim/portugal" class="europe-related-card"><img :src="getFlagImage('PT')" alt="Portugal"><strong>eSIM Portugal</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/fr/esim/royaume-uni" class="europe-related-card"><img :src="getFlagImage('GB')" alt="Royaume-Uni"><strong>eSIM Royaume-Uni</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/fr/esim/allemagne" class="europe-related-card"><img :src="getFlagImage('DE')" alt="Allemagne"><strong>eSIM Allemagne</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/fr/esim/pays-bas" class="europe-related-card"><img :src="getFlagImage('NL')" alt="Pays-Bas"><strong>eSIM Pays-Bas</strong><v-icon>mdi-arrow-right</v-icon></router-link>
-          <router-link to="/fr/esim/suisse" class="europe-related-card"><img :src="getFlagImage('CH')" alt="Suisse"><strong>eSIM Suisse</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/esim/spain" class="europe-related-card"><img :src="getFlagImage('ES')" alt="Spain"><strong>eSIM Spain</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/esim/france" class="europe-related-card"><img :src="getFlagImage('FR')" alt="France"><strong>eSIM France</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/esim/italie" class="europe-related-card"><img :src="getFlagImage('IT')" alt="Italy"><strong>eSIM Italy</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/esim/portugal" class="europe-related-card"><img :src="getFlagImage('PT')" alt="Portugal"><strong>eSIM Portugal</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/esim/royaume-uni" class="europe-related-card"><img :src="getFlagImage('GB')" alt="United Kingdom"><strong>eSIM United Kingdom</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/esim/allemagne" class="europe-related-card"><img :src="getFlagImage('DE')" alt="Germany"><strong>eSIM Germany</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/esim/pays-bas" class="europe-related-card"><img :src="getFlagImage('NL')" alt="Netherlands"><strong>eSIM Netherlands</strong><v-icon>mdi-arrow-right</v-icon></router-link>
+          <router-link to="/esim/suisse" class="europe-related-card"><img :src="getFlagImage('CH')" alt="Switzerland"><strong>eSIM Switzerland</strong><v-icon>mdi-arrow-right</v-icon></router-link>
         </div>
       </v-container>
     </section>
 
     <div class="europe-last-updated">
-      <v-container><v-icon size="17">mdi-calendar-check-outline</v-icon><span>Informations mises à jour le 2 septembre 2026.</span></v-container>
+      <v-container><v-icon size="17">mdi-calendar-check-outline</v-icon><span>Information updated on 2 September 2026.</span></v-container>
     </div>
 
     <v-snackbar v-model="snackbar" location="top" color="green" timeout="2000">{{ snackbarText }}</v-snackbar>
@@ -245,10 +263,10 @@ import { getLocalizedName } from '@/utils/localizedNames'
 import { formatPriceFromMad, priceFromMad, getPreferredCurrency } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
 import Cart from '@/pages/Cart.vue'
-import spainHeroImage from '@/assets/images/hero_spain.png'
+import egyptHeroImage from '@/assets/images/hero_egypt.png'
 
 export default {
-  name: 'SpainFrenchPage',
+  name: 'EgyptEnglishPage',
 
   components: { Cart },
 
@@ -260,7 +278,7 @@ export default {
       snackbar: false,
       snackbarText: '',
       checkoutOpen: false,
-      spainHeroImage,
+      egyptHeroImage,
       countryNameOverrides: {
         AE: 'Émirats arabes unis',
         AG: 'Antigua-et-Barbuda',
@@ -453,7 +471,7 @@ export default {
     coveredCountries() {
       if (!this.region?.coverageIsoCodes) return []
 
-      const locale = 'fr'
+      const locale = 'en'
 
       return this.region.coverageIsoCodes.map((iso) => ({
         iso,
@@ -462,16 +480,16 @@ export default {
     },
 
     localizedRegionName() {
-      return getLocalizedName(this.region, 'fr')
+      return getLocalizedName(this.region, 'en')
     },
 
     localePrefix() {
-      return '/fr'
+      return ''
     },
 
     startingPrice() {
       const cheapest = this.parsedPlans.reduce((lowest, plan) => Math.min(lowest, plan.price), Infinity)
-      return Number.isFinite(cheapest) ? formatPriceFromMad(cheapest, 'fr') : ''
+      return Number.isFinite(cheapest) ? formatPriceFromMad(cheapest, 'en') : ''
     },
 
     featuredCountries() {
@@ -489,7 +507,7 @@ export default {
         { iso: 'DE', slug: 'allemagne' },
         { iso: 'NL', slug: 'pays-bas' },
         { iso: 'CH', slug: 'suisse' },
-      ].map((country) => ({ ...country, name: this.getCountryName(country.iso, 'fr') }))
+      ].map((country) => ({ ...country, name: this.getCountryName(country.iso, 'en') }))
     },
 
   },
@@ -516,7 +534,7 @@ export default {
     },
 
     loadRegion() {
-      this.region = destinations.find((item) => item.slug === 'espagne') || null
+      this.region = destinations.find((item) => item.slug === 'egypte') || null
     },
 
     handleAddToCart(plan) {
@@ -551,10 +569,10 @@ export default {
       })
 
       this.addedPlanKey = plan.key
-      this.snackbarText = 'Ajouté au panier'
+      this.snackbarText = 'Added to cart'
       this.snackbar = true
 
-      if (this.region.slug === 'espagne') {
+      if (this.region.slug === 'egypte') {
         this.checkoutOpen = true
         this.$nextTick(() => {
           document.getElementById('europe-checkout')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -592,8 +610,8 @@ export default {
     formatPriceFromMad,
 
     updateStructuredData() {
-      const locale = 'fr'
-      const path = `${this.localePrefix}/esim/spain`
+      const locale = 'en'
+      const path = `${this.localePrefix}/esim/egypt`
       const url = `https://safarsim.net${path}`
       const currency = getPreferredCurrency()
       const schema = [
@@ -628,7 +646,7 @@ export default {
       }
       node.textContent = JSON.stringify(schema)
       document.documentElement.lang = locale
-      document.title = document.querySelector('#europe-plans h2')?.textContent.trim() || 'SafarSim eSIM Espagne'
+      document.title = document.querySelector('#europe-plans h2')?.textContent.trim() || 'SafarSim Egypt eSIM'
     },
   },
 
@@ -808,9 +826,18 @@ export default {
 .covered-countries-compact{max-width:1060px;margin:28px auto 0;border:1px solid #eadfe3;border-radius:18px;background:var(--eu-cream);overflow:hidden}.covered-countries-compact summary{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:16px 18px;cursor:pointer;list-style:none;color:var(--eu-ink)}.covered-countries-compact summary::-webkit-details-marker{display:none}.covered-countries-compact summary>.v-icon:first-child{color:var(--eu-pink)}.covered-toggle{color:var(--eu-pink);transition:transform .2s}.covered-countries-compact[open] .covered-toggle{transform:rotate(180deg)}.covered-country-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 18px}.covered-country-chips a{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:99px;background:#fff;border:1px solid #eadfe3;color:var(--eu-ink);font-size:12px;text-decoration:none}.covered-country-chips img{width:22px;height:16px;object-fit:cover;border-radius:3px}.europe-purchase-cta{display:flex!important;margin:24px auto 0;color:#fff!important;font-weight:900!important;letter-spacing:0!important}
 .network-disclosure>summary{display:none}.network-disclosure>.network-table-wrap{display:block}.network-disclosure[open]>summary .v-icon{transform:rotate(180deg)}
 @media(max-width:599px){.europe-section-heading{padding-inline:24px}.europe-explainer-copy{padding-inline:20px}.covered-countries-compact{margin-inline:4px}.covered-country-chips{max-height:230px;overflow:auto}.europe-purchase-cta{width:calc(100% - 24px)}.network-disclosure>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border:1px solid #eadfe3;border-radius:16px;background:#fff0f5;color:var(--eu-ink);font-weight:850;cursor:pointer;list-style:none}.network-disclosure>summary::-webkit-details-marker{display:none}.network-disclosure>summary .v-icon{color:var(--eu-pink);transition:transform .2s}.network-disclosure:not([open])>.network-table-wrap{display:none}.network-disclosure[open]>summary{border-radius:16px 16px 0 0}.network-disclosure[open]>.network-table-wrap{border-radius:0 0 16px 16px}}
-.turkey-country-line{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 18px}.turkey-country-line img{width:34px;height:24px;object-fit:cover;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,.14)}.turkey-country-line strong{color:var(--eu-pink)}
+.egypt-country-line{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 18px}.egypt-country-line img{width:34px;height:24px;object-fit:cover;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,.14)}.egypt-country-line strong{color:var(--eu-pink)}
 .europe-proof-grid{grid-template-columns:1fr;max-width:520px;padding-top:0;padding-bottom:12px}.europe-proof-grid>div{justify-content:center;padding-top:6px}.europe-proof-grid>div+div{border:0}@media(max-width:599px){.europe-proof-grid{padding-block:0 10px}.europe-proof-grid>div{padding:6px 18px}.europe-map-card{margin-bottom:-40px}}
 .network-disclosure>.network-table-wrap{display:block!important}
+.egypt-policy-section{padding:90px 0;background:#f7f4f1}.egypt-policy-container{max-width:950px}.egypt-policy-copy{display:grid;gap:14px;padding:26px 28px;border:1px solid #efdce3;border-radius:22px;background:#fff;color:#526b65;box-shadow:0 12px 30px rgba(96,45,65,.05)}.egypt-policy-copy p{margin:0;font-size:15px;line-height:1.8}.egypt-policy-copy strong{color:var(--eu-green)}@media(max-width:600px){.egypt-policy-section{padding:65px 0}.egypt-policy-copy{padding:21px 19px}.egypt-policy-copy p{font-size:14px}}
+.egypt-proof-strip{background:#fff1f5}
+.egypt-proof-grid{max-width:1200px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:26px;gap:20px}
+.egypt-proof-grid>div{text-align:center;display:flex;flex-direction:column;gap:5px;min-width:0;padding-inline:8px}
+.egypt-proof-grid>div+div{border-inline-start:1px solid #ead7df}
+.egypt-proof-grid b{font-size:21px;font-weight:800;line-height:1.35;color:#d91c58}
+.egypt-proof-grid span{font-size:13px;line-height:1.55;color:#6f5966}
+@media(max-width:960px){.egypt-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.egypt-proof-grid>div+div{border:0}}
+@media(max-width:600px){.egypt-proof-grid{padding:28px 12px}.egypt-proof-grid b{font-size:18px}}
 </style>
 
 <style scoped src="@/assets/styles/destination-layout.css"></style>

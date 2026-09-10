@@ -229,7 +229,7 @@ import turkeyLandingImage from '@/assets/images/flags/tr.svg'
 import spainLandingImage from '@/assets/images/flags/es.svg'
 import franceLandingImage from '@/assets/images/flags/fr.svg'
 import saudiLandingImage from '@/assets/images/flags/sa.svg'
-import uaeLandingImage from '@/assets/images/flags/ae.svg'
+import egyptLandingImage from '@/assets/images/flags/eg.svg'
 
 const locale = ref(i18n.global.locale)
 const preferredCurrency = getPreferredCurrency() === 'MAD' ? 'DH' : getPreferredCurrency()
@@ -271,17 +271,17 @@ const featuredDestinationsCopy = computed(() => featuredDestinationsText[locale.
 const featuredLandingPages = computed(() => {
   const language = ['en', 'fr', 'ar'].includes(locale.value) ? locale.value : 'en'
   const names = {
-    ar: ['أوروبا', 'تركيا', 'إسبانيا', 'فرنسا', 'المملكة العربية السعودية', 'الإمارات العربية المتحدة'],
-    fr: ['Europe', 'Turquie', 'Espagne', 'France', 'Arabie saoudite', 'Émirats arabes unis'],
-    en: ['Europe', 'Turkey', 'Spain', 'France', 'Saudi Arabia', 'United Arab Emirates'],
-  }[locale.value] || ['Europe', 'Turkey', 'Spain', 'France', 'Saudi Arabia', 'United Arab Emirates']
+    ar: ['أوروبا', 'تركيا', 'إسبانيا', 'فرنسا', 'المملكة العربية السعودية', 'مصر'],
+    fr: ['Europe', 'Turquie', 'Espagne', 'France', 'Arabie saoudite', 'Égypte'],
+    en: ['Europe', 'Turkey', 'Spain', 'France', 'Saudi Arabia', 'Egypt'],
+  }[locale.value] || ['Europe', 'Turkey', 'Spain', 'France', 'Saudi Arabia', 'Egypt']
   return [
     { slug: 'europe', routeKey: 'europeDetails', flag: '🇪🇺', image: europeLandingImage },
     { slug: 'turkiye', routeKey: 'turkeyDetails', flag: '🇹🇷', image: turkeyLandingImage },
     { slug: 'spain', routeKey: 'spainDetails', flag: '🇪🇸', image: spainLandingImage },
     { slug: 'france', routeKey: 'franceDetails', flag: '🇫🇷', image: franceLandingImage },
     { slug: 'saudi-arabia', routeKey: 'saudiArabiaDetails', flag: '🇸🇦', image: saudiLandingImage },
-    { slug: 'united-arab-emirates', routeKey: 'unitedArabEmiratesDetails', flag: '🇦🇪', image: uaeLandingImage },
+    { slug: 'egypt', routeKey: 'egyptDetails', flag: '🇪🇬', image: egyptLandingImage },
   ].map((item, index) => ({ ...item, name: names[index], route: { name: `${item.routeKey}-${language}` } }))
 })
 const stepsSubtitle = computed(() => ({
@@ -307,7 +307,7 @@ const featuredPackageKeys = {
   turquie: '10GB_30days',
   'etats-unis': '10GB_30days',
   france: '10GB_30days',
-  'emirats-arabes-unis': '10GB_30days',
+  egypte: '10GB_30days',
 }
 
 const normalize = value => String(value || '').toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')

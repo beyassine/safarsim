@@ -12,12 +12,13 @@
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
             <h1><span>Stay connected across</span><em>Europe</em></h1>
-            <p>Travel from Lisbon to Istanbul with one prepaid eSIM. No roaming surprises, no physical SIM swaps—just reliable data across your journey.</p>
+            <p class="europe-hero-description">Travel from Lisbon to Istanbul with one prepaid eSIM. No roaming surprises, no physical SIM swaps—just reliable data across your journey.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
                 See Europe plans<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 2.21354%">
             <div class="europe-map-card">
