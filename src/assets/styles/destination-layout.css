@@ -42,3 +42,7 @@
 
 .europe-hero-copy .europe-hero-description { margin:24px auto; max-width:600px; text-align:center; font-size:18px; line-height:1.75; color:#6b7b77; position:relative; }
 @media(max-width:599px){.europe-hero-copy .europe-hero-description{font-size:16px;padding-inline:12px}}
+
+.europe-page[dir] .europe-hero-copy h1 em { position:relative; width:fit-content; max-width:100%; margin-inline:auto; padding-bottom:8px; }
+.europe-page[dir] .europe-hero-copy h1 em::after { content:'';position:absolute;right:0;left:5%;bottom:-7px;height:9px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='9'%3E%3Cpath d='M2 7 C70 1 180 1 298 5' fill='none' stroke='%23efb39e' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
+.europe-page[dir="rtl"] .europe-hero-copy h1 em { padding-bottom:16px; }
