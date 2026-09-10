@@ -714,4 +714,12 @@ watch(locale, () => {
 .featured-destination-card--illustrated small{font-size:17px;gap:12px;margin-top:0}
 .featured-destination-card--illustrated small .v-icon{width:36px;height:36px;font-size:25px!important;border:2px solid #ffffff70}
 @media(max-width:600px){.featured-destination-card--illustrated{height:auto;border-radius:18px}.featured-destination-card--illustrated>div{inset-inline:12px;bottom:12px;gap:7px}.featured-destination-card--illustrated strong{font-size:22px}.featured-destination-card--illustrated small{font-size:10px;gap:5px}.featured-destination-card--illustrated small .v-icon{width:22px;height:22px;font-size:16px!important;flex-shrink:0}}
+@media(min-width:961px){
+  .featured-destinations-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+  .featured-destination-card--illustrated{aspect-ratio:.78;border-radius:18px}
+  .featured-destination-card--illustrated>div{inset-inline:12px;bottom:14px;gap:8px}
+  .featured-destination-card--illustrated strong{font-size:20px;line-height:1.2}
+  .featured-destination-card--illustrated small{font-size:11px;line-height:1.35;gap:6px}
+  .featured-destination-card--illustrated small .v-icon{width:23px;height:23px;font-size:17px!important;flex-shrink:0}
+}
 </style>

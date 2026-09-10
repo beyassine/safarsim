@@ -11,7 +11,7 @@
         </div>
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
-            <h1><span>ابقَ متصلاً في</span><em style="--country-title-size: 7cqw">المملكة العربية السعودية</em></h1>
+            <h1><span>ابقَ متصلاً<br>خلال الحج والعمرة في</span><em style="--country-title-size: 7cqw">المملكة العربية السعودية</em></h1>
             <p class="europe-hero-description">استعد لرحلة الحج أو العمرة بشريحة eSIM مسبقة الدفع. ابقَ متصلاً في مكة المكرمة والمدينة المنورة وجدة وفي أنحاء المملكة دون تغيير شريحتك الأساسية.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
@@ -29,9 +29,12 @@
       </v-container>
     </section>
 
-    <section class="europe-proof-strip">
-      <v-container class="europe-proof-grid">
-        <div class="proof-highlight"><v-icon>mdi-tag-outline</v-icon><b>الباقات ابتداءً من <strong>{{ startingPrice }}</strong></b></div>
+    <section class="saudi-proof-strip">
+      <v-container class="saudi-proof-grid">
+        <div><b>ابتداءً من {{ startingPrice }}</b><span>باقات مسبقة الدفع لالسعودية</span></div>
+        <div><b>قبل السفر</b><span>ثبّت شريحتك مسبقاً</span></div>
+        <div><b>عند الوصول</b><span>اتصل بالإنترنت في السعودية</span></div>
+        <div><b>STC · Mobily · Zain</b><span>شبكات محلية شريكة</span></div>
       </v-container>
     </section>
 
@@ -65,7 +68,7 @@
           <p>راجع باقة المملكة العربية السعودية، ثم أدخل معلومات الاستلام والدفع الآمن.</p>
         </div>
         <div class="europe-embedded-checkout">
-          <Cart :show-step-numbers="true" />
+          <Cart :show-step-numbers="true" :first-step-number="2" />
         </div>
       </v-container>
     </section>
@@ -868,6 +871,14 @@ export default {
 .europe-page[dir="rtl"] .whatsapp-title-row h2{grid-column:1;grid-row:1;direction:rtl;text-align:right}
 .europe-page[dir="rtl"] .europe-whatsapp-container>p{margin-right:0;margin-left:92px;text-align:right}
 @media(max-width:600px){.europe-page[dir="rtl"] .whatsapp-title-row{grid-template-columns:minmax(0,1fr) 58px}.europe-page[dir="rtl"] .europe-whatsapp-container>p{margin:18px 0 0}}
+.saudi-proof-strip{background:#fff1f5}
+.saudi-proof-grid{max-width:1200px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:26px;gap:20px}
+.saudi-proof-grid>div{text-align:center;display:flex;flex-direction:column;gap:5px;min-width:0;padding-inline:8px}
+.saudi-proof-grid>div+div{border-inline-start:1px solid #ead7df}
+.saudi-proof-grid b{font-size:21px;font-weight:800;line-height:1.35;color:#d91c58}
+.saudi-proof-grid span{font-size:13px;line-height:1.55;color:#6f5966}
+@media(max-width:960px){.saudi-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.saudi-proof-grid>div+div{border:0}}
+@media(max-width:600px){.saudi-proof-grid{padding:28px 12px}.saudi-proof-grid b{font-size:18px}}
 </style>
 
 <style scoped src="@/assets/styles/destination-layout.css"></style>

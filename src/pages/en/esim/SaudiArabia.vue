@@ -11,7 +11,7 @@
         </div>
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
-            <h1><span>Stay connected during Hajj and Umrah in</span><em>Saudi Arabia</em></h1>
+            <h1><span>Stay connected<br>during Hajj and Umrah in</span><em>Saudi Arabia</em></h1>
             <p class="europe-hero-description">Prepare your Hajj or Umrah journey with one prepaid Saudi Arabia eSIM. Stay connected in Makkah, Madinah, Jeddah and across the Kingdom without changing your physical SIM.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
@@ -29,9 +29,12 @@
       </v-container>
     </section>
 
-    <section class="europe-proof-strip">
-      <v-container class="europe-proof-grid">
-        <div class="proof-highlight"><v-icon>mdi-tag-outline</v-icon><b>Plans from <strong>{{ startingPrice }}</strong></b></div>
+    <section class="saudi-proof-strip">
+      <v-container class="saudi-proof-grid">
+        <div><b>From {{ startingPrice }}</b><span>Prepaid plans for Saudi Arabia</span></div>
+        <div><b>Before departure</b><span>Install your eSIM ahead of time</span></div>
+        <div><b>On arrival</b><span>Get connected in Saudi Arabia</span></div>
+        <div><b>STC · Mobily · Zain</b><span>Local partner networks</span></div>
       </v-container>
     </section>
 
@@ -65,7 +68,7 @@
           <p>Review your Saudi Arabia plan, then enter your delivery and secure payment details.</p>
         </div>
         <div class="europe-embedded-checkout">
-          <Cart :show-step-numbers="true" />
+          <Cart :show-step-numbers="true" :first-step-number="2" />
         </div>
       </v-container>
     </section>
@@ -811,6 +814,14 @@ export default {
 .france-country-line{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 18px}.france-country-line img{width:34px;height:24px;object-fit:cover;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,.14)}.france-country-line strong{color:var(--eu-pink)}
 .europe-proof-grid{grid-template-columns:1fr;max-width:520px;padding-top:0;padding-bottom:12px}.europe-proof-grid>div{justify-content:center;padding-top:6px}.europe-proof-grid>div+div{border:0}@media(max-width:599px){.europe-proof-grid{padding-block:0 10px}.europe-proof-grid>div{padding:6px 18px}.europe-map-card{margin-bottom:-40px}}
 .network-disclosure>.network-table-wrap{display:block!important}
+.saudi-proof-strip{background:#fff1f5}
+.saudi-proof-grid{max-width:1200px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:26px;gap:20px}
+.saudi-proof-grid>div{text-align:center;display:flex;flex-direction:column;gap:5px;min-width:0;padding-inline:8px}
+.saudi-proof-grid>div+div{border-inline-start:1px solid #ead7df}
+.saudi-proof-grid b{font-size:21px;font-weight:800;line-height:1.35;color:#d91c58}
+.saudi-proof-grid span{font-size:13px;line-height:1.55;color:#6f5966}
+@media(max-width:960px){.saudi-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.saudi-proof-grid>div+div{border:0}}
+@media(max-width:600px){.saudi-proof-grid{padding:28px 12px}.saudi-proof-grid b{font-size:18px}}
 </style>
 
 <style scoped src="@/assets/styles/destination-layout.css"></style>

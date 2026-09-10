@@ -18,7 +18,7 @@
       <v-col cols="12" md="6" class="summary-column">
         <v-card rounded="xl" elevation="1" class="pa-5 summary-card">
         <div class="cart-step-title mb-4" :class="{ 'cart-step-title--rtl': $i18n.locale === 'ar' }">
-          <span v-if="showStepNumbers" class="cart-step-number">4</span>
+          <span v-if="showStepNumbers" class="cart-step-number">{{ firstStepNumber + 1 }}</span>
           <h2 class="subsection-title">{{ $t("cart.summary") }}</h2>
         </div>
           <div v-for="(item, index) in cart" :key="item.id" class="cart-line py-4">
@@ -233,7 +233,7 @@
       <v-col cols="12" md="6" class="contact-column">
         <v-card rounded="xl" elevation="1" class="pa-5 contact-card">
         <div class="cart-step-title mb-4" :class="{ 'cart-step-title--rtl': $i18n.locale === 'ar' }">
-          <span v-if="showStepNumbers" class="cart-step-number">3</span>
+          <span v-if="showStepNumbers" class="cart-step-number">{{ firstStepNumber }}</span>
           <h2 class="subsection-title">{{ $t("cart.contactInfo") }}</h2>
         </div>
           <v-text-field
@@ -356,7 +356,7 @@
       class="pa-3 pa-sm-5 mt-5 embedded-payment-card"
     >
       <div class="cart-step-title mb-2" :class="{ 'cart-step-title--rtl': $i18n.locale === 'ar' }">
-        <span class="cart-step-number">5</span>
+        <span class="cart-step-number">{{ firstStepNumber + 2 }}</span>
         <h2 class="subsection-title">{{ embeddedPaymentTitle }}</h2>
       </div>
       <div class="payment-security mb-4" :class="{ 'payment-security--rtl': $i18n.locale === 'ar' }">
@@ -392,6 +392,10 @@ export default {
   name: 'CartPage',
 
   props: {
+    firstStepNumber: {
+      type: Number,
+      default: 3,
+    },
     showStepNumbers: {
       type: Boolean,
       default: false,

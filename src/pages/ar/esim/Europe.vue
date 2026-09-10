@@ -109,7 +109,7 @@
           <p>راجع باقة أوروبا، ثم أدخل معلومات الاستلام والدفع الآمن.</p>
         </div>
         <div class="europe-embedded-checkout">
-          <Cart :show-step-numbers="true" />
+          <Cart :show-step-numbers="true" :first-step-number="2" />
         </div>
       </v-container>
     </section>

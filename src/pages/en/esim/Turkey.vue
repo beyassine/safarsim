@@ -68,7 +68,7 @@
           <p>Review your Turkey plan, then enter your delivery and secure payment details.</p>
         </div>
         <div class="europe-embedded-checkout">
-          <Cart :show-step-numbers="true" />
+          <Cart :show-step-numbers="true" :first-step-number="2" />
         </div>
       </v-container>
     </section>

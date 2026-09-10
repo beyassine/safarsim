@@ -65,7 +65,7 @@
           <p>Vérifiez votre forfait France, puis renseignez la livraison et le paiement sécurisé.</p>
         </div>
         <div class="europe-embedded-checkout">
-          <Cart :show-step-numbers="true" />
+          <Cart :show-step-numbers="true" :first-step-number="2" />
         </div>
       </v-container>
     </section>
