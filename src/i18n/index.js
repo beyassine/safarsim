@@ -46,6 +46,11 @@ export function getDefaultLanguage() {
 
   if (isMorocco) return "fr"
 
+  const isFrance = timeZone === "Europe/Paris" ||
+    locales.some((locale) => getLocaleCountry(locale) === "FR")
+
+  if (isFrance) return "fr"
+
   if (!isArabicMarket) {
     isArabicMarket = locales.some((locale) => {
       const language = String(locale).split(/[-_]/)[0].toLowerCase()

@@ -1,8 +1,11 @@
-const PURCHASE_DESTINATION = 'AW-10976721001/G_taCLrGvPIcEOnwjfIo'
+const PURCHASE_LABEL = (process.env.VUE_APP_GOOGLE_ADS_PURCHASE_CONVERSION_LABEL || '').trim()
+const PURCHASE_DESTINATION = `AW-18442061093/${PURCHASE_LABEL}`
 
 // Call only with the successful /api/checkout/verify response, never URL/cart data.
 export function trackVerifiedPurchase(result) {
   if (typeof window === 'undefined' || result?.paid !== true) return false
+  // Labels belong to a specific conversion action; never reuse another account's label.
+  if (!/^[A-Za-z0-9_-]+$/.test(PURCHASE_LABEL)) return false
   const purchase = result.purchase
   if (!purchase || typeof purchase.livemode !== 'boolean') return false
   const { transactionId, amountTotal, livemode } = purchase

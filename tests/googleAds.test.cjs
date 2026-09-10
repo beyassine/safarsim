@@ -11,7 +11,7 @@ function setup(storage = new Map(), options = {}) {
     setItem: (key, value) => storage.set(key, value),
   } }
   if (!options.noTag) window.gtag = (...args) => { if (options.throwTag) throw Error('blocked'); calls.push(args) }
-  const context = vm.createContext({ window, console: { info: (...args) => previews.push(args) } })
+  const context = vm.createContext({ window, process: { env: { VUE_APP_GOOGLE_ADS_PURCHASE_CONVERSION_LABEL: options.label ?? 'test_purchase_label' } }, console: { info: (...args) => previews.push(args) } })
   vm.runInContext(source, context)
   return { track: context.trackVerifiedPurchase, calls, previews }
 }
@@ -21,13 +21,34 @@ test('paid revenue and currency come from verified Stripe data; payload contains
     const result = paid(currency, 1395) // final discounted amount
     result.customerEmail = 'private@example.com'
     assert.equal(track(result), true)
-    assert.deepEqual(JSON.parse(JSON.stringify(calls)), [['event', 'conversion', {send_to:'AW-10976721001/G_taCLrGvPIcEOnwjfIo', value:13.95, currency:currency.toUpperCase(), transaction_id:'cs_live_verified123'}]])
+    assert.deepEqual(JSON.parse(JSON.stringify(calls)), [['event', 'conversion', {send_to:'AW-18442061093/test_purchase_label', value:13.95, currency:currency.toUpperCase(), transaction_id:'cs_live_verified123'}]])
   }
 })
 test('unverified, unpaid, incomplete, malformed and unsupported payments do not fire', () => {
   for (const result of [undefined, {}, {paid:false}, {paid:true}, {...paid(),paid:false}, paid('jpy'), paid('eur',-1), paid('eur',NaN), paid('eur',1.5), {...paid(),purchase:{...paid().purchase,livemode:undefined}}, {...paid(),purchase:{...paid().purchase,transactionId:'random'}}]) {
     const {track,calls} = setup();assert.equal(track(result),false);assert.equal(calls.length,0)
   }
+})
+test('missing or malformed conversion labels do not send or mark a purchase', () => {
+  for (const label of ['', ' ', 'AW-18442061093/label']) {
+    const storage = new Map()
+    const { track, calls } = setup(storage, { label })
+    assert.equal(track(paid()), false)
+    assert.equal(calls.length, 0)
+    assert.equal(storage.size, 0)
+  }
+})
+test('one global Google tag defaults all Consent Mode v2 signals to denied before config', () => {
+  const html = fs.readFileSync(require('node:path').join(__dirname, '../public/index.html'), 'utf8')
+  assert.equal((html.match(/src="https:\/\/www.googletagmanager.com\/gtag\/js\?id=/g) || []).length, 1)
+  assert.ok(html.includes('js?id=AW-18442061093'))
+  const context = vm.createContext({ window: {} })
+  vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('dataLayer.push', 'window.dataLayer.push'), context)
+  const commands = JSON.parse(JSON.stringify(context.window.dataLayer.map(args => Array.from(args))))
+  assert.deepEqual(commands[0], ['consent', 'default', {
+    ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  }])
+  assert.deepEqual(commands[2], ['config', 'AW-18442061093'])
 })
 test('repeat calls, refreshes and locale page changes share persistent deduplication', () => {
   const storage = new Map(), first = setup(storage)
