@@ -2,6 +2,7 @@ const fs = require('fs')
 const http = require('http')
 const path = require('path')
 const puppeteer = require('puppeteer')
+const { serverlessLaunchOptions } = require('./prerender-browser.cjs')
 
 const distDir = path.resolve(__dirname, '..', 'dist')
 const port = 4177
@@ -30,9 +31,7 @@ async function run() {
     const options = { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] }
     if (process.env.VERCEL && process.platform === 'linux') {
       const { default: chromium } = await import('@sparticuz/chromium')
-      options.args = puppeteer.defaultArgs({ args: chromium.args, headless: 'shell' })
-      options.executablePath = await chromium.executablePath()
-      options.headless = 'shell'
+      Object.assign(options, await serverlessLaunchOptions(puppeteer, chromium))
     }
     browser = await puppeteer.launch(options)
     for (const route of routes) {
