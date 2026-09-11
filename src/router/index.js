@@ -29,6 +29,7 @@ export const LOCALIZED_ROUTE_PATHS = {
     ar: "/guides/compatibility",
   },
   europeDetails: { fr: "/esim/europe", en: "/esim/europe", ar: "/esim/europe" },
+  moroccoDetails: { fr: "/esim/morocco", en: "/esim/morocco", ar: "/esim/morocco" },
   turkeyDetails: { fr: "/esim/turkiye", en: "/esim/turkiye", ar: "/esim/turkiye" },
   spainDetails: { fr: "/esim/spain", en: "/esim/spain", ar: "/esim/spain" },
   franceDetails: { fr: "/esim/france", en: "/esim/france", ar: "/esim/france" },
@@ -68,6 +69,11 @@ const LOCALIZED_COMPONENTS = {
     fr: () => import("@/pages/fr/esim/Europe.vue"),
     en: () => import("@/pages/en/esim/Europe.vue"),
     ar: () => import("@/pages/ar/esim/Europe.vue"),
+  },
+  moroccoDetails: {
+    fr: () => import("@/pages/fr/esim/Morocco.vue"),
+    en: () => import("@/pages/en/esim/Morocco.vue"),
+    ar: () => import("@/pages/ar/esim/Morocco.vue"),
   },
   turkeyDetails: {
     fr: () => import("@/pages/fr/esim/Turkey.vue"),
@@ -181,6 +187,15 @@ const pageRoutes = [
     path: "/esim/europe",
     name: "europeDetails",
     component: LOCALIZED_COMPONENTS.europeDetails.en,
+  },
+  {
+    path: "/esim/morocco",
+    name: "moroccoDetails",
+    component: LOCALIZED_COMPONENTS.moroccoDetails.en,
+  },
+  {
+    path: "/esim/maroc",
+    redirect: (to) => `${to.params.lang ? `/${to.params.lang}` : ""}/esim/morocco`,
   },
   {
     path: "/esim/turkiye",
