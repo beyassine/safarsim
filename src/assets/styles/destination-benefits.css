@@ -1,0 +1,41 @@
+.destination-benefits-strip{background:#fff1f5}
+.destination-proof-grid{max-width:1200px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.destination-proof-grid>.destination-proof-item{display:flex;min-width:0}
+@media(max-width:960px){.destination-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Compact, colored destination benefits. */
+:is(.europe-page,.country-page) .destination-proof-grid {
+  padding-block: 16px;
+  gap: 10px;
+}
+:is(.europe-page,.country-page) .destination-proof-grid > .destination-proof-item {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  text-align: start;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+:is(.europe-page,.country-page) .destination-proof-item > .v-icon {
+  align-self: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  border-radius: 11px;
+  background: #ffe4ee;
+  color: #d91c58;
+  font-size: 21px !important;
+}
+:is(.europe-page,.country-page) .destination-proof-item:first-child > .v-icon { background: #e0f2fe; color: #0284c7; }
+:is(.europe-page,.country-page) .destination-proof-item:nth-child(2) > .v-icon { background: #fff0d6; color: #a96509; }
+:is(.europe-page,.country-page) .destination-proof-item:nth-child(3) > .v-icon { background: #def5e9; color: #20825a; }
+:is(.europe-page,.country-page) .destination-proof-item:nth-child(4) > .v-icon { background: #e7eaff; color: #6260ba; }
+:is(.europe-page,.country-page) .destination-proof-item > b { font-size: 15px; line-height: 1.35; color: #d91c58; font-weight: 700; }
+@media(max-width:600px) {
+  :is(.europe-page,.country-page) .destination-proof-grid { padding: 12px; gap: 8px; }
+  :is(.europe-page,.country-page) .destination-proof-grid > .destination-proof-item { padding: 10px 8px; gap: 7px; }
+  :is(.europe-page,.country-page) .destination-proof-item > .v-icon { width: 30px; height: 30px; border-radius: 9px; font-size: 18px !important; }
+  :is(.europe-page,.country-page) .destination-proof-item > b { font-size: 12px; }
+}

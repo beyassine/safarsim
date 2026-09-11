@@ -43,3 +43,21 @@ A future consent UI must call `gtag('consent', 'update', ...)` with the user's
 explicit choices, including withdrawals; these defaults do not collect consent.
 
 Run tracking checks with `node --test tests/googleAds.test.cjs`.
+
+### Destination prerendering
+
+`npm run build` must prerender all eight popular destination landing pages in
+English, French, and Arabic. The build fails if a page lacks its heading, plans,
+structured data, locale, or canonical URL. Each generated page is also loaded
+with JavaScript disabled to verify that its content is present in the HTML.
+
+Vercel Linux builds use `@sparticuz/chromium`; local builds use Puppeteer's
+browser. Do not skip the prerender step in deployment. `vercel.json` serves
+existing static files before falling back to the SPA entry point. Deploy the
+whole `dist` directory, including nested destination `index.html` files.
+Prerendering uses the bundled catalog and blocks external requests to keep
+builds reproducible; the live application refreshes the catalog on startup.
+
+After deployment, check a destination URL with JavaScript disabled (or inspect
+its HTTP response source), including `/fr/esim/morocco` and `/ar/esim/europe`.
+Local build verification does not verify production routing or Google indexing.

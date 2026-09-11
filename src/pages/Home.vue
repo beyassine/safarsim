@@ -71,7 +71,10 @@
         <div class="section-heading">
           <span>{{ planKicker }}</span>
           <h2>{{ c.planInTwo }}</h2>
-          <p>{{ c.planIntro }}</p>
+          <div class="home-plan-trust">
+            <span><v-icon size="19" aria-hidden="true">mdi-lock-outline</v-icon>{{ c.securePayment }}</span>
+            <span><v-icon size="19" aria-hidden="true">mdi-currency-usd</v-icon>{{ c.refundPolicy }}</span>
+          </div>
         </div>
 
         <div class="purchase-card" :class="{ 'purchase-card--single': !selectedDestination }">
@@ -249,12 +252,15 @@ const languages = [
 
 const pageCopy = {
   ar: {
+    securePayment:'دفع آمن',refundPolicy:'سياسة استرداد كامل المبلغ',
     language:'اختر اللغة',eyebrow:'رفيقك الذكي في كل رحلة',heroTitle:'إنترنت السفر',heroAccent:'أسهل من أي وقت.',heroLead:'فعّل شريحة SafarSIM الإلكترونية خلال دقائق، وابقَ متصلاً فور وصولك إلى وجهتك بدون تجوال مكلف أو تبديل شريحتك.',choosePlan:'اختر وجهتك',checkPhone:'تحقق من توافق هاتفك',instant:'تفعيل فوري',noFees:'بدون رسوم خفية',support:'شبكات 4G / 5G',connected:'أنت متصل!',internetReady:'الإنترنت جاهز للاستخدام',remaining:'المتبقي',moreThan:'أكثر من',destination:'وجهة',destinations:'وجهة',fastNetwork:'شبكة سريعة',worldDestinations:'وجهة حول العالم',reliable:'اتصال سريع وموثوق',minutes:'دقائق',purchaseToActivation:'من الشراء إلى التفعيل',travelSupport:'دعم قبل وأثناء السفر',choosePayConnect:'باقتك في خطوات بسيطة',planInTwo:'باقتك المناسبة في خطوتين',planIntro:'اختر وجهتك ثم الباقة التي تناسب مدة سفرك واستهلاكك.',where:'إلى أين ستسافر؟',searchCountry:'ابحث عن دولة...',searchDestination:'ابحث عن وجهة',noDestination:'لا توجد وجهة بهذا الاسم.',selectPackage:'اختر باقة الإنترنت',packagesFor:'باقات',networkAvailability:'تعمل على شبكات 4G و5G المتاحة',internet:'إنترنت',validFor:'صالحة لمدة',mad:'MAD',total:'المبلغ الإجمالي',addToCart:'أضف إلى السلة',secureNote:'دفع آمن ومشفّر • ستتوصل بالشريحة الإلكترونية بعد إتمام الطلب',popular:'الأكثر طلباً',lastStep:'الخطوة الأخيرة',completeOrder:'أكمل طلبك',checkoutIntro:'راجع باقتك، ثم أدخل معلومات الاستلام والدفع.',simple:'بكل بساطة',threeSteps:'اتصل بالإنترنت في 3 خطوات',step1Title:'اختر وجهتك وباقتك',step1Text:'حدد بلد السفر وحجم الإنترنت المناسب لرحلتك.',step2Title:'امسح رمز QR',step2Text:'ستتوصل بكود التفعيل مع تعليمات بسيطة وواضحة.',step3Title:'سافر وأنت متصل',step3Text:'فعّل الشريحة عند الوصول واستمتع بالإنترنت فوراً.',why:'لماذا SafarSIM؟',benefitTitle:'رحلتك تستحق اتصالاً بلا مفاجآت',benefitLead:'ابقَ متصلاً بتطبيقاتك المفضلة طوال رحلتك.',phoneSupports:'هل هاتفي يدعم eSIM؟',saveRoaming:'وفّر رسوم التجوال',saveRoamingText:'أسعار واضحة قبل أن تسافر.',keepNumber:'احتفظ برقمك',keepNumberText:'لا حاجة لإزالة شريحتك الأساسية من الهاتف.',fastActivation:'تفعيل سريع',fastActivationText:'لا متاجر، لا انتظار، ولا أوراق مطلوبة.',help:'دعم يرافقك',helpText:'فريقنا جاهز لمساعدتك باللغة العربية.',faqLabel:'أسئلة شائعة',faqTitle:'كل ما تحتاج معرفته',ready:'جاهز للسفر؟',takeInternet:'خذ الإنترنت معك أينما ذهبت.',finalText:'اختر وجهتك الآن واستمتع باتصال سريع من لحظة وصولك.',buyNow:'اشترِ شريحتك الآن',added:'تمت إضافة الباقة إلى الطلب',checkout:'إتمام الطلب',day:'يوم',days:'أيام',title:'SafarSIM | شريحة إنترنت للسفر'
   },
   fr: {
+    securePayment:'Paiement sécurisé',refundPolicy:'Remboursement intégral',
     language:'Choisir la langue',eyebrow:'Votre compagnon connecté à chaque voyage',heroTitle:'Internet en voyage,',heroAccent:'plus simple que jamais.',heroLead:'Activez votre eSIM SafarSIM en quelques minutes et restez connecté dès votre arrivée, sans frais d’itinérance ni changement de carte SIM.',choosePlan:'Choisir ma destination',checkPhone:'Vérifier la compatibilité',instant:'Activation instantanée',noFees:'Aucun frais caché',support:'Réseaux 4G / 5G',connected:'Vous êtes connecté !',internetReady:'Internet est prêt à l’emploi',remaining:'Données restantes',moreThan:'Plus de',destination:'destinations',destinations:'destinations',fastNetwork:'Réseau rapide',worldDestinations:'destinations dans le monde',reliable:'Connexion rapide et fiable',minutes:'Quelques minutes',purchaseToActivation:'de l’achat à l’activation',travelSupport:'Assistance avant et pendant le voyage',choosePayConnect:'Choisissez. Payez. Connectez-vous.',planInTwo:'Votre forfait idéal en deux étapes',planIntro:'Choisissez votre destination, puis le forfait adapté à votre séjour et à vos besoins.',where:'Où partez-vous ?',searchCountry:'Rechercher un pays...',searchDestination:'Rechercher une destination',noDestination:'Aucune destination ne correspond à votre recherche.',selectPackage:'Choisissez votre forfait Internet',packagesFor:'Forfaits pour',networkAvailability:'Fonctionne sur les réseaux 4G et 5G disponibles',internet:'Internet',validFor:'Valable',mad:'MAD',total:'Montant total',addToCart:'Ajouter au panier',secureNote:'Paiement sécurisé et chiffré • Vous recevrez votre eSIM après la commande',popular:'Le plus populaire',lastStep:'Dernière étape',completeOrder:'Finalisez votre commande',checkoutIntro:'Vérifiez votre forfait, puis renseignez la livraison et le paiement.',simple:'C’est très simple',threeSteps:'Connectez-vous en 3 étapes',step1Title:'Choisissez destination et forfait',step1Text:'Sélectionnez le pays et le volume de données adapté à votre voyage.',step2Title:'Scannez le QR code',step2Text:'Recevez votre code d’activation avec des instructions simples.',step3Title:'Voyagez connecté',step3Text:'Activez l’eSIM à votre arrivée et profitez immédiatement d’Internet.',why:'Pourquoi SafarSIM ?',benefitTitle:'Votre voyage mérite une connexion sans surprise',benefitLead:'Restez connecté à vos applications préférées pendant tout votre voyage.',phoneSupports:'Mon téléphone accepte-t-il l’eSIM ?',saveRoaming:'Économisez sur l’itinérance',saveRoamingText:'Des prix clairs en dirhams marocains avant votre départ.',keepNumber:'Gardez votre numéro',keepNumberText:'Inutile de retirer votre carte SIM principale.',fastActivation:'Activation rapide',fastActivationText:'Aucune boutique, attente ou formalité.',help:'Assistance avec vous',helpText:'Notre équipe est prête à vous aider dans votre langue.',faqLabel:'Questions fréquentes',faqTitle:'Tout ce qu’il faut savoir',ready:'Prêt à partir ?',takeInternet:'Emportez Internet partout avec vous.',finalText:'Choisissez votre destination et profitez d’une connexion rapide dès votre arrivée.',buyNow:'Acheter mon eSIM',added:'Le forfait a été ajouté à la commande',checkout:'Finaliser',day:'jour',days:'jours',title:'SafarSIM | eSIM Internet pour voyager'
   },
   en: {
+    securePayment:'Secure payment',refundPolicy:'Full refund policy',
     language:'Choose language',eyebrow:'Your smart companion for every trip',heroTitle:'Travel internet,',heroAccent:'simpler than ever.',heroLead:'Activate your SafarSIM eSIM in minutes and stay connected as soon as you arrive, without costly roaming or swapping your SIM.',choosePlan:'Choose your destination',checkPhone:'Check phone compatibility',instant:'Instant activation',noFees:'No hidden fees',support:'4G / 5G networks',connected:'You’re connected!',internetReady:'Internet is ready to use',remaining:'Data remaining',moreThan:'More than',destination:'destinations',destinations:'destinations',fastNetwork:'Fast network',worldDestinations:'destinations worldwide',reliable:'Fast, reliable connection',minutes:'Minutes',purchaseToActivation:'from purchase to activation',travelSupport:'Support before and during travel',choosePayConnect:'Choose. Pay. Connect.',planInTwo:'Your ideal plan in two steps',planIntro:'Choose your destination, then select the plan that fits your trip and data needs.',where:'Where are you going?',searchCountry:'Search for a country...',searchDestination:'Search destinations',noDestination:'No destination matches your search.',selectPackage:'Choose an internet plan',packagesFor:'Plans for',networkAvailability:'Works on available 4G and 5G networks',internet:'Internet',validFor:'Valid for',mad:'MAD',total:'Total amount',addToCart:'Add to cart',secureNote:'Secure encrypted payment • You’ll receive your eSIM after checkout',popular:'Most popular',lastStep:'Final step',completeOrder:'Complete your order',checkoutIntro:'Review your plan, then enter delivery and payment details.',simple:'It’s that simple',threeSteps:'Get online in 3 steps',step1Title:'Choose destination and plan',step1Text:'Select your country and the right amount of data for your trip.',step2Title:'Scan the QR code',step2Text:'Receive your activation code with clear, simple instructions.',step3Title:'Travel connected',step3Text:'Activate the eSIM when you arrive and get online immediately.',why:'Why SafarSIM?',benefitTitle:'Your trip deserves a connection with no surprises',benefitLead:'Stay connected to your favorite apps throughout your trip.',phoneSupports:'Does my phone support eSIM?',saveRoaming:'Save on roaming',saveRoamingText:'Clear prices in Moroccan dirhams before you travel.',keepNumber:'Keep your number',keepNumberText:'No need to remove your primary SIM.',fastActivation:'Fast activation',fastActivationText:'No stores, waiting, or paperwork.',help:'Support that travels with you',helpText:'Our team is ready to help in your language.',faqLabel:'Frequently asked questions',faqTitle:'Everything you need to know',ready:'Ready to travel?',takeInternet:'Take the internet wherever you go.',finalText:'Choose your destination and enjoy a fast connection from the moment you arrive.',buyNow:'Buy your eSIM',added:'The plan was added to your order',checkout:'Checkout',day:'day',days:'days',title:'SafarSIM | Travel Internet eSIM'
   }
 }
@@ -721,5 +727,34 @@ watch(locale, () => {
   .featured-destination-card--illustrated strong{font-size:20px;line-height:1.2}
   .featured-destination-card--illustrated small{font-size:11px;line-height:1.35;gap:6px}
   .featured-destination-card--illustrated small .v-icon{width:23px;height:23px;font-size:17px!important;flex-shrink:0}
+}
+
+.home-plan-trust{display:flex;flex-wrap:nowrap;justify-content:center;gap:10px 12px;margin-top:18px}
+.section-heading .home-plan-trust>span{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border:1px solid #eee9f2;border-radius:999px;background:#fff;color:#353535;font-size:14px;font-weight:400;line-height:1.5;letter-spacing:normal;text-transform:none}
+.home-plan-trust .v-icon{color:#666;flex-shrink:0}
+
+@media(max-width:600px){
+  .home-plan-trust{gap:6px}
+  .section-heading .home-plan-trust>span{padding:8px 9px;gap:4px;font-size:11px;white-space:nowrap}
+  .home-plan-trust .v-icon{font-size:15px!important;width:15px;height:15px}
+}
+@media(max-width:360px){
+  .home-plan-trust{gap:4px}
+  .section-heading .home-plan-trust>span{padding:7px 6px;font-size:10px}
+}
+
+.one-page .package-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px}
+.one-page .plan-option{grid-template-columns:18px minmax(0,1fr);grid-template-rows:auto auto auto;min-width:0;padding:18px 12px;gap:9px 7px}
+.one-page .plan-option .radio-dot{grid-column:1;grid-row:1/3}
+.one-page .plan-option .plan-data{grid-column:2;grid-row:1}
+.one-page .plan-option .plan-validity{grid-column:2;grid-row:2;white-space:normal;font-size:12px}
+.one-page .plan-option>strong{grid-column:2;grid-row:3;font-size:20px}
+@media(max-width:600px){
+ .one-page .package-grid{gap:18px 8px}
+ .one-page .plan-option{padding:18px 9px 12px;gap:8px 6px}
+ .one-page .plan-option .plan-data b{font-size:21px}
+ .one-page .plan-option>strong{font-size:19px}
+ .one-page .plan-option>strong small{font-size:10px}
+ .one-page .plan-option em{font-size:9px;padding:3px 6px;inset-inline-end:5px}
 }
 </style>

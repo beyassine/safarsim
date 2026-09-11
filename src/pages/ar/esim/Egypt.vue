@@ -30,11 +30,11 @@
     </section>
 
     <section class="egypt-proof-strip">
-      <v-container class="egypt-proof-grid">
-        <div><b>ابتداءً من {{ startingPrice }}</b><span>باقات مسبقة الدفع لمصر</span></div>
-        <div><b>قبل السفر</b><span>ثبّت شريحتك مسبقاً</span></div>
-        <div><b>عند الوصول</b><span>اتصل بالإنترنت في مصر</span></div>
-        <div><b>Orange Egypt &amp; Etisalat</b><span>شبكات محلية شريكة</span></div>
+      <v-container class="egypt-proof-grid destination-proof-grid">
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-tag-outline</v-icon><b>ابتداءً من {{ startingPrice }}</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-lightning-bolt-outline</v-icon><b>توصيل فوري</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-cash-check</v-icon><b>بدون رسوم تجوال</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-signal</v-icon><b>Orange Egypt &amp; Etisalat</b></div>
       </v-container>
     </section>
 
@@ -43,13 +43,16 @@
         <div class="europe-section-heading">
           <span>بيانات مسبقة الدفع بمرونة</span>
           <h2>اختر باقة eSIM لمصر</h2>
-          <p>اختر حجم البيانات ومدة الصلاحية المناسبين لإقامتك في مصر.</p>
+          <div class="destination-plan-trust">
+              <span><v-icon size="19" aria-hidden="true">mdi-lock-outline</v-icon>دفع آمن</span>
+              <span><v-icon size="19" aria-hidden="true">mdi-currency-usd</v-icon>سياسة استرداد كامل المبلغ</span>
+            </div>
         </div>
         <div class="europe-plan-grid">
           <button v-for="plan in sortedPlans" :key="plan.key" type="button" class="europe-plan-card" :class="{ active: selectedPlanKey === plan.key }" @click="handleAddToCart(plan)">
-            <span v-if="plan.data === '10GB'" class="popular-label">الأكثر اختياراً • مثالية لمدة أسبوع إلى أسبوعين</span>
+            <span v-if="plan.data === '10GB'" class="popular-label">الأكثر شعبية</span>
             <span class="plan-radio" aria-hidden="true"></span>
-            <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>بيانات الهاتف</span></div>
+            <div class="plan-data"><b>{{ plan.dataLabel }}</b></div>
             <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} أيام</div>
             <div class="plan-price">{{ formatPriceFromMad(plan.price, 'ar') }}</div>
           </button>
@@ -257,6 +260,8 @@
 </template>
 
 <script>
+import { destinationTitle } from "@/utils/destinationTitle"
+import { applyPageMetadata } from "@/utils/pageMetadata"
 import { destinations, regions } from '@/services/catalog'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
@@ -646,15 +651,22 @@ export default {
       }
       node.textContent = JSON.stringify(schema)
       document.documentElement.lang = locale
-      document.title = document.querySelector('#europe-plans h2')?.textContent.trim() || 'SafarSim eSIM مصر'
+      document.title = destinationTitle("مصر", "ar")
     },
   },
 
   mounted() {
     this.updateStructuredData()
+    this.restoreMetadata = applyPageMetadata({
+      title: destinationTitle("مصر", "ar"),
+      description: document.querySelector('.europe-hero-description')?.textContent.trim() || '',
+      path: this.$route.path,
+      image: document.querySelector('.europe-visual img')?.getAttribute('src') || '/favicon.ico',
+    })
   },
 
   beforeUnmount() {
+    this.restoreMetadata?.()
     document.getElementById('europe-structured-data')?.remove()
   },
 
@@ -917,3 +929,5 @@ export default {
 </style>
 
 <style scoped src="@/assets/styles/destination-layout.css"></style>
+
+<style scoped src="@/assets/styles/destination-benefits.css"></style>

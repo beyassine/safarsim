@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@mdi/font": "^7.4.47",
+    "@sparticuz/chromium": "^152.0.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "puppeteer": "^25.9.0",

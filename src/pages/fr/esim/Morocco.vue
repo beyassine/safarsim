@@ -30,11 +30,11 @@
     </section>
 
     <section class="morocco-proof-strip">
-      <v-container class="morocco-proof-grid">
-        <div><b>Dès {{ startingPrice }}</b><span>Forfaits prépayés pour le Maroc</span></div>
-        <div><b>Avant le départ</b><span>Installez votre eSIM à l’avance</span></div>
-        <div><b>Dès l’arrivée</b><span>Connectez-vous au Maroc</span></div>
-        <div><b>Orange Maroc · Maroc Telecom</b><span>Réseaux partenaires locaux</span></div>
+      <v-container class="morocco-proof-grid destination-proof-grid">
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-tag-outline</v-icon><b>Dès {{ startingPrice }}</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-lightning-bolt-outline</v-icon><b>Livraison instantanée</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-cash-check</v-icon><b>Sans frais d’itinérance</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-signal</v-icon><b>Orange Maroc · Maroc Telecom</b></div>
       </v-container>
     </section>
 
@@ -43,13 +43,16 @@
         <div class="europe-section-heading">
           <span>Données prépayées flexibles</span>
           <h2>Choisissez votre forfait eSIM Maroc</h2>
-          <p>Choisissez le volume de données et la durée adaptés à votre séjour au Maroc.</p>
+          <div class="destination-plan-trust">
+              <span><v-icon size="19" aria-hidden="true">mdi-lock-outline</v-icon>Paiement sécurisé</span>
+              <span><v-icon size="19" aria-hidden="true">mdi-currency-usd</v-icon>Remboursement intégral</span>
+            </div>
         </div>
         <div class="europe-plan-grid">
           <button v-for="plan in sortedPlans" :key="plan.key" type="button" class="europe-plan-card" :class="{ active: selectedPlanKey === plan.key }" @click="handleAddToCart(plan)">
-            <span v-if="plan.data === '10GB'" class="popular-label">Le plus populaire • Idéal pour 1–2 semaines</span>
+            <span v-if="plan.data === '10GB'" class="popular-label">Le plus populaire</span>
             <span class="plan-radio" aria-hidden="true"></span>
-            <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>de données mobiles</span></div>
+            <div class="plan-data"><b>{{ plan.dataLabel }}</b></div>
             <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} jours</div>
             <div class="plan-price">{{ formatPriceFromMad(plan.price, 'fr') }}</div>
           </button>
@@ -242,6 +245,7 @@
 </template>
 
 <script>
+import { destinationTitle } from "@/utils/destinationTitle"
 import { destinations } from '@/services/catalog'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
@@ -441,7 +445,7 @@ export default {
     this.$nextTick(() => {
       this.updateStructuredData()
       this.restoreMetadata = applyPageMetadata({
-        title: "eSIM Maroc | Forfaits Internet prépayés pour votre voyage | SafarSIM",
+        title: destinationTitle("Maroc", "fr"),
         description: "Voyagez au Maroc avec une eSIM prépayée SafarSIM. Comparez les forfaits Internet, consultez la couverture et installez avant le départ. Gardez votre numéro WhatsApp.",
         path: `${this.localePrefix}/esim/morocco`,
         image: moroccoHeroImage,
@@ -634,3 +638,5 @@ export default {
 </style>
 
 <style scoped src="@/assets/styles/destination-layout.css"></style>
+
+<style scoped src="@/assets/styles/destination-benefits.css"></style>

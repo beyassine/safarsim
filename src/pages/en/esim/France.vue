@@ -29,9 +29,12 @@
       </v-container>
     </section>
 
-    <section class="europe-proof-strip">
-      <v-container class="europe-proof-grid">
-        <div class="proof-highlight"><v-icon>mdi-tag-outline</v-icon><b>Plans from <strong>{{ startingPrice }}</strong></b></div>
+    <section class="destination-benefits-strip">
+      <v-container class="destination-proof-grid">
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-tag-outline</v-icon><b>Plans from {{ startingPrice }}</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-lightning-bolt-outline</v-icon><b>Instant delivery</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-cash-check</v-icon><b>No roaming fees</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-signal</v-icon><b>Local networks</b></div>
       </v-container>
     </section>
 
@@ -40,13 +43,16 @@
         <div class="europe-section-heading">
           <span>Flexible prepaid data</span>
           <h2>Choose your France eSIM plan</h2>
-          <p>Choose the data allowance and validity period that match your stay in France.</p>
+          <div class="destination-plan-trust">
+              <span><v-icon size="19" aria-hidden="true">mdi-lock-outline</v-icon>Secure payment</span>
+              <span><v-icon size="19" aria-hidden="true">mdi-currency-usd</v-icon>Full refund policy</span>
+            </div>
         </div>
         <div class="europe-plan-grid">
           <button v-for="plan in sortedPlans" :key="plan.key" type="button" class="europe-plan-card" :class="{ active: selectedPlanKey === plan.key }" @click="handleAddToCart(plan)">
-            <span v-if="plan.data === '10GB'" class="popular-label">Most popular • Ideal for 1–2 weeks</span>
+            <span v-if="plan.data === '10GB'" class="popular-label">Most popular</span>
             <span class="plan-radio" aria-hidden="true"></span>
-            <div class="plan-data"><b>{{ plan.dataLabel }}</b><span>mobile data</span></div>
+            <div class="plan-data"><b>{{ plan.dataLabel }}</b></div>
             <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} days</div>
             <div class="plan-price">{{ formatPriceFromMad(plan.price, 'en') }}</div>
           </button>
@@ -239,6 +245,8 @@
 </template>
 
 <script>
+import { destinationTitle } from "@/utils/destinationTitle"
+import { applyPageMetadata } from "@/utils/pageMetadata"
 import { destinations, regions } from '@/services/catalog'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
@@ -628,15 +636,22 @@ export default {
       }
       node.textContent = JSON.stringify(schema)
       document.documentElement.lang = locale
-      document.title = document.querySelector('#europe-plans h2')?.textContent.trim() || 'SafarSim France eSIM'
+      document.title = destinationTitle("France", "en")
     },
   },
 
   mounted() {
     this.updateStructuredData()
+    this.restoreMetadata = applyPageMetadata({
+      title: destinationTitle("France", "en"),
+      description: document.querySelector('.europe-hero-description')?.textContent.trim() || '',
+      path: this.$route.path,
+      image: document.querySelector('.europe-visual img')?.getAttribute('src') || '/favicon.ico',
+    })
   },
 
   beforeUnmount() {
+    this.restoreMetadata?.()
     document.getElementById('europe-structured-data')?.remove()
   },
 
@@ -814,3 +829,5 @@ export default {
 </style>
 
 <style scoped src="@/assets/styles/destination-layout.css"></style>
+
+<style scoped src="@/assets/styles/destination-benefits.css"></style>

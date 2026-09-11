@@ -46,3 +46,73 @@
 .europe-page[dir] .europe-hero-copy h1 em { position:relative; width:fit-content; max-width:100%; margin-inline:auto; padding-bottom:8px; }
 .europe-page[dir] .europe-hero-copy h1 em::after { content:'';position:absolute;right:0;left:5%;bottom:-7px;height:9px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='9'%3E%3Cpath d='M2 7 C70 1 180 1 298 5' fill='none' stroke='%23efb39e' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
 .europe-page[dir="rtl"] .europe-hero-copy h1 em { padding-bottom:16px; }
+
+
+.destination-plan-trust {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 10px 12px;
+  margin: 18px 0 0;
+  color: #353535;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.destination-plan-trust > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #eee9f2;
+}
+.destination-plan-trust .v-icon {
+  color: #666;
+  flex-shrink: 0;
+}
+
+.europe-section-heading .destination-plan-trust > span { color: #353535; font-size: 14px; font-weight: 400; letter-spacing: normal; text-transform: none; }
+
+@media(max-width:600px){
+  .destination-plan-trust{gap:6px}
+  .europe-section-heading .destination-plan-trust>span{padding:8px 9px;gap:4px;font-size:11px;white-space:nowrap}
+  .destination-plan-trust .v-icon{font-size:15px!important;width:15px;height:15px}
+}
+@media(max-width:360px){
+  .destination-plan-trust{gap:4px}
+  .europe-section-heading .destination-plan-trust>span{padding:7px 6px;font-size:10px}
+}
+
+.destination-proof-item > .v-icon { align-self: center; color: #d91c58; margin-bottom: 5px; }
+
+.europe-page .europe-plans-section { padding-top: 0; }
+
+.europe-page .europe-plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media(max-width:600px){
+  .europe-page .europe-plan-grid { gap: 18px 8px; }
+  .europe-page .europe-plan-card { grid-template-columns: 20px minmax(0,1fr); grid-template-rows: auto auto auto; padding: 20px 10px 12px; gap: 7px; }
+  .europe-page .europe-plan-card .plan-radio { grid-row: 1 / 3; }
+  .europe-page .europe-plan-card .plan-price { grid-column: 2; grid-row: 3; font-size: 20px; }
+  .europe-page .europe-plan-card .plan-duration { margin-top: 0; }
+  .europe-page[dir] .europe-plan-card .popular-label { left: 4px; right: 4px; padding: 4px; font-size: 9px; text-align: center; white-space: normal; }
+}
+
+.europe-page .europe-purchase-cta {
+  max-width: 100%;
+  height: auto !important;
+  min-height: 52px;
+  padding: 14px 20px !important;
+  font-size: 15px !important;
+  line-height: 1.4;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+.europe-page .europe-purchase-cta :deep(.v-btn__content) {
+  white-space: normal;
+  text-align: center;
+  min-width: 0;
+}
+@media(max-width:600px){
+  .europe-page .europe-purchase-cta { width: 100%; font-size: 13px !important; padding-inline: 14px !important; }
+}
