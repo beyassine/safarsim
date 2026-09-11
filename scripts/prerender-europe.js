@@ -59,6 +59,8 @@ async function run() {
       if (!content.heading || content.plans < 1 || content.text < 1000 || content.lang !== locale) {
         throw new Error(`Incomplete prerender for ${route}: ${JSON.stringify(content)}`)
       }
+      // The destination content is available without JS; the SPA-only notice is misleading here.
+      await page.evaluate(() => document.querySelectorAll('noscript').forEach(node => node.remove()))
       const html = await page.content()
       const outputDir = path.join(distDir, route.replace(/^\//, ''))
       fs.mkdirSync(outputDir, { recursive: true })
@@ -70,9 +72,10 @@ async function run() {
       const rendered = await crawler.evaluate(() => ({
         heading: document.querySelector('h1')?.textContent.trim(),
         plans: document.querySelectorAll('.europe-plan-card').length,
+        titles: document.querySelectorAll('head title').length,
         canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
       }))
-      if (rendered.heading !== content.heading || rendered.plans !== content.plans || rendered.canonical !== `https://safarsim.net${route}`) {
+      if (rendered.titles !== 1 || rendered.heading !== content.heading || rendered.plans !== content.plans || rendered.canonical !== `https://safarsim.net${route}`) {
         throw new Error(`JavaScript-disabled crawl failed for ${route}: ${JSON.stringify(rendered)}`)
       }
       await crawler.close()
