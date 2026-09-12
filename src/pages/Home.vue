@@ -4,18 +4,6 @@
       <div class="hero-glow hero-glow-one"></div>
       <div class="hero-glow hero-glow-two"></div>
       <div class="hero-glow hero-glow-three"></div>
-      <div class="page-language-bar">
-      <v-container class="language-bar-inner">
-        <span class="language-prompt"><v-icon size="18">mdi-web</v-icon>{{ c.language }}</span>
-        <div class="language-options" role="group" :aria-label="c.language">
-          <button v-for="language in languages" :key="language.code" type="button"
-            :class="{ active: locale === language.code }" :aria-pressed="locale === language.code"
-            @click.stop.prevent="changeLanguage(language.code)">
-            <span>{{ language.flag }}</span>{{ language.label }}
-          </button>
-        </div>
-      </v-container>
-      </div>
       <section class="hero-section">
       <v-container fluid class="hero-container">
         <div class="hero-copy">
@@ -219,11 +207,9 @@
 
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
 import { destinations, regions } from '@/services/catalog'
 import { addToCart, getCart } from '@/utils/cart'
-import i18n, { rememberLanguage } from '@/i18n'
-import { localePath } from '@/router'
+import i18n from '@/i18n'
 import Cart from '@/pages/Cart.vue'
 import { priceFromMad, getPreferredCurrency } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
@@ -238,20 +224,12 @@ import { getLocalizedName } from '@/utils/localizedNames'
 
 const locale = ref(i18n.global.locale)
 const preferredCurrency = getPreferredCurrency() === 'MAD' ? 'DH' : getPreferredCurrency()
-const router = useRouter()
-const route = useRoute()
 const search = ref('')
 const checkoutOpen = ref(false)
 const snackbar = ref(false)
 const catalog = computed(() => [...regions, ...destinations])
 const selectedDestination = ref(null)
 const selectedPlan = ref(null)
-const languages = [
-  { code: 'ar', label: 'العربية', flag: '🇸🇦' },
-  { code: 'en', label: 'English', flag: '🇬🇧' },
-  { code: 'fr', label: 'Français', flag: '🇫🇷' },
-  { code: 'nl', label: 'Nederlands', flag: '🇳🇱' },
-]
 
 const pageCopy = {
   ar: {
@@ -515,10 +493,6 @@ async function selectDestination(destination, shouldScroll = true) {
 
 
 
-function changeLanguage(language) {
-  rememberLanguage(language)
-  router.push(localePath(route, language))
-}
 
 function syncLanguage(event) {
   locale.value = event.detail || i18n.global.locale
@@ -627,8 +601,8 @@ watch(locale, () => {
 .one-page * { box-sizing:border-box; }
 .one-page > *,
 .one-page :deep(.v-container) { width:100%;min-width:0; }
-.home-hero-shell{position:relative;background:#fffbf8;isolation:isolate;overflow:clip}.page-language-bar{position:relative;z-index:3;background:transparent;color:#2f1b2a;padding:12px 0 5px}.language-bar-inner{min-height:42px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;white-space:nowrap}.language-prompt{display:flex;align-items:center;gap:7px;color:#765f6d;font-size:13px;font-weight:700}.language-options{display:flex;gap:8px;direction:rtl;flex-wrap:nowrap}.language-options button{position:relative;z-index:4;min-width:92px;border:1px solid #e4ddd8;background:#fffbf8;color:#6d5362;border-radius:99px;padding:7px 12px;display:flex;align-items:center;justify-content:center;gap:6px;font:inherit;font-size:13px;cursor:pointer;transition:.18s;white-space:nowrap}.language-options button:hover{border-color:#ef7891;color:#d91c58}.language-options button.active{background:#fff;color:#d91c58;border-color:#e72a64;font-weight:800}
-.one-page[dir="rtl"] .language-prompt{direction:ltr;flex-direction:row-reverse}.one-page[dir="ltr"] .language-prompt{direction:ltr;flex-direction:row}
+.home-hero-shell{position:relative;background:#fffbf8;isolation:isolate;overflow:clip}
+
 .hero-section { position:relative; min-height:690px; display:flex; align-items:center; background:transparent; overflow:visible; }
 .hero-container { display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:70px; padding-top:32px; padding-bottom:75px; position:relative; z-index:2; }
 .hero-glow { display:block;position:absolute;border-radius:50%;filter:blur(5px);pointer-events:none; }
@@ -698,7 +672,7 @@ watch(locale, () => {
 .final-cta{background:var(--coral);color:#fff;padding:60px 0}.final-cta .v-container{display:flex;justify-content:space-between;align-items:center;gap:30px}.final-cta span{font-weight:800;opacity:.8}.final-cta h2{font-size:34px;margin:6px 0}.final-cta p{opacity:.85}.final-cta .v-btn{background:#fff;color:var(--ink);font-weight:900;letter-spacing:0;padding-inline:28px}.snackbar-content{display:flex;align-items:center;gap:10px}.snackbar-content .v-btn{color:#a9e0ce;margin-right:auto}
 @media(max-width:960px){.hero-container{grid-template-columns:1fr;text-align:center;padding-top:75px}.hero-lead{margin-inline:auto}.hero-actions{justify-content:center}.hero-visual{height:470px}.purchase-card,.one-page[dir="ltr"] .purchase-card{grid-template-columns:minmax(0,1fr);grid-template-areas:"destination" "package";gap:54px}.purchase-card--single,.one-page[dir="ltr"] .purchase-card--single{grid-template-areas:"destination"}.destination-list{display:grid;grid-template-columns:1fr;max-height:460px}.embedded-checkout :deep(.summary-column),.embedded-checkout :deep(.contact-column){padding-inline:12px!important}.embedded-checkout :deep(.summary-column){border-inline-start:0;margin-top:34px}.benefits-layout{grid-template-columns:1fr;grid-template-rows:auto;gap:28px}.benefit-copy{grid-column:1;grid-row:1;text-align:center}.benefit-apps-visual{grid-column:1;grid-row:2}.benefit-cta-wrap{grid-column:1;grid-row:3;justify-content:center}.steps-grid{grid-template-columns:1fr}.step-arrow{transform:rotate(-90deg)}.proof-grid{grid-template-columns:1fr 1fr;gap:20px}.proof-grid div{border:0}.final-cta .v-container{flex-direction:column;text-align:center}}
 @media(max-width:960px){.popular-packs-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.one-page :deep(.v-container){padding-left:12px!important;padding-right:12px!important}.page-language-bar{padding:10px 0 3px}.language-bar-inner{flex-direction:column;justify-content:center;gap:7px;padding-inline:8px!important}.language-prompt{display:flex;font-size:12px;gap:5px}.language-prompt .v-icon{font-size:17px!important}.language-options{width:auto;max-width:100%;justify-content:center;gap:5px;min-width:0}.language-options button{min-width:0;padding:6px 8px;font-size:11px;gap:4px}.hero-section{min-height:auto}.hero-container{padding-top:24px;padding-bottom:50px}.hero-copy h1{font-size:40px;letter-spacing:-1px}.hero-lead{font-size:16px}.hero-actions{flex-direction:column}.hero-visual{height:470px;margin-top:12px}.proof-grid b{font-size:18px}.plans-section,.how-section,.benefits-section,.faq-section{padding:70px 0}.section-heading{margin-bottom:30px}.destination-panel{padding:20px 0 4px}.package-panel{padding:20px 12px 20px}.step-label{font-size:21px;margin-bottom:24px}.step-label i{width:38px;height:38px;font-size:16px}.destination-list{grid-template-columns:1fr;max-height:460px}.package-grid{grid-template-columns:1fr}.selected-country{align-items:flex-start;flex-direction:column}.one-page[dir="rtl"] .selected-country>div,.one-page[dir="rtl"] .selected-country small{width:100%;text-align:right}.one-page[dir="rtl"] .selected-country>div{justify-content:flex-start}.one-page[dir="ltr"] .selected-country>div,.one-page[dir="ltr"] .selected-country small{width:100%;text-align:left}.checkout-row{align-items:stretch;flex-direction:column}.buy-button{width:100%}.benefit-copy h2{font-size:31px}.benefit-grid{grid-template-columns:1fr}.final-cta h2{font-size:28px}.final-cta .v-btn{width:100%}}
+@media(max-width:600px){.one-page :deep(.v-container){padding-left:12px!important;padding-right:12px!important}.hero-section{min-height:auto}.hero-container{padding-top:24px;padding-bottom:50px}.hero-copy h1{font-size:40px;letter-spacing:-1px}.hero-lead{font-size:16px}.hero-actions{flex-direction:column}.hero-visual{height:470px;margin-top:12px}.proof-grid b{font-size:18px}.plans-section,.how-section,.benefits-section,.faq-section{padding:70px 0}.section-heading{margin-bottom:30px}.destination-panel{padding:20px 0 4px}.package-panel{padding:20px 12px 20px}.step-label{font-size:21px;margin-bottom:24px}.step-label i{width:38px;height:38px;font-size:16px}.destination-list{grid-template-columns:1fr;max-height:460px}.package-grid{grid-template-columns:1fr}.selected-country{align-items:flex-start;flex-direction:column}.one-page[dir="rtl"] .selected-country>div,.one-page[dir="rtl"] .selected-country small{width:100%;text-align:right}.one-page[dir="rtl"] .selected-country>div{justify-content:flex-start}.one-page[dir="ltr"] .selected-country>div,.one-page[dir="ltr"] .selected-country small{width:100%;text-align:left}.checkout-row{align-items:stretch;flex-direction:column}.buy-button{width:100%}.benefit-copy h2{font-size:31px}.benefit-grid{grid-template-columns:1fr}.final-cta h2{font-size:28px}.final-cta .v-btn{width:100%}}
 @media(max-width:600px){.plans-section{padding-bottom:28px}.checkout-section{padding-top:24px}}
 @media(max-width:600px){.plans-section{scroll-margin-top:96px}}
 @media(max-width:600px){.benefits-section{padding-top:30px}.benefit-copy h2{font-size:30px;line-height:1.35}.benefit-copy p{font-size:16px;line-height:1.7}.benefit-apps-visual{margin-top:28px}}
@@ -729,10 +703,10 @@ watch(locale, () => {
 /* Desktop layout: keep content readable and restore the intended multi-column rhythm. */
 @media(min-width:961px){
   .one-page :deep(.v-container){max-width:1240px;padding-inline:32px}
-  .language-bar-inner{max-width:1240px;min-height:38px;flex-direction:row;justify-content:flex-end;gap:14px;padding-block:4px}
-  .one-page[dir="rtl"] .language-bar-inner{direction:rtl;justify-content:flex-start}
-  .one-page[dir="ltr"] .language-bar-inner{direction:ltr;justify-content:flex-end}
-  .page-language-bar{padding:6px 0}
+
+
+
+
   .hero-section{min-height:640px}
   .hero-container{max-width:1320px!important;grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr);gap:48px;padding:38px 48px 70px!important;margin-inline:auto}
   .hero-copy{max-width:680px}
