@@ -11,7 +11,7 @@
         </div>
         <div class="europe-hero-grid">
           <div class="europe-hero-copy">
-            <h1><span>Blijf verbonden in heel</span><em>Marokko</em></h1>
+            <h1><em>eSIM Marokko:</em> <span style="white-space: normal">blijf verbonden tijdens je reis</span></h1>
             <p class="europe-hero-description">Reis door Marokko met één prepaid eSIM. Blijf verbonden in Marrakesh, Casablanca, Rabat en daarbuiten zonder je fysieke simkaart te vervangen.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans"> Bekijk bundels voor Marokko<v-icon end>mdi-arrow-down</v-icon>
