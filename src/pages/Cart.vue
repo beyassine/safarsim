@@ -467,6 +467,7 @@ export default {
         ar: 'الدفع الآمن',
         fr: 'Paiement sécurisé',
         en: 'Secure payment',
+        nl: "Veilig betalen",
       }[this.$i18n.locale] || 'Secure payment'
     },
 

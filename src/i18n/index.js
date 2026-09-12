@@ -2,6 +2,7 @@ import { createI18n } from "vue-i18n"
 import fr from "./fr.json"
 import en from "./en.json"
 import ar from "./ar.json"
+import nl from "./nl.json"
 
 const ARABIC_COUNTRIES = new Set([
   "AE", "BH", "DJ", "DZ", "EG", "IQ", "JO", "KM", "KW", "LB", "LY",
@@ -44,6 +45,8 @@ export function getDefaultLanguage() {
   const isMorocco = timeZone === "Africa/Casablanca" ||
     locales.some((locale) => getLocaleCountry(locale) === "MA")
 
+  if (String(locales[0] || "").split(/[-_]/)[0].toLowerCase() === "nl") return "nl"
+
   if (isMorocco) return "fr"
 
   const isFrance = timeZone === "Europe/Paris" ||
@@ -67,11 +70,11 @@ const LANGUAGE_PREFERENCE_KEY = "safarsim-language"
 export function getPreferredLanguage() {
   if (typeof localStorage === "undefined") return ""
   const language = localStorage.getItem(LANGUAGE_PREFERENCE_KEY)
-  return ["fr", "en", "ar"].includes(language) ? language : ""
+  return ["fr", "en", "ar", "nl"].includes(language) ? language : ""
 }
 
 export function rememberLanguage(language) {
-  if (typeof localStorage !== "undefined" && ["fr", "en", "ar"].includes(language)) {
+  if (typeof localStorage !== "undefined" && ["fr", "en", "ar", "nl"].includes(language)) {
     localStorage.setItem(LANGUAGE_PREFERENCE_KEY, language)
     sessionStorage.setItem("safarsim-language-navigation", language)
   }
@@ -84,7 +87,8 @@ const i18n = createI18n({
   messages: {
     fr,
     en,
-    ar
+    ar,
+    nl
   }
 })
 

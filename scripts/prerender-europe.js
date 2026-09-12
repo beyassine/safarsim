@@ -7,6 +7,7 @@ const { serverlessLaunchOptions } = require('./prerender-browser.cjs')
 const distDir = path.resolve(__dirname, '..', 'dist')
 const port = 4177
 const routes = ['/esim/morocco', '/fr/esim/morocco', '/ar/esim/morocco', '/esim/egypt', '/fr/esim/egypt', '/ar/esim/egypt', '/esim/europe', '/fr/esim/europe', '/ar/esim/europe', '/esim/turkiye', '/fr/esim/turkiye', '/ar/esim/turkiye', '/esim/spain', '/fr/esim/spain', '/ar/esim/spain', '/esim/france', '/fr/esim/france', '/ar/esim/france', '/esim/saudi-arabia', '/fr/esim/saudi-arabia', '/ar/esim/saudi-arabia', '/esim/united-arab-emirates', '/fr/esim/united-arab-emirates', '/ar/esim/united-arab-emirates']
+routes.push(...routes.filter((route) => route.startsWith('/esim/')).map((route) => `/nl${route}`))
 const mimeTypes = { '.css': 'text/css', '.html': 'text/html; charset=utf-8', '.ico': 'image/x-icon', '.jpg': 'image/jpeg', '.js': 'text/javascript', '.png': 'image/png', '.svg': 'image/svg+xml', '.woff': 'font/woff', '.woff2': 'font/woff2' }
 
 const server = http.createServer((request, response) => {
@@ -55,7 +56,7 @@ async function run() {
         text: document.querySelector('.europe-page')?.textContent.length || 0,
         lang: document.documentElement.lang,
       }))
-      const locale = route.startsWith('/fr/') ? 'fr' : route.startsWith('/ar/') ? 'ar' : 'en'
+      const locale = route.startsWith('/nl/') ? 'nl' : route.startsWith('/fr/') ? 'fr' : route.startsWith('/ar/') ? 'ar' : 'en'
       if (!content.heading || content.plans < 1 || content.text < 1000 || content.lang !== locale) {
         throw new Error(`Incomplete prerender for ${route}: ${JSON.stringify(content)}`)
       }

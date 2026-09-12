@@ -234,6 +234,8 @@ import franceLandingImage from '@/assets/images/france_flag.png'
 import saudiLandingImage from '@/assets/images/saudi_flag.png'
 import egyptLandingImage from '@/assets/images/egypt_flag.png'
 
+import { getLocalizedName } from '@/utils/localizedNames'
+
 const locale = ref(i18n.global.locale)
 const preferredCurrency = getPreferredCurrency() === 'MAD' ? 'DH' : getPreferredCurrency()
 const router = useRouter()
@@ -248,6 +250,7 @@ const languages = [
   { code: 'ar', label: 'العربية', flag: '🇸🇦' },
   { code: 'en', label: 'English', flag: '🇬🇧' },
   { code: 'fr', label: 'Français', flag: '🇫🇷' },
+  { code: 'nl', label: 'Nederlands', flag: '🇳🇱' },
 ]
 
 const pageCopy = {
@@ -262,7 +265,84 @@ const pageCopy = {
   en: {
     securePayment:'Secure payment',refundPolicy:'Full refund policy',
     language:'Choose language',eyebrow:'Your smart companion for every trip',heroTitle:'Travel internet,',heroAccent:'simpler than ever.',heroLead:'Activate your SafarSIM eSIM in minutes and stay connected as soon as you arrive, without costly roaming or swapping your SIM.',choosePlan:'Choose your destination',checkPhone:'Check phone compatibility',instant:'Instant activation',noFees:'No hidden fees',support:'4G / 5G networks',connected:'You’re connected!',internetReady:'Internet is ready to use',remaining:'Data remaining',moreThan:'More than',destination:'destinations',destinations:'destinations',fastNetwork:'Fast network',worldDestinations:'destinations worldwide',reliable:'Fast, reliable connection',minutes:'Minutes',purchaseToActivation:'from purchase to activation',travelSupport:'Support before and during travel',choosePayConnect:'Choose. Pay. Connect.',planInTwo:'Your ideal plan in two steps',planIntro:'Choose your destination, then select the plan that fits your trip and data needs.',where:'Where are you going?',searchCountry:'Search for a country...',searchDestination:'Search destinations',noDestination:'No destination matches your search.',selectPackage:'Choose an internet plan',packagesFor:'Plans for',networkAvailability:'Works on available 4G and 5G networks',internet:'Internet',validFor:'Valid for',mad:'MAD',total:'Total amount',addToCart:'Add to cart',secureNote:'Secure encrypted payment • You’ll receive your eSIM after checkout',popular:'Most popular',lastStep:'Final step',completeOrder:'Complete your order',checkoutIntro:'Review your plan, then enter delivery and payment details.',simple:'It’s that simple',threeSteps:'Get online in 3 steps',step1Title:'Choose destination and plan',step1Text:'Select your country and the right amount of data for your trip.',step2Title:'Scan the QR code',step2Text:'Receive your activation code with clear, simple instructions.',step3Title:'Travel connected',step3Text:'Activate the eSIM when you arrive and get online immediately.',why:'Why SafarSIM?',benefitTitle:'Your trip deserves a connection with no surprises',benefitLead:'Stay connected to your favorite apps throughout your trip.',phoneSupports:'Does my phone support eSIM?',saveRoaming:'Save on roaming',saveRoamingText:'Clear prices in Moroccan dirhams before you travel.',keepNumber:'Keep your number',keepNumberText:'No need to remove your primary SIM.',fastActivation:'Fast activation',fastActivationText:'No stores, waiting, or paperwork.',help:'Support that travels with you',helpText:'Our team is ready to help in your language.',faqLabel:'Frequently asked questions',faqTitle:'Everything you need to know',ready:'Ready to travel?',takeInternet:'Take the internet wherever you go.',finalText:'Choose your destination and enjoy a fast connection from the moment you arrive.',buyNow:'Buy your eSIM',added:'The plan was added to your order',checkout:'Checkout',day:'day',days:'days',title:'SafarSIM | Travel Internet eSIM'
-  }
+  },
+  nl: {
+  securePayment: "Veilig betalen",
+  refundPolicy: "Beleid voor volledige terugbetaling",
+  language: "Kies je taal",
+  eyebrow: "Je slimme reisgenoot voor elke reis",
+  heroTitle: "Internet op reis,",
+  heroAccent: "eenvoudiger dan ooit.",
+  heroLead: "Activeer je SafarSIM eSIM in enkele minuten en blijf verbonden vanaf aankomst, zonder dure roaming of je simkaart te vervangen.",
+  choosePlan: "Kies je bestemming",
+  checkPhone: "Controleer je telefoon",
+  instant: "Directe activering",
+  noFees: "Geen verborgen kosten",
+  support: "4G / 5G-netwerken",
+  connected: "Je bent verbonden!",
+  internetReady: "Internet is klaar voor gebruik",
+  remaining: "Resterende data",
+  moreThan: "Meer dan",
+  destination: "bestemmingen",
+  destinations: "bestemmingen",
+  fastNetwork: "Snel netwerk",
+  worldDestinations: "bestemmingen wereldwijd",
+  reliable: "Snelle, betrouwbare verbinding",
+  minutes: "Minuten",
+  purchaseToActivation: "van aankoop tot activering",
+  travelSupport: "Ondersteuning vóór en tijdens je reis",
+  choosePayConnect: "Kies. Betaal. Maak verbinding.",
+  planInTwo: "Je ideale bundel in twee stappen",
+  planIntro: "Kies je bestemming en selecteer de bundel die bij je reis en dataverbruik past.",
+  where: "Waar ga je naartoe?",
+  searchCountry: "Zoek een land...",
+  searchDestination: "Zoek bestemmingen",
+  noDestination: "Geen bestemming komt overeen met je zoekopdracht.",
+  selectPackage: "Kies een internetbundel",
+  packagesFor: "Bundels voor",
+  networkAvailability: "Werkt op beschikbare 4G- en 5G-netwerken",
+  internet: "Internet",
+  validFor: "Geldig voor",
+  mad: "MAD",
+  total: "Totaalbedrag",
+  addToCart: "Toevoegen aan winkelwagen",
+  secureNote: "Veilige, versleutelde betaling \u2022 Je ontvangt je eSIM na het afrekenen",
+  popular: "Meest populair",
+  lastStep: "Laatste stap",
+  completeOrder: "Rond je bestelling af",
+  checkoutIntro: "Controleer je bundel en vul vervolgens je leverings- en betaalgegevens in.",
+  simple: "Zo eenvoudig is het",
+  threeSteps: "Online in 3 stappen",
+  step1Title: "Kies je bestemming en bundel",
+  step1Text: "Selecteer je land en de juiste hoeveelheid data voor je reis.",
+  step2Title: "Scan de QR-code",
+  step2Text: "Ontvang je activeringscode met duidelijke, eenvoudige instructies.",
+  step3Title: "Reis met internet",
+  step3Text: "Activeer de eSIM bij aankomst en ga direct online.",
+  why: "Waarom SafarSIM?",
+  benefitTitle: "Je reis verdient een verbinding zonder verrassingen",
+  benefitLead: "Blijf tijdens je hele reis verbonden met je favoriete apps.",
+  phoneSupports: "Ondersteunt mijn telefoon eSIM?",
+  saveRoaming: "Bespaar op roaming",
+  saveRoamingText: "Duidelijke prijzen in Marokkaanse dirham vóór je reis.",
+  keepNumber: "Behoud je nummer",
+  keepNumberText: "Je hoeft je hoofdsimkaart niet te verwijderen.",
+  fastActivation: "Snelle activering",
+  fastActivationText: "Geen winkels, wachttijden of papierwerk.",
+  help: "Ondersteuning die met je meereist",
+  helpText: "Ons team staat klaar om je in je taal te helpen.",
+  faqLabel: "Veelgestelde vragen",
+  faqTitle: "Alles wat je moet weten",
+  ready: "Klaar voor vertrek?",
+  takeInternet: "Neem internet overal mee naartoe.",
+  finalText: "Kies je bestemming en geniet vanaf aankomst van een snelle verbinding.",
+  buyNow: "Koop je eSIM",
+  added: "De bundel is aan je bestelling toegevoegd",
+  checkout: "Afrekenen",
+  day: "dag",
+  days: "dagen",
+  title: "SafarSIM | eSIM voor internet op reis"
+}
 }
 
 const c = computed(() => pageCopy[locale.value] || pageCopy.en)
@@ -272,14 +352,21 @@ const featuredDestinationsText = {
   ar: { kicker: 'وجهات مميزة', title: 'اكتشف أشهر وجهات SafarSIM', text: 'صفحات مفصلة تساعدك على اختيار باقتك والاستعداد لرحلتك.', explore: 'اكتشف الباقات' },
   fr: { kicker: 'Destinations à la une', title: 'Découvrez nos destinations populaires', text: 'Des guides détaillés pour choisir votre forfait et préparer votre voyage.', explore: 'Découvrir les forfaits' },
   en: { kicker: 'Featured destinations', title: 'Explore our popular destinations', text: 'Detailed guides to help you choose a plan and prepare for your trip.', explore: 'Explore plans' },
+  nl: {
+  kicker: "Uitgelichte bestemmingen",
+  title: "Ontdek onze populaire bestemmingen",
+  text: "Uitgebreide gidsen om je te helpen een bundel te kiezen en je reis voor te bereiden.",
+  explore: "Ontdek bundels"
+},
 }
 const featuredDestinationsCopy = computed(() => featuredDestinationsText[locale.value] || featuredDestinationsText.en)
 const featuredLandingPages = computed(() => {
-  const language = ['en', 'fr', 'ar'].includes(locale.value) ? locale.value : 'en'
+  const language = ['en', 'fr', 'ar', 'nl'].includes(locale.value) ? locale.value : 'en'
   const names = {
     ar: ['أوروبا', 'تركيا', 'إسبانيا', 'فرنسا', 'المملكة العربية السعودية', 'مصر'],
     fr: ['Europe', 'Turquie', 'Espagne', 'France', 'Arabie saoudite', 'Égypte'],
     en: ['Europe', 'Turkey', 'Spain', 'France', 'Saudi Arabia', 'Egypt'],
+  nl: ["Europa", "Turkije", "Spanje", "Frankrijk", "Saoedi-Arabië", "Egypte"],
   }[locale.value] || ['Europe', 'Turkey', 'Spain', 'France', 'Saudi Arabia', 'Egypt']
   return [
     { slug: 'europe', routeKey: 'europeDetails', flag: '🇪🇺', image: europeLandingImage },
@@ -294,16 +381,26 @@ const stepsSubtitle = computed(() => ({
   ar: 'من اختيار باقتك إلى الاتصال بالإنترنت، كل شيء يتم بسرعة وسهولة.',
   fr: 'Du choix de votre forfait à la connexion, tout se fait rapidement et simplement.',
   en: 'From choosing your plan to getting online, everything is quick and simple.',
+  nl: "Van je bundel kiezen tot online gaan: alles gaat snel en eenvoudig.",
 }[locale.value] || 'From choosing your plan to getting online, everything is quick and simple.'))
 const planKicker = computed(() => ({
   ar: 'باقتك في خطوات بسيطة',
   fr: 'Votre forfait en quelques étapes simples',
   en: 'Your plan in a few simple steps',
+  nl: "Je bundel in een paar eenvoudige stappen",
 }[locale.value] || 'Your plan in a few simple steps'))
 const catalogCopy = {
   ar: { popular: 'الوجهات الأكثر طلباً', results: 'النتائج', regions: 'الباقات الإقليمية', countries: 'الدول', countryCount: 'دولة', includedCountries: 'الدول المشمولة' },
   fr: { popular: 'Destinations populaires', results: 'Résultats', regions: 'Forfaits régionaux', countries: 'Pays', countryCount: 'pays', includedCountries: 'Pays inclus' },
   en: { popular: 'Popular destinations', results: 'Results', regions: 'Regional plans', countries: 'Countries', countryCount: 'countries', includedCountries: 'Included countries' },
+  nl: {
+  popular: "Populaire bestemmingen",
+  results: "Resultaten",
+  regions: "Regionale bundels",
+  countries: "Landen",
+  countryCount: "landen",
+  includedCountries: "Inbegrepen landen"
+},
 }
 const cc = computed(() => catalogCopy[locale.value] || catalogCopy.en)
 
@@ -327,7 +424,7 @@ const filteredDestinations = computed(() => {
   }
 
   const matchesQuery = item => {
-    const names = [item.name, item.names?.ar, item.names?.fr, item.names?.en, item.iso]
+    const names = [getLocalizedName(item, locale.value), item.name, item.names?.ar, item.names?.fr, item.names?.en, item.iso]
     return names.some(name => normalize(name).includes(query))
   }
   const matchingCountries = destinations.filter(matchesQuery)
@@ -402,7 +499,8 @@ const faqCopy = {
     ['Can I keep my number and WhatsApp?','Yes. Your primary SIM, phone number and WhatsApp remain unchanged. SafarSIM is used for mobile data.'],
     ['How do I check phone compatibility?','Use our compatibility checker and select your device brand and model. Your phone must also be carrier-unlocked.'],
     ['Can I share my connection?','Most plans support personal hotspot use, depending on the device and local network.']
-  ]
+  ],
+  nl: [["Wat is een eSIM?", "Een eSIM is een digitale simkaart die in je telefoon is ingebouwd. Je installeert deze eenvoudig door een QR-code te scannen."], ["Wanneer moet ik mijn bundel activeren?", "Installeer de eSIM vóór je reis en schakel data in bij aankomst. De meeste bundels beginnen bij de eerste verbinding met een lokaal netwerk."], ["Kan ik mijn nummer en WhatsApp behouden?", "Ja. Je hoofdsimkaart, telefoonnummer en WhatsApp blijven ongewijzigd. SafarSIM wordt gebruikt voor mobiele data."], ["Hoe controleer ik of mijn telefoon compatibel is?", "Gebruik onze compatibiliteitscontrole en selecteer het merk en model van je toestel. Je telefoon moet ook simlockvrij zijn."], ["Kan ik mijn verbinding delen?", "De meeste bundels ondersteunen een persoonlijke hotspot, afhankelijk van het toestel en het lokale netwerk."]]
 }
 const faqs = computed(() => (faqCopy[locale.value] || faqCopy.fr).map(([question, answer]) => ({ question, answer })))
 
@@ -441,8 +539,7 @@ function flagUrl(destination) {
 }
 
 function destinationName(destination) {
-  if (destination?.slug === 'europe') return locale.value === 'ar' ? 'أوروبا' : 'Europe'
-  return destination?.names?.[locale.value] || destination?.name || ''
+  return getLocalizedName(destination, locale.value)
 }
 
 function dayLabel(days) {
@@ -451,7 +548,7 @@ function dayLabel(days) {
 }
 
 function formatPrice(price) {
-  const numberLocale = locale.value === 'ar' ? 'ar-MA' : locale.value === 'en' ? 'en-US' : 'fr-MA'
+  const numberLocale = locale.value === 'ar' ? 'ar-MA' : locale.value === 'nl' ? 'nl-NL' : locale.value === 'en' ? 'en-US' : 'fr-MA'
   return new Intl.NumberFormat(numberLocale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(priceFromMad(price))
 }
 

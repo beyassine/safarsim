@@ -8,7 +8,7 @@ import Home from "@/pages/Home.vue"
 import i18n, { applyLanguage, getDefaultLanguage, getPreferredLanguage } from "@/i18n"
 import regionCatalog from "@/data/regions.json"
 
-export const SUPPORTED_LOCALES = ["fr", "en", "ar"]
+export const SUPPORTED_LOCALES = ["fr", "en", "ar", "nl"]
 const PREFIXED_LOCALES = SUPPORTED_LOCALES.filter((locale) => locale !== "en")
 const LOCALE_PATTERN = PREFIXED_LOCALES.join("|")
 const REGION_SLUG_PATTERN = regionCatalog
@@ -20,149 +20,169 @@ const REGION_SLUG_PATTERN = regionCatalog
 export const LOCALIZED_ROUTE_PATHS = {
   PaymentSuccess: {
     fr: "/payment-success",
-    en: "/payment-success",
+    en: "/payment-success", nl: "/payment-success",
     ar: "/payment-success",
   },
   compatibility: {
     fr: "/guides/compatibility",
-    en: "/guides/compatibility",
+    en: "/guides/compatibility", nl: "/guides/compatibility",
     ar: "/guides/compatibility",
   },
-  europeDetails: { fr: "/esim/europe", en: "/esim/europe", ar: "/esim/europe" },
-  moroccoDetails: { fr: "/esim/morocco", en: "/esim/morocco", ar: "/esim/morocco" },
-  turkeyDetails: { fr: "/esim/turkiye", en: "/esim/turkiye", ar: "/esim/turkiye" },
-  spainDetails: { fr: "/esim/spain", en: "/esim/spain", ar: "/esim/spain" },
-  franceDetails: { fr: "/esim/france", en: "/esim/france", ar: "/esim/france" },
-  saudiArabiaDetails: { fr: "/esim/saudi-arabia", en: "/esim/saudi-arabia", ar: "/esim/saudi-arabia" },
-  egyptDetails: { fr: "/esim/egypt", en: "/esim/egypt", ar: "/esim/egypt" },
-  unitedArabEmiratesDetails: { fr: "/esim/united-arab-emirates", en: "/esim/united-arab-emirates", ar: "/esim/united-arab-emirates" },
-  help: { fr: "/help", en: "/help", ar: "/help" },
-  pricing: { fr: "/pricing", en: "/pricing", ar: "/pricing" },
+  europeDetails: { fr: "/esim/europe", en: "/esim/europe", nl: "/esim/europe", ar: "/esim/europe" },
+  moroccoDetails: { fr: "/esim/morocco", en: "/esim/morocco", nl: "/esim/morocco", ar: "/esim/morocco" },
+  turkeyDetails: { fr: "/esim/turkiye", en: "/esim/turkiye", nl: "/esim/turkiye", ar: "/esim/turkiye" },
+  spainDetails: { fr: "/esim/spain", en: "/esim/spain", nl: "/esim/spain", ar: "/esim/spain" },
+  franceDetails: { fr: "/esim/france", en: "/esim/france", nl: "/esim/france", ar: "/esim/france" },
+  saudiArabiaDetails: { fr: "/esim/saudi-arabia", en: "/esim/saudi-arabia", nl: "/esim/saudi-arabia", ar: "/esim/saudi-arabia" },
+  egyptDetails: { fr: "/esim/egypt", en: "/esim/egypt", nl: "/esim/egypt", ar: "/esim/egypt" },
+  unitedArabEmiratesDetails: { fr: "/esim/united-arab-emirates", en: "/esim/united-arab-emirates", nl: "/esim/united-arab-emirates", ar: "/esim/united-arab-emirates" },
+  help: { fr: "/help", en: "/help", nl: "/help", ar: "/help" },
+  pricing: { fr: "/pricing", en: "/pricing", nl: "/pricing", ar: "/pricing" },
   privacyPolicy: {
     fr: "/privacy-policy",
-    en: "/privacy-policy",
+    en: "/privacy-policy", nl: "/privacy-policy",
     ar: "/privacy-policy",
   },
   refundPolicy: {
     fr: "/refund-policy",
-    en: "/refund-policy",
+    en: "/refund-policy", nl: "/refund-policy",
     ar: "/refund-policy",
   },
   termsOfService: {
     fr: "/terms-of-service",
-    en: "/terms-of-service",
+    en: "/terms-of-service", nl: "/terms-of-service",
     ar: "/terms-of-service",
   },
   digitalDeliveryPolicy: {
     fr: "/digital-delivery-policy",
-    en: "/digital-delivery-policy",
+    en: "/digital-delivery-policy", nl: "/digital-delivery-policy",
     ar: "/digital-delivery-policy",
   },
-  contact: { fr: "/contact", en: "/contact", ar: "/contact" },
-  about: { fr: "/about", en: "/about", ar: "/about" },
-  iphoneEsimGuide: { fr: "/guides/install-esim-iphone", en: "/guides/install-esim-iphone", ar: "/guides/install-esim-iphone" },
-  androidEsimGuide: { fr: "/guides/install-esim-android", en: "/guides/install-esim-android", ar: "/guides/install-esim-android" },
+  contact: { fr: "/contact", en: "/contact", nl: "/contact", ar: "/contact" },
+  about: { fr: "/about", en: "/about", nl: "/about", ar: "/about" },
+  iphoneEsimGuide: { fr: "/guides/install-esim-iphone", en: "/guides/install-esim-iphone", nl: "/guides/install-esim-iphone", ar: "/guides/install-esim-iphone" },
+  androidEsimGuide: { fr: "/guides/install-esim-android", en: "/guides/install-esim-android", nl: "/guides/install-esim-android", ar: "/guides/install-esim-android" },
 }
 
 const LOCALIZED_COMPONENTS = {
   europeDetails: {
     fr: () => import("@/pages/fr/esim/Europe.vue"),
     en: () => import("@/pages/en/esim/Europe.vue"),
+    nl: () => import("@/pages/dutch/esim/Europe.vue"),
     ar: () => import("@/pages/ar/esim/Europe.vue"),
   },
   moroccoDetails: {
     fr: () => import("@/pages/fr/esim/Morocco.vue"),
     en: () => import("@/pages/en/esim/Morocco.vue"),
+    nl: () => import("@/pages/dutch/esim/Morocco.vue"),
     ar: () => import("@/pages/ar/esim/Morocco.vue"),
   },
   turkeyDetails: {
     fr: () => import("@/pages/fr/esim/Turkey.vue"),
     en: () => import("@/pages/en/esim/Turkey.vue"),
+    nl: () => import("@/pages/dutch/esim/Turkey.vue"),
     ar: () => import("@/pages/ar/esim/Turkey.vue"),
   },
   spainDetails: {
     fr: () => import("@/pages/fr/esim/Spain.vue"),
     en: () => import("@/pages/en/esim/Spain.vue"),
+    nl: () => import("@/pages/dutch/esim/Spain.vue"),
     ar: () => import("@/pages/ar/esim/Spain.vue"),
   },
   franceDetails: {
     fr: () => import("@/pages/fr/esim/France.vue"),
     en: () => import("@/pages/en/esim/France.vue"),
+    nl: () => import("@/pages/dutch/esim/France.vue"),
     ar: () => import("@/pages/ar/esim/France.vue"),
   },
   saudiArabiaDetails: {
     fr: () => import("@/pages/fr/esim/SaudiArabia.vue"),
     en: () => import("@/pages/en/esim/SaudiArabia.vue"),
+    nl: () => import("@/pages/dutch/esim/SaudiArabia.vue"),
     ar: () => import("@/pages/ar/esim/SaudiArabia.vue"),
   },
   egyptDetails: {
     fr: () => import("@/pages/fr/esim/Egypt.vue"),
     en: () => import("@/pages/en/esim/Egypt.vue"),
+    nl: () => import("@/pages/dutch/esim/Egypt.vue"),
     ar: () => import("@/pages/ar/esim/Egypt.vue"),
   },
   unitedArabEmiratesDetails: {
     fr: () => import("@/pages/fr/esim/UnitedArabEmirates.vue"),
     en: () => import("@/pages/en/esim/UnitedArabEmirates.vue"),
+    nl: () => import("@/pages/dutch/esim/UnitedArabEmirates.vue"),
     ar: () => import("@/pages/ar/esim/UnitedArabEmirates.vue"),
   },
   PaymentSuccess: {
     fr: () => import("@/pages/fr/PaymentSuccess.vue"),
     en: () => import("@/pages/en/PaymentSuccess.vue"),
+    nl: () => import("@/pages/dutch/PaymentSuccess.vue"),
     ar: () => import("@/pages/ar/PaymentSuccess.vue"),
   },
   compatibility: {
     fr: () => import("@/pages/fr/guides/Compatibility.vue"),
     en: () => import("@/pages/en/guides/Compatibility.vue"),
+    nl: () => import("@/pages/dutch/guides/Compatibility.vue"),
     ar: () => import("@/pages/ar/guides/Compatibility.vue"),
   },
   help: {
     fr: () => import("@/pages/fr/Help.vue"),
     en: () => import("@/pages/en/Help.vue"),
+    nl: () => import("@/pages/dutch/Help.vue"),
     ar: () => import("@/pages/ar/Help.vue"),
   },
   pricing: {
     fr: () => import("@/pages/fr/Pricing.vue"),
     en: () => import("@/pages/en/Pricing.vue"),
+    nl: () => import("@/pages/dutch/Pricing.vue"),
     ar: () => import("@/pages/ar/Pricing.vue"),
   },
   privacyPolicy: {
     fr: () => import("@/pages/fr/PrivacyPolicy.vue"),
     en: () => import("@/pages/en/PrivacyPolicy.vue"),
+    nl: () => import("@/pages/dutch/PrivacyPolicy.vue"),
     ar: () => import("@/pages/ar/PrivacyPolicy.vue"),
   },
   refundPolicy: {
     fr: () => import("@/pages/fr/RefundPolicy.vue"),
     en: () => import("@/pages/en/RefundPolicy.vue"),
+    nl: () => import("@/pages/dutch/RefundPolicy.vue"),
     ar: () => import("@/pages/ar/RefundPolicy.vue"),
   },
   termsOfService: {
     fr: () => import("@/pages/fr/TermsOfService.vue"),
     en: () => import("@/pages/en/TermsOfService.vue"),
+    nl: () => import("@/pages/dutch/TermsOfService.vue"),
     ar: () => import("@/pages/ar/TermsOfService.vue"),
   },
   digitalDeliveryPolicy: {
     fr: () => import("@/pages/fr/DigitalDeliveryPolicy.vue"),
     en: () => import("@/pages/en/DigitalDeliveryPolicy.vue"),
+    nl: () => import("@/pages/dutch/DigitalDeliveryPolicy.vue"),
     ar: () => import("@/pages/ar/DigitalDeliveryPolicy.vue"),
   },
   contact: {
     fr: () => import("@/pages/fr/Contact.vue"),
     en: () => import("@/pages/en/Contact.vue"),
+    nl: () => import("@/pages/dutch/Contact.vue"),
     ar: () => import("@/pages/ar/Contact.vue"),
   },
   about: {
     fr: () => import("@/pages/fr/About.vue"),
     en: () => import("@/pages/en/About.vue"),
+    nl: () => import("@/pages/dutch/About.vue"),
     ar: () => import("@/pages/ar/About.vue"),
   },
   iphoneEsimGuide: {
     fr: () => import("@/pages/fr/guides/IphoneInstallation.vue"),
     en: () => import("@/pages/en/guides/IphoneInstallation.vue"),
+    nl: () => import("@/pages/dutch/guides/IphoneInstallation.vue"),
     ar: () => import("@/pages/ar/guides/IphoneInstallation.vue"),
   },
   androidEsimGuide: {
     fr: () => import("@/pages/fr/guides/AndroidInstallation.vue"),
     en: () => import("@/pages/en/guides/AndroidInstallation.vue"),
+    nl: () => import("@/pages/dutch/guides/AndroidInstallation.vue"),
     ar: () => import("@/pages/ar/guides/AndroidInstallation.vue"),
   },
 }
@@ -363,7 +383,7 @@ export function localePath(route, lang) {
   const suffixIndex = fullPath.search(/[?#]/)
   const path = suffixIndex === -1 ? fullPath : fullPath.slice(0, suffixIndex)
   const suffix = suffixIndex === -1 ? "" : fullPath.slice(suffixIndex)
-  const unprefixedPath = path.replace(/^\/(fr|en|ar)(?=\/|$)/, "") || "/"
+  const unprefixedPath = path.replace(/^\/(fr|en|ar|nl)(?=\/|$)/, "") || "/"
   const routeKey = route.meta?.routeKey || Object.entries(LOCALIZED_ROUTE_PATHS)
     .find(([, paths]) => Object.values(paths).includes(unprefixedPath))?.[0] ||
     pageRoutes.find((candidate) => candidate.path === unprefixedPath)?.name
@@ -404,7 +424,7 @@ router.beforeEach((to, from) => {
   }
 
   // Shared components may still use canonical, unprefixed paths. When the
-  // visitor is browsing French or Arabic, keep that locale for every internal
+  // visitor is browsing French, Arabic or Dutch, keep that locale for every internal
   // navigation unless this navigation came from the language selector itself.
   if (!requestedLanguage && from.name && fromLanguage !== "en" &&
       !SUPPORTED_LOCALES.includes(firstSegment)) {

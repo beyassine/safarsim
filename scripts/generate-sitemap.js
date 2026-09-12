@@ -8,7 +8,7 @@ const siteUrl = String(process.env.SITE_URL || process.env.VUE_APP_SITE_URL || "
   .trim()
   .replace(/\/$/, "")
 
-const locales = ["en", "fr", "ar"]
+const locales = ["en", "fr", "ar", "nl"]
 const destinations = require(path.join(projectRoot, "src/data/destinations.json"))
 const regions = require(path.join(projectRoot, "src/data/regions.json"))
 

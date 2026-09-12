@@ -1,0 +1,560 @@
+{
+  "common": {
+    "home": "Home",
+    "destinations": "Bestemmingen",
+    "esims": "eSIMs",
+    "viewDestinations": "Bekijk bestemmingen",
+    "chooseDestination": "Kies mijn bestemming",
+    "chooseDestinationShort": "Kies bestemming",
+    "from": "Vanaf",
+    "models": "model(len)",
+    "contactUs": "Neem contact op",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "website": "Website"
+  },
+  "hero": {
+    "title": "Reis overal ter wereld met internet",
+    "subtitle": "Installeer je SAFAR SIM eSIM en geniet van betrouwbaar internet, waar je ook bent",
+    "activation": "Activering in 2 minuten",
+    "noPhysicalSim": "Geen fysieke simkaart",
+    "destinationsCount": "Meer dan 160 bestemmingen"
+  },
+  "search": {
+    "placeholder": "Zoek een bestemming",
+    "destinationPlaceholder": "Waar ga je naartoe?",
+    "popularLabel": "Populaire bestemmingen",
+    "resultsLabel": "Resultaten",
+    "noResults": "Geen bestemming gevonden",
+    "clear": "Zoekopdracht wissen",
+    "destination": "Bestemming"
+  },
+  "nav": {
+    "destinations": "Bestemmingen",
+    "compatibility": "eSIM-compatibiliteit",
+    "pricing": "Prijzen",
+    "help": "Hulp"
+  },
+  "home": {
+    "popular": {
+      "title": "Populaire bestemmingen",
+      "subtitle": "Kies uit 160 bestemmingen en ontdek flexibele bundels voor jouw reis."
+    },
+    "steps": {
+      "title": "Overal internet in slechts 3 stappen",
+      "step1": {
+        "strong": "Kies je bestemming",
+        "text": "en het aantal dagen voor je eSIM-bundel."
+      },
+      "step2": {
+        "strong": "Installeer je eSIM",
+        "text": "eenvoudig met de QR-code die je per e-mail ontvangt."
+      },
+      "step3": {
+        "strong": "Activeer je verbinding",
+        "text": "bij aankomst en geniet direct van internet."
+      }
+    },
+    "apps": {
+      "title": "Blijf je favoriete apps gebruiken",
+      "text": "Vind je accommodatie, ontdek de leukste plekken en bezoek bezienswaardigheden terwijl je met je eSIM contact houdt met je dierbaren."
+    },
+    "marketing": {
+      "title": "Waarom SAFAR SIM?",
+      "text1": "Met een SAFAR SIM eSIM heb je direct bij aankomst mobiel internet, zonder je simkaart te vervangen of roamingkosten te betalen.",
+      "text2": "Installeer je eSIM in enkele seconden en maak verbinding op meer dan 160 bestemmingen. Behoud je WhatsApp-nummer en internet als een local."
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "subtitle": "Alles wat je moet weten over je SAFAR eSIM",
+      "items": {
+        "whatIsEsim": {
+          "question": "Wat is een eSIM?",
+          "answer": "Een eSIM is een digitale simkaart waarmee je toegang krijgt tot internet zonder fysieke simkaart."
+        },
+        "roaming": {
+          "question": "Moet ik dataroaming inschakelen?",
+          "answer": "Ja, roaming moet ingeschakeld zijn om je eSIM in het buitenland te gebruiken."
+        },
+        "speed": {
+          "question": "Welke verbindingssnelheid kan ik verwachten?",
+          "answer": "De snelheid hangt af van het lokale netwerk, meestal 4G of 5G afhankelijk van de bestemming."
+        },
+        "whatsapp": {
+          "question": "Kan ik mijn WhatsApp behouden?",
+          "answer": "Ja, je WhatsApp-nummer blijft hetzelfde met een eSIM."
+        },
+        "receive": {
+          "question": "Wanneer ontvang ik mijn eSIM?",
+          "answer": "Je eSIM wordt na aankoop direct per e-mail verstuurd."
+        },
+        "phones": {
+          "question": "Welke telefoons zijn compatibel?",
+          "answer": "De meeste recente smartphones ondersteunen eSIM, waaronder iPhone, Samsung en andere merken."
+        },
+        "calls": {
+          "question": "Kan ik bellen of sms’en?",
+          "answer": "Onze eSIMs zijn voornamelijk bedoeld voor mobiele data."
+        },
+        "why": {
+          "question": "Waarom kiezen voor een SAFAR eSIM?",
+          "answer": "We bieden een betrouwbare verbinding op meer dan 160 bestemmingen met snelle activering."
+        },
+        "dualSim": {
+          "question": "Kan ik een simkaart en eSIM tegelijk gebruiken?",
+          "answer": "Ja, op de meeste telefoons kun je beide tegelijk gebruiken."
+        },
+        "delete": {
+          "question": "Hoe verwijder ik een eSIM?",
+          "answer": "Je kunt deze rechtstreeks verwijderen via de instellingen van je telefoon."
+        },
+        "reuse": {
+          "question": "Hoe vaak kan ik mijn eSIM gebruiken?",
+          "answer": "Elke eSIM is geldig voor eenmalig gebruik, afhankelijk van de gekozen bundel."
+        },
+        "usage": {
+          "question": "Hoe controleer ik mijn verbruik?",
+          "answer": "Je kunt je verbruik bijhouden in de instellingen van je toestel."
+        },
+        "setup": {
+          "question": "Wanneer moet ik mijn eSIM instellen?",
+          "answer": "We raden aan om deze voor vertrek te installeren."
+        },
+        "install": {
+          "question": "Hoe installeer ik mijn eSIM?",
+          "answer": "Scan de QR-code uit de e-mail en volg de eenvoudige instructies."
+        }
+      }
+    }
+  },
+  "compatibility": {
+    "breadcrumb": "Compatibele toestellen",
+    "title": "Controleer de compatibiliteit",
+    "intro": "Om een Safar Sim eSIM te gebruiken, moet je toestel aan deze voorwaarden voldoen:",
+    "conditionEsim": "Het toestel ondersteunt eSIM.",
+    "conditionUnlocked": "Het toestel heeft geen simlock van een provider of netwerk.",
+    "conditionRoot": "Het toestel is niet gejailbreakt op iOS of geroot op Android.",
+    "description": "Bekijk onze lijst om te controleren of je toestel eSIM ondersteunt. Sommige regionale modellen ondersteunen mogelijk geen eSIM.",
+    "ctaTitle": "Heb je jouw compatibele toestel gevonden?",
+    "ctaText": "Kies nu je bestemming en geniet direct van internet met eSIM",
+    "searchPlaceholder": "Zoek je toestel",
+    "noDevice": "Geen toestel gevonden",
+    "notFoundTitle": "Staat jouw toestel er niet bij?",
+    "notFoundText": "Onze lijst wordt regelmatig bijgewerkt, maar is niet volledig. Controleer bij de fabrikant of je toestel eSIM ondersteunt."
+  },
+  "destinationsPage": {
+    "title": "Alle bestemmingen",
+    "regionalPlans": "Regionale bundels",
+    "chooseByCountry": "Kies per land",
+    "days": "dagen",
+    "availableNetwork": "Beschikbaar netwerk",
+    "planStarts": "De bundel start zodra je verbinding maakt met een ondersteund netwerk",
+    "checkCompatibility": "Controleer de compatibiliteit",
+    "choosePlan": "Kies je bundel",
+    "countryNotFound": "Land niet gevonden",
+    "regionNotFound": "Regio niet gevonden",
+    "coveredCountries": "gedekte landen",
+    "regionalCoverage": "Regionale dekking",
+    "regionWorks": "Deze eSIM werkt in de landen die tot deze regio behoren.",
+    "countriesIncluded": "Landen in deze regio",
+    "addedToCart": "Bundel toegevoegd aan winkelwagen"
+  },
+  "cart": {
+    "emptyTitle": "Je winkelwagen is leeg",
+    "emptyText": "Voeg een eSIM-bundel toe om verder te gaan.",
+    "summary": "Besteloverzicht",
+    "confirmOrder": "Bevestig je bestelling",
+    "subtotal": "Subtotaal",
+    "cartSubtotal": "TOTAAL",
+    "couponCode": "Kortingscode",
+    "applyCoupon": "Toepassen",
+    "couponApplied": "Kortingscode toegepast.",
+    "invalidCoupon": "Deze kortingscode is niet geldig.",
+    "discount": "Korting",
+    "deliveryFee": "Levering",
+    "totalToPay": "Te betalen bedrag",
+    "orderTotal": "Besteltotaal",
+    "total": "Totaal",
+    "payment": "Betaling",
+    "paymentAndDelivery": "Betaling en levering",
+    "buyButton": "Eenvoudig en veilig betalen",
+    "checkoutContactError": "Vul je volledige naam en twee geldige, overeenkomende e-mailadressen in.",
+    "checkoutTermsError": "Accepteer de voorwaarden voordat je verdergaat naar de betaling.",
+    "checkoutError": "We konden de veilige betaling niet starten. Probeer het opnieuw.",
+    "phoneCompatibility": "Telefooncompatibiliteit",
+    "checkPhoneForEsim": "Controleer de compatibiliteit van je telefoon voor eSIM {number}.",
+    "phoneModel": "Telefoonmodel",
+    "phoneSubmodel": "Submodel",
+    "noModel": "Geen model gevonden",
+    "contactInfo": "Contactgegevens",
+    "emailNotice": "De QR-codes voor gekochte eSIMs worden per e-mail verstuurd. Geef een geldig e-mailadres op waartoe je toegang hebt.",
+    "whatsappNotice": "De QR-code van je eSIM wordt naar het opgegeven WhatsApp-nummer verstuurd.",
+    "deliveryMethod": "Leveringswijze",
+    "digitalQr": "Digitale QR-code",
+    "digitalQrDescription": "Betaal via bankoverschrijving en ontvang je QR-code via WhatsApp of e-mail.",
+    "digitalChannel": "Leveringskanaal",
+    "qrDeliveryChannel": "Ontvang de QR-code via",
+    "bankTransfer": "Bankoverschrijving",
+    "bankTransferNotice": "Voor een digitale QR-code betaal je via bankoverschrijving. Je ontvangt de bankgegevens via WhatsApp.",
+    "paperDelivery": "Afgedrukte QR-code",
+    "paperDeliveryDescription": "Ontvang een afgedrukte versie en betaal bij levering (+50 DH).",
+    "paperDeliveryFee": "Levering op papier",
+    "cashOnDeliveryNotice": "Er wordt 50 DH in rekening gebracht. Je betaalt de bestelling bij levering.",
+    "cashOnDelivery": "Betalen bij levering",
+    "paymentMethod": "Betaalmethode",
+    "paperContactNotice": "Vul je contactgegevens in. We bevestigen het afleveradres met je via WhatsApp.",
+    "fullName": "Volledige naam",
+    "deliveryAddress": "Afleveradres",
+    "city": "Stad",
+    "enterDeliveryAddress": "Vul je naam, afleveradres en woonplaats in.",
+    "enterFullName": "Vul je volledige naam in.",
+    "confirmEmail": "Bevestig e-mailadres",
+    "compatibilityTitle": "Controleer je telefoon vóór aankoop",
+    "compatibilityDescription": "Je toestel moet eSIM ondersteunen om je bundel te kunnen installeren en activeren.",
+    "compatibilityConfirmed": "Ik bevestig dat mijn telefoon eSIM ondersteunt.",
+    "checkCompatibilityLink": "Controleer de compatibiliteit",
+    "checkoutCompatibilityError": "Bevestig dat je telefoon eSIM ondersteunt voordat je verdergaat.",
+    "phone": "Telefoon",
+    "phoneHelp": "Indien nodig nemen we contact met je op over je bestelling.",
+    "compatiblePhone": "Je telefoon ondersteunt eSIM.",
+    "selectPhone": "Selecteer je telefoonmodel. Je telefoon moet recent genoeg zijn om eSIM te ondersteunen.",
+    "invalidEmail": "Vul een geldig e-mailadres in.",
+    "emailsMismatch": "De e-mailadressen komen niet overeen.",
+    "selectCompatiblePhone": "Selecteer een telefoon die eSIM ondersteunt.",
+    "enterValidEmails": "Vul twee geldige, overeenkomende e-mailadressen in.",
+    "enterPhone": "Vul je telefoonnummer in.",
+    "completeRequired": "Vul de verplichte gegevens in.",
+    "quantity": "Aantal",
+    "unitPrice": "Prijs per stuk",
+    "cartTotal": "Totaal winkelwagen",
+    "notProvided": "Niet opgegeven",
+    "whatsappGreeting": "Hallo,",
+    "whatsappIntro": "Ik wil graag de volgende eSIMs bestellen:",
+    "whatsappCompatiblePhone": "Compatibele telefoon",
+    "whatsappThanks": "Bedankt.",
+    "emailLabel": "E-mail",
+    "acceptPoliciesPrefix": "Ik ga akkoord met de",
+    "acceptPoliciesAnd": "en het",
+    "acceptPoliciesRequired": "Accepteer de gebruiksvoorwaarden, het terugbetalingsbeleid, het beleid voor digitale levering en het privacybeleid.",
+    "policiesAccepted": "Voorwaarden en beleid geaccepteerd: Ja",
+    "paymentSecurityNotice": "Kaartgegevens worden veilig verstuurd naar een betalingsprovider die aan de PCI-normen voldoet. SafarSIM slaat geen volledige kaartnummers op.",
+    "acceptedCards": "Geaccepteerde kaarten:"
+  },
+  "footer": {
+    "company": "Bedrijf",
+    "about": "Over ons",
+    "pricing": "Prijzen",
+    "contact": "Contact",
+    "destinations": "Bestemmingen",
+    "esimEurope": "eSIM Europa",
+    "esimSaudiArabia": "eSIM Saoedi-Arabië",
+    "esimTurkey": "eSIM Turkije",
+    "allDestinations": "Alle bestemmingen",
+    "legal": "Juridisch",
+    "terms": "Gebruiksvoorwaarden",
+    "privacy": "Privacy",
+    "refund": "Terugbetalingsbeleid",
+    "digitalDelivery": "Beleid voor digitale levering",
+    "support": "Ondersteuning",
+    "help": "Hulp",
+    "compatibility": "eSIM-compatibiliteit",
+    "bottom": "Met liefde gemaakt voor reizigers",
+    "copyright": "SAFAR NETWORKS LLC © 2026",
+    "companyInfo": "Bedrijf",
+    "customerSupport": "Klantenservice",
+    "supportHours": "Maandag–vrijdag, 09.00–17.00 uur Eastern Time",
+    "responseTime": "Gebruikelijke reactietijd: 2 werkdagen"
+  },
+  "about": {
+    "title": "Wat is SafarSim?",
+    "subtitle": "SafarSim verkoopt eSIMs voor reizen waarmee je op veel bestemmingen mobiel internet kunt gebruiken zonder fysieke simkaart.",
+    "features": {
+      "internet": {
+        "title": "Mobiel internet",
+        "text": "Gebruik internet op je bestemming met een databundel die voor een bepaalde periode geldig is."
+      },
+      "delivery": {
+        "title": "Snelle levering",
+        "text": "Na betaling ontvang je de eSIM per e-mail met installatie-instructies."
+      },
+      "travelers": {
+        "title": "Voor reizigers",
+        "text": "Een eenvoudige oplossing om roamingkosten te vermijden en in het buitenland verbonden te blijven."
+      }
+    },
+    "whatWeSell": {
+      "title": "Wat we verkopen",
+      "text": "SafarSim biedt eSIM-bundels voor reizen met mobiele data, een geldigheidsduur en dekking voor de gekozen bestemming."
+    },
+    "included": {
+      "title": "Wat is inbegrepen",
+      "items": [
+        "Een digitale eSIM",
+        "Een QR-code of installatie-instructies",
+        "Een databundel volgens het gekozen aanbod",
+        "Een vastgestelde geldigheidsduur op basis van de gekochte bundel"
+      ]
+    },
+    "howItWorks": {
+      "title": "Zo werkt het",
+      "items": [
+        "Kies je bestemming en bundel",
+        "Rond je aankoop online af",
+        "Ontvang je eSIM per e-mail",
+        "Installeer deze op je compatibele toestel",
+        "Activeer deze tijdens je reis"
+      ]
+    },
+    "important": {
+      "title": "Belangrijk",
+      "text": "De koper moet vóór aankoop controleren of het toestel eSIM ondersteunt. De kwaliteit van de dienst kan variëren afhankelijk van lokale netwerken en beschikbare dekking."
+    },
+    "cta": "Bekijk prijzen"
+  },
+  "allDestinations": {
+    "filters": {
+      "popular": "Populair",
+      "regional": "Regionale bundels",
+      "countries": "Landen",
+      "cities": "Steden",
+      "all": "Alle bestemmingen"
+    }
+  },
+  "paymentSuccess": {
+    "title": "Betaling bevestigd",
+    "text": "Bedankt voor je bestelling. We verwerken je eSIM zo snel mogelijk.",
+    "orderReference": "Bestelnummer",
+    "viewDestinations": "Bekijk bestemmingen",
+    "contact": "Neem contact op"
+  },
+  "privacy": {
+    "title": "Privacybeleid",
+    "sections": [
+      {
+        "title": "1. Verzamelde gegevens",
+        "text": "We verzamelen je naam, e-mailadres en de gegevens die nodig zijn voor de bestelling."
+      },
+      {
+        "title": "2. Gebruik",
+        "text": "De gegevens worden gebruikt om bestellingen te verwerken en ondersteuning te bieden."
+      },
+      {
+        "title": "3. Betaling",
+        "text": "Wanneer kaartbetaling beschikbaar is, worden betaalgegevens veilig verstuurd naar een PCI-conforme provider zoals Stripe. We ontvangen of bewaren geen volledige kaartnummers."
+      },
+      {
+        "title": "4. Delen",
+        "text": "Gegevens worden alleen gedeeld met de noodzakelijke dienstverleners."
+      },
+      {
+        "title": "5. Beveiliging",
+        "text": "We beschermen je gegevens met passende maatregelen."
+      },
+      {
+        "title": "6. Je rechten",
+        "text": "Neem voor verzoeken contact met ons op via support@safarsim.net."
+      }
+    ]
+  },
+  "refund": {
+    "title": "Terugbetalingsbeleid",
+    "sections": [
+      {
+        "title": "1. Digitale producten",
+        "text": "eSIMs zijn digitale producten die direct worden geleverd."
+      },
+      {
+        "title": "2. Garantie",
+        "text": "We bieden een geld-terug-garantie van 14 dagen als de dienst niet werkt."
+      },
+      {
+        "title": "3. Gevallen waarin terugbetaling mogelijk is",
+        "items": [
+          "eSIM niet ontvangen",
+          "eSIM werkt niet"
+        ]
+      },
+      {
+        "title": "4. Geen terugbetaling",
+        "items": [
+          "Niet-compatibel toestel",
+          "Onjuist gebruik",
+          "Verbruikte bundel"
+        ]
+      },
+      {
+        "title": "5. Verzoek",
+        "text": "Stuur je verzoek met de details naar support@safarsim.net."
+      },
+      {
+        "title": "6. Termijn",
+        "text": "Terugbetalingen worden binnen 5 tot 10 werkdagen verwerkt."
+      },
+      {
+        "title": "7. Annulering",
+        "text": "Je kunt annulering aanvragen voordat de eSIM-QR-code is geleverd, geïnstalleerd, geactiveerd of gebruikt. Na levering of activering wordt beoordeeld of annulering mogelijk is op basis van de bovenstaande voorwaarden voor terugbetaling."
+      },
+      {
+        "title": "8. Geschillen en klachten",
+        "text": "Neem contact op met support@safarsim.net voordat je een betalingsgeschil opent, zodat we het probleem kunnen onderzoeken en proberen op te lossen. Dit beperkt geen rechten die je hebt via je kaartuitgever of de toepasselijke wetgeving."
+      },
+      {
+        "title": "9. Retourneren",
+        "text": "Digitale eSIM-producten kunnen niet fysiek worden geretourneerd. Bestellingen met afgedrukte QR-codes kunnen na levering niet worden geretourneerd, maar storingen die aan de voorwaarden voldoen blijven onder dit terugbetalingsbeleid vallen."
+      }
+    ]
+  },
+  "digitalDelivery": {
+    "title": "Beleid voor digitale levering",
+    "updated": "Laatst bijgewerkt: augustus 2026",
+    "sections": [
+      {
+        "title": "1. Digitaal product",
+        "text": "SafarSIM eSIM-bundels zijn digitale producten. Bij digitale levering wordt geen fysieke simkaart verzonden."
+      },
+      {
+        "title": "2. Leveringswijze",
+        "text": "Na betaling en controle van de bestelling worden de eSIM-QR-code en installatie-instructies verstuurd naar het e-mailadres of WhatsApp-nummer dat je bij het afrekenen hebt opgegeven."
+      },
+      {
+        "title": "3. Levertijd",
+        "text": "Digitale levering begint normaal gesproken kort na de betalingsbevestiging. Controle, betalingsverwerking of technische problemen kunnen vertraging veroorzaken."
+      },
+      {
+        "title": "4. Verantwoordelijkheid van de klant",
+        "text": "Je bent verantwoordelijk voor correcte, bereikbare contactgegevens en moet vóór aankoop controleren of je toestel simlockvrij is en eSIM ondersteunt."
+      },
+      {
+        "title": "5. Niet ontvangen levering",
+        "text": "Als je je eSIM niet ontvangt, controleer dan je spammap en neem contact op met support@safarsim.net. We controleren de bestelling en versturen de levering indien nodig opnieuw."
+      },
+      {
+        "title": "6. Activering en retourneren",
+        "text": "Installeer of activeer de eSIM niet als je annulering wilt aanvragen. Ons terugbetalingsbeleid bepaalt of je recht hebt op terugbetaling."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Verkoop- en gebruiksvoorwaarden",
+    "updated": "Laatst bijgewerkt: augustus 2026",
+    "sections": [
+      {
+        "title": "1. Algemene informatie",
+        "paragraphs": [
+          "De website www.safarsim.net en de SafarSIM-dienst worden beheerd door SAFAR NETWORKS LLC, 30 N Gould St, Ste R, Sheridan, WY 82801, Verenigde Staten.",
+          "Voor vragen kun je contact met ons opnemen:"
+        ],
+        "items": [
+          "E-mail: support@safarsim.net"
+        ]
+      },
+      {
+        "title": "2. Beschrijving van de dienst",
+        "paragraphs": [
+          "SafarSim biedt eSIM-bundels voor mobiel internet in het buitenland. Elk aanbod bevat een vastgestelde hoeveelheid data en geldigheidsduur."
+        ]
+      },
+      {
+        "title": "3. Bestelling en betaling",
+        "paragraphs": [
+          "Bestellingen worden online via onze website geplaatst.",
+          "Kaartbetalingen kunnen veilig worden verwerkt door een externe betalingsprovider zoals Stripe. SAFAR NETWORKS LLC blijft de verkoper die verantwoordelijk is voor de transactie, levering, terugbetalingen, klachten en geschillen."
+        ]
+      },
+      {
+        "title": "4. Levering",
+        "paragraphs": [
+          "Na betaling en controle van de bestelling worden de eSIM-QR-code en instructies normaal gesproken kort daarna geleverd per e-mail of WhatsApp, zoals beschreven in ons beleid voor digitale levering."
+        ]
+      },
+      {
+        "title": "5. Verantwoordelijkheden",
+        "paragraphs": [
+          "De gebruiker moet vóór aankoop de compatibiliteit van het toestel controleren. SafarSim garandeert geen perfecte dekking in alle gebieden."
+        ]
+      },
+      {
+        "title": "6. Gebruik",
+        "paragraphs": [
+          "De gebruiker gaat ermee akkoord de dienst te gebruiken volgens de wetten van het bezochte land."
+        ]
+      },
+      {
+        "title": "7. Intellectueel eigendom",
+        "paragraphs": [
+          "Alle inhoud van de website is eigendom van SafarSim."
+        ]
+      },
+      {
+        "title": "8. Toepasselijk recht",
+        "paragraphs": [
+          "Op deze voorwaarden is het recht van toepassing dat geldt voor SAFAR NETWORKS LLC, zonder afbreuk te doen aan dwingende consumentenbescherming die op de klant van toepassing is."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Neem contact op",
+    "subtitle": "Ons team helpt je vóór, tijdens en na je aankoop.",
+    "supportTitle": "Klantenservice",
+    "supportText": "Voor vragen over je bestelling, je eSIM of de installatie kun je rechtstreeks contact met ons opnemen:",
+    "phoneWhatsapp": "Telefoon / WhatsApp",
+    "responseTitle": "Reactietijden",
+    "responseText": "We doen ons best om zo snel mogelijk te reageren, meestal binnen 2 werkdagen.",
+    "assistanceTitle": "Ondersteuning",
+    "assistanceText": "Neem contact met ons op voordat je een terugbetaling aanvraagt, zodat we het probleem snel kunnen onderzoeken en oplossen.",
+    "cta": "Schrijf ons"
+  },
+  "pricing": {
+    "title": "Onze eSIM-prijzen",
+    "subtitle": "Eenvoudige, flexibele bundels voor je reizen, met transparante prijzen voor elke bestemming.",
+    "features": [
+      {
+        "icon": "🌍",
+        "title": "190+ bestemmingen",
+        "text": "Blijf wereldwijd verbonden met bundels voor elk land en elke regio."
+      },
+      {
+        "icon": "⚡",
+        "title": "Snelle activering",
+        "text": "Ontvang je eSIM per e-mail en installeer deze in enkele minuten vóór of tijdens je reis."
+      },
+      {
+        "icon": "💸",
+        "title": "Transparante prijzen",
+        "text": "Geen verborgen kosten. De weergegeven prijs is de prijs die je betaalt voor je eSIM-bundel."
+      }
+    ],
+    "howTitle": "Hoe werken onze prijzen?",
+    "howText": "Prijzen variëren afhankelijk van de bestemming, de hoeveelheid data en de looptijd. Bij SafarSim vind je aanbiedingen voor korte verblijven en langere reizen.",
+    "influencesTitle": "Wat bepaalt de prijs",
+    "influences": [
+      "De gekozen bestemming",
+      "Het aantal GB in de bundel",
+      "De geldigheidsduur van de bundel",
+      "Het type aanbod: één land of een regio"
+    ],
+    "includedTitle": "Wat is inbegrepen",
+    "included": [
+      "Een eSIM die klaar is voor installatie",
+      "Een QR-code per e-mail",
+      "4G / 5G-internet afhankelijk van het lokale netwerk",
+      "Je kunt je WhatsApp-nummer behouden"
+    ],
+    "note": "De onderstaande prijzen gelden voor onze beschikbare bundels op enkele populaire bestemmingen.",
+    "popularTitle": "Populaire bestemmingen",
+    "popularText": "Bekijk enkele van onze meest gevraagde bestemmingen met hun eSIM-prijzen.",
+    "from": "Vanaf",
+    "offer": "Bekijk aanbod",
+    "allDestinations": "Bekijk alle bestemmingen",
+    "days": "dagen"
+  },
+  "helpPage": {
+    "badge": "Helpcentrum",
+    "title": "Veelgestelde vragen",
+    "subtitle": "Vind snel antwoorden op de meest gestelde vragen over je SAFAR eSIM.",
+    "ctaTitle": "Geen antwoord gevonden?",
+    "ctaText": "Ons team helpt je vóór, tijdens en na je aankoop.",
+    "cta": "Neem contact op"
+  }
+}

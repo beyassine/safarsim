@@ -3,7 +3,7 @@ export function applyPageMetadata({ title, description, path, image }) {
   const previousTitle = document.title
   const restore = []
   const site = 'https://safarsim.net'
-  const unprefixedPath = path.replace(/^\/(fr|ar)(?=\/)/, '')
+  const unprefixedPath = path.replace(/^\/(fr|ar|nl)(?=\/)/, '')
   function setTag(tag, selector, attributes) {
     let node = document.head.querySelector(selector)
     const previous = node ? [...node.attributes].map(({ name, value }) => [name, value]) : null
@@ -21,10 +21,10 @@ export function applyPageMetadata({ title, description, path, image }) {
   document.title = title
   setTag('meta', 'meta[name="description"]', { name: 'description', content: description })
   setTag('link', 'link[rel="canonical"]', { rel: 'canonical', href: `${site}${path}` })
-  for (const lang of ['en', 'fr', 'ar', 'x-default']) {
+  for (const lang of ['en', 'fr', 'ar', 'nl', 'x-default']) {
     setTag('link', `link[rel="alternate"][hreflang="${lang}"]`, {
       rel: 'alternate', hreflang: lang,
-      href: `${site}${lang === 'fr' || lang === 'ar' ? `/${lang}` : ''}${unprefixedPath}`,
+      href: `${site}${lang === 'fr' || lang === 'ar' || lang === 'nl' ? `/${lang}` : ''}${unprefixedPath}`,
     })
   }
   for (const [property, content] of Object.entries({ 'og:title': title, 'og:description': description, 'og:url': `${site}${path}`, 'og:type': 'website', 'og:image': new URL(image, site).href })) {

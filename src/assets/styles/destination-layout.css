@@ -5,6 +5,11 @@
 .europe-page[dir] .europe-hero-copy h1 { font-size: clamp(20px, 6.2cqw, 42px); }
 .europe-page[dir] .europe-hero-copy h1 em { font-size: clamp(28px, var(--country-title-size, 9cqw), 60px); line-height: 1.15; margin-top: 6px; }
 .europe-page[dir] .europe-hero-copy h1 span, .europe-page[dir] .europe-hero-copy h1 em { white-space: nowrap; overflow-wrap: normal; }
+.europe-page[dir]:lang(nl) .europe-hero-copy h1 em {
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
 /* Keep the hero image and its CTA together. */
 .europe-hero-inner { padding-bottom: 0; }
 .europe-visual { align-self: end; margin-bottom: 0; }

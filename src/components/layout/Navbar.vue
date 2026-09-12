@@ -61,6 +61,7 @@
                             <v-list-item-title>English</v-list-item-title>
                         </v-list-item>
 
+                        <v-list-item @click="setLang('nl')"><v-list-item-title>Nederlands</v-list-item-title></v-list-item>
                         <v-list-item @click="setLang('ar')">
                             <v-list-item-title>العربية</v-list-item-title>
                         </v-list-item>

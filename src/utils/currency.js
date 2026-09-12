@@ -60,7 +60,7 @@ export function priceFromMad(amount) {
 }
 
 export function formatMoney(amount, currency = getPreferredCurrency(), locale = 'en') {
-  const numberLocale = locale === 'ar' ? 'ar-MA' : locale === 'fr' ? 'fr-MA' : 'en-US'
+  const numberLocale = locale === 'ar' ? 'ar-MA' : locale === 'fr' ? 'fr-MA' : locale === 'nl' ? 'nl-NL' : 'en-US'
   const formatter = new Intl.NumberFormat(numberLocale, {
     style: 'currency', currency, minimumFractionDigits: 2, maximumFractionDigits: 2,
   })
@@ -75,7 +75,7 @@ export function formatPriceFromMad(amount, locale = 'en') {
 }
 
 export function formatUsd(amount, locale = 'en') {
-  const numberLocale = locale === 'ar' ? 'ar-MA' : locale === 'fr' ? 'fr-FR' : 'en-US'
+  const numberLocale = locale === 'ar' ? 'ar-MA' : locale === 'fr' ? 'fr-FR' : locale === 'nl' ? 'nl-NL' : 'en-US'
   return new Intl.NumberFormat(numberLocale, {
     style: 'currency',
     currency: USD_CURRENCY,
