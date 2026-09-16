@@ -1,7 +1,7 @@
 {
   "consent": {
     "title": "Your privacy choices",
-    "description": "With your permission, we use Google and Meta advertising cookies to measure our ads and personalize advertising. You can reject non-essential cookies and change your choice at any time in Cookie settings.",
+    "description": "With your permission, we use cookies to measure and personalize ads. Change your choice anytime in Cookie settings.",
     "accept": "Accept all",
     "reject": "Reject non-essential",
     "settings": "Cookie settings",
