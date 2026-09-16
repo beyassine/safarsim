@@ -1,8 +1,7 @@
 const PIXEL_ID = '1114292477590208'
 const SCRIPT_URL = 'https://connect.facebook.net/en_US/fbevents.js'
 
-// Match the site's denied advertising-consent default. No implicit grant or
-// persistence: a consent manager must supply the visitor's actual decision.
+// The shared consent service supplies the visitor's decision; default denied.
 let marketingConsent = false
 let initialized = false
 let loadFailed = false
@@ -74,7 +73,8 @@ export function setMetaMarketingConsent(granted) {
     if (initialized && typeof window !== 'undefined' && typeof window.fbq === 'function') {
       window.fbq('consent', marketingConsent ? 'grant' : 'revoke')
     }
-    return marketingConsent ? trackPageView() : false
+    if (!marketingConsent || !initMetaPixel()) return false
+    return trackPageView()
   } catch {
     return false
   }

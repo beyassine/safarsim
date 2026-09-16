@@ -7,6 +7,7 @@
     </v-main>
 
     <Footer />
+    <ConsentBanner />
 
   </v-app>
 </template>
@@ -14,6 +15,7 @@
 <script>
 import Navbar from "./components/layout/Navbar.vue"
 import Footer from "./components/layout/Footer.vue"
+import ConsentBanner from "./components/layout/ConsentBanner.vue"
 
 export default {
     name: "App",
@@ -25,6 +27,7 @@ export default {
     components: {
         Navbar: Navbar,
         Footer: Footer,
+        ConsentBanner,
     },
 
     data() {

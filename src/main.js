@@ -5,6 +5,7 @@ import i18n , {applyLanguage } from "./i18n"
 import { loadCatalog } from "./services/catalog"
 import { initPostHog, posthog } from "./services/posthog"
 import { installMetaPixelTracking } from "./services/metaPixel"
+import { initConsent } from "./services/consent"
 
 import "vuetify/styles"
 import '@mdi/font/css/materialdesignicons.css'
@@ -40,6 +41,8 @@ const vuetify = createVuetify({
 applyLanguage(i18n.global.locale)
 
 async function bootstrap() {
+  installMetaPixelTracking(router)
+  initConsent()
   await loadCatalog()
   const posthogInitialized = initPostHog()
   const app = createApp(App)
@@ -49,8 +52,6 @@ async function bootstrap() {
       posthog.captureException(error)
     }
   }
-
-  installMetaPixelTracking(router)
 
   app
     .use(i18n)

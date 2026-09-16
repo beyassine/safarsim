@@ -74,6 +74,7 @@
                             <router-link class="text-decoration-none" to="/privacy-policy">
                                 <li>{{ $t("footer.privacy") }}</li>
                             </router-link>
+                            <li><button type="button" class="cookie-settings" @click="openConsentSettings">{{ $t('consent.settings') }}</button></li>
                             <router-link class="text-decoration-none" to="/refund-policy">
                                 <li>{{ $t("footer.refund") }}</li>
                             </router-link>
@@ -131,6 +132,7 @@ import { useDisplay } from "vuetify";
 import footer_bg from "@/assets/images/bg/footer.png";
 
 import logo from "@/assets/logo.png";
+import { openConsentSettings } from "../../services/consent";
 
 export default {
     name: "Header",
@@ -154,6 +156,7 @@ export default {
         },
     },
     methods: {
+        openConsentSettings,
     },
     mounted() { },
 };
@@ -161,6 +164,8 @@ export default {
 </script>
 
 <style scoped>
+.cookie-settings { font: inherit; color: inherit; text-align: start; cursor: pointer; text-decoration: underline; }
+.cookie-settings:focus-visible { outline: 2px solid #7d1948; outline-offset: 4px; }
 .bg-footer {
     background-image: url("@/assets/images/bg/footer.png");
     background-size: cover;

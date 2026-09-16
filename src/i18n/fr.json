@@ -1,4 +1,12 @@
 {
+  "consent": {
+    "title": "Vos choix de confidentialité",
+    "description": "Avec votre accord, nous utilisons les cookies publicitaires de Google et Meta pour mesurer nos publicités et personnaliser les annonces. Vous pouvez refuser les cookies non essentiels et modifier votre choix à tout moment dans les paramètres des cookies.",
+    "accept": "Tout accepter",
+    "reject": "Refuser les cookies non essentiels",
+    "settings": "Paramètres des cookies",
+    "close": "Fermer"
+  },
   "common": {
     "home": "Accueil",
     "destinations": "Destinations",
