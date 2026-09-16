@@ -32,6 +32,7 @@
 import { clearCart, getCart } from '@/utils/cart'
 import { posthog } from '@/services/posthog'
 import { trackVerifiedPurchase } from '@/services/googleAds'
+import { trackPurchase } from '@/services/metaPixel'
 
 export default {
   name: 'PaymentSuccess',
@@ -67,6 +68,7 @@ export default {
         throw new Error(result.error || "Betaling kan niet worden gecontroleerd")
       }
       trackVerifiedPurchase(result)
+      trackPurchase(result)
       this.customerEmail = result.customerEmail || ''
       if (!this.paymentCaptured) {
         const completedCart = getCart()

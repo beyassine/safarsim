@@ -98,7 +98,7 @@ test('all localized success pages wait for a successful verification response', 
     const script = page.split('<script>')[1].split('</script>')[0].replace(/^import .*$/gm,'').replace('export default', 'globalThis.component =')
     for (const scenario of ['missing-session','failed-response','unpaid','verified']) {
       const calls=[]
-      const context=vm.createContext({process:{env:{}},fetch:async()=>({ok:scenario!=='failed-response',json:async()=>({...paid(),paid:scenario==='verified'})}),trackVerifiedPurchase:r=>calls.push(r),posthog:{capture(){}},getCart:()=>[],clearCart(){},console:{error(){}}})
+      const context=vm.createContext({process:{env:{}},fetch:async()=>({ok:scenario!=='failed-response',json:async()=>({...paid(),paid:scenario==='verified'})}),trackVerifiedPurchase:r=>calls.push(r),trackPurchase:()=>false,posthog:{capture(){}},getCart:()=>[],clearCart(){},console:{error(){}}})
       vm.runInContext(script,context)
       await context.component.mounted.call({$route:{query:scenario==='missing-session'?{}:{session_id:'cs_live_verified123'}},paymentCaptured:false})
       assert.equal(calls.length,scenario==='verified'?1:0,`${locale}: ${scenario}`)

@@ -102,7 +102,8 @@ test('Meta is installed before router startup and components do not call the pix
   for (const file of fs.readdirSync(path.join(__dirname, '../src'), { recursive: true })) {
     if (!file.endsWith('.vue')) continue
     const component = fs.readFileSync(path.join(__dirname, '../src', file), 'utf8')
-    assert.ok(!component.includes('metaPixel'), file)
-    assert.ok(!/track(ViewContent|AddToCart|Purchase)\s*\(/.test(component), file)
+    assert.ok(!/\bfbq\s*\(/.test(component), file)
+    assert.ok(!/track(ViewContent|AddToCart)\s*\(/.test(component), file)
+    if (!file.endsWith('PaymentSuccess.vue')) assert.ok(!/trackPurchase\s*\(/.test(component), file)
   }
 })

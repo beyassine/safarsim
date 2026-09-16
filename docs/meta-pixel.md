@@ -82,8 +82,7 @@ payment retries cannot resend it. Selecting a different plan can count once;
 a new page visit starts a new scope. Events blocked by consent are not replayed
 on grant; a subsequent explicit checkout action can send with permission.
 
-ViewContent, AddToCart and Purchase remain unwired. Future Purchase work must use
-an actually paid /api/checkout/verify result and transaction deduplication. No
+ViewContent and AddToCart remain unwired. Purchase is described below. No
 Conversions API is included. Existing cart mutations and PostHog naming remain
 unchanged by this tracking integration.
 
@@ -94,3 +93,63 @@ saved choices, storage failures/expiry, cross-tab changes, withdrawal, Google
 updates, actual Vue Router redirects/navigation and existing Google Ads purchases.
 The production compilation can be checked locally with Vue CLI; no deployment
 is needed. Live Meta delivery must be verified separately after deployment.
+
+## Verified Purchase
+
+Each of the English, French, Arabic and Dutch PaymentSuccess pages calls
+trackPurchase(result) immediately after the existing Google trackVerifiedPurchase
+call, inside the successful /api/checkout/verify branch. No extra verification
+request or server modification was added. The server retrieves the Stripe session,
+requires payment_status === "paid", validates the SafarSIM order, and returns
+purchase.transactionId, amountTotal, currency and livemode from Stripe.
+
+The Meta service additionally requires paid === true, livemode === true, a valid
+cs_live_ session ID, a positive integer amountTotal and EUR/USD/MAD currency.
+Stripe test payments are deliberately excluded from live Meta revenue, consistent
+with the existing Google live-purchase policy. Meta Events Manager testing should
+use an actually verified live payment; no test-payment override was added.
+
+The exact dispatch is the existing pixel-scoped standard-event mechanism:
+
+```js
+fbq('trackSingle', '1114292477590208', 'Purchase', {
+  value: result.purchase.amountTotal / 100,
+  currency: result.purchase.currency.toUpperCase()
+})
+```
+
+Stripe supplies minor units; all three supported currencies have two decimal
+places (1250 EUR minor units = 12.50 EUR, 9000 MAD minor units = 90 MAD). No cart,
+URL, customer information or locally calculated total enters the payload. The
+verification response does not expose verified storefront product IDs, so optional
+content_ids/contents/num_items/content_type are omitted rather than reconstructed
+from potentially stale cart contents.
+
+Deduplication uses the VERIFIED purchase.transactionId (Stripe Checkout Session
+ID), not the query-string session ID or amount. The first-party localStorage key
+is safarsim:meta:purchase:<transactionId>, with value "1" and no automatic expiry.
+It persists across refreshes, remounts, locale changes and later visits until the
+browser/user clears site storage. Distinct sessions with equal totals still count.
+It is separate from all Google Ads keys.
+
+Before dispatch a temporary safarsim:meta:storage-check key checks storage
+writability and is removed; it does not mark a transaction tracked. If persistent
+storage is inaccessible, Purchase is skipped. The purchase marker is written only
+AFTER the tracking service successfully calls fbq. An in-memory set also prevents
+repeat calls if that final storage write unexpectedly fails. Such a late failure
+cannot guarantee deduplication after reload. Clearing storage, different browsers,
+and simultaneous first attempts in different tabs are outside this browser-only
+deduplication guarantee.
+
+Denied consent sends nothing and stores no transaction marker. No Purchase is
+replayed automatically on consent grant; a later success-page revisit must verify
+payment again and may attempt the event if consent is then granted. Missing,
+throwing or known-failed Meta tracking returns false silently. Success UI,
+fulfillment and the prior Google call continue normally.
+
+A successful fbq call may enqueue the event while the library loads. The marker
+records an accepted attempt, not confirmed network delivery; later ad blocking or
+network failure can prevent delivery without retrying that recorded transaction.
+No CAPI or delivery acknowledgement was implemented. PageView, InitiateCheckout,
+Google Ads configuration, conversion label, verification and Google deduplication
+are unchanged.

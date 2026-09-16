@@ -96,9 +96,45 @@ export function installMetaPixelTracking(router) {
   })
 }
 
-// InitiateCheckout is called through metaCheckout.js. Other commerce interfaces
-// remain unused; Purchase must only use an actually paid server-verified transaction.
+// InitiateCheckout is called through metaCheckout.js. ViewContent and AddToCart
+// remain unused. Purchase below accepts only a verified backend result.
 export const trackViewContent = parameters => track('ViewContent', parameters)
 export const trackAddToCart = parameters => track('AddToCart', parameters)
 export const trackInitiateCheckout = parameters => track('InitiateCheckout', parameters)
-export const trackPurchase = parameters => track('Purchase', parameters)
+const attemptedPurchases = new Set()
+
+// Accept ONLY the successful /api/checkout/verify response, never cart/URL data.
+export function trackPurchase(result) {
+  try {
+    if (!marketingConsent || typeof window === 'undefined' || result?.paid !== true) return false
+    const purchase = result.purchase
+    // Test-mode Stripe payments must not inflate the live advertising revenue.
+    if (!purchase || purchase.livemode !== true) return false
+    const { transactionId, amountTotal } = purchase
+    const currency = String(purchase.currency || '').toUpperCase()
+    if (typeof transactionId !== 'string' || !/^cs_live_[A-Za-z0-9]+$/.test(transactionId) ||
+        !['EUR', 'USD', 'MAD'].includes(currency) ||
+        !Number.isSafeInteger(amountTotal) || amountTotal <= 0) return false
+
+    const key = `safarsim:meta:purchase:${transactionId}`
+    const storage = window.localStorage
+    if (attemptedPurchases.has(transactionId) || storage.getItem(key)) return false
+    // Fail closed if persistent deduplication is unavailable. This is only a
+    // storage capability probe, NOT a transaction marker or a tracked purchase.
+    const probeKey = 'safarsim:meta:storage-check'
+    storage.setItem(probeKey, '1')
+    storage.removeItem(probeKey)
+
+    // track() checks consent/library availability and catches fbq failures.
+    // All currently supported currencies have two decimal places in Stripe.
+    if (!track('Purchase', { value: amountTotal / 100, currency })) return false
+    // Record only AFTER fbq accepted the attempt (possibly into its async queue).
+    // This is not an acknowledgement of delivery from Meta.
+    attemptedPurchases.add(transactionId)
+    storage.setItem(key, '1')
+    return true
+  } catch {
+    // Even a storage failure after dispatch must not interrupt a successful order.
+    return false
+  }
+}
