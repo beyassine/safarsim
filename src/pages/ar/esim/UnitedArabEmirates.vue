@@ -252,6 +252,7 @@ import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
 import { formatPriceFromMad, priceFromMad, getPreferredCurrency } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
+import { trackDirectCheckoutEntry } from '@/services/metaCheckout'
 import Cart from '@/pages/Cart.vue'
 import uaeHeroImage from '@/assets/images/hero_uae.png'
 
@@ -564,6 +565,7 @@ export default {
 
       if (this.region.slug === 'emirats-arabes-unis') {
         this.checkoutOpen = true
+        trackDirectCheckoutEntry(this, this.region.slug, plan.key)
         this.$nextTick(() => {
           document.getElementById('europe-checkout')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
         })

@@ -53,10 +53,39 @@ unload executed JavaScript, or guarantee deletion of existing Meta/Google cookie
 After withdrawal fbq/the script can remain present, but service events are blocked.
 After a reload with saved rejection, no Meta script is injected.
 
-The pre-existing commerce helper interfaces remain unused. No ViewContent,
-AddToCart, InitiateCheckout or Purchase callers were added. Future Purchase work
-must use an actually paid /api/checkout/verify result and transaction deduplication.
-No Conversions API is included.
+## Checkout entry events
+
+The homepage and all 32 localized destination pages open a same-page customer
+form after plan selection. Although these handlers currently insert into cart
+storage internally, Meta treats the customer action as direct checkout:
+InitiateCheckout only, with no synthetic AddToCart. Tracking is called explicitly
+after checkoutOpen is set, never from rendering or ordinary page loading. The
+homepage restoring an old cart on mount does not emit InitiateCheckout.
+
+The generic Region page adds to the cart without opening checkout; it does not
+emit InitiateCheckout. Visiting the standalone Cart page with valid items starts
+the customer form and emits InitiateCheckout. Embedded Cart instances do not fire
+it again, and payment submission/retries do not emit another entry event.
+
+src/services/metaCheckout.js owns payload validation and deduplication. Direct
+checkout reports one unit of the selected plan, using its stored price converted
+with the same currency utility used by checkout. It excludes unrelated stored
+items. Standalone cart checkout reports all normalized items and quantities.
+content_ids use the existing destinationSlug-planKey item identity; contents
+contains id, quantity and item_price. num_items, value and currency describe the
+selection/order at entry, before any coupon entered later. These are browser
+checkout estimates, not verified revenue. No customer information is included.
+
+Each page instance deduplicates successful events by the complete checkout
+payload. Re-renders, repeat clicks for the same plan, scrolling, form edits and
+payment retries cannot resend it. Selecting a different plan can count once;
+a new page visit starts a new scope. Events blocked by consent are not replayed
+on grant; a subsequent explicit checkout action can send with permission.
+
+ViewContent, AddToCart and Purchase remain unwired. Future Purchase work must use
+an actually paid /api/checkout/verify result and transaction deduplication. No
+Conversions API is included. Existing cart mutations and PostHog naming remain
+unchanged by this tracking integration.
 
 ## Verification
 

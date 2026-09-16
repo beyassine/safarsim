@@ -213,6 +213,7 @@ import i18n from '@/i18n'
 import Cart from '@/pages/Cart.vue'
 import { priceFromMad, getPreferredCurrency } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
+import { trackDirectCheckoutEntry } from '@/services/metaCheckout'
 import europeLandingImage from '@/assets/images/ue_flag.png'
 import turkeyLandingImage from '@/assets/images/turkey_flag.png'
 import spainLandingImage from '@/assets/images/spain_flag.png'
@@ -226,6 +227,7 @@ const locale = ref(i18n.global.locale)
 const preferredCurrency = getPreferredCurrency() === 'MAD' ? 'DH' : getPreferredCurrency()
 const search = ref('')
 const checkoutOpen = ref(false)
+const checkoutTrackingOwner = {}
 const snackbar = ref(false)
 const catalog = computed(() => [...regions, ...destinations])
 const selectedDestination = ref(null)
@@ -564,6 +566,7 @@ async function buySelectedPlan() {
     add_source: 'plan_selector',
   })
   checkoutOpen.value = true
+  trackDirectCheckoutEntry(checkoutTrackingOwner, destination.slug, plan.key)
   snackbar.value = true
   await nextTick()
   scrollToCheckout()

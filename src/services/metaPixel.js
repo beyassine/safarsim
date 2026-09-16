@@ -96,8 +96,8 @@ export function installMetaPixelTracking(router) {
   })
 }
 
-// Interfaces only. Callers must supply appropriate event data and, for Purchase,
-// an actually paid server-verified transaction. No commerce callers exist yet.
+// InitiateCheckout is called through metaCheckout.js. Other commerce interfaces
+// remain unused; Purchase must only use an actually paid server-verified transaction.
 export const trackViewContent = parameters => track('ViewContent', parameters)
 export const trackAddToCart = parameters => track('AddToCart', parameters)
 export const trackInitiateCheckout = parameters => track('InitiateCheckout', parameters)

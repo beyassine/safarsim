@@ -94,13 +94,15 @@ test('missing browser, unavailable/throwing fbq and blocked script fail silently
   assert.equal(s.context.trackPageView(), false)
   assert.equal(s.scripts.length, 1)
 })
-test('Meta is installed before router startup and commerce is not wired into components', () => {
+test('Meta is installed before router startup and components do not call the pixel directly', () => {
   const main = fs.readFileSync(path.join(__dirname, '../src/main.js'), 'utf8')
   assert.ok(main.indexOf('installMetaPixelTracking(router)') < main.indexOf('.use(router)'))
   const html = fs.readFileSync(path.join(__dirname, '../public/index.html'), 'utf8')
   assert.ok(!html.includes('fbq'))
   for (const file of fs.readdirSync(path.join(__dirname, '../src'), { recursive: true })) {
     if (!file.endsWith('.vue')) continue
-    assert.ok(!fs.readFileSync(path.join(__dirname, '../src', file), 'utf8').includes('metaPixel'), file)
+    const component = fs.readFileSync(path.join(__dirname, '../src', file), 'utf8')
+    assert.ok(!component.includes('metaPixel'), file)
+    assert.ok(!/track(ViewContent|AddToCart|Purchase)\s*\(/.test(component), file)
   }
 })

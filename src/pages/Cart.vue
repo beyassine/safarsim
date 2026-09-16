@@ -382,6 +382,7 @@ import {
 import { getLocalizedName } from '@/utils/localizedNames'
 import { formatMoney as formatCurrency, getPreferredCurrency, MAD_CURRENCY, convertPrice } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
+import { trackCheckoutEntry } from '@/services/metaCheckout'
 
 const PROMO_CODES = new Map([
   ['issam92', 10],
@@ -680,8 +681,11 @@ export default {
 
   },
 
-  mounted() {
-    this.refreshCart()
+  async mounted() {
+    await this.refreshCart()
+    // Embedded forms are tracked by the plan-selection action in their parent.
+    // Only a visit to the standalone cart route starts checkout here.
+    if (!this.showStepNumbers) trackCheckoutEntry(this, this.cart)
     window.addEventListener(CART_UPDATED_EVENT, this.refreshCart)
     window.addEventListener('storage', this.refreshCart)
   },
