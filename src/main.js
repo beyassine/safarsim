@@ -4,6 +4,7 @@ import router from "./router"
 import i18n , {applyLanguage } from "./i18n"
 import { loadCatalog } from "./services/catalog"
 import { initPostHog, posthog } from "./services/posthog"
+import { installMetaPixelTracking } from "./services/metaPixel"
 
 import "vuetify/styles"
 import '@mdi/font/css/materialdesignicons.css'
@@ -48,6 +49,8 @@ async function bootstrap() {
       posthog.captureException(error)
     }
   }
+
+  installMetaPixelTracking(router)
 
   app
     .use(i18n)
