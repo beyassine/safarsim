@@ -6,8 +6,11 @@ const { serverlessLaunchOptions } = require('./prerender-browser.cjs')
 
 const distDir = path.resolve(__dirname, '..', 'dist')
 const port = 4177
-const routes = ['/esim/morocco', '/fr/esim/morocco', '/ar/esim/morocco', '/esim/egypt', '/fr/esim/egypt', '/ar/esim/egypt', '/esim/europe', '/fr/esim/europe', '/ar/esim/europe', '/esim/turkiye', '/fr/esim/turkiye', '/ar/esim/turkiye', '/esim/spain', '/fr/esim/spain', '/ar/esim/spain', '/esim/france', '/fr/esim/france', '/ar/esim/france', '/esim/saudi-arabia', '/fr/esim/saudi-arabia', '/ar/esim/saudi-arabia', '/esim/united-arab-emirates', '/fr/esim/united-arab-emirates', '/ar/esim/united-arab-emirates']
-routes.push(...routes.filter((route) => route.startsWith('/esim/')).map((route) => `/nl${route}`))
+// The sitemap is generated before the build; include every country in each locale.
+const excludedRegions = new Set(require('../src/data/regions.json').filter(region => region.slug !== 'europe').map(region => region.slug))
+const routes = [...new Set([...fs.readFileSync(path.join(distDir, 'sitemap.xml'), 'utf8').matchAll(/<loc>(.*?)<\/loc>/g)]
+  .map(match => new URL(match[1]).pathname)
+  .filter(route => /^\/(?:fr\/|ar\/|nl\/)?esim\/[^/]+$/.test(route) && !excludedRegions.has(route.split('/').pop())))]
 const mimeTypes = { '.css': 'text/css', '.html': 'text/html; charset=utf-8', '.ico': 'image/x-icon', '.jpg': 'image/jpeg', '.js': 'text/javascript', '.png': 'image/png', '.svg': 'image/svg+xml', '.woff': 'font/woff', '.woff2': 'font/woff2' }
 
 const server = http.createServer((request, response) => {
@@ -35,7 +38,7 @@ async function run() {
       Object.assign(options, await serverlessLaunchOptions(puppeteer, chromium))
     }
     browser = await puppeteer.launch(options)
-    for (const route of routes) {
+    async function renderRoute(route) {
       const page = await browser.newPage()
       // Keep the build deterministic and avoid analytics/payment side effects.
       await page.setRequestInterception(true)
@@ -45,19 +48,19 @@ async function run() {
         else request.abort()
       })
       await page.goto(`http://127.0.0.1:${port}${route}`, { waitUntil: 'domcontentloaded', timeout: 60000 })
-      await page.waitForSelector('.europe-page h1', { timeout: 60000 })
-      await page.waitForFunction(() => document.querySelectorAll('.europe-plan-card').length > 0, { timeout: 60000 })
-      await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))))
-      await page.waitForFunction(() => !!document.querySelector('script[type="application/ld+json"]'), { timeout: 15000 })
+      await page.waitForSelector('.europe-page h1, .country-page h1', { timeout: 60000 })
+      await page.waitForSelector('.europe-plan-card, .country-page .plans', { timeout: 60000 })
+      await page.waitForFunction(() => !!document.querySelector('link[rel="canonical"]'), { timeout: 15000 })
       const content = await page.evaluate(() => ({
         title: document.title,
         heading: document.querySelector('h1')?.textContent.trim(),
-        plans: document.querySelectorAll('.europe-plan-card').length,
-        text: document.querySelector('.europe-page')?.textContent.length || 0,
+        plans: document.querySelectorAll('.europe-plan-card, .country-page .plans > button').length,
+        unavailable: !!document.querySelector('#plans [role="status"]'),
+        text: document.querySelector('.europe-page, .country-page')?.textContent.length || 0,
         lang: document.documentElement.lang,
       }))
       const locale = route.startsWith('/nl/') ? 'nl' : route.startsWith('/fr/') ? 'fr' : route.startsWith('/ar/') ? 'ar' : 'en'
-      if (!content.heading || content.plans < 1 || content.text < 1000 || content.lang !== locale) {
+      if (!content.heading || (content.plans < 1 && !content.unavailable) || content.text < 1000 || content.lang !== locale) {
         throw new Error(`Incomplete prerender for ${route}: ${JSON.stringify(content)}`)
       }
       // The destination content is available without JS; the SPA-only notice is misleading here.
@@ -72,16 +75,27 @@ async function run() {
       await crawler.goto(`http://127.0.0.1:${port}${route}`, { waitUntil: 'domcontentloaded' })
       const rendered = await crawler.evaluate(() => ({
         heading: document.querySelector('h1')?.textContent.trim(),
-        plans: document.querySelectorAll('.europe-plan-card').length,
+        plans: document.querySelectorAll('.europe-plan-card, .country-page .plans > button').length,
+        unavailable: !!document.querySelector('#plans [role="status"]'),
         titles: document.querySelectorAll('head title').length,
+        h1s: document.querySelectorAll('h1').length,
+        description: document.querySelector('meta[name="description"]')?.content,
+        alternates: document.querySelectorAll('link[rel="alternate"][hreflang]').length,
+        checker: !!document.querySelector('#phone-compatibility'),
+        apps: !!document.querySelector('.esim-app-icons'),
         canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
       }))
-      if (rendered.titles !== 1 || rendered.heading !== content.heading || rendered.plans !== content.plans || rendered.canonical !== `https://safarsim.net${route}`) {
+      if (rendered.h1s !== 1 || !rendered.description || rendered.alternates !== 5 || !rendered.checker || !rendered.apps || rendered.titles !== 1 || rendered.heading !== content.heading || rendered.plans !== content.plans || rendered.canonical !== `https://safarsim.net${route}`) {
         throw new Error(`JavaScript-disabled crawl failed for ${route}: ${JSON.stringify(rendered)}`)
       }
       await crawler.close()
       console.log(`Prerendered ${route}`)
     }
+    let nextRoute = 0
+    await Promise.all(Array.from({ length: 4 }, async () => {
+      while (nextRoute < routes.length) await renderRoute(routes[nextRoute++])
+    }))
+    console.log(`Verified ${routes.length} prerendered destination pages without JavaScript.`)
   } finally {
     if (browser) await browser.close()
     server.close()

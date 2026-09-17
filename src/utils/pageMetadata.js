@@ -30,6 +30,9 @@ export function applyPageMetadata({ title, description, path, image }) {
   for (const [property, content] of Object.entries({ 'og:title': title, 'og:description': description, 'og:url': `${site}${path}`, 'og:type': 'website', 'og:image': new URL(image, site).href })) {
     setTag('meta', `meta[property="${property}"]`, { property, content })
   }
+  for (const [name, content] of Object.entries({ 'twitter:title': title, 'twitter:description': description, 'twitter:image': new URL(image, site).href })) {
+    setTag('meta', `meta[name="${name}"]`, { name, content })
+  }
   return () => {
     restore.reverse().forEach((undo) => undo())
     document.title = previousTitle

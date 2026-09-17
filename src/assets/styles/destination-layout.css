@@ -129,3 +129,11 @@
 @media(max-width:600px){
   .europe-page .europe-purchase-cta { width: 100%; font-size: 13px !important; padding-inline: 14px !important; }
 }
+
+/* In-page package links remain usable in prerendered HTML without JavaScript. */
+.destination-section-action { display: flex; justify-content: center; margin-top: 32px; }
+.destination-section-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; max-width: 100%; min-height: 48px; padding: 13px 25px; border-radius: 999px; background: #d91c58; color: #fff; text-decoration: none; text-align: center; font-size: 16px; font-weight: 800; line-height: 1.5; box-shadow: 0 6px 18px rgba(217,28,88,.15); transition: background .18s, box-shadow .18s; }
+.destination-section-cta:hover { background: #bc174b; box-shadow: 0 8px 22px rgba(217,28,88,.22); }
+.destination-section-cta:focus-visible { outline: 3px solid #16835f; outline-offset: 4px; }
+@media (max-width: 600px) { .destination-section-cta { width: 100%; max-width: 360px; padding-inline: 18px; } }
+@media (prefers-reduced-motion: reduce) { .destination-section-cta { transition: none; } }

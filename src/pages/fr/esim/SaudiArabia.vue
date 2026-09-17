@@ -18,6 +18,7 @@
                 Voir les forfaits Arabie saoudite<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+            <PhoneCompatibility button />
 
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 3.25521%">
@@ -63,6 +64,17 @@
       </v-container>
     </section>
 
+    <section class="europe-explainer-section">
+      <v-container class="europe-explainer-container">
+        <div class="europe-explainer-copy">
+          <h2>Qu’est-ce qu’une eSIM Arabie saoudite ?</h2>
+          <p>Une eSIM est une carte SIM numérique intégrée à un téléphone compatible. Avec SafarSIM, vous achetez un forfait internet prépayé et vous l’installez sur votre téléphone : aucune carte SIM physique à acheter, à récupérer ou à remplacer. Vous choisissez la quantité de données et la durée adaptées à votre séjour.</p>
+          <p>Après l’achat, suivez les instructions d’installation en Wi-Fi, puis sélectionnez l’eSIM pour les données mobiles à destination. Utilisez les cartes, naviguez sur internet et échangez des messages ou des appels avec des applications comme WhatsApp, tout en gardant votre SIM habituelle dans le téléphone. Ces forfaits incluent internet, mais pas les appels téléphoniques classiques ni les SMS.</p>
+        </div>
+        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
+      </v-container>
+    </section>
+
     <section v-if="checkoutOpen" id="europe-checkout" class="europe-checkout-section">
       <v-container>
         <div class="europe-section-heading europe-checkout-heading">
@@ -76,21 +88,7 @@
       </v-container>
     </section>
 
-    <section class="europe-explainer-section">
-      <v-container class="europe-explainer-container">
-        <div class="europe-explainer-copy">
-          <span>L’eSIM Arabie saoudite expliquée</span>
-          <h2>Qu’est-ce qu’une eSIM Arabie saoudite ?</h2>
-          <p>Une eSIM Arabie saoudite est une carte SIM numérique permettant d’utiliser les données mobiles en Arabie saoudite sans insérer ni récupérer de carte SIM physique.</p>
-        </div>
-        <div class="europe-facts-grid">
-          <div class="europe-fact"><v-icon>mdi-wifi</v-icon><span><b>Données mobiles</b><small>Accédez à Internet sans appels ni SMS traditionnels.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-access-point</v-icon><span><b>Partage de connexion</b><small>La plupart des forfaits permettent le hotspot selon l’appareil et le réseau.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-timer-outline</v-icon><span><b>Validité dès la connexion</b><small>Le forfait démarre lors de la première connexion à un réseau pris en charge en Arabie saoudite.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-map-marker-radius</v-icon><span><b>Couverture en Arabie saoudite</b><small>Utilisez la même eSIM pendant vos déplacements dans les zones couvertes du pays.</small></span></div>
-        </div>
-      </v-container>
-    </section>
+    <PhoneCompatibility />
 
     <section class="europe-network-section">
       <v-container class="europe-network-container">
@@ -114,6 +112,7 @@
           <span><v-icon size="20">mdi-earth-arrow-right</v-icon>Gardez l’itinérance des données activée sur l’eSIM pendant vos déplacements en Arabie saoudite.</span>
         </div>
         <p class="network-disclaimer">La disponibilité du réseau, le débit et l’accès à la 5G dépendent de la couverture locale, des conditions du réseau et de la compatibilité de votre appareil.</p>
+      <div class="destination-section-action"><a href="#europe-plans" class="destination-section-cta">Voir les forfaits internet<v-icon size="20" aria-hidden="true">mdi-arrow-up</v-icon></a></div>
       </v-container>
     </section>
 
@@ -153,6 +152,7 @@
           <router-link :to="`${localePrefix}/guides/install-esim-android`"><v-icon>mdi-cellphone-cog</v-icon><span>Guide d’installation eSIM sur Samsung</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
           <router-link :to="`${localePrefix}/guides/compatibility`"><v-icon>mdi-cellphone-check</v-icon><span>Vérifier la compatibilité de votre téléphone</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
         </div>
+      <div class="destination-section-action"><a href="#europe-plans" class="destination-section-cta">Choisir mon forfait internet<v-icon size="20" aria-hidden="true">mdi-arrow-up</v-icon></a></div>
       </v-container>
     </section>
 
@@ -214,6 +214,7 @@
           <details><summary><span>Puis-je recharger mon eSIM Arabie saoudite ?</span><v-icon>mdi-plus</v-icon></summary><p>La recharge dépend du forfait sélectionné. Si elle n’est pas proposée, achetez un nouveau forfait.</p></details>
           <details><summary><span>Quels téléphones sont compatibles ?</span><v-icon>mdi-plus</v-icon></summary><p>De nombreux appareils récents Apple, Samsung, Google et autres prennent en charge l’eSIM. Vérifiez votre modèle avant l’achat.</p></details>
         </div>
+      <div class="destination-section-action"><a href="#europe-plans" class="destination-section-cta">Acheter un forfait internet<v-icon size="20" aria-hidden="true">mdi-arrow-up</v-icon></a></div>
       </v-container>
     </section>
 
@@ -245,6 +246,7 @@
 </template>
 
 <script>
+import PhoneCompatibility from "@/components/destination_page/PhoneCompatibility.vue"
 import { destinationTitle } from "@/utils/destinationTitle"
 import { applyPageMetadata } from "@/utils/pageMetadata"
 import { destinations, regions } from '@/services/catalog'
@@ -259,7 +261,7 @@ import saudiArabiaHeroImage from '@/assets/images/hero_saudi_arabia.png'
 export default {
   name: 'SaudiArabiaFrenchPage',
 
-  components: { Cart },
+  components: { Cart, PhoneCompatibility },
 
   data() {
     return {

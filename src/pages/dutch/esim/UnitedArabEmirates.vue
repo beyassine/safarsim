@@ -17,6 +17,7 @@
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans"> Bekijk bundels voor Verenigde Arabische Emiraten<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
+            <PhoneCompatibility button />
 
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 1.75781%">
@@ -61,6 +62,17 @@
       </v-container>
     </section>
 
+    <section class="europe-explainer-section">
+      <v-container class="europe-explainer-container">
+        <div class="europe-explainer-copy">
+          <h2>Wat is een eSIM voor Verenigde Arabische Emiraten?</h2>
+          <p>Een eSIM is een digitale simkaart die al in een geschikte telefoon is ingebouwd. Met SafarSIM koop je een prepaid internetbundel en installeer je die op je telefoon. Je hoeft geen fysieke simkaart te kopen, op te halen of te verwisselen. Je kiest zelf hoeveel data je nodig hebt en hoe lang je de bundel wilt gebruiken.</p>
+          <p>Volg na aankoop de installatie-instructies via wifi en kies op je bestemming de eSIM voor mobiele data. Gebruik kaarten, surf op internet en stuur berichten of bel via apps zoals WhatsApp, terwijl je gewone simkaart in je telefoon blijft. Deze bundels bieden internet; gewone telefoongesprekken en sms zijn niet inbegrepen.</p>
+        </div>
+        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
+      </v-container>
+    </section>
+
     <section v-if="checkoutOpen" id="europe-checkout" class="europe-checkout-section">
       <v-container>
         <div class="europe-section-heading europe-checkout-heading">
@@ -74,21 +86,7 @@
       </v-container>
     </section>
 
-    <section class="europe-explainer-section">
-      <v-container class="europe-explainer-container">
-        <div class="europe-explainer-copy">
-          <span>Uitleg over de eSIM voor Verenigde Arabische Emiraten</span>
-          <h2>Wat is een eSIM voor Verenigde Arabische Emiraten?</h2>
-          <p>Een eSIM voor Verenigde Arabische Emiraten is een digitale simkaart voor mobiele data in Verenigde Arabische Emiraten, zonder een fysieke simkaart te plaatsen of op te halen.</p>
-        </div>
-        <div class="europe-facts-grid">
-          <div class="europe-fact"><v-icon>mdi-wifi</v-icon><span><b>Mobiele data</b><small>Internettoegang zonder gewone telefoongesprekken of sms.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-access-point</v-icon><span><b>Persoonlijke hotspot</b><small>De meeste bundels ondersteunen een hotspot, afhankelijk van je toestel en het lokale netwerk.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-timer-outline</v-icon><span><b>Geldigheid begint bij verbinding</b><small>De bundel begint wanneer de eSIM voor het eerst verbinding maakt met een ondersteund netwerk in Verenigde Arabische Emiraten.</small></span></div>
-          <div class="europe-fact"><v-icon>mdi-map-marker-radius</v-icon><span><b>Dekking in Verenigde Arabische Emiraten</b><small>Gebruik dezelfde eSIM wanneer je tussen gedekte locaties in Verenigde Arabische Emiraten reist.</small></span></div>
-        </div>
-      </v-container>
-    </section>
+    <PhoneCompatibility />
 
     <section class="europe-network-section">
       <v-container class="europe-network-container">
@@ -112,6 +110,7 @@
           <span><v-icon size="20">mdi-earth-arrow-right</v-icon>Laat dataroaming ingeschakeld op de eSIM tijdens je reis in Verenigde Arabische Emiraten.</span>
         </div>
         <p class="network-disclaimer">Netwerkbeschikbaarheid, snelheid en 5G-toegang hangen af van de lokale dekking, netwerkomstandigheden en compatibiliteit van je toestel.</p>
+      <div class="destination-section-action"><a href="#europe-plans" class="destination-section-cta">Bekijk internetbundels<v-icon size="20" aria-hidden="true">mdi-arrow-up</v-icon></a></div>
       </v-container>
     </section>
 
@@ -151,6 +150,7 @@
           <router-link :to="`${localePrefix}/guides/install-esim-android`"><v-icon>mdi-cellphone-cog</v-icon><span>Installatiehandleiding voor eSIM op Samsung</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
           <router-link :to="`${localePrefix}/guides/compatibility`"><v-icon>mdi-cellphone-check</v-icon><span>Controleer of je telefoon compatibel is</span><v-icon size="19">mdi-arrow-right</v-icon></router-link>
         </div>
+      <div class="destination-section-action"><a href="#europe-plans" class="destination-section-cta">Kies mijn internetbundel<v-icon size="20" aria-hidden="true">mdi-arrow-up</v-icon></a></div>
       </v-container>
     </section>
 
@@ -212,6 +212,7 @@
           <details><summary><span>Kan ik de eSIM voor Verenigde Arabische Emiraten opwaarderen?</span><v-icon>mdi-plus</v-icon></summary><p>Of opwaarderen mogelijk is, hangt af van de gekozen bundel. Koop een nieuwe bundel als opwaarderen niet beschikbaar is.</p></details>
           <details><summary><span>Welke telefoons zijn compatibel?</span><v-icon>mdi-plus</v-icon></summary><p>Veel recente toestellen van Apple, Samsung, Google en andere merken ondersteunen eSIM. Controleer je exacte model vóór aankoop.</p></details>
         </div>
+      <div class="destination-section-action"><a href="#europe-plans" class="destination-section-cta">Internet kopen<v-icon size="20" aria-hidden="true">mdi-arrow-up</v-icon></a></div>
       </v-container>
     </section>
 
@@ -243,6 +244,7 @@
 </template>
 
 <script>
+import PhoneCompatibility from "@/components/destination_page/PhoneCompatibility.vue"
 import { destinationTitle } from "@/utils/destinationTitle"
 import { applyPageMetadata } from "@/utils/pageMetadata"
 import { destinations, regions } from '@/services/catalog'
@@ -257,7 +259,7 @@ import uaeHeroImage from '@/assets/images/hero_uae.png'
 export default {
   name: 'UnitedArabEmiratesDutchPage',
 
-  components: { Cart },
+  components: { Cart, PhoneCompatibility },
 
   data() {
     return {

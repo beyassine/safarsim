@@ -15,6 +15,7 @@
               <v-icon end>{{ arrowIcon }}</v-icon>
             </v-btn>
           </div>
+          <PhoneCompatibility button />
         </div>
 
         <div class="hero-visual" :aria-label="c.connected">
@@ -126,6 +127,8 @@
       </v-container>
     </section>
 
+    <PhoneCompatibility plans-id="destination-selection" />
+
     <section v-if="checkoutOpen" id="checkout" class="checkout-section">
       <v-container>
         <div class="section-heading checkout-heading">
@@ -211,6 +214,7 @@ import { destinations, regions } from '@/services/catalog'
 import { addToCart, getCart } from '@/utils/cart'
 import i18n from '@/i18n'
 import Cart from '@/pages/Cart.vue'
+import PhoneCompatibility from '@/components/destination_page/PhoneCompatibility.vue'
 import { priceFromMad, getPreferredCurrency } from '@/utils/currency'
 import { posthog } from '@/services/posthog'
 import { trackDirectCheckoutEntry } from '@/services/metaCheckout'
@@ -831,4 +835,6 @@ watch(locale, () => {
  .one-page .plan-option>strong small{font-size:10px}
  .one-page .plan-option em{font-size:9px;padding:3px 6px;inset-inline-end:5px}
 }
+
+#destination-selection { scroll-margin-top: 90px; }
 </style>

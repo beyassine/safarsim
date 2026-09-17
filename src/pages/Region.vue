@@ -49,16 +49,7 @@
         </div>
       </div>
 
-      <router-link to="/guides/compatibility">
-        <v-btn
-          color="green"
-          rounded="pill"
-          class="text-none font-weight-bold mt-2"
-          prepend-icon="mdi-cellphone-check"
-        >
-          {{ $t("destinationsPage.checkCompatibility") }}
-        </v-btn>
-      </router-link>
+      <PhoneCompatibility button />
     </v-card>
 
     <!-- Covered countries -->
@@ -97,7 +88,7 @@
     </v-card>
 
     <!-- Packages -->
-    <v-card rounded="xl" elevation="0" class="pa-4 pa-md-6 mb-8 package-card">
+    <v-card id="region-plans" style="scroll-margin-top: 90px" rounded="xl" elevation="0" class="pa-4 pa-md-6 mb-8 package-card">
       <h3 class="text-h5 text-center mb-5">{{ $t("destinationsPage.choosePlan") }}</h3>
       <div class="section-line mb-6"></div>
 
@@ -140,6 +131,7 @@
         {{ snackbarText }}
       </v-snackbar>
     </v-card>
+    <PhoneCompatibility plans-id="region-plans" />
   </v-container>
 
   <v-container v-else class="py-10">
@@ -148,6 +140,7 @@
 </template>
 
 <script>
+import PhoneCompatibility from "@/components/destination_page/PhoneCompatibility.vue"
 import { regions } from '@/services/catalog'
 import { addToCart } from '@/utils/cart'
 import { getLocalizedName } from '@/utils/localizedNames'
@@ -156,6 +149,7 @@ import { posthog } from '@/services/posthog'
 
 export default {
   name: 'RegionDetailsPage',
+  components: { PhoneCompatibility },
 
   data() {
     return {
