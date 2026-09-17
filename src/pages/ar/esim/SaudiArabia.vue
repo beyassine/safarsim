@@ -15,7 +15,7 @@
             <p class="europe-hero-description">استعد لرحلة الحج أو العمرة بشريحة eSIM مسبقة الدفع. ابقَ متصلاً في مكة المكرمة والمدينة المنورة وجدة وفي أنحاء المملكة دون تغيير شريحتك الأساسية.</p>
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
-                عرض باقات المملكة العربية السعودية<v-icon end>mdi-arrow-down</v-icon>
+                عرض باقات الإنترنت<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
 
@@ -42,7 +42,7 @@
       <v-container>
         <div class="europe-section-heading">
           <span>بيانات مسبقة الدفع بمرونة</span>
-          <h2>اختر باقة eSIM لالمملكة العربية السعودية</h2>
+          <h2>اختر باقة eSIM للمملكة العربية السعودية</h2>
           <div class="destination-plan-trust">
               <span><v-icon size="19" aria-hidden="true">mdi-lock-outline</v-icon>دفع آمن</span>
               <span><v-icon size="19" aria-hidden="true">mdi-currency-usd</v-icon>سياسة استرداد كامل المبلغ</span>
@@ -80,8 +80,8 @@
       <v-container class="europe-explainer-container">
         <div class="europe-explainer-copy">
           <span>شرح شريحة المملكة العربية السعودية</span>
-          <h2>ما هي شريحة eSIM لالمملكة العربية السعودية؟</h2>
-          <p>شريحة eSIM لالمملكة العربية السعودية هي شريحة رقمية تتيح استخدام بيانات الهاتف في المملكة العربية السعودية دون إدخال أو استلام شريحة فعلية.</p>
+          <h2>ما هي شريحة eSIM للمملكة العربية السعودية؟</h2>
+          <p>شريحة eSIM للمملكة العربية السعودية هي شريحة رقمية تتيح استخدام بيانات الهاتف في المملكة العربية السعودية دون إدخال أو استلام شريحة فعلية.</p>
         </div>
         <div class="europe-facts-grid">
           <div class="europe-fact"><v-icon>mdi-wifi</v-icon><span><b>بيانات الهاتف</b><small>اتصال بالإنترنت دون مكالمات أو رسائل نصية تقليدية.</small></span></div>
@@ -121,7 +121,7 @@
       <v-container class="europe-use-cases-container">
         <div class="europe-section-heading compact">
           <span>باقة واحدة لكل محطة</span>
-          <h2>لأي رحلات تختار شريحة eSIM لالمملكة العربية السعودية؟</h2>
+          <h2>لأي رحلات تختار شريحة eSIM للمملكة العربية السعودية؟</h2>
           <p>تناسب شريحة المملكة العربية السعودية خصوصاً حجاج بيت الله والمعتمرين، إضافة إلى السياحة ورحلات العمل.</p>
         </div>
         <div class="europe-use-cases-grid">
@@ -138,7 +138,7 @@
       <v-container class="europe-installation-container">
         <div class="europe-section-heading compact">
           <span>جاهزة خلال دقائق</span>
-          <h2>كيف تثبّت شريحة eSIM لالمملكة العربية السعودية؟</h2>
+          <h2>كيف تثبّت شريحة eSIM للمملكة العربية السعودية؟</h2>
           <p>اشترِ شريحتك وجهزها قبل السفر، ثم فعّلها في الوقت المناسب.</p>
         </div>
         <ol class="europe-installation-steps">
@@ -158,7 +158,7 @@
 
     <section class="europe-activation-section">
       <v-container class="europe-activation-container">
-        <div class="europe-section-heading compact"><span>ثبّتها الآن واتصل عند الوصول</span><h2>متى تثبّت وتفعّل شريحة eSIM لالمملكة العربية السعودية؟</h2><p>يمكنك تثبيت الشريحة قبل السفر. تبدأ جميع باقات SafarSIM تلقائياً عندما تتصل الشريحة لأول مرة بشبكة مدعومة مع تفعيل تجوال البيانات.</p></div>
+        <div class="europe-section-heading compact"><span>ثبّتها الآن واتصل عند الوصول</span><h2>متى تثبّت وتفعّل شريحة eSIM للمملكة العربية السعودية؟</h2><p>يمكنك تثبيت الشريحة قبل السفر. تبدأ جميع باقات SafarSIM تلقائياً عندما تتصل الشريحة لأول مرة بشبكة مدعومة مع تفعيل تجوال البيانات.</p></div>
         <div class="activation-guidance">
           <div><v-icon>mdi-download-circle-outline</v-icon><span><b>ثبّتها قبل السفر</b><p>استخدم Wi-Fi مستقراً لمسح رمز QR وإضافة الشريحة إلى هاتفك.</p></span></div>
           <div><v-icon>mdi-timer-play-outline</v-icon><span><b>تبدأ الصلاحية عند الاتصال</b><p>لا تبدأ المدة بمجرد تثبيت الملف، بل عند الاتصال بشبكة مدعومة مع تشغيل تجوال البيانات.</p></span></div>
@@ -171,7 +171,7 @@
       <v-container class="europe-whatsapp-container">
         <div class="whatsapp-title-row">
           <div class="whatsapp-icon"><v-icon>mdi-whatsapp</v-icon></div>
-          <h2>هل يعمل واتساب مع شريحة eSIM لالمملكة العربية السعودية؟</h2>
+          <h2>هل يعمل واتساب مع شريحة eSIM للمملكة العربية السعودية؟</h2>
         </div>
         <p>نعم. شريحة البيانات الإلكترونية لا تغيّر عادة الرقم المستخدم في حساب واتساب. يمكنك الاستمرار في استخدام واتساب برقمك المعتاد بينما توفر شريحة SafarSIM اتصال بيانات الهاتف.</p>
       </v-container>
@@ -890,7 +890,8 @@ export default {
 .saudi-proof-grid>div{text-align:center;display:flex;flex-direction:column;gap:5px;min-width:0;padding-inline:8px}
 .saudi-proof-grid>div+div{border-inline-start:1px solid #ead7df}
 .europe-page[dir="rtl"] .saudi-proof-grid > .destination-proof-item { direction: rtl; justify-content: center; text-align: center; }
-.europe-page[dir="rtl"] .saudi-proof-grid > .destination-proof-item > b { direction: rtl; }
+.europe-page[dir="rtl"] .saudi-proof-grid > .destination-proof-item > b { direction: rtl; font-size: 19px; }
+@media(max-width:600px){.europe-page[dir="rtl"] .saudi-proof-grid > .destination-proof-item > b { font-size: 15px; }}
 .saudi-proof-grid b{font-size:21px;font-weight:800;line-height:1.35;color:#d91c58}
 .saudi-proof-grid span{font-size:13px;line-height:1.55;color:#6f5966}
 @media(max-width:960px){.saudi-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.saudi-proof-grid>div+div{border:0}}
