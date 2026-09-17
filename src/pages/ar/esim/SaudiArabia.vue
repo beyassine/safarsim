@@ -31,7 +31,7 @@
 
     <section class="saudi-proof-strip">
       <v-container class="saudi-proof-grid destination-proof-grid">
-        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-tag-outline</v-icon><b>ابتداءً من {{ startingPrice }}</b></div>
+        <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-tag-outline</v-icon><b>ابتداءً من <bdi dir="ltr">{{ startingPrice }}</bdi></b></div>
         <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-lightning-bolt-outline</v-icon><b>توصيل فوري</b></div>
         <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-cash-check</v-icon><b>بدون رسوم تجوال</b></div>
         <div class="destination-proof-item"><v-icon size="26" aria-hidden="true">mdi-signal</v-icon><b>STC · Mobily · Zain</b></div>
@@ -50,7 +50,7 @@
         </div>
         <div class="europe-plan-grid">
           <button v-for="plan in sortedPlans" :key="plan.key" type="button" class="europe-plan-card" :class="{ active: selectedPlanKey === plan.key }" @click="handleAddToCart(plan)">
-            <span v-if="plan.data === '20GB'" class="popular-label">الأكثر شعبية</span>
+            <span v-if="plan.data === '10GB'" class="popular-label">الأكثر شعبية</span>
             <span class="plan-radio" aria-hidden="true"></span>
             <div class="plan-data"><b>{{ plan.dataLabel }}</b></div>
             <div class="plan-duration"><v-icon size="19">mdi-calendar-blank-outline</v-icon>{{ plan.days }} أيام</div>
@@ -889,6 +889,8 @@ export default {
 .saudi-proof-grid{max-width:1200px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:26px;gap:20px}
 .saudi-proof-grid>div{text-align:center;display:flex;flex-direction:column;gap:5px;min-width:0;padding-inline:8px}
 .saudi-proof-grid>div+div{border-inline-start:1px solid #ead7df}
+.europe-page[dir="rtl"] .saudi-proof-grid > .destination-proof-item { direction: rtl; justify-content: center; text-align: center; }
+.europe-page[dir="rtl"] .saudi-proof-grid > .destination-proof-item > b { direction: rtl; }
 .saudi-proof-grid b{font-size:21px;font-weight:800;line-height:1.35;color:#d91c58}
 .saudi-proof-grid span{font-size:13px;line-height:1.55;color:#6f5966}
 @media(max-width:960px){.saudi-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.saudi-proof-grid>div+div{border:0}}
