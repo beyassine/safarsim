@@ -333,24 +333,14 @@
         "esimGoBundleName": "esim_5GB_30D_SA_V2"
       },
       "10GB_30days": {
-        "price": 250,
-        "price_usd": 25,
+        "price": 180,
+        "price_usd": 18,
         "esimGoBundleName": "esim_10GB_30D_SA_V2"
       },
       "20GB_30days": {
-        "price": 405,
-        "price_usd": 40.5,
+        "price": 300,
+        "price_usd": 30,
         "esimGoBundleName": "esim_20GB_30D_SA_V2"
-      },
-      "50GB_30days": {
-        "price": 560,
-        "price_usd": 56,
-        "esimGoBundleName": "esim_50GB_30D_SA_V2"
-      },
-      "2GB_15days": {
-        "price": 85,
-        "price_usd": 8.5,
-        "esimGoBundleName": "esim_2GB_15D_SA_V2"
       }
     },
     "names": {

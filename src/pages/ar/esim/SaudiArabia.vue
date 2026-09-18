@@ -102,7 +102,11 @@
           <table class="network-table">
             <thead><tr><th>الدولة</th><th>الشبكات الشريكة</th></tr></thead>
             <tbody>
-              <tr><th>🇸🇦 المملكة العربية السعودية</th><td><span class="network-operators">STC<br>Mobily<br>Zain</span><span class="technology-badge">4G / 5G</span></td></tr>
+              <tr><th>🇸🇦 المملكة العربية السعودية</th><td><span class="network-operators saudi-operators">
+                <span class="saudi-operator"><img src="/images/operators/stc.svg" alt="" width="64" height="36" loading="lazy"><bdi dir="ltr">STC</bdi></span>
+                <span class="saudi-operator"><img src="/images/operators/mobily.svg" alt="" width="64" height="36" loading="lazy"><bdi dir="ltr">Mobily</bdi></span>
+                <span class="saudi-operator"><img src="/images/operators/zain.svg" alt="" width="64" height="36" loading="lazy"><bdi dir="ltr">Zain</bdi></span>
+              </span><span class="technology-badge">4G / 5G</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -898,6 +902,13 @@ export default {
 .saudi-proof-grid span{font-size:13px;line-height:1.55;color:#6f5966}
 @media(max-width:960px){.saudi-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}.saudi-proof-grid>div+div{border:0}}
 @media(max-width:600px){.saudi-proof-grid{padding:28px 12px}.saudi-proof-grid b{font-size:18px}}
+
+.europe-page[dir="rtl"] .network-table{direction:rtl}
+.europe-page[dir="rtl"] .saudi-operator{direction:rtl;text-align:right}
+.saudi-operators{display:flex;flex-direction:column;gap:12px}
+.saudi-operator{display:flex;align-items:center;gap:12px;min-height:40px}
+.network-table .saudi-operator img{width:64px;height:36px;object-fit:contain;border-radius:0;box-shadow:none;flex:0 0 64px}
+.network-table .saudi-operator img[src$="mobily.svg"]{background:#00529b;border-radius:6px;padding:5px}
 </style>
 
 <style scoped src="@/assets/styles/destination-layout.css"></style>

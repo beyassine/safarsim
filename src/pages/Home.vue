@@ -14,8 +14,8 @@
               {{ c.choosePlan }}
               <v-icon end>{{ arrowIcon }}</v-icon>
             </v-btn>
+            <PhoneCompatibility button />
           </div>
-          <PhoneCompatibility button />
         </div>
 
         <div class="hero-visual" :aria-label="c.connected">
@@ -623,6 +623,7 @@ watch(locale, () => {
 .hero-copy h1 .hero-accent-line:after { content:'';position:absolute;right:0;left:5%;bottom:-7px;height:9px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='9'%3E%3Cpath d='M2 7 C70 1 180 1 298 5' fill='none' stroke='%23efb39e' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
 .hero-lead { font-size:19px;line-height:1.9;color:#705b68;max-width:620px;margin:0 0 28px; }
 .hero-actions { width:100%;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap; }
+.hero-actions :deep(.compatibility-link) { margin-top:0;min-height:56px; }
 .one-page[dir="rtl"] .hero-copy h1{line-height:1.46;letter-spacing:0;margin-bottom:52px}
 .one-page[dir="rtl"] .hero-copy h1 .hero-accent-line{padding-bottom:.22em}
 .one-page[dir="rtl"] .hero-copy h1 .hero-accent-line:after{bottom:-18px}
