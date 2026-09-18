@@ -58,7 +58,7 @@ export default {
   overflow-y: auto;
 }
 .consent-copy { flex: 1; }
-.consent-copy p { font-size: 12px; line-height: 1.5; margin: 0; }
+.consent-copy p { font-size: 14px; line-height: 1.5; margin: 0; }
 .consent-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .consent-actions button {
   flex: 1 1 0;
@@ -69,7 +69,7 @@ export default {
   border: 1px solid #7d1948;
   border-radius: 8px;
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
 }
