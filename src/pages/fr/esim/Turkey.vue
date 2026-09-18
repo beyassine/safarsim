@@ -64,17 +64,6 @@
       </v-container>
     </section>
 
-    <section class="europe-explainer-section">
-      <v-container class="europe-explainer-container">
-        <div class="europe-explainer-copy">
-          <h2>Qu’est-ce qu’une eSIM Turquie ?</h2>
-          <p>Une eSIM est une carte SIM numérique intégrée à un téléphone compatible. Avec SafarSIM, vous achetez un forfait internet prépayé et vous l’installez sur votre téléphone : aucune carte SIM physique à acheter, à récupérer ou à remplacer. Vous choisissez la quantité de données et la durée adaptées à votre séjour.</p>
-          <p>Après l’achat, suivez les instructions d’installation en Wi-Fi, puis sélectionnez l’eSIM pour les données mobiles à destination. Utilisez les cartes, naviguez sur internet et échangez des messages ou des appels avec des applications comme WhatsApp, tout en gardant votre SIM habituelle dans le téléphone. Ces forfaits incluent internet, mais pas les appels téléphoniques classiques ni les SMS.</p>
-        </div>
-        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
-      </v-container>
-    </section>
-
     <section v-if="checkoutOpen" id="europe-checkout" class="europe-checkout-section">
       <v-container>
         <div class="europe-section-heading europe-checkout-heading">
@@ -85,6 +74,17 @@
         <div class="europe-embedded-checkout">
           <Cart :show-step-numbers="true" :first-step-number="2" />
         </div>
+      </v-container>
+    </section>
+
+    <section class="europe-explainer-section">
+      <v-container class="europe-explainer-container">
+        <div class="europe-explainer-copy">
+          <h2>Qu’est-ce qu’une eSIM Turquie ?</h2>
+          <p>Une eSIM est une carte SIM numérique intégrée à un téléphone compatible. Avec SafarSIM, vous achetez un forfait internet prépayé et vous l’installez sur votre téléphone : aucune carte SIM physique à acheter, à récupérer ou à remplacer. Vous choisissez la quantité de données et la durée adaptées à votre séjour.</p>
+          <p>Après l’achat, suivez les instructions d’installation en Wi-Fi, puis sélectionnez l’eSIM pour les données mobiles à destination. Utilisez les cartes, naviguez sur internet et échangez des messages ou des appels avec des applications comme WhatsApp, tout en gardant votre SIM habituelle dans le téléphone. Ces forfaits incluent internet, mais pas les appels téléphoniques classiques ni les SMS.</p>
+        </div>
+        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
       </v-container>
     </section>
 

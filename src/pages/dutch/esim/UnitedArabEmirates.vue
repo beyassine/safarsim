@@ -62,17 +62,6 @@
       </v-container>
     </section>
 
-    <section class="europe-explainer-section">
-      <v-container class="europe-explainer-container">
-        <div class="europe-explainer-copy">
-          <h2>Wat is een eSIM voor Verenigde Arabische Emiraten?</h2>
-          <p>Een eSIM is een digitale simkaart die al in een geschikte telefoon is ingebouwd. Met SafarSIM koop je een prepaid internetbundel en installeer je die op je telefoon. Je hoeft geen fysieke simkaart te kopen, op te halen of te verwisselen. Je kiest zelf hoeveel data je nodig hebt en hoe lang je de bundel wilt gebruiken.</p>
-          <p>Volg na aankoop de installatie-instructies via wifi en kies op je bestemming de eSIM voor mobiele data. Gebruik kaarten, surf op internet en stuur berichten of bel via apps zoals WhatsApp, terwijl je gewone simkaart in je telefoon blijft. Deze bundels bieden internet; gewone telefoongesprekken en sms zijn niet inbegrepen.</p>
-        </div>
-        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
-      </v-container>
-    </section>
-
     <section v-if="checkoutOpen" id="europe-checkout" class="europe-checkout-section">
       <v-container>
         <div class="europe-section-heading europe-checkout-heading">
@@ -83,6 +72,17 @@
         <div class="europe-embedded-checkout">
           <Cart :show-step-numbers="true" :first-step-number="2" />
         </div>
+      </v-container>
+    </section>
+
+    <section class="europe-explainer-section">
+      <v-container class="europe-explainer-container">
+        <div class="europe-explainer-copy">
+          <h2>Wat is een eSIM voor Verenigde Arabische Emiraten?</h2>
+          <p>Een eSIM is een digitale simkaart die al in een geschikte telefoon is ingebouwd. Met SafarSIM koop je een prepaid internetbundel en installeer je die op je telefoon. Je hoeft geen fysieke simkaart te kopen, op te halen of te verwisselen. Je kiest zelf hoeveel data je nodig hebt en hoe lang je de bundel wilt gebruiken.</p>
+          <p>Volg na aankoop de installatie-instructies via wifi en kies op je bestemming de eSIM voor mobiele data. Gebruik kaarten, surf op internet en stuur berichten of bel via apps zoals WhatsApp, terwijl je gewone simkaart in je telefoon blijft. Deze bundels bieden internet; gewone telefoongesprekken en sms zijn niet inbegrepen.</p>
+        </div>
+        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
       </v-container>
     </section>
 

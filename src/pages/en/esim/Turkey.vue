@@ -64,17 +64,6 @@
       </v-container>
     </section>
 
-    <section class="europe-explainer-section">
-      <v-container class="europe-explainer-container">
-        <div class="europe-explainer-copy">
-          <h2>What is a Turkey eSIM?</h2>
-          <p>An eSIM is a digital SIM built into a compatible phone. With SafarSIM, you buy a prepaid internet package and install it on your phone — no plastic SIM card to buy, collect or swap. You choose how much data you need and how many days you want to use it.</p>
-          <p>After purchase, follow the installation instructions using Wi-Fi, then select the eSIM for mobile data at your destination. Use maps, browse the internet, message and make calls through apps such as WhatsApp, while keeping your usual SIM in your phone. These packages provide internet access; traditional phone calls and SMS are not included.</p>
-        </div>
-        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
-      </v-container>
-    </section>
-
     <section v-if="checkoutOpen" id="europe-checkout" class="europe-checkout-section">
       <v-container>
         <div class="europe-section-heading europe-checkout-heading">
@@ -85,6 +74,17 @@
         <div class="europe-embedded-checkout">
           <Cart :show-step-numbers="true" :first-step-number="2" />
         </div>
+      </v-container>
+    </section>
+
+    <section class="europe-explainer-section">
+      <v-container class="europe-explainer-container">
+        <div class="europe-explainer-copy">
+          <h2>What is a Turkey eSIM?</h2>
+          <p>An eSIM is a digital SIM built into a compatible phone. With SafarSIM, you buy a prepaid internet package and install it on your phone — no plastic SIM card to buy, collect or swap. You choose how much data you need and how many days you want to use it.</p>
+          <p>After purchase, follow the installation instructions using Wi-Fi, then select the eSIM for mobile data at your destination. Use maps, browse the internet, message and make calls through apps such as WhatsApp, while keeping your usual SIM in your phone. These packages provide internet access; traditional phone calls and SMS are not included.</p>
+        </div>
+        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
       </v-container>
     </section>
 

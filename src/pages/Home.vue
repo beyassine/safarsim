@@ -127,8 +127,6 @@
       </v-container>
     </section>
 
-    <PhoneCompatibility plans-id="destination-selection" />
-
     <section v-if="checkoutOpen" id="checkout" class="checkout-section">
       <v-container>
         <div class="section-heading checkout-heading">
@@ -141,6 +139,8 @@
         </div>
       </v-container>
     </section>
+
+    <PhoneCompatibility plans-id="destination-selection" />
 
     <section class="compact-steps-section">
       <v-container fluid class="compact-steps-container">

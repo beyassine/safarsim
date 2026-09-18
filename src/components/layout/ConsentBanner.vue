@@ -49,14 +49,14 @@ export default {
 .consent-banner {
   position: fixed;
   z-index: 2400;
-  inset-inline: 16px;
-  bottom: max(16px, env(safe-area-inset-bottom));
-  max-width: 1000px;
-  margin-inline: auto;
-  padding: 20px 24px;
+  inset-inline-end: 16px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  width: min(440px, calc(100% - 32px));
+  padding: 12px 16px;
   display: flex;
-  align-items: center;
-  gap: 24px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
   background: #fffbf8;
   color: #2f1b2a;
   border: 1px solid #dec7d1;
@@ -67,27 +67,28 @@ export default {
   overflow-y: auto;
 }
 .consent-copy { flex: 1; }
-.consent-copy h2 { font-size: 18px; margin-bottom: 8px; }
-.consent-copy p { font-size: 14px; line-height: 1.6; margin-bottom: 8px; }
-.consent-copy a { color: #7d1948; font-size: 14px; text-decoration: underline; }
-.consent-actions { display: flex; flex-direction: column; gap: 8px; min-width: 200px; }
+.consent-copy h2 { font-size: 14px; line-height: 1.4; margin-bottom: 4px; }
+.consent-copy p { font-size: 12px; line-height: 1.5; margin-bottom: 4px; }
+.consent-copy a { color: #7d1948; font-size: 12px; text-decoration: underline; }
+.consent-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .consent-actions button {
-  padding: 10px 16px;
+  flex: 1 1 0;
+  padding: 8px 10px;
   min-height: 44px;
   background: #7d1948;
   color: white;
   border: 1px solid #7d1948;
   border-radius: 8px;
   font: inherit;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
 }
 .consent-actions button:hover { background: #601238; }
-.consent-actions .consent-close { background: transparent; color: #7d1948; }
+.consent-actions .consent-close { flex-basis: 100%; background: transparent; color: #7d1948; }
 .consent-banner :focus-visible { outline: 3px solid #2f1b2a; outline-offset: 3px; }
 @media (max-width: 599px) {
-  .consent-banner { inset-inline: 12px; padding: 16px; flex-direction: column; gap: 14px; }
+  .consent-banner { inset-inline: 8px; width: auto; padding: 10px 12px; gap: 8px; }
   .consent-actions { width: 100%; }
 }
 </style>

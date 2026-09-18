@@ -64,17 +64,6 @@
       </v-container>
     </section>
 
-    <section class="europe-explainer-section">
-      <v-container class="europe-explainer-container">
-        <div class="europe-explainer-copy">
-          <h2>ما هي شريحة eSIM لفرنسا؟</h2>
-          <p>شريحة eSIM هي شريحة رقمية مدمجة في الهاتف المتوافق معها. مع SafarSIM، تشتري باقة إنترنت مسبقة الدفع وتثبّتها على هاتفك، دون الحاجة إلى شراء شريحة بلاستيكية أو استلامها أو تبديل شريحتك الحالية. تختار كمية الإنترنت ومدة الباقة المناسبة لرحلتك وتدفع ثمنها مسبقًا.</p>
-          <p>بعد الشراء، اتبع تعليمات التثبيت عبر Wi-Fi، ثم اختر eSIM لبيانات الهاتف عند الوصول إلى وجهتك. يمكنك استخدام الخرائط وتصفح الإنترنت وإرسال الرسائل وإجراء المكالمات عبر تطبيقات مثل واتساب، مع إبقاء شريحتك المعتادة في هاتفك. هذه الباقات مخصصة للإنترنت ولا تشمل المكالمات الهاتفية التقليدية أو الرسائل النصية SMS.</p>
-        </div>
-        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
-      </v-container>
-    </section>
-
     <section v-if="checkoutOpen" id="europe-checkout" class="europe-checkout-section">
       <v-container>
         <div class="europe-section-heading europe-checkout-heading">
@@ -85,6 +74,17 @@
         <div class="europe-embedded-checkout">
           <Cart :show-step-numbers="true" :first-step-number="2" />
         </div>
+      </v-container>
+    </section>
+
+    <section class="europe-explainer-section">
+      <v-container class="europe-explainer-container">
+        <div class="europe-explainer-copy">
+          <h2>ما هي شريحة eSIM لفرنسا؟</h2>
+          <p>شريحة eSIM هي شريحة رقمية مدمجة في الهاتف المتوافق معها. مع SafarSIM، تشتري باقة إنترنت مسبقة الدفع وتثبّتها على هاتفك، دون الحاجة إلى شراء شريحة بلاستيكية أو استلامها أو تبديل شريحتك الحالية. تختار كمية الإنترنت ومدة الباقة المناسبة لرحلتك وتدفع ثمنها مسبقًا.</p>
+          <p>بعد الشراء، اتبع تعليمات التثبيت عبر Wi-Fi، ثم اختر eSIM لبيانات الهاتف عند الوصول إلى وجهتك. يمكنك استخدام الخرائط وتصفح الإنترنت وإرسال الرسائل وإجراء المكالمات عبر تطبيقات مثل واتساب، مع إبقاء شريحتك المعتادة في هاتفك. هذه الباقات مخصصة للإنترنت ولا تشمل المكالمات الهاتفية التقليدية أو الرسائل النصية SMS.</p>
+        </div>
+        <img class="esim-app-icons" src="@/assets/images/apps-icons.png" alt="WhatsApp, Instagram, Facebook, TikTok, Spotify, Uber, Gmail, Google Maps" width="1536" height="1024" loading="lazy" style="display:block;width:100%;max-width:620px;height:auto;margin:auto;align-self:center;border-radius:24px;mix-blend-mode:multiply" />
       </v-container>
     </section>
 
