@@ -1,8 +1,9 @@
 <template>
   <section v-if="consent.visible" ref="banner" class="consent-banner" role="region"
-    :aria-label="$t('consent.title')" aria-describedby="consent-description" tabindex="-1"
+    aria-labelledby="consent-title" aria-describedby="consent-description" tabindex="-1"
     @keydown.esc="closeConsentSettings">
     <div class="consent-copy">
+      <h2 id="consent-title">{{ $t('consent.title') }}</h2>
       <p id="consent-description">{{ $t('consent.description') }}</p>
     </div>
     <div class="consent-actions">
@@ -58,6 +59,7 @@ export default {
   overflow-y: auto;
 }
 .consent-copy { flex: 1; }
+.consent-copy h2 { font-size: 16px; line-height: 1.4; font-weight: 700; margin: 0 0 4px; }
 .consent-copy p { font-size: 14px; line-height: 1.5; margin: 0; }
 .consent-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .consent-actions button {
