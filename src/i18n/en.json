@@ -1,9 +1,9 @@
 {
   "consent": {
     "title": "Your privacy choices",
-    "description": "With your permission, we use cookies to measure and personalize ads. Change your choice anytime in Cookie settings.",
-    "accept": "Accept all",
-    "reject": "Reject non-essential",
+    "description": "We use cookies to improve your experience on our website.",
+    "accept": "Accept",
+    "reject": "Reject",
     "settings": "Cookie settings",
     "close": "Close"
   },

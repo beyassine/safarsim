@@ -1,9 +1,9 @@
 {
   "consent": {
     "title": "Vos choix de confidentialité",
-    "description": "Avec votre accord, nous utilisons des cookies pour mesurer et personnaliser les publicités. Modifiez votre choix à tout moment dans les paramètres des cookies.",
-    "accept": "Tout accepter",
-    "reject": "Refuser les cookies non essentiels",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience sur notre site.",
+    "accept": "Accepter",
+    "reject": "Refuser",
     "settings": "Paramètres des cookies",
     "close": "Fermer"
   },

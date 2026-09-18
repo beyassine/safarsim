@@ -1,9 +1,9 @@
 {
   "consent": {
     "title": "Je privacykeuzes",
-    "description": "Met jouw toestemming gebruiken we cookies om advertenties te meten en te personaliseren. Wijzig je keuze altijd via Cookie-instellingen.",
-    "accept": "Alles accepteren",
-    "reject": "Niet-essentiële cookies weigeren",
+    "description": "We gebruiken cookies om je ervaring op onze website te verbeteren.",
+    "accept": "Accepteren",
+    "reject": "Weigeren",
     "settings": "Cookie-instellingen",
     "close": "Sluiten"
   },

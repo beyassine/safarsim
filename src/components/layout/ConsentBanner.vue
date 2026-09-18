@@ -1,17 +1,13 @@
 <template>
   <section v-if="consent.visible" ref="banner" class="consent-banner" role="region"
-    aria-labelledby="consent-title" aria-describedby="consent-description" tabindex="-1"
+    :aria-label="$t('consent.title')" aria-describedby="consent-description" tabindex="-1"
     @keydown.esc="closeConsentSettings">
     <div class="consent-copy">
-      <h2 id="consent-title">{{ $t('consent.title') }}</h2>
       <p id="consent-description">{{ $t('consent.description') }}</p>
-      <router-link :to="privacyPath">{{ $t('footer.privacy') }}</router-link>
     </div>
     <div class="consent-actions">
       <button type="button" data-consent="accept" @click="choose(true)">{{ $t('consent.accept') }}</button>
       <button type="button" data-consent="reject" @click="choose(false)">{{ $t('consent.reject') }}</button>
-      <button v-if="consent.choice !== null" type="button" class="consent-close"
-        @click="closeConsentSettings">{{ $t('consent.close') }}</button>
     </div>
   </section>
 </template>
@@ -23,11 +19,6 @@ export default {
   name: 'ConsentBanner',
   setup() {
     return { consent: consentState, closeConsentSettings }
-  },
-  computed: {
-    privacyPath() {
-      return `${this.$i18n.locale === 'en' ? '' : '/' + this.$i18n.locale}/privacy-policy`
-    },
   },
   watch: {
     'consent.visible'(visible) {
@@ -67,10 +58,8 @@ export default {
   overflow-y: auto;
 }
 .consent-copy { flex: 1; }
-.consent-copy h2 { font-size: 14px; line-height: 1.4; margin-bottom: 4px; }
-.consent-copy p { font-size: 12px; line-height: 1.5; margin-bottom: 4px; }
-.consent-copy a { color: #7d1948; font-size: 12px; text-decoration: underline; }
-.consent-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.consent-copy p { font-size: 12px; line-height: 1.5; margin: 0; }
+.consent-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .consent-actions button {
   flex: 1 1 0;
   padding: 8px 10px;
@@ -85,7 +74,8 @@ export default {
   cursor: pointer;
 }
 .consent-actions button:hover { background: #601238; }
-.consent-actions .consent-close { flex-basis: 100%; background: transparent; color: #7d1948; }
+.consent-actions [data-consent="reject"] { background: #eee9ed; color: #47333e; border-color: #d5c8cf; }
+.consent-actions [data-consent="reject"]:hover { background: #e0d7dd; }
 .consent-banner :focus-visible { outline: 3px solid #2f1b2a; outline-offset: 3px; }
 @media (max-width: 599px) {
   .consent-banner { inset-inline: 8px; width: auto; padding: 10px 12px; gap: 8px; }
