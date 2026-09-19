@@ -30,6 +30,8 @@ async function run() {
     server.listen(port, '127.0.0.1', resolve)
   })
   let browser
+  const startedAt = Date.now()
+  console.log(`Prerendering ${routes.length} destination pages...`)
 
   try {
     const options = { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] }
@@ -38,7 +40,7 @@ async function run() {
       Object.assign(options, await serverlessLaunchOptions(puppeteer, chromium))
     }
     browser = await puppeteer.launch(options)
-    async function renderRoute(route) {
+    async function createRenderPage() {
       const page = await browser.newPage()
       // Keep the build deterministic and avoid analytics/payment side effects.
       await page.setRequestInterception(true)
@@ -47,9 +49,12 @@ async function run() {
         if (url.origin === `http://127.0.0.1:${port}` || ['data:', 'blob:'].includes(url.protocol)) request.continue()
         else request.abort()
       })
-      await page.goto(`http://127.0.0.1:${port}${route}`, { waitUntil: 'domcontentloaded', timeout: 60000 })
-      await page.waitForSelector('.europe-page h1, .country-page h1', { timeout: 60000 })
-      await page.waitForSelector('.europe-plan-card, .country-page .plans', { timeout: 60000 })
+      return page
+    }
+    async function renderRoute(route, page, crawler) {
+      await page.goto(`http://127.0.0.1:${port}${route}`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+      await page.waitForSelector('.europe-page h1, .country-page h1', { timeout: 30000 })
+      await page.waitForSelector('.europe-plan-card, .country-page .plans', { timeout: 30000 })
       await page.waitForFunction(() => !!document.querySelector('link[rel="canonical"]'), { timeout: 15000 })
       const content = await page.evaluate(() => ({
         title: document.title,
@@ -69,9 +74,6 @@ async function run() {
       const outputDir = path.join(distDir, route.replace(/^\//, ''))
       fs.mkdirSync(outputDir, { recursive: true })
       fs.writeFileSync(path.join(outputDir, 'index.html'), html)
-      await page.close()
-      const crawler = await browser.newPage()
-      await crawler.setJavaScriptEnabled(false)
       await crawler.goto(`http://127.0.0.1:${port}${route}`, { waitUntil: 'domcontentloaded' })
       const rendered = await crawler.evaluate(() => ({
         heading: document.querySelector('h1')?.textContent.trim(),
@@ -88,14 +90,35 @@ async function run() {
       if (rendered.h1s !== 1 || !rendered.description || rendered.alternates !== 5 || !rendered.checker || !rendered.apps || rendered.titles !== 1 || rendered.heading !== content.heading || rendered.plans !== content.plans || rendered.canonical !== `https://safarsim.net${route}`) {
         throw new Error(`JavaScript-disabled crawl failed for ${route}: ${JSON.stringify(rendered)}`)
       }
-      await crawler.close()
-      console.log(`Prerendered ${route}`)
+      completed += 1
+      if (completed % 25 === 0 || completed === routes.length) {
+        console.log(`Prerendered ${completed}/${routes.length} pages (${Math.round((Date.now() - startedAt) / 1000)}s); latest: ${route}`)
+      }
     }
     let nextRoute = 0
+    let completed = 0
     await Promise.all(Array.from({ length: 4 }, async () => {
-      while (nextRoute < routes.length) await renderRoute(routes[nextRoute++])
+      // Reuse a pair of tabs per worker instead of creating ~1,600 tabs.
+      const page = await createRenderPage()
+      const crawler = await browser.newPage()
+      await crawler.setJavaScriptEnabled(false)
+      await crawler.setRequestInterception(true)
+      crawler.on('request', (request) => {
+        // The no-JS check only reads HTML; fonts, images and tracking are irrelevant.
+        if (request.isNavigationRequest() && new URL(request.url()).origin === `http://127.0.0.1:${port}`) request.continue()
+        else request.abort()
+      })
+      try {
+        while (nextRoute < routes.length) {
+          const route = routes[nextRoute++]
+          try { await renderRoute(route, page, crawler) }
+          catch (error) { throw new Error(`Prerender failed for ${route}: ${error.message}`, { cause: error }) }
+        }
+      } finally {
+        await Promise.all([page.close(), crawler.close()])
+      }
     }))
-    console.log(`Verified ${routes.length} prerendered destination pages without JavaScript.`)
+    console.log(`Verified ${routes.length} prerendered destination pages without JavaScript in ${Math.round((Date.now() - startedAt) / 1000)}s.`)
   } finally {
     if (browser) await browser.close()
     server.close()

@@ -52,6 +52,13 @@
 .europe-page[dir] .europe-hero-copy { text-align: center; }
 .europe-hero-copy > p { margin-inline: auto; }
 .europe-hero-copy .europe-actions { display: flex; justify-content: center; align-items: center; margin: 24px 0; position: relative; }
+.europe-page[dir] .europe-hero-copy .europe-actions { justify-content: center; gap: 20px; }
+.europe-actions :deep(.compatibility-link) { margin-top: 0; }
+@media (min-width: 901px) {
+  .europe-page[dir] .europe-hero-copy .europe-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 16px; }
+  .europe-actions > .europe-primary,
+  .europe-actions :deep(.compatibility-link) { width: 100%; min-width: 0; min-height: 56px; }
+}
 
 .europe-hero-copy .europe-hero-description { margin:24px auto; max-width:600px; text-align:center; font-size:18px; line-height:1.75; color:#6b7b77; position:relative; }
 @media(max-width:599px){.europe-hero-copy .europe-hero-description{font-size:16px;padding-inline:12px}}

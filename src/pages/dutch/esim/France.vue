@@ -16,8 +16,8 @@
             <div class="europe-actions">
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans"> Bekijk bundels voor Frankrijk<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
+              <PhoneCompatibility button />
             </div>
-            <PhoneCompatibility button />
 
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 0.84635%">

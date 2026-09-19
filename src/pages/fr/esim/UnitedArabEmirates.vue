@@ -17,8 +17,8 @@
               <v-btn color="#d91c58" rounded="pill" size="x-large" elevation="0" class="europe-primary" @click="scrollEuropePlans">
                 Voir les forfaits Émirats arabes unis<v-icon end>mdi-arrow-down</v-icon>
               </v-btn>
+              <PhoneCompatibility button />
             </div>
-            <PhoneCompatibility button />
 
           </div>
           <div class="europe-visual" style="--hero-bottom-trim: 1.75781%">
